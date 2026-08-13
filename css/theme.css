@@ -542,6 +542,14 @@ img { max-width: 100%; display: block; }
 }
 .footer-links-flat a:hover { color: var(--cb-gold); text-decoration: underline; }
 
+.footer-contact-line {
+  color: var(--cb-muted-2);
+  font-size: 14px;
+  margin: 0 0 28px;
+}
+.footer-contact-line a { color: var(--cb-muted); text-decoration: underline; }
+.footer-contact-line a:hover { color: var(--cb-text); }
+
 .footer-disclaimer {
   max-width: 780px;
   margin: 0 0 24px;
