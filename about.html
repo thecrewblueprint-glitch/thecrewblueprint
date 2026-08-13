@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About | The Crew Blueprint</title>
+<meta name="description" content="A practical training platform for the people behind live events. Learn why The Crew Blueprint exists and what makes the approach different." />
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/about/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="About | The Crew Blueprint" />
+<meta property="og:description" content="A practical training platform for the people behind live events." />
+<meta property="og:url" content="https://thecrewblueprint.com/about/" />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="css/theme.css" rel="stylesheet" />
+<style>
+  /* Page-specific: About's two-column hero with a numbered-principles side panel.
+     Reuses shared tokens/buttons/cards from theme.css rather than redeclaring them. */
+  .cb-about-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    align-items: center;
+    gap: clamp(32px, 6vw, 72px);
+    text-align: left;
+    max-width: none;
+    padding-bottom: clamp(60px, 8vw, 104px);
+  }
+
+  .cb-about-hero h1 {
+    margin: 0 0 24px;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.97;
+    letter-spacing: -0.04em;
+  }
+
+  .cb-about-hero p {
+    max-width: 620px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .cb-about-hero .cb-actions { justify-content: flex-start; }
+
+  .cb-about-hero-panel {
+    padding: clamp(28px, 4vw, 42px);
+    text-align: left;
+  }
+
+  .cb-about-hero-panel h2 {
+    margin: 0 0 16px;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.1;
+  }
+
+  .cb-about-principles { display: grid; gap: 14px; margin-top: 26px; }
+
+  .cb-about-principle {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+  }
+
+  .cb-about-principle-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: var(--cb-bg-deep);
+    background: var(--cb-gold);
+    border-radius: var(--cb-radius-sm);
+    font-weight: 900;
+  }
+
+  .cb-about-principle strong { display: block; margin-bottom: 4px; font-size: 16px; }
+  .cb-about-principle span { display: block; color: var(--cb-muted); line-height: 1.5; font-size: 14px; }
+
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { margin: 0 0 14px; text-align: left; }
+  .cb-section-left p.cb-section-intro { margin: 0; text-align: left; max-width: 820px; }
+
+  .cb-cta-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 28px;
+    text-align: left;
+    padding: clamp(28px, 5vw, 48px);
+    background: linear-gradient(135deg, rgba(245, 180, 0, 0.16), transparent 45%), var(--cb-card);
+    border: 1px solid var(--cb-gold-border);
+    border-radius: var(--cb-radius-lg);
+  }
+
+  .cb-cta-split h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 42px); text-align: left; }
+  .cb-cta-split p { margin: 0; color: var(--cb-muted); max-width: 620px; }
+
+  @media (max-width: 900px) {
+    .cb-about-hero { grid-template-columns: 1fr; }
+    .cb-cta-split { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <img src="images/logo.png" alt="The Crew Blueprint" class="nav-logo-img">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active" aria-current="page">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="courses/stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap">
+
+    <section class="cb-about-hero">
+      <div>
+        <h1>A practical training platform for the people behind live events.</h1>
+        <p>
+          The Crew Blueprint helps new and developing live event workers understand the jobsite,
+          communicate clearly, work with awareness, and build a path beyond simply being new on the call.
+        </p>
+        <div class="cb-actions">
+          <a class="cb-btn cb-btn-primary" href="courses/stagehand-fundamentals.html">Start Stagehand Fundamentals</a>
+          <a class="cb-btn cb-btn-secondary" href="resources.html">View Resources</a>
+        </div>
+      </div>
+
+      <aside class="cb-panel cb-about-hero-panel">
+        <h2>Built around real jobsite expectations.</h2>
+        <p>
+          The platform focuses on the habits, language, awareness, and crew behavior that help
+          workers arrive better prepared for live production.
+        </p>
+
+        <div class="cb-about-principles">
+          <div class="cb-about-principle">
+            <span class="cb-about-principle-number">01</span>
+            <div>
+              <strong>Preparation before performance</strong>
+              <span>Know what to bring, where to report, and how to enter the call ready to work.</span>
+            </div>
+          </div>
+          <div class="cb-about-principle">
+            <span class="cb-about-principle-number">02</span>
+            <div>
+              <strong>Awareness before speed</strong>
+              <span>Learn to observe the site, follow direction, and avoid creating preventable hazards.</span>
+            </div>
+          </div>
+          <div class="cb-about-principle">
+            <span class="cb-about-principle-number">03</span>
+            <div>
+              <strong>Growth beyond the first call</strong>
+              <span>Build a foundation for department awareness, stronger skills, and long-term career development.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Why The Crew Blueprint exists</h2>
+      <p class="cb-section-intro">
+        Live event work can be difficult to enter because much of the job is learned on-site, under
+        pressure, around moving equipment, tight timelines, and experienced crews. The Crew Blueprint
+        is being built to close that gap with practical, safety-aware preparation.
+      </p>
+
+      <div class="cb-grid-3">
+        <article class="cb-card">
+          <h3>Plain-language training</h3>
+          <p>Lessons avoid unnecessary academic language and focus on what new workers need to understand before and during real calls.</p>
+        </article>
+        <article class="cb-card">
+          <h3>Real jobsite focus</h3>
+          <p>Training is centered around load-ins, show calls, load-outs, venues, departments, crew structure, and expected jobsite behavior.</p>
+        </article>
+        <article class="cb-card">
+          <h3>Career direction</h3>
+          <p>The long-term system supports department pathways, practical resources, leadership development, and growth beyond general labor.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>What makes the approach different</h2>
+      <p class="cb-section-intro">
+        The Crew Blueprint is designed as practical orientation and job-readiness education, not as
+        a substitute for hands-on training, employer instruction, or specialized authorization.
+      </p>
+
+      <div class="cb-grid-2">
+        <article class="cb-card">
+          <h3>Safety-aware without overclaiming</h3>
+          <p>The content clearly separates general awareness from certification, qualification, employer training, and authorization for specialized work.</p>
+        </article>
+        <article class="cb-card">
+          <h3>Built around jobsite behavior</h3>
+          <p>Training emphasizes listening, communication, awareness, reliability, chain of command, and knowing when to stop and ask.</p>
+        </article>
+        <article class="cb-card">
+          <h3>Mobile-first learning</h3>
+          <p>Lessons are designed for workers who may review material from a phone before a call, between shifts, or while traveling.</p>
+        </article>
+        <article class="cb-card">
+          <h3>An expandable training system</h3>
+          <p>Stagehand Fundamentals is the starting point for future department, leadership, compliance-awareness, and worker-development pathways.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Start with the fundamentals.</h2>
+          <p>Learn how live event crews work, what to expect on a call, and how to show up as a safer, more prepared, and more reliable entry-level stagehand.</p>
+        </div>
+        <div class="cb-actions">
+          <a class="cb-btn cb-btn-primary" href="courses/stagehand-fundamentals.html">View the Course</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="The Crew Blueprint" class="footer-logo-img">
+        <p>A practical training platform for the people who build the show. Job-readiness training, not a certifying body.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+        <h4 class="mt-8">Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deadhang Labor LLC. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="accessibility-statement.html">Accessibility</a> &middot;
+        <a href="limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
