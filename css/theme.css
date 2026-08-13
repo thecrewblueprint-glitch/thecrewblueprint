@@ -526,6 +526,25 @@ img { max-width: 100%; display: block; }
 .footer-legal a { color: var(--cb-muted-2); text-decoration: underline; }
 .footer-legal a:hover { color: var(--cb-text); }
 
+.footer-disclaimer {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--cb-warning-border);
+  background: var(--cb-warning-bg);
+  border-radius: var(--cb-radius-md);
+}
+
+.footer-disclaimer strong {
+  display: block;
+  color: var(--cb-gold-strong);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+}
+
+.footer-disclaimer p { margin: 0; color: var(--cb-muted); font-size: 13px; line-height: 1.6; }
+
 @media (max-width: 760px) {
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
