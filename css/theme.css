@@ -549,7 +549,9 @@ img { max-width: 100%; display: block; }
 .footer-col a:hover { color: var(--cb-text); }
 
 @media (max-width: 640px) {
-  .footer-cols { grid-template-columns: 1fr; gap: 20px; }
+  .footer-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 100%; }
+  .footer-col h4 { font-size: 11px; }
+  .footer-col a { font-size: 12px; word-break: break-word; }
 }
 
 .footer-disclaimer {
