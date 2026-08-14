@@ -46,11 +46,6 @@
   }
   .cb-chain-arrow { color: var(--cb-muted-2); font-size: 16px; }
 
-  .cb-phase-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 8px; }
-  .cb-phase-card { padding: 22px; text-align: left; }
-  .cb-phase-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--cb-gold); }
-  .cb-phase-card p { margin: 0; color: var(--cb-muted); }
-
   .cb-value-list { display: grid; gap: 14px; margin-top: 8px; }
   .cb-value-item {
     display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 14px;
@@ -64,6 +59,23 @@
   .cb-value-item strong { display: block; margin-bottom: 4px; font-size: 16px; }
   .cb-value-item span { display: block; color: var(--cb-muted); line-height: 1.55; font-size: 14px; }
 
+  .cb-example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; margin-top: 16px; }
+  .cb-example-card { padding: 20px; text-align: left; }
+  .cb-example-card.cb-good { border-color: rgba(34,197,94,0.35); }
+  .cb-example-card.cb-bad { border-color: rgba(239,68,68,0.35); }
+  .cb-example-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .cb-good .cb-example-tag { color: #4ade80; }
+  .cb-bad .cb-example-tag { color: #f87171; }
+  .cb-example-card p { margin: 0 0 8px; color: var(--cb-muted); font-size: 14px; }
+  .cb-example-card p:last-child { margin-bottom: 0; }
+
+  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+  .cb-quiz-item { padding: 16px 20px; }
+  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
   .cb-lesson-nav {
     display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
   }
@@ -75,11 +87,12 @@
     color: var(--cb-muted-2);
   }
   .cb-lesson-nav-card h3 { margin: 0; font-size: 17px; }
-  .cb-lesson-nav-card.cb-locked { opacity: 0.6; }
-  .cb-lesson-nav-card.cb-locked h3::after { content: " (Coming Soon)"; font-size: 12px; color: var(--cb-muted-2); font-weight: 600; }
 
   @media (max-width: 820px) {
-    .cb-phase-grid, .cb-lesson-nav { grid-template-columns: 1fr; }
+    .cb-lesson-nav { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .cb-example-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -132,28 +145,96 @@
     <section class="cb-section cb-section-left">
       <h2>What a Stagehand Actually Does</h2>
       <p class="cb-section-intro">
-        "Stagehand" covers more ground than the name suggests. On any given call you might be building
-        truss, pushing cases, coiling cable, laying down staging deck, or hanging soft goods &mdash;
-        whatever the show needs, in whatever order it needs to happen.
+        Say the word "stagehand" and most people picture someone carrying boxes. That's part of it
+        &mdash; but it's not the job.
       </p>
       <p>
-        You're not a spectator brought in to watch professionals work. You're part of how the show
-        physically comes together and comes back apart, safely and on schedule. That's true whether
-        it's your first call or your five hundredth. The difference experience buys you is speed,
-        judgment, and which jobs you get handed &mdash; not whether the work matters.
+        On a real call you might unload trucks, push road cases, set staging, move barricade, run
+        cable under a department's direction, sort gear by department, or help reset a venue after
+        the event. The common thread isn't the specific task &mdash; it's that almost every other
+        department depends on hands like yours to get their gear from the truck to the stage and
+        back again.
       </p>
       <p>
-        It's also a starting point, not a ceiling. Audio, lighting, video, rigging, and carpentry are
-        all specialized departments that most people enter through general stagehand work first. Learning
-        to be a solid, safe, useful hand is what makes those doors open later.
+        That's why the job matters more than "moving boxes" suggests. A stagehand who pays
+        attention, follows direction, protects the gear, and works safely is doing something the
+        whole production depends on &mdash; even before they know a single piece of equipment by name.
+      </p>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">The bar for day one</strong>
+        <p style="margin: 0; color: var(--cb-muted);">You're not expected to know the gear or the terminology yet. What matters is showing up prepared, listening, following direction, asking when you're unsure, and working safely. Confidence you haven't earned yet reads as a problem &mdash; not knowing something and saying so doesn't.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Load-In, Show Call, and Load-Out</h2>
+      <p class="cb-section-intro">
+        Every call breaks into the same three phases. Knowing which one you're in changes what's
+        expected of you.
+      </p>
+
+      <div class="cb-legal-table-wrap">
+        <table class="cb-legal-table">
+          <thead>
+            <tr><th>Phase</th><th>When</th><th>What It Means</th><th>Likely for Beginners?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Load-In</td><td>Before the event</td><td>Gear comes in and the show gets built</td><td>Very likely</td></tr>
+            <tr><td>Show Call</td><td>During the event</td><td>Crew supports the live performance</td><td>Less likely at first</td></tr>
+            <tr><td>Load-Out</td><td>After the event</td><td>Gear is struck, packed, and loaded out</td><td>Very likely</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top: 20px;">
+        Show call gets handed to newer hands less often because it needs more trust, timing, and
+        familiarity with that specific production &mdash; not because it's more important. Most
+        beginners build their reputation on load-in and load-out first, which is exactly where
+        safety and reliability matter most anyway: gear is moving fast, the room is full of people
+        who don't know you yet, and everyone's watching how you handle it.
+      </p>
+      <p>
+        For the fast-facts version of what to actually do at each phase &mdash; what to bring, when
+        you're allowed to leave, how sign-in works &mdash; see the
+        <a href="../resources/load-in-load-out-reference.html" style="color: var(--cb-gold-strong); text-decoration: underline;">Load-In / Load-Out Reference</a>
+        in the Resource Hub. This lesson is about understanding the shape of the day; that page is
+        about executing it.
       </p>
     </section>
 
     <section class="cb-section cb-section-left">
-      <h2>Where You Fit in the Bigger Picture</h2>
+      <h2>Common Work Environments</h2>
       <p class="cb-section-intro">
-        A show has a chain of direction above you, and knowing where you sit in it changes how you act
-        on a call.
+        The expectations stay the same everywhere &mdash; show up ready, work safely, follow
+        direction. The room you're in changes how that looks.
+      </p>
+
+      <div class="cb-legal-table-wrap">
+        <table class="cb-legal-table">
+          <thead>
+            <tr><th>Environment</th><th>What It's Like</th><th>Beginner Focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Arenas</td><td>Large, loud, fast-paced, heavy gear movement</td><td>Stay alert to moving equipment; follow direction closely</td></tr>
+            <tr><td>Theaters</td><td>Tighter backstage spaces, more precise work</td><td>Move carefully; never touch fly systems or rigging unless trained and authorized</td></tr>
+            <tr><td>Convention Centers</td><td>Varies day to day &mdash; trade shows, conferences, room resets</td><td>Watch for forklifts, pallet jacks, and marked traffic paths</td></tr>
+            <tr><td>Outdoor Shows</td><td>Weather, uneven ground, temporary structures</td><td>Hydrate, watch your footing, report weather concerns to a lead</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 20px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Don't assume a task is safe because it looks simple</strong>
+        <p style="margin: 0; color: var(--cb-muted);">Each environment carries different hazards. If you're not trained, assigned, or sure how to do something safely in the room you're in &mdash; stop and ask.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Where You Fit In: Who Is on the Crew</h2>
+      <p class="cb-section-intro">
+        A show has a chain of direction above you, and a call might put you alongside dozens of
+        people or hundreds, split across departments. Knowing where you sit in that structure
+        &mdash; and who to actually listen to &mdash; changes how you act.
       </p>
 
       <div class="cb-panel" style="padding: 22px;">
@@ -171,47 +252,40 @@
       </div>
 
       <p style="margin-top: 20px;">
-        You take direction from whoever is leading your department or your section of the call &mdash;
-        not from the show, not from the headliner, not from whoever seems busiest. If a lead tells you
-        to do something and someone else tells you something different, the lead giving you direction
-        wins. When you're not sure who that is, that's the first question to ask, not something to
-        guess at.
-      </p>
-      <p>
-        This also means your job isn't to freelance decisions. Good new hands ask before they act when
-        something isn't clear. It reads as competence, not weakness &mdash; the hands who get called
-        back are the ones a lead doesn't have to worry about.
-      </p>
-    </section>
-
-    <section class="cb-section cb-section-left">
-      <h2>The Three Phases of a Show</h2>
-      <p class="cb-section-intro">
-        Every call breaks down into three phases, and each one has a different pace and a different
-        set of expectations.
+        That's the chain top to bottom. Day to day, the department leads are who actually direct
+        your work &mdash; and a single call can have several of them, each running their own
+        specialty:
       </p>
 
-      <div class="cb-phase-grid">
-        <div class="cb-panel cb-phase-card">
-          <h3>Load-In</h3>
-          <p>Trucks arrive, gear comes off, and the empty room turns into a show. Fast-moving, physical, and the phase where being ready and useful matters most.</p>
-        </div>
-        <div class="cb-panel cb-phase-card">
-          <h3>Show Call</h3>
-          <p>The event itself. Less lifting, more watching, holding positions, and reacting fast if something needs attention mid-show.</p>
-        </div>
-        <div class="cb-panel cb-phase-card">
-          <h3>Load-Out</h3>
-          <p>Everything in reverse, usually faster and later at night than load-in. Tired crews and last-minute urgency make this the phase where mistakes happen most.</p>
-        </div>
+      <div class="cb-legal-table-wrap" style="margin-top: 12px;">
+        <table class="cb-legal-table">
+          <thead>
+            <tr><th>Crew Role</th><th>What They Do</th><th>What Beginners Should Know</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Leads / Dept. Heads</td><td>Give direction and organize the work</td><td>This is your main point of contact</td></tr>
+            <tr><td>Riggers</td><td>Handle overhead systems and flown equipment</td><td>Stay clear unless directed</td></tr>
+            <tr><td>Audio Crew</td><td>Sound equipment and systems</td><td>Don't touch audio gear unless asked</td></tr>
+            <tr><td>Lighting Crew</td><td>Fixtures, truss, cable, control</td><td>Follow direction carefully around lighting gear</td></tr>
+            <tr><td>Video Crew</td><td>Screens, cameras, projectors, LED</td><td>Equipment can be delicate and expensive</td></tr>
+            <tr><td>Carpenters / Staging</td><td>Decks, scenic pieces, stage structure</td><td>Pay attention to safe lifting and placement</td></tr>
+            <tr><td>Truck Loaders</td><td>Gear movement in and out of trailers</td><td>Follow truck direction &mdash; cases have a specific order</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <p style="margin-top: 20px;">
-        For the fast-facts version of what to actually do at each phase &mdash; what to bring, when
-        you're allowed to leave, how sign-in works &mdash; see the
-        <a href="../resources/load-in-load-out-reference.html" style="color: var(--cb-gold-strong); text-decoration: underline;">Load-In / Load-Out Reference</a>
-        in the Resource Hub. This lesson is about understanding the shape of the day; that page is
-        about executing it.
+        You take direction from whoever is leading your department or your section of the call
+        &mdash; not from the show, not from the headliner, not from whoever seems busiest or
+        sounds confident. If a lead tells you one thing and someone else tells you another, the
+        lead giving you direction wins. When you're not sure who that is, that's the first
+        question to ask &mdash; guessing wrong can move the wrong gear, slow the crew down, or
+        create a safety problem.
+      </p>
+      <p>
+        This also means your job isn't to freelance decisions. Good new hands ask before they act
+        when something isn't clear. It reads as competence, not weakness &mdash; the hands who get
+        called back are the ones a lead doesn't have to worry about.
       </p>
     </section>
 
@@ -219,55 +293,114 @@
       <h2>What Makes a New Stagehand Valuable</h2>
       <p class="cb-section-intro">
         Nobody expects a first-call hand to know everything. What gets you called back isn't
-        experience &mdash; it's how you handle not having it yet.
+        experience &mdash; it's how you handle not having it yet. Here's what actually gets noticed
+        on a call:
       </p>
 
       <div class="cb-value-list">
         <div class="cb-panel cb-value-item">
           <span class="cb-value-num">1</span>
           <div>
-            <strong>Show up ready, not just on time</strong>
-            <span>Right clothes, right gear, already knowing the basics of where you're going. Being on time with none of that ready still creates a problem for someone else to solve.</span>
+            <strong>Punctuality</strong>
+            <span>Early enough to check in, find your lead, and be ready for direction &mdash; not still parking at call time.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
           <span class="cb-value-num">2</span>
           <div>
-            <strong>Listen more than you talk, early on</strong>
-            <span>You don't know what you don't know yet. The fastest way to learn a crew's rhythm is to watch it before you try to keep pace with it.</span>
+            <strong>Reliability</strong>
+            <span>Showing up prepared &mdash; right clothes, right gear, already knowing the basics of where you're going &mdash; and doing what you said you would, call after call. It's what gets your number saved for next time.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
           <span class="cb-value-num">3</span>
           <div>
-            <strong>Ask at the right moment</strong>
-            <span>Questions are welcome. Mid-lift, mid-cue, or mid-instruction usually isn't the moment &mdash; find the gap, then ask.</span>
+            <strong>Active listening</strong>
+            <span>You don't know what you don't know yet. The fastest way to learn a crew's rhythm is to watch and confirm instructions before you try to keep pace with it &mdash; not interrupt to prove you've got it.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
           <span class="cb-value-num">4</span>
           <div>
-            <strong>Do the small things right</strong>
-            <span>Coil cable the way you were shown, not the fast way. Watch what's overhead. Don't wander off between tasks. Small habits are what leads actually notice.</span>
+            <strong>Clear communication</strong>
+            <span>Asking questions, reporting problems, and updating your lead when a task is done &mdash; instead of disappearing, guessing, or pretending you understood.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
           <span class="cb-value-num">5</span>
           <div>
-            <strong>Be reliable before you're fast</strong>
-            <span>Speed comes with reps. Reliability is available to you on day one, and it's what gets your number saved for the next call.</span>
+            <strong>Good judgment</strong>
+            <span>Questions are welcome, but mid-lift or mid-instruction isn't the moment &mdash; find the gap, then ask. And if something's unclear, unsafe, or outside your training, stop and ask instead of guessing.</span>
           </div>
         </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">6</span>
+          <div>
+            <strong>Following instructions</strong>
+            <span>Do the task exactly as directed before you try to improve on it. A lead who says "these four cases, stage left, leave them closed" wants exactly that &mdash; not your idea of a better plan.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">7</span>
+          <div>
+            <strong>Safety commitment</strong>
+            <span>Watching for hazards, coiling cable the way you were shown instead of the fast way, and never treating speed as more important than doing it safely. Small habits are what leads actually notice.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cb-example-grid">
+        <div class="cb-panel cb-example-card cb-good">
+          <span class="cb-example-tag">Good Example</span>
+          <p>A new hand isn't sure whether a cable is safe to move. They ask: "Do you want this moved, or should I leave it until the department clears it?"</p>
+        </div>
+        <div class="cb-panel cb-example-card cb-good">
+          <span class="cb-example-tag">Good Example</span>
+          <p>A new hand is asked to help with something they haven't been trained to do. They say: "I haven't been trained on that yet &mdash; can someone show me the safe way, or would you like me to help with something else?"</p>
+        </div>
+        <div class="cb-panel cb-example-card cb-bad">
+          <span class="cb-example-tag">Bad Example</span>
+          <p>A new hand sees a road case and moves it without asking. It seemed helpful &mdash; but it was staged correctly and belonged to another department.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Quick Knowledge Check</h2>
+      <p class="cb-section-intro">Click a question to check your answer.</p>
+
+      <div class="cb-quiz-list">
+        <details class="cb-panel cb-quiz-item">
+          <summary>What is the main role of an entry-level stagehand?</summary>
+          <p>To support the larger production through safe, organized, and efficient labor under the direction of crew leads and department heads.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What should you do if you're unsure whether something is safe to move?</summary>
+          <p>Ask a lead or the appropriate department before acting &mdash; never guess with equipment that isn't clearly yours to move.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Why are brand-new stagehands less likely to work show call right away?</summary>
+          <p>Show call requires more trust, timing, and familiarity with the specific production than load-in or load-out do.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What should a beginner do around a rigging zone?</summary>
+          <p>Stay clear, never stand under a suspended load, and wait for direction from the appropriate lead.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What's one of the most valuable traits for a new stagehand?</summary>
+          <p>Reliability &mdash; showing up prepared, working safely, communicating clearly, and following instructions beats acting experienced and creating confusion.</p>
+        </details>
       </div>
     </section>
 
     <section class="cb-section cb-section-left">
       <h2>Key Takeaways</h2>
       <ul class="cb-list">
-        <li>Stagehand work is real production work, not a spectator role &mdash; and it's the common entry point into every specialized department.</li>
-        <li>Direction flows down a chain. Know who your lead is, and take direction from them specifically.</li>
-        <li>Every call has three phases &mdash; load-in, show call, load-out &mdash; each with its own pace and risk.</li>
-        <li>What makes a new hand valuable is preparation, listening, timing your questions, attention to small details, and reliability &mdash; not experience you don't have yet.</li>
+        <li>Stagehand work is real production work, not a spectator role &mdash; nearly every department depends on it.</li>
+        <li>Every call breaks into load-in, show call, and load-out. Beginners usually start with load-in and load-out.</li>
+        <li>The room changes the risks &mdash; arenas, theaters, convention centers, and outdoor shows each demand different awareness.</li>
+        <li>Know your lead and follow that chain. Guessing or taking direction from the wrong person creates problems.</li>
+        <li>What makes a new hand valuable is reliability, listening, communication, and safety &mdash; not experience you don't have yet.</li>
       </ul>
     </section>
 
