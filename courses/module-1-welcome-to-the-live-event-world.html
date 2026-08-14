@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Module 1: Welcome to the Live Event World | The Crew Blueprint</title>
+<meta name="description" content="What a stagehand actually does, where you fit in the crew, and what makes a new hand valuable — the first lesson in Stagehand Fundamentals." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/module-1-welcome-to-the-live-event-world/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Module 1: Welcome to the Live Event World | The Crew Blueprint" />
+<meta property="og:description" content="What a stagehand actually does, where you fit in the crew, and what makes a new hand valuable." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+
+  .cb-lesson-progress {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    flex-wrap: wrap; margin-bottom: 8px;
+  }
+  .cb-lesson-progress-track {
+    flex: 1; min-width: 160px; height: 6px; border-radius: var(--cb-radius-pill);
+    background: rgba(255,255,255,0.08); overflow: hidden;
+  }
+  .cb-lesson-progress-fill { width: 16.6%; height: 100%; background: var(--cb-gold); }
+  .cb-lesson-progress-label {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--cb-muted-2); white-space: nowrap;
+  }
+
+  .cb-chain {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px;
+  }
+  .cb-chain-step {
+    padding: 10px 16px; border-radius: var(--cb-radius-pill); border: 1px solid var(--cb-border);
+    background: var(--cb-panel); font-size: 14px; font-weight: 700; color: var(--cb-text);
+  }
+  .cb-chain-step.cb-chain-you {
+    border-color: var(--cb-gold-border); background: rgba(245,180,0,0.1); color: var(--cb-gold-strong);
+  }
+  .cb-chain-arrow { color: var(--cb-muted-2); font-size: 16px; }
+
+  .cb-phase-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin-top: 8px; }
+  .cb-phase-card { padding: 22px; text-align: left; }
+  .cb-phase-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--cb-gold); }
+  .cb-phase-card p { margin: 0; color: var(--cb-muted); }
+
+  .cb-value-list { display: grid; gap: 14px; margin-top: 8px; }
+  .cb-value-item {
+    display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 14px;
+    padding: 18px 20px; align-items: start;
+  }
+  .cb-value-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: var(--cb-radius-sm);
+    background: var(--cb-gold); color: var(--cb-bg-deep); font-weight: 900;
+  }
+  .cb-value-item strong { display: block; margin-bottom: 4px; font-size: 16px; }
+  .cb-value-item span { display: block; color: var(--cb-muted); line-height: 1.55; font-size: 14px; }
+
+  .cb-lesson-nav {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+  }
+  .cb-lesson-nav-card {
+    padding: 22px; text-align: left; display: flex; flex-direction: column; gap: 6px;
+  }
+  .cb-lesson-nav-card span.cb-eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--cb-muted-2);
+  }
+  .cb-lesson-nav-card h3 { margin: 0; font-size: 17px; }
+  .cb-lesson-nav-card.cb-locked { opacity: 0.6; }
+  .cb-lesson-nav-card.cb-locked h3::after { content: " (Coming Soon)"; font-size: 12px; color: var(--cb-muted-2); font-weight: 600; }
+
+  @media (max-width: 820px) {
+    .cb-phase-grid, .cb-lesson-nav { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="stagehand-fundamentals.html">Stagehand Fundamentals</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Module 1</span>
+    </nav>
+
+    <section class="cb-hero" style="padding-top: 8px;">
+      <div class="cb-lesson-progress" style="max-width: 620px; margin: 0 auto 18px;">
+        <span class="cb-lesson-progress-label">Module 1 of 6</span>
+        <span class="cb-lesson-progress-track"><span class="cb-lesson-progress-fill"></span></span>
+      </div>
+      <span class="cb-label">Module 1</span>
+      <h1>Welcome to the Live Event World</h1>
+      <p>
+        Before load-in times, call sheets, or hand signals matter, you need to understand what this
+        job actually is, where you fit in it, and why crews keep calling back the same new hands.
+        That's this lesson.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>What a Stagehand Actually Does</h2>
+      <p class="cb-section-intro">
+        "Stagehand" covers more ground than the name suggests. On any given call you might be building
+        truss, pushing cases, coiling cable, laying down staging deck, or hanging soft goods &mdash;
+        whatever the show needs, in whatever order it needs to happen.
+      </p>
+      <p>
+        You're not a spectator brought in to watch professionals work. You're part of how the show
+        physically comes together and comes back apart, safely and on schedule. That's true whether
+        it's your first call or your five hundredth. The difference experience buys you is speed,
+        judgment, and which jobs you get handed &mdash; not whether the work matters.
+      </p>
+      <p>
+        It's also a starting point, not a ceiling. Audio, lighting, video, rigging, and carpentry are
+        all specialized departments that most people enter through general stagehand work first. Learning
+        to be a solid, safe, useful hand is what makes those doors open later.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Where You Fit in the Bigger Picture</h2>
+      <p class="cb-section-intro">
+        A show has a chain of direction above you, and knowing where you sit in it changes how you act
+        on a call.
+      </p>
+
+      <div class="cb-panel" style="padding: 22px;">
+        <div class="cb-chain">
+          <span class="cb-chain-step">Promoter / Production</span>
+          <span class="cb-chain-arrow">&rarr;</span>
+          <span class="cb-chain-step">Venue</span>
+          <span class="cb-chain-arrow">&rarr;</span>
+          <span class="cb-chain-step">Crew Chief / PC</span>
+          <span class="cb-chain-arrow">&rarr;</span>
+          <span class="cb-chain-step">Department Leads</span>
+          <span class="cb-chain-arrow">&rarr;</span>
+          <span class="cb-chain-step cb-chain-you">You</span>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;">
+        You take direction from whoever is leading your department or your section of the call &mdash;
+        not from the show, not from the headliner, not from whoever seems busiest. If a lead tells you
+        to do something and someone else tells you something different, the lead giving you direction
+        wins. When you're not sure who that is, that's the first question to ask, not something to
+        guess at.
+      </p>
+      <p>
+        This also means your job isn't to freelance decisions. Good new hands ask before they act when
+        something isn't clear. It reads as competence, not weakness &mdash; the hands who get called
+        back are the ones a lead doesn't have to worry about.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>The Three Phases of a Show</h2>
+      <p class="cb-section-intro">
+        Every call breaks down into three phases, and each one has a different pace and a different
+        set of expectations.
+      </p>
+
+      <div class="cb-phase-grid">
+        <div class="cb-panel cb-phase-card">
+          <h3>Load-In</h3>
+          <p>Trucks arrive, gear comes off, and the empty room turns into a show. Fast-moving, physical, and the phase where being ready and useful matters most.</p>
+        </div>
+        <div class="cb-panel cb-phase-card">
+          <h3>Show Call</h3>
+          <p>The event itself. Less lifting, more watching, holding positions, and reacting fast if something needs attention mid-show.</p>
+        </div>
+        <div class="cb-panel cb-phase-card">
+          <h3>Load-Out</h3>
+          <p>Everything in reverse, usually faster and later at night than load-in. Tired crews and last-minute urgency make this the phase where mistakes happen most.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;">
+        For the fast-facts version of what to actually do at each phase &mdash; what to bring, when
+        you're allowed to leave, how sign-in works &mdash; see the
+        <a href="../resources/load-in-load-out-reference.html" style="color: var(--cb-gold-strong); text-decoration: underline;">Load-In / Load-Out Reference</a>
+        in the Resource Hub. This lesson is about understanding the shape of the day; that page is
+        about executing it.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>What Makes a New Stagehand Valuable</h2>
+      <p class="cb-section-intro">
+        Nobody expects a first-call hand to know everything. What gets you called back isn't
+        experience &mdash; it's how you handle not having it yet.
+      </p>
+
+      <div class="cb-value-list">
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">1</span>
+          <div>
+            <strong>Show up ready, not just on time</strong>
+            <span>Right clothes, right gear, already knowing the basics of where you're going. Being on time with none of that ready still creates a problem for someone else to solve.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">2</span>
+          <div>
+            <strong>Listen more than you talk, early on</strong>
+            <span>You don't know what you don't know yet. The fastest way to learn a crew's rhythm is to watch it before you try to keep pace with it.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">3</span>
+          <div>
+            <strong>Ask at the right moment</strong>
+            <span>Questions are welcome. Mid-lift, mid-cue, or mid-instruction usually isn't the moment &mdash; find the gap, then ask.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">4</span>
+          <div>
+            <strong>Do the small things right</strong>
+            <span>Coil cable the way you were shown, not the fast way. Watch what's overhead. Don't wander off between tasks. Small habits are what leads actually notice.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">5</span>
+          <div>
+            <strong>Be reliable before you're fast</strong>
+            <span>Speed comes with reps. Reliability is available to you on day one, and it's what gets your number saved for the next call.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Key Takeaways</h2>
+      <ul class="cb-list">
+        <li>Stagehand work is real production work, not a spectator role &mdash; and it's the common entry point into every specialized department.</li>
+        <li>Direction flows down a chain. Know who your lead is, and take direction from them specifically.</li>
+        <li>Every call has three phases &mdash; load-in, show call, load-out &mdash; each with its own pace and risk.</li>
+        <li>What makes a new hand valuable is preparation, listening, timing your questions, attention to small details, and reliability &mdash; not experience you don't have yet.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section">
+      <h2 style="text-align: left; margin-bottom: 16px;">Continue Learning</h2>
+      <div class="cb-lesson-nav">
+        <div class="cb-panel cb-lesson-nav-card">
+          <span class="cb-eyebrow">Up Next</span>
+          <h3>Module 2: Safety Mindset Before Skillset</h3>
+        </div>
+        <a class="cb-panel cb-lesson-nav-card" href="../resources.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">In the Meantime</span>
+          <h3 style="color: var(--cb-gold-strong);">Explore the Resource Hub &rarr;</h3>
+        </a>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Back to the course overview.</h2>
+          <p>See the full module list and what's ahead in Stagehand Fundamentals.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="stagehand-fundamentals.html">Course Overview</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
