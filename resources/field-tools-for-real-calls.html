@@ -53,17 +53,19 @@
 
   .cb-signals-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 8px; }
   .cb-signal-card { padding: 22px; text-align: left; }
-  .cb-signal-head { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
-  .cb-signal-icon {
-    flex-shrink: 0; width: 58px; height: 58px;
+  .cb-signal-stage {
+    width: 96px; height: 96px; margin: 0 auto 14px;
     display: flex; align-items: center; justify-content: center;
     border: 1px solid var(--cb-gold-border); border-radius: var(--cb-radius-md);
-    background: linear-gradient(160deg, rgba(245,180,0,0.14), transparent 60%), var(--cb-card);
-    color: var(--cb-gold);
+    background: #faf5e8;
   }
-  .cb-signal-icon svg { width: 32px; height: 32px; display: block; }
-  .cb-signal-card h3 { margin: 0; font-size: 18px; text-align: left; color: var(--cb-gold); }
+  .cb-signal-stage img { width: 62px; height: 62px; display: block; }
+  .cb-signal-stage-pair img { width: 42px; height: 42px; }
+  .cb-signal-stage svg { width: 62px; height: 62px; display: block; color: #1c1c1c; }
+  .cb-signal-card h3 { margin: 0 0 8px; font-size: 18px; text-align: center; color: var(--cb-gold); }
   .cb-signal-card p { margin: 0; color: var(--cb-muted); text-align: left; }
+  .cb-signals-credit { margin-top: 14px; font-size: 12px; color: var(--cb-muted-2); text-align: left; }
+  .cb-signals-credit a { color: var(--cb-muted-2); }
 
   .cb-caution {
     margin-top: 24px;
@@ -98,7 +100,7 @@
     body, .cb-page { background: #fff !important; }
     .cb-hero, .cb-notes-card, .cb-signal-card { background: #fff !important; border-color: #ccc !important; }
     .cb-hero *, .cb-notes-card *, .cb-signal-card * { color: #111 !important; }
-    .cb-signal-icon { background: #fff !important; border-color: #999 !important; }
+    .cb-signal-stage { background: #fff !important; border-color: #999 !important; }
     .cb-notes-fill { border-color: #111 !important; }
     .cb-label { background: #111 !important; color: #fff !important; }
   }
@@ -172,92 +174,56 @@
 
       <div class="cb-signals-grid">
         <div class="cb-panel cb-signal-card">
-          <div class="cb-signal-head">
-            <span class="cb-signal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="9.4" y="14.6" width="6.2" height="8.4" rx="2" fill="currentColor"/>
-                <rect x="4.8" y="2.6" width="14.4" height="13.2" rx="3" fill="currentColor"/>
-                <path d="M8.3 4.6v8M12 4.2v8.4M15.7 4.6v8" stroke="#171308" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
-                <rect x="2.6" y="8.4" width="4.6" height="6.4" rx="2.1" fill="currentColor"/>
-              </svg>
-            </span>
-            <h3>Stop / Hold</h3>
-          </div>
+          <span class="cb-signal-stage">
+            <img src="../images/signals/fist.svg" alt="Raised fist" width="62" height="62" loading="lazy">
+          </span>
+          <h3>Stop / Hold</h3>
           <p>A closed fist raised overhead. Means stop what you're doing immediately &mdash; used most often around moving loads or rigging.</p>
         </div>
         <div class="cb-panel cb-signal-card">
-          <div class="cb-signal-head">
-            <span class="cb-signal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="9.4" y="15.8" width="6.2" height="7.2" rx="2" fill="currentColor"/>
-                <rect x="6" y="8.4" width="12" height="10" rx="3" fill="currentColor"/>
-                <path d="M9.9 8.8C9 5 10.4 1.3 12.9 1c1.7-.2 2.6 1.1 2.2 2.7-.4 1.6-1.9 3.2-3.6 4.4" fill="currentColor"/>
-                <path d="M9.6 12.8h8.6M9.6 15.6h8.6" stroke="#171308" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-              </svg>
-            </span>
-            <h3>All Clear / Go Ahead</h3>
-          </div>
+          <span class="cb-signal-stage">
+            <img src="../images/signals/thumbsup.svg" alt="Thumbs up" width="62" height="62" loading="lazy">
+          </span>
+          <h3>All Clear / Go Ahead</h3>
           <p>A raised open palm, or a thumbs-up depending on the crew. Confirms it's safe to proceed with the next step.</p>
         </div>
         <div class="cb-panel cb-signal-card">
-          <div class="cb-signal-head">
-            <span class="cb-signal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10.4" y="16" width="6.2" height="7.2" rx="2" fill="currentColor"/>
-                <rect x="6.6" y="8" width="12.6" height="9.6" rx="3" fill="currentColor"/>
-                <path d="M10.4 11.4h9M10.4 14.2h9" stroke="#171308" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-                <path d="M5.2 9.8c-1.6 1.1-1.6 3.3 0 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                <path d="M2.6 8c-2.7 2.2-2.7 5.9 0 8.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <h3>Come Here</h3>
-          </div>
+          <span class="cb-signal-stage">
+            <img src="../images/signals/wave.svg" alt="Waving hand" width="62" height="62" loading="lazy">
+          </span>
+          <h3>Come Here</h3>
           <p>A waving motion toward yourself, usually paired with eye contact first so the other person knows it's meant for them.</p>
         </div>
         <div class="cb-panel cb-signal-card">
-          <div class="cb-signal-head">
-            <span class="cb-signal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10.5" cy="7" r="4.3" fill="currentColor"/>
-                <path d="M9 15.5c0-1.7 1.5-2.6 3.2-2.3 3.4.5 8 2.4 9.6 4.1" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" fill="none"/>
-                <rect x="2.5" y="12.6" width="17" height="3.2" rx="1.6" transform="rotate(-9 11 14.2)" fill="currentColor"/>
-              </svg>
-            </span>
-            <h3>Cut / Kill It</h3>
-          </div>
+          <span class="cb-signal-stage" aria-hidden="true">
+            <svg viewBox="0 0 100 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 112 34 71 Q36 60 50 60 Q64 60 66 71 L70 112 Z" fill="currentColor" opacity="0.92"/>
+              <circle cx="50" cy="35" r="14" fill="currentColor" opacity="0.92"/>
+              <path d="M92 72 Q78 58 68 51" stroke="currentColor" stroke-width="10" stroke-linecap="round" fill="none"/>
+              <rect x="32" y="45" width="40" height="11" rx="5.5" fill="currentColor"/>
+            </svg>
+          </span>
+          <h3>Cut / Kill It</h3>
           <p>A flat hand drawn across the throat. Used to mean stop or shut off &mdash; power, audio, a motor, whatever's running.</p>
         </div>
         <div class="cb-panel cb-signal-card">
-          <div class="cb-signal-head">
-            <span class="cb-signal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.5 22 6.6 15.4" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-                <rect x="4.4" y="10" width="7.6" height="6.4" rx="2.6" fill="currentColor"/>
-                <path d="M8.2 10.4V3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-                <path d="M5.6 5.6 8.2 2l2.6 3.6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <path d="M18 4v16" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-                <path d="M15.2 7 18 4l2.8 3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <path d="M15.2 17l2.8 3 2.8-3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
-            </span>
-            <h3>Up / Down</h3>
-          </div>
+          <span class="cb-signal-stage cb-signal-stage-pair">
+            <img src="../images/signals/point-up.svg" alt="Index finger pointing up" width="42" height="42" loading="lazy">
+            <img src="../images/signals/point-down.svg" alt="Index finger pointing down" width="42" height="42" loading="lazy">
+          </span>
+          <h3>Up / Down</h3>
           <p>A pointed finger raised or lowered, often circled for continuous movement. Common around lifts, trusses, and rigging points.</p>
         </div>
         <div class="cb-panel cb-signal-card">
-          <div class="cb-signal-head">
-            <span class="cb-signal-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="9" cy="8.4" r="5.4" fill="currentColor"/>
-                <path d="M13 12.4c1.6-.9 3-.9 4 .4 1.2 1.6.6 4.6-1.6 6.4-2.7 2.2-6.7 1.9-8.8-.6-1-1.2-1-2.7.2-3.7" fill="currentColor"/>
-                <path d="M17.2 5.2c1 .9 1 2.3 0 3.2M19.6 3c2 1.9 2 5 0 6.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-              </svg>
-            </span>
-            <h3>Radio / Talk to Me</h3>
-          </div>
+          <span class="cb-signal-stage">
+            <img src="../images/signals/call-me.svg" alt="Call-me hand, thumb and pinky extended" width="62" height="62" loading="lazy">
+          </span>
+          <h3>Radio / Talk to Me</h3>
           <p>A hand shaped like a phone near the ear, or a point at a radio. Means switch to verbal communication &mdash; the signal alone isn't enough right now.</p>
         </div>
       </div>
+
+      <p class="cb-signals-credit">Hand icons: <a href="https://github.com/twitter/twemoji" target="_blank" rel="noopener noreferrer">Twemoji</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC-BY 4.0</a>.</p>
 
       <div class="cb-caution">
         <strong>These aren't universal</strong>
