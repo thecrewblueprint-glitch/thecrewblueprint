@@ -269,6 +269,21 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
 }
 
+.cb-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--cb-muted-2);
+}
+
+.cb-breadcrumb a { color: var(--cb-muted); text-decoration: none; }
+.cb-breadcrumb a:hover { color: var(--cb-gold-strong); }
+.cb-breadcrumb .cb-breadcrumb-sep { color: var(--cb-border); }
+.cb-breadcrumb .cb-breadcrumb-current { color: var(--cb-gold-strong); font-weight: 700; }
+
 .cb-center { text-align: center; margin-inline: auto; }
 
 .cb-label {
