@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Field Tools for Real Calls | The Crew Blueprint</title>
+<meta name="description" content="Things you actually reach for once you're on-site, not before you leave the house — a fillable day-of notes card and common crew hand signals." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/resources/field-tools-for-real-calls/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Field Tools for Real Calls | The Crew Blueprint" />
+<meta property="og:description" content="Things you actually reach for once you're on-site, not before you leave the house." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+
+  .cb-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .cb-tag {
+    display: inline-flex; align-items: center; padding: 6px 10px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .cb-tag-muted { color: #d8d8d8; background: rgba(255,255,255,0.05); border-color: var(--cb-border); }
+
+  .cb-print-btn {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+    padding: 12px 20px; border-radius: var(--cb-radius-md); border: 1px solid var(--cb-gold-border);
+    background: rgba(245,180,0,0.1); color: var(--cb-gold-strong); font-weight: 800; font-size: 14px;
+    cursor: pointer; letter-spacing: 0.02em;
+  }
+  .cb-print-btn:hover { background: rgba(245,180,0,0.18); }
+
+  .cb-notes-card { padding: clamp(24px, 4vw, 34px); margin-top: 8px; }
+  .cb-notes-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 14px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);
+  }
+  .cb-notes-row:last-child { border-bottom: 0; }
+  .cb-notes-label {
+    color: var(--cb-gold-strong); font-weight: 800; letter-spacing: 0.05em;
+    text-transform: uppercase; font-size: 11px; flex-shrink: 0; width: 160px;
+  }
+  .cb-notes-fill {
+    flex: 1; border-bottom: 1px solid var(--cb-border); min-height: 22px;
+  }
+
+  .cb-signals-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 8px; }
+  .cb-signal-card { padding: 22px; text-align: left; }
+  .cb-signal-card h3 { margin: 0 0 8px; font-size: 18px; text-align: left; color: var(--cb-gold); }
+  .cb-signal-card p { margin: 0; color: var(--cb-muted); text-align: left; }
+
+  .cb-caution {
+    margin-top: 24px;
+    border: 1px solid var(--cb-warning-border);
+    background: var(--cb-warning-bg);
+    border-left: 4px solid var(--cb-gold);
+    border-radius: var(--cb-radius-md);
+    padding: 18px 22px;
+  }
+  .cb-caution strong { color: var(--cb-gold-strong); }
+  .cb-caution p { margin: 6px 0 0; color: var(--cb-muted); }
+
+  .cb-cta-split {
+    display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
+    padding: clamp(28px, 5vw, 46px);
+    background: linear-gradient(135deg, rgba(245,180,0,0.15), transparent 45%), var(--cb-card);
+    border: 1px solid var(--cb-gold-border); border-radius: var(--cb-radius-lg); text-align: left;
+  }
+  .cb-cta-split h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); text-align: left; }
+  .cb-cta-split p { margin: 0; color: var(--cb-muted); }
+
+  @media (max-width: 900px) {
+    .cb-signals-grid, .cb-cta-split { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .cb-notes-row { flex-direction: column; gap: 4px; }
+    .cb-notes-label { width: auto; }
+  }
+
+  @media print {
+    .site-nav, .site-footer, .cb-breadcrumb, .cb-print-btn, .cb-cta-split, .cookie-notice { display: none !important; }
+    body, .cb-page { background: #fff !important; }
+    .cb-hero, .cb-notes-card, .cb-signal-card { background: #fff !important; border-color: #ccc !important; }
+    .cb-hero *, .cb-notes-card *, .cb-signal-card * { color: #111 !important; }
+    .cb-notes-fill { border-color: #111 !important; }
+    .cb-label { background: #111 !important; color: #fff !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../resources.html" class="active" aria-current="page">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../courses/stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../resources.html">Resources</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Field Tools for Real Calls</span>
+    </nav>
+
+    <section class="cb-hero">
+      <span class="cb-label">Real Calls</span>
+      <h1>Field Tools for Real Calls</h1>
+      <p>
+        Not prep, not paperwork &mdash; things you actually reach for once you're already on-site,
+        in the middle of the work.
+      </p>
+      <button type="button" class="cb-print-btn" onclick="window.print()">Print This Page</button>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Day-Of Notes Card</h2>
+      <p class="cb-section-intro">
+        Fill this out the moment you check in. Names and numbers you're told once, in passing, are
+        easy to lose an hour later &mdash; write them down before you need them.
+      </p>
+
+      <div class="cb-panel cb-notes-card">
+        <div class="cb-notes-row"><span class="cb-notes-label">PC / Sign-In</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">PC Phone</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">My Position</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">My Lead</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">Parking / Lot</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">Break Time</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">Emergency Contact</span><span class="cb-notes-fill"></span></div>
+        <div class="cb-notes-row"><span class="cb-notes-label">Other Notes</span><span class="cb-notes-fill"></span></div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Common Hand Signals</h2>
+      <p class="cb-section-intro">
+        Calls get loud, and distances get long. These are the basics used across crews to communicate
+        without shouting &mdash; site-specific direction always overrides what's listed here.
+      </p>
+
+      <div class="cb-signals-grid">
+        <div class="cb-panel cb-signal-card">
+          <h3>Stop / Hold</h3>
+          <p>A closed fist raised overhead. Means stop what you're doing immediately &mdash; used most often around moving loads or rigging.</p>
+        </div>
+        <div class="cb-panel cb-signal-card">
+          <h3>All Clear / Go Ahead</h3>
+          <p>A raised open palm, or a thumbs-up depending on the crew. Confirms it's safe to proceed with the next step.</p>
+        </div>
+        <div class="cb-panel cb-signal-card">
+          <h3>Come Here</h3>
+          <p>A waving motion toward yourself, usually paired with eye contact first so the other person knows it's meant for them.</p>
+        </div>
+        <div class="cb-panel cb-signal-card">
+          <h3>Cut / Kill It</h3>
+          <p>A flat hand drawn across the throat. Used to mean stop or shut off &mdash; power, audio, a motor, whatever's running.</p>
+        </div>
+        <div class="cb-panel cb-signal-card">
+          <h3>Up / Down</h3>
+          <p>A pointed finger raised or lowered, often circled for continuous movement. Common around lifts, trusses, and rigging points.</p>
+        </div>
+        <div class="cb-panel cb-signal-card">
+          <h3>Radio / Talk to Me</h3>
+          <p>A hand shaped like a phone near the ear, or a point at a radio. Means switch to verbal communication &mdash; the signal alone isn't enough right now.</p>
+        </div>
+      </div>
+
+      <div class="cb-caution">
+        <strong>These aren't universal</strong>
+        <p>Every crew and every department can vary slightly. On an unfamiliar call, especially anything involving rigging or moving loads, confirm signals with your lead before you rely on them.</p>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Head back to the full Resource Hub.</h2>
+          <p>Gear, checklists, quick reference guides, and everything else built for new and developing stagehands.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="../resources.html">All Resources</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand-center">
+      <span class="footer-mark">CB</span>
+      <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+    </div>
+    <p class="footer-tagline">Built for the people who build the show.</p>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
