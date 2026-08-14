@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Quick-Reference Guides | The Crew Blueprint</title>
-<meta name="description" content="Fast lookup guides for new stagehands — how the call sheet works, how you actually get booked, and what paperwork you'll see on a call." />
+<title>How You Get Called &amp; Paid | The Crew Blueprint</title>
+<meta name="description" content="Fast facts for new stagehands — how the call sheet works, how you actually get booked, and what a sign-in sheet looks like." />
 <link rel="icon" href="../images/logo.png" type="image/png">
-<link rel="canonical" href="https://thecrewblueprint.com/resources/quick-reference-guides/" />
+<link rel="canonical" href="https://thecrewblueprint.com/resources/how-you-get-called-and-paid/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="The Crew Blueprint" />
-<meta property="og:title" content="Quick-Reference Guides | The Crew Blueprint" />
-<meta property="og:description" content="Fast lookup guides for new stagehands — call sheets, how calls work, and what paperwork you'll see." />
+<meta property="og:title" content="How You Get Called & Paid | The Crew Blueprint" />
+<meta property="og:description" content="Fast facts for new stagehands — call sheets, how calls work, and what a sign-in sheet looks like." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -58,6 +58,27 @@
   }
   .cb-callsheet-mock .value { color: var(--cb-text); font-size: 14px; text-align: right; }
 
+  .cb-timesheet-example { padding: 22px; }
+  .cb-timesheet-example .cb-tag { margin-bottom: 14px; }
+  .cb-timesheet-mock {
+    background: var(--cb-bg-deep);
+    border: 1px dashed var(--cb-border);
+    border-radius: var(--cb-radius-md);
+    padding: 6px 18px;
+    overflow-x: auto;
+  }
+  .cb-timesheet-mock table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  .cb-timesheet-mock th {
+    color: var(--cb-gold-strong); font-weight: 800; letter-spacing: 0.05em;
+    text-transform: uppercase; font-size: 10px; text-align: left; padding: 10px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .cb-timesheet-mock td {
+    padding: 12px 8px; border-bottom: 1px dashed rgba(255,255,255,0.08);
+    color: var(--cb-muted); font-size: 13px;
+  }
+  .cb-timesheet-mock tr:last-child td { border-bottom: 0; }
+
   .cb-cta-split {
     display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
     padding: clamp(28px, 5vw, 46px);
@@ -99,18 +120,19 @@
     <nav class="cb-breadcrumb" aria-label="Breadcrumb">
       <a href="../resources.html">Resources</a>
       <span class="cb-breadcrumb-sep">/</span>
-      <span class="cb-breadcrumb-current">Quick-Reference Guides</span>
+      <span class="cb-breadcrumb-current">How You Get Called &amp; Paid</span>
     </nav>
 
     <section class="cb-hero">
       <span class="cb-label">Quick Reference</span>
-      <h1>Quick-Reference Guides</h1>
+      <h1>How You Get Called &amp; Paid</h1>
       <p>
         Fast facts only. For the full walkthrough on any of this, it's covered in depth in
         <a href="../courses/stagehand-fundamentals.html" style="color: var(--cb-gold-strong); text-decoration: underline;">Stagehand Fundamentals</a>.
       </p>
       <div class="cb-guide-index">
         <a class="cb-tag" href="#day-to-day-production-paperwork">The Call Sheet</a>
+        <a class="cb-tag" href="#sign-in-sheet">Sign-In Sheet</a>
         <a class="cb-tag" href="#how-calls-work">How Calls Work</a>
       </div>
     </section>
@@ -146,6 +168,30 @@
             <div class="row"><span class="label">Attire</span><span class="value">All black, closed-toe shoes</span></div>
             <div class="row"><span class="label">Emergency</span><span class="value">Office line, after-hours</span></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="sign-in-sheet">
+      <h2>The Sign-In Sheet</h2>
+      <p class="cb-section-intro">
+        A different document from the call sheet, filled out once you're actually on-site. This is
+        what determines your hours &mdash; get on the call sheet, then sign this to prove you showed up.
+      </p>
+
+      <div class="cb-panel cb-timesheet-example" style="margin-top: 20px;">
+        <div class="cb-tag-row"><span class="cb-tag cb-tag-muted">Example &mdash; Not a Real Sheet</span></div>
+        <div class="cb-timesheet-mock">
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Position</th><th>Time In</th><th>Time Out</th><th>Signature</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>J. Rivera</td><td>Stagehand</td><td>7:02 AM</td><td>&mdash;</td><td>J. Rivera</td></tr>
+              <tr><td>A. Chen</td><td>Stagehand</td><td>7:05 AM</td><td>&mdash;</td><td>A. Chen</td></tr>
+              <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
