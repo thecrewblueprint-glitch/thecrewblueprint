@@ -41,29 +41,6 @@
   .cb-res-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
   .cb-download-card { border-left: 5px solid var(--cb-gold); }
 
-  .cb-use-box h3 { color: var(--cb-gold); text-align: left; }
-  .cb-use-box ul { margin: 0; padding-left: 20px; text-align: left; }
-  .cb-use-box li { margin-bottom: 8px; color: var(--cb-muted); }
-
-  .cb-callsheet-example { padding: 22px; }
-  .cb-callsheet-example .cb-tag { margin-bottom: 14px; }
-  .cb-callsheet-mock {
-    background: var(--cb-bg-deep);
-    border: 1px dashed var(--cb-border);
-    border-radius: var(--cb-radius-md);
-    padding: 6px 18px;
-  }
-  .cb-callsheet-mock .row {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
-    padding: 11px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);
-  }
-  .cb-callsheet-mock .row:last-child { border-bottom: 0; }
-  .cb-callsheet-mock .label {
-    color: var(--cb-gold-strong); font-weight: 800; letter-spacing: 0.05em;
-    text-transform: uppercase; font-size: 11px; flex-shrink: 0;
-  }
-  .cb-callsheet-mock .value { color: var(--cb-text); font-size: 14px; text-align: right; }
-
   .cb-cta-split {
     display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
     padding: clamp(28px, 5vw, 46px);
@@ -127,29 +104,17 @@
           <p>Practical checklists for jobsite readiness, load-in preparation, show call awareness, load-out habits, and basic crew expectations.</p>
           <div class="cb-tag-row"><span class="cb-tag">Field Tool</span><span class="cb-tag cb-tag-muted">Coming Soon</span></div>
         </article>
-        <article class="cb-card cb-res-card cb-download-card cb-res-soon">
-          <h3>Quick-Reference Guides</h3>
-          <p>Plain-language reference guides that help workers understand common terminology, crew structure, production flow, safety awareness, and department basics.</p>
-          <div class="cb-tag-row"><span class="cb-tag">Quick Reference</span><span class="cb-tag cb-tag-muted">Coming Soon</span></div>
+        <article class="cb-card cb-res-card cb-download-card">
+          <a class="cb-res-link" href="resources/quick-reference-guides.html">
+            <h3>Quick-Reference Guides</h3>
+            <p>Fast lookups for the call sheet, how calls actually work, and what paperwork you'll see on a call.</p>
+            <div class="cb-tag-row"><span class="cb-tag">Quick Reference</span></div>
+          </a>
         </article>
         <article class="cb-card cb-res-card cb-download-card cb-res-soon">
           <h3>Field Tools for Real Calls</h3>
           <p>Resources designed for practical use before, during, and after calls, including preparation notes, reminders, and basic worksite organization tools.</p>
           <div class="cb-tag-row"><span class="cb-tag">Real Calls</span><span class="cb-tag cb-tag-muted">Coming Soon</span></div>
-        </article>
-        <article class="cb-card cb-res-card">
-          <a class="cb-res-link" href="#day-to-day-production-paperwork">
-            <h3>The Call Sheet</h3>
-            <p>The one document that tells you where to be, when, and what to bring — broken down field by field, with an example.</p>
-            <div class="cb-tag-row"><span class="cb-tag">Day One</span><span class="cb-tag cb-tag-muted">Must Know</span></div>
-          </a>
-        </article>
-        <article class="cb-card cb-res-card">
-          <a class="cb-res-link" href="#how-calls-work">
-            <h3>How Calls Work</h3>
-            <p>Touring crews and local staffing agencies call you differently — know the difference before your first job.</p>
-            <div class="cb-tag-row"><span class="cb-tag">Getting Booked</span><span class="cb-tag cb-tag-muted">Good to Know</span></div>
-          </a>
         </article>
         <article class="cb-card cb-res-card">
           <a class="cb-res-link" href="#crew-support">
@@ -159,93 +124,6 @@
           </a>
         </article>
       </div>
-    </section>
-
-    <section class="cb-section cb-section-left" id="day-to-day-production-paperwork">
-      <h2>The Call Sheet</h2>
-      <p class="cb-section-intro">
-        The call sheet is the one document every new stagehand actually needs to read closely. It's
-        usually sent out before the job and tells you everything you need to know to show up ready.
-      </p>
-
-      <div class="cb-res-grid-2" style="margin-top: 28px;">
-        <div class="cb-panel cb-use-box" style="padding: 24px;">
-          <h3>What It Tells You</h3>
-          <ul>
-            <li><strong>Date and venue</strong> — where you're going, usually with a full address if it's somewhere new.</li>
-            <li><strong>Crew call time</strong> — when you need to be there, which is not the same as show time or doors.</li>
-            <li><strong>Sign-in location and PC</strong> — who's running sign-in (often called the PC, or Production Coordinator) and where to find them — a parking lot, a specific door, a dock.</li>
-            <li><strong>Parking instructions</strong> — where to park so you don't get towed or block a truck route.</li>
-            <li><strong>Attire</strong> — black clothes, closed-toe shoes, or whatever the call requires.</li>
-            <li><strong>Emergency contact</strong> — usually separate from the PC, for anything urgent that can't wait.</li>
-          </ul>
-        </div>
-
-        <div class="cb-panel cb-callsheet-example">
-          <div class="cb-tag-row"><span class="cb-tag cb-tag-muted">Example &mdash; Not a Real Call</span></div>
-          <div class="cb-callsheet-mock">
-            <div class="row"><span class="label">Show</span><span class="value">Sample Corporate Event</span></div>
-            <div class="row"><span class="label">Date</span><span class="value">Saturday, March 14</span></div>
-            <div class="row"><span class="label">Venue</span><span class="value">Example Convention Center, 123 Main St</span></div>
-            <div class="row"><span class="label">Crew Call</span><span class="value">7:00 AM</span></div>
-            <div class="row"><span class="label">Doors / Show</span><span class="value">6:00 PM / 7:30 PM</span></div>
-            <div class="row"><span class="label">Sign-In</span><span class="value">Lot C &mdash; ask for the PC</span></div>
-            <div class="row"><span class="label">PC Contact</span><span class="value">Jordan (Crew Lead)</span></div>
-            <div class="row"><span class="label">Parking</span><span class="value">Lot C &mdash; crew lot, badge required</span></div>
-            <div class="row"><span class="label">Attire</span><span class="value">All black, closed-toe shoes</span></div>
-            <div class="row"><span class="label">Emergency</span><span class="value">Office line, after-hours</span></div>
-          </div>
-        </div>
-      </div>
-
-      <p class="cb-section-intro" style="margin-top: 20px;">
-        Read it before you leave the house, not in the parking lot. If anything on it is unclear,
-        that's exactly what the PC is for. And on bigger crews, your name can show up more than once
-        with different call times, so check the whole thing carefully, not just the first mention of your name.
-      </p>
-
-      <div class="cb-panel cb-use-box" style="padding: 20px 24px; margin-top: 20px; max-width: 780px;">
-        <h3 style="margin-bottom: 8px;">Not the Same as the Sign-In Sheet</h3>
-        <p style="margin: 0; color: var(--cb-muted);">
-          The call sheet gets you there. Once you're actually on-site, you'll sign a separate
-          sheet &mdash; the timesheet &mdash; to log your time in and out. That's the document that
-          determines your hours, not the call sheet.
-        </p>
-      </div>
-    </section>
-
-    <section class="cb-section cb-section-left" id="how-calls-work">
-      <h2>Not Every Call Works the Same Way</h2>
-      <p class="cb-section-intro">
-        How you get called to work depends on who's staffing the job. You'll likely run into both of
-        these patterns over time, so it helps to recognize them early.
-      </p>
-
-      <div class="cb-res-grid-2" style="margin-top: 28px;">
-        <div class="cb-panel cb-use-box" style="padding: 24px;">
-          <h3>Touring &amp; Festival Crews</h3>
-          <ul>
-            <li>You usually get one call sheet for the day, or for the whole run, with the PC and sign-in details already spelled out.</li>
-            <li>You show up, sign in once with the PC, and the schedule carries you through the day.</li>
-            <li>The call sheet <em>is</em> the confirmation — if you're on it, you're expected.</li>
-          </ul>
-        </div>
-        <div class="cb-panel cb-use-box" style="padding: 24px;">
-          <h3>Local &amp; Staffing Agency Crews</h3>
-          <ul>
-            <li>Calls often come one at a time, by text or email, letting you know a call is available.</li>
-            <li>You have to confirm it yourself, usually through an app or online portal — it's not automatic just because you got the notice.</li>
-            <li>Where your actual hours get tracked varies by company. Some track it in that same app. Others still run sign-in on paper on-site, even if scheduling happens digitally. Don't assume — if it isn't obvious, ask, or watch what everyone else does when they arrive.</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="cb-section-intro" style="margin-top: 20px;">
-        Neither pattern is more "official" than the other — it just depends on the company, and you'll
-        likely work under a few different systems over time. The habit that carries over either way:
-        read every notice carefully, and if a call needs you to confirm, confirm it promptly so you
-        don't lose the spot.
-      </p>
     </section>
 
     <section class="cb-section cb-section-left" id="authoritative-resource-sources">
@@ -300,24 +178,6 @@
             <p>A relief fund for live event crew facing hardship &mdash; covers riggers, carpenters, sound and lighting techs, and other backstage roles, not just headline acts.</p>
           </a>
         </article>
-      </div>
-    </section>
-
-    <section class="cb-section cb-section-left" id="how-to-use-this-hub">
-      <h2>Where You Fit In</h2>
-      <p class="cb-section-intro">
-        As a new stagehand, you won't own or manage this paperwork — but you'll see pieces of it on
-        most calls. Knowing what it is, and who it belongs to, helps you stay useful without needing
-        to manage any of it yourself.
-      </p>
-
-      <div class="cb-panel cb-use-box" style="padding: 24px; margin-top: 28px; max-width: 620px;">
-        <h3>What You'll Actually See</h3>
-        <ul>
-          <li>You'll usually get a <strong>Call Sheet</strong> before the job — that's your confirmation you're booked, with the where/when/what-to-bring details.</li>
-          <li>Once you're on-site, you'll sign a <strong>Sign-in Sheet</strong> (the timesheet) yourself — that's the separate document that actually tracks your hours.</li>
-          <li>Everything else — production reports, run sheets, spike plots — belongs to stage management and leads. You don't need to manage it, just follow direction when it affects you.</li>
-        </ul>
       </div>
     </section>
 

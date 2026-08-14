@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quick-Reference Guides | The Crew Blueprint</title>
+<meta name="description" content="Fast lookup guides for new stagehands — how the call sheet works, how you actually get booked, and what paperwork you'll see on a call." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/resources/quick-reference-guides/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Quick-Reference Guides | The Crew Blueprint" />
+<meta property="og:description" content="Fast lookup guides for new stagehands — call sheets, how calls work, and what paperwork you'll see." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 12px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0; max-width: 880px; }
+
+  .cb-res-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+
+  .cb-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .cb-tag {
+    display: inline-flex; align-items: center; padding: 6px 10px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .cb-tag-muted { color: #d8d8d8; background: rgba(255,255,255,0.05); border-color: var(--cb-border); }
+
+  .cb-guide-index { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .cb-guide-index a.cb-tag { text-decoration: none; font-size: 12px; padding: 8px 14px; }
+  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
+
+  .cb-use-box h3 { color: var(--cb-gold); text-align: left; }
+  .cb-use-box ul { margin: 0; padding-left: 20px; text-align: left; }
+  .cb-use-box li { margin-bottom: 8px; color: var(--cb-muted); }
+
+  .cb-callsheet-example { padding: 22px; }
+  .cb-callsheet-example .cb-tag { margin-bottom: 14px; }
+  .cb-callsheet-mock {
+    background: var(--cb-bg-deep);
+    border: 1px dashed var(--cb-border);
+    border-radius: var(--cb-radius-md);
+    padding: 6px 18px;
+  }
+  .cb-callsheet-mock .row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 11px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);
+  }
+  .cb-callsheet-mock .row:last-child { border-bottom: 0; }
+  .cb-callsheet-mock .label {
+    color: var(--cb-gold-strong); font-weight: 800; letter-spacing: 0.05em;
+    text-transform: uppercase; font-size: 11px; flex-shrink: 0;
+  }
+  .cb-callsheet-mock .value { color: var(--cb-text); font-size: 14px; text-align: right; }
+
+  .cb-cta-split {
+    display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
+    padding: clamp(28px, 5vw, 46px);
+    background: linear-gradient(135deg, rgba(245,180,0,0.15), transparent 45%), var(--cb-card);
+    border: 1px solid var(--cb-gold-border); border-radius: var(--cb-radius-lg); text-align: left;
+  }
+  .cb-cta-split h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); text-align: left; }
+  .cb-cta-split p { margin: 0; color: var(--cb-muted); }
+
+  @media (max-width: 900px) {
+    .cb-res-grid-2, .cb-cta-split { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../resources.html" class="active" aria-current="page">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../courses/stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap">
+
+    <section class="cb-hero">
+      <span class="cb-label">Quick Reference</span>
+      <h1>Quick-Reference Guides</h1>
+      <p>
+        Fast lookups for the things every new stagehand needs to know cold: how the call sheet works,
+        how you actually get booked, and what paperwork you'll run into on a call.
+      </p>
+      <div class="cb-guide-index">
+        <a class="cb-tag" href="#day-to-day-production-paperwork">The Call Sheet</a>
+        <a class="cb-tag" href="#how-calls-work">How Calls Work</a>
+        <a class="cb-tag" href="#how-to-use-this-hub">Where You Fit In</a>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="day-to-day-production-paperwork">
+      <h2>The Call Sheet</h2>
+      <p class="cb-section-intro">
+        The call sheet is the one document every new stagehand actually needs to read closely. It's
+        usually sent out before the job and tells you everything you need to know to show up ready.
+      </p>
+
+      <div class="cb-res-grid-2" style="margin-top: 28px;">
+        <div class="cb-panel cb-use-box" style="padding: 24px;">
+          <h3>What It Tells You</h3>
+          <ul>
+            <li><strong>Date and venue</strong> — where you're going, usually with a full address if it's somewhere new.</li>
+            <li><strong>Crew call time</strong> — when you need to be there, which is not the same as show time or doors.</li>
+            <li><strong>Sign-in location and PC</strong> — who's running sign-in (often called the PC, or Production Coordinator) and where to find them — a parking lot, a specific door, a dock.</li>
+            <li><strong>Parking instructions</strong> — where to park so you don't get towed or block a truck route.</li>
+            <li><strong>Attire</strong> — black clothes, closed-toe shoes, or whatever the call requires.</li>
+            <li><strong>Emergency contact</strong> — usually separate from the PC, for anything urgent that can't wait.</li>
+          </ul>
+        </div>
+
+        <div class="cb-panel cb-callsheet-example">
+          <div class="cb-tag-row"><span class="cb-tag cb-tag-muted">Example &mdash; Not a Real Call</span></div>
+          <div class="cb-callsheet-mock">
+            <div class="row"><span class="label">Show</span><span class="value">Sample Corporate Event</span></div>
+            <div class="row"><span class="label">Date</span><span class="value">Saturday, March 14</span></div>
+            <div class="row"><span class="label">Venue</span><span class="value">Example Convention Center, 123 Main St</span></div>
+            <div class="row"><span class="label">Crew Call</span><span class="value">7:00 AM</span></div>
+            <div class="row"><span class="label">Doors / Show</span><span class="value">6:00 PM / 7:30 PM</span></div>
+            <div class="row"><span class="label">Sign-In</span><span class="value">Lot C &mdash; ask for the PC</span></div>
+            <div class="row"><span class="label">PC Contact</span><span class="value">Jordan (Crew Lead)</span></div>
+            <div class="row"><span class="label">Parking</span><span class="value">Lot C &mdash; crew lot, badge required</span></div>
+            <div class="row"><span class="label">Attire</span><span class="value">All black, closed-toe shoes</span></div>
+            <div class="row"><span class="label">Emergency</span><span class="value">Office line, after-hours</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="cb-section-intro" style="margin-top: 20px;">
+        Read it before you leave the house, not in the parking lot. If anything on it is unclear,
+        that's exactly what the PC is for. And on bigger crews, your name can show up more than once
+        with different call times, so check the whole thing carefully, not just the first mention of your name.
+      </p>
+
+      <div class="cb-panel cb-use-box" style="padding: 20px 24px; margin-top: 20px; max-width: 780px;">
+        <h3 style="margin-bottom: 8px;">Not the Same as the Sign-In Sheet</h3>
+        <p style="margin: 0; color: var(--cb-muted);">
+          The call sheet gets you there. Once you're actually on-site, you'll sign a separate
+          sheet &mdash; the timesheet &mdash; to log your time in and out. That's the document that
+          determines your hours, not the call sheet.
+        </p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="how-calls-work">
+      <h2>Not Every Call Works the Same Way</h2>
+      <p class="cb-section-intro">
+        How you get called to work depends on who's staffing the job. You'll likely run into both of
+        these patterns over time, so it helps to recognize them early.
+      </p>
+
+      <div class="cb-res-grid-2" style="margin-top: 28px;">
+        <div class="cb-panel cb-use-box" style="padding: 24px;">
+          <h3>Touring &amp; Festival Crews</h3>
+          <ul>
+            <li>You usually get one call sheet for the day, or for the whole run, with the PC and sign-in details already spelled out.</li>
+            <li>You show up, sign in once with the PC, and the schedule carries you through the day.</li>
+            <li>The call sheet <em>is</em> the confirmation — if you're on it, you're expected.</li>
+          </ul>
+        </div>
+        <div class="cb-panel cb-use-box" style="padding: 24px;">
+          <h3>Local &amp; Staffing Agency Crews</h3>
+          <ul>
+            <li>Calls often come one at a time, by text or email, letting you know a call is available.</li>
+            <li>You have to confirm it yourself, usually through an app or online portal — it's not automatic just because you got the notice.</li>
+            <li>Where your actual hours get tracked varies by company. Some track it in that same app. Others still run sign-in on paper on-site, even if scheduling happens digitally. Don't assume — if it isn't obvious, ask, or watch what everyone else does when they arrive.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cb-section-intro" style="margin-top: 20px;">
+        Neither pattern is more "official" than the other — it just depends on the company, and you'll
+        likely work under a few different systems over time. The habit that carries over either way:
+        read every notice carefully, and if a call needs you to confirm, confirm it promptly so you
+        don't lose the spot.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left" id="how-to-use-this-hub">
+      <h2>Where You Fit In</h2>
+      <p class="cb-section-intro">
+        As a new stagehand, you won't own or manage this paperwork — but you'll see pieces of it on
+        most calls. Knowing what it is, and who it belongs to, helps you stay useful without needing
+        to manage any of it yourself.
+      </p>
+
+      <div class="cb-panel cb-use-box" style="padding: 24px; margin-top: 28px; max-width: 620px;">
+        <h3>What You'll Actually See</h3>
+        <ul>
+          <li>You'll usually get a <strong>Call Sheet</strong> before the job — that's your confirmation you're booked, with the where/when/what-to-bring details.</li>
+          <li>Once you're on-site, you'll sign a <strong>Sign-in Sheet</strong> (the timesheet) yourself — that's the separate document that actually tracks your hours.</li>
+          <li>Everything else — production reports, run sheets, spike plots — belongs to stage management and leads. You don't need to manage it, just follow direction when it affects you.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Head back to the full Resource Hub.</h2>
+          <p>Checklists, field tools, real organizations, and everything else built for new and developing stagehands.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="../resources.html">All Resources</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand-center">
+      <span class="footer-mark">CB</span>
+      <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+    </div>
+    <p class="footer-tagline">Built for the people who build the show.</p>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
