@@ -64,20 +64,6 @@
   }
   .cb-callsheet-mock .value { color: var(--cb-text); font-size: 14px; text-align: right; }
 
-  .cb-signin-strip { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--cb-border); }
-  .cb-signin-strip .cb-signin-label {
-    color: var(--cb-gold-strong); font-weight: 800; letter-spacing: 0.05em;
-    text-transform: uppercase; font-size: 11px; margin-bottom: 10px;
-  }
-  .cb-signin-mini { width: 100%; border-collapse: collapse; }
-  .cb-signin-mini th {
-    color: var(--cb-muted-2); font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.04em; font-size: 10px; text-align: left; padding: 6px 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .cb-signin-mini td { padding: 9px 8px; border-bottom: 1px dashed rgba(255,255,255,0.08); color: var(--cb-muted-2); font-size: 12px; }
-  .cb-signin-mini tr:last-child td { border-bottom: 0; }
-
   .cb-cta-split {
     display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
     padding: clamp(28px, 5vw, 46px);
@@ -209,26 +195,23 @@
             <div class="row"><span class="label">Attire</span><span class="value">All black, closed-toe shoes</span></div>
             <div class="row"><span class="label">Emergency</span><span class="value">Office line, after-hours</span></div>
           </div>
-
-          <div class="cb-signin-strip">
-            <div class="cb-signin-label">Sign-In &mdash; Bottom of Sheet</div>
-            <table class="cb-signin-mini">
-              <thead><tr><th>Name</th><th>Time In</th><th>Time Out</th><th>Signature</th></tr></thead>
-              <tbody>
-                <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
-                <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
 
       <p class="cb-section-intro" style="margin-top: 20px;">
         Read it before you leave the house, not in the parking lot. If anything on it is unclear,
-        that's exactly what the PC is for. On many calls, this is also the sheet you sign at
-        sign-in to confirm your hours — and on bigger crews, your name can show up more than once
+        that's exactly what the PC is for. And on bigger crews, your name can show up more than once
         with different call times, so check the whole thing carefully, not just the first mention of your name.
       </p>
+
+      <div class="cb-panel cb-use-box" style="padding: 20px 24px; margin-top: 20px; max-width: 780px;">
+        <h3 style="margin-bottom: 8px;">Not the Same as the Sign-In Sheet</h3>
+        <p style="margin: 0; color: var(--cb-muted);">
+          The call sheet gets you there. Once you're actually on-site, you'll sign a separate
+          sheet &mdash; the timesheet &mdash; to log your time in and out. That's the document that
+          determines your hours, not the call sheet.
+        </p>
+      </div>
     </section>
 
     <section class="cb-section cb-section-left" id="how-calls-work">
@@ -331,7 +314,8 @@
       <div class="cb-panel cb-use-box" style="padding: 24px; margin-top: 28px; max-width: 620px;">
         <h3>What You'll Actually See</h3>
         <ul>
-          <li>You'll usually get a <strong>Call Sheet</strong> before the job — read it closely, it has everything you need to show up ready. It's often the same sheet you sign at sign-in with the PC, which is how your hours and headcount get tracked.</li>
+          <li>You'll usually get a <strong>Call Sheet</strong> before the job — that's your confirmation you're booked, with the where/when/what-to-bring details.</li>
+          <li>Once you're on-site, you'll sign a <strong>Sign-in Sheet</strong> (the timesheet) yourself — that's the separate document that actually tracks your hours.</li>
           <li>Everything else — production reports, run sheets, spike plots — belongs to stage management and leads. You don't need to manage it, just follow direction when it affects you.</li>
         </ul>
       </div>
