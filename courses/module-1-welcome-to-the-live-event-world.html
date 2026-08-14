@@ -34,6 +34,22 @@
     color: var(--cb-muted-2); white-space: nowrap;
   }
 
+  .cb-guide-index { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+  .cb-guide-index a.cb-tag {
+    display: inline-flex; align-items: center; padding: 8px 14px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
+
+  .cb-value-group-label {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--cb-muted-2); margin: 22px 0 10px;
+  }
+  .cb-value-group-label:first-child { margin-top: 0; }
+
   .cb-chain {
     display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px;
   }
@@ -140,9 +156,16 @@
         job actually is, where you fit in it, and why crews keep calling back the same new hands.
         That's this lesson.
       </p>
+      <div class="cb-guide-index">
+        <a class="cb-tag" href="#the-job">The Job</a>
+        <a class="cb-tag" href="#the-phases">The Phases</a>
+        <a class="cb-tag" href="#work-environments">Work Environments</a>
+        <a class="cb-tag" href="#the-crew">Who's on the Crew</a>
+        <a class="cb-tag" href="#what-makes-you-valuable">What Makes You Valuable</a>
+      </div>
     </section>
 
-    <section class="cb-section cb-section-left">
+    <section class="cb-section cb-section-left" id="the-job">
       <h2>What a Stagehand Actually Does</h2>
       <p class="cb-section-intro">
         Say the word "stagehand" and most people picture someone carrying boxes. That's part of it
@@ -166,7 +189,7 @@
       </div>
     </section>
 
-    <section class="cb-section cb-section-left">
+    <section class="cb-section cb-section-left" id="the-phases">
       <h2>Load-In, Show Call, and Load-Out</h2>
       <p class="cb-section-intro">
         Every call breaks into the same three phases. Knowing which one you're in changes what's
@@ -202,7 +225,7 @@
       </p>
     </section>
 
-    <section class="cb-section cb-section-left">
+    <section class="cb-section cb-section-left" id="work-environments">
       <h2>Common Work Environments</h2>
       <p class="cb-section-intro">
         The expectations stay the same everywhere &mdash; show up ready, work safely, follow
@@ -217,7 +240,7 @@
           <tbody>
             <tr><td>Arenas</td><td>Large, loud, fast-paced, heavy gear movement</td><td>Stay alert to moving equipment; follow direction closely</td></tr>
             <tr><td>Theaters</td><td>Tighter backstage spaces, more precise work</td><td>Move carefully; never touch fly systems or rigging unless trained and authorized</td></tr>
-            <tr><td>Convention Centers</td><td>Varies day to day &mdash; trade shows, conferences, room resets</td><td>Watch for forklifts, pallet jacks, and marked traffic paths</td></tr>
+            <tr><td>Convention Centers</td><td>Freight and forklift traffic, tight room turnarounds between events</td><td>Watch for forklifts, pallet jacks, and marked traffic paths</td></tr>
             <tr><td>Outdoor Shows</td><td>Weather, uneven ground, temporary structures</td><td>Hydrate, watch your footing, report weather concerns to a lead</td></tr>
           </tbody>
         </table>
@@ -229,7 +252,7 @@
       </div>
     </section>
 
-    <section class="cb-section cb-section-left">
+    <section class="cb-section cb-section-left" id="the-crew">
       <h2>Where You Fit In: Who Is on the Crew</h2>
       <p class="cb-section-intro">
         A show has a chain of direction above you, and a call might put you alongside dozens of
@@ -252,9 +275,10 @@
       </div>
 
       <p style="margin-top: 20px;">
-        That's the chain top to bottom. Day to day, the department leads are who actually direct
-        your work &mdash; and a single call can have several of them, each running their own
-        specialty:
+        That's the chain top to bottom. "PC" stands for production coordinator &mdash; on smaller
+        calls the PC and the crew chief are often the same person, the one keeping the whole day on
+        schedule. Day to day, the department leads are who actually direct your work &mdash; and a
+        single call can have several of them, each running their own specialty:
       </p>
 
       <div class="cb-legal-table-wrap" style="margin-top: 12px;">
@@ -264,7 +288,7 @@
           </thead>
           <tbody>
             <tr><td>Leads / Dept. Heads</td><td>Give direction and organize the work</td><td>This is your main point of contact</td></tr>
-            <tr><td>Riggers</td><td>Handle overhead systems and flown equipment</td><td>Stay clear unless directed</td></tr>
+            <tr><td>Riggers</td><td>Handle overhead systems and flown equipment</td><td>Stay clear unless directed &mdash; never stand under a suspended load</td></tr>
             <tr><td>Audio Crew</td><td>Sound equipment and systems</td><td>Don't touch audio gear unless asked</td></tr>
             <tr><td>Lighting Crew</td><td>Fixtures, truss, cable, control</td><td>Follow direction carefully around lighting gear</td></tr>
             <tr><td>Video Crew</td><td>Screens, cameras, projectors, LED</td><td>Equipment can be delicate and expensive</td></tr>
@@ -287,16 +311,22 @@
         when something isn't clear. It reads as competence, not weakness &mdash; the hands who get
         called back are the ones a lead doesn't have to worry about.
       </p>
+
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 20px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Touring crew vs. local crew</strong>
+        <p style="margin: 0; color: var(--cb-muted);">Touring crew travels with the production &mdash; they built the show and know it inside out. Local crew is hired market by market to provide labor support, which is the role most new stagehands start in. That's not a lesser spot; the touring crew's plan only works if local crew executes it well. Your job on early calls is to support that plan, not improvise your own.</p>
+      </div>
     </section>
 
-    <section class="cb-section cb-section-left">
+    <section class="cb-section cb-section-left" id="what-makes-you-valuable">
       <h2>What Makes a New Stagehand Valuable</h2>
       <p class="cb-section-intro">
         Nobody expects a first-call hand to know everything. What gets you called back isn't
         experience &mdash; it's how you handle not having it yet. Here's what actually gets noticed
-        on a call:
+        on a call, grouped into three habits:
       </p>
 
+      <div class="cb-value-group-label">Show Up Ready</div>
       <div class="cb-value-list">
         <div class="cb-panel cb-value-item">
           <span class="cb-value-num">1</span>
@@ -312,36 +342,44 @@
             <span>Showing up prepared &mdash; right clothes, right gear, already knowing the basics of where you're going &mdash; and doing what you said you would, call after call. It's what gets your number saved for next time.</span>
           </div>
         </div>
+      </div>
+
+      <div class="cb-value-group-label">Communicate Well</div>
+      <div class="cb-value-list">
         <div class="cb-panel cb-value-item">
-          <span class="cb-value-num">3</span>
+          <span class="cb-value-num">1</span>
           <div>
             <strong>Active listening</strong>
             <span>You don't know what you don't know yet. The fastest way to learn a crew's rhythm is to watch and confirm instructions before you try to keep pace with it &mdash; not interrupt to prove you've got it.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
-          <span class="cb-value-num">4</span>
+          <span class="cb-value-num">2</span>
           <div>
             <strong>Clear communication</strong>
             <span>Asking questions, reporting problems, and updating your lead when a task is done &mdash; instead of disappearing, guessing, or pretending you understood.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
-          <span class="cb-value-num">5</span>
+          <span class="cb-value-num">3</span>
           <div>
             <strong>Good judgment</strong>
             <span>Questions are welcome, but mid-lift or mid-instruction isn't the moment &mdash; find the gap, then ask. And if something's unclear, unsafe, or outside your training, stop and ask instead of guessing.</span>
           </div>
         </div>
+      </div>
+
+      <div class="cb-value-group-label">Work the Way You're Directed</div>
+      <div class="cb-value-list">
         <div class="cb-panel cb-value-item">
-          <span class="cb-value-num">6</span>
+          <span class="cb-value-num">1</span>
           <div>
             <strong>Following instructions</strong>
             <span>Do the task exactly as directed before you try to improve on it. A lead who says "these four cases, stage left, leave them closed" wants exactly that &mdash; not your idea of a better plan.</span>
           </div>
         </div>
         <div class="cb-panel cb-value-item">
-          <span class="cb-value-num">7</span>
+          <span class="cb-value-num">2</span>
           <div>
             <strong>Safety commitment</strong>
             <span>Watching for hazards, coiling cable the way you were shown instead of the fast way, and never treating speed as more important than doing it safely. Small habits are what leads actually notice.</span>
@@ -399,8 +437,8 @@
         <li>Stagehand work is real production work, not a spectator role &mdash; nearly every department depends on it.</li>
         <li>Every call breaks into load-in, show call, and load-out. Beginners usually start with load-in and load-out.</li>
         <li>The room changes the risks &mdash; arenas, theaters, convention centers, and outdoor shows each demand different awareness.</li>
-        <li>Know your lead and follow that chain. Guessing or taking direction from the wrong person creates problems.</li>
-        <li>What makes a new hand valuable is reliability, listening, communication, and safety &mdash; not experience you don't have yet.</li>
+        <li>Know your lead and follow that chain. Guessing or taking direction from the wrong person creates problems. As local crew, your job is to support the touring crew's plan, not improvise your own.</li>
+        <li>What makes a new hand valuable comes down to three habits: showing up ready (punctuality, reliability), communicating well (listening, clear updates, good judgment), and working the way you're directed (following instructions, safety) &mdash; not experience you don't have yet.</li>
       </ul>
     </section>
 
