@@ -20,22 +20,37 @@
     text-align: center;
   }
 
-  .cb-week-toggle { display: flex; gap: 12px; margin: 20px 0 24px; flex-wrap: wrap; }
-  .cb-week-btn {
-    flex: 1; min-width: 200px; background: var(--cb-panel); border: 1px solid var(--cb-border);
-    border-radius: var(--cb-radius-sm); padding: 14px 18px; cursor: pointer; text-align: left;
-    display: flex; flex-direction: column; gap: 4px; transition: border-color .15s, background .15s;
-    font-family: inherit;
+  .cb-week-slider-panel {
+    background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-sm);
+    padding: 22px 24px; margin: 20px 0 24px;
   }
-  .cb-week-btn:hover { border-color: var(--cb-gold-border); }
-  .cb-week-btn.active { border-color: var(--cb-gold-strong); background: rgba(245,180,0,0.08); }
-  .cb-week-btn-label {
+  .cb-week-readout { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .cb-week-tier {
     font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--cb-gold-strong);
+  }
+  .cb-week-hours-display { font-size: 34px; font-weight: 900; color: var(--cb-text); }
+  .cb-week-hours-display span { font-size: 16px; font-weight: 700; color: var(--cb-muted-2); }
+
+  .cb-week-slider {
+    -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px;
+    background: rgba(255,255,255,0.1); outline: none; margin: 18px 0 8px; cursor: pointer;
+  }
+  .cb-week-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--cb-gold); border: 3px solid var(--cb-bg-deep); cursor: pointer;
+    box-shadow: 0 0 0 1px var(--cb-gold-border);
+  }
+  .cb-week-slider::-moz-range-thumb {
+    width: 24px; height: 24px; border-radius: 50%; background: var(--cb-gold);
+    border: 3px solid var(--cb-bg-deep); cursor: pointer; box-shadow: 0 0 0 1px var(--cb-gold-border);
+  }
+  .cb-week-slider::-moz-range-track { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.1); }
+
+  .cb-week-slider-ticks {
+    display: flex; justify-content: space-between; font-size: 11px; font-weight: 700;
     color: var(--cb-muted-2);
   }
-  .cb-week-btn.active .cb-week-btn-label { color: var(--cb-gold-strong); }
-  .cb-week-btn-hours { font-size: 26px; font-weight: 900; color: var(--cb-text); }
-  .cb-week-btn-sub { font-size: 12px; color: var(--cb-muted); }
 
   .cb-week-axis { display: flex; margin-bottom: 6px; }
   .cb-week-axis-spacer { width: 78px; flex-shrink: 0; }
@@ -189,22 +204,20 @@
     <section class="cb-section cb-section-left" id="calendar-compare" style="margin-top: 44px;">
       <h2>See It On a Calendar</h2>
       <p class="cb-section-intro">
-        Numbers on a page are one thing &mdash; here's what a light week and a maxed-out week
-        actually look like laid out day by day. Toggle between them and decide for yourself what
-        kind of pace you're looking for.
+        Numbers on a page are one thing &mdash; here's what different weekly totals actually look
+        like laid out day by day. Drag the slider and decide for yourself what kind of pace you're
+        looking for.
       </p>
 
-      <div class="cb-week-toggle">
-        <button type="button" class="cb-week-btn active" data-week="light">
-          <span class="cb-week-btn-label">Light Week</span>
-          <span class="cb-week-btn-hours">20 hrs</span>
-          <span class="cb-week-btn-sub">A few standalone calls</span>
-        </button>
-        <button type="button" class="cb-week-btn" data-week="maxed">
-          <span class="cb-week-btn-label">Maxed Week</span>
-          <span class="cb-week-btn-hours">100 hrs</span>
-          <span class="cb-week-btn-sub">Wide-open availability, saying yes to everything</span>
-        </button>
+      <div class="cb-week-slider-panel">
+        <div class="cb-week-readout">
+          <span class="cb-week-tier" id="weekTier">Light Week</span>
+          <span class="cb-week-hours-display" id="weekHoursDisplay">20 <span>hrs</span></span>
+        </div>
+        <input type="range" class="cb-week-slider" id="weekSlider" min="20" max="100" step="20" value="20" aria-label="Weekly hours" />
+        <div class="cb-week-slider-ticks">
+          <span>20</span><span>40</span><span>60</span><span>80</span><span>100</span>
+        </div>
       </div>
 
       <div class="cb-week-summary" id="weekSummary"></div>
@@ -226,11 +239,11 @@
       </div>
 
       <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">
-        Both weeks are built from the real call patterns above &mdash; nothing invented for effect.
-        The maxed week isn't a target: it's what four straight festival days plus a heavy weekend
-        can add up to for someone with wide-open availability who's actively chasing every hour they
-        can get. Most new hands' weeks look a lot closer to the light one, and that's completely
-        normal &mdash; it's not a sign you're not getting enough work.
+        Every step here is built from the real call patterns above &mdash; nothing invented for
+        effect. The high end isn't a target: it's what stacking festival runs and show calls back
+        to back can add up to for someone with wide-open availability who's actively chasing every
+        hour they can get. Most new hands' weeks look a lot closer to the low end, and that's
+        completely normal &mdash; it's not a sign you're not getting enough work.
       </p>
     </section>
 
@@ -240,8 +253,8 @@
 <script>
 (function () {
   var weekData = {
-    light: {
-      totalHours: 20,
+    20: {
+      tier: 'Light Week',
       days: [
         { label: 'Mon', blocks: [] },
         { label: 'Tue', blocks: [ { type: 'standard', text: 'Standard Call', start: 9, end: 13 } ] },
@@ -252,8 +265,63 @@
         { label: 'Sun', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 10, end: 15 } ] }
       ]
     },
-    maxed: {
-      totalHours: 100,
+    40: {
+      tier: 'Picking Up',
+      days: [
+        { label: 'Mon', blocks: [ { type: 'standard', text: 'Standard Call', start: 9, end: 13 } ] },
+        { label: 'Tue', blocks: [ { type: 'standard', text: 'Festival Day', start: 8, end: 18 } ] },
+        { label: 'Wed', blocks: [ { type: 'standard', text: 'Standard Call', start: 9, end: 14 } ] },
+        { label: 'Thu', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 8, end: 13 } ] },
+        { label: 'Fri', blocks: [] },
+        { label: 'Sat', blocks: [
+          { type: 'booking', text: 'Load-In', start: 8, end: 13 },
+          { type: 'booking', text: 'Load-Out', start: 18, end: 23 }
+        ] },
+        { label: 'Sun', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 10, end: 16 } ] }
+      ]
+    },
+    60: {
+      tier: 'Busy Week',
+      days: [
+        { label: 'Mon', blocks: [
+          { type: 'showcall', text: 'Show Call (in+show+out)', start: 8, end: 24 }
+        ] },
+        { label: 'Tue', blocks: [
+          { type: 'showcall', text: 'Show Call (cont.)', start: 0, end: 2, newCall: false },
+          { type: 'standard', text: 'Festival Day', start: 6, end: 16 }
+        ] },
+        { label: 'Wed', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 8, end: 13 } ] },
+        { label: 'Thu', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 8, end: 13 } ] },
+        { label: 'Fri', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 8, end: 13 } ] },
+        { label: 'Sat', blocks: [
+          { type: 'booking', text: 'Load-In', start: 8, end: 14 },
+          { type: 'booking', text: 'Load-Out', start: 18, end: 24 }
+        ] },
+        { label: 'Sun', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 10, end: 15 } ] }
+      ]
+    },
+    80: {
+      tier: 'Heavy Week',
+      days: [
+        { label: 'Mon', blocks: [
+          { type: 'showcall', text: 'Show Call (in+show+out)', start: 7, end: 24 }
+        ] },
+        { label: 'Tue', blocks: [
+          { type: 'showcall', text: 'Show Call (cont.)', start: 0, end: 1, newCall: false },
+          { type: 'showcall', text: 'Show Call (in+show+out)', start: 5, end: 23 }
+        ] },
+        { label: 'Wed', blocks: [ { type: 'standard', text: 'Festival Day', start: 7, end: 17 } ] },
+        { label: 'Thu', blocks: [ { type: 'standard', text: 'Festival Day', start: 7, end: 17 } ] },
+        { label: 'Fri', blocks: [
+          { type: 'booking', text: 'Load-In', start: 8, end: 13 },
+          { type: 'booking', text: 'Load-Out', start: 19, end: 24 }
+        ] },
+        { label: 'Sat', blocks: [ { type: 'standard', text: 'Standard Call', start: 9, end: 17 } ] },
+        { label: 'Sun', blocks: [ { type: 'corporate', text: 'Corporate Call', start: 10, end: 16 } ] }
+      ]
+    },
+    100: {
+      tier: 'Maxed Week',
       days: [
         { label: 'Mon', blocks: [
           { type: 'showcall', text: 'Show Call (in+show+out)', start: 7, end: 24 }
@@ -295,6 +363,10 @@
     var grid = document.getElementById('weekGrid');
     grid.innerHTML = '';
     var callCount = 0;
+    var totalHours = 0;
+
+    document.getElementById('weekTier').textContent = data.tier;
+    document.getElementById('weekHoursDisplay').innerHTML = key + ' <span>hrs</span>';
 
     data.days.forEach(function (day) {
       var row = document.createElement('div');
@@ -320,6 +392,7 @@
         el.textContent = widthPct > 9 ? b.text : '';
         track.appendChild(el);
         dayHours += (b.end - b.start);
+        totalHours += (b.end - b.start);
         if (b.newCall !== false) callCount++;
       });
 
@@ -334,18 +407,15 @@
     });
 
     document.getElementById('weekSummary').textContent =
-      data.totalHours + ' hours across ' + callCount + ' call' + (callCount === 1 ? '' : 's') + ' this week.';
+      totalHours + ' hours across ' + callCount + ' call' + (callCount === 1 ? '' : 's') + ' this week.';
   }
 
-  document.querySelectorAll('.cb-week-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.cb-week-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      renderWeek(btn.getAttribute('data-week'));
-    });
+  var slider = document.getElementById('weekSlider');
+  slider.addEventListener('input', function () {
+    renderWeek(slider.value);
   });
 
-  renderWeek('light');
+  renderWeek('20');
 })();
 </script>
 
