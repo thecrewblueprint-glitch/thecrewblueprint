@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Downloadable Checklists | The Crew Blueprint</title>
-<meta name="description" content="Printable checklists for your first load-in and every load-out after it. Nothing to remember in your head." />
+<title>Load-In / Load-Out Reference | The Crew Blueprint</title>
+<meta name="description" content="Fast facts for showing up ready to your first load-in, and leaving a call the right way." />
 <link rel="icon" href="../images/logo.png" type="image/png">
-<link rel="canonical" href="https://thecrewblueprint.com/resources/downloadable-checklists/" />
+<link rel="canonical" href="https://thecrewblueprint.com/resources/load-in-load-out-reference/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="The Crew Blueprint" />
-<meta property="og:title" content="Downloadable Checklists | The Crew Blueprint" />
-<meta property="og:description" content="Printable checklists for your first load-in and every load-out after it." />
+<meta property="og:title" content="Load-In / Load-Out Reference | The Crew Blueprint" />
+<meta property="og:description" content="Fast facts for showing up ready to your first load-in, and leaving a call the right way." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="../css/theme.css" rel="stylesheet" />
 <style>
   .cb-section-left { text-align: left; }
-  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
-  .cb-section-left p.cb-section-intro { text-align: left; margin: 0; max-width: 880px; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 12px; }
+
+  .cb-res-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
 
   .cb-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .cb-tag {
@@ -28,27 +29,9 @@
     font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
   }
 
-  .cb-print-btn {
-    display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
-    padding: 12px 20px; border-radius: var(--cb-radius-md); border: 1px solid var(--cb-gold-border);
-    background: rgba(245,180,0,0.1); color: var(--cb-gold-strong); font-weight: 800; font-size: 14px;
-    cursor: pointer; letter-spacing: 0.02em;
-  }
-  .cb-print-btn:hover { background: rgba(245,180,0,0.18); }
-
-  .cb-checklist-panel { padding: clamp(24px, 4vw, 34px); margin-top: 24px; }
-  .cb-checklist-panel h3 { margin: 0 0 4px; font-size: clamp(22px, 3vw, 28px); text-align: left; }
-  .cb-checklist-panel .cb-checklist-note { margin: 0 0 20px; color: var(--cb-muted); text-align: left; }
-
-  .cb-checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-  .cb-checklist li {
-    display: flex; align-items: flex-start; gap: 14px;
-    color: var(--cb-text); font-size: 15px; line-height: 1.5;
-  }
-  .cb-checklist li::before {
-    content: ""; flex-shrink: 0; width: 20px; height: 20px; margin-top: 2px;
-    border: 2px solid var(--cb-gold-border); border-radius: 5px; background: var(--cb-bg-deep);
-  }
+  .cb-use-box h3 { color: var(--cb-gold); text-align: left; }
+  .cb-use-box ul { margin: 0; padding-left: 20px; text-align: left; }
+  .cb-use-box li { margin-bottom: 8px; color: var(--cb-muted); }
 
   .cb-cta-split {
     display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
@@ -60,16 +43,7 @@
   .cb-cta-split p { margin: 0; color: var(--cb-muted); }
 
   @media (max-width: 900px) {
-    .cb-cta-split { grid-template-columns: 1fr; }
-  }
-
-  @media print {
-    .site-nav, .site-footer, .cb-breadcrumb, .cb-print-btn, .cb-cta-split, .cookie-notice { display: none !important; }
-    body, .cb-page { background: #fff !important; }
-    .cb-hero, .cb-checklist-panel { background: #fff !important; border-color: #ccc !important; }
-    .cb-hero *, .cb-checklist-panel *, .cb-checklist li { color: #111 !important; }
-    .cb-checklist li::before { border-color: #111 !important; background: #fff !important; }
-    .cb-label { background: #111 !important; color: #fff !important; }
+    .cb-res-grid-2, .cb-cta-split { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -100,48 +74,40 @@
     <nav class="cb-breadcrumb" aria-label="Breadcrumb">
       <a href="../resources.html">Resources</a>
       <span class="cb-breadcrumb-sep">/</span>
-      <span class="cb-breadcrumb-current">Downloadable Checklists</span>
+      <span class="cb-breadcrumb-current">Load-In / Load-Out Reference</span>
     </nav>
 
     <section class="cb-hero">
-      <span class="cb-label">Field Tool</span>
-      <h1>Downloadable Checklists</h1>
+      <span class="cb-label">Quick Reference</span>
+      <h1>Load-In / Load-Out Reference</h1>
       <p>
-        Show up missing one thing and it's the thing everyone notices. Run through these before your
-        first call, and before every load-out after it.
+        Fast facts only. Show up missing one thing and it's the thing everyone notices &mdash; how
+        you leave a call matters just as much as how you show up to it.
       </p>
-      <button type="button" class="cb-print-btn" onclick="window.print()">Print This Page</button>
     </section>
 
     <section class="cb-section cb-section-left">
-      <div class="cb-panel cb-checklist-panel">
-        <h3>First Load-In Checklist</h3>
-        <p class="cb-checklist-note">Run through this the night before, not on the drive over.</p>
-        <ul class="cb-checklist">
-          <li>Read your call sheet fully &mdash; crew call time, sign-in location, PC name and number.</li>
-          <li>Set more than one alarm. Being late to your first call follows you.</li>
-          <li>Lay out all-black clothing and closed-toe shoes.</li>
-          <li>Pack work gloves, a basic multitool, and a flashlight or headlamp.</li>
-          <li>Pack earplugs.</li>
-          <li>Charge your phone fully, and bring a portable charger if you have one.</li>
-          <li>Bring cash for parking, in case card isn't an option.</li>
-          <li>Know exactly where you're parking before you leave the house.</li>
-          <li>Eat something before you go &mdash; you may not get a break right away.</li>
-          <li>Save the PC's number and the emergency contact in your phone.</li>
-        </ul>
-      </div>
-
-      <div class="cb-panel cb-checklist-panel">
-        <h3>Load-Out Checklist</h3>
-        <p class="cb-checklist-note">How you leave a call matters as much as how you show up to it.</p>
-        <ul class="cb-checklist">
-          <li>Don't leave until you're actually told you're released.</li>
-          <li>Return any tools or gear you borrowed before you go.</li>
-          <li>Sign out on the sign-in sheet if that's how the call tracks hours.</li>
-          <li>Don't walk off with gear that isn't yours &mdash; check your bag before you leave.</li>
-          <li>Double check you're not leaving any of your own belongings behind.</li>
-          <li>Thank your PC or lead on the way out. It matters more than you'd think for getting called back.</li>
-        </ul>
+      <div class="cb-res-grid-2" style="margin-top: 8px;">
+        <div class="cb-panel cb-use-box" style="padding: 24px;">
+          <h3>Load-In</h3>
+          <ul>
+            <li>Read your call sheet the night before &mdash; call time, sign-in, PC contact.</li>
+            <li>All-black clothing, closed-toe shoes &mdash; non-negotiable at most venues.</li>
+            <li>Pack gloves, a multitool, and a flashlight or headlamp. Don't plan to borrow.</li>
+            <li>Know exactly where you're parking before you leave the house.</li>
+            <li>Eat before you go &mdash; breaks aren't guaranteed early on.</li>
+          </ul>
+        </div>
+        <div class="cb-panel cb-use-box" style="padding: 24px;">
+          <h3>Load-Out</h3>
+          <ul>
+            <li>Don't leave until you're actually told you're released.</li>
+            <li>Return anything you borrowed before you go.</li>
+            <li>Sign out if that's how the call tracks hours.</li>
+            <li>Check your bag &mdash; don't walk off with gear that isn't yours.</li>
+            <li>Thank your PC or lead on the way out. It matters more than you'd think.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -149,7 +115,7 @@
       <div class="cb-cta-split">
         <div>
           <h2>Head back to the full Resource Hub.</h2>
-          <p>Gear, quick reference guides, field tools, and everything else built for new and developing stagehands.</p>
+          <p>Gear, field tools, organizations, and everything else built for new and developing stagehands.</p>
         </div>
         <div class="cb-actions" style="flex-wrap: nowrap;">
           <a class="cb-btn cb-btn-primary" href="../resources.html">All Resources</a>
