@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Module 1 (Packet Version): Welcome to the Live Event World | The Crew Blueprint</title>
+<meta name="description" content="DRAFT — adapted from the course packet's Module 1 material, for internal comparison only." />
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+
+  .cb-draft-banner {
+    background: var(--cb-warning-bg); border: 1px solid var(--cb-warning-border);
+    border-left: 4px solid var(--cb-gold); border-radius: var(--cb-radius-md);
+    padding: 14px 20px; margin-bottom: 24px; font-size: 14px; color: var(--cb-muted);
+  }
+  .cb-draft-banner strong { color: var(--cb-gold-strong); }
+
+  .cb-chain {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px;
+  }
+  .cb-chain-step {
+    padding: 10px 16px; border-radius: var(--cb-radius-pill); border: 1px solid var(--cb-border);
+    background: var(--cb-panel); font-size: 14px; font-weight: 700; color: var(--cb-text);
+  }
+  .cb-chain-step.cb-chain-you {
+    border-color: var(--cb-gold-border); background: rgba(245,180,0,0.1); color: var(--cb-gold-strong);
+  }
+  .cb-chain-arrow { color: var(--cb-muted-2); font-size: 16px; }
+
+  .cb-phase-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; margin-top: 8px; }
+  .cb-phase-card { padding: 22px; text-align: left; }
+  .cb-phase-card h3 { margin: 0 0 8px; font-size: 17px; color: var(--cb-gold); }
+  .cb-phase-card p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
+  .cb-value-list { display: grid; gap: 14px; margin-top: 8px; }
+  .cb-value-item {
+    display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 14px;
+    padding: 18px 20px; align-items: start;
+  }
+  .cb-value-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: var(--cb-radius-sm);
+    background: var(--cb-gold); color: var(--cb-bg-deep); font-weight: 900;
+  }
+  .cb-value-item strong { display: block; margin-bottom: 4px; font-size: 16px; }
+  .cb-value-item span { display: block; color: var(--cb-muted); line-height: 1.55; font-size: 14px; }
+
+  .cb-example-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 16px; }
+  .cb-example-card { padding: 20px; text-align: left; }
+  .cb-example-card.cb-good { border-color: rgba(34,197,94,0.35); }
+  .cb-example-card.cb-bad { border-color: rgba(239,68,68,0.35); }
+  .cb-example-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .cb-good .cb-example-tag { color: #4ade80; }
+  .cb-bad .cb-example-tag { color: #f87171; }
+  .cb-example-card p { margin: 0 0 8px; color: var(--cb-muted); font-size: 14px; }
+  .cb-example-card p:last-child { margin-bottom: 0; }
+
+  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+  .cb-quiz-item { padding: 16px 20px; }
+  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
+  @media (max-width: 900px) {
+    .cb-phase-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 620px) {
+    .cb-phase-grid, .cb-example-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="stagehand-fundamentals.html">Stagehand Fundamentals</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Module 1 (Packet Version)</span>
+    </nav>
+
+    <div class="cb-draft-banner">
+      <strong>Draft — not linked from the site.</strong> Built from the course packet's "Module 1: Welcome to the Live Event World" material for side-by-side comparison against the version already live. Not for public viewing yet.
+    </div>
+
+    <section class="cb-hero" style="padding-top: 8px;">
+      <span class="cb-label">Module 1 &mdash; Packet Version</span>
+      <h1>Welcome to the Live Event World</h1>
+      <p>
+        Before you can be useful on a call, you need the big picture: what the job actually is,
+        the different kinds of calls you'll work, the places you'll work them, who's in charge of
+        what, and what makes crews want you back.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>What a Stagehand Actually Does</h2>
+      <p class="cb-section-intro">
+        Say the word "stagehand" and most people picture someone carrying boxes. That's part of it
+        &mdash; but it's not the job.
+      </p>
+      <p>
+        On a real call you might unload trucks, push road cases, set staging, move barricade, run
+        cable under a department's direction, sort gear by department, or help reset a venue after
+        the event. The common thread isn't the specific task &mdash; it's that almost every other
+        department depends on hands like yours to get their gear from the truck to the stage and
+        back again.
+      </p>
+      <p>
+        That's why the job matters more than "moving boxes" suggests. A stagehand who pays
+        attention, follows direction, protects the gear, and works safely is doing something the
+        whole production depends on &mdash; even before they know a single piece of equipment by name.
+      </p>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">The bar for day one</strong>
+        <p style="margin: 0; color: var(--cb-muted);">You're not expected to know the gear or the terminology yet. What matters is showing up prepared, listening, following direction, asking when you're unsure, and working safely. Confidence you haven't earned yet reads as a problem &mdash; not knowing something and saying so doesn't.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Load-In, Show Call, and Load-Out</h2>
+      <p class="cb-section-intro">
+        Every call breaks into the same three phases. Knowing which one you're in changes what's
+        expected of you.
+      </p>
+
+      <div class="cb-legal-table-wrap">
+        <table class="cb-legal-table">
+          <thead>
+            <tr><th>Phase</th><th>When</th><th>What It Means</th><th>Likely for Beginners?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Load-In</td><td>Before the event</td><td>Gear comes in and the show gets built</td><td>Very likely</td></tr>
+            <tr><td>Show Call</td><td>During the event</td><td>Crew supports the live performance</td><td>Less likely at first</td></tr>
+            <tr><td>Load-Out</td><td>After the event</td><td>Gear is struck, packed, and loaded out</td><td>Very likely</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top: 20px;">
+        Show call gets handed to newer hands less often because it needs more trust, timing, and
+        familiarity with that specific production &mdash; not because it's more important. Most
+        beginners build their reputation on load-in and load-out first, which is exactly where
+        safety and reliability matter most anyway: gear is moving fast, the room is full of people
+        who don't know you yet, and everyone's watching how you handle it.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Common Work Environments</h2>
+      <p class="cb-section-intro">
+        The expectations stay the same everywhere &mdash; show up ready, work safely, follow
+        direction. The room you're in changes how that looks.
+      </p>
+
+      <div class="cb-legal-table-wrap">
+        <table class="cb-legal-table">
+          <thead>
+            <tr><th>Environment</th><th>What It's Like</th><th>Beginner Focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Arenas</td><td>Large, loud, fast-paced, heavy gear movement</td><td>Stay alert to moving equipment; follow direction closely</td></tr>
+            <tr><td>Theaters</td><td>Tighter backstage spaces, more precise work</td><td>Move carefully; never touch fly systems or rigging unless trained and authorized</td></tr>
+            <tr><td>Convention Centers</td><td>Varies day to day &mdash; trade shows, conferences, room resets</td><td>Watch for forklifts, pallet jacks, and marked traffic paths</td></tr>
+            <tr><td>Outdoor Shows</td><td>Weather, uneven ground, temporary structures</td><td>Hydrate, watch your footing, report weather concerns to a lead</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 20px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Don't assume a task is safe because it looks simple</strong>
+        <p style="margin: 0; color: var(--cb-muted);">Each environment carries different hazards. If you're not trained, assigned, or sure how to do something safely in the room you're in &mdash; stop and ask.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Who Is on the Crew</h2>
+      <p class="cb-section-intro">
+        A call might have dozens of people or hundreds, split across departments that each answer
+        to someone. Your job isn't to know everyone &mdash; it's to know who to listen to.
+      </p>
+
+      <div class="cb-panel" style="padding: 22px;">
+        <div class="cb-chain">
+          <span class="cb-chain-step">Leads / Dept. Heads</span>
+          <span class="cb-chain-arrow">&rarr;</span>
+          <span class="cb-chain-step">Give You Direction</span>
+        </div>
+      </div>
+
+      <div class="cb-legal-table-wrap" style="margin-top: 20px;">
+        <table class="cb-legal-table">
+          <thead>
+            <tr><th>Crew Role</th><th>What They Do</th><th>What Beginners Should Know</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Leads / Dept. Heads</td><td>Give direction and organize the work</td><td>This is your main point of contact</td></tr>
+            <tr><td>Riggers</td><td>Handle overhead systems and flown equipment</td><td>Stay clear unless directed</td></tr>
+            <tr><td>Audio Crew</td><td>Sound equipment and systems</td><td>Don't touch audio gear unless asked</td></tr>
+            <tr><td>Lighting Crew</td><td>Fixtures, truss, cable, control</td><td>Follow direction carefully around lighting gear</td></tr>
+            <tr><td>Video Crew</td><td>Screens, cameras, projectors, LED</td><td>Equipment can be delicate and expensive</td></tr>
+            <tr><td>Carpenters / Staging</td><td>Decks, scenic pieces, stage structure</td><td>Pay attention to safe lifting and placement</td></tr>
+            <tr><td>Truck Loaders</td><td>Gear movement in and out of trailers</td><td>Follow truck direction &mdash; cases have a specific order</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top: 20px;">
+        Not everyone on-site can give you work direction, even if they sound confident telling you
+        what to do. Know who your lead is, follow that chain, and ask when you're not sure &mdash;
+        guessing wrong can move the wrong gear, slow the crew down, or create a safety problem.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>What Makes a New Stagehand Valuable</h2>
+      <p class="cb-section-intro">
+        Not technical knowledge &mdash; that comes with reps. What gets a beginner called back is
+        how they handle not having it yet.
+      </p>
+
+      <div class="cb-value-list">
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">1</span>
+          <div>
+            <strong>Reliability</strong>
+            <span>Showing up prepared and ready to work, not just present.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">2</span>
+          <div>
+            <strong>Punctuality</strong>
+            <span>Early enough to check in, find your lead, and be ready for direction &mdash; not still parking at call time.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">3</span>
+          <div>
+            <strong>Active listening</strong>
+            <span>Paying attention, confirming instructions, and not interrupting.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">4</span>
+          <div>
+            <strong>Clear communication</strong>
+            <span>Asking questions, reporting problems, and updating your lead instead of disappearing or guessing.</span>
+          </div>
+        </div>
+        <div class="cb-panel cb-value-item">
+          <span class="cb-value-num">5</span>
+          <div>
+            <strong>Safety commitment</strong>
+            <span>Watching for hazards, and never treating speed as more important than doing it safely.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cb-example-grid">
+        <div class="cb-panel cb-example-card cb-good">
+          <span class="cb-example-tag">Good Example</span>
+          <p>A new hand isn't sure whether a cable is safe to move. They ask: "Do you want this moved, or should I leave it until the department clears it?"</p>
+        </div>
+        <div class="cb-panel cb-example-card cb-bad">
+          <span class="cb-example-tag">Bad Example</span>
+          <p>A new hand sees a road case and moves it without asking. It seemed helpful &mdash; but it was staged correctly and belonged to another department.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Quick Knowledge Check</h2>
+      <p class="cb-section-intro">Click a question to check your answer.</p>
+
+      <div class="cb-quiz-list">
+        <details class="cb-panel cb-quiz-item">
+          <summary>What is the main role of an entry-level stagehand?</summary>
+          <p>To support the larger production through safe, organized, and efficient labor under the direction of crew leads and department heads.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What should you do if you're unsure whether something is safe to move?</summary>
+          <p>Ask a lead or the appropriate department before acting &mdash; never guess with equipment that isn't clearly yours to move.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Why are brand-new stagehands less likely to work show call right away?</summary>
+          <p>Show call requires more trust, timing, and familiarity with the specific production than load-in or load-out do.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What should a beginner do around a rigging zone?</summary>
+          <p>Stay clear, never stand under a suspended load, and wait for direction from the appropriate lead.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What's one of the most valuable traits for a new stagehand?</summary>
+          <p>Reliability &mdash; showing up prepared, working safely, communicating clearly, and following instructions beats acting experienced and creating confusion.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Key Takeaways</h2>
+      <ul class="cb-list">
+        <li>Stagehand work is real production work, not a spectator role &mdash; nearly every department depends on it.</li>
+        <li>Every call breaks into load-in, show call, and load-out. Beginners usually start with load-in and load-out.</li>
+        <li>The room changes the risks &mdash; arenas, theaters, convention centers, and outdoor shows each demand different awareness.</li>
+        <li>Know your lead and follow that chain. Guessing or taking direction from the wrong person creates problems.</li>
+        <li>What makes a new hand valuable is reliability, listening, communication, and safety &mdash; not experience you don't have yet.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Back to the course overview.</h2>
+          <p>See the full module list and what's ahead in Stagehand Fundamentals.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="stagehand-fundamentals.html">Course Overview</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
