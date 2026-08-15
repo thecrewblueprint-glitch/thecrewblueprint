@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DRAFT — Work Week Section</title>
-<meta name="robots" content="noindex, nofollow" />
+<title>What a Work Week Can Actually Look Like | The Crew Blueprint</title>
+<meta name="description" content="Real call-length patterns for local stagehands, plus an interactive calendar comparing a light week to a maxed-out one." />
 <link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/resources/what-a-work-week-looks-like/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="What a Work Week Can Actually Look Like | The Crew Blueprint" />
+<meta property="og:description" content="Real call-length patterns for local stagehands, plus an interactive calendar comparing a light week to a maxed-out one." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,11 +19,6 @@
   .cb-section-left { text-align: left; }
   .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
   .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
-  .cb-draft-banner {
-    background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.4); color: #f87171;
-    padding: 14px 18px; border-radius: var(--cb-radius-sm); font-weight: 700; margin-bottom: 24px;
-    text-align: center;
-  }
 
   .cb-week-slider-panel {
     background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-sm);
@@ -95,6 +95,18 @@
     margin-right: 6px; vertical-align: middle;
   }
 
+  .cb-cta-split {
+    display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
+    padding: clamp(28px, 5vw, 46px);
+    background: linear-gradient(135deg, rgba(245,180,0,0.15), transparent 45%), var(--cb-card);
+    border: 1px solid var(--cb-gold-border); border-radius: var(--cb-radius-lg); text-align: left;
+  }
+  .cb-cta-split h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); text-align: left; }
+  .cb-cta-split p { margin: 0; color: var(--cb-muted); }
+
+  @media (max-width: 900px) {
+    .cb-cta-split { grid-template-columns: 1fr; }
+  }
   @media (max-width: 560px) {
     .cb-week-day-label { width: 40px; font-size: 12px; }
     .cb-week-axis-spacer { width: 62px; }
@@ -104,19 +116,48 @@
 </head>
 <body>
 
-<main class="cb-page">
-  <div class="cb-wrap" style="max-width: 900px; padding-top: 40px;">
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../resources.html" class="active" aria-current="page">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../courses/stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="cb-draft-banner">DRAFT — not linked anywhere, not indexed. For review only.</div>
+<main class="cb-page">
+  <div class="cb-wrap">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../resources.html">Resources</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">What a Work Week Can Actually Look Like</span>
+    </nav>
+
+    <section class="cb-hero">
+      <span class="cb-label">Quick Reference</span>
+      <h1>What a Work Week Can Actually Look Like</h1>
+      <p>
+        Stagehand work doesn't run on a 9-to-5, and it doesn't run on a fixed weekly total either.
+        Calls come in whatever shape the show needs &mdash; here's the shape they actually take.
+      </p>
+    </section>
 
     <section class="cb-section cb-section-left" id="work-week">
-      <h2>What a Work Week Can Actually Look Like</h2>
       <p class="cb-section-intro">
-        Stagehand work doesn't run on a 9-to-5, and it doesn't run on a fixed weekly total either.
-        Calls come in whatever shape the show needs. The call lengths below are ones every local
-        hand runs into sooner or later &mdash; how many of them get stacked together in a given
-        week is a different question, and depends heavily on your availability, your reputation,
-        and how much of it you're actively chasing.
+        The call lengths below are ones every local hand runs into sooner or later &mdash; how many
+        of them get stacked together in a given week is a different question, and depends heavily on
+        your availability, your reputation, and how much of it you're actively chasing.
       </p>
 
       <div class="cb-legal-table-wrap">
@@ -247,9 +288,80 @@
       </p>
     </section>
 
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Head back to the full Resource Hub.</h2>
+          <p>Gear, field tools, organizations, and everything else built for new and developing stagehands.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="../resources.html">All Resources</a>
+        </div>
+      </div>
+    </section>
+
   </div>
 </main>
 
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
 <script>
 (function () {
   var weekData = {
@@ -418,6 +530,5 @@
   renderWeek('20');
 })();
 </script>
-
 </body>
 </html>
