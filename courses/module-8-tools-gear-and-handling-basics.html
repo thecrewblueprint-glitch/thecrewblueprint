@@ -166,25 +166,71 @@
         <svg viewBox="0 0 540 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="m8-case-title m8-case-desc">
           <title id="m8-case-title">Labeled parts of a road case</title>
           <desc id="m8-case-desc">A road case has a lid, latches along the seam, hinges on the back edge, handles on both sides, casters or wheels with a brake on one or more, a corner protector, and a label or placard area on the front face.</desc>
+          <defs>
+            <linearGradient id="m8-case-lid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3c4652"/>
+              <stop offset="100%" stop-color="#252c34"/>
+            </linearGradient>
+            <linearGradient id="m8-case-body" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#242b33"/>
+              <stop offset="100%" stop-color="#171c22"/>
+            </linearGradient>
+            <linearGradient id="m8-metal" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e8edf1"/>
+              <stop offset="45%" stop-color="#aeb7c1"/>
+              <stop offset="100%" stop-color="#6b7580"/>
+            </linearGradient>
+            <linearGradient id="m8-brass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffd45a"/>
+              <stop offset="100%" stop-color="#c98f0c"/>
+            </linearGradient>
+            <radialGradient id="m8-tire" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#41464c"/>
+              <stop offset="70%" stop-color="#1e2226"/>
+              <stop offset="100%" stop-color="#0b0d0f"/>
+            </radialGradient>
+            <radialGradient id="m8-floor" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.07"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <ellipse cx="280" cy="254" rx="150" ry="16" fill="url(#m8-floor)"/>
+
           <g>
-            <rect x="180" y="90" width="200" height="130" rx="4" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="2"/>
-            <line x1="180" y1="120" x2="380" y2="120" stroke="var(--cb-border)" stroke-width="1.5" stroke-dasharray="3 4"/>
-            <rect x="212" y="116" width="16" height="8" rx="2" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)"/>
-            <rect x="272" y="116" width="16" height="8" rx="2" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)"/>
-            <rect x="332" y="116" width="16" height="8" rx="2" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)"/>
+            <rect x="180" y="90" width="200" height="130" rx="4" fill="url(#m8-case-body)" stroke="#4a5560" stroke-width="2"/>
+            <rect x="183" y="93" width="194" height="25" rx="3" fill="url(#m8-case-lid)"/>
+            <line x1="180" y1="120" x2="380" y2="120" stroke="#6b7480" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <g fill="none" stroke="#3a4148" stroke-width="1" opacity="0.6">
+              <circle cx="188" cy="98" r="1.6"/><circle cx="372" cy="98" r="1.6"/>
+              <circle cx="188" cy="212" r="1.6"/><circle cx="372" cy="212" r="1.6"/>
+            </g>
 
-            <rect x="250" y="160" width="70" height="28" rx="3" fill="var(--cb-elevated)" stroke="var(--cb-border)"/>
+            <rect x="212" y="116" width="16" height="8" rx="2" fill="url(#m8-brass)" stroke="#7a5a00" stroke-width="1"/>
+            <rect x="272" y="116" width="16" height="8" rx="2" fill="url(#m8-brass)" stroke="#7a5a00" stroke-width="1"/>
+            <rect x="332" y="116" width="16" height="8" rx="2" fill="url(#m8-brass)" stroke="#7a5a00" stroke-width="1"/>
 
-            <rect x="165" y="140" width="15" height="22" rx="3" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)"/>
-            <rect x="380" y="140" width="15" height="22" rx="3" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)"/>
+            <rect x="250" y="160" width="70" height="28" rx="3" fill="#10141a" stroke="#050708" stroke-width="1.5"/>
+            <rect x="253" y="163" width="64" height="6" rx="2" fill="#2c333c" opacity="0.85"/>
 
-            <path d="M380,205 Q380,220 365,220 Z" fill="var(--cb-warning-bg)" stroke="var(--cb-gold-border)" stroke-width="1.5"/>
+            <rect x="255" y="193" width="60" height="16" rx="2" fill="#f2e8cc" stroke="#b9ac82" stroke-width="1"/>
+            <line x1="259" y1="197" x2="300" y2="197" stroke="#8a7d55" stroke-width="1"/>
+            <line x1="259" y1="201" x2="291" y2="201" stroke="#8a7d55" stroke-width="1"/>
+            <rect x="303" y="196" width="7" height="7" fill="#d1453f"/>
 
-            <circle cx="210" cy="232" r="14" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="350" cy="232" r="14" fill="var(--cb-elevated)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <rect x="344" y="224" width="12" height="6" rx="1.5" fill="var(--cb-muted-2)"/>
+            <rect x="165" y="140" width="15" height="22" rx="3" fill="url(#m8-metal)" stroke="#4a5560" stroke-width="1.25"/>
+            <rect x="380" y="140" width="15" height="22" rx="3" fill="url(#m8-metal)" stroke="#4a5560" stroke-width="1.25"/>
 
-            <g stroke="var(--cb-muted-2)" stroke-width="1.25" fill="none">
+            <path d="M380,205 Q380,220 365,220 Z" fill="url(#m8-metal)" stroke="#4a5560" stroke-width="1.5"/>
+            <circle cx="376" cy="214" r="1.4" fill="#5c6570"/>
+
+            <circle cx="210" cy="232" r="14" fill="url(#m8-tire)" stroke="#050708" stroke-width="1.5"/>
+            <circle cx="210" cy="232" r="5" fill="url(#m8-metal)" stroke="#3a4048" stroke-width="1"/>
+            <circle cx="350" cy="232" r="14" fill="url(#m8-tire)" stroke="#050708" stroke-width="1.5"/>
+            <circle cx="350" cy="232" r="5" fill="url(#m8-metal)" stroke="#3a4048" stroke-width="1"/>
+            <rect x="344" y="224" width="12" height="6" rx="1.5" fill="#e2453f" stroke="#8a1f1f" stroke-width="1"/>
+
+            <g stroke="var(--cb-gold-strong)" stroke-width="1.25" fill="none" opacity="0.9">
               <line x1="280" y1="90" x2="280" y2="42"/>
               <line x1="340" y1="120" x2="455" y2="106"/>
               <line x1="200" y1="90" x2="60" y2="58"/>
