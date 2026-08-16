@@ -43,7 +43,8 @@ Recommended handoff order:
 25. `17-stagehand-fundamentals-jobsite-hazard-awareness-validation.md`
 26. `18-stagehand-fundamentals-load-in-load-out-validation.md`
 27. `19-stagehand-fundamentals-tools-handling-hiring-career-growth-validation.md`
-28. `20-stagehand-fundamentals-gap-audit-and-supplemental-validation.md` — cross-check of Packages 15–19 plus supplemental evidence for housekeeping/egress, near misses, push-vs-pull/cart sightlines, hand tools, tape distinctions, pinch/crush awareness, and remaining non-standardized claims.
+28. `20-stagehand-fundamentals-gap-audit-and-supplemental-validation.md` — canonical cross-check of Packages 15–19 plus supplemental evidence for housekeeping/egress, near misses, push-vs-pull/cart sightlines, hand tools, tape distinctions, pinch/crush awareness, and remaining non-standardized claims.
+29. `20A-stagehand-fundamentals-gap-audit-addendum.md` — targeted addendum with additional evidence for show-blacks rationale, real tool lists, QSC over-under guidance, show-call assignment/trust, onboarding/probation, headset discipline, check-in practices, fatigue/visibility, and cleanup.
 
 Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
@@ -78,7 +79,8 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - For jobsite-hazard content, distinguish equipment-specific OSHA operator-training rules from broader employer authorization/industry practice. Do not imply OSHA has a stage-specific fly-system or automation license where none exists.
 - For load-in/load-out content, distinguish direct evidence from inference when discussing fatigue, time pressure, darkness/visibility, and beginner assignment patterns.
 - For tools/handling/career content, do not present the over-under coil as an OSHA requirement, the OSHA eTool 50-lb figure as a universal federal lifting limit, or the Crew Blueprint first-30-days plan as an industry-standard onboarding sequence.
-- Package 20 is the final gap audit for the 15–19 backfill set. Its key rule is to label unsupported universal claims honestly as employer/local practice or Crew Blueprint instructional framing rather than forcing them into a false national standard.
+- Package 20 is the canonical gap audit for the 15–19 backfill set. Its key rule is to label unsupported universal claims honestly as employer/local practice or Crew Blueprint instructional framing rather than forcing them into a false national standard.
+- Package 20A is a targeted evidence addendum only. It strengthens the source base but does not supersede Package 20 or convert local IATSE rules, institutional theatre practices, or manufacturer guidance into national standards.
 
 ## Organization
 
@@ -88,7 +90,7 @@ Naming convention:
 
 `NN-topic-name.md`
 
-Companion notes may use suffixes such as `04A`, `08A`, or `11A` when they clarify or amend interpretation of a numbered package without replacing its underlying research.
+Companion notes may use suffixes such as `04A`, `08A`, `11A`, or `20A` when they clarify or supplement a numbered package without replacing its underlying research.
 
 Each completed research document should preserve source links/citations, distinguish sourced findings from analysis, and include the research date when information may change over time.
 
@@ -121,7 +123,8 @@ Each completed research document should preserve source links/citations, disting
 - **17** — Stagehand Fundamentals jobsite hazard-awareness validation
 - **18** — Stagehand Fundamentals load-in/load-out operational validation
 - **19** — Stagehand Fundamentals tools/gear/handling and hiring/career-growth validation
-- **20** — Stagehand Fundamentals gap audit and supplemental validation — fills remaining evidence gaps from Packages 15–19 and records claims that must remain labeled as local practice, common convention, or Crew Blueprint guidance rather than national standards
+- **20** — Stagehand Fundamentals canonical gap audit and supplemental validation — fills remaining evidence gaps from Packages 15–19 and records claims that must remain labeled as local practice, common convention, or Crew Blueprint guidance rather than national standards
+- **20A** — Targeted gap-audit addendum — strengthens show-blacks rationale, real tool-list evidence, manufacturer cable guidance, show-call trust/assignment evidence, onboarding/probation examples, communication/check-in practices, fatigue/visibility support, and cleanup/reset evidence
 
 ## Suggested Claude synthesis role
 
@@ -150,4 +153,4 @@ There is **no NotebookLM step in the current workflow**.
 
 Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A contain Lighting and Video Course 2 source material. Packages 14/14A preserve the Stagehand Fundamentals original source archive and its original citation gap.
 
-The Stagehand Fundamentals citation backfill is now covered by **Packages 15–20**. Packages 15–19 supply the main validation research; Package 20 audits those five packets against the course and fills the remaining smaller gaps while explicitly documenting claims that still should not be presented as universal industry standards.
+The Stagehand Fundamentals citation backfill is now covered by **Packages 15–20 plus 20A**. Packages 15–19 supply the main validation research; Package 20 is the canonical audit across those five packets; Package 20A adds targeted evidence discovered during the final gap-fill pass. Claims that remain local, employer-specific, manufacturer-specific, or informal should stay labeled that way during Claude synthesis.
