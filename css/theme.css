@@ -780,7 +780,90 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------------------------------------------------
-   10. RESPONSIVE
+   10. DEPARTMENT COURSE DIRECTORY
+   Used on the main Courses page to organize department pathways
+   by course level, without routing discovery through a lesson.
+   --------------------------------------------------------- */
+
+.cb-dept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.cb-dept-card { padding: 24px; }
+
+.cb-dept-card h3 {
+  margin: 0 0 4px;
+  font-size: 19px;
+  color: var(--cb-text);
+}
+
+.cb-dept-card .cb-dept-tagline {
+  margin: 0 0 16px;
+  color: var(--cb-muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.cb-dept-course-list { display: grid; gap: 10px; list-style: none; margin: 0; padding: 0; }
+
+.cb-dept-course-list a,
+.cb-dept-course-list li.cb-dept-locked > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--cb-radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cb-border);
+  text-decoration: none;
+  transition: border-color var(--cb-transition), background var(--cb-transition);
+}
+
+.cb-dept-course-list a:hover,
+.cb-dept-course-list a:focus-visible {
+  border-color: var(--cb-gold-border);
+  background: rgba(245, 180, 0, 0.06);
+}
+
+.cb-dept-course-level {
+  flex-shrink: 0;
+  padding: 4px 9px;
+  border-radius: var(--cb-radius-pill);
+  background: var(--cb-gold);
+  color: var(--cb-bg-deep);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.cb-dept-course-list li.cb-dept-locked .cb-dept-course-level {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cb-muted-2);
+}
+
+.cb-dept-course-list li.cb-dept-locked > div {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.cb-dept-course-title {
+  color: var(--cb-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .cb-dept-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------
+   11. RESPONSIVE
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
