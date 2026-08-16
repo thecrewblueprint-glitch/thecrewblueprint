@@ -39,6 +39,7 @@ Recommended handoff order:
 21. `14` Stagehand Fundamentals original source archive
 22. `14A` Stagehand Fundamentals Module 1 original source archive
 23. `15-stagehand-fundamentals-entry-level-role-validation.md` — sourced validation for entry-level stagehand role, event phases, environments, crew structure, employer-valued behaviors, and communication norms.
+24. `16-stagehand-fundamentals-safety-ppe-validation.md` — sourced validation for OSHA worker rights, HazCom, hazard/risk framing, PPE standards, show blacks, heat/hydration, fatigue, and readiness.
 
 Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
@@ -69,6 +70,7 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - For staging/carpentry support, distinguish **participating in modular assembly under direction** from structural modification, load-bearing decisions, hardware substitution, final leveling acceptance, or safety sign-off.
 - For backline, props, and wardrobe, distinguish **moving an assigned item** from changing its settings, contents, preset, fit, condition, packing logic, or placement. Treat show-critical and performer-owned items as requiring explicit department direction.
 - For Stagehand Fundamentals citation backfill, treat each validation packet as evidence for claims already present in the course. If a claim is only partially supported, regional, employer-specific, or not directly sourced, preserve that qualification rather than upgrading it into a universal rule.
+- For safety/PPE validation, distinguish **OSHA legal requirements**, **ANSI/ISEA consensus-performance standards**, and **industry/employer practices** such as show blacks. Do not convert hazard-dependent PPE into a universal stagehand kit.
 
 ## Organization
 
@@ -107,6 +109,7 @@ Each completed research document should preserve source links/citations, disting
 - **14** — Stagehand Fundamentals original source (`complete_course_1_standardized_lesson_structure`, Modules 1-10). **No external citations recorded** — flagged, see doc 14's header and `10_content_research_queue.md`
 - **14A** — Stagehand Fundamentals Module 1 original source (structured JSON). Same no-citation flag as 14
 - **15** — Stagehand Fundamentals entry-level role validation — sourced evidence for day-to-day duties, load-in/show-call/load-out, work environments, crew structure, employer-valued behaviors, and call etiquette; includes explicit qualification of weak/overgeneralized claims
+- **16** — Stagehand Fundamentals safety/PPE validation — OSHA worker rights and employer duties, HazCom, hazard/risk language, PPE hazard assessment, head/eye/foot/hand/hearing/high-visibility standards, show-black attire evidence, heat/hydration, fatigue and readiness; includes corrections where existing course claims overstate universal requirements
 
 ## Suggested Claude synthesis role
 
@@ -135,4 +138,4 @@ There is **no NotebookLM step in the current workflow**.
 
 Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A (Lighting and Video Course 2 source material) and 14/14A (Stagehand Fundamentals original source, no citations recorded) were pulled into the repo from Drive 2026-08-16 per owner directive: every Drive document used to create learner content lives here, not just in Drive.
 
-Stagehand Fundamentals citation backfill is now underway. **Package 15** is the first sourced validation packet in that series and covers the entry-level role, event phases, environments, crew structure, employer-valued behaviors, and communication/etiquette norms. Additional validation packets should continue from 16 onward unless a companion note is needed.
+Stagehand Fundamentals citation backfill is underway. **Package 15** validates the entry-level role, event phases, environments, crew structure, employer-valued behaviors, and communication/etiquette norms. **Package 16** validates safety/PPE claims and separates OSHA requirements from consensus standards and employer/industry practices. Additional validation packets should continue from 17 onward unless a companion note is needed.
