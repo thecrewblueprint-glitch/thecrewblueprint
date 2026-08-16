@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Video Pathway Course 2: Large-Scale LED Video Systems | The Crew Blueprint</title>
+<meta name="description" content="How large-scale direct-view LED video systems are built, powered, rigged, and operated across arenas, stadiums, corporate events, and outdoor festivals." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-video-02-led-video-systems/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Video Pathway Course 2: Large-Scale LED Video Systems | The Crew Blueprint" />
+<meta property="og:description" content="How large-scale LED video systems are built, powered, rigged, and operated." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-course-hero { text-align: center; padding: clamp(32px, 6vw, 60px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); margin-bottom: 18px; }
+  .cb-course-hero h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 16px; }
+  .cb-course-hero p { max-width: 780px; margin: 0 auto 22px; color: var(--cb-muted); font-size: clamp(17px, 2vw, 20px); }
+  .cb-course-section { margin-top: 18px; padding: clamp(24px, 4vw, 38px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); text-align: left; }
+  .cb-course-section h2 { margin: 0 0 14px; font-size: clamp(26px, 4vw, 38px); text-align: left; }
+  .cb-course-section > p { margin: 0 0 18px; color: var(--cb-muted); }
+  .cb-course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+  .cb-course-module-list { display: grid; gap: 14px; margin-top: 18px; }
+  .cb-course-card, .cb-course-module { padding: 22px; background: rgba(5, 7, 8, 0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-align: left; }
+  .cb-course-card h3, .cb-course-module h3 { margin: 0 0 8px; font-size: clamp(19px, 3vw, 24px); text-align: left; }
+  .cb-course-card p, .cb-course-module p { margin: 0; color: var(--cb-muted); }
+  .cb-course-final { text-align: center; }
+  .cb-course-final h2 { text-align: center; }
+  .cb-course-final p { max-width: 700px; margin: 0 auto 18px; }
+  @media (max-width: 820px) { .cb-course-grid { grid-template-columns: 1fr; } }
+
+  .cb-course-module { position: relative; }
+  a.cb-course-module { display: block; text-decoration: none; color: inherit; transition: border-color 180ms ease; }
+  a.cb-course-module:hover { border-color: var(--cb-gold-border); }
+  a.cb-course-module:hover h3 { color: var(--cb-gold-strong); }
+  .cb-module-tag {
+    display: inline-flex; align-items: center; margin-bottom: 10px; padding: 5px 10px;
+    border-radius: var(--cb-radius-pill); font-size: 11px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .cb-module-tag-live { color: var(--cb-gold); background: rgba(245,180,0,0.1); border: 1px solid rgba(245,180,0,0.32); }
+
+  .cb-glossary-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; margin-top: 8px; }
+  .cb-glossary-item { padding: 16px 18px; background: rgba(5,7,8,0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
+  .cb-glossary-item strong { display: block; color: var(--cb-gold-strong); margin-bottom: 4px; font-size: 14px; }
+  .cb-glossary-item span { display: block; color: var(--cb-muted); font-size: 13px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="pathway-video-01-support.html">Video Pathway</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Course 2</span>
+    </nav>
+
+    <section class="cb-course-hero">
+      <span class="cb-label">Video Pathway &middot; Course 2 &middot; Available Now</span>
+      <h1>Large-Scale LED Video Systems</h1>
+      <p>
+        Course 1 taught you how to support an LED video wall build as a ground hand. This course
+        goes deeper: how large-scale direct-view LED systems are actually designed, built, powered,
+        rigged, and operated &mdash; across arenas, stadiums, corporate events, and outdoor
+        festivals.
+      </p>
+      <div class="cb-actions">
+        <a class="cb-btn cb-btn-primary" href="pathway-video-02-lesson-1-integrated-systems.html">Start Lesson 1</a>
+        <a class="cb-btn cb-btn-secondary" href="pathway-video-01-support.html">Back to Course 1</a>
+      </div>
+    </section>
+
+    <section class="cb-course-section">
+      <h2>What this course helps you understand</h2>
+      <p>
+        This is awareness-level training for new stagehands, early-career live event workers,
+        freelance labor, arena crews, festival crews, corporate event crews, and convention center
+        crews. It does not certify the learner, authorize restricted work, replace employer
+        training, replace manufacturer instructions, or replace engineered, electrical, rigging,
+        weather, venue, OSHA, ANSI/ESTA, or NFPA/NEC requirements.
+      </p>
+
+      <div class="cb-course-grid">
+        <article class="cb-course-card">
+          <h3>The wall as a system</h3>
+          <p>Why a problem on the wall may not be a bad panel at all, and how to report symptoms that a lead can act on.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Pixel pitch &amp; equipment choice</h3>
+          <p>Why the right panel gets selected against the job &mdash; audience, content, environment, and camera use, not one spec.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Signal flow &amp; redundancy</h3>
+          <p>What the media server and the LED processor each actually do, and why connected backup cabling isn't proven redundancy.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Power, data &amp; structure</h3>
+          <p>Why average consumption isn't a safe design load, and why a clean image never proves a wall is structurally safe.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Outdoor weather awareness</h3>
+          <p>Why an IP rating isn't an all-weather approval, and what small connector habits prevent larger failures.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Build, test &amp; troubleshoot</h3>
+          <p>How a controlled build reduces uncertainty, and how to classify a failure before replacing parts.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cb-course-section">
+      <h2>Course lessons</h2>
+      <div class="cb-course-module-list">
+        <a class="cb-course-module" href="pathway-video-02-lesson-1-integrated-systems.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>1. LED Walls Are Integrated Systems</h3>
+          <p>Recognize the major subsystems in a large LED wall and where failures actually happen.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>2. Pixel Pitch, Resolution, Brightness, and Equipment Choice</h3>
+          <p>Define pixel pitch, native resolution, nit, refresh rate, and scan rate, and why smaller pitch isn't automatically better.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-3-signal-flow-and-redundancy.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>3. Signal Flow, Processors, Mapping, and Redundancy</h3>
+          <p>Trace a typical LED signal chain and understand why redundancy must be tested, not assumed.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-4-power-and-data-distribution.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>4. Power and Data Distribution Awareness</h3>
+          <p>Maximum vs. average demand, inrush, phase balance, and cable discipline for copper and fiber.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-5-structural-support-and-rigging.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>5. Structural Support, Rigging, and Load-Path Awareness</h3>
+          <p>Ground-supported vs. flown walls, dead load vs. dynamic load, and role boundaries for rigging.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-6-outdoor-led-and-weather.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>6. Outdoor LED, Wind, Weather, Heat, and Lightning Awareness</h3>
+          <p>Why outdoor-rated doesn't mean safe in all weather, and what a weather plan has to assign.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-7-build-and-commissioning.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>7. Build, Configuration, Test, and Commissioning Workflow</h3>
+          <p>The normal LED workflow from advance to initial test, and why full-field patterns matter.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-video-02-lesson-8-troubleshooting-and-show-operation.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>8. Troubleshooting and Show Operation Discipline</h3>
+          <p>Classify failures before replacing parts, and what show-call monitoring actually involves.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="cb-course-section">
+      <h2>Glossary</h2>
+      <p>Terms used throughout this course. Come back to this list any time.</p>
+      <div class="cb-glossary-list">
+        <div class="cb-glossary-item"><strong>LED cabinet / tile / panel</strong><span>Modular enclosure containing LED modules, power supplies, receiving electronics, connectors, and locks.</span></div>
+        <div class="cb-glossary-item"><strong>LED module</strong><span>Smaller serviceable pixel assembly within a cabinet, may be replaced from front or rear.</span></div>
+        <div class="cb-glossary-item"><strong>Pixel pitch</strong><span>Center-to-center spacing between pixels, usually in millimeters &mdash; helps determine pixel density and viewing distance.</span></div>
+        <div class="cb-glossary-item"><strong>Native resolution</strong><span>Total physical pixel count of the assembled wall; defines the raster the processor must map.</span></div>
+        <div class="cb-glossary-item"><strong>Nit</strong><span>Unit of luminance equal to one candela per square meter, used to discuss display brightness.</span></div>
+        <div class="cb-glossary-item"><strong>Refresh rate</strong><span>How often LED driver electronics refresh the image; affects flicker and camera behavior.</span></div>
+        <div class="cb-glossary-item"><strong>Scan rate</strong><span>Multiplexing method used to drive LEDs; can affect brightness, efficiency, and camera artifacts.</span></div>
+        <div class="cb-glossary-item"><strong>LED processor / sending device</strong><span>Device that scales, maps, synchronizes, processes, and distributes LED data &mdash; the bridge between sources and receiving cards.</span></div>
+        <div class="cb-glossary-item"><strong>Receiving card</strong><span>Electronics in the cabinet that receive mapped LED data and drive outputs; must match configuration and hardware.</span></div>
+        <div class="cb-glossary-item"><strong>Mapping</strong><span>Assignment of processor outputs and data paths to physical cabinets; bad mapping causes missing, reversed, or displaced imagery.</span></div>
+        <div class="cb-glossary-item"><strong>EDID</strong><span>Display-identification data communicated to a video source; can affect resolution, refresh rate, and compatibility.</span></div>
+        <div class="cb-glossary-item"><strong>Genlock</strong><span>Common timing reference for synchronized video devices, helping avoid tearing or timing mismatch.</span></div>
+        <div class="cb-glossary-item"><strong>Frame synchronization</strong><span>Buffering/timing conversion to align asynchronous sources; can stabilize switching but may add latency.</span></div>
+        <div class="cb-glossary-item"><strong>IP rating</strong><span>Ingress-protection rating against solids and water &mdash; not a full weather approval or wind rating.</span></div>
+        <div class="cb-glossary-item"><strong>Redundancy</strong><span>Backup signal, processor, data, or power path &mdash; useful only when configured, current, and tested.</span></div>
+        <div class="cb-glossary-item"><strong>Ground support</strong><span>Structure supported from the ground with towers, frames, bases, ballast, or outriggers.</span></div>
+        <div class="cb-glossary-item"><strong>Flown wall</strong><span>LED array suspended from overhead rigging points or temporary roof systems, requiring qualified rigging personnel.</span></div>
+        <div class="cb-glossary-item"><strong>Dead load</strong><span>Permanent gravitational weight of the system and support hardware &mdash; includes more than panel weight.</span></div>
+        <div class="cb-glossary-item"><strong>Dynamic load</strong><span>Load created by motion, stopping, wind, impact, or oscillation &mdash; can exceed the static weight.</span></div>
+        <div class="cb-glossary-item"><strong>Fiber hygiene</strong><span>Cleaning, inspecting, protecting, and handling fiber correctly &mdash; dirty or damaged fiber can cause signal failures.</span></div>
+      </div>
+    </section>
+
+    <section class="cb-course-section cb-course-final">
+      <h2>Start with Lesson 1</h2>
+      <p>
+        Begin with LED walls as integrated systems, then continue through all eight lessons in order.
+      </p>
+      <div class="cb-actions">
+        <a class="cb-btn cb-btn-primary" href="pathway-video-02-lesson-1-integrated-systems.html">Start Lesson 1</a>
+        <a class="cb-btn cb-btn-secondary" href="pathway-video-01-support.html">Back to Course 1</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
