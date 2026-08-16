@@ -1,0 +1,12 @@
+{
+  "content_unit_id": "foundational-live-production-rigging",
+  "import_order": [
+    "metadata.json",
+    "rag-records/asset_inventory.jsonl",
+    "rag-records/slide_timing_chunks.jsonl",
+    "database/mysql_rag_schema.sql",
+    "web-package/rigging_web_presentation/"
+  ],
+  "large_binary_note": "Original zip and MP3 source artifacts are preserved in source-artifacts when storage backend supports large binary files. If GitHub connector upload fails for large binaries, use checksums in metadata.json to verify later manual or Git LFS upload.",
+  "data_outflow_status": "unconfirmed; schema is intentionally normalized and additive."
+}

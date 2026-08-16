@@ -1,0 +1,55 @@
+{
+  "content_unit_id": "first-two-years-stagehand-research-packet",
+  "sources": [
+    {
+      "source_id": "osha-ppe",
+      "title": "OSHA Personal Protective Equipment Overview",
+      "url": "https://www.osha.gov/personal-protective-equipment",
+      "organization": "Occupational Safety and Health Administration",
+      "relevance": "PPE definition, employer training expectations, PPE limitations and maintenance."
+    },
+    {
+      "source_id": "osha-fall-protection",
+      "title": "OSHA Fall Protection Overview",
+      "url": "https://www.osha.gov/fall-protection",
+      "organization": "Occupational Safety and Health Administration",
+      "relevance": "Fall hazard baseline, fall-protection thresholds, elevated platform/open-sided floor controls, dangerous-equipment caveat."
+    },
+    {
+      "source_id": "osha-workers",
+      "title": "OSHA Worker Rights and Protections",
+      "url": "https://www.osha.gov/workers",
+      "organization": "Occupational Safety and Health Administration",
+      "relevance": "Worker rights, safety training, required safety equipment, hazard reporting, anti-retaliation context."
+    },
+    {
+      "source_id": "osha-hazcom",
+      "title": "OSHA Hazard Communication Overview",
+      "url": "https://www.osha.gov/hazcom",
+      "organization": "Occupational Safety and Health Administration",
+      "relevance": "Hazard communication research path for chemicals, labels, and safety data sheets used around production shops and venues."
+    },
+    {
+      "source_id": "etcp-home",
+      "title": "Entertainment Technician Certification Program",
+      "url": "https://etcp.esta.org/",
+      "organization": "ESTA / ETCP",
+      "relevance": "Certification pathways for Arena Rigger, Theatre Rigger, Entertainment Electrician, and Portable Power Distribution Technician."
+    },
+    {
+      "source_id": "esta-tsp",
+      "title": "ESTA Technical Standards Program",
+      "url": "https://tsp.esta.org/",
+      "organization": "ESTA Technical Standards Program",
+      "relevance": "ANSI-accredited entertainment technology standards research path."
+    },
+    {
+      "source_id": "iatse-home",
+      "title": "IATSE",
+      "url": "https://www.iatse.net/",
+      "organization": "International Alliance of Theatrical Stage Employees",
+      "relevance": "Union/local structure, training, referral, and professional development research path."
+    }
+  ],
+  "source_policy": "Prefer official standards bodies, regulator pages, certification bodies, and union/local training pages before blogs or anecdotal sources."
+}

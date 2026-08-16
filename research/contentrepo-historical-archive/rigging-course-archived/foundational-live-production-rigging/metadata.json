@@ -1,0 +1,64 @@
+{
+  "content_unit_id": "foundational-live-production-rigging",
+  "title": "Foundational Live Production Rigging",
+  "repository_session": "database-creation-session-001",
+  "program": "The Crew Blueprint",
+  "domain": "live production",
+  "discipline": "rigging",
+  "content_type": "web presentation with narration and slide timings",
+  "data_outflow_status": "unconfirmed",
+  "database_target": "future MySQL-backed RAG extraction for LMS",
+  "preservation_policy": {
+    "preserve_originals": true,
+    "do_not_delete_or_lossily_transform_source_assets": true,
+    "derived_records_are_additive": true,
+    "exact_duplicate_rule": "If two files have the same SHA-256 checksum, store one canonical file and represent the duplicate path/name as an alias or reference record. Do not keep redundant binary copies unless there is a documented reason.",
+    "non_identical_rule": "If checksums differ, keep both files even if filenames, formats, or apparent content are similar.",
+    "dedupe_method": "SHA-256 exact-match only; no fuzzy matching, perceptual image matching, audio similarity, or content rewriting unless explicitly approved later."
+  },
+  "source_uploads": [
+    {
+      "filename": "foundational_live_production_rigging_web_package.zip",
+      "size_bytes": 55132355,
+      "sha256": "1689863762f54c38ef2a209643e9b767a9ecfb253fb411f1f38832da5a756784",
+      "role": "original uploaded web package"
+    },
+    {
+      "filename": "foundational_live_production_rigging_narration.mp3",
+      "size_bytes": 57527527,
+      "sha256": "5c327a096960cb63888a187904a65d7fde8755bd744a3e1fab25d48cb32d5c35",
+      "role": "original uploaded narration audio"
+    },
+    {
+      "filename": "foundational_live_production_rigging_slide_timings.csv",
+      "size_bytes": 3796,
+      "sha256": "03ba91db833f31dd4904a6173121b505081dd5caad16bf845a67e7485b24d449",
+      "role": "original uploaded timing table"
+    }
+  ],
+  "extracted_package_counts": {
+    "slides_png": 74,
+    "timing_rows": 74,
+    "web_runtime_files_in_zip": 78
+  },
+  "recommended_mysql_tables": [
+    "content_units",
+    "content_assets",
+    "source_artifacts",
+    "asset_aliases",
+    "slide_timing_chunks",
+    "rag_chunks"
+  ],
+  "embedding_candidates": [
+    "slide title plus timing text",
+    "future transcript text when generated",
+    "human QA notes",
+    "safety/compliance annotations"
+  ],
+  "notes": [
+    "The final LMS/RAG outflow is intentionally marked unconfirmed.",
+    "This folder should be treated as a staging content unit, not the final LMS schema.",
+    "Large binary files should be stored with Git LFS or object storage if connector upload limits block direct GitHub storage. The SHA-256 values above preserve identity for verification.",
+    "Identical duplicates should be removed only after checksum verification and replaced with alias/reference metadata so no source context is lost."
+  ]
+}

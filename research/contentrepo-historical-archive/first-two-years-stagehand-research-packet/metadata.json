@@ -1,0 +1,50 @@
+{
+  "content_unit_id": "first-two-years-stagehand-research-packet",
+  "title": "First Two Years Stagehand Research Packet",
+  "repository_session": "database-creation-session-001",
+  "program": "The Crew Blueprint",
+  "domain": "live production",
+  "discipline": "stagehand career entry",
+  "content_type": "research_packet",
+  "audience": "new professional stagehands in their first 0-24 months",
+  "data_outflow_status": "unconfirmed",
+  "database_target": "future MySQL-backed RAG extraction for LMS",
+  "preservation_policy": {
+    "preserve_original_prompt": true,
+    "derived_records_are_additive": true,
+    "exact_duplicate_rule": "If future duplicate research files are identical by SHA-256, store one canonical item and preserve duplicate path/name as an alias/reference."
+  },
+  "content_dimensions": [
+    "workflow dynamics",
+    "core competency progression",
+    "risk and safety framework",
+    "industry literacy",
+    "underestimated risks and blind spots",
+    "first 90 days checklist",
+    "house vs touring stagehand comparison",
+    "misconceptions",
+    "research roadmap",
+    "unsafe-situation decision framework",
+    "uncertainty and caveats"
+  ],
+  "recommended_mysql_tables": [
+    "content_units",
+    "research_packets",
+    "source_references",
+    "rag_chunks",
+    "asset_aliases"
+  ],
+  "embedding_candidates": [
+    "section-level research chunks",
+    "checklists",
+    "tables converted to text",
+    "source-index summaries",
+    "future QA annotations"
+  ],
+  "source_anchor_count": 7,
+  "notes": [
+    "This is a staging research packet for future LMS content and RAG extraction.",
+    "It is not a certification, safety manual, legal compliance guide, or site authorization document.",
+    "Practices vary by region, venue, union jurisdiction, employer, department, and event type."
+  ]
+}
