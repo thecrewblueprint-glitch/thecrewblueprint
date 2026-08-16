@@ -92,6 +92,12 @@ Each completed research document should preserve source links/citations, disting
 - **10** — General-hand support for staging/carpentry departments: modular decks, risers, platforms, stairs, guardrails, and scenic handling
 - **11** — General-hand support for backline, props, wardrobe, and general production-support items
 - **11A** — Sensitive show-item and performer-owned gear handling clarification
+- **12** — Lighting Production Flow Research Packet (real citations: published books, ETCP/ESTA/USITT/OSHA/NFPA) — source for Lighting Pathway Course 2
+- **12A** — Lighting Production Flow Rough Draft Curriculum Package — draft Course 2 was adapted from
+- **13** — Large-Scale LED Video Systems Research Packet (real citations: ANSI E1.21/E1.56/E1.6/ES1.7/E1.58, OSHA 29 CFR 1926.404, NFPA 70/NEC, AVIXA) — source for Video Pathway Course 2
+- **13A** — Large-Scale LED Video Systems Rough Draft Curriculum Package — draft Course 2 was adapted from
+- **14** — Stagehand Fundamentals original source (`complete_course_1_standardized_lesson_structure`, Modules 1-10). **No external citations recorded** — flagged, see doc 14's header and `10_content_research_queue.md`
+- **14A** — Stagehand Fundamentals Module 1 original source (structured JSON). Same no-citation flag as 14
 
 ## Suggested Claude synthesis role
 
@@ -117,4 +123,6 @@ There is **no NotebookLM step in the current workflow**.
 
 ## Status
 
-Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Additional research packages can be appended using the same structure.
+Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A (Lighting and Video Course 2 source material) and 14/14A (Stagehand Fundamentals original source, no citations recorded) were pulled into the repo from Drive 2026-08-16 per owner directive: every Drive document used to create learner content lives here, not just in Drive. Additional research packages can be appended using the same structure.
+
+**Note on 14/14A:** these two documents are archived as historical record only — they contain no external citation trail. New, genuinely sourced research packets to backfill real citations for Stagehand Fundamentals are a tracked, separate piece of work (see `10_content_research_queue.md`), not yet built.
