@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 4: Power, Control Data, Networks, and Layered Troubleshooting | The Crew Blueprint</title>
+<meta name="description" content="Separating power problems from data, patch, and mechanical problems, and why temporary power stays restricted to qualified personnel — Lesson 4 of the Lighting Pathway's Course 2." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Lesson 4: Power, Control Data, Networks, and Layered Troubleshooting | The Crew Blueprint" />
+<meta property="og:description" content="Separating power problems from data, patch, and mechanical problems on a lighting system." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+
+  .cb-lesson-progress { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  .cb-lesson-progress-track { flex: 1; min-width: 160px; height: 6px; border-radius: var(--cb-radius-pill); background: rgba(255,255,255,0.08); overflow: hidden; }
+  .cb-lesson-progress-fill { width: 80%; height: 100%; background: var(--cb-gold); }
+  .cb-lesson-progress-label { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); white-space: nowrap; }
+
+  .cb-guide-index { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+  .cb-guide-index a.cb-tag {
+    display: inline-flex; align-items: center; padding: 8px 14px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
+
+  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+  .cb-quiz-item { padding: 16px 20px; }
+  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
+  .cb-lesson-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .cb-lesson-nav-card { padding: 22px; text-align: left; display: flex; flex-direction: column; gap: 6px; }
+  .cb-lesson-nav-card span.cb-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cb-muted-2); }
+  .cb-lesson-nav-card h3 { margin: 0; font-size: 17px; }
+
+  .cb-drill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  @media (max-width: 820px) { .cb-lesson-nav, .cb-drill-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="pathway-lighting-02-production-flow.html">Lighting Pathway &middot; Course 2</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Lesson 4</span>
+    </nav>
+
+    <section class="cb-hero" style="padding-top: 8px;">
+      <div class="cb-lesson-progress" style="max-width: 620px; margin: 0 auto 18px;">
+        <span class="cb-lesson-progress-label">Lesson 4 of 5</span>
+        <span class="cb-lesson-progress-track"><span class="cb-lesson-progress-fill"></span></span>
+      </div>
+      <span class="cb-label">Lighting Pathway &middot; Course 2</span>
+      <h1>Power, Control Data, Networks, and Layered Troubleshooting</h1>
+      <p>
+        A fixture needs suitable power and correct control data. Similar symptoms can come from
+        different layers &mdash; source power, distro, circuit, cable, address, mode, patch, node
+        output, universe, IP configuration, fixture mechanics, or console programming. Good
+        troubleshooting isolates one layer at a time.
+      </p>
+      <div class="cb-guide-index">
+        <a class="cb-tag" href="#what-youll-learn">What You'll Learn</a>
+        <a class="cb-tag" href="#real-call">On a Real Call</a>
+        <a class="cb-tag" href="#mistakes">Beginner Mistakes</a>
+        <a class="cb-tag" href="#habit-safety">Habit &amp; Safety</a>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="what-youll-learn">
+      <h2>What You'll Learn</h2>
+      <ul class="cb-list">
+        <li>Separate power problems from data, patch, configuration, and mechanical problems.</li>
+        <li>Recognize the basic path from console to fixtures.</li>
+        <li>Understand DMX, RDM, sACN, Art-Net, universes, nodes, and switches at an introductory level.</li>
+        <li>Explain why temporary power work is restricted to qualified personnel.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section cb-section-left" id="real-call">
+      <h2>On a Real Call</h2>
+      <p class="cb-section-intro">
+        A common control path is LD/operator to console, console to Ethernet switch or fiber,
+        switch to gateway or DMX node, node to DMX line, then fixture.
+      </p>
+      <p>
+        On a festival, the house backbone may support visiting consoles and guest universes. On a
+        corporate show, the network may also interface with show control or video systems. In every
+        case, a fixture that isn't responding could be a power problem, a data problem, a patch
+        problem, or a mechanical problem &mdash; and they look similar from the floor.
+      </p>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">A lit fixture isn't a fully-checked fixture</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          Pan, tilt, zoom, shutters, color, fans, encoders, and network settings still need
+          checkout even after a fixture makes light.
+        </p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="mistakes">
+      <h2>Beginner Mistakes</h2>
+      <ul class="cb-list">
+        <li><strong>Changing several variables at once.</strong> This can hide the actual fault and create new problems.</li>
+        <li><strong>Assuming a lit fixture is fully functional.</strong> Pan, tilt, zoom, shutters, color, fans, encoders, and network settings still need checkout.</li>
+        <li><strong>Confusing DMX slots with fixture count.</strong> One fixture may use many slots.</li>
+        <li><strong>Assuming Ethernet automatically means the network is correct.</strong> IP addressing, universe routing, multicast/unicast behavior, priority, merging, VLANs, and switch configuration all matter.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section cb-section-left" id="habit-safety">
+      <h2>Professional Habit &amp; Safety Notes</h2>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Troubleshoot in layers</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          Confirm what changed, identify the symptom, isolate the simplest layer first, communicate
+          before changing shared settings, and record the fix if it changes the build.
+        </p>
+      </div>
+      <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">
+        <strong style="color: var(--cb-text);">Safety notes:</strong> Temporary entertainment power
+        must be designed, connected, and inspected by properly qualified personnel under applicable
+        codes, venue rules, employer procedures, and authority requirements. Single-pole feeder
+        connectors, grounding, bonding, protective devices, lockout/tagout, and verified
+        de-energization are not beginner tasks. Treat grounding and bonding as life-safety systems.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Quick Knowledge Check</h2>
+      <p class="cb-section-intro">Click a question to check your answer.</p>
+      <div class="cb-quiz-list">
+        <details class="cb-panel cb-quiz-item">
+          <summary>A fixture turns on but does not pan or tilt. What should a beginner assume?</summary>
+          <p>That it may still have a control, patch, mode, mechanical, or parameter issue &mdash; light output alone doesn't prove full function.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Who should perform or supervise temporary entertainment power connection and inspection?</summary>
+          <p>Properly qualified personnel under site rules &mdash; this is restricted, safety-sensitive work, not a beginner task.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>The console patch says a fixture is in one mode, but the fixture is set to another mode. What's the likely result?</summary>
+          <p>Parameters may respond incorrectly or not at all &mdash; console personality and fixture mode have to match.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What is a DMX universe?</summary>
+          <p>A set of up to 512 DMX data slots &mdash; it's a control-data grouping, not a fixture count.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What's the professional habit during troubleshooting?</summary>
+          <p>Isolate layers and communicate before changing shared settings &mdash; layered troubleshooting reduces new errors.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Scenario Practice</h2>
+      <p class="cb-section-intro">Two real situations. Think through your response before reading the expected one.</p>
+      <div class="cb-drill-grid">
+        <div class="cb-panel" style="padding: 20px 22px;">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Patch Mismatch at Checkout</strong>
+          <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">
+            A moving light responds to intensity, but the color and zoom controls are wrong. The
+            paperwork shows one personality, but the fixture menu appears to show a different mode.
+          </p>
+          <p style="margin: 0; color: var(--cb-muted); font-size: 14px;">
+            <strong style="color: var(--cb-text);">Expected response:</strong> Stop guessing. Tell
+            the lead or programmer what you observed. Compare fixture mode, address, universe,
+            console personality, and paperwork before changing anything.
+          </p>
+        </div>
+        <div class="cb-panel" style="padding: 20px 22px;">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Festival Guest Console</strong>
+          <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">
+            A visiting LD asks to plug a console into the house lighting network during a fast
+            changeover.
+          </p>
+          <p style="margin: 0; color: var(--cb-muted); font-size: 14px;">
+            <strong style="color: var(--cb-text);">Expected response:</strong> Direct the request to
+            the house lighting lead or network lead. Do not patch unknown network gear or change
+            switch/node settings without authorization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Key Takeaway</h2>
+      <div class="cb-panel" style="padding: 20px 22px;">
+        <p style="margin: 0; color: var(--cb-muted);">Do not guess across the whole system; isolate the layer and escalate restricted work.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Think About It</h2>
+      <ul class="cb-list">
+        <li>If a fixture does not respond, what layers could cause the symptom?</li>
+        <li>Why can duplicate IP addresses or uncontrolled DHCP damage the production flow?</li>
+        <li>Why should a beginner not attempt feeder or distro changes without authorization?</li>
+      </ul>
+    </section>
+
+    <section class="cb-section">
+      <h2 style="text-align: left; margin-bottom: 16px;">Continue Learning</h2>
+      <div class="cb-lesson-nav">
+        <a class="cb-panel cb-lesson-nav-card" href="pathway-lighting-02-lesson-5-focus-programming-and-load-out.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">Up Next</span>
+          <h3>Lesson 5: Focus, Programming, Show Operation, and Load-Out</h3>
+        </a>
+        <a class="cb-panel cb-lesson-nav-card" href="../resources.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">In the Meantime</span>
+          <h3 style="color: var(--cb-gold-strong);">Explore the Resource Hub &rarr;</h3>
+        </a>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Back to the course overview.</h2>
+          <p>See all five lessons in Lighting Pathway Course 2.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="pathway-lighting-02-production-flow.html">Course Overview</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

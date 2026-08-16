@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lighting Pathway Course 2: Lighting Production Flow | The Crew Blueprint</title>
+<meta name="description" content="How lighting systems move from creative intent through advancing, load-in, rigging coordination, power, networking, focus, programming, show operation, and load-out." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-02-production-flow/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Lighting Pathway Course 2: Lighting Production Flow | The Crew Blueprint" />
+<meta property="og:description" content="How lighting systems move from creative intent through load-in, power, networking, programming, and load-out." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-course-hero { text-align: center; padding: clamp(32px, 6vw, 60px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); margin-bottom: 18px; }
+  .cb-course-hero h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 16px; }
+  .cb-course-hero p { max-width: 780px; margin: 0 auto 22px; color: var(--cb-muted); font-size: clamp(17px, 2vw, 20px); }
+  .cb-course-section { margin-top: 18px; padding: clamp(24px, 4vw, 38px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); text-align: left; }
+  .cb-course-section h2 { margin: 0 0 14px; font-size: clamp(26px, 4vw, 38px); text-align: left; }
+  .cb-course-section > p { margin: 0 0 18px; color: var(--cb-muted); }
+  .cb-course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+  .cb-course-module-list { display: grid; gap: 14px; margin-top: 18px; }
+  .cb-course-card, .cb-course-module { padding: 22px; background: rgba(5, 7, 8, 0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-align: left; }
+  .cb-course-card h3, .cb-course-module h3 { margin: 0 0 8px; font-size: clamp(19px, 3vw, 24px); text-align: left; }
+  .cb-course-card p, .cb-course-module p { margin: 0; color: var(--cb-muted); }
+  .cb-course-final { text-align: center; }
+  .cb-course-final h2 { text-align: center; }
+  .cb-course-final p { max-width: 700px; margin: 0 auto 18px; }
+  @media (max-width: 820px) { .cb-course-grid { grid-template-columns: 1fr; } }
+
+  .cb-course-module { position: relative; }
+  a.cb-course-module { display: block; text-decoration: none; color: inherit; transition: border-color 180ms ease; }
+  a.cb-course-module:hover { border-color: var(--cb-gold-border); }
+  a.cb-course-module:hover h3 { color: var(--cb-gold-strong); }
+  .cb-module-tag {
+    display: inline-flex; align-items: center; margin-bottom: 10px; padding: 5px 10px;
+    border-radius: var(--cb-radius-pill); font-size: 11px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .cb-module-tag-live { color: var(--cb-gold); background: rgba(245,180,0,0.1); border: 1px solid rgba(245,180,0,0.32); }
+
+  .cb-glossary-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; margin-top: 8px; }
+  .cb-glossary-item { padding: 16px 18px; background: rgba(5,7,8,0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
+  .cb-glossary-item strong { display: block; color: var(--cb-gold-strong); margin-bottom: 4px; font-size: 14px; }
+  .cb-glossary-item span { display: block; color: var(--cb-muted); font-size: 13px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="pathway-lighting-01-support.html">Lighting Pathway</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Course 2</span>
+    </nav>
+
+    <section class="cb-course-hero">
+      <span class="cb-label">Lighting Pathway &middot; Course 2 &middot; Available Now</span>
+      <h1>Lighting Production Flow</h1>
+      <p>
+        Course 1 taught you how to support a lighting hang as a ground hand. This course goes
+        deeper: how a lighting system actually moves from creative intent through advancing,
+        load-in, rigging coordination, power, networking, focus, programming, show operation, and
+        load-out &mdash; across corporate, arena, stadium, and outdoor festival production.
+      </p>
+      <div class="cb-actions">
+        <a class="cb-btn cb-btn-primary" href="pathway-lighting-02-lesson-1-production-lifecycle.html">Start Lesson 1</a>
+        <a class="cb-btn cb-btn-secondary" href="pathway-lighting-01-support.html">Back to Course 1</a>
+      </div>
+    </section>
+
+    <section class="cb-course-section">
+      <h2>What this course helps you understand</h2>
+      <p>
+        This is awareness-level training for new stagehands, early-career live event workers,
+        freelance labor, local crew, and workers trying to become reliable lighting crew members on
+        real calls. It does not certify, authorize, or qualify you to perform restricted rigging,
+        electrical, lift, forklift, pyrotechnic, automation, fall-protection, or weather-command
+        work &mdash; those stay with your employer, the venue, and qualified, authorized personnel.
+      </p>
+
+      <div class="cb-course-grid">
+        <article class="cb-course-card">
+          <h3>The lifecycle</h3>
+          <p>Why the console is only one part of the system, and the full chain from concept to load-out.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Advancing &amp; documentation</h3>
+          <p>How confirmed information, paperwork, and shop prep reduce jobsite risk before the truck even arrives.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Load-in &amp; coordination</h3>
+          <p>How lighting interfaces with rigging, audio, video, scenic, and venue operations during the build.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Power, data &amp; troubleshooting</h3>
+          <p>DMX, RDM, sACN, Art-Net, and why isolating one layer at a time beats guessing across the whole system.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Focus &amp; programming</h3>
+          <p>The difference between a lit fixture and a fully-checked one, and how scripted and busked shows differ.</p>
+        </article>
+        <article class="cb-course-card">
+          <h3>Show operation &amp; load-out</h3>
+          <p>Why load-out is high-risk, not low-risk, and what has to be documented before the truck leaves.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cb-course-section">
+      <h2>Course lessons</h2>
+      <div class="cb-course-module-list">
+        <a class="cb-course-module" href="pathway-lighting-02-lesson-1-production-lifecycle.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>1. The Lighting Production Lifecycle</h3>
+          <p>Recognize the full path from creative intent to load-out and why standardized process still needs site-specific adaptation.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-lighting-02-lesson-2-advancing-and-documentation.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>2. Advancing, Documentation, and Shop Preparation</h3>
+          <p>What advance work confirms, the core documents a lighting department relies on, and why one controlled record matters.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>3. Load-In, Rig Assembly, and Department Coordination</h3>
+          <p>The early sequence of a lighting load-in, the load path concept, and why overhead work needs controlled zones.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>4. Power, Control Data, Networks, and Layered Troubleshooting</h3>
+          <p>Separating power problems from data, patch, and mechanical problems &mdash; and why temporary power stays restricted work.</p>
+        </a>
+        <a class="cb-course-module" href="pathway-lighting-02-lesson-5-focus-programming-and-load-out.html">
+          <span class="cb-module-tag cb-module-tag-live">Start Lesson</span>
+          <h3>5. Focus, Programming, Show Operation, and Load-Out</h3>
+          <p>Function check versus focus versus programming, scripted vs. busked shows, and why load-out is high-risk.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="cb-course-section">
+      <h2>Glossary</h2>
+      <p>Terms used throughout this course. Come back to this list any time.</p>
+      <div class="cb-glossary-list">
+        <div class="cb-glossary-item"><strong>Address</strong><span>The starting control slot assigned to a fixture, used to match it to the console patch.</span></div>
+        <div class="cb-glossary-item"><strong>Art-Net</strong><span>An IP-based entertainment-control protocol that can carry many universes across Ethernet networks.</span></div>
+        <div class="cb-glossary-item"><strong>Busking</strong><span>Live improvised operation using prepared groups, palettes, effects, and playbacks &mdash; common in concerts and festivals.</span></div>
+        <div class="cb-glossary-item"><strong>Circuit</strong><span>An electrical path supplying loads through appropriate protection.</span></div>
+        <div class="cb-glossary-item"><strong>Cue</strong><span>A recorded lighting state or action, executed by an operator or triggered by show control/timecode.</span></div>
+        <div class="cb-glossary-item"><strong>DMX Universe</strong><span>A set of up to 512 DMX data slots &mdash; a control-data grouping, not a fixture count.</span></div>
+        <div class="cb-glossary-item"><strong>Distro</strong><span>Temporary electrical distribution equipment &mdash; restricted power equipment handled by qualified personnel.</span></div>
+        <div class="cb-glossary-item"><strong>FOH</strong><span>Front of house &mdash; usually an audience-area operating or lighting position.</span></div>
+        <div class="cb-glossary-item"><strong>Loom</strong><span>A grouped bundle of cables, often preassembled, that speeds repeated truss or floor-package installation.</span></div>
+        <div class="cb-glossary-item"><strong>Node</strong><span>A device that converts or routes network control data to outputs such as DMX.</span></div>
+        <div class="cb-glossary-item"><strong>Patch</strong><span>The mapping between console identities and physical or network outputs &mdash; must match addresses, modes, universes, and outputs.</span></div>
+        <div class="cb-glossary-item"><strong>Point</strong><span>An approved suspension location for rigging &mdash; requires qualified approval, never assumed safe by beginners.</span></div>
+        <div class="cb-glossary-item"><strong>RDM</strong><span>Bidirectional management over compatible DMX infrastructure &mdash; helps identify or monitor fixtures, but doesn't replace paperwork.</span></div>
+        <div class="cb-glossary-item"><strong>sACN</strong><span>A standardized IP-based transport for entertainment-control levels, requiring correct addressing and routing.</span></div>
+        <div class="cb-glossary-item"><strong>Secondary retention</strong><span>A secondary means intended to retain equipment if the primary attachment fails &mdash; part of overhead fixture safety.</span></div>
+        <div class="cb-glossary-item"><strong>Trim</strong><span>The final operating height of flown equipment &mdash; access gets harder once trusses reach show trim.</span></div>
+        <div class="cb-glossary-item"><strong>VLAN</strong><span>Logical network separation through managed switching, used to separate show-control or lighting traffic when designed and tested.</span></div>
+      </div>
+    </section>
+
+    <section class="cb-course-section cb-course-final">
+      <h2>Start with Lesson 1</h2>
+      <p>
+        Begin with the production lifecycle, then continue through all five lessons in order.
+      </p>
+      <div class="cb-actions">
+        <a class="cb-btn cb-btn-primary" href="pathway-lighting-02-lesson-1-production-lifecycle.html">Start Lesson 1</a>
+        <a class="cb-btn cb-btn-secondary" href="pathway-lighting-01-support.html">Back to Course 1</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
