@@ -38,8 +38,11 @@ Recommended handoff order:
 20. `13A` companion video curriculum package
 21. `14` Stagehand Fundamentals original source archive
 22. `14A` Stagehand Fundamentals Module 1 original source archive
-23. `15-stagehand-fundamentals-entry-level-role-validation.md` — sourced validation for entry-level stagehand role, event phases, environments, crew structure, employer-valued behaviors, and communication norms.
-24. `16-stagehand-fundamentals-safety-ppe-validation.md` — sourced validation for OSHA worker rights, HazCom, hazard/risk framing, PPE standards, show blacks, heat/hydration, fatigue, and readiness.
+23. `15-stagehand-fundamentals-entry-level-role-validation.md`
+24. `16-stagehand-fundamentals-safety-ppe-validation.md`
+25. `17-stagehand-fundamentals-jobsite-hazard-awareness-validation.md`
+26. `18-stagehand-fundamentals-load-in-load-out-validation.md`
+27. `19-stagehand-fundamentals-tools-handling-hiring-career-growth-validation.md`
 
 Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
@@ -71,6 +74,9 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - For backline, props, and wardrobe, distinguish **moving an assigned item** from changing its settings, contents, preset, fit, condition, packing logic, or placement. Treat show-critical and performer-owned items as requiring explicit department direction.
 - For Stagehand Fundamentals citation backfill, treat each validation packet as evidence for claims already present in the course. If a claim is only partially supported, regional, employer-specific, or not directly sourced, preserve that qualification rather than upgrading it into a universal rule.
 - For safety/PPE validation, distinguish **OSHA legal requirements**, **ANSI/ISEA consensus-performance standards**, and **industry/employer practices** such as show blacks. Do not convert hazard-dependent PPE into a universal stagehand kit.
+- For jobsite-hazard content, distinguish equipment-specific OSHA operator-training rules from broader employer authorization/industry practice. Do not imply OSHA has a stage-specific fly-system or automation license where none exists.
+- For load-in/load-out content, distinguish direct evidence from inference when discussing fatigue, time pressure, darkness/visibility, and beginner assignment patterns.
+- For tools/handling/career content, do not present the over-under coil as an OSHA requirement, the OSHA eTool 50-lb figure as a universal federal lifting limit, or the Crew Blueprint first-30-days plan as an industry-standard onboarding sequence.
 
 ## Organization
 
@@ -102,14 +108,17 @@ Each completed research document should preserve source links/citations, disting
 - **10** — General-hand support for staging/carpentry departments: modular decks, risers, platforms, stairs, guardrails, and scenic handling
 - **11** — General-hand support for backline, props, wardrobe, and general production-support items
 - **11A** — Sensitive show-item and performer-owned gear handling clarification
-- **12** — Lighting Production Flow Research Packet (real citations: published books, ETCP/ESTA/USITT/OSHA/NFPA) — source for Lighting Pathway Course 2
-- **12A** — Lighting Production Flow Rough Draft Curriculum Package — draft Course 2 was adapted from
-- **13** — Large-Scale LED Video Systems Research Packet (real citations: ANSI E1.21/E1.56/E1.6/ES1.7/E1.58, OSHA 29 CFR 1926.404, NFPA 70/NEC, AVIXA) — source for Video Pathway Course 2
-- **13A** — Large-Scale LED Video Systems Rough Draft Curriculum Package — draft Course 2 was adapted from
-- **14** — Stagehand Fundamentals original source (`complete_course_1_standardized_lesson_structure`, Modules 1-10). **No external citations recorded** — flagged, see doc 14's header and `10_content_research_queue.md`
-- **14A** — Stagehand Fundamentals Module 1 original source (structured JSON). Same no-citation flag as 14
-- **15** — Stagehand Fundamentals entry-level role validation — sourced evidence for day-to-day duties, load-in/show-call/load-out, work environments, crew structure, employer-valued behaviors, and call etiquette; includes explicit qualification of weak/overgeneralized claims
-- **16** — Stagehand Fundamentals safety/PPE validation — OSHA worker rights and employer duties, HazCom, hazard/risk language, PPE hazard assessment, head/eye/foot/hand/hearing/high-visibility standards, show-black attire evidence, heat/hydration, fatigue and readiness; includes corrections where existing course claims overstate universal requirements
+- **12** — Lighting Production Flow Research Packet
+- **12A** — Lighting Production Flow Rough Draft Curriculum Package
+- **13** — Large-Scale LED Video Systems Research Packet
+- **13A** — Large-Scale LED Video Systems Rough Draft Curriculum Package
+- **14** — Stagehand Fundamentals original source archive; no external citations recorded
+- **14A** — Stagehand Fundamentals Module 1 original source archive; same citation gap as 14
+- **15** — Stagehand Fundamentals entry-level role validation
+- **16** — Stagehand Fundamentals safety/PPE validation
+- **17** — Stagehand Fundamentals jobsite hazard-awareness validation
+- **18** — Stagehand Fundamentals load-in/load-out operational validation
+- **19** — Stagehand Fundamentals tools/gear/handling and hiring/career-growth validation
 
 ## Suggested Claude synthesis role
 
@@ -136,6 +145,6 @@ There is **no NotebookLM step in the current workflow**.
 
 ## Status
 
-Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A (Lighting and Video Course 2 source material) and 14/14A (Stagehand Fundamentals original source, no citations recorded) were pulled into the repo from Drive 2026-08-16 per owner directive: every Drive document used to create learner content lives here, not just in Drive.
+Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A contain Lighting and Video Course 2 source material. Packages 14/14A preserve the Stagehand Fundamentals original source archive and its original citation gap.
 
-Stagehand Fundamentals citation backfill is underway. **Package 15** validates the entry-level role, event phases, environments, crew structure, employer-valued behaviors, and communication/etiquette norms. **Package 16** validates safety/PPE claims and separates OSHA requirements from consensus standards and employer/industry practices. Additional validation packets should continue from 17 onward unless a companion note is needed.
+Stagehand Fundamentals citation backfill now includes **Packages 15–19**: entry-level role and call structure; safety/PPE; jobsite hazards; load-in/load-out operations; and tools/gear/handling plus hiring/career-growth. Additional validation packets should continue from 20 onward unless a companion clarification note is needed.
