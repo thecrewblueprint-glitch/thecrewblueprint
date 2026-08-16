@@ -7,32 +7,33 @@ This directory is the staging library for deep research supporting The Crew Blue
 Research files collected here are intended to be:
 
 1. Stored as durable source material in the repository.
-2. Imported as a batch into NotebookLM for cross-document synthesis and source-grounded analysis.
-3. Handed off to Claude for downstream curriculum/content development.
+2. Kept as separate, source-traceable research packages.
+3. Handed directly to Claude for curriculum architecture, synthesis, and downstream content development.
 
-## NotebookLM ingestion order
+## Claude handoff order
 
-Keep the research files as **separate Markdown sources** rather than merging them into one document. This preserves source-level traceability inside NotebookLM.
+Keep the research files as **separate Markdown sources** rather than merging them into one document. This preserves source-level traceability during Claude synthesis.
 
-Recommended ingestion order:
+Recommended handoff order:
 
-1. `00-NOTEBOOKLM-RESEARCH-SYNTHESIS-NOTES.md` — interpretive map of the research set; use as orientation, not as a substitute for the underlying evidence.
-2. `01-general-stagehand-career-levels-us-live-events.md`
-3. `02-department-skill-progressions-us-live-events.md`
-4. `03-live-events-career-lanes-warehouse-touring-venue.md`
-5. `04-safety-training-timing-crowd-weather-electrical-risk-assessment.md`
-6. `04A-note-stagehand-public-area-material-interaction-awareness.md` — curriculum clarification to Package 04; prioritize this framing for general-hand public-area safety.
-7. `05-stage-management-and-cross-cutting-production-leadership.md`
-8. `06-training-certification-curriculum-progression-models.md`
-9. `07-ground-hand-lighting-support.md`
-10. `08-ground-hand-video-wall-support.md`
-11. `08A-note-led-wall-model-specific-handling-boundaries.md` — curriculum clarification to Package 08; use it to prevent model-specific LED procedures from being taught as universal rules.
-12. `09-ground-hand-audio-support.md`
-13. `10-ground-hand-staging-carpentry-support.md`
-14. `11-ground-hand-backline-props-wardrobe-support.md`
-15. `11A-note-sensitive-show-items-and-performer-owned-gear.md` — curriculum clarification to Package 11; use it to distinguish ordinary freight handling from show-critical, preset-dependent, or performer-owned items.
+1. `00-NOTEBOOKLM-RESEARCH-SYNTHESIS-NOTES.md` — legacy filename; interpretive map of the early research set. Its NotebookLM-specific wording is obsolete. Use it only as synthesis context, not as a substitute for the underlying evidence.
+2. `00A-CLAUDE-HANDOFF-WORKFLOW-NOTE.md` — current workflow note; this supersedes NotebookLM-specific workflow instructions.
+3. `01-general-stagehand-career-levels-us-live-events.md`
+4. `02-department-skill-progressions-us-live-events.md`
+5. `03-live-events-career-lanes-warehouse-touring-venue.md`
+6. `04-safety-training-timing-crowd-weather-electrical-risk-assessment.md`
+7. `04A-note-stagehand-public-area-material-interaction-awareness.md`
+8. `05-stage-management-and-cross-cutting-production-leadership.md`
+9. `06-training-certification-curriculum-progression-models.md`
+10. `07-ground-hand-lighting-support.md`
+11. `08-ground-hand-video-wall-support.md`
+12. `08A-note-led-wall-model-specific-handling-boundaries.md`
+13. `09-ground-hand-audio-support.md`
+14. `10-ground-hand-staging-carpentry-support.md`
+15. `11-ground-hand-backline-props-wardrobe-support.md`
+16. `11A-note-sensitive-show-items-and-performer-owned-gear.md`
 
-Claude can package these with the additional Crew Blueprint files selected for the final NotebookLM source set.
+Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
 ## Source hierarchy
 
@@ -42,7 +43,7 @@ When sources appear to differ, use this hierarchy:
 2. **Other cited industry evidence** — trade publications, job postings, training providers, worker/community evidence where included.
 3. **Research-package analysis and proposed models** — synthesis derived from the evidence.
 4. **Companion clarification notes** — targeted curriculum corrections or interpretation safeguards tied to a numbered package.
-5. **`00-NOTEBOOKLM-RESEARCH-SYNTHESIS-NOTES.md`** — cross-package interpretation and curriculum implications.
+5. **Cross-package synthesis notes** — orientation and interpretation only; they must not override stronger source evidence.
 
 The synthesis and companion notes deliberately contain proposed Crew Blueprint structures. Those structures must not be mistaken for existing national industry standards.
 
@@ -63,7 +64,7 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 
 ## Organization
 
-Research is stored as separate Markdown documents so individual topics remain independently citable and easy to ingest.
+Research is stored as separate Markdown documents so individual topics remain independently citable and easy to hand directly to Claude.
 
 Naming convention:
 
@@ -75,7 +76,8 @@ Each completed research document should preserve source links/citations, disting
 
 ## Current research set
 
-- **00** — Cross-package synthesis and interpretation notes
+- **00** — Cross-package synthesis and interpretation notes *(legacy filename contains NotebookLM wording; workflow references are superseded by 00A)*
+- **00A** — Current Claude handoff/workflow clarification
 - **01** — General stagehand / ground-hand career levels
 - **02** — Department skill progressions: audio, lighting, video, rigging, electrics, carpentry, staging
 - **03** — Warehouse, touring/field, and fixed-venue career lanes
@@ -91,25 +93,28 @@ Each completed research document should preserve source links/citations, disting
 - **11** — General-hand support for backline, props, wardrobe, and general production-support items
 - **11A** — Sensitive show-item and performer-owned gear handling clarification
 
-## Suggested NotebookLM role
+## Suggested Claude synthesis role
 
-NotebookLM should be used to perform **source-grounded cross-document synthesis**, identify recurring competencies, compare conflicting terminology, trace proposed curriculum claims back to evidence, and distinguish documented industry practice from Crew Blueprint design recommendations.
+Claude should perform **source-grounded cross-document synthesis**, identify recurring competencies, compare conflicting terminology, trace proposed curriculum claims back to evidence, and distinguish documented industry practice from Crew Blueprint design recommendations.
 
-The `00` synthesis file includes a set of suggested cross-source questions for this purpose.
-
-For Packages 07–11 specifically, useful synthesis questions include:
+Useful cross-source questions include:
 
 - Which department-support tasks are broadly transferable between calls, and which are product/company-specific?
 - What physical tasks can a general hand safely repeat after demonstration without being treated as a department technician?
 - Which actions should trigger an immediate stop-and-ask boundary because they enter technical, electrical, rigging, configuration, troubleshooting, repair, structural, or performer/show-critical scope?
 - Which common gear-handling mistakes should be taught as prevention scenarios rather than specialist technique?
-- Which support tasks are best taught as "move/stage/assist" versus "do not adjust/modify/configure"?
+- Which support tasks are best taught as `move/stage/assist` versus `do not adjust/modify/configure`?
 - How should the course teach ownership sensitivity for department-owned, preset-dependent, custom, or performer-owned items?
+- Which competencies recur across every entry-level live-event pathway?
+- Which skills require supervised practical experience rather than online instruction alone?
+- Which proposed curriculum claims are inference/design recommendations rather than documented industry standards?
 
 ## Workflow
 
-Deep Research → Repository Research Library → Claude packaging with additional source files → NotebookLM source set → source-grounded synthesis → Claude curriculum/content architecture
+**Deep Research → Repository Research Library → Claude → Curriculum/Content Architecture**
+
+There is **no NotebookLM step in the current workflow**.
 
 ## Status
 
-Research Packages 01–11 and companion notes 04A/08A/11A are organized and prepared for NotebookLM packaging. Additional research packages can be appended using the same structure.
+Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Additional research packages can be appended using the same structure.
