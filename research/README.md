@@ -27,6 +27,10 @@ Recommended ingestion order:
 9. `07-ground-hand-lighting-support.md`
 10. `08-ground-hand-video-wall-support.md`
 11. `08A-note-led-wall-model-specific-handling-boundaries.md` — curriculum clarification to Package 08; use it to prevent model-specific LED procedures from being taught as universal rules.
+12. `09-ground-hand-audio-support.md`
+13. `10-ground-hand-staging-carpentry-support.md`
+14. `11-ground-hand-backline-props-wardrobe-support.md`
+15. `11A-note-sensitive-show-items-and-performer-owned-gear.md` — curriculum clarification to Package 11; use it to distinguish ordinary freight handling from show-critical, preset-dependent, or performer-owned items.
 
 Claude can package these with the additional Crew Blueprint files selected for the final NotebookLM source set.
 
@@ -52,8 +56,10 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - Treat theatrical stage management as a distinct discipline while preserving context differences with concert/festival uses of the title `stage manager`.
 - For general hands, prioritize **Public-Area and Worksite Interaction Awareness** over formal crowd-management framing. Crowd Manager material establishes a responsibility boundary and may support later security/event-operations content.
 - Do not infer qualification to perform specialized, regulated, electrical, rigging, supervisory, or safety-critical work from completion of educational content alone.
-- For lighting/video support, distinguish **physical department support under direction** from specialist configuration, troubleshooting, focus, patching, processing, calibration, repair, or other technical ownership.
+- For lighting/video/audio support, distinguish **physical department support under direction** from specialist configuration, troubleshooting, focus, patching, processing, tuning, calibration, repair, RF coordination, or other technical ownership.
 - For LED walls, do not generalize one manufacturer's handle locations, lock sequence, connector family, or storage orientation into an industry-wide rule.
+- For staging/carpentry support, distinguish **participating in modular assembly under direction** from structural modification, load-bearing decisions, hardware substitution, final leveling acceptance, or safety sign-off.
+- For backline, props, and wardrobe, distinguish **moving an assigned item** from changing its settings, contents, preset, fit, condition, packing logic, or placement. Treat show-critical and performer-owned items as requiring explicit department direction.
 
 ## Organization
 
@@ -63,7 +69,7 @@ Naming convention:
 
 `NN-topic-name.md`
 
-Companion notes may use suffixes such as `04A` or `08A` when they clarify or amend interpretation of a numbered package without replacing its underlying research.
+Companion notes may use suffixes such as `04A`, `08A`, or `11A` when they clarify or amend interpretation of a numbered package without replacing its underlying research.
 
 Each completed research document should preserve source links/citations, distinguish sourced findings from analysis, and include the research date when information may change over time.
 
@@ -80,6 +86,10 @@ Each completed research document should preserve source links/citations, disting
 - **07** — General-hand support for lighting departments during load-in, hang, focus, and strike
 - **08** — General-hand support for LED video-wall handling, build, cabling, staging, and strike
 - **08A** — LED-wall model-specific handling and scope-boundary clarification
+- **09** — General-hand support for audio departments during load-in, PA/system build, show, and strike
+- **10** — General-hand support for staging/carpentry departments: modular decks, risers, platforms, stairs, guardrails, and scenic handling
+- **11** — General-hand support for backline, props, wardrobe, and general production-support items
+- **11A** — Sensitive show-item and performer-owned gear handling clarification
 
 ## Suggested NotebookLM role
 
@@ -87,12 +97,14 @@ NotebookLM should be used to perform **source-grounded cross-document synthesis*
 
 The `00` synthesis file includes a set of suggested cross-source questions for this purpose.
 
-For Packages 07 and 08 specifically, useful synthesis questions include:
+For Packages 07–11 specifically, useful synthesis questions include:
 
 - Which department-support tasks are broadly transferable between calls, and which are product/company-specific?
 - What physical tasks can a general hand safely repeat after demonstration without being treated as a department technician?
-- Which actions should trigger an immediate stop-and-ask boundary because they enter technical, electrical, rigging, configuration, troubleshooting, or repair scope?
+- Which actions should trigger an immediate stop-and-ask boundary because they enter technical, electrical, rigging, configuration, troubleshooting, repair, structural, or performer/show-critical scope?
 - Which common gear-handling mistakes should be taught as prevention scenarios rather than specialist technique?
+- Which support tasks are best taught as "move/stage/assist" versus "do not adjust/modify/configure"?
+- How should the course teach ownership sensitivity for department-owned, preset-dependent, custom, or performer-owned items?
 
 ## Workflow
 
@@ -100,4 +112,4 @@ Deep Research → Repository Research Library → Claude packaging with addition
 
 ## Status
 
-Research Packages 01–08 and companion notes 04A/08A are organized and prepared for NotebookLM packaging. Additional research packages can be appended using the same structure.
+Research Packages 01–11 and companion notes 04A/08A/11A are organized and prepared for NotebookLM packaging. Additional research packages can be appended using the same structure.
