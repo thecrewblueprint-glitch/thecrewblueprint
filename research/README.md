@@ -43,6 +43,7 @@ Recommended handoff order:
 25. `17-stagehand-fundamentals-jobsite-hazard-awareness-validation.md`
 26. `18-stagehand-fundamentals-load-in-load-out-validation.md`
 27. `19-stagehand-fundamentals-tools-handling-hiring-career-growth-validation.md`
+28. `20-stagehand-fundamentals-gap-audit-and-supplemental-validation.md` — cross-check of Packages 15–19 plus supplemental evidence for housekeeping/egress, near misses, push-vs-pull/cart sightlines, hand tools, tape distinctions, pinch/crush awareness, and remaining non-standardized claims.
 
 Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
@@ -77,6 +78,7 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - For jobsite-hazard content, distinguish equipment-specific OSHA operator-training rules from broader employer authorization/industry practice. Do not imply OSHA has a stage-specific fly-system or automation license where none exists.
 - For load-in/load-out content, distinguish direct evidence from inference when discussing fatigue, time pressure, darkness/visibility, and beginner assignment patterns.
 - For tools/handling/career content, do not present the over-under coil as an OSHA requirement, the OSHA eTool 50-lb figure as a universal federal lifting limit, or the Crew Blueprint first-30-days plan as an industry-standard onboarding sequence.
+- Package 20 is the final gap audit for the 15–19 backfill set. Its key rule is to label unsupported universal claims honestly as employer/local practice or Crew Blueprint instructional framing rather than forcing them into a false national standard.
 
 ## Organization
 
@@ -119,6 +121,7 @@ Each completed research document should preserve source links/citations, disting
 - **17** — Stagehand Fundamentals jobsite hazard-awareness validation
 - **18** — Stagehand Fundamentals load-in/load-out operational validation
 - **19** — Stagehand Fundamentals tools/gear/handling and hiring/career-growth validation
+- **20** — Stagehand Fundamentals gap audit and supplemental validation — fills remaining evidence gaps from Packages 15–19 and records claims that must remain labeled as local practice, common convention, or Crew Blueprint guidance rather than national standards
 
 ## Suggested Claude synthesis role
 
@@ -147,4 +150,4 @@ There is **no NotebookLM step in the current workflow**.
 
 Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A contain Lighting and Video Course 2 source material. Packages 14/14A preserve the Stagehand Fundamentals original source archive and its original citation gap.
 
-Stagehand Fundamentals citation backfill now includes **Packages 15–19**: entry-level role and call structure; safety/PPE; jobsite hazards; load-in/load-out operations; and tools/gear/handling plus hiring/career-growth. Additional validation packets should continue from 20 onward unless a companion clarification note is needed.
+The Stagehand Fundamentals citation backfill is now covered by **Packages 15–20**. Packages 15–19 supply the main validation research; Package 20 audits those five packets against the course and fills the remaining smaller gaps while explicitly documenting claims that still should not be presented as universal industry standards.
