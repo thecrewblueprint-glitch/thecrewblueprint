@@ -32,6 +32,13 @@ Recommended handoff order:
 14. `10-ground-hand-staging-carpentry-support.md`
 15. `11-ground-hand-backline-props-wardrobe-support.md`
 16. `11A-note-sensitive-show-items-and-performer-owned-gear.md`
+17. `12-lighting-production-flow-research-packet.md` or current equivalent Package 12 source file
+18. `12A` companion lighting curriculum package
+19. `13` large-scale LED/video research packet
+20. `13A` companion video curriculum package
+21. `14` Stagehand Fundamentals original source archive
+22. `14A` Stagehand Fundamentals Module 1 original source archive
+23. `15-stagehand-fundamentals-entry-level-role-validation.md` — sourced validation for entry-level stagehand role, event phases, environments, crew structure, employer-valued behaviors, and communication norms.
 
 Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
@@ -61,6 +68,7 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - For LED walls, do not generalize one manufacturer's handle locations, lock sequence, connector family, or storage orientation into an industry-wide rule.
 - For staging/carpentry support, distinguish **participating in modular assembly under direction** from structural modification, load-bearing decisions, hardware substitution, final leveling acceptance, or safety sign-off.
 - For backline, props, and wardrobe, distinguish **moving an assigned item** from changing its settings, contents, preset, fit, condition, packing logic, or placement. Treat show-critical and performer-owned items as requiring explicit department direction.
+- For Stagehand Fundamentals citation backfill, treat each validation packet as evidence for claims already present in the course. If a claim is only partially supported, regional, employer-specific, or not directly sourced, preserve that qualification rather than upgrading it into a universal rule.
 
 ## Organization
 
@@ -98,6 +106,7 @@ Each completed research document should preserve source links/citations, disting
 - **13A** — Large-Scale LED Video Systems Rough Draft Curriculum Package — draft Course 2 was adapted from
 - **14** — Stagehand Fundamentals original source (`complete_course_1_standardized_lesson_structure`, Modules 1-10). **No external citations recorded** — flagged, see doc 14's header and `10_content_research_queue.md`
 - **14A** — Stagehand Fundamentals Module 1 original source (structured JSON). Same no-citation flag as 14
+- **15** — Stagehand Fundamentals entry-level role validation — sourced evidence for day-to-day duties, load-in/show-call/load-out, work environments, crew structure, employer-valued behaviors, and call etiquette; includes explicit qualification of weak/overgeneralized claims
 
 ## Suggested Claude synthesis role
 
@@ -114,6 +123,7 @@ Useful cross-source questions include:
 - Which competencies recur across every entry-level live-event pathway?
 - Which skills require supervised practical experience rather than online instruction alone?
 - Which proposed curriculum claims are inference/design recommendations rather than documented industry standards?
+- Which existing Stagehand Fundamentals claims are strongly sourced, partially sourced, employer/local-specific, or currently unsupported?
 
 ## Workflow
 
@@ -123,6 +133,6 @@ There is **no NotebookLM step in the current workflow**.
 
 ## Status
 
-Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A (Lighting and Video Course 2 source material) and 14/14A (Stagehand Fundamentals original source, no citations recorded) were pulled into the repo from Drive 2026-08-16 per owner directive: every Drive document used to create learner content lives here, not just in Drive. Additional research packages can be appended using the same structure.
+Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A (Lighting and Video Course 2 source material) and 14/14A (Stagehand Fundamentals original source, no citations recorded) were pulled into the repo from Drive 2026-08-16 per owner directive: every Drive document used to create learner content lives here, not just in Drive.
 
-**Note on 14/14A:** these two documents are archived as historical record only — they contain no external citation trail. New, genuinely sourced research packets to backfill real citations for Stagehand Fundamentals are a tracked, separate piece of work (see `10_content_research_queue.md`), not yet built.
+Stagehand Fundamentals citation backfill is now underway. **Package 15** is the first sourced validation packet in that series and covers the entry-level role, event phases, environments, crew structure, employer-valued behaviors, and communication/etiquette norms. Additional validation packets should continue from 16 onward unless a companion note is needed.
