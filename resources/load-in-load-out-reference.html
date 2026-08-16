@@ -32,6 +32,8 @@
   .cb-use-box h3 { color: var(--cb-gold); text-align: left; }
   .cb-use-box ul { margin: 0; padding-left: 20px; text-align: left; }
   .cb-use-box li { margin-bottom: 8px; color: var(--cb-muted); }
+  .cb-use-box ul.cb-list { margin: 0; max-width: none; padding-left: 0; }
+  .cb-use-box ul.cb-list li { margin-bottom: 0; }
 
   .cb-cta-split {
     display: grid; grid-template-columns: minmax(0,1.6fr) auto; align-items: center; gap: 28px;
@@ -90,7 +92,7 @@
       <div class="cb-res-grid-2" style="margin-top: 8px;">
         <div class="cb-panel cb-use-box" style="padding: 24px;">
           <h3>Load-In</h3>
-          <ul>
+          <ul class="cb-list">
             <li>Read your call sheet the night before &mdash; call time, sign-in, PC contact.</li>
             <li>All-black clothing, closed-toe shoes &mdash; non-negotiable at most venues.</li>
             <li>Pack gloves, an adjustable (crescent) wrench, and a knife or cutting tool. Don't plan to borrow.</li>
@@ -101,7 +103,7 @@
         </div>
         <div class="cb-panel cb-use-box" style="padding: 24px;">
           <h3>Load-Out</h3>
-          <ul>
+          <ul class="cb-list">
             <li>Don't leave until you're actually told you're released.</li>
             <li>Return anything you borrowed before you go.</li>
             <li>Sign out if that's how the call tracks hours.</li>

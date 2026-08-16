@@ -1,6 +1,24 @@
 # 00 — Graphics Tooling Recommendation and Design Queue
 
-**Created 2026-08-16.** Companion to the course-catalog visual-retention
+**Created 2026-08-16.**
+
+**Superseded the same day.** The plan below (external tools: "Diagrams:
+Show Me," Lucide/Phosphor icon libraries) was reversed once written —
+owner said *"let's disregard this entirely, go back to when you offered
+to do it yourself for certain things,"* and chose to have Claude
+hand-build the entire queue directly as inline SVG/HTML in the repo
+instead, matching the site's existing code-only asset pattern (no image
+files). All 13 items below shipped that way across three commits:
+`5762abe` (Tier 1), `e203e66` (Tier 2), and the Tier 3 commit that
+follows this one. The tool recommendation in Part 1 and the prompt text
+in Part 3 are kept as a historical record of the road not taken, not as
+active instructions — nothing here should be run through an external
+tool going forward. See `10_content_research_queue.md` in the
+50yearroadmap repo for the full before/after log of that decision.
+
+---
+
+Companion to the course-catalog visual-retention
 review (see `10_content_research_queue.md` in the 50yearroadmap repo for
 the full audit this queue is based on). This doc has two parts: (1) which
 tool to actually use for this kind of graphic, and why; (2) a prioritized,
