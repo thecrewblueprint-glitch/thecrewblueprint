@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lighting Pathway, Course 1: Supporting a Lighting Hang | The Crew Blueprint</title>
+<meta name="description" content="The first course in the Lighting pathway: what a ground hand actually does to support a lighting load-in and hang, and where the line sits between helping and adjusting." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-01-support/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Lighting Pathway, Course 1: Supporting a Lighting Hang | The Crew Blueprint" />
+<meta property="og:description" content="What a ground hand actually does to support a lighting load-in and hang." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+  .cb-guide-index { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+  .cb-guide-index a.cb-tag {
+    display: inline-flex; align-items: center; padding: 8px 14px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
+  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+  .cb-quiz-item { padding: 16px 20px; }
+  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+  .cb-lesson-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .cb-lesson-nav-card { padding: 22px; text-align: left; display: flex; flex-direction: column; gap: 6px; }
+  .cb-lesson-nav-card span.cb-eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--cb-muted-2);
+  }
+  .cb-lesson-nav-card h3 { margin: 0; font-size: 17px; }
+  @media (max-width: 820px) { .cb-lesson-nav { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Lighting Pathway</span>
+    </nav>
+
+    <section class="cb-hero" style="padding-top: 8px;">
+      <span class="cb-label">Lighting Pathway &middot; Course 1</span>
+      <h1>Supporting a Lighting Hang</h1>
+      <p>
+        This is where the Lighting pathway begins &mdash; not by teaching you to be a lighting
+        technician, but by teaching you to be genuinely useful to one. Real support work, and the
+        exact line between helping and adjusting.
+      </p>
+      <div class="cb-guide-index">
+        <a class="cb-tag" href="#what-you-can-do">What You Can Help With</a>
+        <a class="cb-tag" href="#dont-touch">What Stays Off-Limits</a>
+        <a class="cb-tag" href="#mistakes-signals">Mistakes &amp; Communication</a>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="what-you-can-do">
+      <h2>What You Can Help With, Under Direction</h2>
+      <p class="cb-section-intro">
+        A ground hand genuinely helps build a lighting rig &mdash; this isn't just standing nearby
+        and passing things along.
+      </p>
+      <p>
+        Real support work includes assembling truss, un-casing and re-casing fixtures, running and
+        dressing cable, passing tools to someone working overhead, and staying alert while truss or
+        battens move to trim. When you carry a fixture, use its actual handle &mdash; not the lens,
+        the yoke lock, or its cable. When you coil cable, use the method your crew actually runs;
+        over-under is common on a lot of entertainment cable, but don't assume every cable or every
+        crew handles it the same way.
+      </p>
+      <p>
+        Ground support during a trim &mdash; when truss or a batten moves from working height to its
+        final position &mdash; is real work too. You're not operating the hoist or fly system.
+        You're watching for obvious snags or cable conflicts, staying clear of the moving system,
+        and listening for the designated caller.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left" id="dont-touch">
+      <h2>What Stays Off-Limits Without Direction</h2>
+      <p class="cb-section-intro">
+        This is where the line is strict, and where most beginner mistakes actually happen.
+      </p>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">If you didn't set it, don't "fix" it</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          A fixture that looks crooked might be exactly where the lighting department wants it.
+          Focus, tilt, shutters, barn doors, and gel or color that's already installed are the
+          lighting department's call, not yours &mdash; even if straightening it seems harmless.
+          Same goes for DMX addressing, patch, console settings, and feeder/electrical connections.
+          If something looks wrong, ask the lighting lead instead of adjusting it yourself.
+        </p>
+      </div>
+      <p>
+        Electrical distribution and feeder connections are especially strict &mdash; that stays
+        with the Head Electrician or whoever's qualified and assigned, full stop. You may be asked
+        to move or stage cable and power equipment; you don't energize, reconfigure, or troubleshoot
+        it.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left" id="mistakes-signals">
+      <h2>Common Mistakes, and How Lighting Crews Actually Communicate</h2>
+      <p class="cb-section-intro">
+        A few habits separate a hand who speeds up a hang from one who slows it down.
+      </p>
+      <p>
+        The most common ways a hand damages gear or slows a hang: grabbing a fixture by the lens or
+        yoke lock instead of its handle, touching a lamp's glass with bare skin (contamination can
+        damage some lamps), tangled or incorrect cable coiling, and "correcting" a fixture or cable
+        that was already placed on purpose.
+      </p>
+      <p>
+        There's no single nationwide hand-signal system for entertainment rigging &mdash; crews and
+        venues run their own. What is universal: <strong>STOP</strong> always means stop. Know who's
+        calling the move before it starts, keep clear of the moving system, and if communication
+        breaks down, stop and re-establish it before anything continues.
+      </p>
+      <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">
+        PPE for lighting support is site- and task-specific, but expect hard hats where overhead
+        work requires them, work gloves, protective footwear, and hearing or eye protection where
+        the task or site calls for it. Follow whatever the call's hazard assessment requires rather
+        than assuming one kit covers every venue.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Quick Knowledge Check</h2>
+      <p class="cb-section-intro">Click a question to check your answer.</p>
+      <div class="cb-quiz-list">
+        <details class="cb-panel cb-quiz-item">
+          <summary>You're carrying a fixture. What should you hold it by?</summary>
+          <p>The fixture's actual handle &mdash; never the lens, the yoke lock, or its cable.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>A fixture looks crooked. Should you straighten it?</summary>
+          <p>No &mdash; it may be exactly where the lighting department focused it. Ask the lighting lead instead of adjusting it yourself.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Is there one universal hand-signal system used for entertainment rigging everywhere?</summary>
+          <p>No &mdash; crews and venues run their own. What's universal is that STOP always means stop, and you re-establish communication before continuing if it breaks down.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Who connects and energizes temporary electrical/feeder power for the lighting rig?</summary>
+          <p>The Head Electrician or another qualified, assigned person &mdash; not a general ground hand, even if you're asked to move or stage the equipment.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Truss is moving to trim overhead. What's your job?</summary>
+          <p>Listen for the designated caller, stay clear of the moving system, watch for obvious snags or cable conflicts and report them &mdash; not operate the hoist or fly system.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Key Takeaways</h2>
+      <ul class="cb-list">
+        <li>Real lighting support: truss assembly, cable running/dressing, fixture handling, staying alert during a trim &mdash; all under direction.</li>
+        <li>Focus, addressing, patch, console settings, and electrical connections stay with the lighting department. If it looks wrong, ask before you touch it.</li>
+        <li>There's no universal hand-signal system for entertainment rigging &mdash; only STOP is a safe assumption everywhere.</li>
+        <li>Common mistakes are handling errors, not knowledge gaps: wrong grip points, poor cable coiling, "fixing" something already set.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section">
+      <h2 style="text-align: left; margin-bottom: 16px;">Continue Learning</h2>
+      <div class="cb-lesson-nav">
+        <a class="cb-panel cb-lesson-nav-card" href="module-7-department-basics.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">Back to the Overview</span>
+          <h3>Module 7: Department Basics</h3>
+        </a>
+        <a class="cb-panel cb-lesson-nav-card" href="../resources.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">In the Meantime</span>
+          <h3 style="color: var(--cb-gold-strong);">Explore the Resource Hub &rarr;</h3>
+        </a>
+      </div>
+      <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">
+        This is Course 1 of the Lighting pathway. Course 2 and beyond &mdash; deeper lighting
+        production content &mdash; are in development.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
