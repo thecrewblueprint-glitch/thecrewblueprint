@@ -137,6 +137,56 @@
       </div>
     </section>
 
+    <figure class="cb-diagram">
+      <span class="cb-diagram-label">Diagram &mdash; LED Video Signal Flow</span>
+      <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="v2-3-title v2-3-desc">
+        <title id="v2-3-title">LED video signal flow from source to pixels</title>
+        <desc id="v2-3-desc">Signal travels from the source or media server through a switcher/router, an LED processor, and copper or fiber transport, to receiving cards, driver electronics, and physical pixels.</desc>
+        <g>
+          <rect x="20" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="90" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--cb-text)">Source /</text>
+          <text x="90" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="var(--cb-text)">Media Server</text>
+
+          <path d="M160,45 L178,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M178,45 L170,40 L170,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="180" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="250" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--cb-text)">Switcher /</text>
+          <text x="250" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="var(--cb-text)">Router</text>
+
+          <path d="M320,45 L338,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M338,45 L330,40 L330,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="340" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="410" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">LED Processor</text>
+
+          <path d="M480,45 L498,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M498,45 L490,40 L490,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="500" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="570" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--cb-text)">Copper or Fiber</text>
+          <text x="570" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="var(--cb-text)">Transport</text>
+
+          <path d="M660,45 L660,120 L120,120 L120,168" fill="none" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <path d="M120,168 L115,158 L125,158 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="20" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="120" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Receiving Cards</text>
+
+          <path d="M220,195 L238,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M238,195 L230,190 L230,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="240" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="340" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Driver Electronics</text>
+
+          <path d="M440,195 L458,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M458,195 L450,190 L450,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="460" y="170" width="200" height="50" rx="8" fill="var(--cb-panel)" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <text x="560" y="200" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Physical Pixels</text>
+        </g>
+      </svg>
+      <figcaption class="cb-diagram-caption">
+        Redundancy means a second complete path through this chain, tested before doors &mdash; not
+        just a spare cable sitting connected and unverified.
+      </figcaption>
+    </figure>
+
     <section class="cb-section cb-section-left" id="mistakes">
       <h2>Beginner Mistakes</h2>
       <ul class="cb-list">

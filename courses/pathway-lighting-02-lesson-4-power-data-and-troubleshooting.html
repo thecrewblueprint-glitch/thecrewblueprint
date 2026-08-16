@@ -135,6 +135,51 @@
       </div>
     </section>
 
+    <figure class="cb-diagram">
+      <span class="cb-diagram-label">Diagram &mdash; Lighting Control Signal Flow</span>
+      <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="l2-4-title l2-4-desc">
+        <title id="l2-4-title">Lighting control signal flow from operator to fixture</title>
+        <desc id="l2-4-desc">The LD or operator sends commands through the console, an Ethernet switch or fiber run, a gateway or DMX node, and a DMX line, to reach fixtures, dimmers, and relays.</desc>
+        <g>
+          <rect x="20" y="20" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="120" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">LD / Operator</text>
+
+          <path d="M220,45 L238,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M238,45 L230,40 L230,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="240" y="20" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="340" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Lighting Console</text>
+
+          <path d="M440,45 L458,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M458,45 L450,40 L450,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="460" y="20" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="560" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Ethernet Switch</text>
+          <text x="560" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">or Fiber</text>
+
+          <path d="M660,45 L660,120 L120,120 L120,168" fill="none" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <path d="M120,168 L115,158 L125,158 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="20" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="120" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Gateway /</text>
+          <text x="120" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">DMX Node</text>
+
+          <path d="M220,195 L238,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M238,195 L230,190 L230,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="240" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="340" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">DMX Line</text>
+
+          <path d="M440,195 L458,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M458,195 L450,190 L450,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="460" y="170" width="200" height="50" rx="8" fill="var(--cb-panel)" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <text x="560" y="192" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Fixtures, Dimmers,</text>
+          <text x="560" y="208" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Relays</text>
+        </g>
+      </svg>
+      <figcaption class="cb-diagram-caption">
+        A fixture not responding could be a break anywhere in this chain &mdash; power, data,
+        patching, or the fixture itself &mdash; not necessarily the last link.
+      </figcaption>
+    </figure>
+
     <section class="cb-section cb-section-left" id="mistakes">
       <h2>Beginner Mistakes</h2>
       <ul class="cb-list">

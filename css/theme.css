@@ -670,11 +670,87 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------------------------------------------------
-   9. RESPONSIVE
+   9. DIAGRAMS & ICON ROWS
+   Hand-built inline SVG diagrams and icon sets, styled to match
+   the panel/card language above instead of loose floating images.
+   --------------------------------------------------------- */
+
+.cb-diagram {
+  margin: 28px auto;
+  max-width: 760px;
+  padding: clamp(20px, 3.5vw, 34px);
+  background: var(--cb-panel);
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-lg);
+  text-align: center;
+}
+
+.cb-diagram-label {
+  display: block;
+  margin: 0 0 16px;
+  color: var(--cb-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cb-diagram svg {
+  width: 100%;
+  height: auto;
+  max-width: 680px;
+  display: block;
+  margin: 0 auto;
+}
+
+.cb-diagram-caption {
+  margin: 16px 0 0;
+  color: var(--cb-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.cb-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px 18px;
+  margin: 26px 0;
+}
+
+.cb-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 104px;
+}
+
+.cb-icon-item svg {
+  width: 34px;
+  height: 34px;
+  color: var(--cb-gold-strong);
+  flex-shrink: 0;
+}
+
+.cb-icon-item span {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--cb-muted);
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* ---------------------------------------------------------
+   10. RESPONSIVE
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
   .cb-grid-2, .cb-grid-3, .cb-grid-4 { grid-template-columns: 1fr; }
   .cb-actions { flex-direction: column; }
   .cb-actions .cb-btn { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .cb-diagram svg text { font-size: 11px; }
 }
