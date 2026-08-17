@@ -131,65 +131,62 @@
         checked out. The room is usually darker, louder, and more crowded than it was that morning.
       </p>
       <p>
-        None of that changes the sequence. Strike means taking down, packing, or clearing show
-        equipment, and it follows a planned order &mdash; some gear can't move until another
-        department is finished, some cable may still be active or in use, and some equipment may be
-        supporting a system that hasn't been cleared yet. Randomly striking gear because it looks
-        done is exactly what strike order exists to prevent. Wait for direction before you move or
+        None of that changes the principle: strike means taking down, packing, or clearing show
+        equipment, and it follows the dependencies of that specific setup. Some gear can't move until
+        another department is finished, some cable may still be active or carrying power, and some
+        equipment may be supporting a system that hasn't been cleared yet. There's no fixed category
+        order like "department gear first, then cable, then truss" that works for every show &mdash;
+        the actual sequence depends entirely on how that show's systems are configured and connected.
+        Randomly striking gear because it looks done is exactly what strike order exists to prevent.
+        Wait for direction from your department lead or the strike coordinator before you move or
         break anything down.
       </p>
 
       <figure class="cb-diagram">
-        <span class="cb-diagram-label">Diagram &mdash; Typical Strike Order</span>
-        <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="m9-seq-title m9-seq-desc">
-          <title id="m9-seq-title">Typical strike sequence, seven steps</title>
-          <desc id="m9-seq-desc">Gear usually comes down in this order: department gear, cable trunks, barricade, truss, decks, carts, then cases.</desc>
-          <g>
-            <rect x="20" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="34" cy="16" r="9" fill="var(--cb-gold)"/><text x="34" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">1</text>
-            <text x="90" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Department Gear</text>
+        <span class="cb-diagram-label">Diagram &mdash; Strike Order Determined by Dependencies</span>
+        <svg viewBox="0 0 660 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="m9-deps-title m9-deps-desc">
+          <title id="m9-deps-title">Strike order flowchart showing dependencies</title>
+          <desc id="m9-deps-desc">A flowchart showing how strike order is determined: start with "what's holding up something else," then work backwards through dependencies. Examples: a lighting fixture holds up its power cable, a power cable holds up the cable trunk it's in, the cable trunk must come out before stage cabling. Real order depends on show setup.</desc>
 
-            <path d="M160,45 L178,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M178,45 L170,40 L170,50 Z" fill="var(--cb-gold-border)"/>
+          <!-- Background text -->
+          <text x="330" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-muted)">Strike order is determined by dependencies, not a fixed sequence</text>
 
-            <rect x="180" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="194" cy="16" r="9" fill="var(--cb-gold)"/><text x="194" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">2</text>
-            <text x="250" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Cable Trunks</text>
+          <!-- Top: "What's the blocker?" -->
+          <rect x="200" y="40" width="260" height="50" rx="8" fill="var(--cb-gold)" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <text x="330" y="72" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-bg-deep)">What's holding up the next task?</text>
 
-            <path d="M320,45 L338,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M338,45 L330,40 L330,50 Z" fill="var(--cb-gold-border)"/>
+          <!-- Arrow down -->
+          <path d="M330,90 L330,110" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M330,110 L325,100 L335,100 Z" fill="var(--cb-gold-border)"/>
 
-            <rect x="340" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="354" cy="16" r="9" fill="var(--cb-gold)"/><text x="354" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">3</text>
-            <text x="410" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Barricade</text>
+          <!-- Middle: Example dependencies -->
+          <rect x="20" y="120" width="280" height="160" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <text x="160" y="142" text-anchor="middle" font-size="11" font-weight="800" fill="var(--cb-muted-2)" text-transform="uppercase">Example: Lighting System</text>
 
-            <path d="M480,45 L498,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M498,45 L490,40 L490,50 Z" fill="var(--cb-gold-border)"/>
+          <text x="40" y="165" font-size="12" font-weight="600" fill="var(--cb-text)">1. Fixtures off truss</text>
+          <text x="40" y="185" font-size="11" fill="var(--cb-muted)">   ↓ power cable attached</text>
+          <text x="40" y="205" font-size="12" font-weight="600" fill="var(--cb-text)">2. Power cable to trunk</text>
+          <text x="40" y="225" font-size="11" fill="var(--cb-muted)">   ↓ cable trunk blocks stage</text>
+          <text x="40" y="245" font-size="12" font-weight="600" fill="var(--cb-text)">3. Cable trunk out</text>
+          <text x="40" y="265" font-size="11" fill="var(--cb-muted)">   ↓ now stage is clear</text>
 
-            <rect x="500" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="514" cy="16" r="9" fill="var(--cb-gold)"/><text x="514" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">4</text>
-            <text x="570" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Truss</text>
+          <!-- Right: Real outcome -->
+          <rect x="360" y="120" width="280" height="160" rx="8" fill="var(--cb-panel)" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <text x="500" y="142" text-anchor="middle" font-size="11" font-weight="800" fill="var(--cb-gold-strong)" text-transform="uppercase">Real Strike Order</text>
 
-            <path d="M660,45 L660,120 L120,120 L120,168" fill="none" stroke="var(--cb-gold-border)" stroke-width="2"/>
-            <path d="M120,168 L115,158 L125,158 Z" fill="var(--cb-gold-border)"/>
+          <text x="380" y="165" font-size="12" font-weight="600" fill="var(--cb-gold-strong)">Lighting department</text>
+          <text x="380" y="185" font-size="11" fill="var(--cb-text)">takes fixtures (1st)</text>
+          <text x="380" y="210" font-size="12" font-weight="600" fill="var(--cb-gold-strong)">Electrician coils</text>
+          <text x="380" y="230" font-size="11" fill="var(--cb-text)">power cable (2nd)</text>
+          <text x="380" y="255" font-size="12" font-weight="600" fill="var(--cb-gold-strong)">Cable trunk comes out</text>
+          <text x="380" y="275" font-size="11" fill="var(--cb-text)">(3rd, not last)</text>
 
-            <rect x="20" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="34" cy="166" r="9" fill="var(--cb-gold)"/><text x="34" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">5</text>
-            <text x="120" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Decks</text>
-
-            <path d="M220,195 L238,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M238,195 L230,190 L230,200 Z" fill="var(--cb-gold-border)"/>
-
-            <rect x="240" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
-            <circle cx="254" cy="166" r="9" fill="var(--cb-gold)"/><text x="254" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">6</text>
-            <text x="340" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Carts</text>
-
-            <path d="M440,195 L458,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M458,195 L450,190 L450,200 Z" fill="var(--cb-gold-border)"/>
-
-            <rect x="460" y="170" width="200" height="50" rx="8" fill="var(--cb-panel)" stroke="var(--cb-gold-border)" stroke-width="2"/>
-            <circle cx="474" cy="166" r="9" fill="var(--cb-gold)"/><text x="474" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">7</text>
-            <text x="560" y="200" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Cases</text>
-          </g>
+          <!-- Bottom: Key insight -->
+          <text x="330" y="310" text-anchor="middle" font-size="11" fill="var(--cb-muted)" font-style="italic">Different shows = different strike orders. Wait for direction from your lead.</text>
         </svg>
         <figcaption class="cb-diagram-caption">
-          Strike order isn't random &mdash; some gear can't move until another department finishes
-          with it first.
+          Strike order depends on what's actually holding up something else in that specific setup.
+          Department gear, cable trunks, and cases might come out in completely different sequences
+          depending on how the show is configured.
         </figcaption>
       </figure>
 
