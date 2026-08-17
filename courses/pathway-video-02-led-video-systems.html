@@ -239,6 +239,7 @@ footer {
 .section-header.show { display: block; }
 </style>
 </head>
+
 <body>
 
 <div class="top">
@@ -250,31 +251,38 @@ footer {
   <div class="side" id="sidebar">
     <div class="module-nav">
       <div class="module-title">LED Video Systems</div>
-      <span class="lesson-link active" onclick="switchLesson(0)">1. LED Walls Are Integrated Systems</span>
-      <span class="lesson-link" onclick="switchLesson(1)">2. Pixel Pitch & Equipment Choice</span>
-      <span class="lesson-link" onclick="switchLesson(2)">3. Signal Flow & Redundancy</span>
-      <span class="lesson-link" onclick="switchLesson(3)">4. Power & Data Distribution</span>
-      <span class="lesson-link" onclick="switchLesson(4)">5. Structural Support & Rigging</span>
-      <span class="lesson-link" onclick="switchLesson(5)">6. Outdoor LED & Weather</span>
-      <span class="lesson-link" onclick="switchLesson(6)">7. Build & Commissioning</span>
-      <span class="lesson-link" onclick="switchLesson(7)">8. Troubleshooting & Operation</span>
+      <a class="lesson-link active" onclick="switchLesson(0)">Lesson 1: Integrated Systems</a>
+      <a class="lesson-link" onclick="switchLesson(1)">Lesson 2: Pixel Pitch & Equipment</a>
+      <a class="lesson-link" onclick="switchLesson(2)">Lesson 3: Signal Flow & Redundancy</a>
+      <a class="lesson-link" onclick="switchLesson(3)">Lesson 4: Power & Data</a>
+      <a class="lesson-link" onclick="switchLesson(4)">Lesson 5: Structural Support</a>
+      <a class="lesson-link" onclick="switchLesson(5)">Lesson 6: Outdoor & Weather</a>
+      <a class="lesson-link" onclick="switchLesson(6)">Lesson 7: Build & Commissioning</a>
+      <a class="lesson-link" onclick="switchLesson(7)">Lesson 8: Troubleshooting & Ops</a>
     </div>
   </div>
 
   <div class="content">
-    <h1>Video Pathway · Course 2</h1>
-    <p>Large-Scale LED Video Systems: Understand how professional LED displays are designed, built, powered, rigged, and operated across arenas, stadiums, corporate events, and outdoor festivals.</p>
-
-    <!-- Progress Card -->
-    <div class="card progress">
-      <div class="rule" id="objectiveDisplay">Recognize the full path from creative intent to load-out.</div>
+    <div id="mobileSelect" class="section-header">
+      <select class="mobile-select" onchange="switchLesson(parseInt(this.value))">
+        <option value="0">Lesson 1: Integrated Systems</option>
+        <option value="1">Lesson 2: Pixel Pitch & Equipment</option>
+        <option value="2">Lesson 3: Signal Flow & Redundancy</option>
+        <option value="3">Lesson 4: Power & Data</option>
+        <option value="4">Lesson 5: Structural Support</option>
+        <option value="5">Lesson 6: Outdoor & Weather</option>
+        <option value="6">Lesson 7: Build & Commissioning</option>
+        <option value="7">Lesson 8: Troubleshooting & Ops</option>
+      </select>
     </div>
 
     <!-- LESSON 1 -->
-    <div id="lesson-0" class="lesson-div active">
-      <h2>LED Walls Are Integrated Systems</h2>
-      <p>A large LED wall is a connected production system. The visible wall is built from LED cabinets or tiles, but the finished display depends on structural support, power distribution, receiving electronics, processors, signal transport, source systems, cooling, weather protection, and crew workflow &mdash; so a problem on the wall may not be a bad panel at all.</p>
-
+    <div id="lesson-0" class="lesson-content active">
+      <h1>LED Walls Are Integrated Systems</h1>
+      <p>A large LED wall is a connected production system. The visible wall is built from LED cabinets or tiles, but the finished display depends on structural support, power distribution, receiving electronics, processors, signal transport, source systems, cooling, weather protection, and crew workflow.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-0">Recognize the major subsystems in a large LED wall.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
@@ -285,16 +293,14 @@ footer {
           <li>Know when to ask the LED lead, video engineer, rigger, or electrician.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
         <p>Several teams touch the same wall, even when it looks like one simple piece of gear. On a corporate load-in, the wall may look like a simple 40-foot-wide rectangle, but riggers or ground-support crew establish the support, electricians or qualified power crew provide distro, LED techs build and cable cabinets, video engineers configure processors, and media-server or graphics operators feed content. On a festival, the same wall also has weather planning, wind monitoring, generator coordination, dust, mud, and limited repair windows.</p>
         <div class="cb-panel">
-          <strong>Report by location, symptom, timing, and what changed</strong>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Report by location, symptom, timing, and what changed</strong>
           <p style="margin: 0; color: var(--cb-muted);">Example: "Stage left, third row from bottom, four cabinets downstream from port 3 went black after the cable move." That's a report a lead can actually act on.</p>
         </div>
       </div>
-
       <div class="cb-section">
         <h2>Beginner Mistakes</h2>
         <ul class="cb-list">
@@ -304,16 +310,23 @@ footer {
           <li><strong>Treating similar-looking cabinets as interchangeable.</strong> Hardware, firmware, scan configuration, calibration, and pinouts can all differ.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>Professional Habit & Safety Notes</h2>
         <div class="cb-panel">
-          <strong>Use system language, not "the screen's broken"</strong>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Use system language, not "the screen's broken"</strong>
           <p style="margin: 0; color: var(--cb-muted);">Report what you actually see: location, symptom, timing, and what changed. Vague reports waste time; specific ones get fixed fast.</p>
         </div>
-        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong>Safety notes:</strong> Do not perform work you have not been trained or authorized to do. Do not treat a clean image as proof that the wall is structurally or electrically safe. Follow the department lead's direction before touching power, rigging, processor files, or weather-critical systems. Keep egress, cable paths, and exclusion zones clear.</p>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not perform work you have not been trained or authorized to do. Do not treat a clean image as proof that the wall is structurally or electrically safe. Follow the department lead's direction before touching power, rigging, processor files, or weather-critical systems. Keep egress, cable paths, and exclusion zones clear.</p>
       </div>
-
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>What is the best beginner description of a large LED wall?</summary>
+            <p>An integrated system of structure, panels, power, receiving electronics, processing, transport, sources, and personnel — failures often occur at the interfaces between these subsystems.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
@@ -323,10 +336,12 @@ footer {
     </div>
 
     <!-- LESSON 2 -->
-    <div id="lesson-1" class="lesson-div">
-      <h2>Pixel Pitch, Resolution, Brightness, and Equipment Choice</h2>
+    <div id="lesson-1" class="lesson-content">
+      <h1>Pixel Pitch, Resolution, Brightness, and Equipment Choice</h1>
       <p>Pixel pitch is the center-to-center spacing between pixels, usually measured in millimeters. Smaller pitch creates more pixels in a given area and can look better up close, but it also increases pixel count, processing needs, panel count, power density, heat, cost, setup time, and sensitivity to calibration.</p>
-
+      <div class="card progress">
+        <div class="rule" id="rule-1">Understand why camera performance must be tested, not assumed.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
@@ -337,16 +352,14 @@ footer {
           <li>Distinguish indoor, outdoor, fine-pitch, mesh, transparent, floor, and mobile LED categories.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
         <p>The right panel gets selected against the job, not against one isolated spec. For an executive meeting, a fine-pitch wall may be needed because the front row is close and text has to be readable on camera. For an arena IMAG wall, a moderate pitch may be acceptable because the audience is farther away. For a stadium or outdoor festival, brightness, weather resistance, wind behavior, weight, service access, and long-distance viewing may matter more than fine detail.</p>
         <div class="cb-panel">
-          <strong>Native resolution is not the same as wall size</strong>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Native resolution is not the same as wall size</strong>
           <p style="margin: 0; color: var(--cb-muted);">Native resolution is the total physical pixel count of the assembled wall. A large, coarse-pitch wall can have fewer pixels than a smaller fine-pitch one.</p>
         </div>
       </div>
-
       <div class="cb-section">
         <h2>Beginner Mistakes</h2>
         <ul class="cb-list">
@@ -356,62 +369,97 @@ footer {
           <li><strong>Assuming published refresh rate guarantees camera compatibility.</strong> Scan behavior, shutter, frame rate, synchronization, PWM behavior, and camera sensor readout also matter.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>Professional Habit & Safety Notes</h2>
         <div class="cb-panel">
-          <strong>Ask what it's for before judging the wall</strong>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Ask what it's for before judging the wall</strong>
           <p style="margin: 0; color: var(--cb-muted);">Close presentation, IMAG, scenic imagery, outdoor daylight, camera backdrop, or long-distance viewing all call for different priorities. There's no single "correct" panel spec.</p>
         </div>
-        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong>Safety notes:</strong> Do not promise that a pitch, brightness, IP rating, or refresh rate will be acceptable without product- and site-specific confirmation. Camera tests should be conducted with the actual camera settings where practical. Outdoor-rated product still requires qualified review of weather, support, power, and operation conditions.</p>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not promise that a pitch, brightness, IP rating, or refresh rate will be acceptable without product- and site-specific confirmation. Camera tests should be conducted with the actual camera settings where practical. Outdoor-rated product still requires qualified review of weather, support, power, and operation conditions.</p>
       </div>
-
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>Which statement about pixel pitch is most accurate?</summary>
+            <p>Pixel pitch affects pixel density and practical viewing distance — it's one selection factor, not the automatic determinant of image quality, safety, or processing workflow.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">Select LED equipment by audience, content, environment, structure, power, camera use, and serviceability &mdash; not by one spec.</p>
+          <p style="margin: 0; color: var(--cb-muted);">Select LED equipment by audience, content, environment, structure, power, camera use, and serviceability — not by one spec.</p>
         </div>
       </div>
     </div>
 
     <!-- LESSON 3 -->
-    <div id="lesson-2" class="lesson-div">
-      <h2>Signal Flow, Processors, Mapping, and Redundancy</h2>
+    <div id="lesson-2" class="lesson-content">
+      <h1>Signal Flow, Processors, Mapping, and Redundancy</h1>
       <p>The media server renders or plays content. The LED processor adapts that content to the real cabinet raster, maps outputs, handles scaling and synchronization, and distributes LED data to receiving cards. They are not the same job, and confusing them is one of the fastest ways to misdiagnose a wall problem.</p>
-
+      <div class="card progress">
+        <div class="rule" id="rule-2">Understand why redundancy must be tested.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
-          <li>Distinguish media server, LED processor, receiving electronics, and display roles.</li>
-          <li>Describe basic signal flow from content to cabinets.</li>
-          <li>Explain why redundant cabling does not automatically mean proven backup.</li>
-          <li>Recognize single points of failure in a typical wall chain.</li>
-          <li>Know when to escalate a signal-path problem.</li>
+          <li>Trace a typical LED signal chain from source to physical pixels.</li>
+          <li>Separate media-server duties from LED-processor duties.</li>
+          <li>Explain mapping and receiver configuration at a beginner level.</li>
+          <li>Recognize common failures caused by topology or configuration mismatch.</li>
+          <li>Understand why redundancy must be tested.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>A video engineer configures the processor to map the media server output onto the cabinet raster — the physical grid of LED units. That map stays the same for the entire show unless the wall is rebuilt. If the media server crashes, the wall goes dark. If the processor crashes, the wall goes dark. If a single receiving card fails downstream, only its portion of the wall goes dark.</p>
+        <p>A typical chain is source or playback system to switcher or screen-management system, then router, converter, or distribution if needed, then LED processor, transport over copper or fiber, receiving cards, hub boards, driver electronics, and physical pixels. On a concert, content may come from media servers into a router, through redundant screen-management systems, into primary and backup processors, and then to redundant LED-data paths.</p>
         <div class="cb-panel">
-          <strong>Backup equipment only works if it's actually wired and tested</strong>
-          <p style="margin: 0; color: var(--cb-muted);">Connected cables mean nothing. Backup redundancy has to be proven under load, with actual failover testing.</p>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">A connected backup cable is not proven redundancy</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Redundancy procedures should be tested during setup, not discovered during show failure. A plugged-in fiber tells you nothing about whether failover actually works.</p>
         </div>
       </div>
-
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Thinking the media server replaces the processor.</strong> The server creates the image; the processor maps and distributes it.</li>
+          <li><strong>Assuming any Ethernet switch or network layout will work.</strong> Proprietary LED data isn't ordinary IP traffic unless the system documentation says so.</li>
+          <li><strong>Starting the wall at the wrong cabinet.</strong> This leads to chasing a mapping problem across the entire wall.</li>
+          <li><strong>Leaving backup fibers connected but never testing failover.</strong> A connected backup cable is not proven redundancy.</li>
+        </ul>
+      </div>
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Label everything, change one variable at a time</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Label home runs, ports, cabinet coordinates, fibers, and backup paths. Save known-good configurations with clear names, and change one variable at a time when troubleshooting whenever practical.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not upload unknown receiver files or unverified firmware/configuration files to live equipment unless directed by the qualified LED lead or video engineer. Do not unplug or reroute processor, fiber, or data paths without permission.</p>
+      </div>
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>A media server usually does which job?</summary>
+            <p>Renders or plays back content — the LED processor maps and distributes that content to the physical raster, which is a different job.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">Understand the signal chain and where each failure point affects the display.</p>
+          <p style="margin: 0; color: var(--cb-muted);">The wall will only display correctly when the source, processor, receiver configuration, mapping, and physical topology agree.</p>
         </div>
       </div>
     </div>
 
     <!-- LESSON 4 -->
-    <div id="lesson-3" class="lesson-div">
-      <h2>Power and Data Distribution Awareness</h2>
-      <p>LED walls require planned power and data distribution. Power planning must account for maximum demand, average demand, inrush current, power factor, phase arrangement, branch loading, circuit limits, and qualified electrical design &mdash; not just "how bright does it usually run."</p>
-
+    <div id="lesson-3" class="lesson-content">
+      <h1>Power and Data Distribution Awareness</h1>
+      <p>LED walls require planned power and data distribution. Power planning must account for maximum demand, average demand, inrush current, power factor, phase arrangement, branch loading, circuit limits, and qualified electrical design.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-3">Understand why maximum consumption is different from average consumption.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
@@ -422,29 +470,55 @@ footer {
           <li>Apply beginner-level cable discipline.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>Data distribution may use copper for short processor-to-wall and cabinet-to-cabinet paths, while fiber is often preferred for long FOH-to-stage or processor-backbone runs. On a ballroom general session, power may come from building service and the data path may be short. On an outdoor festival, the wall may be fed from generators and temporary distribution, with long fiber paths from front of house. Wet ground, cable ramps, drip loops, elevated connectors, dust, and physical protection become part of the job.</p>
+        <p>Data distribution may use copper for short processor-to-wall and cabinet-to-cabinet paths, while fiber is often preferred for long FOH-to-stage or processor-backbone runs. On a ballroom general session, power may come from building service and the data path may be short. On an outdoor festival, the wall may be fed from generators and temporary distribution, with long fiber paths from front of house.</p>
         <div class="cb-panel">
-          <strong>Fiber can fail even when it looks fine</strong>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Fiber can fail even when it looks fine</strong>
           <p style="margin: 0; color: var(--cb-muted);">Dirty ends, wrong mode, wrong transceiver, tight bends, or damaged connectors can all cause failures that aren't visible from the outside.</p>
         </div>
       </div>
-
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Using average wattage as the design load.</strong> Average show content is not a safe substitute for maximum rated demand.</li>
+          <li><strong>Ignoring inrush.</strong> A system may be acceptable after startup but still trip if everything energizes at once.</li>
+          <li><strong>Letting power or data cables carry mechanical load.</strong> They can become strain points if routed carelessly.</li>
+          <li><strong>Assuming fiber is automatically reliable.</strong> Dirty ends, wrong mode, wrong transceiver, tight bends, or damaged connectors can fail.</li>
+        </ul>
+      </div>
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Protect, label, strain-relieve, report</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Keep cables protected, labeled, strain-relieved, and routed where they're not trip hazards, pinch points, or load-transfer paths. Report damage early.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Electrical distribution must be handled by qualified and authorized personnel. Do not bypass breakers, GFCI/ground-fault protection, grounding, disconnects, or weather-rated distribution requirements.</p>
+      </div>
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>Why is average power consumption not enough for electrical planning?</summary>
+            <p>It ignores maximum demand and startup conditions such as inrush — planning from average consumption can underestimate the actual load.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">Power and data distribution are designed, not assumed. Protect cables from environmental hazards and test redundancy under real conditions.</p>
+          <p style="margin: 0; color: var(--cb-muted);">Good power and data discipline prevents many wall failures before troubleshooting even begins.</p>
         </div>
       </div>
     </div>
 
     <!-- LESSON 5 -->
-    <div id="lesson-4" class="lesson-div">
-      <h2>Structural Support, Rigging, and Load-Path Awareness</h2>
-      <p>LED walls can be ground-supported, flown from approved points, roof-supported, mounted to temporary structures, built on mobile trailers, or installed in custom engineered systems. The structural concern is never just panel weight &mdash; dead load includes bumpers, rigging, cables, distribution boxes, covers, and secondary components.</p>
-
+    <div id="lesson-4" class="lesson-content">
+      <h1>Structural Support, Rigging, and Load-Path Awareness</h1>
+      <p>LED walls can be ground-supported, flown from approved points, roof-supported, mounted to temporary structures, built on mobile trailers, or installed in custom engineered systems. The structural concern is never just panel weight.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-4">Understand why panel weight alone is not enough for structural decisions.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
@@ -455,129 +529,225 @@ footer {
           <li>Know role boundaries for rigging and structure.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>The same wall looks different depending on how it's supported &mdash; but the structural discipline underneath stays the same. In an arena, a flown wall may hang from approved rigging points through hoists, truss, bumpers, and cabinet locks. At an outdoor festival, a wall may be part of a roof, tower, or ground-support system with ballast and wind planning. In a convention center, even an indoor ground-support wall still needs review for floor loading, stage decks, risers, slope, access, and egress.</p>
+        <p>The same wall looks different depending on how it's supported — but the structural discipline underneath stays the same. In an arena, a flown wall may hang from approved rigging points through hoists, truss, bumpers, and cabinet locks. At an outdoor festival, a wall may be part of a roof, tower, or ground-support system with ballast and wind planning.</p>
         <div class="cb-panel">
-          <strong>Dynamic load can exceed static weight</strong>
-          <p style="margin: 0; color: var(--cb-muted);">Hoisting, stopping, wind, rotation, impact, and movement all add dynamic load on top of the wall's dead weight &mdash; the published panel weight alone never tells the full story.</p>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Dynamic load can exceed static weight</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Hoisting, stopping, wind, rotation, impact, and movement all add dynamic load on top of the wall's dead weight.</p>
         </div>
       </div>
-
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Making structural decisions from the published panel weight alone.</strong> Dead load includes far more than the panels themselves.</li>
+          <li><strong>Assuming a clean rectangular image means the wall is mechanically safe.</strong> Image quality and structural integrity are unrelated.</li>
+          <li><strong>Removing braces, ballast, pins, locks, or outriggers because they're in the way.</strong> They belong to the approved system, not to convenience.</li>
+          <li><strong>Standing under or behind a wall without understanding the exclusion zone.</strong> Established work plans exist for a reason.</li>
+        </ul>
+      </div>
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Respect the load path and the exclusion zone</strong>
+          <p style="margin: 0; color: var(--cb-muted);">If something looks loose, missing, overloaded, unsupported, out of plumb, or different from the plan, stop and report it through the chain of command.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not calculate, approve, or modify rigging, ballast, pick points, hoists, truss, roof systems, or ground support unless qualified and authorized. Follow the approved rigging or ground-support plan and the direction of the qualified lead.</p>
+      </div>
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>A clean image on the LED wall proves what?</summary>
+            <p>That the signal path is producing an image — nothing about structural approval, electrical code compliance, or the wind plan.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">Respect the structural design. Do not add weight, move suspension points, or modify support systems without approval from qualified personnel.</p>
+          <p style="margin: 0; color: var(--cb-muted);">Structural safety belongs to qualified planning and supervision; a beginner's job is to recognize boundaries and report concerns.</p>
         </div>
       </div>
     </div>
 
     <!-- LESSON 6 -->
-    <div id="lesson-5" class="lesson-div">
-      <h2>Outdoor LED, Wind, Weather, Heat, and Lightning Awareness</h2>
-      <p>Outdoor LED systems face sunlight, rain, condensation, wind, heat, dust, mud, generators, long cable paths, and limited repair windows. IP ratings address ingress protection against solids and water, but they do not establish wind resistance, lightning safety, drainage performance, structural adequacy, or approval for every storm.</p>
-
+    <div id="lesson-5" class="lesson-content">
+      <h1>Outdoor LED, Wind, Weather, Heat, and Lightning Awareness</h1>
+      <p>Outdoor LED systems face sunlight, rain, condensation, wind, heat, dust, mud, generators, long cable paths, and limited repair windows. IP ratings address ingress protection but do not establish wind resistance, lightning safety, or approval for every storm.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-5">Explain why outdoor-rated does not mean safe in all weather.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
-          <li>Recognize IP rating and what it does and does not cover.</li>
-          <li>Identify weathering concerns: wind, vibration, thermal stress, UV, corrosion, mud, dust, and condensation.</li>
-          <li>Understand lightning and grounding discipline.</li>
-          <li>Know extreme weather shutdown criteria.</li>
-          <li>Apply drainage, sealing, and protection best practices.</li>
+          <li>Explain why outdoor-rated does not mean safe in all weather.</li>
+          <li>Identify major environmental risks: wind, rain, heat, dust, mud, and lightning.</li>
+          <li>Understand the difference between design planning and operational decisions.</li>
+          <li>Recognize what a weather plan must assign.</li>
+          <li>Apply beginner-level protection habits around connectors and cable paths.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>Outdoor work requires weather monitoring, wind speed tracking, and rapid decision-making. A wall rated for outdoor use at a festival still needs weather management: covers during build, monitoring during operation, power-down decisions during wind or lightning events. Grounding and bonding become safety-critical. Drainage and sealing matter. Mud, dust, and salt spray affect cabinets differently depending on geography.</p>
+        <p>Wind force isn't a single number — it depends on speed, exposed area, solidity, permeability, height, orientation, shielding, gusts, geometry, manufacturer data, codes, and engineering. At a festival, a wall may operate through daylight, sunset, night, rain risk, and multiple artist changeovers. The wall may need brightness adjustment for cameras and audience comfort.</p>
         <div class="cb-panel">
-          <strong>Rating and reality are different</strong>
-          <p style="margin: 0; color: var(--cb-muted);">A wall might have an IP65 rating but still need protection from sustained mud exposure, sandblasting wind, or lightning proximity. Site conditions and safety require active management, not just equipment selection.</p>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">IP65 doesn't mean "rainproof in any condition"</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Outdoor safety depends on weather planning, structure, power, and disciplined operation — not just the panel's ingress-protection rating.</p>
         </div>
       </div>
-
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Assuming an IP rating means "rainproof in any condition."</strong> IP ratings address ingress protection, not wind or lightning safety.</li>
+          <li><strong>Improvising wind or lightning thresholds.</strong> Follow the event weather plan instead of guessing.</li>
+          <li><strong>Leaving connector caps off or cable ends exposed to wet ground.</strong> Small habits prevent larger failures.</li>
+          <li><strong>Ignoring heat symptoms.</strong> Brightness reduction, color shift, shutdowns, or intermittent faults can all be heat-related.</li>
+        </ul>
+      </div>
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Protect the system from the start</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Keep caps managed, connections oriented and elevated as directed, cable paths clear of puddles, fan paths unobstructed, and weather information flowing through the correct chain of command.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not decide wind, lightning, lowering, evacuation, or restart thresholds unless specifically assigned and qualified. Follow the site weather and emergency plan.</p>
+      </div>
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>What does an IP rating primarily describe?</summary>
+            <p>Ingress protection against solids and water — it doesn't prove all-weather suitability or structural wind safety.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">Outdoor LED work is active, not passive. Weather management, grounding discipline, and rapid shutdown decisions are part of the job.</p>
+          <p style="margin: 0; color: var(--cb-muted);">Outdoor LED safety depends on weather planning, structure, power, and disciplined operation — not just outdoor-rated panels.</p>
         </div>
       </div>
     </div>
 
     <!-- LESSON 7 -->
-    <div id="lesson-6" class="lesson-div">
-      <h2>Build, Configuration, Test, and Commissioning Workflow</h2>
-      <p>A controlled LED build moves from advance and preproduction to receiving, inspection, mechanical build, power and data cabling, processor configuration, initial test, show operation, and shutdown. Each step reduces uncertainty &mdash; the wall shouldn't be treated as complete until every one of those steps has actually happened.</p>
-
+    <div id="lesson-6" class="lesson-content">
+      <h1>Build, Configuration, Test, and Commissioning Workflow</h1>
+      <p>A controlled LED build moves from advance and preproduction to receiving, inspection, mechanical build, power and data cabling, processor configuration, initial test, show operation, and shutdown. Each step reduces uncertainty.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-6">Understand why the first cabinet, orientation, and port mapping matter.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
-          <li>Describe the phases of an LED wall build.</li>
-          <li>Understand why each phase of testing matters.</li>
-          <li>Recognize incomplete builds and what to escalate.</li>
-          <li>Apply basic mechanical and electrical inspection skills.</li>
-          <li>Know the difference between "looked good on the load-in" and "tested, configured, and ready to go."</li>
+          <li>Follow the normal LED workflow from advance to initial test.</li>
+          <li>Recognize what should be checked during receiving and inspection.</li>
+          <li>Understand why the first cabinet, orientation, and port mapping matter.</li>
+          <li>Use basic test patterns to identify system problems.</li>
+          <li>Document final configuration and marginal components.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>You might arrive at load-in to find a wall partially assembled but not yet mechanically complete, or mechanically complete but not yet cabled, or cabled but not yet configured. Each state is normal, but the wall should move through each step intentionally. A wall that looks good by eye but hasn't passed processor configuration, content load, camera test, and show-run simulation is still a build in progress. Do not treat it as complete.</p>
+        <p>Most build risk gets removed by sequence and inspection, not by working faster. On a large corporate show, the LED lead confirms wall dimensions, cabinet model, raster, processor model, input format, frame rate, backup signal, power, cable distances, rigging, and access before the truck arrives.</p>
         <div class="cb-panel">
-          <strong>Every test that gets skipped is a risk that gets discovered live</strong>
-          <p style="margin: 0; color: var(--cb-muted);">Initial power-up → mechanical check → signal flow test → content load → camera/overlay test → show-run simulation. These steps aren't optional extras; they're where problems get found before the show.</p>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Full-field patterns catch what show content hides</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Test patterns reveal mapping, color, module, brightness, and boundary issues systematically — show content alone doesn't exercise the whole raster the same way.</p>
         </div>
       </div>
-
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Skipping inspection because the cases look organized.</strong> Organized packing says nothing about the equipment inside.</li>
+          <li><strong>Building without confirming the known first cabinet and physical orientation.</strong> This causes mapping problems that are hard to trace later.</li>
+          <li><strong>Testing only show content and never using full-field patterns.</strong> Color, gray, grid, and motion patterns catch issues show content won't.</li>
+          <li><strong>Failing to save the final processor configuration after changes.</strong> Or not documenting a damaged panel or marginal jumper.</li>
+        </ul>
+      </div>
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Build in a repeatable order, label as you go</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Test with patterns before blaming content. Save final files and communicate changes to the LED lead or video engineer.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not elevate, fly, power, or expose the wall to public areas until required mechanical, electrical, and operational checks have been completed by responsible personnel. Do not change processor settings, receiver files, firmware, redundancy mode, or cabling topology without direction.</p>
+      </div>
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>Which item belongs in the advance for an LED wall?</summary>
+            <p>Wall dimensions, cabinet model, raster, processor, input format, power, support mode, access, weather plan, and responsible leads.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">A build is not complete until it's been tested and proven ready. Stay involved through each phase and escalate incomplete steps.</p>
+          <p style="margin: 0; color: var(--cb-muted);">A reliable wall is built by sequence, inspection, labeling, testing, documentation, and controlled handoff.</p>
         </div>
       </div>
     </div>
 
     <!-- LESSON 8 -->
-    <div id="lesson-7" class="lesson-div">
-      <h2>Troubleshooting and Show Operation Discipline</h2>
+    <div id="lesson-7" class="lesson-content">
+      <h1>Troubleshooting and Show Operation Discipline</h1>
       <p>Good troubleshooting starts by naming the failure category: total power failure, partial power failure, total signal loss, partial signal loss, incorrect mapping, intermittent fault, color or brightness issue, synchronization issue, or physical damage. From there, move from system-wide causes toward local causes.</p>
-
+      <div class="card progress">
+        <div class="rule" id="rule-7">Classify LED failures before replacing parts.</div>
+      </div>
       <div class="cb-section">
         <h2>What You'll Learn</h2>
         <ul class="cb-list">
-          <li>Categorize LED wall failures by symptom.</li>
-          <li>Apply diagnostic logic: system-wide cause first, then local.</li>
-          <li>Recognize when to escalate versus when to pursue a fix.</li>
-          <li>Apply show-discipline communication and coordination.</li>
-          <li>Understand safe shutdown and load-out procedures.</li>
+          <li>Classify LED failures before replacing parts.</li>
+          <li>Move from broad system boundaries toward local components.</li>
+          <li>Recognize common symptoms: dark wall, missing chain, bad cabinet, bad module, scrambled image, flicker, and intermittent failure.</li>
+          <li>Use known-good substitutions and test patterns carefully.</li>
+          <li>Understand show-call monitoring responsibilities.</li>
         </ul>
       </div>
-
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>During a show, the wall has to work. If it fails, troubleshooting is time-limited: seconds for IMAG, a few minutes for a presentation, longer for scenic content. You need to be able to quickly name what's failing, communicate it accurately, and either fix it fast or escalate to someone who can. Post-show load-out is equally important: a wall that worked fine for the show might have damage that you'll miss if you're not attentive.</p>
+        <p>The boundary of the failure tells you where to look — not the first cabinet you happen to notice. If the entire wall is dark during rehearsal, the team may check processor power, input detection, output enable, panel power, breakers, disconnects, blackout settings, show file, and expected outputs.</p>
         <div class="cb-panel">
-          <strong>Name the failure, don't guess</strong>
-          <p style="margin: 0; color: var(--cb-muted);">Example: "All power gone, not all signal" points to power distribution. "Signal on parts of the wall but not others" points to a data-path break or receiving-card failure. Precision saves troubleshooting time.</p>
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">During show, monitoring is a job, not a spectator activity</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Source presence, processor status, cabinet errors, temperature, fiber health, backup readiness, power distribution, and environmental conditions all get watched according to assigned role.</p>
         </div>
       </div>
-
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Replacing panels before checking source, processor output, power, and data boundaries.</strong> Jumping to hardware first often wastes time.</li>
+          <li><strong>Making several changes at once.</strong> This loses track of what fixed or worsened the problem.</li>
+          <li><strong>Ignoring intermittent symptoms.</strong> Heat, vibration, moisture, dirty fiber, or partially seated connectors can all cause faults that come and go.</li>
+          <li><strong>Trying to solve camera banding by random processor changes.</strong> Coordinate shutter, frame rate, sync, brightness, and driver behavior instead of guessing.</li>
+        </ul>
+      </div>
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Report symptoms clearly, avoid speculative changes</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Preserve the tested configuration and avoid making changes based on a guess. During show, monitor your assigned systems and report what you actually observe.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Only qualified personnel should open equipment, measure power, modify electrical distribution, or make restricted configuration changes. Do not defeat safety systems or protective devices to make an image appear.</p>
+      </div>
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>Four cabinets downstream from one cabinet go dark. Which category should be considered early?</summary>
+            <p>A possible data-chain interruption near the first affected cabinet — a failure near the start of a chain can affect everything downstream from it.</p>
+          </details>
+        </div>
+      </div>
       <div class="cb-section">
         <h2>Key Takeaway</h2>
         <div class="cb-panel">
-          <p style="margin: 0; color: var(--cb-muted);">Stay present and disciplined: during troubleshooting, during show operation, and during shutdown.</p>
+          <p style="margin: 0; color: var(--cb-muted);">Troubleshooting is faster and safer when you classify the failure, isolate the boundary, test deliberately, and escalate correctly.</p>
         </div>
       </div>
     </div>
 
-    <div class="cb-section">
-      <h2>Back to Courses</h2>
-      <div class="cb-panel">
-        <p style="margin: 0; color: var(--cb-muted);"><a href="../courses.html" style="color: var(--cb-gold);">Return to the Courses page</a> to explore other learning pathways.</p>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -587,24 +757,46 @@ footer {
 
 <script>
 const lessons = [
-  { id: 0, obj: "Recognize the full path from creative intent to load-out." },
-  { id: 1, obj: "Recognize why smaller pixel pitch isn't automatically better, and why camera performance has to be tested, not assumed." },
-  { id: 2, obj: "Distinguish media server, LED processor, and receiving electronics — and recognize where single points of failure occur." },
-  { id: 3, obj: "Understand why maximum consumption differs from average consumption, and why backup cabling is only redundancy if it's tested." },
-  { id: 4, obj: "Describe a basic load path and recognize why dynamic load exceeds static weight." },
-  { id: 5, obj: "Distinguish IP rating from actual weather safety, and know what active weather management requires." },
-  { id: 6, obj: "Describe the phases of a controlled LED build and recognize when a wall is incomplete." },
-  { id: 7, obj: "Categorize LED failures by symptom and apply system-to-local diagnostic logic." }
+  { id: 0, obj: "Recognize the major subsystems in a large LED wall." },
+  { id: 1, obj: "Understand why camera performance must be tested, not assumed." },
+  { id: 2, obj: "Understand why redundancy must be tested." },
+  { id: 3, obj: "Understand why maximum consumption is different from average consumption." },
+  { id: 4, obj: "Understand why panel weight alone is not enough for structural decisions." },
+  { id: 5, obj: "Explain why outdoor-rated does not mean safe in all weather." },
+  { id: 6, obj: "Understand why the first cabinet, orientation, and port mapping matter." },
+  { id: 7, obj: "Classify LED failures before replacing parts." }
 ];
 
+let currentLesson = 0;
+
 function switchLesson(id) {
-  document.querySelectorAll('.lesson-div').forEach(div => div.classList.remove('active'));
-  document.querySelectorAll('.lesson-link').forEach(link => link.classList.remove('active'));
-  document.getElementById(`lesson-${id}`).classList.add('active');
+  document.querySelectorAll('.lesson-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lesson-link').forEach(el => el.classList.remove('active'));
+
+  document.getElementById('lesson-' + id).classList.add('active');
   document.querySelectorAll('.lesson-link')[id].classList.add('active');
-  document.getElementById('objectiveDisplay').textContent = lessons[id].obj;
+  document.getElementById('mobileSelect').value = id;
+
+  document.getElementById('rule-' + id).textContent = lessons[id].obj;
+  currentLesson = id;
   window.scrollTo(0, 0);
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 820) {
+    document.getElementById('mobileSelect').classList.remove('show');
+    document.getElementById('sidebar').style.display = 'block';
+  } else {
+    document.getElementById('mobileSelect').classList.add('show');
+    document.getElementById('sidebar').style.display = 'none';
+  }
+});
+
+if (window.innerWidth <= 820) {
+  document.getElementById('mobileSelect').classList.add('show');
+  document.getElementById('sidebar').style.display = 'none';
+}
 </script>
+
 </body>
 </html>
