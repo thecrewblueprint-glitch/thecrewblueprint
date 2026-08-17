@@ -1,279 +1,1255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stagehand Fundamentals | The Crew Blueprint</title>
-<meta name="description" content="Learn how to work your first load-in, show call, and load-out with a stronger understanding of crew structure, jobsite awareness, and safety expectations." />
-<link rel="icon" href="../images/logo.png" type="image/png">
-<link rel="canonical" href="https://thecrewblueprint.com/courses/stagehand-fundamentals/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="The Crew Blueprint" />
-<meta property="og:title" content="Stagehand Fundamentals | The Crew Blueprint" />
-<meta property="og:description" content="Learn how to work your first load-in, show call, and load-out." />
-<link href="https://fonts.googleapis.com" rel="preconnect" />
-<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link href="../css/theme.css" rel="stylesheet" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stagehand Fundamentals — Comprehensive Hybrid Course</title>
 <style>
-  .cb-course-hero { text-align: center; padding: clamp(32px, 6vw, 60px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); margin-bottom: 18px; }
-  .cb-course-hero h1 { font-size: clamp(44px, 7vw, 76px); line-height: 0.98; letter-spacing: -0.04em; margin: 0 0 16px; }
-  .cb-course-hero p { max-width: 780px; margin: 0 auto 22px; color: var(--cb-muted); font-size: clamp(17px, 2vw, 20px); }
-  .cb-course-section { margin-top: 18px; padding: clamp(24px, 4vw, 38px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); text-align: left; }
-  .cb-course-section h2 { margin: 0 0 14px; font-size: clamp(28px, 4vw, 42px); text-align: left; }
-  .cb-course-section > p { margin: 0 0 18px; color: var(--cb-muted); }
-  .cb-course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
-  .cb-course-module-list { display: grid; gap: 14px; margin-top: 18px; }
-  .cb-course-card, .cb-course-module { padding: 22px; background: rgba(5, 7, 8, 0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-align: left; }
-  .cb-course-card h3, .cb-course-module h3 { margin: 0 0 8px; font-size: clamp(19px, 3vw, 24px); text-align: left; }
-  .cb-course-card p, .cb-course-module p { margin: 0; color: var(--cb-muted); }
-  .cb-course-final { text-align: center; }
-  .cb-course-final h2 { text-align: center; }
-  .cb-course-final p { max-width: 700px; margin: 0 auto 18px; }
-  @media (max-width: 820px) { .cb-course-grid { grid-template-columns: 1fr; } }
+:root{--bg:#090c10;--panel:#121820;--panel2:#18212b;--text:#f1f4f7;--muted:#aab5c0;--line:#2b3641;--gold:#f5b400;--gold2:#ffd45a;--good:#39b979;--bad:#e26868;--info:#0284c7}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#090c10,#0b0f14);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:20;background:#090c10ee;border-bottom:1px solid var(--line)}.topin{max-width:1400px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:900}.brand span,.eyebrow{color:var(--gold)}.small{font-size:.78rem;color:var(--muted)}.progbox{width:min(360px,45vw)}.progrow{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.bar{height:8px;background:#222b34;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}.shell{max-width:1400px;margin:auto;padding:22px 18px 60px}.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}.side{position:sticky;top:86px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:calc(100vh-100px);overflow-y:auto}.mod{display:flex;gap:10px;align-items:center;padding:9px;border-radius:11px;color:var(--muted);cursor:pointer;transition:all 200ms}.mod:hover{background:#1a2430}.mod.active{background:#211d0e;color:var(--text);border:1px solid #65551f}.num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#232c35;font-weight:800;font-size:12px}.active .num{background:var(--gold);color:#111}.sub{margin:8px 0 10px 23px;padding-left:13px;border-left:1px solid var(--line)}.sub button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--muted);padding:8px 0;cursor:pointer;font-size:13px;transition:color 200ms}.sub button:hover{color:var(--gold2)}.sub button.active{color:var(--gold2);font-weight:800}.hero,.card{background:linear-gradient(var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.03;margin:.3rem 0}.hero p{color:var(--muted);max-width:880px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900}.lesson{display:none}.lesson.active{display:block}.objective{border-left:4px solid var(--gold)}.visual-section{background:#0f1419;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:300px;overflow-x:auto}.visual-section svg{max-width:100%;height:auto;display:block}.visual-section img{max-width:100%;height:auto}.explainer{background:#0f1419;border-left:4px solid var(--info);padding:16px;border-radius:8px;margin-bottom:14px;font-size:14px;line-height:1.7;color:var(--text)}.explainer strong{color:var(--gold2)}.reference{background:#0f1419;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px;font-size:13px}.reference strong{color:var(--gold2)}.reference ul{margin:8px 0;padding-left:20px}.reference li{margin:6px 0}.reference-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;font-weight:800}h3{margin:14px 0 8px 0;font-size:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#1b2530;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:13px}.mini strong{color:var(--gold2)}.options{display:grid;gap:10px}.opt{border:1px solid var(--line);background:#10151a;color:var(--text);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-size:13px;transition:all 200ms}.opt:hover:not(:disabled){border-color:var(--gold);background:#0f1a1f}.opt.correct{border-color:var(--good);background:#123026}.opt.incorrect{border-color:var(--bad);background:#321919}.opt:disabled{opacity:.7;cursor:not-allowed}.coach{display:none;margin-top:12px;padding:14px;border-left:4px solid var(--gold);background:#0e1419;border-radius:10px;font-size:13px;line-height:1.6}.coach.show{display:block}.coach strong{color:var(--gold2)}.rule{background:#211d0f;border:2px solid #66561f;padding:16px;border-radius:12px;text-align:center;font-weight:900;color:var(--gold2);margin-bottom:14px}.key-takeaway{background:#0e3a54;border:1px solid #1a5a7a;border-left:4px solid #0284c7;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;color:#e0f2fe}.key-takeaway strong{color:#0284c7}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:800;font-size:13px;transition:all 200ms}.btn:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--gold);color:#111}.primary:hover:not(:disabled){background:#ffc700;transform:translateY(-1px)}.secondary{background:#11161c;color:var(--text)}.secondary:hover:not(:disabled){background:#1a2430}.mobile{display:none}@media(max-width:1000px){.layout{grid-template-columns:1fr}.side{display:none}.mobile{display:block;margin-bottom:12px}.mobile select{width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;font-size:13px}.grid2{grid-template-columns:1fr}.hero{padding:17px}.card{padding:17px}.actions{flex-direction:column-reverse}.btn{width:100%}.visual-section{min-height:200px}}
+</style></head><body>
+<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small">Stagehand Fundamentals — Comprehensive Learning Course</div></div><div class="progbox"><div class="progrow"><span id="progtext">Module 1.1 of 40</span><span id="pct">2%</span></div><div class="bar"><i id="bar" style="width:2%"></i></div></div></div></header>
+<div class="shell"><div class="mobile"><select id="mobile" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
+<aside class="side" id="sidebar"></aside>
+<main id="main"></main>
+</div></div>
 
-  .cb-course-module { position: relative; }
-  a.cb-course-module { display: block; text-decoration: none; color: inherit; transition: border-color 180ms ease; }
-  a.cb-course-module:hover { border-color: var(--cb-gold-border); }
-  a.cb-course-module:hover h3 { color: var(--cb-gold-strong); }
-  .cb-module-tag {
-    display: inline-flex; align-items: center; margin-bottom: 10px; padding: 5px 10px;
-    border-radius: var(--cb-radius-pill); font-size: 11px; font-weight: 800;
-    letter-spacing: 0.06em; text-transform: uppercase;
+<script>
+const modules = [
+  {num:1,title:"Welcome to Live Event World",lessons:[
+    {id:"1.1",name:"The Job & The Room",obj:"Recognize how environment changes risk."},
+    {id:"1.2",name:"The Shape of a Call",obj:"Understand the three-phase structure."},
+    {id:"1.3",name:"Crew, Direction & Value",obj:"Identify who leads and what matters."},
+    {id:"1.4",name:"First-Call Integration",obj:"Apply Module 1 concepts in context."}
+  ],rule:"SHOW UP READY. KNOW WHO IS LEADING YOU. FOLLOW DIRECTION. ASK BEFORE YOU GUESS. WORK SAFELY."},
+  {num:2,title:"Safety Mindset Before Skillset",lessons:[
+    {id:"2.1",name:"Hazard vs. Risk vs. Behavior",obj:"Distinguish three related concepts."},
+    {id:"2.2",name:"Notice & Classify",obj:"Apply the NCCE decision model."},
+    {id:"2.3",name:"Under Pressure",obj:"Keep safety judgment active."},
+    {id:"2.4",name:"Hazard Integration",obj:"Identify hazards in complex scenes."}
+  ],rule:"SEE THE HAZARD. THINK ABOUT THE RISK. CONTROL YOUR BEHAVIOR. SPEAK UP BEFORE IT BECOMES AN INCIDENT."},
+  {num:3,title:"PPE, Clothing & Readiness",lessons:[
+    {id:"3.1",name:"Context-Dependent Prep",obj:"Match PPE to task and environment."},
+    {id:"3.2",name:"Site Requirements",obj:"Understand non-negotiable PPE."},
+    {id:"3.3",name:"Phase Transitions",obj:"Adapt PPE and clothing to context."}
+  ],rule:"PREPARE FOR THE CALL YOU HAVE — CLOTHING, PPE, GEAR, FOOD, REST, AND TRANSPORT ALL COUNT AS JOB READINESS."},
+  {num:4,title:"Venue & Jobsite Awareness",lessons:[
+    {id:"4.1",name:"Orient First",obj:"Know the first-15-minute sequence."},
+    {id:"4.2",name:"Read the Space",obj:"Navigate using venue vocabulary."},
+    {id:"4.3",name:"Hazard Recognition",obj:"Spot multiple hazards in scenes."}
+  ],rule:"ORIENT FIRST. KNOW WHERE YOU ARE, WHO IS LEADING YOU, WHAT IS MOVING, AND WHAT YOU MUST STAY OUT OF."},
+  {num:5,title:"Load-In Fundamentals",lessons:[
+    {id:"5.1",name:"The Sequence",obj:"Understand truck-to-room workflow."},
+    {id:"5.2",name:"Control & Visibility",obj:"Move with awareness and spotters."},
+    {id:"5.3",name:"Pinch Points & Coordination",obj:"Handle gear safely with a team."},
+    {id:"5.4",name:"Load-In Integration",obj:"Apply concepts through full sequence."}
+  ],rule:"MOVE WHAT YOU ARE ASSIGNED, IN THE ORDER YOU ARE GIVEN, WITH A CLEAR PATH AND CONTROL OF THE LOAD."},
+  {num:6,title:"Communication & Crew Etiquette",lessons:[
+    {id:"6.1",name:"Clarity First",obj:"Communicate clearly and briefly."},
+    {id:"6.2",name:"Confirm & Report",obj:"Confirm what you heard and check in."},
+    {id:"6.3",name:"Professional Presence",obj:"Respond to correction and respect teams."}
+  ],rule:"BE CLEAR, BRIEF, AND HONEST: CONFIRM WHAT YOU HEARD, ASK WHEN YOU DO NOT UNDERSTAND, AND CHECK BACK IN WHEN THE TASK IS DONE."},
+  {num:7,title:"Department Basics",lessons:[
+    {id:"7.1",name:"Physical Support vs. Technical",obj:"Know the boundary you cannot cross."},
+    {id:"7.2",name:"Permission Levels",obj:"Classify objects by what you can do."},
+    {id:"7.3",name:"Classification Practice",obj:"Apply permission levels to new scenes."}
+  ],rule:"SUPPORT THE PHYSICAL WORKFLOW. PRESERVE THE TECHNICAL OR SHOW-CRITICAL SETUP."},
+  {num:8,title:"Tools, Gear & Handling",lessons:[
+    {id:"8.1",name:"Recognize It",obj:"Distinguish recognition from authorization."},
+    {id:"8.2",name:"Check It",obj:"Inspect before using or moving."},
+    {id:"8.3",name:"Use It Safely",obj:"Coordinate team handling and methods."}
+  ],rule:"RECOGNIZE IT, CHECK IT, THEN USE OR MOVE IT ONLY THE WAY YOU WERE ASSIGNED."},
+  {num:9,title:"Load-Out Fundamentals",lessons:[
+    {id:"9.1",name:"Strike Discipline",obj:"Wait for clearance despite urgency."},
+    {id:"9.2",name:"Fatigue & Urgency",obj:"Maintain discipline under pressure."},
+    {id:"9.3",name:"Finish Strong",obj:"Complete the job with care."}
+  ],rule:"FINISH WITH THE SAME DISCIPLINE YOU STARTED WITH: WAIT FOR CLEARANCE, CONTROL THE LOAD, COMMUNICATE, AND STAY USEFUL UNTIL RELEASED."},
+  {num:10,title:"Getting Hired, Called Back & Growing",lessons:[
+    {id:"10.1",name:"Getting Hired",obj:"Communicate honestly about skills."},
+    {id:"10.2",name:"Reputation Patterns",obj:"Understand what drives callbacks."},
+    {id:"10.3",name:"Into Specialization",obj:"Find your pathway into departments."},
+    {id:"10.4",name:"First Month & Beyond",obj:"Prioritize fundamentals and growth."}
+  ],rule:"GETTING HIRED OPENS THE DOOR. RELIABILITY KEEPS IT OPEN. HONEST LEARNING IS HOW YOU MOVE FORWARD."}
+];
+
+let current = 0;
+let total = modules.reduce((sum,m)=>sum+m.lessons.length,0);
+
+function buildSidebar(){
+  const s = document.getElementById('sidebar');
+  let h='<div class="small" style="padding:5px 8px 10px;text-transform:uppercase;letter-spacing:.12em">Stagehand Fundamentals</div>';
+  modules.forEach((m,mi)=>{
+    const isActive = current>=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<modules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
+    h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
+    h+=`<div class="sub">`;
+    m.lessons.forEach((l,li)=>{
+      const idx = modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0)+li;
+      h+=`<button class="nav ${idx===current?'active':''}" onclick="goLesson(${idx})">${l.id} ${l.name}</button>`;
+    });
+    h+=`</div>`;
+  });
+  s.innerHTML=h;
+  buildMobileSelect();
+}
+
+function buildMobileSelect(){
+  const m=document.getElementById('mobile');
+  m.innerHTML='';
+  let idx=0;
+  modules.forEach(mod=>{
+    mod.lessons.forEach(l=>{
+      const opt=document.createElement('option');
+      opt.value=idx;
+      opt.textContent=`${l.id} ${l.name}`;
+      if(idx===current)opt.selected=true;
+      m.appendChild(opt);
+      idx++;
+    });
+  });
+  m.onchange=e=>goLesson(+e.target.value);
+}
+
+function getModuleLesson(idx){
+  let count=0;
+  for(let m of modules){
+    if(count+m.lessons.length>idx)return [m,m.lessons[idx-count]];
+    count+=m.lessons.length;
   }
-  .cb-module-tag-live { color: var(--cb-gold); background: rgba(245,180,0,0.1); border: 1px solid rgba(245,180,0,0.32); }
-  .cb-module-tag-soon { color: #d8d8d8; background: rgba(255,255,255,0.05); border: 1px solid var(--cb-border); }
-</style>
-</head>
-<body>
+  return [modules[0],modules[0].lessons[0]];
+}
 
-<nav class="site-nav" aria-label="Primary navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
-      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
-    </a>
-    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
-      <li><a href="../resources.html">Resources</a></li>
-      <li><a href="../contact.html">Contact</a></li>
-      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
-    </ul>
-  </div>
-</nav>
+function goLesson(idx){
+  current=Math.max(0,Math.min(idx,total-1));
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-<main class="cb-page">
-  <div class="cb-wrap" style="max-width: 900px;">
+function goModule(mi){
+  const idx=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0);
+  goLesson(idx);
+}
 
-    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
-      <a href="../courses.html">Courses</a>
-      <span class="cb-breadcrumb-sep">/</span>
-      <span class="cb-breadcrumb-current">Stagehand Fundamentals</span>
-    </nav>
+function svgVenueComparison(){
+  return `<svg viewBox="0 0 500 200" style="width:100%;max-width:600px">
+    <defs><style>
+      .venue-label{font-size:13px;font-weight:bold;fill:#f5b400}
+      .venue-text{font-size:11px;fill:#aab5c0}
+      .venue-area{fill:#1a3a4a;stroke:#0284c7;stroke-width:2}
+      .venue-box{fill:#0f1419;stroke:#0284c7;stroke-width:1;rx:4}
+    </style></defs>
+    <g id="arena"><rect class="venue-box" x="10" y="10" width="100" height="140"/><text x="60" y="50" text-anchor="middle" class="venue-label">Arena</text><text x="60" y="75" text-anchor="middle" class="venue-text">Large space</text><text x="60" y="88" text-anchor="middle" class="venue-text">High traffic</text><text x="60" y="101" text-anchor="middle" class="venue-text">Fast pace</text><text x="60" y="130" text-anchor="middle" style="fill:#39b979;font-weight:bold">Watch for</text><text x="60" y="143" text-anchor="middle" class="venue-text">equipment</text></g>
+    <g id="theater"><rect class="venue-box" x="120" y="10" width="100" height="140"/><text x="170" y="50" text-anchor="middle" class="venue-label">Theater</text><text x="170" y="75" text-anchor="middle" class="venue-text">Tight spaces</text><text x="170" y="88" text-anchor="middle" class="venue-text">Precision</text><text x="170" y="101" text-anchor="middle" class="venue-text">Complex</text><text x="170" y="130" text-anchor="middle" style="fill:#39b979;font-weight:bold">Ask first</text><text x="170" y="143" text-anchor="middle" class="venue-text">always</text></g>
+    <g id="convention"><rect class="venue-box" x="230" y="10" width="100" height="140"/><text x="280" y="50" text-anchor="middle" class="venue-label">Convention</text><text x="280" y="75" text-anchor="middle" class="venue-text">Freight flow</text><text x="280" y="88" text-anchor="middle" class="venue-text">Forklifts</text><text x="280" y="101" text-anchor="middle" class="venue-text">Quick turns</text><text x="280" y="130" text-anchor="middle" style="fill:#39b979;font-weight:bold">Stay clear</text><text x="280" y="143" text-anchor="middle" class="venue-text">of paths</text></g>
+    <g id="outdoor"><rect class="venue-box" x="340" y="10" width="100" height="140"/><text x="390" y="50" text-anchor="middle" class="venue-label">Outdoor</text><text x="390" y="75" text-anchor="middle" class="venue-text">Weather</text><text x="390" y="88" text-anchor="middle" class="venue-text">Uneven ground</text><text x="390" y="101" text-anchor="middle" class="venue-text">Exposure</text><text x="390" y="130" text-anchor="middle" style="fill:#39b979;font-weight:bold">Adjust</text><text x="390" y="143" text-anchor="middle" class="venue-text">grip/method</text></g>
+  </svg>`;
+}
 
-    <section class="cb-course-hero">
-      <span class="cb-label">Available Now</span>
-      <h1>Stagehand Fundamentals</h1>
-      <p>
-        Learn how to work your first load-in, show call, and load-out with a stronger understanding
-        of crew structure, jobsite awareness, safety expectations, and the habits that get new
-        stagehands called back.
-      </p>
-      <div class="cb-actions">
-        <a class="cb-btn cb-btn-primary" href="../lms-dashboard.html">Start Learning</a>
-        <a class="cb-btn cb-btn-secondary" href="../courses.html">Back to Courses</a>
-      </div>
-    </section>
+function svgCallPhases(){
+  return `<svg viewBox="0 0 550 160" style="width:100%;max-width:650px">
+    <defs><style>
+      .phase-box{fill:#0f1419;stroke:#f5b400;stroke-width:2;rx:6}
+      .phase-title{font-size:14px;font-weight:bold;fill:#f5b400}
+      .phase-desc{font-size:11px;fill:#aab5c0;line-height:13}
+      .arrow{fill:none;stroke:#0284c7;stroke-width:2}
+      .timeline{stroke:#2b3641;stroke-width:1;fill:none}
+    </style></defs>
+    <line class="timeline" x1="50" y1="75" x2="500" y2="75"/>
+    <g><rect class="phase-box" x="15" y="25" width="90" height="100"/><text class="phase-title" x="60" y="50">Load-In</text><text class="phase-desc" x="60" y="65" text-anchor="middle">Before event</text><text class="phase-desc" x="60" y="80" text-anchor="middle">Build show</text><text class="phase-desc" x="60" y="110" text-anchor="middle" style="fill:#39b979">Status: Building</text></g>
+    <polyline class="arrow" points="105,75 125,75"/>
+    <g><rect class="phase-box" x="135" y="25" width="90" height="100"/><text class="phase-title" x="180" y="50">Show Call</text><text class="phase-desc" x="180" y="65" text-anchor="middle">Live performance</text><text class="phase-desc" x="180" y="80" text-anchor="middle">Support crew</text><text class="phase-desc" x="180" y="110" text-anchor="middle" style="fill:#f5b400">Status: Live</text></g>
+    <polyline class="arrow" points="225,75 245,75"/>
+    <g><rect class="phase-box" x="255" y="25" width="90" height="100"/><text class="phase-title" x="300" y="50">Load-Out</text><text class="phase-desc" x="300" y="65" text-anchor="middle">After event</text><text class="phase-desc" x="300" y="80" text-anchor="middle">Strike & pack</text><text class="phase-desc" x="300" y="110" text-anchor="middle" style="fill:#e26868">Status: Packing</text></g>
+  </svg>`;
+}
 
-    <section class="cb-course-section">
-      <h2>What this course helps you understand</h2>
-      <p>
-        This course is built for people who need the real-world basics before stepping into a live
-        event jobsite. It focuses on what beginners need to know, what the work looks like on actual
-        calls, what mistakes to avoid, and what professional habits matter most.
-      </p>
+function svgHazardFlow(){
+  return `<svg viewBox="0 0 500 240" style="width:100%;max-width:600px">
+    <defs><style>
+      .box{fill:#0f1419;stroke:#0284c7;stroke-width:2;rx:6}
+      .label{font-size:12px;font-weight:bold;fill:#f5b400;text-anchor:middle}
+      .desc{font-size:10px;fill:#aab5c0;text-anchor:middle;line-height:12}
+      .arrow{fill:none;stroke:#0284c7;stroke-width:2;marker-end:url(#arrowhead)}
+    </style><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#0284c7"/></marker></defs>
+    <rect class="box" x="20" y="20" width="100" height="70"/><text class="label" x="70" y="45">Hazard</text><text class="desc" x="70" y="62" width="90">What can cause harm</text><text class="desc" x="70" y="75">(wet floor)</text>
+    <polyline class="arrow" d="M 120 55 L 150 55"/>
+    <rect class="box" x="160" y="20" width="100" height="70"/><text class="label" x="210" y="45">Risk</text><text class="desc" x="210" y="62">Likelihood given</text><text class="desc" x="210" y="75">conditions (traffic?)</text>
+    <polyline class="arrow" d="M 260 55 L 290 55"/>
+    <rect class="box" x="300" y="20" width="100" height="70"/><text class="label" x="350" y="45">Behavior</text><text class="desc" x="350" y="62">Unsafe action that</text><text class="desc" x="350" y="75">creates exposure</text>
+    <polyline class="arrow" d="M 350 90 L 350 130"/>
+    <rect class="box" x="270" y="140" width="160" height="70"/><text class="label" x="350" y="165">Control</text><text class="desc" x="350" y="182">Action that reduces risk:</text><text class="desc" x="350" y="195">clear path, warning,</text><text class="desc" x="350" y="208">safer route, help</text>
+  </svg>`;
+}
 
-      <div class="cb-course-grid">
-        <article class="cb-course-card">
-          <h3>The job</h3>
-          <p>What a stagehand does and why the role matters to the larger production.</p>
-        </article>
-        <article class="cb-course-card">
-          <h3>The call</h3>
-          <p>How load-in, show call, and load-out differ in pace, expectations, and risk.</p>
-        </article>
-        <article class="cb-course-card">
-          <h3>The crew</h3>
-          <p>Who gives direction, how departments work, and why chain of command matters.</p>
-        </article>
-        <article class="cb-course-card">
-          <h3>The environment</h3>
-          <p>How arenas, theaters, convention centers, stadiums, and outdoor sites change the work.</p>
-        </article>
-        <article class="cb-course-card">
-          <h3>The safety mindset</h3>
-          <p>How to stay aware around moving gear, overhead work, cable paths, forklifts, ramps, and changing conditions.</p>
-        </article>
-        <article class="cb-course-card">
-          <h3>The habits</h3>
-          <p>Reliability, punctuality, communication, listening, and coachability.</p>
-        </article>
-      </div>
-    </section>
+function render(){
+  const [mod,lesson]=getModuleLesson(current);
+  document.getElementById('progtext').textContent=`${lesson.id} of ${total} lessons`;
+  document.getElementById('pct').textContent=Math.round((current+1)/total*100)+'%';
+  document.getElementById('bar').style.width=(current+1)/total*100+'%';
 
-    <section class="cb-course-section">
-      <h2>Course modules</h2>
-      <div class="cb-course-module-list">
-        <a class="cb-course-module" href="module-1-welcome-to-the-live-event-world.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>1. Welcome to the Live Event World</h3>
-          <p>Understand what stagehands do, where they fit, and what makes a new worker valuable.</p>
-        </a>
-        <a class="cb-course-module" href="module-2-safety-mindset-before-skillset.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>2. Safety Mindset Before Skillset</h3>
-          <p>Build the safety-first thinking needed before speed, confidence, or specialized work.</p>
-        </a>
-        <a class="cb-course-module" href="module-3-ppe-clothing-and-what-to-bring.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>3. PPE, Clothing, and What to Bring</h3>
-          <p>Prepare for calls with the right clothing, gear, and personal readiness.</p>
-        </a>
-        <a class="cb-course-module" href="module-4-venue-and-jobsite-awareness.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>4. Venue and Jobsite Awareness</h3>
-          <p>Learn how to move through a site without becoming a hazard.</p>
-        </a>
-        <a class="cb-course-module" href="module-5-load-in-fundamentals.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>5. Load-In Fundamentals</h3>
-          <p>Understand the rhythm of unloading, sorting, building, and preparing the room.</p>
-        </a>
-        <a class="cb-course-module" href="module-6-stagehand-communication-and-crew-etiquette.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>6. Communication and Crew Etiquette</h3>
-          <p>Learn how to ask questions, take correction, check in, and be useful.</p>
-        </a>
-        <a class="cb-course-module" href="module-7-department-basics.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>7. Department Basics</h3>
-          <p>A beginner-friendly overview of audio, lighting, video, staging, rigging, and more.</p>
-        </a>
-        <a class="cb-course-module" href="module-8-tools-gear-and-handling-basics.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>8. Tools, Gear, and Handling Basics</h3>
-          <p>Road cases, cable coiling, tape, lifting safely, and the hazard concepts underneath it all.</p>
-        </a>
-        <a class="cb-course-module" href="module-9-load-out-fundamentals.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>9. Load-Out Fundamentals</h3>
-          <p>Strike order, staying alert when everyone's tired, and finishing a call strong.</p>
-        </a>
-        <a class="cb-course-module" href="module-10-getting-hired-getting-called-back-and-growing.html">
-          <span class="cb-module-tag cb-module-tag-live">Start Module</span>
-          <h3>10. Getting Hired, Getting Called Back, and Growing</h3>
-          <p>Where work comes from, building a resume, reliability, and your first 30 days.</p>
-        </a>
-      </div>
-    </section>
+  let html=`<section class="hero">
+    <div class="eyebrow">Module ${mod.num} • Lesson ${lesson.id}</div>
+    <h1>${lesson.name}</h1>
+    <p><b>Objective:</b> ${lesson.obj}</p>
+    <div class="rule">${mod.rule}</div>
+  </section>`;
 
-    <section class="cb-course-section">
-      <h2>How This Course Is Verified</h2>
-      <p>
-        This course was originally AI-researched and drafted, but its citation trail wasn't
-        preserved &mdash; there's no source list behind the original draft. What <em>is</em> real:
-        every module was reviewed and corrected module-by-module against direct professional
-        ground-hand experience across lighting, video, audio, carpentry, and backline support on
-        actual calls &mdash; PPE specifics, break/meal structure, water provisioning, radio access,
-        terminology, stage/house directions, and more were fixed against what real calls actually
-        require.
-      </p>
-      <p style="margin-top: 12px; color: var(--cb-muted);">
-        That citation gap has since been backfilled with genuine external research: every module now
-        has its own "Sources" section citing real OSHA regulations, ANSI/ISEA standards, IATSE local
-        rules, and industry/manufacturer documentation, the same way the department pathway courses
-        already cite published standards and industry research. Where a claim is local, employer-
-        specific, or a Crew Blueprint framework rather than a documented national standard, the module
-        says so directly instead of overstating it.
-      </p>
-    </section>
+  if(lesson.id==='1.1')html+=renderM11();
+  else if(lesson.id==='1.2')html+=renderM12();
+  else if(lesson.id==='1.3')html+=renderM13();
+  else if(lesson.id==='1.4')html+=renderM14();
+  else if(lesson.id==='2.1')html+=renderM21();
+  else if(lesson.id==='2.2')html+=renderM22();
+  else if(lesson.id==='2.3')html+=renderM23();
+  else if(lesson.id==='2.4')html+=renderM24();
+  else if(lesson.id==='3.1')html+=renderM31();
+  else if(lesson.id==='3.2')html+=renderM32();
+  else if(lesson.id==='3.3')html+=renderM33();
+  else if(lesson.id==='4.1')html+=renderM41();
+  else if(lesson.id==='4.2')html+=renderM42();
+  else if(lesson.id==='4.3')html+=renderM43();
+  else if(lesson.id==='5.1')html+=renderM51();
+  else if(lesson.id==='5.2')html+=renderM52();
+  else if(lesson.id==='5.3')html+=renderM53();
+  else if(lesson.id==='5.4')html+=renderM54();
+  else if(lesson.id==='6.1')html+=renderM61();
+  else if(lesson.id==='6.2')html+=renderM62();
+  else if(lesson.id==='6.3')html+=renderM63();
+  else if(lesson.id==='7.1')html+=renderM71();
+  else if(lesson.id==='7.2')html+=renderM72();
+  else if(lesson.id==='7.3')html+=renderM73();
+  else if(lesson.id==='8.1')html+=renderM81();
+  else if(lesson.id==='8.2')html+=renderM82();
+  else if(lesson.id==='8.3')html+=renderM83();
+  else if(lesson.id==='9.1')html+=renderM91();
+  else if(lesson.id==='9.2')html+=renderM92();
+  else if(lesson.id==='9.3')html+=renderM93();
+  else if(lesson.id==='10.1')html+=renderM101();
+  else if(lesson.id==='10.2')html+=renderM102();
+  else if(lesson.id==='10.3')html+=renderM103();
+  else if(lesson.id==='10.4')html+=renderM104();
 
-    <section class="cb-course-section cb-course-final">
-      <h2>Start with Module 1</h2>
-      <p>
-        Begin with the foundation course path, then continue through all 10 modules in order.
-      </p>
-      <div class="cb-actions">
-        <a class="cb-btn cb-btn-primary" href="module-1-welcome-to-the-live-event-world.html">Start Module 1</a>
-        <a class="cb-btn cb-btn-secondary" href="../courses.html">Back to Courses</a>
-      </div>
-    </section>
+  html+=`<div class="actions">
+    <button class="btn secondary" ${current===0?'disabled':''} onclick="goLesson(${current-1})">← Previous</button>
+    <button class="btn primary" ${current===total-1?'disabled':''} onclick="goLesson(${current+1})">Next →</button>
+  </div>`;
 
-  </div>
-</main>
+  document.getElementById('main').innerHTML=html;
+  buildSidebar();
+}
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-layout">
-      <div class="footer-disclaimer">
-      <strong>Important Safety Disclaimer</strong>
-      <p>
-        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
-        workers. This does not replace employer-provided safety training, site-specific instruction, union
-        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
-      </p>
-    </div>
-      <div class="footer-main">
-        <div class="footer-brand-center">
-        <span class="footer-mark">CB</span>
-        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
-        </div>
-        <p class="footer-tagline">Built for the people who build the show.</p>
-
-        <div class="footer-cols">
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../courses.html">Courses</a></li>
-          <li><a href="../resources.html">Resources</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Also Visit</h4>
-        <ul>
-          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
-        </ul>
-      </div>
-    </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
-      <p class="footer-legal">
-        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
-        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
-        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
-        <a href="../accessibility-statement.html">Accessibility</a> &middot;
-        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
-        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
-      </p>
+function renderM11(){
+  return `<div class="card objective">
+    <h3>What Do Stagehands Actually Do?</h3>
+    <div class="explainer">Stagehands provide <strong>safe, organized labor</strong> that production depends on. On a call you might unload trucks, push road cases, set staging, move barricade, run cable under direction, sort gear by department, or help reset a venue. The constant: following direction safely while protecting gear and keeping the production moving. This is not "moving boxes"—it's being the reliable hands that every other department counts on to get their equipment from truck to stage and back.</div>
+    <div class="reference">
+      <span class="reference-label">The Bar for Day One</span>
+      You are not expected to know gear or terminology yet. What matters: showing up prepared, listening carefully, following direction, asking when unsure, and working safely. Confidence you haven't earned reads as a liability. Honesty about what you do not know is professional.
     </div>
   </div>
-</footer>
 
-<script src="../js/main.js"></script>
+  <div class="card">
+    <h3>Four Common Venue Types</h3>
+    <div class="visual-section">${svgVenueComparison()}</div>
+    <div class="reference">
+      <span class="reference-label">Environment Context</span>
+      <ul>
+        <li><strong>Arenas:</strong> Large, loud, fast-paced. Heavy gear movement, lots of crew, high traffic. New hands watch for moving equipment and follow direction closely.</li>
+        <li><strong>Theaters:</strong> Tighter backstage spaces, more precise work, show systems matter. Never touch rigging or fly systems unless trained and authorized.</li>
+        <li><strong>Conventions:</strong> Freight and forklift traffic, quick room turnarounds. Watch for forklifts, pallet jacks, and marked traffic paths.</li>
+        <li><strong>Outdoor:</strong> Weather exposure, uneven ground, different sight lines. Same job looks different when footing changes or weather comes in.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Why Environment Matters</h3>
+    <p>You worked indoors yesterday. Today the same case crosses uneven outdoor ground. What changes?</p>
+    <div class="options" data-q="q11">
+      <button class="opt" data-c="0">Nothing. Same case, same method.</button>
+      <button class="opt" data-c="1">Environment changes risk. Confirm path and control method.</button>
+      <button class="opt" data-c="0">Outdoor work is faster. Use the quickest method.</button>
+    </div>
+    <div class="coach" id="q11c"><strong>Why:</strong> Familiar equipment does not erase new hazards. The same case in different environments has different risks. Your method must adapt to the place, not the other way around.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Show up ready, know the space, follow direction safely.</div>`;
+}
+
+function renderM12(){
+  return `<div class="card objective">
+    <h3>The Three Phases of a Call</h3>
+    <div class="explainer">Every call follows the same three-phase structure. Understanding which phase you are in changes what is expected of you, what equipment means, and what is safe. Load-in builds the show. Show call keeps it running live. Load-out strikes, packs, and ships. Each phase has different equipment states, different priorities, and different risks.</div>
+    <div class="reference">
+      <span class="reference-label">Phase Breakdown</span>
+      <ul>
+        <li><strong>Load-In (Before event):</strong> Gear enters the venue and the show gets built. New hands are very likely to work load-in. This is where speed and safety matter most because the room is full of moving equipment and people unfamiliar with each other.</li>
+        <li><strong>Show Call (During event):</strong> Crew supports the live performance. Less likely for beginners because it requires timing, familiarity with that production, and trust. Mistakes during a show are visible to the audience.</li>
+        <li><strong>Load-Out (After event):</strong> Gear is struck, packed, and loaded into trucks. New hands are very likely to work load-out. Fatigue, urgency, and darkness make safety discipline critical.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>What the Phases Look Like</h3>
+    <div class="visual-section">${svgCallPhases()}</div>
+  </div>
+
+  <div class="card">
+    <h3>Phase Context Matters</h3>
+    <p>During show, a case is positioned differently than during load-in. Your assumption?</p>
+    <div class="options" data-q="q12">
+      <button class="opt" data-c="0">Someone made a mistake. Put it back.</button>
+      <button class="opt" data-c="1">Position may be intentional for show. Do not change without direction.</button>
+      <button class="opt" data-c="0">If nobody is touching it, it is available to move.</button>
+    </div>
+    <div class="coach" id="q12c"><strong>Why:</strong> Same object has different operational meaning in each phase. A case positioned for load-in is not the same as a case positioned for show. Your assumption about what needs doing changes based on phase, not on what looks wrong to you.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Know which phase you are in. It tells you what equipment means and what is safe.</div>`;
+}
+
+function renderM13(){
+  return `<div class="card objective">
+    <h3>Who Is Directing Your Work?</h3>
+    <div class="explainer">You do not need to memorize every title. You need to know one thing: <strong>Who is directing my current assignment right now?</strong> Once you know your lead, confirm all changes through them. This prevents conflicting instructions and keeps work organized. Your lead is your reference. They know what needs doing and can clarify when something is unclear or changes.</div>
+    <div class="reference">
+      <span class="reference-label">What Makes You Valuable</span>
+      <ul>
+        <li><strong>Show up ready:</strong> On time, prepared with gear and mindset, ready to receive direction.</li>
+        <li><strong>Communicate clearly:</strong> Listen carefully, ask when unclear, report when done.</li>
+        <li><strong>Use judgment:</strong> Stop and ask when you are unsure rather than guessing.</li>
+        <li><strong>Follow direction:</strong> Get the assignment right before optimizing or changing it.</li>
+        <li><strong>Work safely:</strong> Protect yourself and the crew. Safety is non-negotiable.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Conflicting Instructions</h3>
+    <p>Your lead said, "Leave these cases closed." A stranger says, "Open one." You do?</p>
+    <div class="options" data-q="q13">
+      <button class="opt" data-c="0">Open it. They sound experienced.</button>
+      <button class="opt" data-c="0">Ignore them completely.</button>
+      <button class="opt" data-c="1">Confirm the change through your lead first.</button>
+    </div>
+    <div class="coach" id="q13c"><strong>Why:</strong> Your lead is your reference point. Conflicting instructions get resolved through the chain directing your work, not by choosing who sounds most confident or authoritative.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Know your lead. Ask clarifying questions. Confirm changes through them.</div>`;
+}
+
+function renderM14(){
+  return `<div class="card objective">
+    <h3>First-Call Scenarios: Applying Module 1</h3>
+    <div class="explainer">Real calls test your judgment across multiple decisions: arriving ready, completing work, reporting, and handling specialized requests. These scenarios show when Module 1's principles matter most. Each scenario has one moment where your choice determines whether you are reliable and safe or risky and unreliable.</div>
+  </div>
+
+  <div class="card">
+    <h3>Scenario 1: Call Time</h3>
+    <p>Call time is 8:00 AM. At 7:57 you are walking from parking and have not yet checked in.</p>
+    <div class="options" data-q="q14a">
+      <button class="opt" data-c="0">You are on time. It is not 8:00 AM yet.</button>
+      <button class="opt" data-c="1">Call time means ready to work and receive direction. You should have checked in already.</button>
+    </div>
+    <div class="coach" id="q14ac"><strong>Why:</strong> Call time is not the moment you arrive; it is the moment you are ready and available. Getting there early and checking in shows you are professional.</div>
+  </div>
+
+  <div class="card">
+    <h3>Scenario 2: Task Completion</h3>
+    <p>You finish your assigned task. No one immediately gives another one. You see other departments working nearby.</p>
+    <div class="options" data-q="q14b">
+      <button class="opt" data-c="1">Report completion or return to your lead for direction.</button>
+      <button class="opt" data-c="0">Open nearby cases to stay busy.</button>
+      <button class="opt" data-c="0">Take a break since your work is done.</button>
+    </div>
+    <div class="coach" id="q14bc"><strong>Why:</strong> Staying useful means staying available to your lead, not self-assigning work or helping other departments without direction.</div>
+  </div>
+
+  <div class="card">
+    <h3>Scenario 3: Specialized Work Request</h3>
+    <p>A tech says, "Can you hang this light fixture?" You have never done this before.</p>
+    <div class="options" data-q="q14c">
+      <button class="opt" data-c="0">Try it carefully. You can learn as you go.</button>
+      <button class="opt" data-c="1">State your limitation honestly. Ask for instruction or another task.</button>
+      <button class="opt" data-c="0">Watch someone once, then do it yourself.</button>
+    </div>
+    <div class="coach" id="q14cc"><strong>Why:</strong> Honest limits are professional judgment. Bluffing creates risk and liability. Saying "I have not been trained" is how you stay low-risk and reliable.</div>
+  </div>
+  <div class="key-takeaway"><strong>Integration:</strong> Show up ready, know your lead, follow direction, ask when unclear, work safely. These five things make you reliable on your first call.</div>`;
+}
+
+function renderM21(){
+  return `<div class="card objective">
+    <h3>Three Concepts That Are Connected But Different</h3>
+    <div class="explainer">Safety judgment requires distinguishing <strong>the hazard (what can cause harm), the risk (likelihood and severity given conditions), and the unsafe behavior (what creates exposure)</strong>. Understanding the difference teaches you how to classify hazards and respond correctly. A wet floor is always a hazard. Whether the risk is low or high depends on who is around it and what they are doing there.</div>
+  </div>
+
+  <div class="card">
+    <h3>The Three Concepts</h3>
+    <div class="visual-section">${svgHazardFlow()}</div>
+    <div class="reference">
+      <span class="reference-label">Applying the Concepts</span>
+      <ul>
+        <li><strong>Hazard:</strong> Wet floor, forklift, suspended load, unplugged cable, sharp edge, combustible material. The thing that can cause harm.</li>
+        <li><strong>Risk:</strong> The likelihood and severity given current conditions. Wet floor in an empty hallway at 9 AM (low risk) vs. wet floor in a busy case route at 4 PM (high risk). Risk is hazard + exposure.</li>
+        <li><strong>Unsafe behavior:</strong> Walking through the wet floor (unsafe). Going around or over it (safe). Same hazard, different behavior.</li>
+        <li><strong>Control:</strong> The action reducing risk. Clear signage, better traction, closed path, warning, escort, or alternative route. Hazard stays (wet floor), but risk reduces.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recognizing Risk Change</h3>
+    <p>Wet floor in empty hallway (9 AM) vs. same floor in busy case route (4 PM). What changed?</p>
+    <div class="options" data-q="q21">
+      <button class="opt" data-c="0">The hazard. Different situations have different hazards.</button>
+      <button class="opt" data-c="1">The risk. Same hazard, different traffic and exposure changes the risk level.</button>
+    </div>
+    <div class="coach" id="q21c"><strong>Why:</strong> The wet surface is the hazard. It does not change. Exposure (traffic, people working nearby, equipment moving) changes the risk. Report and correct according to procedure based on current risk, not just hazard.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Same hazard, different context = different risk level requiring different response.</div>`;
+}
+
+function renderM22(){
+  return `<div class="card objective">
+    <h3>NCCE: Notice, Classify, Control, Escalate</h3>
+    <div class="explainer">This is your decision flowchart for every hazard you notice. <strong>Notice</strong> something that could cause harm, <strong>classify</strong> whether you can control it safely, <strong>control</strong> it if you can, <strong>escalate</strong> if you cannot. This model repeats throughout your stagehand career. It gives you a clear path: you are not guessing whether to report something or trying to fix problems beyond your authority.</div>
+    <div class="reference">
+      <span class="reference-label">The Four Steps</span>
+      <ul>
+        <li><strong>NOTICE:</strong> See something that could cause harm. A trip hazard, unclear cable, uncontrolled load, missing guard, or unsafe behavior.</li>
+        <li><strong>CLASSIFY:</strong> Ask yourself: Can I safely control this with my current authority and training? If yes → CONTROL. If unsure or no → ESCALATE.</li>
+        <li><strong>CONTROL:</strong> Use the safer behavior. Examples: move the trip hazard, position the cable safely, secure the load, position yourself clear of the hazard.</li>
+        <li><strong>ESCALATE:</strong> Tell your lead if you are unsure or if the risk is beyond your control level. Rigging systems, electrical, suspended loads, structural changes—escalate these.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Near Miss Reporting</h3>
+    <p>A rolling case nearly enters a travel path. Nothing bad happened. You should:</p>
+    <div class="options" data-q="q22">
+      <button class="opt" data-c="0">Say nothing. Nobody got hurt.</button>
+      <button class="opt" data-c="1">Report the near miss so the underlying hazard can be corrected.</button>
+      <button class="opt" data-c="0">Watch more carefully yourself next time.</button>
+    </div>
+    <div class="coach" id="q22c"><strong>Why:</strong> Near misses are safety information. Report them through the call's process so the hazard (loose brake, bad ramp positioning) gets fixed for everyone, not just you.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> NCCE is your framework for every hazard. Use it automatically.</div>`;
+}
+
+function renderM23(){
+  return `<div class="card objective">
+    <h3>Safety Judgment Stays Active Under Pressure</h3>
+    <div class="explainer">Speed, fatigue, and schedule pressure create conditions where hazards multiply. <strong>Pressure is when your safety judgment matters most, not when it takes a break.</strong> The professional move is keeping control even when shortcuts seem faster. Schedule pressure and fatigue are real, but they are also the moments when mistakes happen.</div>
+    <div class="reference">
+      <span class="reference-label">Two Pressure Scenarios</span>
+      <ul>
+        <li><strong>Schedule Pressure:</strong> A shortcut over active cable saves 2 seconds. Stepping over it instead of going around adds 5 seconds. The temptation is real. Controlled method wins.</li>
+        <li><strong>Fatigue Pressure:</strong> Late in the call, your attention slips. You want to keep pace. You worry you look slow. This is when you communicate, hydrate, and slow down—not when you push through.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Judgment Under Pressure</h3>
+    <p>Which response is correct in BOTH pressure scenarios?</p>
+    <div class="options" data-q="q23">
+      <button class="opt" data-c="1">Use the safer route. Communicate fatigue. Controlled behavior under pressure earns trust.</button>
+      <button class="opt" data-c="0">Speed up. Production is more important than small risk.</button>
+      <button class="opt" data-c="0">Push through without saying anything.</button>
+    </div>
+    <div class="coach" id="q23c"><strong>Why:</strong> Controlled behavior under pressure is how you earn trust. Honest communication about fatigue is professional judgment, not weakness. Fast crews stay organized, not by rushing individuals but by correct method.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Pressure tests judgment. Controlled behavior is the mark of a reliable crew member.</div>`;
+}
+
+function renderM24(){
+  return `<div class="card objective">
+    <h3>Hazard Complexity: Identify and Prioritize</h3>
+    <div class="explainer">Real load-ins have <strong>multiple simultaneous hazards</strong>: wet floor, forklift path, unclear cable, overhead work, schedule pressure. You need to recognize all of them, prioritize them by risk, and know which ones to escalate rather than guess about. This is where Module 2's concepts come together under the stress conditions you will actually experience.</div>
+  </div>
+
+  <div class="card">
+    <h3>Real Complexity Scenario</h3>
+    <p>A fast load-in has: wet floor in the load area, active forklift path crossing your route, cable across the work area, overhead work happening 20 feet away, and a schedule to finish in 90 minutes.</p>
+    <div class="reference">
+      <span class="reference-label">What to Consider</span>
+      <ul>
+        <li>Which hazard has the highest risk right now? (Forklift or overhead work, probably.)</li>
+        <li>Which hazard can you control? (Wet floor: mark it or reroute. Cable: report it.)</li>
+        <li>Which requires escalation? (Overhead work positioning, forklift path—these are not your decision.)</li>
+        <li>How does schedule pressure change your judgment? (It does not. Controlled pace matters more.)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Your Assessment</h3>
+    <p>Take 2-3 minutes. Write: What hazards do you notice? Which ones increase risk? Which would you pause rather than guess about?</p>
+    <textarea placeholder="Hazard 1:...&#10;Risk level:...&#10;Action:...&#10;Escalate?..." style="background:#0f1419;border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--text);font-family:inherit;min-height:100px;font-size:13px;width:100%;"></textarea>
+  </div>
+  <div class="key-takeaway"><strong>Checkpoint:</strong> Can you classify and prioritize hazards under realistic pressure? Can you identify which task to pause? This is the judgment Module 2 develops.</div>`;
+}
+
+function renderM31(){
+  return `<div class="card objective">
+    <h3>Context Determines Preparation</h3>
+    <div class="explainer">A call sheet specifies what you will do and when. <strong>Show blacks (black clothing for stage appearance) and load-in PPE serve different phases.</strong> Reading the call sheet before you leave home lets you pack both instead of wasting time changing midway or standing unprepared. Preparation is contextual. The call sheet tells you what to prepare for.</div>
+    <div class="reference">
+      <span class="reference-label">Call Sheet Context</span>
+      <ul>
+        <li><strong>If it says "early load-in":</strong> Expect 2-4 hours building before show call. Wear load-in PPE: work clothes, hard hat if overhead, gloves, closed-toe shoes.</li>
+        <li><strong>If it says "show blacks required":</strong> You will be visible during the performance. Bring black clothing separate from work gear.</li>
+        <li><strong>If it says both:</strong> Bring both outfits. Change when the phase changes. Do not show up in one and improvise the other.</li>
+        <li><strong>If it is outdoors:</strong> Weather gear, better traction, longer sleeves, hat. Environment changes what PPE means.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Dual-Phase Preparation</h3>
+    <p>Call sheet requires show blacks AND early load-in with overhead work.</p>
+    <div class="options" data-q="q31">
+      <button class="opt" data-c="0">Bring show blacks. Change if overhead work happens.</button>
+      <button class="opt" data-c="1">Bring both outfits/PPE ready for both work phase and show appearance.</button>
+      <button class="opt" data-c="0">Decide on arrival based on what you see.</button>
+    </div>
+    <div class="coach" id="q31c"><strong>Why:</strong> Preparation happens before arrival. Reading the call sheet and packing accordingly means you are ready, not scrambling.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Read the call sheet. Prepare before you leave. Readiness is how you show respect for the production.</div>`;
+}
+
+function renderM32(){
+  return `<div class="card objective">
+    <h3>Site-Specific Requirements Are Non-Negotiable</h3>
+    <div class="explainer"><strong>Some PPE is determined by the site or task, not by habit or preference.</strong> Head protection in overhead work zones, hearing protection in loud areas, high-visibility in vehicle traffic—these are not optional. If the site requires it and you did not expect it, you get the equipment through the employer/site process before working. Non-compliance means you do not work that area.</div>
+    <div class="reference">
+      <span class="reference-label">Common Site-Specific Requirements</span>
+      <ul>
+        <li><strong>Hard hat:</strong> Overhead work, rigging, tall ceiling areas. If required, you cannot enter without one.</li>
+        <li><strong>High-visibility:</strong> Vehicle traffic areas, outdoor loading docks, forklift paths. Production decides, not you.</li>
+        <li><strong>Hearing protection:</strong> Loud events (concerts, festivals). Some venues require it at decibel thresholds.</li>
+        <li><strong>Respirator/mask:</strong> Dusty areas, chemical exposure. Site safety rules determine this.</li>
+        <li><strong>Footwear:</strong> Some rigging work requires specific boots. Some venues require closed-toe only.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Unexpected Requirements</h3>
+    <p>You arrive and learn your assigned area requires head protection you did not expect.</p>
+    <div class="options" data-q="q32">
+      <button class="opt" data-c="0">Work without it today. Bring one next call.</button>
+      <button class="opt" data-c="1">Do not enter unprotected. Obtain required PPE through the employer/site process.</button>
+      <button class="opt" data-c="0">Ask another crew member to lend theirs.</button>
+    </div>
+    <div class="coach" id="q32c"><strong>Why:</strong> Site requirements override habit. Getting proper equipment is the employer's job to facilitate. Your job is to not work outside those requirements. This is liability protection for everyone.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Site-specific PPE is mandatory, not optional. You cannot work without it.</div>`;
+}
+
+function renderM33(){
+  return `<div class="card objective">
+    <h3>PPE Needs Shift With the Phase</h3>
+    <div class="explainer">During load-in with vehicle traffic, high-visibility gear makes sense and is often required. During show call when crew needs to blend into background, production directs something different. <strong>Requirements are contextual, not universal rules.</strong> You adapt your readiness to the phase, not the other way around.</div>
+    <div class="reference">
+      <span class="reference-label">Phase-Specific PPE</span>
+      <ul>
+        <li><strong>Load-In PPE:</strong> Work clothes, high-visibility, hard hat if required, gloves, closed-toe shoes. Visibility and protection matter here.</li>
+        <li><strong>Show Call PPE:</strong> Often minimal—black clothing to blend, professional appearance. Production might explicitly say "no high-vis" during performance.</li>
+        <li><strong>Load-Out PPE:</strong> Back to load-in levels. Darkness, fatigue, and urgency make safety gear critical again.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Contextual Adaptation</h3>
+    <p>During load-in you wore high-vis. Later, show call directs crew to blend in. What do you do?</p>
+    <div class="options" data-q="q33">
+      <button class="opt" data-c="0">Keep high-vis. Visibility always beats appearance.</button>
+      <button class="opt" data-c="1">Follow current production/hazard assessment for this phase.</button>
+      <button class="opt" data-c="0">Compromise between both.</button>
+    </div>
+    <div class="coach" id="q33c"><strong>Why:</strong> PPE requirements respond to the actual hazard condition now, not the hazard condition from earlier. If production directs you to change, the hazard assessment changed.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Readiness adapts to the phase. You are one crew member across three different phases.</div>`;
+}
+
+function renderM41(){
+  return `<div class="card objective">
+    <h3>The First 15 Minutes: Orient Before Acting</h3>
+    <div class="explainer">Arriving at a new venue and jumping into work looks helpful but skips critical steps. <strong>Check in, identify your lead, observe traffic and hazards, then join work.</strong> This sequence takes minutes and prevents mistakes that waste much more time. You cannot work safely in a space you do not understand. Orientation is not wasted time; it is the foundation for everything that follows.</div>
+    <div class="reference">
+      <span class="reference-label">First 15 Minutes Sequence</span>
+      <ul>
+        <li><strong>Minute 1:</strong> Find the check-in location. Report your arrival. Get the call sheet info and assignments.</li>
+        <li><strong>Minute 2-3:</strong> Identify your lead. Learn their name, position, what they direct. Where will you find them?</li>
+        <li><strong>Minute 4-10:</strong> Observe. Where is equipment traffic? Where are crew moving? What equipment is active? Are there restricted zones? What are exits and travel paths?</li>
+        <li><strong>Minute 11-15:</strong> Report to your lead. Confirm your assignment and where to start. Ask any immediate questions.</li>
+        <li><strong>Then:</strong> Join work with context, not blind.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Action vs. Orientation</h3>
+    <p>You enter the venue. A busy crew is unloading nearby. You want to help immediately.</p>
+    <div class="options" data-q="q41">
+      <button class="opt" data-c="0">Start moving cases. They will tell you if you are in the way.</button>
+      <button class="opt" data-c="1">Check in, identify your lead, observe traffic before joining.</button>
+      <button class="opt" data-c="0">Ask someone what needs to be done.</button>
+    </div>
+    <div class="coach" id="q41c"><strong>Why:</strong> Orientation before action prevents mistakes and shows you are thinking about safety, not just enthusiasm. Leads respect crew who arrive ready to be directed, not crew who start working blindly.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Knowing the space and your lead takes 15 minutes. Mistakes from not knowing take hours to fix.</div>`;
+}
+
+function renderM42(){
+  return `<div class="card objective">
+    <h3>Venue Vocabulary: Consistent Location Language</h3>
+    <div class="explainer">Venues use consistent location language that repeats across every show you work. <strong>Stage left/right (performer's perspective), house left/right (audience perspective), FOH (front-of-house control area), upstage/downstage (away from/toward audience), dock, backstage.</strong> This vocabulary is stable. Once you learn it, it works everywhere. Stage left is always stage left, no matter the venue.</div>
+    <div class="reference">
+      <span class="reference-label">Venue Directions Explained</span>
+      <ul>
+        <li><strong>Stage Left/Right:</strong> Using the performer's perspective facing the audience. If you are standing on stage facing where the audience is, stage left is to your left. For someone in the audience, stage left looks like it is on the right. This is why it matters—it is not a direction; it is a perspective.</li>
+        <li><strong>House Left/Right:</strong> Using the audience's perspective facing the stage. If you are sitting in the audience, house left is your left.</li>
+        <li><strong>FOH (Front-of-House):</strong> The control/production area in the audience seating area. Where sound, lighting, and production control sits during a show. It is not stage left or right; it is a zone.</li>
+        <li><strong>Upstage/Downstage:</strong> Away from audience / toward audience. Upstage is farther from the audience, downstage is closer.</li>
+        <li><strong>Dock/Loading Dock:</strong> Where trucks back up to load/unload. Usually at the rear or side of the venue.</li>
+        <li><strong>Backstage:</strong> Everything behind or to the sides of the stage. Not the stage itself, but the areas crew uses.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Perspective Matters</h3>
+    <p>You stand in the house facing the stage. Told to move to stage left. Where?</p>
+    <div class="options" data-q="q42">
+      <button class="opt" data-c="0">To your left as you face the stage.</button>
+      <button class="opt" data-c="1">To the performer's left (your right as you face the stage).</button>
+      <button class="opt" data-c="0">Anywhere on the left side of the building.</button>
+    </div>
+    <div class="coach" id="q42c"><strong>Why:</strong> Venue directions use performer's perspective. This is the industry standard. If unsure, ask clarification ("You mean stage left from the performer's view?") rather than moving to the wrong zone.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Venue language is stable. Learn it once, use it everywhere.</div>`;
+}
+
+function renderM43(){
+  return `<div class="card objective">
+    <h3>Recognizing Multiple Hazards in New Spaces</h3>
+    <div class="explainer">Every venue has <strong>restricted areas you cannot enter, equipment blind spots, active cable paths, and emergency routes you must keep clear.</strong> Your first task in a new space is identifying these, not working around them. Hazard recognition is spatial. You are learning to see the invisible risks in a room you have never been in before.</div>
+    <div class="reference">
+      <span class="reference-label">Hazards in Every Venue</span>
+      <ul>
+        <li><strong>Blind Spots:</strong> Places where equipment (forklift, stage) cannot see you. Stay out of these areas or position so operators can see you.</li>
+        <li><strong>Cable Paths:</strong> Trip hazards and electrical concerns. Do not move, unplug, or reroute cable. Report unclear paths to the responsible department.</li>
+        <li><strong>Restricted Zones:</strong> Rigging areas, overhead work, electrical rooms. You cannot enter unless trained and assigned.</li>
+        <li><strong>Emergency Exits:</strong> Must stay clear always. Cases staged in front of them during fast load-in still need clearance paths. Report blocked exits.</li>
+        <li><strong>Vehicle Paths:</strong> Forklift routes, truck backing areas. Stay completely clear. These have priority.</li>
+        <li><strong>Overhead Work:</strong> Rigging, lighting, suspended loads. Never work under these. Never assume it is safe because nothing is falling right now.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>New Space Hazards</h3>
+    <p>In a new venue: a cable crosses your work area, a door is open, a forklift operator can see the area but may not see you at certain angles.</p>
+    <div class="options" data-q="q43">
+      <button class="opt" data-c="1">Do not move cable, assume open door is accessible, or stand in blind spot. Ask about all three.</button>
+      <button class="opt" data-c="0">Do whatever keeps you productive and moving cases.</button>
+      <button class="opt" data-c="0">Report concerns but work anyway.</button>
+    </div>
+    <div class="coach" id="q43c"><strong>Why:</strong> Orientation means identifying what you must stay out of. Staying clear of blind spots and unknown systems is how you avoid becoming part of the hazard. This is not caution; this is professionalism.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Every space has invisible hazards. Orientation reveals them.</div>`;
+}
+
+function renderM51(){
+  return `<div class="card objective">
+    <h3>Why Truck Unload Sequence Matters</h3>
+    <div class="explainer">Trailers are loaded carefully for stability and safe access. Cases in front block cases behind. <strong>Unloading starts from the rear and moves forward.</strong> Following sequence means the load stays stable and you do not climb over restraints or create collapse risk. The sequence is not arbitrary; it is physics. Breaking sequence creates danger.</div>
+    <div class="reference">
+      <span class="reference-label">Load Sequence Logic</span>
+      <ul>
+        <li><strong>Why rear-to-front:</strong> The back of the trailer is accessible. The front is blocked by cases already unloaded. You work from clear space, not from trapped space.</li>
+        <li><strong>Load restraints:</strong> Straps, bars, and load locks hold the trailer's contents stable during transport. Do not release or cross these without the truck loader's direction.</li>
+        <li><strong>Stability:</strong> A full trailer is balanced. Removing cases from the middle destabilizes the front and rear. Always work front-to-back in the load order.</li>
+        <li><strong>Truck loader authority:</strong> The person who loaded the truck knows its weight distribution and unload sequence. Follow their direction. They are responsible for load safety.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Sequence Priority</h3>
+    <p>A needed case is visible deep in a tight trailer, behind the current unload position and restraints.</p>
+    <div class="options" data-q="q51">
+      <button class="opt" data-c="0">Climb over to reach it. It is urgent.</button>
+      <button class="opt" data-c="1">Follow the truck loader's unload sequence. Do not climb past restraints.</button>
+      <button class="opt" data-c="0">Maybe. Ask first, then decide.</button>
+    </div>
+    <div class="coach" id="q51c"><strong>Why:</strong> Truck sequence prevents cases from shifting and restraints from failing. Breaking sequence saves 10 seconds and creates a collapse risk. Following the sequence matters more than perceived urgency.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Organization beats urgency. Sequence is how fast crews work fast safely.</div>`;
+}
+
+function renderM52(){
+  return `<div class="card objective">
+    <h3>Control and Visibility During Movement</h3>
+    <div class="explainer">A tall case blocks your view. A ramp entrance is around a blind corner. <strong>Move with visibility or use a guide/spotter.</strong> This is not slowing you down; this is the correct fast method. Collisions happen in blind spots. Professional crews use spotters or routes with visibility. Speed without sight is not speed; it is danger.</div>
+    <div class="reference">
+      <span class="reference-label">Visibility Management</span>
+      <ul>
+        <li><strong>Spotter/guide:</strong> One person directs the case movement, calling "left," "straight," "stop," etc. They stand where they can see the hazard area. The case handler listens and controls. This is faster and safer than solo movement with blind sections.</li>
+        <li><strong>Clear route:</strong> Choose the path you can see all the way through. Longer but visible beats shorter but blind.</li>
+        <li><strong>Small movements:</strong> If you must enter a blind area, enter slowly, stop before the corner, scout it, then proceed.</li>
+        <li><strong>Two-person standard:</strong> For tall cases, cases with limited visibility, or any blind entry, use two people: one to handle, one to guide.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Blind Spot Movement</h3>
+    <p>A tall road case blocks your view entering a blind doorway/ramp.</p>
+    <div class="options" data-q="q52">
+      <button class="opt" data-c="0">Move quickly. You will see if someone is coming.</button>
+      <button class="opt" data-c="1">Use a guide/spotter or follow the lead's controlled movement method.</button>
+      <button class="opt" data-c="0">Take it solo if it seems light enough.</button>
+    </div>
+    <div class="coach" id="q52c"><strong>Why:</strong> Controlled movement with a guide is how teams move fast safely. Solo speed into blind spots creates collisions with crew, equipment, or walls. The guide makes the difference between fast and reckless.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> The fastest method includes a guide when you cannot see. That is not slow; that is organized.</div>`;
+}
+
+function renderM53(){
+  return `<div class="card objective">
+    <h3>Pinch Points and Team Coordination</h3>
+    <div class="explainer">Ramps create momentum. Team carries require one person calling the moves. <strong>Do not position your body downhill/behind an uncontrolled load, and in team carries, one person signals the timing.</strong> This prevents crushing injuries and dropped loads. Pinch points are where fingers, hands, and bodies get caught between equipment and something else. Awareness of body positioning is a core safety skill.</div>
+    <div class="reference">
+      <span class="reference-label">Pinch Point Awareness</span>
+      <ul>
+        <li><strong>Body positioning:</strong> Never place your body downhill of a load moving on a ramp. Never position behind a load that is rolling. Always position to the side, where you can stop it by side pressure, not by blocking it.</li>
+        <li><strong>Team carry positions:</strong> For large items with multiple people, use a specific grip and stance. The team leader calls moves: "Lift," "Hold," "Step," "Lower." Everyone moves together, not at individual pace.</li>
+        <li><strong>Hand placement:</strong> Avoid fingers in pinch points. Use palms and grips designed for the load. Rigid cases have specific grip handles. Use them. Do not improvise grips.</li>
+        <li><strong>One caller:</strong> In team movement, one person has authority to stop the action ("STOP" is always obeyed immediately). This prevents conflicting signals and coordination failures.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Team Safety in Movement</h3>
+    <p>A case is gaining speed on a ramp. Multiple people are carrying a large item with different people calling different moves.</p>
+    <div class="options" data-q="q53">
+      <button class="opt" data-c="0">Position behind the load to stop it if it rolls.</button>
+      <button class="opt" data-c="1">Never position behind uncontrolled loads. Use assigned handling with adequate help. One caller in team carries.</button>
+      <button class="opt" data-c="0">Work fast to minimize the time the load is moving.</button>
+    </div>
+    <div class="coach" id="q53c"><strong>Why:</strong> Pinch points and rolling loads cause crushing injuries and broken bones. Correct handling and communication prevent these. One caller prevents conflicting moves that cause drops or injuries.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Team coordination and body positioning are safety fundamentals, not optional details.</div>`;
+}
+
+function renderM54(){
+  return `<div class="card objective">
+    <h3>Full Load-In: Dock to Room With Decisions</h3>
+    <div class="explainer">You move cases through dock, ramp, blind doorway, department split, active cable, public corridor. Every zone has decisions: <strong>follow order, maintain visibility, preserve paths, respect technical state, communicate.</strong> This is where Modules 1-5 come together. You are not just moving things; you are moving them correctly through a complex environment.</div>
+    <div class="reference">
+      <span class="reference-label">Dock-to-Room Journey Checkpoints</span>
+      <ul>
+        <li><strong>At truck:</strong> Follow unload sequence. Do not climb past restraints. Wait for the truck loader's direction.</li>
+        <li><strong>On ramp:</strong> Use spotter if case is tall or blocks view. Control momentum. Do not position behind loads rolling downhill.</li>
+        <li><strong>At doorway:</strong> Confirm the path is clear. If blind corner, move slowly or use guide.</li>
+        <li><strong>In hallway:</strong> Stay in assigned route. Do not damage walls or fixtures. Keep emergency exits clear.</li>
+        <li><strong>At cable:</strong> Do not move or reroute it. Step over if safe, go around if not. Report unclear paths.</li>
+        <li><strong>At department split:</strong> Confirm the destination. Label dictates where case goes. Wrong sorting creates downstream delays.</li>
+        <li><strong>At destination:</strong> Set case down under direction. Confirm placement with department lead. Report completion.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Full Sequence Decision</h3>
+    <p>You move through dock, ramp, blind door, department split, active cable, public corridor.</p>
+    <div class="options" data-q="q54">
+      <button class="opt" data-c="0">Move cases as fast as possible to impress the crew.</button>
+      <button class="opt" data-c="1">Maintain controlled pace, follow the lead's workflow, communicate, preserve paths and technical state.</button>
+      <button class="opt" data-c="0">Reach your destination before other crew members.</button>
+    </div>
+    <div class="coach" id="q54c"><strong>Why:</strong> Organized, controlled load-in is what makes fast crews look easy. Fast is the result of correct method, not the starting goal. The crew's pace is collective; your pace must match it.</div>
+  </div>
+  <div class="key-takeaway"><strong>Integration:</strong> Coordination beats individual speed. The crew's method matters more than your pace.</div>`;
+}
+
+function renderM61(){
+  return `<div class="card objective">
+    <h3>Clarity Over Social Pressure</h3>
+    <div class="explainer">A lead gives a fast instruction. You catch only half. Social pressure says "copy" anyway. <strong>Brief clarification is professional, not weak.</strong> Saying "copy" to an instruction you did not understand creates mistakes. Professionals ask for clarification. This is not weakness; it is how you protect the production and crew.</div>
+    <div class="reference">
+      <span class="reference-label">Clarification Strategies</span>
+      <ul>
+        <li><strong>Full misunderstanding:</strong> "Say again?" or "Can you repeat that?" Fast and normal.</li>
+        <li><strong>Partial understanding:</strong> "I got that we are moving cases to... [restate what you heard]. Where?" Fill in the blanks.</li>
+        <li><strong>Speed confusion:</strong> "I need a slower copy on that" when the pace is too fast to follow.</li>
+        <li><strong>Radio static:</strong> "Radio is breaking up. Did you say [confirm]?" Better to confirm than guess.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Understanding vs. Guessing</h3>
+    <p>Lead gives a fast instruction. You understand only part.</p>
+    <div class="options" data-q="q61">
+      <button class="opt" data-c="0">Say "copy" and hope you understood correctly.</button>
+      <button class="opt" data-c="1">Say "Say again" or restate what you heard and ask for the missing detail.</button>
+      <button class="opt" data-c="0">Ask another crew member what was said.</button>
+    </div>
+    <div class="coach" id="q61c"><strong>Why:</strong> Brief clarification prevents mistakes. Your lead knows you are reliable if you confirm, not if you guess. Guessing leads to wrong case placement or wrong task.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Clarity is professional. Guessing is a liability.</div>`;
+}
+
+function renderM62(){
+  return `<div class="card objective">
+    <h3>Staying Useful Means Staying Available</h3>
+    <div class="explainer">You finish a task. A nearby department looks busy. Proactive help outside the chain of direction creates confusion. <strong>Your lead knowing where you are and what is next is how you stay useful.</strong> Do not confuse independence with initiative. Initiative is offering to help your lead; independence is acting without direction.</div>
+    <div class="reference">
+      <span class="reference-label">Availability Management</span>
+      <ul>
+        <li><strong>After task completion:</strong> Return to your lead immediately. Say, "That is finished. What is next?"</li>
+        <li><strong>If no immediate task:</strong> "Should I wait here or move closer to [location]?" Ask where to stand so you are easy to find.</li>
+        <li><strong>If a neighbor department needs help:</strong> Do not assume you can help them. Ask your lead: "Should I help [department] with [task]?" If yes, get direction. If no, stay available to yours.</li>
+        <li><strong>During breaks:</strong> Confirm break locations with your lead so you are accessible when work resumes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Availability Decision</h3>
+    <p>You finish your assignment. Another department nearby is very busy.</p>
+    <div class="options" data-q="q62">
+      <button class="opt" data-c="0">Help them. You can see they need it.</button>
+      <button class="opt" data-c="1">Check back with your assigned lead or remain ready where directed.</button>
+      <button class="opt" data-c="0">Take a break since your task is done.</button>
+    </div>
+    <div class="coach" id="q62c"><strong>Why:</strong> Proactive help across departments creates coordination confusion. Your lead not knowing where you are is a coordination failure. Availability to your lead prevents bottlenecks.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Your reliability is measured by availability to your lead, not by independent helpfulness.</div>`;
+}
+
+function renderM63(){
+  return `<div class="card objective">
+    <h3>Professional Response to Correction</h3>
+    <div class="explainer">A lead corrects you sharply in front of others. Crew criticizes touring staff. <strong>Acknowledge, correct behavior immediately, stay professional with all teams.</strong> This shows you understand the bigger picture. Correction is information. Ego gets in the way of learning.</div>
+    <div class="reference">
+      <span class="reference-label">Response Patterns</span>
+      <ul>
+        <li><strong>When corrected about safety:</strong> Immediate action. Do not defend or explain. Change behavior now. Discuss understanding later if needed.</li>
+        <li><strong>When corrected about process:</strong> "Got it. I will [correct action]." Implement immediately.</li>
+        <li><strong>When unsure why you were corrected:</strong> Later, ask your lead: "I want to understand why [action] was not right. Can you explain?" Shows you care about learning, not about being right.</li>
+        <li><strong>When crew criticizes others:</strong> Do not amplify. "That is not my call" or stay silent. Professionalism with all teams—touring, local, venue—is non-negotiable.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Professionalism Under Critique</h3>
+    <p>A lead corrects you sharply in front of other workers. Or: crew members criticize touring staff while work is active.</p>
+    <div class="options" data-q="q63">
+      <button class="opt" data-c="1">Acknowledge, correct behavior immediately if safety-related, stay professional with all teams.</button>
+      <button class="opt" data-c="0">Defend yourself or explain why they are wrong.</button>
+      <button class="opt" data-c="0">Avoid the lead for the rest of the call.</button>
+    </div>
+    <div class="coach" id="q63c"><strong>Why:</strong> Corrections are information. Immediate action and professionalism with all teams shows you are reliable and safe. Defending yourself creates friction and confusion about whether you will actually change.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Professionalism under correction earns respect more than defending yourself.</div>`;
+}
+
+function renderM71(){
+  return `<div class="card objective">
+    <h3>Physical Support vs. Technical Modification</h3>
+    <div class="explainer">You can move audio cases (physical support). You cannot connect/disconnect audio systems (technical work). <strong>This boundary exists for every department.</strong> Recognizing which side of the line you are on prevents damage and keeps you low-risk. It is not about knowledge; it is about authorization and safety.</div>
+    <div class="reference">
+      <span class="reference-label">Department Boundaries</span>
+      <ul>
+        <li><strong>Can do:</strong> Move cases, carry gear, set up staging, run cable under direction, sort equipment, clean areas, assist with physical setup.</li>
+        <li><strong>Cannot do:</strong> Connect/disconnect systems, adjust technical equipment, troubleshoot gear, modify rigging, alter electrical, configure systems. These belong to trained department crew.</li>
+        <li><strong>The boundary:</strong> Can you move it? Yes → case/gear. Can you modify or connect it? Do not without explicit training and permission.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Support vs. Technical</h3>
+    <p>You are assigned to move audio cases. A cable nearby looks unplugged.</p>
+    <div class="options" data-q="q71">
+      <button class="opt" data-c="0">Plug it in. It might be the problem.</button>
+      <button class="opt" data-c="1">Move the assigned cases. Do not connect/disconnect unless audio crew directs it.</button>
+      <button class="opt" data-c="0">Leave it and tell the audio lead later.</button>
+    </div>
+    <div class="coach" id="q71c"><strong>Why:</strong> Physical support (moving) is different from technical modification (connecting). Stay in your lane. Unauthorized connections can damage systems or create electrical hazards.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> You can recognize it and report it. You cannot fix it unless directed.</div>`;
+}
+
+function renderM72(){
+  return `<div class="card objective">
+    <h3>Classification: What Can You Touch?</h3>
+    <div class="explainer"><strong>General production items you can move under direction, department gear needing explicit direction, show-critical systems to avoid, performer-owned items needing permission, and exclusion zones you cannot enter.</strong> Each category has different rules. Learning to classify is a core judgment skill that prevents damage and keeps you low-risk.</div>
+    <div class="reference">
+      <span class="reference-label">Permission Levels by Category</span>
+      <ul>
+        <li><strong>General production:</strong> Tables, chairs, barricade, staging, signage. You can move these under assignment. Preserve layout as directed.</li>
+        <li><strong>Department gear:</strong> Lighting rigs, audio amplifiers, video processors, staging pieces under department assembly. Ask the department before touching.</li>
+        <li><strong>Show-critical:</strong> Rigging systems, suspended loads, electrical systems, pyrotechnics, performer equipment during performance. Do not touch. Never work under or around these without explicit authorization.</li>
+        <li><strong>Performer-owned:</strong> Instruments, personal gear, costume pieces. Ask the performer or department before moving. Some musicians treat instruments as part of themselves and do not want unknowns handling them.</li>
+        <li><strong>Exclusion zones:</strong> Rigging areas, overhead work, electrical rooms. You cannot enter even if the door is open. These require specific training and authorization.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Boundary Recognition</h3>
+    <p>A lighting fixture appears crooked. A video panel is dark. Rigging hardware is in an exclusion zone. A performer's guitar case is in the way.</p>
+    <div class="options" data-q="q72">
+      <button class="opt" data-c="0">Fix visible problems to help the show.</button>
+      <button class="opt" data-c="1">Report to the department. Stay out of exclusion zones. Never enter or work under suspended loads. Ask about performer items.</button>
+      <button class="opt" data-c="0">Do not touch anything technical; only move general production items.</button>
+    </div>
+    <div class="coach" id="q72c"><strong>Why:</strong> Reporting + respecting boundaries = you are reliable and safe. Crossing boundaries to help creates bigger problems and liability.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Permission levels vary. Asking before touching is always professional.</div>`;
+}
+
+function renderM73(){
+  return `<div class="card objective">
+    <h3>Classification Practice: Mixed Scene</h3>
+    <div class="explainer">A realistic backstage scene has speaker carts, focused lights, deck sections, instrument cases, props, tables. <strong>You must classify each by permission level, not by comfort or familiarity.</strong> This is the judgment Module 7 builds. You are training visual pattern recognition: seeing a piece of equipment and immediately knowing your permission level with it.</div>
+    <div class="reference">
+      <span class="reference-label">Scene Classification Example</span>
+      <ul>
+        <li><strong>Speaker carts:</strong> Department gear. Ask audio before moving.</li>
+        <li><strong>Focused lights on stands:</strong> Department gear. Do not adjust focus/angle. Report if crooked.</li>
+        <li><strong>Deck sections:</strong> General production or staging. Move under assignment.</li>
+        <li><strong>Instrument cases:</strong> Performer-owned. Ask permission before moving.</li>
+        <li><strong>Props on table:</strong> Department-owned (usually). Ask props before moving.</li>
+        <li><strong>Tables and chairs:</strong> General production. Move under assignment.</li>
+        <li><strong>Cable:</strong> Do not move, coil, or unplug. Report to department.</li>
+        <li><strong>Rigging hardware visible:</strong> Exclusion. Stay clear.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Classification Decision</h3>
+    <p>In a mixed backstage scene: speaker carts, lights, LED processor, deck sections, rigging hardware, instrument cases, props, tables, cables.</p>
+    <div class="options" data-q="q73">
+      <button class="opt" data-c="0">Move anything that is not obviously connected to another department.</button>
+      <button class="opt" data-c="1">Classify each: general production (move), department (ask), show-critical (avoid), performer-owned (permission), exclusion (never).</button>
+      <button class="opt" data-c="0">Move everything so the space is clean.</button>
+    </div>
+    <div class="coach" id="q73c"><strong>Why:</strong> Permission levels vary by object. Classification is a learned skill that repeats across all calls. With practice, you see equipment and immediately know the right action.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Classification is a learned skill that repeats across all calls.</div>`;
+}
+
+function renderM81(){
+  return `<div class="card objective">
+    <h3>Recognition Does Not Equal Authorization</h3>
+    <div class="explainer">You recognize a tool and see a problem it could fix. Recognizing the tool is not permission to use it. <strong>Authorization is separate from recognition.</strong> Having a wrench does not mean you should tighten loose hardware on department gear. Having a ladder does not mean you should reach overhead rigging. Knowledge is not permission.</div>
+    <div class="reference">
+      <span class="reference-label">Possession vs. Authorization</span>
+      <ul>
+        <li><strong>What you own:</strong> Your personal tools, personal gear, your work clothes. You brought them and own them.</li>
+        <li><strong>What you can use:</strong> Only what you have been explicitly authorized to use for the task you have been assigned. A screwdriver to assemble a case. A wrench to tighten a specific bolt under direction. Tape to mark a position under direction.</li>
+        <li><strong>What you cannot use:</strong> Tools for modifying systems, troubleshooting technical gear, or working on something not assigned. Even if you see the problem.</li>
+        <li><strong>The principle:</strong> Recognizing a tool is not the same as being authorized to use it on someone else's equipment. Ask first.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tool Possession Dilemma</h3>
+    <p>You have an adjustable wrench. You see loose-looking hardware on department gear.</p>
+    <div class="options" data-q="q81">
+      <button class="opt" data-c="0">Tighten it. You can see it is loose.</button>
+      <button class="opt" data-c="1">Do not alter it independently. Report or follow the responsible lead's instruction.</button>
+      <button class="opt" data-c="0">Ask another crew member if it looks safe.</button>
+    </div>
+    <div class="coach" id="q81c"><strong>Why:</strong> Owning a tool is not permission to alter a department's setup. That boundary keeps you low-risk and prevents liability. Reporting the issue is professional.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> You can recognize it but not act on it without authorization.</div>`;
+}
+
+function renderM82(){
+  return `<div class="card objective">
+    <h3>Inspect Before Using: Look, Feel, Decide</h3>
+    <div class="explainer">A tool has a cracked handle. A case feels light. A mechanism is slipping. <strong>Remove defective equipment from use, do not work around the defect.</strong> Do not assume contents or state by appearance or weight. Inspection is your safety checkpoint. Working around defects is how injuries happen.</div>
+    <div class="reference">
+      <span class="reference-label">Inspection Checklist</span>
+      <ul>
+        <li><strong>Visual inspection:</strong> Cracks, dents, bent components, loose parts, broken handles, missing latches.</li>
+        <li><strong>Feel inspection:</strong> Does the mechanism work smoothly? Does the handle feel solid? Are latches loose? Does it shift?</li>
+        <li><strong>Function test:</strong> Do wheels roll freely? Does the brake work? Can you latch it? Do zippers work?</li>
+        <li><strong>Weight assessment:</strong> Does it feel like its normal weight? If lighter than expected, contents may have shifted or be missing. Do not assume it is empty or safe.</li>
+        <li><strong>Decision:</strong> If anything seems off, do not use it. Report it and get a replacement. There is always a replacement.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Defect Response</h3>
+    <p>A tool has a cracked handle or slipping mechanism. A road case feels unexpectedly light.</p>
+    <div class="options" data-q="q82">
+      <button class="opt" data-c="0">Use it. You can compensate for small defects.</button>
+      <button class="opt" data-c="1">Remove defective equipment and get a replacement. Do not assume contents by weight; handle per direction.</button>
+      <button class="opt" data-c="0">Test it first to see if it works.</button>
+    </div>
+    <div class="coach" id="q82c"><strong>Why:</strong> Working around defects is how injuries happen. Safe equipment is a basic job requirement, not a luxury. Replacements exist. Use them.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Inspection is your safety checkpoint. Remove unsafe equipment immediately.</div>`;
+}
+
+function renderM83(){
+  return `<div class="card objective">
+    <h3>Team Coordination and Method Variation</h3>
+    <div class="explainer">Four people carry a large item; two call different moves. A department shows a cable-coiling method different from what you know. <strong>Stop safely, establish one caller, use the current crew's method.</strong> Their procedure beats your habit. Consistency across the team is more important than individual technique.</div>
+    <div class="reference">
+      <span class="reference-label">Team Movement Rules</span>
+      <ul>
+        <li><strong>One caller only:</strong> In team carries, one person (usually at the front or with the best view) calls the moves. Everyone listens and follows that voice only. No cross-talk.</li>
+        <li><strong>Verbal signals:</strong> "Lift," "Hold," "Step," "Lower," "Stop" (always obeyed immediately). Clear, short, audible.</li>
+        <li><strong>Pace matching:</strong> Everyone moves at the group's pace, not individual pace. Faster people slow. Slower people do not rush.</li>
+        <li><strong>Set-down coordination:</strong> "Lower on three: 1, 2, 3, lower." Everyone sets down together. No individual timing.</li>
+        <li><strong>Method adoption:</strong> If the crew shows you a cable-coiling method, use it. Even if your method works fine, consistency matters more. Tomorrow's crew may expect the standard method.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Coordination Conflict</h3>
+    <p>Two people signal different movement commands during a team carry. Or: department shows a coiling method different from yours.</p>
+    <div class="options" data-q="q83">
+      <button class="opt" data-c="0">Everyone move their own way. Diversity is good.</button>
+      <button class="opt" data-c="1">Stop safely, establish one caller, use the current crew's method.</button>
+      <button class="opt" data-c="0">Continue moving. Someone will figure it out.</button>
+    </div>
+    <div class="coach" id="q83c"><strong>Why:</strong> Coordinated handling and following the crew's procedures keeps equipment intact and people safe. Conflicting signals cause drops and injuries.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Procedure varies by crew. Their method is the right method for that call.</div>`;
+}
+
+function renderM91(){
+  return `<div class="card objective">
+    <h3>Appearance Is Not Clearance</h3>
+    <div class="explainer">After the show, department gear appears unused. Cable looks abandoned. <strong>Appearance does not mean clearance.</strong> Wait for the responsible department to explicitly clear it before moving or breaking it down. Appearance is deceiving. A cable that looks done might still be carrying power or be part of a system. A rig that looks finished might still be under load.</div>
+    <div class="reference">
+      <span class="reference-label">Strike Discipline</span>
+      <ul>
+        <li><strong>Department clearance:</strong> Before moving or breaking down any department gear, confirm with the department that it is cleared to strike. Do not assume the show ending means strike starting.</li>
+        <li><strong>Cable:</strong> Do not touch cable without clearance. Even if it looks unplugged, power may still be present. Even if it looks finished, it might be rolled up with something connected to it.</li>
+        <li><strong>Cases and equipment:</strong> Ask the department "Is this clear to strike?" Do not decide based on appearance.</li>
+        <li><strong>Exclusion zones:</strong> Rigging, overhead, electrical. Do not enter or work in these until explicitly cleared by the appropriate department or lead.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Post-Show Appearance</h3>
+    <p>Show ends. Department gear appears unused. A cable path looks abandoned.</p>
+    <div class="options" data-q="q91">
+      <button class="opt" data-c="0">Start moving it since the show is done.</button>
+      <button class="opt" data-c="1">Wait for the responsible department/lead to explicitly clear it before moving.</button>
+      <button class="opt" data-c="0">Test a quick movement to see if anyone is using it.</button>
+    </div>
+    <div class="coach" id="q91c"><strong>Why:</strong> Strike discipline means waiting for actual direction even when the show ends. Appearance is deceiving. Clearance is explicit, not assumed.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Urgency at the end of the call is when discipline matters most.</div>`;
+}
+
+function renderM92(){
+  return `<div class="card objective">
+    <h3>Load-Out Discipline Under Fatigue</h3>
+    <div class="explainer">Gear fits into the wrong case because speed matters at end of call. You are making small errors because fatigue has set in. <strong>Inventory discipline and honest communication about fatigue are how you earn trust during long calls, not by hiding mistakes.</strong> Long calls test judgment and honesty. Fatigue is real. Working around it is professional.</div>
+    <div class="reference">
+      <span class="reference-label">Fatigue Management</span>
+      <ul>
+        <li><strong>Recognize fatigue:</strong> Small errors, slower thinking, loss of attention, difficulty following direction, feeling overwhelmed.</li>
+        <li><strong>Communicate it:</strong> Tell your lead: "I am hitting a wall" or "I am making small mistakes because I am tired." This is not weakness; this is honest reporting.</li>
+        <li><strong>Adjust approach:</strong> Slow down. Do fewer things, but do them right. Take approved breaks. Hydrate. Eat something. The last hour looks different when you are fresh vs. exhausted.</li>
+        <li><strong>Inventory discipline:</strong> Even under fatigue, use the correct case. Putting gear in the wrong case saves 5 seconds and creates downstream liability. The cost is not worth the time savings.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Fatigue Decisions</h3>
+    <p>Gear physically fits into the wrong case but label does not match. You realize you are mentally fading and making small errors.</p>
+    <div class="options" data-q="q92">
+      <button class="opt" data-c="0">Use the wrong case to save time. Hide your fatigue.</button>
+      <button class="opt" data-c="1">Use the correct case. Communicate fatigue. Hydrate/eat/slow down to regain control.</button>
+      <button class="opt" data-c="0">Push through without saying anything.</button>
+    </div>
+    <div class="coach" id="q92c"><strong>Why:</strong> Inventory discipline and honest communication are how you stay low-risk during long calls. Hidden mistakes are risks multiplied.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Fatigue is real. Communication about it is professional judgment.</div>`;
+}
+
+function renderM93(){
+  return `<div class="card objective">
+    <h3>Finishing Strong</h3>
+    <div class="explainer">Main gear is gone. Tape, trash, hardware remain. Other workers disappear before formal release. <strong>Finishing strong means cleanup, staying available, returning borrowed items, and formal release through the call's process.</strong> How you end the call shapes how you are remembered for the next call. Finishing strong is how reputation is built.</div>
+    <div class="reference">
+      <span class="reference-label">Strike Completion Checklist</span>
+      <ul>
+        <li><strong>Assigned cleanup:</strong> Tape, zip ties, debris, loose hardware. Remove these from work areas and exits.</li>
+        <li><strong>Path preservation:</strong> Keep exits and travel routes clear until the very end. Do not stage strike materials in fire exits or emergency paths.</li>
+        <li><strong>Borrowed items:</strong> Return any equipment you borrowed (tools, stands, tape). Confirm with the person who lent it.</li>
+        <li><strong>Check-in:</strong> Before you leave, check in with your lead. "Is there anything else before I go?" This is the professional exit.</li>
+        <li><strong>Formal release:</strong> Do not sneak out. Wait for your lead to release you or confirm it is okay to leave. This shows discipline.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Strike Completion</h3>
+    <p>Main equipment is loaded. Cleanup remains. Other workers disappear. No formal release yet.</p>
+    <div class="options" data-q="q93">
+      <button class="opt" data-c="0">Leave with the crew. Main work is done.</button>
+      <button class="opt" data-c="1">Continue assigned cleanup, keep exits clear, check in, return borrowed items, stay until released formally.</button>
+      <button class="opt" data-c="0">Load the truck yourself.</button>
+    </div>
+    <div class="coach" id="q93c"><strong>Why:</strong> Finishing strong is how reputation is built. Cleanup, communication, and formal release show you understand the whole job, not just the exciting parts.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> How you end the call shapes how you are remembered for the next call.</div>`;
+}
+
+function renderM101(){
+  return `<div class="card objective">
+    <h3>Communicate Honestly About Your Experience</h3>
+    <div class="explainer">You have warehouse/moving experience but no live-event credits. A recruiter asks if you can rig. <strong>Describe transferable skills accurately. State what you have not done. Honest presentation is stronger than exaggeration.</strong> Getting hired opens the door. How you present yourself determines whether you get called back.</div>
+    <div class="reference">
+      <span class="reference-label">Resume and Interview Honesty</span>
+      <ul>
+        <li><strong>Transferable skills are real:</strong> "I have 2 years moving furniture and loading trucks. I understand how to control weight, communicate in teams, work fast safely."</li>
+        <li><strong>Lack of experience is real:</strong> "I have never worked a live event or rigged anything. I am trainable and safety-focused."</li>
+        <li><strong>Avoid padding:</strong> Do not list "rigging" on your resume if you have observed it. Do not claim "sound systems" because you plugged in a speaker once.</li>
+        <li><strong>What you will learn:</strong> "I have not done [task] yet, but I am willing to be trained and supervised. Where does that fit?"</li>
+        <li><strong>Be specific:</strong> "I have done load-in truck work" beats "I am an experienced mover." Specificity is credible.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Honesty in Hiring</h3>
+    <p>You have warehouse/moving experience but no live-event credits. Recruiter asks, "Can you rig?"</p>
+    <div class="options" data-q="q101">
+      <button class="opt" data-c="0">Say yes to get the call. You will learn on the job.</button>
+      <button class="opt" data-c="1">Describe transferable skills honestly. State exactly what you have and have not been trained to do.</button>
+      <button class="opt" data-c="0">Pad your resume with skills you have observed.</button>
+    </div>
+    <div class="coach" id="q101c"><strong>Why:</strong> Honest presentation about what you know and need to learn is stronger than exaggeration. It builds trust and reduces risk.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Getting hired opens the door. Honesty keeps it open.</div>`;
+}
+
+function renderM102(){
+  return `<div class="card objective">
+    <h3>Reputation & Callback Patterns</h3>
+    <div class="explainer">Two learners have similar physical ability. One: always on time, prepared, communicative, safe. Other: technically confident but unreliable. <strong>At fundamentals level, reliability drives callbacks more than technical skill.</strong> Specialization comes after you prove you are low-risk. Reputation is accumulated evidence of repeated behavior, not one impressive moment.</div>
+    <div class="reference">
+      <span class="reference-label">What Drives Callbacks</span>
+      <ul>
+        <li><strong>Reliable crew:</strong> Shows on time, comes prepared, communicates clearly, works safely, finishes what they started. Gets called back. Gets better assignments.</li>
+        <li><strong>Confident but unreliable crew:</strong> Maybe shows up late, forgets gear, cuts corners, but has swagger. Risky to hire. Does not get called back.</li>
+        <li><strong>New hand assessment:</strong> Leads assume new hands do not know much. They evaluate: can this person be trusted? Will they follow direction? Do they work safely? Confidence without reliability reads as reckless.</li>
+        <li><strong>Specialization timeline:</strong> After 5-10 calls proving reliability, a lead might say, "Want to learn [specialty]?" Specialization is an invitation, not a claim.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Callback Drivers</h3>
+    <p>Two learners: One always on time, prepared, communicative, safe. Other: confident but unreliable. At fundamentals level, who gets called back?</p>
+    <div class="options" data-q="q102">
+      <button class="opt" data-c="0">The confident one. Skill matters most at entry level.</button>
+      <button class="opt" data-c="1">The reliable one. Reliability is the stronger callback signal. Specialization comes later.</button>
+      <button class="opt" data-c="0">Whoever is faster on calls.</button>
+    </div>
+    <div class="coach" id="q102c"><strong>Why:</strong> Reputation is accumulated evidence of repeated behavior. Build reliability first. Technical specialization happens within a reliable foundation.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Callbacks are built on consistency, not flash.</div>`;
+}
+
+function renderM103(){
+  return `<div class="card objective">
+    <h3>Specialization: The Right Pathway</h3>
+    <div class="explainer">After several calls you become interested in lighting. <strong>Express interest, ask questions, seek training, accept support assignments.</strong> Do not cross technical boundaries independently. Specialization begins when you are invited and trained, not when you decide. The pathway is observation → interest → training → authorization.</div>
+    <div class="reference">
+      <span class="reference-label">Specialization Pathway</span>
+      <ul>
+        <li><strong>Observation phase:</strong> Work fundamentals crew jobs. Notice which departments interest you. Watch how they work.</li>
+        <li><strong>Express interest:</strong> Tell your lead or the department: "I am interested in learning [specialty]. What is the first step?"</li>
+        <li><strong>Ask questions:</strong> Get books, videos, online courses. Ask department members to explain concepts. Do not pretend to understand.</li>
+        <li><strong>Support assignments:</strong> "Can I assist [department] during load-in? I want to learn." Accept unglamorous support work first. That is how you learn the workflow.</li>
+        <li><strong>Training and authorization:</strong> Once a department invites you formally, training and certification follow. This is the real pathway.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Specialization Interest</h3>
+    <p>You want more responsibility in your specialty interest (lighting, rigging, audio). What is the pathway?</p>
+    <div class="options" data-q="q103">
+      <button class="opt" data-c="0">Modify lighting independently to show interest.</button>
+      <button class="opt" data-c="1">Express interest, ask questions, seek training/supervision, accept support assignments.</button>
+      <button class="opt" data-c="0">Study it in free time and help on your own terms.</button>
+    </div>
+    <div class="coach" id="q103c"><strong>Why:</strong> Specialization begins when you are invited into the department and trained, not when you cross boundaries independently. The pathway is structured for safety and liability.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> You are invited into specialization through observation, interest, and training.</div>`;
+}
+
+function renderM104(){
+  return `<div class="card objective">
+    <h3>First Month: Prioritize Fundamentals</h3>
+    <div class="explainer">You have limited time and want to learn everything. <strong>First month belongs to preparation, communication, etiquette, case/cable awareness, department recognition, and observation.</strong> Specialization comes later. This is how you become low-risk. Master the fundamentals, and everything else becomes easier.</div>
+    <div class="reference">
+      <span class="reference-label">First-Month Focus</span>
+      <ul>
+        <li><strong>Preparation:</strong> Show up with gear, dressed right, on time, ready to be directed.</li>
+        <li><strong>Communication:</strong> Ask questions. Confirm direction. Report completion. Communicate fatigue or confusion.</li>
+        <li><strong>Etiquette:</strong> Professional with all teams (touring, local, venue). No complaints. Stay useful.</li>
+        <li><strong>Case/cable awareness:</strong> Know how to move cases safely. Understand cable is not to be touched. Recognize hazards.</li>
+        <li><strong>Department recognition:</strong> Know the departments. Understand boundaries. Know who to ask for what.</li>
+        <li><strong>Observation:</strong> Watch how experienced crew work. Notice communication patterns. Learn the rhythm of calls.</li>
+        <li><strong>Do not specialize yet:</strong> Do not try to learn rigging, lighting, or audio in month one. Learn to be a reliable fundamentals crew member first.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>First-Month Priority</h3>
+    <p>Your first month has limited time. You could learn every department or focus on core fundamentals.</p>
+    <div class="options" data-q="q104">
+      <button class="opt" data-c="0">Learn every department simultaneously to become versatile.</button>
+      <button class="opt" data-c="1">Prioritize: preparation, etiquette, communication, gear awareness, department recognition, feedback, observation.</button>
+      <button class="opt" data-c="0">Specialize immediately in your target department.</button>
+    </div>
+    <div class="coach" id="q104c"><strong>Why:</strong> Mastering fundamentals is how you become low-risk. Specialization is what follows reliability and observation. Depth before breadth.</div>
+  </div>
+  <div class="key-takeaway"><strong>Key principle:</strong> Fundamentals are the foundation for everything else.</strong></div>`;
+}
+
+buildSidebar();
+render();
+
+setInterval(()=>{
+  document.querySelectorAll('.options').forEach(g=>{
+    [...g.children].forEach(b=>b.onclick=()=>{
+      if([...g.children].some(x=>x.disabled))return;
+      [...g.children].forEach(x=>{x.disabled=true;if(x.dataset.c==='1')x.classList.add('correct')});
+      if(b.dataset.c!=='1')b.classList.add('incorrect');
+      const cid=g.dataset.q+'c';
+      const coach=document.getElementById(cid);
+      if(coach)coach.classList.add('show');
+    });
+  });
+},100);
+</script>
 </body>
 </html>
