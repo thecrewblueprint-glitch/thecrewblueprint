@@ -863,15 +863,273 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------------------------------------------------
-   11. RESPONSIVE
+   11. BLUEPRINT LINE SYSTEM & VISUAL MOTIFS
+   Thin technical lines, nodes, connectors inspired by production
+   drawings, signal paths, rigging diagrams, and stage plots.
+   --------------------------------------------------------- */
+
+.cb-blueprint-path {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 28px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cb-muted);
+}
+
+.cb-blueprint-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--cb-card);
+  border: 1.5px solid var(--cb-border-strong);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cb-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cb-blueprint-node.cb-node-primary {
+  border-color: var(--cb-gold-border);
+  background: rgba(245, 180, 0, 0.06);
+  color: var(--cb-gold-strong);
+}
+
+.cb-blueprint-connector {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cb-border-strong), transparent);
+  position: relative;
+  min-width: 20px;
+}
+
+.cb-blueprint-connector::after {
+  content: "→";
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  color: var(--cb-muted-2);
+  font-size: 14px;
+}
+
+.cb-blueprint-transition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-md);
+}
+
+.cb-blueprint-transition .cb-blueprint-node { min-width: 32px; height: 32px; font-size: 11px; padding: 0 10px; }
+
+/* ---------------------------------------------------------
+   12. SEMANTIC LESSON COMPONENTS
+   Consistent visual treatment for instructional meaning.
+   --------------------------------------------------------- */
+
+.cb-field-note,
+.cb-why-matters,
+.cb-watch-for,
+.cb-know-limit,
+.cb-check-understanding,
+.cb-on-call {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-radius: var(--cb-radius-md);
+  border-left: 3px solid;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--cb-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cb-field-note {
+  border-left-color: var(--cb-gold-border);
+  background: rgba(245, 180, 0, 0.06);
+}
+
+.cb-field-note::before {
+  content: "📋 ";
+  font-weight: 700;
+  color: var(--cb-gold-strong);
+  margin-right: 6px;
+}
+
+.cb-why-matters {
+  border-left-color: rgba(56, 212, 119, 0.48);
+  background: rgba(56, 212, 119, 0.06);
+}
+
+.cb-why-matters::before {
+  content: "💡 ";
+  font-weight: 700;
+  color: var(--cb-success);
+  margin-right: 6px;
+}
+
+.cb-why-matters strong {
+  color: var(--cb-text);
+}
+
+.cb-watch-for {
+  border-left-color: var(--cb-warning-border);
+  background: var(--cb-warning-bg);
+}
+
+.cb-watch-for::before {
+  content: "⚠ ";
+  font-weight: 700;
+  color: var(--cb-gold-strong);
+  margin-right: 6px;
+}
+
+.cb-know-limit {
+  border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+.cb-know-limit::before {
+  content: "📍 ";
+  font-weight: 700;
+  color: var(--cb-muted);
+  margin-right: 6px;
+}
+
+.cb-check-understanding {
+  border-left-color: rgba(56, 212, 119, 0.38);
+}
+
+.cb-check-understanding::before {
+  content: "✓ ";
+  font-weight: 900;
+  color: var(--cb-success);
+  margin-right: 6px;
+}
+
+.cb-on-call {
+  border-left-color: var(--cb-gold-border);
+  background: rgba(245, 180, 0, 0.04);
+}
+
+.cb-on-call::before {
+  content: "📞 ";
+  font-weight: 700;
+  color: var(--cb-gold-strong);
+  margin-right: 6px;
+}
+
+/* Remove automatic emoji prefix if element uses data-icon="false" */
+.cb-field-note[data-icon="false"]::before,
+.cb-why-matters[data-icon="false"]::before,
+.cb-watch-for[data-icon="false"]::before,
+.cb-know-limit[data-icon="false"]::before,
+.cb-check-understanding[data-icon="false"]::before,
+.cb-on-call[data-icon="false"]::before {
+  content: "";
+  margin-right: 0;
+}
+
+/* ---------------------------------------------------------
+   13. PHOTOGRAPHY & CONTEXTUAL IMAGE COMPONENTS
+   Environmental images with restrained overlays and captions.
+   --------------------------------------------------------- */
+
+.cb-hero-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 28px 0;
+  border-radius: var(--cb-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cb-shadow-md);
+}
+
+.cb-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cb-hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(5, 6, 10, 0.7), transparent);
+  z-index: 1;
+}
+
+.cb-hero-image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 24px;
+  color: var(--cb-text);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cb-contextual-image {
+  position: relative;
+  width: 100%;
+  margin: 32px 0;
+  border-radius: var(--cb-radius-lg);
+  overflow: hidden;
+  background: var(--cb-elevated);
+}
+
+.cb-contextual-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cb-image-caption {
+  margin: 12px 0 0;
+  color: var(--cb-muted-2);
+  font-size: 13px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.cb-image-label {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--cb-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   14. RESPONSIVE
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
   .cb-grid-2, .cb-grid-3, .cb-grid-4 { grid-template-columns: 1fr; }
   .cb-actions { flex-direction: column; }
   .cb-actions .cb-btn { width: 100%; }
+  .cb-blueprint-path { flex-wrap: wrap; }
+  .cb-blueprint-connector { min-width: 16px; }
 }
 
 @media (max-width: 640px) {
   .cb-diagram svg text { font-size: 11px; }
+  .cb-blueprint-transition { flex-direction: column; gap: 12px; }
+  .cb-blueprint-transition .cb-blueprint-node { width: 100%; }
+  .cb-hero-image-overlay { background: linear-gradient(180deg, transparent, rgba(5, 6, 10, 0.9)); }
 }
