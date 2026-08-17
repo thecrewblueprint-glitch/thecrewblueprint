@@ -351,11 +351,11 @@ img { max-width: 100%; display: block; }
 .cb-btn-primary:hover { background: var(--cb-gold-strong); }
 
 .cb-btn-secondary {
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(0, 0, 0, 0.4);
   color: var(--cb-text) !important;
-  border: 1px solid var(--cb-border);
+  border: 1px solid var(--cb-border-strong);
 }
-.cb-btn-secondary:hover { background: rgba(255, 255, 255, 0.09); }
+.cb-btn-secondary:hover { background: rgba(0, 0, 0, 0.55); }
 
 .cb-section {
   padding: clamp(36px, 5vw, 64px) 0;
