@@ -1141,7 +1141,324 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------------------------------------------------
-   15. RESPONSIVE
+   15. LEARNING SHELL — 3-COLUMN COURSE LAYOUT
+   Desktop: left nav (280px) | center content (1fr) | right context (260px)
+   Mobile: stacked with collapsible nav
+   --------------------------------------------------------- */
+
+.cb-learning-shell {
+  display: grid;
+  grid-template-columns: 280px 1fr 260px;
+  gap: 24px;
+  padding: 28px 20px 60px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.cb-learning-nav {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: var(--cb-panel);
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-lg);
+  padding: 16px;
+}
+
+.cb-learning-nav-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cb-muted-2);
+  padding: 8px 8px 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--cb-border);
+}
+
+.cb-learning-module {
+  padding: 12px;
+  margin-bottom: 4px;
+  border-radius: var(--cb-radius-md);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.cb-learning-module:hover {
+  background: rgba(245, 180, 0, 0.08);
+}
+
+.cb-learning-module.active {
+  background: rgba(245, 180, 0, 0.12);
+  border-left: 3px solid var(--cb-gold);
+  padding-left: 9px;
+}
+
+.cb-learning-module h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: var(--cb-text);
+}
+
+.cb-learning-module .cb-muted {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.cb-learning-lessons {
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 1px solid var(--cb-border);
+}
+
+.cb-learning-lesson {
+  display: block;
+  padding: 6px 8px;
+  margin: 4px 0;
+  background: none;
+  border: none;
+  border-radius: var(--cb-radius-sm);
+  color: var(--cb-muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: left;
+}
+
+.cb-learning-lesson:hover {
+  color: var(--cb-gold-strong);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cb-learning-lesson.active {
+  color: var(--cb-gold-strong);
+  background: rgba(245, 180, 0, 0.1);
+  font-weight: 700;
+}
+
+.cb-learning-content {
+  min-width: 0;
+}
+
+.cb-learning-hero {
+  background: linear-gradient(135deg, rgba(245, 180, 0, 0.1), transparent 38%),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-lg);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.cb-learning-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.cb-learning-hero p {
+  margin: 0;
+  color: var(--cb-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.cb-learning-content-main {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-lg);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.cb-learning-content-main h2 {
+  margin: 0 0 16px;
+  font-size: clamp(18px, 3vw, 28px);
+  line-height: 1.15;
+}
+
+.cb-learning-content-main p {
+  margin: 0 0 16px;
+  color: var(--cb-muted);
+  line-height: 1.7;
+}
+
+.cb-learning-content-main ul,
+.cb-learning-content-main ol {
+  margin: 12px 0 16px;
+  padding-left: 24px;
+  color: var(--cb-muted);
+}
+
+.cb-learning-content-main li {
+  margin: 8px 0;
+  line-height: 1.65;
+}
+
+.cb-learning-nav-footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--cb-border);
+}
+
+.cb-learning-nav-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--cb-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-decoration: none;
+}
+
+.cb-learning-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cb-text);
+}
+
+.cb-learning-nav-btn.prev::before {
+  content: "← ";
+}
+
+.cb-learning-nav-btn.next::after {
+  content: " →";
+}
+
+.cb-learning-sidebar-right {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.cb-progress-rail {
+  width: 100%;
+  max-width: 100%;
+  color: var(--cb-muted-2);
+  margin-bottom: 24px;
+}
+
+.cb-learning-context {
+  background: var(--cb-panel);
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-lg);
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cb-learning-context-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cb-muted-2);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.cb-learning-context-label {
+  display: block;
+  font-weight: 700;
+  color: var(--cb-text);
+  margin-bottom: 6px;
+}
+
+.cb-learning-context p {
+  margin: 0 0 12px;
+  color: var(--cb-muted);
+}
+
+/* ---------------------------------------------------------
+   16. RESPONSIVE LEARNING SHELL
+   --------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .cb-learning-shell {
+    grid-template-columns: 240px 1fr 220px;
+    gap: 18px;
+    padding: 20px 16px 60px;
+  }
+
+  .cb-learning-nav {
+    top: 100px;
+    max-height: calc(100vh - 120px);
+  }
+}
+
+@media (max-width: 900px) {
+  .cb-learning-shell {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 16px 60px;
+  }
+
+  .cb-learning-nav {
+    position: static;
+    max-height: none;
+    margin-bottom: 20px;
+  }
+
+  .cb-learning-sidebar-right {
+    position: static;
+    max-height: none;
+    order: 3;
+  }
+
+  .cb-learning-content {
+    order: 2;
+  }
+
+  .cb-learning-nav-footer {
+    gap: 12px;
+  }
+
+  .cb-learning-nav-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cb-learning-shell {
+    padding: 16px 12px 40px;
+  }
+
+  .cb-learning-nav {
+    border-radius: var(--cb-radius-md);
+    padding: 12px;
+  }
+
+  .cb-learning-hero {
+    padding: 16px;
+  }
+
+  .cb-learning-content-main {
+    padding: 16px;
+  }
+
+  .cb-learning-hero h1 {
+    font-size: 20px;
+  }
+
+  .cb-learning-context {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
+/* ---------------------------------------------------------
+   17. RESPONSIVE
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
