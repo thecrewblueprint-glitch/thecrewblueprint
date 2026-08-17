@@ -178,6 +178,162 @@ function svgHazardFlow(){
   </svg>`;
 }
 
+function svgStagePlan(){
+  return `<svg viewBox="0 0 800 600" style="width:100%;max-width:900px">
+    <defs><style>
+      .stage{fill:#2b3a4a;stroke:#f5b400;stroke-width:2}
+      .house{fill:#1a2a3a;stroke:#0284c7;stroke-width:2}
+      .crew{fill:#0f1a25;stroke:#39b979;stroke-width:2}
+      .hazard{fill:none;stroke:#e26868;stroke-width:2;stroke-dasharray:4}
+      .label{font-size:14px;font-weight:bold;fill:#f5b400;text-anchor:middle}
+      .sublabel{font-size:11px;fill:#aab5c0;text-anchor:middle}
+      .hazard-label{font-size:10px;fill:#e26868}
+    </style></defs>
+    <rect class="stage" x="150" y="100" width="500" height="250"/><text class="label" x="400" y="240">STAGE</text>
+    <text class="sublabel" x="180" y="120" style="fill:#f5b400">Stage Left</text><text class="sublabel" x="620" y="120" style="fill:#f5b400">Stage Right</text>
+    <line x1="400" y1="100" x2="400" y2="350" stroke="#666" stroke-width="1" stroke-dasharray="2"/>
+    <text class="sublabel" x="400" y="90" style="fill:#999">(Center Line)</text>
+    <rect class="house" x="150" y="360" width="500" height="140"/><text class="label" x="400" y="440">HOUSE / AUDIENCE</text>
+    <rect class="crew" x="50" y="100" width="80" height="250"/><text class="sublabel" x="90" y="240">Wings &</text><text class="sublabel" x="90" y="255">Crew</text>
+    <rect class="crew" x="670" y="100" width="80" height="250"/><text class="sublabel" x="710" y="240">Wings &</text><text class="sublabel" x="710" y="255">Crew</text>
+    <rect class="crew" x="150" y="20" width="500" height="50"/><text class="sublabel" x="400" y="50">LOADING DOCK</text>
+    <polyline class="hazard" points="50,350 750,350"/><text class="hazard-label" x="760" y="355">Audience edge</text>
+    <polyline class="hazard" points="670,100 670,350"/><text class="hazard-label" x="650" y="85">Stage edge</text>
+  </svg>`;
+}
+
+function svgLoadInSequence(){
+  return `<svg viewBox="0 0 900 300" style="width:100%;max-width:1000px">
+    <defs><style>
+      .phase{fill:#0f1419;stroke:#f5b400;stroke-width:2;rx:6}
+      .phase-label{font-size:13px;font-weight:bold;fill:#f5b400;text-anchor:middle}
+      .phase-desc{font-size:10px;fill:#aab5c0;text-anchor:middle;line-height:12}
+      .arrow{fill:none;stroke:#0284c7;stroke-width:2;marker-end:url(#arrowhead2)}
+      .truck{fill:#666;stroke:#999;stroke-width:1}
+      .case{fill:#555;stroke:#888;stroke-width:1}
+    </style><marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#0284c7"/></marker></defs>
+    <g id="phase1"><rect class="phase" x="10" y="50" width="110" height="120"/><rect class="truck" x="25" y="65" width="80" height="40"/><line x="35" y="65" x2="35" y2="105" stroke="#333" stroke-width="1"/><line x="65" y="65" x2="65" y2="105" stroke="#333" stroke-width="1"/><text class="phase-label" x="65" y="135">1. Truck</text><text class="phase-desc" x="65" y="150">at dock</text><text class="phase-desc" x="65" y="163">ready to</text></g>
+    <polyline class="arrow" points="120,110 160,110"/>
+    <g id="phase2"><rect class="phase" x="170" y="50" width="110" height="120"/><rect class="case" x="185" y="70" width="30" height="30"/><rect class="case" x="225" y="70" width="30" height="30"/><rect class="case" x="185" y="110" width="30" height="30"/><rect class="case" x="225" y="110" width="30" height="30"/><text class="phase-label" x="225" y="135">2. Unload</text><text class="phase-desc" x="225" y="150">into staging</text><text class="phase-desc" x="225" y="163">area</text></g>
+    <polyline class="arrow" points="280,110 320,110"/>
+    <g id="phase3"><rect class="phase" x="330" y="50" width="110" height="120"/><path d="M 385 70 L 375 100 L 395 100 Z" fill="#39b979" stroke="#39b979" stroke-width="1"/><text class="phase-label" x="385" y="135">3. Move</text><text class="phase-desc" x="385" y="150">to stage</text><text class="phase-desc" x="385" y="163">with spotters</text></g>
+    <polyline class="arrow" points="440,110 480,110"/>
+    <g id="phase4"><rect class="phase" x="490" y="50" width="110" height="120"/><rect class="case" x="505" y="75" width="25" height="25"/><rect class="case" x="535" y="75" width="25" height="25"/><rect class="case" x="505" y="105" width="25" height="25"/><rect class="case" x="535" y="105" width="25" height="25"/><text class="phase-label" x="545" y="135">4. Position</text><text class="phase-desc" x="545" y="150">on stage at</text><text class="phase-desc" x="545" y="163">marked spot</text></g>
+    <g id="rules"><rect x="10" y="190" width="590" height="90" fill="none" stroke="#0284c7" stroke-width="1" stroke-dasharray="3" rx="4"/><text style="font-size:11px;font-weight:bold;fill:#0284c7" x="20" y="210">Key Rules Throughout:</text><text style="font-size:10px;fill:#aab5c0" x="20" y="227">✓ Clear path ahead  ✓ Call spotters  ✓ One handler leads  ✓ Set down, don't drop</text><text style="font-size:10px;fill:#aab5c0" x="20" y="242">✓ Back-to-front from truck  ✓ Report when positioned  ✓ Stay with load until released</text><text style="font-size:10px;fill:#e26868" x="20" y="260">✗ Never reach under/over moving gear  ✗ Don't force tight fits  ✗ Ask if unsure about placement</text></g>
+  </svg>`;
+}
+
+function svgDepartmentLevels(){
+  return `<svg viewBox="0 0 700 400" style="width:100%;max-width:800px">
+    <defs><style>
+      .can-do{fill:#0f3a2a;stroke:#39b979;stroke-width:2;rx:6}
+      .off-limits{fill:#3a1a1a;stroke:#e26868;stroke-width:2;rx:6}
+      .title{font-size:14px;font-weight:bold;text-anchor:middle;fill:#f5b400}
+      .subtitle{font-size:12px;font-weight:bold;text-anchor:middle}
+      .item{font-size:11px;text-anchor:middle;line-height:13}
+      .check{fill:#39b979}
+      .x{fill:#e26868}
+    </style></defs>
+    <text class="title" x="175" y="35">CAN DO: Physical Support</text>
+    <text class="subtitle" x="175" y="55" fill="#39b979">What you can assist with</text>
+    <rect class="can-do" x="20" y="70" width="310" height="300"/>
+    <text class="item" x="175" y="90" fill="#39b979" style="font-weight:bold">✓ Move cases and carts</text>
+    <text class="item" x="175" y="105" fill="#aab5c0">- Carry, push, pull, stack</text>
+    <text class="item" x="175" y="125" fill="#39b979" style="font-weight:bold">✓ Hold positions for rigging</text>
+    <text class="item" x="175" y="140" fill="#aab5c0">- Brace truss, spot loads</text>
+    <text class="item" x="175" y="160" fill="#39b979" style="font-weight:bold">✓ Load gear into trucks</text>
+    <text class="item" x="175" y="175" fill="#aab5c0">- Pack, strap, organize</text>
+    <text class="item" x="175" y="195" fill="#39b979" style="font-weight:bold">✓ Assist specialized teams</text>
+    <text class="item" x="175" y="210" fill="#aab5c0">- Follow their lead exactly</text>
+    <text class="item" x="175" y="230" fill="#39b979" style="font-weight:bold">✓ Prepare work areas</text>
+    <text class="item" x="175" y="245" fill="#aab5c0">- Tape, mark, clear debris</text>
+    <text class="item" x="175" y="265" fill="#39b979" style="font-weight:bold">✓ Report hazards</text>
+    <text class="item" x="175" y="280" fill="#aab5c0">- Speak up about unsafe</text>
+    <text class="item" x="175" y="295" fill="#aab5c0">conditions or decisions</text>
+    <text class="title" x="525" y="35" fill="#e26868">OFF LIMITS: Technical Setup</text>
+    <text class="subtitle" x="525" y="55" fill="#e26868">What only specialists touch</text>
+    <rect class="off-limits" x="370" y="70" width="310" height="300"/>
+    <text class="item" x="525" y="90" fill="#e26868" style="font-weight:bold">✗ Adjust fixtures or lights</text>
+    <text class="item" x="525" y="105" fill="#aab5c0">- Don't reprogram/refocus</text>
+    <text class="item" x="525" y="125" fill="#e26868" style="font-weight:bold">✗ Touch audio/video console</text>
+    <text class="item" x="525" y="140" fill="#aab5c0">- Leave settings to crew</text>
+    <text class="item" x="525" y="160" fill="#e26868" style="font-weight:bold">✗ Rewire or modify systems</text>
+    <text class="item" x="525" y="175" fill="#aab5c0">- Don't add/change cables</text>
+    <text class="item" x="525" y="195" fill="#e26868" style="font-weight:bold">✗ Handle show-critical gear</text>
+    <text class="item" x="525" y="210" fill="#aab5c0">- Presets, instruments, etc.</text>
+    <text class="item" x="525" y="230" fill="#e26868" style="font-weight:bold">✗ Override safety systems</text>
+    <text class="item" x="525" y="245" fill="#aab5c0">- Interlocks exist for reason</text>
+    <text class="item" x="525" y="265" fill="#e26868" style="font-weight:bold">✗ Decide on workarounds</text>
+    <text class="item" x="525" y="280" fill="#aab5c0">- Ask lead/tech when unsure</text>
+  </svg>`;
+}
+
+function svgRoadCaseHazards(){
+  return `<svg viewBox="0 0 750 550" style="width:100%;max-width:850px">
+    <defs><style>
+      .case-body{fill:#333;stroke:#666;stroke-width:2}
+      .corner{fill:#222;stroke:#444;stroke-width:1}
+      .hardware{fill:#888;stroke:#555;stroke-width:1}
+      .label{font-size:11px;fill:#aab5c0;text-anchor:start}
+      .hazard-circle{fill:none;stroke:#e26868;stroke-width:2}
+      .hazard-label{font-size:10px;fill:#e26868;font-weight:bold}
+      .safe-label{font-size:10px;fill:#39b979;font-weight:bold}
+    </style></defs>
+    <g id="case"><rect class="case-body" x="100" y="80" width="300" height="200"/><g class="corner"><rect x="100" y="80" width="15" height="15" fill="#555" stroke="#777" stroke-width="1"/><rect x="385" y="80" width="15" height="15" fill="#555" stroke="#777" stroke-width="1"/><rect x="100" y="265" width="15" height="15" fill="#555" stroke="#777" stroke-width="1"/><rect x="385" y="265" width="15" height="15" fill="#555" stroke="#777" stroke-width="1"/></g>
+    <g class="hardware"><rect x="200" y="70" width="100" height="8" fill="#aaa"/><circle cx="210" cy="74" r="2" fill="#666"/><circle cx="240" cy="74" r="2" fill="#666"/><circle cx="270" cy="74" r="2" fill="#666"/><circle cx="300" cy="74" r="2" fill="#666"/><text class="safe-label" x="210" y="58">Handle (safe grip)</text></g>
+    <g class="hardware"><rect x="110" y="175" width="8" height="50" fill="#aaa"/><text class="label" x="125" y="180">Latch</text></g>
+    <circle class="hazard-circle" cx="120" cy="90" r="20"/><text class="hazard-label" x="150" y="95">Pinch point:</text><text class="hazard-label" x="150" y="108">lid hinge</text>
+    <circle class="hazard-circle" cx="230" cy="290" r="25"/><text class="hazard-label" x="270" y="295">Crush hazard:</text><text class="hazard-label" x="270" y="308">stacked cases</text><text class="hazard-label" x="270" y="321">stay stable!</text>
+    </g>
+    <g id="cutaway" transform="translate(450,80)"><rect class="case-body" x="0" y="0" width="250" height="200" opacity="0.7"/><line x1="0" y1="0" x2="250" y2="200" stroke="#666" stroke-width="1" opacity="0.3"/><line x1="250" y1="0" x2="0" y2="200" stroke="#666" stroke-width="1" opacity="0.3"/>
+    <text style="font-size:12px;fill:#aab5c0;font-weight:bold" x="125" y="30" text-anchor="middle">Interior Elements</text>
+    <g class="hardware"><rect x="30" y="50" width="190" height="2" fill="#aaa" stroke="#666" stroke-width="1"/><text class="label" x="30" y="70">Suspension straps / cables</text></g>
+    <g class="hardware"><rect x="50" y="100" width="20" height="20" fill="#999" stroke="#555" stroke-width="1"/><text class="label" x="80" y="115">Shock mount</text></g>
+    <circle class="hazard-circle" cx="125" cy="140" r="15" opacity="0.8"/><text class="hazard-label" x="145" y="145">Stored energy</text><text class="hazard-label" x="145" y="158">(springs)</text>
+    </g>
+    <g id="rules"><rect x="50" y="310" width="650" height="200" fill="none" stroke="#0284c7" stroke-width="1" stroke-dasharray="3" rx="4"/><text style="font-size:12px;font-weight:bold;fill:#f5b400" x="70" y="335">Safe Road Case Handling</text>
+    <text style="font-size:10px;fill:#39b979;font-weight:bold" x="70" y="355">✓ Check before moving</text><text style="font-size:9px;fill:#aab5c0" x="85" y="368">- Look for cracks, loose hardware, broken wheels</text>
+    <text style="font-size:10px;fill:#39b979;font-weight:bold" x="70" y="388">✓ Use handles properly</text><text style="font-size:9px;fill:#aab5c0" x="85" y="401">- Grip in middle, watch fingers at hinges</text>
+    <text style="font-size:10px;fill:#39b979;font-weight:bold" x="70" y="421">✓ Stack carefully</text><text style="font-size:9px;fill:#aab5c0" x="85" y="434">- Largest base first, 3 cases max, strap if needed</text>
+    <text style="font-size:10px;fill:#e26868;font-weight:bold" x="70" y="454">✗ Never reach under suspended cases</text>
+    <text style="font-size:10px;fill:#e26868;font-weight:bold" x="70" y="474">✗ Don't stand in drop zones</text>
+    </g>
+  </svg>`;
+}
+
+function svgStrikeSequence(){
+  return `<svg viewBox="0 0 800 500" style="width:100%;max-width:900px">
+    <defs><style>
+      .box{fill:#0f1419;stroke:#0284c7;stroke-width:2;rx:6}
+      .label{font-size:12px;font-weight:bold;fill:#f5b400;text-anchor:middle}
+      .desc{font-size:10px;fill:#aab5c0;text-anchor:middle;line-height:11}
+      .arrow{fill:none;stroke:#0284c7;stroke-width:2;marker-end:url(#arrowhead3)}
+      .title{font-size:13px;font-weight:bold;fill:#f5b400}
+      .note{font-size:9px;fill:#aab5c0;font-style:italic}
+    </style><marker id="arrowhead3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#0284c7"/></marker></defs>
+    <text class="title" x="400" y="25">Strike Sequence: What Depends On What</text>
+    <text class="note" x="400" y="40" text-anchor="middle">(Order varies by show — it's about connections, not fixed categories)</text>
+    <g id="top"><rect class="box" x="300" y="60" width="200" height="60"/><text class="label" x="400" y="85">1. Wait for Clearance</text><text class="desc" x="400" y="100">(from Load-In Lead)</text></g>
+    <polyline class="arrow" d="M 400 120 L 400 150"/>
+    <g id="middle"><rect class="box" x="100" y="160" width="120" height="70"/><text class="label" x="160" y="185">Remove Fixtures</text><text class="desc" x="160" y="202">&amp; lights</text>
+    <polyline class="arrow" d="M 160 230 L 160 270"/>
+    <rect class="box" x="230" y="160" width="120" height="70"/><text class="label" x="290" y="185">Disconnect Power</text><text class="desc" x="290" y="202">&amp; data</text>
+    <polyline class="arrow" d="M 290 230 L 290 270"/>
+    <rect class="box" x="360" y="160" width="120" height="70"/><text class="label" x="420" y="185">Coil Cable</text><text class="desc" x="420" y="202">neatly</text>
+    <polyline class="arrow" d="M 420 230 L 420 270"/>
+    <rect class="box" x="490" y="160" width="120" height="70"/><text class="label" x="550" y="185">Remove Truss</text><text class="desc" x="550" y="202">&amp; rig</text>
+    <polyline class="arrow" d="M 550 230 L 550 270"/>
+    <rect class="box" x="620" y="160" width="120" height="70"/><text class="label" x="680" y="185">Last: Department</text><text class="desc" x="680" y="202">Gear</text>
+    </g>
+    <g id="lower"><polyline class="arrow" d="M 160 280 L 280 310"/><polyline class="arrow" d="M 290 280 L 350 310"/><polyline class="arrow" d="M 420 280 L 400 310"/><polyline class="arrow" d="M 550 280 L 450 310"/><polyline class="arrow" d="M 680 280 L 500 310"/>
+    <rect class="box" x="280" y="320" width="140" height="70"/><text class="label" x="350" y="345">Pack Cases</text><text class="desc" x="350" y="362">&amp; organize</text>
+    <polyline class="arrow" d="M 350 390 L 350 420"/>
+    <rect class="box" x="260" y="430" width="180" height="50"/><text class="label" x="350" y="455">Load Truck</text><text class="desc" x="350" y="467">(organize by reverse load-in)</text>
+    </g>
+    <g id="key"><rect x="50" y="300" width="200" height="150" fill="none" stroke="#39b979" stroke-width="1" stroke-dasharray="2" rx="4"/><text style="font-size:10px;font-weight:bold;fill:#39b979" x="65" y="318">Key Principle:</text><text style="font-size:9px;fill:#aab5c0" x="65" y="333">Order depends on WHAT IS</text><text style="font-size:9px;fill:#aab5c0" x="65" y="346">CONNECTED TO WHAT</text><text style="font-size:9px;fill:#aab5c0" x="65" y="359">— not fixed categories.</text><text style="font-size:9px;fill:#aab5c0" x="65" y="372">You might strike:</text><text style="font-size:8px;fill:#aab5c0" x="65" y="385">• Lighting → Power → Cases</text><text style="font-size:8px;fill:#aab5c0" x="65" y="397">• Video → Cable → Racks</text><text style="font-size:8px;fill:#aab5c0" x="65" y="409">Always ask the Lead.</text></g>
+  </svg>`;
+}
+
 function render(){
   const [mod,lesson]=getModuleLesson(current);
   document.getElementById('progtext').textContent=`${lesson.id} of ${total} lessons`;
@@ -603,6 +759,7 @@ function renderM41(){
 function renderM42(){
   return `<div class="card objective">
     <h3>Venue Vocabulary: Consistent Location Language</h3>
+    <div class="visual-section">${svgStagePlan()}</div>
     <div class="explainer">Venues use consistent location language that repeats across every show you work. <strong>Stage left/right (performer's perspective), house left/right (audience perspective), FOH (front-of-house control area), upstage/downstage (away from/toward audience), dock, backstage.</strong> This vocabulary is stable. Once you learn it, it works everywhere. Stage left is always stage left, no matter the venue.</div>
     <div class="reference">
       <span class="reference-label">Venue Directions Explained</span>
@@ -663,6 +820,7 @@ function renderM43(){
 function renderM51(){
   return `<div class="card objective">
     <h3>Why Truck Unload Sequence Matters</h3>
+    <div class="visual-section">${svgLoadInSequence()}</div>
     <div class="explainer">Trailers are loaded carefully for stability and safe access. Cases in front block cases behind. <strong>Unloading starts from the rear and moves forward.</strong> Following sequence means the load stays stable and you do not climb over restraints or create collapse risk. The sequence is not arbitrary; it is physics. Breaking sequence creates danger.</div>
     <div class="reference">
       <span class="reference-label">Load Sequence Logic</span>
@@ -862,6 +1020,7 @@ function renderM63(){
 function renderM71(){
   return `<div class="card objective">
     <h3>Physical Support vs. Technical Modification</h3>
+    <div class="visual-section">${svgDepartmentLevels()}</div>
     <div class="explainer">You can move audio cases (physical support). You cannot connect/disconnect audio systems (technical work). <strong>This boundary exists for every department.</strong> Recognizing which side of the line you are on prevents damage and keeps you low-risk. It is not about knowledge; it is about authorization and safety.</div>
     <div class="reference">
       <span class="reference-label">Department Boundaries</span>
@@ -978,6 +1137,7 @@ function renderM81(){
 function renderM82(){
   return `<div class="card objective">
     <h3>Inspect Before Using: Look, Feel, Decide</h3>
+    <div class="visual-section">${svgRoadCaseHazards()}</div>
     <div class="explainer">A tool has a cracked handle. A case feels light. A mechanism is slipping. <strong>Remove defective equipment from use, do not work around the defect.</strong> Do not assume contents or state by appearance or weight. Inspection is your safety checkpoint. Working around defects is how injuries happen.</div>
     <div class="reference">
       <span class="reference-label">Inspection Checklist</span>
@@ -1036,6 +1196,7 @@ function renderM83(){
 function renderM91(){
   return `<div class="card objective">
     <h3>Appearance Is Not Clearance</h3>
+    <div class="visual-section">${svgStrikeSequence()}</div>
     <div class="explainer">After the show, department gear appears unused. Cable looks abandoned. <strong>Appearance does not mean clearance.</strong> Wait for the responsible department to explicitly clear it before moving or breaking it down. Appearance is deceiving. A cable that looks done might still be carrying power or be part of a system. A rig that looks finished might still be under load.</div>
     <div class="reference">
       <span class="reference-label">Strike Discipline</span>
