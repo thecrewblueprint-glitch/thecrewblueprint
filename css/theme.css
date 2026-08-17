@@ -1457,11 +1457,38 @@ img { max-width: 100%; display: block; }
   }
 }
 
+/* Mobile lesson footer navigation */
+.cb-learning-mobile-footer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--cb-bg);
+  border-top: 1px solid var(--cb-border);
+  padding: 12px 16px;
+  gap: 8px;
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cb-btn-sm {
+  font-size: 13px;
+  padding: 8px 12px;
+  flex: 1;
+  min-width: 90px;
+}
+
 /* ---------------------------------------------------------
    17. RESPONSIVE
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
+  .cb-learning-mobile-footer { display: flex; }
+  .cb-page { padding-bottom: 80px; }
   .cb-grid-2, .cb-grid-3, .cb-grid-4 { grid-template-columns: 1fr; }
   .cb-actions { flex-direction: column; }
   .cb-actions .cb-btn { width: 100%; }
