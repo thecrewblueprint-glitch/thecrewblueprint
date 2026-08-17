@@ -1116,7 +1116,32 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------------------------------------------------
-   14. RESPONSIVE
+   14. BLUEPRINT GRID BACKGROUND PATTERN & TRUSS DIVIDER
+   SVG-05: Subtle atmospheric grid texture for major sections
+   SVG-06: Truss structure visual transition element
+   --------------------------------------------------------- */
+
+.cb-blueprint-bg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjI0MCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImJsdWVwcmludC1ncmlkLWZpbmUiIHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjIwIiB5Mj0iMCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMC44IiBvcGFjaXR5PSIwLjA4Ii8+CiAgICAgIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIyMCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMC44IiBvcGFjaXR5PSIwLjA4Ii8+CiAgICA8L3BhdHRlcm4+CiAgICA8cGF0dGVybiBpZD0iYmx1ZXByaW50LWdyaWQtbWFqb3IiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjYmx1ZXByaW50LWdyaWQtZmluZSkiLz4KICAgICAgPGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMTAwIiB5Mj0iMCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIwLjEyIi8+CiAgICAgIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxMDAiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuMiIgb3BhY2l0eT0iMC4xMiIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KCiAgPCEtLSBNYWpvciBncmlkIGJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSIyNDAiIGZpbGw9InVybCgjYmx1ZXByaW50LWdyaWQtbWFqb3IpIi8+CgogIDwhLS0gT2NjYXNpb25hbCBkcmFmdGluZyByZWZlcmVuY2UgbWFya3MgYXQgc2VsZWN0IGludGVyc2VjdGlvbnMgLS0+CiAgPGcgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIiBmaWxsPSJub25lIj4KICAgIDwhLS0gQ3Jvc3NoYWlyIGF0ICg1MCwgNTApIC0tPgogICAgPGxpbmUgeDE9IjQ4IiB5MT0iNTAiIHgyPSI1MiIgeTI9IjUwIi8+CiAgICA8bGluZSB4MT0iNTAiIHkxPSI0OCIgeDI9IjUwIiB5Mj0iNTIiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMiLz4KCiAgICA8IS0tIENyb3NzaGFpciBhdCAoMTUwLCAxNTApIC0tPgogICAgPGxpbmUgeDE9IjE0OCIgeTE9IjE1MCIgeDI9IjE1MiIgeTI9IjE1MCIvPgogICAgPGxpbmUgeDE9IjE1MCIgeTE9IjE0OCIgeDI9IjE1MCIgeTI9IjE1MiIvPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSIzIi8+CgogICAgPCEtLSBTbWFsbCByZWZlcmVuY2UgbWFyayBhdCAoMjAwLCA4MCkgLS0+CiAgICA8bGluZSB4MT0iMTk4IiB5MT0iODAiIHgyPSIyMDIiIHkyPSI4MCIvPgogICAgPGxpbmUgeDE9IjIwMCIgeTE9Ijc4IiB4Mj0iMjAwIiB5Mj0iODIiLz4KICAKICAKICAKICAGPC9nPgo8L3N2Zz4=');
+  background-size: 240px 240px;
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+
+.cb-truss-divider {
+  max-width: 100%;
+  height: auto;
+  color: var(--cb-muted-2);
+  margin: 48px 0;
+  opacity: 0.6;
+}
+
+.cb-truss-accent {
+  color: var(--cb-gold);
+}
+
+/* ---------------------------------------------------------
+   15. RESPONSIVE
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
