@@ -17,8 +17,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="css/theme.css" rel="stylesheet" />
 <style>
-  /* Page-specific: About's two-column hero with a numbered-principles side panel.
-     Reuses shared tokens/buttons/cards from theme.css rather than redeclaring them. */
+  /* Image-based hero for about page */
+  .cb-about-hero-image-section {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    aspect-ratio: 16 / 9;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-bottom: clamp(48px, 6vw, 80px);
+  }
+
+  .cb-about-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cb-about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(5, 6, 10, 0.75), rgba(5, 6, 10, 0.4) 40%, transparent);
+    z-index: 1;
+  }
+
+  .cb-about-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px 48px;
+    width: min(1280px, 100%);
+  }
+
+  .cb-about-hero-content h1 {
+    margin: 0 0 16px;
+    max-width: 620px;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    color: var(--cb-text);
+  }
+
+  .cb-about-hero-content p {
+    max-width: 540px;
+    margin: 0;
+    color: var(--cb-muted);
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.65;
+  }
+
+  /* Original two-column section below hero */
   .cb-about-hero {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
@@ -99,8 +154,56 @@
   .cb-cta-split p { margin: 0; color: var(--cb-muted); max-width: 620px; }
 
   @media (max-width: 900px) {
+    .cb-about-hero-image-section { aspect-ratio: auto; min-height: 360px; }
+    .cb-about-hero-content { padding-bottom: 32px; }
+    .cb-about-hero-content h1 { max-width: 100%; }
     .cb-about-hero { grid-template-columns: 1fr; }
     .cb-cta-split { grid-template-columns: 1fr; }
+  }
+
+  .cb-learning-boundaries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 32px;
+  }
+
+  .cb-learning-boundary-card {
+    padding: clamp(24px, 4vw, 36px);
+    border-radius: var(--cb-radius-lg);
+  }
+
+  .cb-boundary-do {
+    background: rgba(56, 212, 119, 0.08);
+    border: 1px solid rgba(56, 212, 119, 0.3);
+  }
+
+  .cb-boundary-do h3 {
+    color: var(--cb-success);
+    margin: 0 0 12px;
+  }
+
+  .cb-boundary-dont {
+    background: rgba(245, 180, 0, 0.08);
+    border: 1px solid rgba(245, 180, 0, 0.3);
+  }
+
+  .cb-boundary-dont h3 {
+    color: var(--cb-gold);
+    margin: 0 0 12px;
+  }
+
+  .cb-learning-boundary-card p {
+    margin: 0 0 8px;
+    color: var(--cb-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .cb-learning-boundary-card p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 900px) {
+    .cb-learning-boundaries { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -128,12 +231,21 @@
 <main class="cb-page">
   <div class="cb-wrap">
 
+    <section class="cb-about-hero-image-section">
+      <img src="images/site/img-03-systems-perspective.webp" alt="Production crew managing systems during load-in" class="cb-about-hero-image" />
+      <div class="cb-about-hero-overlay"></div>
+      <div class="cb-about-hero-content">
+        <h1>Online orientation for real production work</h1>
+        <p>The Crew Blueprint is a practical training platform built to help new and developing live event workers understand the jobsite, communicate clearly, work with awareness, and build a path beyond simply being new on the call.</p>
+      </div>
+    </section>
+
     <section class="cb-about-hero">
       <div>
-        <h1>A practical training platform for the people behind live events.</h1>
+        <h1>Built for jobsite readiness and crew reliability.</h1>
         <p>
-          The Crew Blueprint helps new and developing live event workers understand the jobsite,
-          communicate clearly, work with awareness, and build a path beyond simply being new on the call.
+          The Crew Blueprint combines job-readiness training, safety awareness, and practical field reference to help new workers arrive prepared
+          and reliable. This is orientation and preparation—not a substitute for hands-on training, employer instruction, or specialized work authorization.
         </p>
         <div class="cb-actions">
           <a class="cb-btn cb-btn-primary" href="courses/stagehand-fundamentals.html">Start Stagehand Fundamentals</a>
@@ -221,6 +333,36 @@
         <article class="cb-card">
           <h3>An expandable training system</h3>
           <p>Stagehand Fundamentals is the starting point for future department, leadership, compliance-awareness, and worker-development pathways.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>What this platform covers—and what it doesn't</h2>
+      <p class="cb-section-intro">
+        The Crew Blueprint provides foundation-level orientation and job-readiness training. It works best as part of a complete learning ecosystem that includes employer training, site-specific instruction, and hands-on authorization.
+      </p>
+
+      <div class="cb-learning-boundaries">
+        <article class="cb-learning-boundary-card cb-boundary-do">
+          <h3>✓ What we teach</h3>
+          <p>Jobsite vocabulary and crew roles</p>
+          <p>Load-in, show, load-out patterns</p>
+          <p>Safety awareness and hazard recognition</p>
+          <p>Department structure and chain of command</p>
+          <p>Professional communication and behavior</p>
+          <p>Field tools and gear preparation</p>
+          <p>Career development pathways</p>
+        </article>
+        <article class="cb-learning-boundary-card cb-boundary-dont">
+          <h3>⚠ What you need elsewhere</h3>
+          <p>Employer-provided safety training and policy</p>
+          <p>Site-specific instructions and venue rules</p>
+          <p>Equipment certification (rigging, fall protection)</p>
+          <p>OSHA 10/30 or union training requirements</p>
+          <p>Hands-on authorization for specialized work</p>
+          <p>Department-specific technical training</p>
+          <p>Real-time direction from your crew leads</p>
         </article>
       </div>
     </section>
