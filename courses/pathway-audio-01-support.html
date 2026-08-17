@@ -3,308 +3,361 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Audio Pathway, Course 1: Supporting an Audio Load-In | The Crew Blueprint</title>
-<meta name="description" content="The first course in the Audio pathway: what a ground hand actually does to support a PA build and audio load-in without touching the system itself." />
+<title>Audio Pathway Course 1: Supporting an Audio Load-In | The Crew Blueprint</title>
+<meta name="description" content="Learn what a ground hand actually does to support a PA build and audio load-in without touching the system itself." />
 <link rel="icon" href="../images/logo.png" type="image/png">
 <link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-audio-01-support/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="The Crew Blueprint" />
-<meta property="og:title" content="Audio Pathway, Course 1: Supporting an Audio Load-In | The Crew Blueprint" />
-<meta property="og:description" content="What a ground hand actually does to support a PA build and audio load-in." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link href="../css/theme.css" rel="stylesheet" />
 <style>
-  .cb-section-left { text-align: left; }
-  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
-  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
-  .cb-guide-index { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
-  .cb-guide-index a.cb-tag {
-    display: inline-flex; align-items: center; padding: 8px 14px;
-    color: var(--cb-gold); background: rgba(245,180,0,0.1);
-    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
-    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
-    text-decoration: none;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--cb-bg); color: var(--cb-text); line-height: 1.6; }
+  :root {
+    --cb-bg: #050606;
+    --cb-text: #f5f5f5;
+    --cb-muted: #b3b3b3;
+    --cb-muted-2: #808080;
+    --cb-card: #0f1112;
+    --cb-border: #1a1d20;
+    --cb-gold: #f5b400;
+    --cb-gold-strong: #f5b400;
+    --cb-panel: #0a0b0d;
+    --cb-radius-md: 8px;
+    --cb-radius-lg: 12px;
   }
-  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
-  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
-  .cb-quiz-item { padding: 16px 20px; }
-  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
-  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
-  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
-  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
-  .cb-lesson-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
-  .cb-lesson-nav-card { padding: 22px; text-align: left; display: flex; flex-direction: column; gap: 6px; }
-  .cb-lesson-nav-card span.cb-eyebrow {
-    font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--cb-muted-2);
+
+  .top { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: var(--cb-bg); border-bottom: 1px solid var(--cb-border); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
+  .top-left { display: flex; align-items: center; gap: 16px; }
+  .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+  .top-actions { display: flex; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
+  .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
+  .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
+  .progress-fill { height: 100%; background: var(--cb-gold); width: 0%; transition: width 300ms ease; }
+
+  .shell { display: grid; grid-template-columns: 240px 1fr; gap: 0; padding-top: 72px; min-height: 100vh; }
+  .side { position: fixed; top: 72px; left: 0; width: 240px; height: calc(100vh - 72px); background: var(--cb-card); border-right: 1px solid var(--cb-border); overflow-y: auto; padding: 24px 0; z-index: 50; }
+  .side-nav { display: grid; gap: 0; }
+  .side-mod { padding: 0; }
+  .side-mod-title { display: block; padding: 12px 24px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cb-muted-2); }
+  .side-lesson { display: block; padding: 10px 24px; font-size: 13px; color: var(--cb-muted); text-decoration: none; border-left: 2px solid transparent; transition: all 180ms ease; }
+  .side-lesson:hover { color: var(--cb-gold); border-left-color: var(--cb-gold); }
+  .side-lesson.active { color: var(--cb-gold); border-left-color: var(--cb-gold); font-weight: 600; }
+
+  .main { grid-column: 2; padding-left: 0; }
+  .hero { padding: clamp(32px, 6vw, 60px) clamp(20px, 6vw, 60px); background: var(--cb-panel); border-bottom: 1px solid var(--cb-border); }
+  .hero h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 16px; line-height: 1.1; letter-spacing: -0.03em; }
+  .hero p { font-size: clamp(16px, 2vw, 18px); color: var(--cb-muted); margin: 0; max-width: 700px; line-height: 1.65; }
+
+  .card { margin: 24px clamp(20px, 6vw, 60px) 0; padding: 22px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
+  .card.progress { position: sticky; top: 90px; margin-top: 24px; z-index: 40; }
+  .rule { font-size: 14px; font-weight: 700; color: var(--cb-gold); background: rgba(245, 180, 0, 0.08); padding: 12px; border-radius: 6px; border-left: 3px solid var(--cb-gold); }
+
+  .content { padding: clamp(20px, 6vw, 60px); }
+  .content h2 { font-size: clamp(24px, 4vw, 32px); margin: 32px 0 16px 0; line-height: 1.2; }
+  .content h2:first-child { margin-top: 0; }
+  .content p { color: var(--cb-muted); margin: 0 0 16px 0; line-height: 1.7; }
+  .content ul { color: var(--cb-muted); margin: 16px 0; padding-left: 24px; }
+  .content li { margin: 8px 0; }
+  .content a { color: var(--cb-gold); text-decoration: none; }
+  .content a:hover { text-decoration: underline; }
+
+  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .split-col { padding: 18px; background: rgba(5, 7, 8, 0.5); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
+  .split-col h4 { font-size: 14px; font-weight: 700; margin: 0 0 12px; color: var(--cb-gold); }
+  .split-col ul { margin: 0; padding-left: 20px; }
+  .split-col li { font-size: 13px; margin: 6px 0; }
+
+  .quiz-list { display: grid; gap: 10px; margin: 18px 0; }
+  .quiz-item { padding: 16px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
+  .quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); list-style: none; }
+  .quiz-item summary::-webkit-details-marker { display: none; }
+  .quiz-item summary::before { content: '▸ '; color: var(--cb-gold); margin-right: 8px; transition: transform 180ms ease; }
+  .quiz-item[open] summary::before { transform: rotate(90deg); }
+  .quiz-item summary:hover { color: var(--cb-gold); }
+  .quiz-item[open] summary { color: var(--cb-gold); margin-bottom: 8px; }
+  .quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; font-weight: 400; }
+
+  .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
+  .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
+  .footer-nav-card:hover { border-color: var(--cb-gold); }
+  .footer-nav-card .label { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); display: block; margin-bottom: 6px; }
+  .footer-nav-card h3 { margin: 0; font-size: 18px; }
+
+  .mobile-select { display: none; }
+  @media (max-width: 820px) {
+    .shell { grid-template-columns: 1fr; }
+    .side { display: none; }
+    .main { grid-column: 1; }
+    .mobile-select { display: block; margin: 0 0 16px 0; width: 100%; padding: 12px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); color: var(--cb-text); font-size: 14px; font-weight: 600; cursor: pointer; }
+    .split-grid { grid-template-columns: 1fr; }
+    .top { flex-direction: column; height: auto; padding: 12px 16px; gap: 12px; }
+    .top-left { flex-direction: column; width: 100%; }
+    .top-title { font-size: 16px; }
+    .progress-bar { top: auto; }
+    .top-actions { width: 100%; }
   }
-  .cb-lesson-nav-card h3 { margin: 0; font-size: 17px; }
-  @media (max-width: 820px) { .cb-lesson-nav { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<nav class="site-nav" aria-label="Primary navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
-      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
-    </a>
-    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
-      <li><a href="../resources.html">Resources</a></li>
-      <li><a href="../contact.html">Contact</a></li>
-      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
-    </ul>
+<div class="top">
+  <div class="top-left">
+    <div class="top-title">Supporting an Audio Load-In</div>
   </div>
-</nav>
+  <div class="top-actions">
+    <a href="../courses.html" class="btn">← Exit Course</a>
+  </div>
+</div>
 
-<main class="cb-page">
-  <div class="cb-wrap" style="max-width: 900px;">
+<div class="progress-bar"><div class="progress-fill"></div></div>
 
-    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
-      <a href="../courses.html">Courses</a>
-      <span class="cb-breadcrumb-sep">/</span>
-      <span class="cb-breadcrumb-current">Audio Pathway</span>
-    </nav>
+<div class="shell">
+  <nav class="side">
+    <div class="side-nav" id="sidebar"></div>
+    <select class="mobile-select" id="mobileSelect"></select>
+  </nav>
 
-    <section class="cb-hero" style="padding-top: 8px;">
-      <span class="cb-label">Audio Pathway &middot; Course 1</span>
+  <div class="main">
+    <div class="hero">
       <h1>Supporting an Audio Load-In</h1>
-      <p>
-        The Audio pathway starts here: move it, stage it, carry it, run it, and connect it only
-        when directed. Reconfiguring, tuning, or troubleshooting stays with the audio department
-        &mdash; this course is about everything you genuinely can do.
-      </p>
-      <p style="font-size: 13px; color: var(--cb-muted); margin-top: 10px;">
-        <strong>Mental model:</strong> <em>"What am I being asked to do, and how do I do my part correctly?"</em>
-      </p>
-      <div class="cb-guide-index">
-        <a class="cb-tag" href="#what-you-can-do">What You Can Help With</a>
-        <a class="cb-tag" href="#dont-touch">What Stays Off-Limits</a>
-        <a class="cb-tag" href="#mistakes-comm">Mistakes &amp; Communication</a>
-      </div>
-    </section>
+      <p>The Audio pathway starts here: move it, stage it, carry it, run it, and connect it only when directed. Reconfiguring, tuning, or troubleshooting stays with the audio department — this course is about everything you genuinely can do.</p>
+    </div>
 
-    <section class="cb-section cb-section-left" id="what-you-can-do">
-      <h2>What You Can Help With, Under Direction</h2>
-      <p class="cb-section-intro">
-        Real ground-hand support includes some of the most physical work on an audio call.
-      </p>
-      <p>
-        You can move and stage speaker cabinets, subs, and monitor wedges using their actual
-        handles &mdash; not grilles, rigging pins, or connectors &mdash; and use a team carry when
-        the size or weight calls for it. You can help build a line array by steadying a cabinet or
-        passing hardware while the audio technician makes the actual connection; locking hardware
-        and rigging angles are manufacturer-specific, so don't assume one system works like another.
-        Running and dressing cable along the path you're given is normal ground-hand work too.
-      </p>
+    <div class="card progress" id="progressCard">
+      <div class="rule" id="objective">Select a lesson to begin</div>
+    </div>
 
-      <figure class="cb-diagram" style="max-width: 700px;">
-        <span class="cb-diagram-label">Quick Reference</span>
-        <div class="cb-split-grid">
-          <div class="cb-split-col cb-split-can">
-            <h4>You Can Help With</h4>
-            <ul>
-              <li>Moving/staging cabinets, subs, monitors by their handles</li>
-              <li>Steadying cabinets during a line array build</li>
-              <li>Team carry for heavy pieces</li>
-              <li>Running and dressing cable</li>
-            </ul>
-          </div>
-          <div class="cb-split-col cb-split-cant">
-            <h4>Stays Off-Limits</h4>
-            <ul>
-              <li>Disconnecting cable before it's cleared</li>
-              <li>Console and mixer settings</li>
-              <li>System tuning/EQ, RF and wireless coordination</li>
-              <li>Moving a microphone that's already placed</li>
-            </ul>
-          </div>
-        </div>
-      </figure>
-    </section>
+    <div class="content" id="lessonContent"></div>
 
-    <section class="cb-section cb-section-left" id="dont-touch">
-      <h2>What Stays Off-Limits Without Direction</h2>
-      <p class="cb-section-intro">
-        The clearest rule in this course: never strike a cable because it looks done.
-      </p>
-      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
-        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">A cable that looks unused might not be</strong>
-        <p style="margin: 0; color: var(--cb-muted);">
-          It might still be patched, powered, or needed for testing. Wait for the audio lead to
-          clear it before you disconnect, coil, or move it &mdash; and if a connector doesn't seat
-          normally, stop and ask instead of forcing it.
-        </p>
-      </div>
-      <p>
-        Console and mixer settings, system tuning/EQ, RF and wireless coordination, and amplifier
-        settings all stay with the audio department. Treat a microphone that's already been placed
-        as deliberate &mdash; move it only if you're told to.
-      </p>
-    </section>
-
-    <section class="cb-section cb-section-left" id="mistakes-comm">
-      <h2>Common Mistakes and Talking to the Audio Lead</h2>
-      <p class="cb-section-intro">
-        A few habits matter more than knowing anything technical about how the system works.
-      </p>
-      <p>
-        Common problems: pulling on the cable instead of the connector, forcing a connector that
-        doesn't align, and mishandling speaker cabinets by grabbing rigging pins or connectors
-        instead of the designed handling points. When in doubt, short confirmation beats assumed
-        terminology &mdash; "Which case?", "Is this cable cleared to strike?", "Do you want this
-        connected or just placed?"
-      </p>
-      <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">
-        Under a suspended line array, stay outside the fall zone and follow the audio/rigging
-        lead's exclusion zone. Hearing protection during testing and soundcheck isn't just for the
-        audio crew &mdash; follow whatever the site requires.
-      </p>
-    </section>
-
-    <section class="cb-section cb-section-left">
-      <h2>Quick Knowledge Check</h2>
-      <p class="cb-section-intro">Click a question to check your answer.</p>
-      <div class="cb-quiz-list">
-        <details class="cb-panel cb-quiz-item">
-          <summary>A cable looks unused during a PA build. Can you strike it?</summary>
-          <p>Not until the audio lead clears it &mdash; it may still be patched, powered, or needed for testing.</p>
-        </details>
-        <details class="cb-panel cb-quiz-item">
-          <summary>You're carrying a speaker cabinet. What should you grab?</summary>
-          <p>The cabinet's actual handle &mdash; not grilles, rigging pins, or connectors.</p>
-        </details>
-        <details class="cb-panel cb-quiz-item">
-          <summary>A microphone is already placed on stage. Can you move it if it looks like it's in your way?</summary>
-          <p>No &mdash; treat a placed microphone as deliberate and move it only if you're told to.</p>
-        </details>
-        <details class="cb-panel cb-quiz-item">
-          <summary>A connector doesn't seat normally. What do you do?</summary>
-          <p>Stop and ask &mdash; don't force it. Forcing a connector can damage contacts, shells, or locking mechanisms.</p>
-        </details>
-        <details class="cb-panel cb-quiz-item">
-          <summary>Who decides system EQ, RF coordination, and amplifier settings?</summary>
-          <p>The audio department &mdash; these stay off-limits for a ground hand regardless of how confident you feel.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="cb-section cb-section-left">
-      <h2>Key Takeaways</h2>
-      <ul class="cb-list">
-        <li>Move it, stage it, carry it, run it &mdash; connect it only when directed. Reconfiguring, tuning, or troubleshooting stays with audio.</li>
-        <li>Never strike a cable that hasn't been cleared, and treat a placed microphone as deliberate.</li>
-        <li>Console settings, system tuning, RF coordination, and amplifier settings are off-limits without direction.</li>
-        <li>Use short confirmation phrases rather than assumed terminology &mdash; ask, don't guess.</li>
-      </ul>
-    </section>
-
-    <section class="cb-section cb-section-left">
-      <h2>Sources</h2>
-      <p class="cb-section-intro">
-        This course was built from research citing real crew postings, manufacturer connector
-        documentation, and OSHA standards. Verify current applicability before relying on any of
-        these for an actual job.
-      </p>
-      <ul class="cb-list">
-        <li>PRG Crew Portal — <a href="https://crew.prg.com/en/" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">crew.prg.com</a></li>
-        <li>Encore — Event Audio Visual Technician posting — <a href="https://jobs.encoreglobal.com/en/job/toronto/event-audio-visual-technician-gta-part-time/6228/95423032384" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">jobs.encoreglobal.com</a></li>
-        <li>L-Acoustics — Kara II line array documentation — <a href="https://www.l-acoustics.com/products/Kara-II/" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">l-acoustics.com</a></li>
-        <li>L-Acoustics — Result Documentation Center — <a href="https://www.l-acoustics.com/result-documentation-center/" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">l-acoustics.com</a></li>
-        <li>Neutrik — locking connector documentation — <a href="https://www.neutrik.com/en/product/nc3mxx-wob" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">neutrik.com</a></li>
-        <li>OSHA — Steel Erection: Cranes eTool — <a href="https://www.osha.gov/etools/steel-erection/cranes" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">osha.gov</a></li>
-        <li>OSHA 29 CFR 1910.95 — Occupational noise exposure — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">osha.gov</a></li>
-        <li>OSHA 29 CFR 1926.1425 — Rigging (Cranes and derricks) — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1425" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">osha.gov</a></li>
-      </ul>
-    </section>
-
-    <section class="cb-section">
-      <h2 style="text-align: left; margin-bottom: 16px;">Continue Learning</h2>
-      <div class="cb-lesson-nav">
-        <a class="cb-panel cb-lesson-nav-card" href="module-7-department-basics.html" style="color: inherit; text-decoration: none;">
-          <span class="cb-eyebrow">Back to the Overview</span>
-          <h3>Module 7: Department Basics</h3>
-        </a>
-        <a class="cb-panel cb-lesson-nav-card" href="../resources.html" style="color: inherit; text-decoration: none;">
-          <span class="cb-eyebrow">In the Meantime</span>
-          <h3 style="color: var(--cb-gold-strong);">Explore the Resource Hub &rarr;</h3>
-        </a>
-      </div>
-      <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">
-        This is Course 1 of the Audio pathway. Course 2 and beyond &mdash; deeper audio systems
-        content &mdash; are in development.
-      </p>
-    </section>
-
+    <div class="footer-nav" id="footerNav"></div>
   </div>
-</main>
+</div>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-layout">
-      <div class="footer-disclaimer">
-      <strong>Important Safety Disclaimer</strong>
-      <p>
-        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
-        workers. This does not replace employer-provided safety training, site-specific instruction, union
-        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
-      </p>
-    </div>
-      <div class="footer-main">
-        <div class="footer-brand-center">
-        <span class="footer-mark">CB</span>
-        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
-        </div>
-        <p class="footer-tagline">Built for the people who build the show.</p>
+<script>
+const modules = [
+  {
+    id: '1',
+    name: 'Support Fundamentals',
+    lessons: [
+      {
+        id: '1.1',
+        name: 'What You Can Help With',
+        obj: 'Master the physical work of audio support.',
+        content: `
+          <h2>What You Can Help With, Under Direction</h2>
+          <p>Real ground-hand support includes some of the most physical work on an audio call.</p>
+          <p>You can move and stage speaker cabinets, subs, and monitor wedges using their actual handles — not grilles, rigging pins, or connectors — and use a team carry when the size or weight calls for it. You can help build a line array by steadying a cabinet or passing hardware while the audio technician makes the actual connection; locking hardware and rigging angles are manufacturer-specific, so don't assume one system works like another. Running and dressing cable along the path you're given is normal ground-hand work too.</p>
+          <figure class="split-grid">
+            <div class="split-col split-can">
+              <h4>You Can Help With</h4>
+              <ul>
+                <li>Moving/staging cabinets, subs, monitors by their handles</li>
+                <li>Steadying cabinets during a line array build</li>
+                <li>Team carry for heavy pieces</li>
+                <li>Running and dressing cable</li>
+              </ul>
+            </div>
+            <div class="split-col split-cant">
+              <h4>Stays Off-Limits</h4>
+              <ul>
+                <li>Disconnecting cable before it's cleared</li>
+                <li>Console and mixer settings</li>
+                <li>System tuning/EQ, RF and wireless coordination</li>
+                <li>Moving a microphone that's already placed</li>
+              </ul>
+            </div>
+          </figure>
+        `
+      },
+      {
+        id: '1.2',
+        name: 'What Stays Off-Limits',
+        obj: 'Understand what audio technicians control.',
+        content: `
+          <h2>What Stays Off-Limits Without Direction</h2>
+          <p>The clearest rule in this course: never strike a cable because it looks done.</p>
+          <div class="card" style="background: rgba(245, 180, 0, 0.08); border: 1px solid rgba(245, 180, 0, 0.32); margin: 16px 0;">
+            <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">A cable that looks unused might not be</strong>
+            <p style="margin: 0; color: var(--cb-muted);">It might still be patched, powered, or needed for testing. Wait for the audio lead to clear it before you disconnect, coil, or move it — and if a connector doesn't seat normally, stop and ask instead of forcing it.</p>
+          </div>
+          <p>Console and mixer settings, system tuning/EQ, RF and wireless coordination, and amplifier settings all stay with the audio department. Treat a microphone that's already been placed as deliberate — move it only if you're told to.</p>
+        `
+      },
+      {
+        id: '1.3',
+        name: 'Common Mistakes & Communication',
+        obj: 'Learn the habits that matter most for audio support.',
+        content: `
+          <h2>Common Mistakes and Talking to the Audio Lead</h2>
+          <p>A few habits matter more than knowing anything technical about how the system works.</p>
+          <p>Common problems: pulling on the cable instead of the connector, forcing a connector that doesn't align, and mishandling speaker cabinets by grabbing rigging pins or connectors instead of the designed handling points. When in doubt, short confirmation beats assumed terminology — "Which case?", "Is this cable cleared to strike?", "Do you want this connected or just placed?"</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">Under a suspended line array, stay outside the fall zone and follow the audio/rigging lead's exclusion zone. Hearing protection during testing and soundcheck isn't just for the audio crew — follow whatever the site requires.</p>
+        `
+      }
+    ]
+  },
+  {
+    id: '2',
+    name: 'Knowledge Check',
+    lessons: [
+      {
+        id: '2.1',
+        name: 'Quick Knowledge Check',
+        obj: 'Test your audio support knowledge.',
+        content: `
+          <h2>Quick Knowledge Check</h2>
+          <p>Click a question to check your answer.</p>
+          <div class="quiz-list">
+            <details class="quiz-item">
+              <summary>A cable looks unused during a PA build. Can you strike it?</summary>
+              <p>Not until the audio lead clears it — it may still be patched, powered, or needed for testing.</p>
+            </details>
+            <details class="quiz-item">
+              <summary>You're carrying a speaker cabinet. What should you grab?</summary>
+              <p>The cabinet's actual handle — not grilles, rigging pins, or connectors.</p>
+            </details>
+            <details class="quiz-item">
+              <summary>A microphone is already placed on stage. Can you move it if it looks like it's in your way?</summary>
+              <p>No — treat a placed microphone as deliberate and move it only if you're told to.</p>
+            </details>
+            <details class="quiz-item">
+              <summary>A connector doesn't seat normally. What do you do?</summary>
+              <p>Stop and ask — don't force it. Forcing a connector can damage contacts, shells, or locking mechanisms.</p>
+            </details>
+            <details class="quiz-item">
+              <summary>Who decides system EQ, RF coordination, and amplifier settings?</summary>
+              <p>The audio department — these stay off-limits for a ground hand regardless of how confident you feel.</p>
+            </details>
+          </div>
+        `
+      },
+      {
+        id: '2.2',
+        name: 'Key Takeaways',
+        obj: 'Remember the principles of audio support.',
+        content: `
+          <h2>Key Takeaways</h2>
+          <ul style="margin: 16px 0; color: var(--cb-muted); list-style: disc; padding-left: 24px;">
+            <li>Move it, stage it, carry it, run it — connect it only when directed. Reconfiguring, tuning, or troubleshooting stays with audio.</li>
+            <li>Never strike a cable that hasn't been cleared, and treat a placed microphone as deliberate.</li>
+            <li>Console settings, system tuning, RF coordination, and amplifier settings are off-limits without direction.</li>
+            <li>Use short confirmation phrases rather than assumed terminology — ask, don't guess.</li>
+          </ul>
+        `
+      },
+      {
+        id: '2.3',
+        name: 'Sources & References',
+        obj: 'Explore the research backing this course.',
+        content: `
+          <h2>Sources</h2>
+          <p>This course was built from research citing real crew postings, manufacturer connector documentation, and OSHA standards. Verify current applicability before relying on any of these for an actual job.</p>
+          <ul style="margin: 16px 0; color: var(--cb-muted); list-style: none; padding-left: 0;">
+            <li style="margin: 10px 0;"><strong>PRG Crew Portal</strong> — <a href="https://crew.prg.com/en/" target="_blank" rel="noopener noreferrer">crew.prg.com</a></li>
+            <li style="margin: 10px 0;"><strong>Encore — Event Audio Visual Technician</strong> — <a href="https://jobs.encoreglobal.com/en/job/toronto/event-audio-visual-technician-gta-part-time/6228/95423032384" target="_blank" rel="noopener noreferrer">jobs.encoreglobal.com</a></li>
+            <li style="margin: 10px 0;"><strong>L-Acoustics Kara II documentation</strong> — <a href="https://www.l-acoustics.com/products/Kara-II/" target="_blank" rel="noopener noreferrer">l-acoustics.com</a></li>
+            <li style="margin: 10px 0;"><strong>Neutrik locking connector documentation</strong> — <a href="https://www.neutrik.com/en/product/nc3mxx-wob" target="_blank" rel="noopener noreferrer">neutrik.com</a></li>
+            <li style="margin: 10px 0;"><strong>OSHA 29 CFR 1910.95 — Occupational noise exposure</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
+            <li style="margin: 10px 0;"><strong>OSHA 29 CFR 1926.1425 — Rigging</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1425" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
+          </ul>
+        `
+      }
+    ]
+  }
+];
 
-        <div class="footer-cols">
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../courses.html">Courses</a></li>
-          <li><a href="../resources.html">Resources</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Also Visit</h4>
-        <ul>
-          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
-        </ul>
-      </div>
-    </div>
-      </div>
-    </div>
+function buildSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const select = document.getElementById('mobileSelect');
+  sidebar.innerHTML = '';
+  select.innerHTML = '';
 
-    <div class="footer-bottom">
-      <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
-      <p class="footer-legal">
-        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
-        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
-        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
-        <a href="../accessibility-statement.html">Accessibility</a> &middot;
-        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
-        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
-      </p>
-    </div>
-  </div>
-</footer>
+  modules.forEach(mod => {
+    const modDiv = document.createElement('div');
+    modDiv.className = 'side-mod';
+    modDiv.innerHTML = `<div class="side-mod-title">${mod.name}</div>`;
 
-<script src="../js/main.js"></script>
+    mod.lessons.forEach(lesson => {
+      const link = document.createElement('a');
+      link.href = '#';
+      link.className = 'side-lesson';
+      link.textContent = lesson.name;
+      link.dataset.idx = `${mod.id}.${lesson.id.split('.')[1]}`;
+      link.onclick = e => { e.preventDefault(); render(link.dataset.idx); };
+      modDiv.appendChild(link);
+
+      const opt = document.createElement('option');
+      opt.value = `${mod.id}.${lesson.id.split('.')[1]}`;
+      opt.textContent = `${mod.name} > ${lesson.name}`;
+      select.appendChild(opt);
+    });
+    sidebar.appendChild(modDiv);
+  });
+}
+
+function getModuleLesson(idx) {
+  const [modIdx, lesIdx] = idx.split('.');
+  const mod = modules.find(m => m.id === modIdx);
+  const lesson = mod.lessons.find(l => l.id.endsWith(lesIdx));
+  return { mod, lesson };
+}
+
+function render(idx) {
+  const { mod, lesson } = getModuleLesson(idx);
+  document.getElementById('objective').textContent = lesson.obj;
+  document.getElementById('lessonContent').innerHTML = lesson.content;
+  document.querySelectorAll('.side-lesson').forEach(l => l.classList.remove('active'));
+  document.querySelector(`[data-idx="${idx}"]`).classList.add('active');
+  document.getElementById('mobileSelect').value = idx;
+
+  const totalLessons = modules.reduce((sum, m) => sum + m.lessons.length, 0);
+  let currentLesson = 0;
+  modules.forEach(m => m.lessons.forEach(l => { currentLesson++; if (l.id === lesson.id) return; }));
+  let count = 0;
+  modules.forEach(m => m.lessons.forEach(l => { count++; if (l.id === lesson.id) currentLesson = count; }));
+
+  const progress = (currentLesson / totalLessons) * 100;
+  document.querySelector('.progress-fill').style.width = progress + '%';
+
+  renderFooterNav(mod, lesson, idx);
+}
+
+function renderFooterNav(mod, lesson, idx) {
+  const nav = document.getElementById('footerNav');
+  nav.innerHTML = '';
+
+  const allLessons = [];
+  modules.forEach(m => m.lessons.forEach(l => allLessons.push({...l, modId: m.id})));
+  const currentIdx = allLessons.findIndex(l => l.id === lesson.id);
+
+  if (currentIdx > 0) {
+    const prev = allLessons[currentIdx - 1];
+    const prevLink = document.createElement('a');
+    prevLink.href = '#';
+    prevLink.className = 'footer-nav-card';
+    prevLink.innerHTML = `<span class="label">← Previous</span><h3>${prev.name}</h3>`;
+    prevLink.onclick = e => { e.preventDefault(); render(`${prev.modId}.${prev.id.split('.')[1]}`); };
+    nav.appendChild(prevLink);
+  }
+
+  if (currentIdx < allLessons.length - 1) {
+    const next = allLessons[currentIdx + 1];
+    const nextLink = document.createElement('a');
+    nextLink.href = '#';
+    nextLink.className = 'footer-nav-card';
+    nextLink.innerHTML = `<span class="label">Next →</span><h3>${next.name}</h3>`;
+    nextLink.onclick = e => { e.preventDefault(); render(`${next.modId}.${next.id.split('.')[1]}`); };
+    nav.appendChild(nextLink);
+  }
+}
+
+buildSidebar();
+render('1.1');
+document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+</script>
+
 </body>
 </html>
