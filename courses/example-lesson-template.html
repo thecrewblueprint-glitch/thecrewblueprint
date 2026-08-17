@@ -85,9 +85,9 @@
 
       <!-- Lesson Hero -->
       <div class="cb-learning-hero">
-        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cb-gold); margin-bottom: 8px;">Module 1.3</div>
-        <h1>Crew, Direction & Value</h1>
-        <p>Understand who leads on a jobsite, what makes direction clear, and what value means to the people paying for the work.</p>
+        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cb-gold); margin-bottom: 8px;" id="lessonModule">Module 1.3</div>
+        <h1 id="lessonTitle">Crew, Direction & Value</h1>
+        <p id="lessonDescription">Understand who leads on a jobsite, what makes direction clear, and what value means to the people paying for the work.</p>
       </div>
 
       <!-- Learning Objective -->
@@ -199,18 +199,18 @@
       <!-- Context: Learning Path Info -->
       <div class="cb-learning-context">
         <span class="cb-learning-context-title">On This Path</span>
-        <span class="cb-learning-context-label">Stagehand Fundamentals</span>
-        <p>Foundation-level training for new live event workers. Learn the jobsite, safety mindset, and professional habits.</p>
+        <span class="cb-learning-context-label" id="contextCourse">Stagehand Fundamentals</span>
+        <p id="contextDescription">Foundation-level training for new live event workers. Learn the jobsite, safety mindset, and professional habits.</p>
 
         <hr style="border: none; border-top: 1px solid var(--cb-border); margin: 12px 0;">
 
         <span class="cb-learning-context-title">Current Progress</span>
-        <p>Lesson 3 of 40 • Module 1 • <strong style="color: var(--cb-gold);">8%</strong></p>
+        <p id="contextProgress">Lesson 3 of 40 • Module 1 • <strong style="color: var(--cb-gold);">8%</strong></p>
 
         <hr style="border: none; border-top: 1px solid var(--cb-border); margin: 12px 0;">
 
         <span class="cb-learning-context-title">Estimated Time</span>
-        <p>12 minutes to complete this lesson<br>~8 hours for entire course</p>
+        <p id="contextTime">12 minutes to complete this lesson<br>~8 hours for entire course</p>
       </div>
 
     </aside>
@@ -257,5 +257,53 @@
 </footer>
 
 <script src="../js/main.js"></script>
+
+<script>
+  // Update lesson progress card with actual lesson data
+  // Usage: add data attributes to the main element:
+  // data-lesson-module="5.1" data-lesson-title="The Sequence" data-current-lesson="14"
+  // data-total-lessons="40" data-progress-percent="35" data-course="Stagehand Fundamentals"
+
+  function updateLessonCard() {
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    // Get lesson metadata from data attributes (these would be set per actual lesson page)
+    const lessonModule = main.getAttribute('data-lesson-module');
+    const lessonTitle = main.getAttribute('data-lesson-title');
+    const currentLesson = main.getAttribute('data-current-lesson');
+    const totalLessons = main.getAttribute('data-total-lessons');
+    const progressPercent = main.getAttribute('data-progress-percent');
+    const courseName = main.getAttribute('data-course');
+    const courseDescription = main.getAttribute('data-course-description');
+    const estimatedTime = main.getAttribute('data-estimated-time');
+    const courseTime = main.getAttribute('data-course-time');
+
+    // Update hero section
+    if (lessonModule) document.getElementById('lessonModule').textContent = `Module ${lessonModule}`;
+    if (lessonTitle) document.getElementById('lessonTitle').textContent = lessonTitle;
+    if (lessonTitle) document.getElementById('lessonDescription').textContent =
+      `Complete this lesson to progress through ${courseName || 'the course'}.`;
+
+    // Update context sidebar
+    if (courseName) document.getElementById('contextCourse').textContent = courseName;
+    if (courseDescription) document.getElementById('contextDescription').textContent = courseDescription;
+
+    if (currentLesson && totalLessons && progressPercent) {
+      document.getElementById('contextProgress').innerHTML =
+        `Lesson ${currentLesson} of ${totalLessons} • ${lessonModule} • <strong style="color: var(--cb-gold);">${progressPercent}%</strong>`;
+    }
+
+    if (estimatedTime || courseTime) {
+      const lesson = estimatedTime || '12 minutes';
+      const course = courseTime || '~8 hours';
+      document.getElementById('contextTime').innerHTML =
+        `${lesson} to complete this lesson<br>${course} for entire course`;
+    }
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', updateLessonCard);
+</script>
 </body>
 </html>
