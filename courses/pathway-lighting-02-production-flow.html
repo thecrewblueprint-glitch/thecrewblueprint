@@ -3,55 +3,907 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lighting Pathway Course 2: Lighting Production Flow | The Crew Blueprint</title>
-<meta name="description" content="How lighting systems move from creative intent through advancing, load-in, rigging coordination, power, networking, focus, programming, show operation, and load-out." />
+<title>Lighting Pathway · Course 2: Production Flow | The Crew Blueprint</title>
+<meta name="description" content="Master the full lighting production flow from creative intent through load-out — understanding process, documentation, rigging, power systems, and safe operation." />
 <link rel="icon" href="../images/logo.png" type="image/png">
 <link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-02-production-flow/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="The Crew Blueprint" />
-<meta property="og:title" content="Lighting Pathway Course 2: Lighting Production Flow | The Crew Blueprint" />
-<meta property="og:description" content="How lighting systems move from creative intent through load-in, power, networking, programming, and load-out." />
+<meta property="og:title" content="Lighting Pathway · Course 2: Production Flow | The Crew Blueprint" />
+<meta property="og:description" content="Master the full lighting production flow from creative intent through load-out." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link href="../css/theme.css" rel="stylesheet" />
 <style>
-  .cb-course-hero { text-align: center; padding: clamp(32px, 6vw, 60px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); margin-bottom: 18px; }
-  .cb-course-hero h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 16px; }
-  .cb-course-hero p { max-width: 780px; margin: 0 auto 22px; color: var(--cb-muted); font-size: clamp(17px, 2vw, 20px); }
-  .cb-course-section { margin-top: 18px; padding: clamp(24px, 4vw, 38px); background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-lg); text-align: left; }
-  .cb-course-section h2 { margin: 0 0 14px; font-size: clamp(26px, 4vw, 38px); text-align: left; }
-  .cb-course-section > p { margin: 0 0 18px; color: var(--cb-muted); }
-  .cb-course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
-  .cb-course-module-list { display: grid; gap: 14px; margin-top: 18px; }
-  .cb-course-card, .cb-course-module { padding: 22px; background: rgba(5, 7, 8, 0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-align: left; }
-  .cb-course-card h3, .cb-course-module h3 { margin: 0 0 8px; font-size: clamp(19px, 3vw, 24px); text-align: left; }
-  .cb-course-card p, .cb-course-module p { margin: 0; color: var(--cb-muted); }
-  .cb-course-final { text-align: center; }
-  .cb-course-final h2 { text-align: center; }
-  .cb-course-final p { max-width: 700px; margin: 0 auto 18px; }
-  @media (max-width: 820px) { .cb-course-grid { grid-template-columns: 1fr; } }
+:root {
+  --cb-bg-deep: #0a0e17;
+  --cb-bg: #0f1219;
+  --cb-bg-light: #1a1f2b;
+  --cb-card: #161b27;
+  --cb-panel: rgba(255,255,255,0.03);
+  --cb-border: rgba(255,255,255,0.06);
+  --cb-border-strong: rgba(255,255,255,0.12);
+  --cb-text: #e8eef5;
+  --cb-muted: #a8b5c9;
+  --cb-muted-2: #7a85a0;
+  --cb-gold: #f5b400;
+  --cb-gold-strong: #ffd700;
+  --cb-gold-border: rgba(245,180,0,0.4);
+  --cb-radius-pill: 999px;
+}
 
-  .cb-course-module { position: relative; }
-  a.cb-course-module { display: block; text-decoration: none; color: inherit; transition: border-color 180ms ease; }
-  a.cb-course-module:hover { border-color: var(--cb-gold-border); }
-  a.cb-course-module:hover h3 { color: var(--cb-gold-strong); }
-  .cb-module-tag {
-    display: inline-flex; align-items: center; margin-bottom: 10px; padding: 5px 10px;
-    border-radius: var(--cb-radius-pill); font-size: 11px; font-weight: 800;
-    letter-spacing: 0.06em; text-transform: uppercase;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cb-bg-deep);
+  color: var(--cb-text);
+  line-height: 1.6;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--cb-bg);
+  border-bottom: 1px solid var(--cb-border);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.top-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cb-gold);
+}
+
+.exit-btn {
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 6px;
+  color: var(--cb-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.exit-btn:hover {
+  background: rgba(245,180,0,0.1);
+  color: var(--cb-gold-strong);
+  border-color: var(--cb-gold-strong);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  margin-top: 64px;
+  min-height: calc(100vh - 64px);
+}
+
+.side {
+  background: var(--cb-bg);
+  border-right: 1px solid var(--cb-border);
+  padding: 32px 0;
+  position: fixed;
+  left: 0;
+  top: 64px;
+  width: 240px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.content {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--cb-card);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card.progress {
+  background: linear-gradient(135deg, rgba(245,180,0,0.08) 0%, rgba(245,180,0,0.02) 100%);
+  border: 1px solid var(--cb-gold-border);
+}
+
+.rule {
+  font-weight: 700;
+  color: var(--cb-gold-strong);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.module-nav {
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+
+.module-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cb-muted-2);
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.lesson-link {
+  display: block;
+  padding: 10px 8px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  color: var(--cb-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.lesson-link:hover {
+  background: rgba(245,180,0,0.1);
+  color: var(--cb-gold);
+}
+
+.lesson-link.active {
+  background: rgba(245,180,0,0.15);
+  color: var(--cb-gold-strong);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 32px 0 16px 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 20px 0 12px 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+p { margin-bottom: 16px; }
+ul { margin-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 8px; }
+
+strong { font-weight: 600; color: var(--cb-gold-strong); }
+
+.cb-section {
+  margin-bottom: 32px;
+}
+
+.cb-list { list-style: disc; }
+.cb-list li { color: var(--cb-text); }
+
+.cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+.cb-quiz-item { padding: 16px 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: 8px; }
+.cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+.cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+.cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+.cb-quiz-item[open] { background: var(--cb-bg-light); }
+.cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
+.cb-panel {
+  background: var(--cb-panel);
+  border: 1px solid var(--cb-border);
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin-top: 8px;
+}
+
+.cb-drill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+
+.cb-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px 0;
+  padding: 24px;
+  background: var(--cb-card);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 12px;
+}
+
+.cb-diagram-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cb-muted-2);
+  margin-bottom: 16px;
+}
+
+.cb-diagram svg {
+  max-width: 100%;
+  height: auto;
+  color-scheme: dark;
+}
+
+.cb-diagram-caption {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--cb-muted);
+  text-align: center;
+}
+
+.cb-cta-split {
+  background: var(--cb-card);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.cb-cta-split h2 { margin: 0 0 8px 0; }
+.cb-cta-split p { margin: 0; color: var(--cb-muted); }
+
+.cb-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.cb-btn-primary {
+  background: var(--cb-gold);
+  color: var(--cb-bg-deep);
+  border-color: var(--cb-gold);
+}
+
+.cb-btn-primary:hover {
+  background: var(--cb-gold-strong);
+  border-color: var(--cb-gold-strong);
+}
+
+svg [fill*="var(--cb-"] {
+  color: inherit;
+}
+
+footer {
+  background: var(--cb-bg);
+  border-top: 1px solid var(--cb-border);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--cb-muted-2);
+  font-size: 13px;
+  margin-top: 64px;
+}
+
+@media (max-width: 820px) {
+  .shell { grid-template-columns: 1fr; }
+  .side { display: none; }
+  .top { flex-direction: column; height: auto; padding: 12px 20px; gap: 12px; }
+  .content { padding: 20px; }
+  .cb-drill-grid { grid-template-columns: 1fr; }
+  .cb-cta-split { flex-direction: column; align-items: flex-start; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+
+  .mobile-select {
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--cb-card);
+    color: var(--cb-gold);
+    border: 1px solid var(--cb-border-strong);
+    border-radius: 6px;
+    font-weight: 600;
   }
-  .cb-module-tag-live { color: var(--cb-gold); background: rgba(245,180,0,0.1); border: 1px solid rgba(245,180,0,0.32); }
+}
 
-  .cb-glossary-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; margin-top: 8px; }
-  .cb-glossary-item { padding: 16px 18px; background: rgba(5,7,8,0.42); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .cb-glossary-item strong { display: block; color: var(--cb-gold-strong); margin-bottom: 4px; font-size: 14px; }
-  .cb-glossary-item span { display: block; color: var(--cb-muted); font-size: 13px; line-height: 1.5; }
+.section-header { display: none; }
+.section-header.show { display: block; }
 </style>
 </head>
 <body>
 
-<nav class="site-nav" aria-label="Primary navigation">
+<div class="top">
+  <div class="top-title">Lighting Pathway · Course 2</div>
+  <a href="../courses.html" class="exit-btn">← Back to Courses</a>
+</div>
+
+<div class="shell">
+  <div class="side" id="sidebar">
+    <div class="module-nav">
+      <div class="module-title">Production Flow</div>
+      <a class="lesson-link active" onclick="switchLesson(0)">Lesson 1: Production Lifecycle</a>
+      <a class="lesson-link" onclick="switchLesson(1)">Lesson 2: Advancing & Documentation</a>
+      <a class="lesson-link" onclick="switchLesson(2)">Lesson 3: Load-In & Rigging</a>
+      <a class="lesson-link" onclick="switchLesson(3)">Lesson 4: Power & Troubleshooting</a>
+      <a class="lesson-link" onclick="switchLesson(4)">Lesson 5: Focus, Programming & Load-Out</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div id="mobileSelect" class="section-header">
+      <select class="mobile-select" onchange="switchLesson(parseInt(this.value))">
+        <option value="0">Lesson 1: Production Lifecycle</option>
+        <option value="1">Lesson 2: Advancing & Documentation</option>
+        <option value="2">Lesson 3: Load-In & Rigging</option>
+        <option value="3">Lesson 4: Power & Troubleshooting</option>
+        <option value="4">Lesson 5: Focus, Programming & Load-Out</option>
+      </select>
+    </div>
+
+    <div id="lesson-0" class="lesson-content">
+      <h1>The Lighting Production Lifecycle</h1>
+      <p>Lighting production flow is the organized process that turns a visual idea into a working, documented, safe, and repeatable system — creative intent, technical design, documentation, installation, testing, programming, live operation, and load-out. New crew are most useful once they understand where their task fits in that chain.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-0">Recognize the full path from creative intent to load-out.</div>
+      </div>
+
+      <div class="cb-section">
+        <h2>What You'll Learn</h2>
+        <ul class="cb-list">
+          <li>Recognize the full path from creative intent to load-out.</li>
+          <li>Explain why the console is only one part of the lighting system.</li>
+          <li>Identify the main phases of planning, installation, testing, operation, and removal.</li>
+          <li>Understand why standardized process matters even when every venue is different.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>On a Real Call</h2>
+        <p>The chain looks different in scale depending on the room, but not in shape.</p>
+        <p>On a corporate ballroom load-in, the lighting crew may start with cases, truss, fixtures, cable, and a plot. By show time, that equipment has to become front light, scenic color, camera-friendly looks, cue lists, and a clean room for presenters. In an arena, the same concept scales into touring trusses, roof points, local labor, console files, and daily repeatability. On a festival, the workflow also has to support short artist changeovers and guest lighting packages.</p>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">The governing idea</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Large-scale lighting production is a chain of translations: creative intent becomes a technical design, the design becomes a documented system, and that system is installed, tested, programmed, operated, and safely removed. Standardize the process; adapt the implementation to the room.</p>
+        </div>
+      </div>
+
+      <figure class="cb-diagram">
+        <span class="cb-diagram-label">Diagram — The Production Lifecycle</span>
+        <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="l2-1-title l2-1-desc">
+          <title id="l2-1-title">The eight-stage lighting production lifecycle</title>
+          <desc id="l2-1-desc">Creative Intent leads to Technical Design, then Documentation, Installation, Testing, Programming, Live Operation, and finally Load-Out.</desc>
+          <g font-family="inherit">
+            <rect x="20" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="34" cy="16" r="9" fill="var(--cb-gold)"/><text x="34" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">1</text>
+            <text x="90" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Creative Intent</text>
+            <path d="M160,45 L178,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M178,45 L170,40 L170,50 Z" fill="var(--cb-gold-border)"/>
+            <rect x="180" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="194" cy="16" r="9" fill="var(--cb-gold)"/><text x="194" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">2</text>
+            <text x="250" y="42" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Technical</text>
+            <text x="250" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Design</text>
+            <path d="M320,45 L338,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M338,45 L330,40 L330,50 Z" fill="var(--cb-gold-border)"/>
+            <rect x="340" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="354" cy="16" r="9" fill="var(--cb-gold)"/><text x="354" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">3</text>
+            <text x="410" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Documentation</text>
+            <path d="M480,45 L498,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M498,45 L490,40 L490,50 Z" fill="var(--cb-gold-border)"/>
+            <rect x="500" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="514" cy="16" r="9" fill="var(--cb-gold)"/><text x="514" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">4</text>
+            <text x="570" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Installation</text>
+            <path d="M660,45 L660,120 L90,120 L90,168" fill="none" stroke="var(--cb-gold-border)" stroke-width="2"/>
+            <path d="M90,168 L85,158 L95,158 Z" fill="var(--cb-gold-border)"/>
+            <rect x="20" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="34" cy="166" r="9" fill="var(--cb-gold)"/><text x="34" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">5</text>
+            <text x="90" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Testing</text>
+            <path d="M160,195 L178,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M178,195 L170,190 L170,200 Z" fill="var(--cb-gold-border)"/>
+            <rect x="180" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="194" cy="166" r="9" fill="var(--cb-gold)"/><text x="194" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">6</text>
+            <text x="250" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Programming</text>
+            <path d="M320,195 L338,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M338,195 L330,190 L330,200 Z" fill="var(--cb-gold-border)"/>
+            <rect x="340" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="354" cy="166" r="9" fill="var(--cb-gold)"/><text x="354" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">7</text>
+            <text x="410" y="192" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Live</text>
+            <text x="410" y="208" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Operation</text>
+            <path d="M480,195 L498,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M498,195 L490,190 L490,200 Z" fill="var(--cb-gold-border)"/>
+            <rect x="500" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <circle cx="514" cy="166" r="9" fill="var(--cb-gold)"/><text x="514" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">8</text>
+            <text x="570" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Load-Out</text>
+          </g>
+        </svg>
+        <figcaption class="cb-diagram-caption">Same eight stages on every scale of show — a ballroom and an arena both move through this chain, just with more people and more paperwork at the bigger end.</figcaption>
+      </figure>
+
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Thinking the console is the whole system.</strong> The console depends on power, data, patching, addressing, networking, fixtures, paperwork, and crew execution.</li>
+          <li><strong>Ignoring the production critical path.</strong> Overhead work, power, stage release, and rehearsal access usually control the schedule.</li>
+          <li><strong>Treating paperwork as office work only.</strong> Documentation is how the crew knows what was intended, what changed, and what must be tested.</li>
+          <li><strong>Assuming every venue works like the last one.</strong> The process stays consistent, but roof points, access, power, labor, and rules change.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Before starting a task, ask three questions</strong>
+          <p style="margin: 0; color: var(--cb-muted);">What phase are we in, who owns this decision, and what does this task affect next? Useful crew members protect the flow of work instead of only completing isolated tasks.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not perform work you have not been trained or authorized to do. Rigging, temporary power, lift operation, fall-protection work, and weather decisions must be performed or supervised by competent, appropriately qualified personnel. Production pressure never justifies bypassing inspection, exclusion zones, protective devices, engineered limits, or de-energization procedures.</p>
+      </div>
+
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>What is the best description of lighting production flow?</summary>
+            <p>The full process from creative intent through load-out — not just console programming. It includes design, documentation, installation, testing, programming, operation, and load-out.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>What does this awareness-level training not provide?</summary>
+            <p>Formal authorization to perform restricted work. It builds vocabulary, workflow understanding, and safer decision-making habits — it does not certify or authorize rigging, electrical, lift, or fall-protection work.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Key Takeaway</h2>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">The lighting rig is not built by the console; it is built by a coordinated workflow.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lesson-1" class="lesson-content" style="display:none;">
+      <h1>Advancing, Documentation, and Shop Preparation</h1>
+      <p>Advancing is the pre-production process of turning assumptions into confirmed information. Documentation turns the plan into instructions the crew can build, test, and revise. Shop preparation makes the load-in faster and safer by checking equipment before the venue clock starts.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-1">Recognize why pre-addressing, labeling, testing, and console preparation reduce jobsite risk.</div>
+      </div>
+
+      <div class="cb-section">
+        <h2>What You'll Learn</h2>
+        <ul class="cb-list">
+          <li>Identify what gets confirmed during advance work.</li>
+          <li>Recognize the core documents used by a lighting department.</li>
+          <li>Explain why pre-addressing, labeling, testing, and console preparation reduce jobsite risk.</li>
+          <li>Understand why one controlled record of changes matters.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>On a Real Call</h2>
+        <p>Most of the risk in a fast load-in gets removed before anyone touches the truck.</p>
+        <p>Before a stadium build, the team may confirm truck routes, dock access, floor loading, roof capacity, approved point loads, generator needs, FOH location, cable paths, lift access, fire lanes, curfews, and inspection requirements. In the shop, fixtures may be addressed, labeled, mode-checked, firmware-checked, tested, cased by zone, and matched to paperwork — all before the venue clock starts.</p>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">The patch list is the connective tissue</strong>
+          <p style="margin: 0; color: var(--cb-muted);">It maps console identities, fixture addresses, universes, and outputs together. When it's out of date, everything downstream — troubleshooting, checkout, even the show itself — gets harder.</p>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Waiting until site to discover missing information.</strong> Unconfirmed roof, power, door size, or cable route details can stop the build.</li>
+          <li><strong>Using old paperwork after field changes.</strong> A stale patch sheet can waste hours during troubleshooting.</li>
+          <li><strong>Labeling only one end of a cable.</strong> Both ends need to be traceable when the rig is built, flown, or packed.</li>
+          <li><strong>Assuming RDM or network discovery replaces physical labels and inspection.</strong> Digital tools help, but they do not replace controlled paperwork.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Update paperwork during the build, not after memory fades</strong>
+          <p style="margin: 0; color: var(--cb-muted);">When a fixture, address, universe, cable route, or substitution changes, make sure the department lead knows and the controlled record is updated — while it's fresh, not at strike.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Documentation must not be treated as proof that a system is safe by itself. Rigging plans, power schedules, and point plans may require engineering, qualified inspection, venue approval, licensed personnel, or local authority review. Follow the site process before acting on technical documents.</p>
+      </div>
+
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>Why should both ends of important cables be labeled?</summary>
+            <p>It helps tracing, troubleshooting, flying, striking, and packing — though two-end labeling improves traceability, it doesn't replace the patch sheet.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>Which document maps console identities, fixture addresses, universes, and outputs together?</summary>
+            <p>The patch list — it connects console and physical/network control information.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>A client requests a lighting change after the rig is already built. What should happen?</summary>
+            <p>Escalate through the lead, assess the labor/equipment/programming/safety impact, and update the records — late revisions affect more than just the look.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Key Takeaway</h2>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">Good paperwork is a safety tool, a troubleshooting tool, and a speed tool.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lesson-2" class="lesson-content" style="display:none;">
+      <h1>Load-In, Rig Assembly, and Department Coordination</h1>
+      <p>Load-in establishes the jobsite, sorts equipment, builds the lighting system, and protects the production critical path. Lighting crew don't work in isolation — the department has to coordinate with rigging, scenic, audio, video, automation, venue staff, and production management.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-2">Describe the early sequence of a lighting load-in and how lighting interfaces with other departments.</div>
+      </div>
+
+      <div class="cb-section">
+        <h2>What You'll Learn</h2>
+        <ul class="cb-list">
+          <li>Describe the early sequence of a lighting load-in.</li>
+          <li>Identify how lighting work interfaces with rigging, audio, video, scenic, automation, and venue operations.</li>
+          <li>Recognize why overhead work and exclusion zones matter.</li>
+          <li>Understand the load path concept at an awareness level.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>On a Real Call</h2>
+        <p>Once the rig is overhead, access gets much harder — so most of the important work happens before it flies.</p>
+        <p>On an arena call, local hands may unload trucks, sort cases by truss or zone, help assemble truss, hang fixtures under direction, install looms, and prepare systems for inspection before the truss flies. Once the rig is overhead, orientation, clamps, secondary retention, cabling, and inspection all need to be handled before lift or show trim — not after.</p>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">The load path, at an awareness level</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Fixture → clamp → truss → suspension hardware → hoist → rigging point → building or temporary structure. Understand the concept — do not make rigging judgments unless you're trained and authorized.</p>
+        </div>
+      </div>
+
+      <figure class="cb-diagram">
+        <span class="cb-diagram-label">Diagram — The Load Path</span>
+        <svg viewBox="0 0 380 528" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="l2-3-title l2-3-desc">
+          <title id="l2-3-title">The lighting load path from fixture to structure</title>
+          <desc id="l2-3-desc">Weight travels from the fixture through the clamp, truss, suspension hardware, hoist, and rigging point, into the building or temporary structure.</desc>
+          <g>
+            <rect x="40" y="20" width="300" height="44" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="190" y="47" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Fixture</text>
+            <path d="M190,64 L190,88" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M190,94 L184,84 L196,84 Z" fill="var(--cb-gold-border)"/>
+            <rect x="40" y="94" width="300" height="44" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="190" y="121" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Clamp</text>
+            <path d="M190,138 L190,162" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M190,168 L184,158 L196,158 Z" fill="var(--cb-gold-border)"/>
+            <rect x="40" y="168" width="300" height="44" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="190" y="195" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Truss</text>
+            <path d="M190,212 L190,236" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M190,242 L184,232 L196,232 Z" fill="var(--cb-gold-border)"/>
+            <rect x="40" y="242" width="300" height="44" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="190" y="269" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Suspension Hardware</text>
+            <path d="M190,286 L190,310" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M190,316 L184,306 L196,306 Z" fill="var(--cb-gold-border)"/>
+            <rect x="40" y="316" width="300" height="44" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="190" y="343" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Hoist</text>
+            <path d="M190,360 L190,384" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M190,390 L184,380 L196,380 Z" fill="var(--cb-gold-border)"/>
+            <rect x="40" y="390" width="300" height="44" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="190" y="417" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Rigging Point</text>
+            <path d="M190,434 L190,458" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M190,464 L184,454 L196,454 Z" fill="var(--cb-gold-border)"/>
+            <rect x="40" y="464" width="300" height="52" rx="8" fill="var(--cb-panel)" stroke="var(--cb-gold-border)" stroke-width="2"/>
+            <text x="190" y="486" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Building / Temporary</text>
+            <text x="190" y="502" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Structure</text>
+          </g>
+        </svg>
+        <figcaption class="cb-diagram-caption">Every point in this chain is carrying the load of everything below the rigging point — it's an awareness concept, not a rigging judgment you're authorized to make on your own.</figcaption>
+      </figure>
+
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Standing under moving or suspended loads.</strong> Overhead work requires controlled zones and direction from qualified leads.</li>
+          <li><strong>Moving gear into another department's path.</strong> Audio, video, scenic, rigging, and lighting often compete for space, lifts, and timing.</li>
+          <li><strong>Hanging fixtures without verifying orientation or plot position.</strong> A fixture in the wrong place may require unsafe or time-consuming correction later.</li>
+          <li><strong>Dressing cable where it can pinch, snag, touch moving parts, block exits, or create trip hazards.</strong> Cable routing affects both function and safety.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Stay aware of zones and sequencing</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Ask before moving equipment that may be staged for another zone, department, or truck-pack order — and stay aware of overhead activity and the lead's sequencing at all times.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> New stagehands should understand the load-path concept but must not make rigging judgments unless trained and authorized. Do not climb, alter rigging hardware, remove retention, or enter exclusion zones without approval.</p>
+      </div>
+
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>What is the safest response if you notice missing secondary retention on an overhead fixture?</summary>
+            <p>Notify the department lead and follow site direction — overhead safety issues must be escalated through qualified supervision, not fixed or ignored on your own.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Scenario: Overhead Retention Concern</h2>
+        <p>During truss prep, you notice a fixture that appears to be missing secondary retention. What do you do before the truss moves?</p>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">Do not ignore it, and do not try to fix it outside your authorization. Notify the department lead immediately and keep people clear as directed. Overhead concerns require qualified direction before lifting or flying — every time.</p>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Key Takeaway</h2>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">A fast load-in depends on sequencing, communication, zones, labels, and respect for overhead risk.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lesson-3" class="lesson-content" style="display:none;">
+      <h1>Power, Control Data, Networks, and Layered Troubleshooting</h1>
+      <p>A fixture needs suitable power and correct control data. Similar symptoms can come from different layers — source power, distro, circuit, cable, address, mode, patch, node output, universe, IP configuration, fixture mechanics, or console programming. Good troubleshooting isolates one layer at a time.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-3">Separate power problems from data, patch, configuration, and mechanical problems.</div>
+      </div>
+
+      <div class="cb-section">
+        <h2>What You'll Learn</h2>
+        <ul class="cb-list">
+          <li>Separate power problems from data, patch, configuration, and mechanical problems.</li>
+          <li>Recognize the basic path from console to fixtures.</li>
+          <li>Understand DMX, RDM, sACN, Art-Net, universes, nodes, and switches at an introductory level.</li>
+          <li>Explain why temporary power work is restricted to qualified personnel.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>On a Real Call</h2>
+        <p>A common control path is LD/operator to console, console to Ethernet switch or fiber, switch to gateway or DMX node, node to DMX line, then fixture.</p>
+        <p>On a festival, the house backbone may support visiting consoles and guest universes. On a corporate show, the network may also interface with show control or video systems. In every case, a fixture that isn't responding could be a power problem, a data problem, a patch problem, or a mechanical problem — and they look similar from the floor.</p>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">A lit fixture isn't a fully-checked fixture</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Pan, tilt, zoom, shutters, color, fans, encoders, and network settings still need checkout even after a fixture makes light.</p>
+        </div>
+      </div>
+
+      <figure class="cb-diagram">
+        <span class="cb-diagram-label">Diagram — Lighting Control Signal Flow</span>
+        <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="l2-4-title l2-4-desc">
+          <title id="l2-4-title">Lighting control signal flow from operator to fixture</title>
+          <desc id="l2-4-desc">The LD or operator sends commands through the console, an Ethernet switch or fiber run, a gateway or DMX node, and a DMX line, to reach fixtures, dimmers, and relays.</desc>
+          <g>
+            <rect x="20" y="20" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="120" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">LD / Operator</text>
+            <path d="M220,45 L238,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M238,45 L230,40 L230,50 Z" fill="var(--cb-gold-border)"/>
+            <rect x="240" y="20" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="340" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Lighting Console</text>
+            <path d="M440,45 L458,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M458,45 L450,40 L450,50 Z" fill="var(--cb-gold-border)"/>
+            <rect x="460" y="20" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="560" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Ethernet Switch</text>
+            <text x="560" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">or Fiber</text>
+            <path d="M660,45 L660,120 L120,120 L120,168" fill="none" stroke="var(--cb-gold-border)" stroke-width="2"/>
+            <path d="M120,168 L115,158 L125,158 Z" fill="var(--cb-gold-border)"/>
+            <rect x="20" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="120" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">Gateway /</text>
+            <text x="120" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">DMX Node</text>
+            <path d="M220,195 L238,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M238,195 L230,190 L230,200 Z" fill="var(--cb-gold-border)"/>
+            <rect x="240" y="170" width="200" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+            <text x="340" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cb-text)">DMX Line</text>
+            <path d="M440,195 L458,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M458,195 L450,190 L450,200 Z" fill="var(--cb-gold-border)"/>
+            <rect x="460" y="170" width="200" height="50" rx="8" fill="var(--cb-panel)" stroke="var(--cb-gold-border)" stroke-width="2"/>
+            <text x="560" y="192" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Fixtures, Dimmers,</text>
+            <text x="560" y="208" text-anchor="middle" font-size="13" font-weight="800" fill="var(--cb-gold-strong)">Relays</text>
+          </g>
+        </svg>
+        <figcaption class="cb-diagram-caption">A fixture not responding could be a break anywhere in this chain — power, data, patching, or the fixture itself — not necessarily the last link.</figcaption>
+      </figure>
+
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Changing several variables at once.</strong> This can hide the actual fault and create new problems.</li>
+          <li><strong>Assuming a lit fixture is fully functional.</strong> Pan, tilt, zoom, shutters, color, fans, encoders, and network settings still need checkout.</li>
+          <li><strong>Confusing DMX slots with fixture count.</strong> One fixture may use many slots.</li>
+          <li><strong>Assuming Ethernet automatically means the network is correct.</strong> IP addressing, universe routing, multicast/unicast behavior, priority, merging, VLANs, and switch configuration all matter.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Troubleshoot in layers</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Confirm what changed, identify the symptom, isolate the simplest layer first, communicate before changing shared settings, and record the fix if it changes the build.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Temporary entertainment power must be designed, connected, and inspected by properly qualified personnel under applicable codes, venue rules, employer procedures, and authority requirements. Single-pole feeder connectors, grounding, bonding, protective devices, lockout/tagout, and verified de-energization are not beginner tasks. Treat grounding and bonding as life-safety systems.</p>
+      </div>
+
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>A fixture turns on but does not pan or tilt. What should a beginner assume?</summary>
+            <p>That it may still have a control, patch, mode, mechanical, or parameter issue — light output alone doesn't prove full function.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>Who should perform or supervise temporary entertainment power connection and inspection?</summary>
+            <p>Properly qualified personnel under site rules — this is restricted, safety-sensitive work, not a beginner task.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>The console patch says a fixture is in one mode, but the fixture is set to another mode. What's the likely result?</summary>
+            <p>Parameters may respond incorrectly or not at all — console personality and fixture mode have to match.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>What is a DMX universe?</summary>
+            <p>A set of up to 512 DMX data slots — it's a control-data grouping, not a fixture count.</p>
+          </details>
+          <details class="cb-quiz-item">
+            <summary>What's the professional habit during troubleshooting?</summary>
+            <p>Isolate layers and communicate before changing shared settings — layered troubleshooting reduces new errors.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Scenario Practice</h2>
+        <p>Two real situations. Think through your response before reading the expected one.</p>
+        <div class="cb-drill-grid">
+          <div class="cb-panel" style="padding: 20px 22px;">
+            <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Patch Mismatch at Checkout</strong>
+            <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">A moving light responds to intensity, but the color and zoom controls are wrong. The paperwork shows one personality, but the fixture menu appears to show a different mode.</p>
+            <p style="margin: 0; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Expected response:</strong> Stop guessing. Tell the lead or programmer what you observed. Compare fixture mode, address, universe, console personality, and paperwork before changing anything.</p>
+          </div>
+          <div class="cb-panel" style="padding: 20px 22px;">
+            <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Festival Guest Console</strong>
+            <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">A visiting LD asks to plug a console into the house lighting network during a fast changeover.</p>
+            <p style="margin: 0; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Expected response:</strong> Direct the request to the house lighting lead or network lead. Do not patch unknown network gear or change switch/node settings without authorization.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Key Takeaway</h2>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">Do not guess across the whole system; isolate the layer and escalate restricted work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lesson-4" class="lesson-content" style="display:none;">
+      <h1>Focus, Programming, Show Operation, and Load-Out</h1>
+      <p>After installation, the lighting system must be checked, focused, programmed, rehearsed, operated, and removed. A fixture making light isn't enough — the crew has to verify full response, aim and calibrate fixtures, build repeatable console logic, operate safely during the show, and load out without losing information or damaging equipment.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-4">Explain the difference between function check, focus, programming, and operation.</div>
+      </div>
+
+      <div class="cb-section">
+        <h2>What You'll Learn</h2>
+        <ul class="cb-list">
+          <li>Explain the difference between function check, focus, programming, and operation.</li>
+          <li>Recognize how scripted shows and busked shows differ.</li>
+          <li>Understand why some faults are not repaired during a live performance.</li>
+          <li>Identify load-out risks and documentation needs.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>On a Real Call</h2>
+        <p>How a show gets run depends on the format — but the discipline underneath stays the same.</p>
+        <p>In a theater or corporate cue-to-cue, the programmer may build precise cue stacks timed to a script. In concerts and festivals, the operator may combine stored cues, palettes, effects, and live busking. During show operation, the lighting team monitors power, data, fixtures, weather, backups, cueing, visibility, and communication with the show caller or stage management.</p>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Focus is more than pointing a light</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Focus includes purpose, position, shuttering, color quality, camera needs, scenic interaction, and documentation — not just aiming a fixture in a general direction.</p>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Beginner Mistakes</h2>
+        <ul class="cb-list">
+          <li><strong>Treating focus as just pointing lights generally.</strong> Focus includes purpose, position, shuttering, color quality, camera needs, scenic interaction, and documentation.</li>
+          <li><strong>Ignoring backup files.</strong> Console files and show data should be saved and backed up throughout programming and before load-out.</li>
+          <li><strong>Trying to repair every show fault immediately.</strong> Access risk and the possibility of causing a bigger failure matter more than fixing it fast.</li>
+          <li><strong>Rushing load-out because the show is over.</strong> Fatigue, darkness, simultaneous departments, and schedule pressure make load-out high-risk, not low-risk.</li>
+        </ul>
+      </div>
+
+      <div class="cb-section">
+        <h2>Professional Habit & Safety Notes</h2>
+        <div class="cb-panel">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Stay disciplined through show and load-out</strong>
+          <p style="margin: 0; color: var(--cb-muted);">Listen to the chain of command, confirm releases before moving or de-energizing systems, protect cable paths, document damage, and pack by the planned truck order.</p>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Safety notes:</strong> Do not access overhead equipment, energized equipment, lifts, roofs, or restricted work areas during a show or load-out unless directed by authorized leads and trained for the task. Public clearance, department release, de-energization procedures, and controlled lowering of flown systems must be respected.</p>
+      </div>
+
+      <div class="cb-section">
+        <h2>Quick Knowledge Check</h2>
+        <div class="cb-quiz-list">
+          <details class="cb-quiz-item">
+            <summary>Why is load-out considered high risk?</summary>
+            <p>Fatigue, darkness, schedule pressure, and many departments moving at once all increase hazard — the work isn't over just because the show is.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Scenario Practice</h2>
+        <p>Two real situations. Think through your response before reading the expected one.</p>
+        <div class="cb-drill-grid">
+          <div class="cb-panel" style="padding: 20px 22px;">
+            <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Corporate Room Access Conflict</strong>
+            <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">Lighting needs a lift to focus front light, but catering is setting tables and scenic is still working downstage.</p>
+            <p style="margin: 0; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Expected response:</strong> Don't drive or move equipment through another department without direction. Ask the lighting lead where to stage and wait for coordinated access.</p>
+          </div>
+          <div class="cb-panel" style="padding: 20px 22px;">
+            <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Load-Out Fatigue</strong>
+            <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">After a long show day, multiple departments are striking at once and a cable path crosses an exit route.</p>
+            <p style="margin: 0; color: var(--cb-muted); font-size: 14px;"><strong style="color: var(--cb-text);">Expected response:</strong> Report the blocked or unsafe path to the lead and help reroute/protect cable only as directed. Maintain awareness of public clearance and department release.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cb-section">
+        <h2>Key Takeaway</h2>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">The show is not finished until the system is safely removed, documented, packed, and accounted for.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
+</footer>
+
+<script>
+const lessons = [
+  { id: 0, obj: "Recognize the full path from creative intent to load-out." },
+  { id: 1, obj: "Recognize why pre-addressing, labeling, testing, and console preparation reduce jobsite risk." },
+  { id: 2, obj: "Describe the early sequence of a lighting load-in and how lighting interfaces with other departments." },
+  { id: 3, obj: "Separate power problems from data, patch, configuration, and mechanical problems." },
+  { id: 4, obj: "Explain the difference between function check, focus, programming, and operation." }
+];
+
+let currentLesson = 0;
+
+function switchLesson(id) {
+  document.querySelectorAll('.lesson-content').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.lesson-link').forEach(el => el.classList.remove('active'));
+
+  document.getElementById('lesson-' + id).style.display = 'block';
+  document.querySelectorAll('.lesson-link')[id].classList.add('active');
+  document.getElementById('mobileSelect').value = id;
+
+  document.getElementById('rule-' + id).textContent = lessons[id].obj;
+  currentLesson = id;
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 820) {
+    document.getElementById('mobileSelect').classList.remove('show');
+    document.getElementById('sidebar').style.display = 'block';
+  } else {
+    document.getElementById('mobileSelect').classList.add('show');
+    document.getElementById('sidebar').style.display = 'none';
+  }
+});
+
+if (window.innerWidth <= 820) {
+  document.getElementById('mobileSelect').classList.add('show');
+  document.getElementById('sidebar').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
       <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
