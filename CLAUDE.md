@@ -26,3 +26,19 @@ not something that needs to be re-confirmed.
   broken links) before it ships, and mirrored into `50yearroadmap`'s
   tracking docs (`companies/crew-blueprint/10_content_research_queue.md`,
   `roadmap.json`'s `cb-4` work item, `CHANGELOG.md`) after it ships.
+
+## Anti-Robot Course Writing Rule
+
+All course content must be vetted against these constraints. These prevent 
+generic AI-sounding text and ensure practitioner authenticity:
+
+- **Never use:** delve, leverage, robust, optimize, synergy, paradigm shift, 
+  circle back, deep dive, best practices, industry-leading, cutting-edge, 
+  seamless, empower, unlock, transform, disrupt, scalable, or corporate 
+  jargon of any kind.
+- **Zero passive voice:** Write "You coil the cable" not "The cable is coiled." 
+  Every sentence should show who does what.
+- **No hedging softeners:** Not "may help" or "could potentially" — either 
+  something works or it doesn't. State facts directly.
+- **Speak like a practitioner:** Use real crew language, field terminology, 
+  and direct instruction. If it sounds like a LinkedIn post, rewrite it.
