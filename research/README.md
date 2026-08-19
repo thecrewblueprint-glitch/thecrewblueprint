@@ -45,6 +45,7 @@ Recommended handoff order:
 27. `19-stagehand-fundamentals-tools-handling-hiring-career-growth-validation.md`
 28. `20-stagehand-fundamentals-gap-audit-and-supplemental-validation.md` — canonical cross-check of Packages 15–19 plus supplemental evidence for housekeeping/egress, near misses, push-vs-pull/cart sightlines, hand tools, tape distinctions, pinch/crush awareness, and remaining non-standardized claims.
 29. `20A-stagehand-fundamentals-gap-audit-addendum.md` — targeted addendum with additional evidence for show-blacks rationale, real tool lists, QSC over-under guidance, show-call assignment/trust, onboarding/probation, headset discipline, check-in practices, fatigue/visibility, and cleanup.
+30. `21-lighting-department-body-of-knowledge-gap-coverage-research.md` — comprehensive lighting-department knowledge map and gap-closing evidence spanning visual science, fixtures, entertainment power boundaries, DMX/RDM/sACN/Art-Net/RDMnet, IP/wireless networking, programming/show control, GDTF/MVR, visualization, atmospherics, laser-regulatory awareness, reliability, commissioning, sector transfer, shop-to-show workflow, troubleshooting, leadership, and remaining specialist research gaps.
 
 Claude can combine these with any additional Crew Blueprint source files selected for the curriculum/content handoff.
 
@@ -81,6 +82,8 @@ The synthesis and companion notes deliberately contain proposed Crew Blueprint s
 - For tools/handling/career content, do not present the over-under coil as an OSHA requirement, the OSHA eTool 50-lb figure as a universal federal lifting limit, or the Crew Blueprint first-30-days plan as an industry-standard onboarding sequence.
 - Package 20 is the canonical gap audit for the 15–19 backfill set. Its key rule is to label unsupported universal claims honestly as employer/local practice or Crew Blueprint instructional framing rather than forcing them into a false national standard.
 - Package 20A is a targeted evidence addendum only. It strengthens the source base but does not supersede Package 20 or convert local IATSE rules, institutional theatre practices, or manufacturer guidance into national standards.
+- Package 21 establishes a **Lighting Department Body of Knowledge** rather than a single promotion ladder or course sequence. Its L0–L6 bands are analytical Crew Blueprint levels only. Preserve its distinction among legal requirements, consensus standards/specifications, certification/job-analysis evidence, manufacturer instructions, employer/local practice, and Crew Blueprint instructional framing.
+- Package 21 must not be interpreted as granting authorization for energized electrical work, portable-power responsibility, lift operation, rigging, internal fixture repair, laser operation, life-safety-system changes, corporate/venue network access, or other specialist work. Use its competency map to decide what may be taught conceptually, what requires supervised practical competency, and what must remain externally authorized.
 
 ## Organization
 
@@ -125,6 +128,7 @@ Each completed research document should preserve source links/citations, disting
 - **19** — Stagehand Fundamentals tools/gear/handling and hiring/career-growth validation
 - **20** — Stagehand Fundamentals canonical gap audit and supplemental validation — fills remaining evidence gaps from Packages 15–19 and records claims that must remain labeled as local practice, common convention, or Crew Blueprint guidance rather than national standards
 - **20A** — Targeted gap-audit addendum — strengthens show-blacks rationale, real tool-list evidence, manufacturer cable guidance, show-call trust/assignment evidence, onboarding/probation examples, communication/check-in practices, fatigue/visibility support, and cleanup/reset evidence
+- **21** — Lighting Department Body of Knowledge gap coverage — complete domain taxonomy, L0–L6 analytical competency bands, sector-transfer matrix, standards/certification map, platform/source map, troubleshooting and authorization boundaries, documentation/shop-to-show workflows, gap disposition, source registry, and bounded specialist follow-up questions.
 
 ## Suggested Claude synthesis role
 
@@ -142,6 +146,8 @@ Useful cross-source questions include:
 - Which skills require supervised practical experience rather than online instruction alone?
 - Which proposed curriculum claims are inference/design recommendations rather than documented industry standards?
 - Which existing Stagehand Fundamentals claims are strongly sourced, partially sourced, employer/local-specific, or currently unsupported?
+- For lighting, which Package 21 domains should recur at increasing depth rather than being assigned to only one course?
+- Where should the lighting pathway branch into electrics, programming, systems/networking, fixture/service, followspots/tracking, film/broadcast, architectural/install, and design instead of forcing one linear promotion ladder?
 
 ## Workflow
 
@@ -153,4 +159,4 @@ There is **no NotebookLM step in the current workflow**.
 
 Research Packages 01–11 and companion notes 04A/08A/11A are organized for direct Claude handoff. Packages 12/12A and 13/13A contain Lighting and Video Course 2 source material. Packages 14/14A preserve the Stagehand Fundamentals original source archive and its original citation gap.
 
-The Stagehand Fundamentals citation backfill is now covered by **Packages 15–20 plus 20A**. Packages 15–19 supply the main validation research; Package 20 is the canonical audit across those five packets; Package 20A adds targeted evidence discovered during the final gap-fill pass. Claims that remain local, employer-specific, manufacturer-specific, or informal should stay labeled that way during Claude synthesis.
+The Stagehand Fundamentals citation backfill is covered by **Packages 15–20 plus 20A**. Package 21 now extends the lighting research beyond introductory production flow into a full body-of-knowledge and career-depth map. Its remaining gaps are explicitly bounded specialist follow-ups rather than unknown missing lighting domains. Claims that remain local, employer-specific, manufacturer-specific, proprietary-standard dependent, or informal should stay labeled that way during Claude synthesis.
