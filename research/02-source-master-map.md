@@ -394,13 +394,113 @@ Look for:
 
 ## PROMPT 9: Emergency Action / Site Procedures
 
-**Prompt:** (awaiting results)
+**Prompt:** "What do OSHA emergency-action-plan standards (1910.38), fire codes, and major U.S. venues (arenas, festivals, outdoor sites) publish about evacuation, alarms, and worker reporting?"
+
+**Coverage:** Emergency action plans, alarm systems, evacuation routes, assembly areas, employee roles, emergency reporting, accountability procedures, fire codes.
+
+**Key finding:** OSHA-compliant EAP must establish reporting, alarms, evacuation routes/assignments, accountability, designated emergency roles, and contacts. Employees must recognize alarm and know their responsibilities.
+
+### Sources
+
+#### Regulation
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA 1910.38 | 29 CFR 1910.38: Emergency Action Plans | Regulation | Written EAP must cover reporting fires/emergencies, evacuation procedures/route assignments, critical-operation shutdown, accountability, rescue/medical roles, contacts | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.38 |
+| OSHA 1910.38 Interp | 1910.38 Interpretation: Employee Alarms & Training | Regulation Interpretation | Maintain distinctive employee alarm system; designate/train evacuation personnel; provide EAP access; review when assigned, duties change, plan changes | https://www.osha.gov/laws-regs/standardinterpretations/2007-04-17-0 |
+| OSHA Emergency Preparedness | Emergency Preparedness and Response: Getting Started | Government Guidance | Alarms must be heard/seen/perceived by all, including workers with disabilities; EAP must describe emergency reporting and post-evacuation accountability | https://www.osha.gov/emergency-preparedness/getting-started |
+| OSHA Employee Alarms | Employee Alarm Systems eTool | Government Guidance | Employee alarm must provide warning needed for emergency actions identified in EAP or for safe escape | https://www.osha.gov/etools/evacuation-plans-procedures/emergency-standards/employee-alarms |
+| OSHA Exit Routes | Exit Routes and Emergency Plans | Regulation Guidance | Employees need to understand required evacuation type and individual role, including situations requiring immediate total evacuation | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910SubpartEApp |
+
+#### Fire-Code Standard
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| IFC 2024 Index | 2024 International Fire Code Index | Model Fire Code | Contains requirements for fire-safety and evacuation plans, emergency drills, responder communication; enforceability depends on adopted local code | https://codes.iccsafe.org/content/IFC2024V1.0/index |
+| IFC Chapter 4 | IFC Chapter 4: Emergency Planning and Preparedness | Model Fire Code | Outdoor assembly areas must be at safe distance, positioned not to interfere with fire-department operations | https://codes.iccsafe.org/content/IFC2021P1/chapter-4-emergency-planning-and-preparedness |
+| New Jersey Fire Code | New Jersey Fire Code Chapter 4 | Adopted Fire-Code Example | Employees must be familiarized with alarm/evacuation signals, routes, refuge areas, exterior assembly areas, emergency procedures | https://codes.iccsafe.org/content/NJFC2018P1/chapter-4-emergency-planning-and-preparedness |
+
+#### Venue / Festival Practice
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| State Farm Arena | Policies and FAQs | Venue Policy | Arena staff trained in emergency preparedness and evacuation; guests/workers follow staff instructions; medical help via staff notification or text to assistance number | https://www.statefarmarena.com/plan-your-visit/policies |
+| MSG Entertainment | Event Security Officer Job Description | Venue/Operator Employment | Role requires participation in emergency-operations procedures, including evacuation plans, through ongoing training and drills | https://www.msgentertainment.com/jobs/event-security-officer-the-chicago-theatre-chicago-il/ |
+| Firefly Music Festival | Emergency Action Plan 2021 | Festival / Public-Agency Plan | Staff alert coworkers and call 911 for fire; evacuate guests/employees if safe suppression not possible; use dedicated staff-relocation points during evacuation | https://www.cityofdover.gov/media/Public%20Works/Firefly%202021/FF2021_0919JR.pdf |
+| Arizona State University | Event Emergency Planning Guide | Institutional Event Planning | Evacuation and shelter plan required; staff/volunteer briefings; accessible planning for mobility-limited people; unobstructed entry/exit paths | https://eventguide.engineering.asu.edu/events-emergency-planning/ |
+
+#### Minimum Site Procedure (per Perplexity analysis)
+
+| Phase | What Crew Needs to Know | Source(s) |
+|-------|-------------------------|-----------|
+| **Before doors / call** | Know the alarm signals, exit routes, assembly/shelter locations, command post, first-aid/EMS access, severe-weather trigger, and who is empowered to pause work or evacuate. This implements OSHA EAP elements and fire-code assembly-area principles. | OSHA 1910.38 [1], IFC Chapter 4 [6] |
+| **During an alarm** | Stop work; do not collect equipment; use assigned/nearest safe exit; assist only if that is your assigned role; move to designated assembly area; do not re-enter until responsible authority gives all-clear. Follow trained staff direction. | State Farm Arena [8], Firefly Festival [10] |
+| **Reporting** | Report fire, medical event, security threat, equipment hazard, blocked exit, alarm malfunction, or severe-weather concern immediately through designated site channel. EAP must specify how workers report emergency. | OSHA 1910.38 [1], OSHA Emergency Preparedness [2] |
+| **Accountability** | Supervisors use department rosters, crew leads, or check-in systems to account for workers after evacuation. Communicate missing-person info only to incident command or emergency responders. OSHA expressly requires accountability procedures. | OSHA 1910.38 [1], OSHA Emergency Preparedness [2] |
+
+#### Stagehand-Specific Application (implied from sources)
+
+| Scenario | Action | Why |
+|----------|--------|-----|
+| **Fire alarm sounds** | Stop work immediately; exit via nearest route; go to assembly area; wait for all-clear from authority. Do NOT stop to grab gear. | Fire spreads fast; evacuation is life-safety priority. Assembly area accountability ensures no one is left behind. |
+| **You see a blocked exit** | Report to site supervisor or security immediately. Do NOT attempt to clear it yourself. | Blocked exits prevent safe evacuation. Authority needs to know. |
+| **Medical emergency on stage** | Stop work; move to safe distance if safe; alert nearest staff/supervisor; let trained responders work; move to assembly area when directed. | Untrained bystanders slow response; medical professionals need clear space. Stay clear unless you are the assigned first-aid person. |
+| **Severe weather develops** | Listen for announcements; follow supervisor direction; move to shelter when directed; do not resume outdoor work until all-clear. | Lightning, wind, flooding can strike fast. Trust the judgment of people with full-site visibility and weather monitoring. |
 
 ---
 
 ## PROMPT 10: Employment Reality / Callbacks
 
-**Prompt:** (awaiting results)
+**Prompt:** "What sources document U.S. live-event hiring: union hiring halls (IATSE locals), labor providers, venue staffing, and how stagehand callbacks and repeat-hire systems actually work?"
+
+**Coverage:** Union hiring halls, labor-provider staffing, venue employment, callback systems, eligibility, seniority/availability, contract terms, hiring-hall rules, dispatcher practices.
+
+**Key finding:** U.S. live-event hiring flows through three distinct pathways (IATSE locals, labor providers, venue/promoter payroll). Callbacks are not uniform—they follow local collective-bargaining rules, provider availability systems, or employer preference. National IATSE affiliation alone does not guarantee list status, named-call rights, or repeat-hire eligibility.
+
+### Sources
+
+#### Union & Association
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| IATSE Join | Join the Union Behind Entertainment | Union / Membership | IATSE represents stagehands and directs prospective members to existing local union or organizer | https://iatse.net/join/ |
+| IATSE Local Directory | About IATSE / Local Union Directory | Union / Reference | IATSE directs workers to Local Union Directory for local-specific dispatch procedures and access | https://iatse.net/about/ |
+| IATSE Local 15 Hiring | Work Through the Hiring Hall | Union / Hiring Hall | Local 15 maintains worker-referral service and invites applicants to overflow "G list" for events including concerts and expos | https://ia15.org/work-with-iatse-15/ |
+| IATSE Local 675 Hiring | Hiring Hall Rules (2022) | Union / Hiring-Hall Rules | Local 675 rules describe employer-requested referral process: business agent fills requests in dispatch-list order, contacts qualified workers, sets acceptance deadline, offers unaccepted call to next qualified person | https://static1.squarespace.com/static/5c05e9d5a9e028d4a03dd291/t/620cc52001b27a2559554dde/1645004064267/HIRING+HALL+RULES+2022.pdf |
+
+#### Labor Provider
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| Crew One Productions | Join the Crew | Labor Provider / Careers | Crew One recruits stagehand/rigging/live-event personnel; presents itself as nationwide staffing resource for concerts, theaters, corporate events, festivals, venues | https://www.crew1.com/careers/join-the-crew |
+| Crew One Productions | Company Profile | Labor Provider | Nationwide provider of live-event staffing and production labor for concerts, festivals, venues | https://www.crew1.com/ |
+| Rhino Staging | Professional Crews for Live Events | Labor Provider | Experienced stagehand crews for live events across U.S.; reports filling large festival staffing, including 803 positions at one operation | https://www.rhinostaging.com/ |
+| Rhino Staging | Staffing Labor Terms and Conditions | Labor Provider / Contract | Rhino contracts to supply temporary labor for agreed events; assigns skilled employees under work orders on as-needed basis; rates and conditions vary by market | https://www.rhinostaging.com/tc/ |
+| Live Event Workers | Find Live-Event Work | Labor-Provider Platform | Applicants complete skills survey and are contacted about next steps; demonstrates staffing-pool approach rather than guaranteed job placement | https://liveeventworkers.com/ |
+
+#### Venue / Operator Staffing
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| MSG Entertainment | Event Security Officer Job Posting | Venue / Employment | Job posting describes venue security work including emergency-operations participation, evacuation planning, training, drills; large venues often directly staff core roles while contracting event-specific labor | https://www.msgentertainment.com/jobs/event-security-officer-the-chicago-theatre-chicago-il/ |
+| Rhino Staging | Training Updates | Labor Provider / Practice | Rhino describes employee training and notes California public-event-venue OSHA-10 requirements, illustrating staffing providers may supply labor under venue- or jurisdiction-specific qualification requirements | https://www.rhinostaging.com/category/training/ |
+
+#### How Callbacks Work (per Perplexity analysis)
+
+| Hiring Path | How a Worker Gets Called | What "Callback" Usually Means |
+|---|---|---|
+| **IATSE Hiring Hall** | Employer submits labor request; local refers qualified workers under its local rules, often based on relevant list/order and availability | Request for named/previously used worker may be possible only to extent allowed by applicable collective-bargaining agreement and hiring-hall rules; not guaranteed |
+| **Labor Provider** | Worker joins provider's roster, completes onboarding/skills verification, accepts available event calls | Scheduler, crew chief, or client may request workers known to be reliable and qualified, subject to availability and staffing needs; work orders are explicitly event-specific and as-needed |
+| **Venue / Promoter / Production** | Employer hires direct staff for ongoing roles, may supplement with union referrals or temporary labor | Repeat work tends to follow familiarity with venue, role competence, safety record, punctuality, availability; final assignment depends on employer, contract, dispatch process |
+
+#### Practical Evidence (per Perplexity analysis)
+
+| Application | What Crew Should Understand | Source(s) | Course 1 Connection |
+|---|---|---|---|
+| **Getting callbacks from a hiring hall** | Maintain current contact details (phone, email); accurately document departments and qualifications; respond promptly to dispatch deadlines; preserve safety/reliability record; understand each local's availability and call-acceptance rules. Local 675 explicitly requires current contact info and uses response deadlines. | IATSE Local 675 [2] | Callbacks depend on dispatch infrastructure, not employer whim. Staying reachable and responsive matters more than asking to be "remembered." |
+| **Getting calls from a labor provider** | Complete thorough onboarding; verify skills match provider's need; maintain current availability status; accept or decline calls promptly; deliver reliable work. Provider models are event-specific; consistent, safe, on-time performance determines future calls. | Crew One [4], Rhino Staging [5][6], Live Event Workers [7] | Provider callbacks reward reliability and skill match, not seniority. New workers can accumulate calls quickly if they perform well. |
+| **Getting called back by a venue or show** | Build familiarity: work competently, show up early, communicate clearly, follow instructions, solve problems, stay safe. Venues rehire familiar, trustworthy crew. Safety violations, tardiness, or missed calls damage callback odds. | MSG Entertainment [8] | Repeat work comes from trusted performance, not just availability. One bad call or safety incident can eliminate future work at that venue. |
+| **National union membership alone does not guarantee work** | IATSE membership gives access to a local's hiring-hall system, not to automatic calls. What matters is local list status, availability, response deadlines, and local rules for named calls or seniority. Each local's dispatch is independent. | IATSE Directory [3], Local 675 Rules [2] | Joining IATSE is the start, not the finish. Stagehand Fundamentals teaches you how to work safely and competently; your local's hiring hall determines when/how often you get called. |
 
 ---
 
@@ -447,7 +547,13 @@ Maps sources to multiple topics (as they emerge).
 | NFPA 70 / NEC Article 590 | — | — | — | Temporary Electrical |
 | JLG (Manufacturer) | — | — | — | Powered Equipment |
 | Genie (Manufacturer) | — | — | — | Powered Equipment |
-| (more as results arrive) | | | | |
+| IATSE | — | — | — | Employment Reality |
+| IATSE Local 15 | — | — | — | Employment Reality |
+| IATSE Local 675 | — | — | — | Employment Reality |
+| Crew One Productions | — | — | — | Employment Reality |
+| Rhino Staging | — | — | — | Employment Reality |
+| Live Event Workers | — | — | — | Employment Reality |
+| MSG Entertainment | — | — | — | Employment Reality |
 
 ---
 
@@ -458,4 +564,4 @@ Maps sources to multiple topics (as they emerge).
 - **Course 1 application:** Each source should tie to a specific lesson/section and support the "recognize → follow → stay within bounds" model
 - **Assessment design:** Use sources to create judgment-quality test items (not just recall)
 
-**Last updated:** 2026-08-21 — Prompts 1–8 results logged
+**Last updated:** 2026-08-21 — Prompts 1–10 results logged (research phase complete)
