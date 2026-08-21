@@ -223,7 +223,42 @@ Consolidated source compilation from Perplexity research (2026-08-21 onward). Ma
 
 ## PROMPT 6: Temporary Electrical Awareness
 
-**Prompt:** (awaiting results)
+**Prompt:** "What OSHA 1910.303-.307 and NEC guidelines cover temporary electrical distribution, damaged-cord identification, and wet-environment electrical hazards for non-electrician workers?"
+
+**Coverage:** Temporary wiring, damaged cords, wet conditions, GFCI protection, flexible cords, physical protection, non-electrician awareness.
+
+**Key finding:** Non-electricians identify damaged/wet/unprotected temporary electrical equipment, keep clear, and report to qualified electrical department. Do NOT repair, splice, alter distribution, or test energized circuits.
+
+### Sources
+
+#### Regulation
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA 1910.303 | 29 CFR 1910.303: General Electrical Requirements | Regulation | Equipment must be acceptable/approved, used per listing/labeling, free from hazards, with sufficient access and working space | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.303 |
+| OSHA 1910.304 | 29 CFR 1910.304: Wiring Design and Protection | Regulation | Branch-circuit, grounding, GFCI, temporary-wiring requirements; applies to construction-like maintenance/remodel/repair activities | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.304 |
+| OSHA 1910.305 | 29 CFR 1910.305: Wiring Methods, Components, Equipment | Regulation | Temporary wiring only for temporary purpose, removal when purpose complete; temporary branch circuits originate at approved power outlet or panelboard | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.305 |
+| OSHA 1910.307 | 29 CFR 1910.307: Hazardous Classified Locations | Regulation | Equipment in classified locations must be intrinsically safe, approved for location, or otherwise safe for environment | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.307 |
+| OSHA 1910.334 | 29 CFR 1910.334: Use of Equipment | Regulation | Governs use of portable electrical equipment and flexible cords; restrictions for highly conductive or wet work locations | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.334 |
+| OSHA 1926.405 | 29 CFR 1926.405: Wiring Methods, Components, Equipment | Regulation | Construction: flexible cords/cables protected from damage, not exposed to sharp corners or projections | https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.405 |
+
+#### NEC / Standards
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| NFPA 70 Article 590 | Article 590: Temporary Installations | Standard | Governs temporary installations; requires skilled installation, GFCI protection, physical protection from damage | https://www.nfpa.org/news-blogs-and-articles/blogs/2024/05/03/construction-site-safety-for-electricians |
+| NEC Article 518 | Article 518: Temporary Wiring Proposal (Exhibition Halls) | Standard Reference | Temporary wiring may follow Article 590; hard/extra-hard-usage cords may be on floors when protected from public contact | https://docinfofiles.nfpa.org/files/AboutTheCodes/70/70_A2025_NEC_P15_PISubmittals.pdf |
+| NEC Article 590 Committee | Article 590 Committee Material | Standards Development | Identifies Article 590 as NEC article for temporary installations; addresses outdoor, water-resistant, hard/extra-hard-service flexible cable | https://docinfofiles.nfpa.org/files/AboutTheCodes/70/70_A2025_NEC_P04_SD_MeetingAgenda_1024.pdf |
+
+#### Awareness Checklist (per Perplexity analysis)
+
+| Hazard | Identification | Course 1 Action |
+|--------|---|---|
+| **Damaged cord or connector** | Penetrated jacket, exposed conductor, damaged plug, loose grounding pin, crushed section, heat damage, broken strain relief, damaged receptacle | Remove from use; report to electrical department. Do NOT tape over defects; tape conceals damage and obstructs inspection. [3] |
+| **Wet conditions** | Cord connections in standing water, wet hands near plugs/unplugging, equipment in damp/wet area without wet-location listing | Do not plug/unplug with wet hands; keep connections out of standing water; use only wet-location-listed equipment when exposure possible. [11][2] |
+| **Physical damage risk** | Cords crossing doorways, drive lanes, ramps, sharp edges, pinch points, traffic paths without protection | Flag and report unprotected runs. OSHA requires temporary cords protected from accidental damage and supported to avoid damage. [4][7] |
+| **Temporary-distribution access** | Panels, disconnects, cable ramps, feeders, connectors under electrical department control; restricted access, no blocking/opening | Keep clear; maintain required access; never block, open, modify, or reconfigure without authorization. [2][5] |
+| **Non-electrician response** | Equipment suspected damaged, hot, smoking, sparking, or malfunctioning | (1) Stop using/approaching if safe. (2) Keep people clear. (3) Notify electrical department immediately. (4) Do NOT reset breakers, install adapters, splice, open panels, or troubleshoot live equipment. [1][2] |
 
 ---
 
@@ -278,9 +313,14 @@ Maps sources to multiple topics (as they emerge).
 | OSHA 1910.178 | Manual Handling | Road Cases | — | Powered Equipment |
 | OSHA 1926.1425 | — | — | — | Suspended Load / Overhead |
 | OSHA 1926.1424 | — | — | — | Suspended Load / Overhead |
+| OSHA 1910.304 | — | — | — | Temporary Electrical |
+| OSHA 1910.305 | — | — | — | Temporary Electrical |
+| OSHA 1910.334 | — | — | — | Temporary Electrical |
+| OSHA 1926.405 | — | — | — | Temporary Electrical |
 | ANSI E1.4 | — | — | — | Suspended Load / Overhead |
 | ANSI ES1.18 | — | — | — | Suspended Load / Overhead |
 | ASME B30 Family | — | — | — | Suspended Load / Overhead |
+| NFPA 70 / NEC Article 590 | — | — | — | Temporary Electrical |
 | JLG (Manufacturer) | — | — | — | Powered Equipment |
 | Genie (Manufacturer) | — | — | — | Powered Equipment |
 | (more as results arrive) | | | | |
@@ -294,4 +334,4 @@ Maps sources to multiple topics (as they emerge).
 - **Course 1 application:** Each source should tie to a specific lesson/section and support the "recognize → follow → stay within bounds" model
 - **Assessment design:** Use sources to create judgment-quality test items (not just recall)
 
-**Last updated:** 2026-08-21 — Prompts 1–5 results logged
+**Last updated:** 2026-08-21 — Prompts 1–6 results logged
