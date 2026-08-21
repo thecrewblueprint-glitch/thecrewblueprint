@@ -321,7 +321,74 @@ Consolidated source compilation from Perplexity research (2026-08-21 onward). Ma
 
 ## PROMPT 8: Heat / Cold / Weather Exposure
 
-**Prompt:** (awaiting results)
+**Prompt:** "What OSHA and CDC guidance exists on heat stress, cold exposure, and weather-related illness prevention for outdoor event and festival workers?"
+
+**Coverage:** Heat-illness prevention, cold stress, acclimatization, weather monitoring, severe-weather triggers (lightning, wind, flooding), first aid, work/rest cycles.
+
+**Key finding:** Use a written weather plan pairing forecast monitoring with job-specific controls: water/shade/rest for heat; dry/warm clothing/buddy monitoring for cold; decisive shelter/evacuation triggers for lightning/wind/flooding.
+
+### Sources
+
+#### Government Guidance — Heat
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA Heat Planning | Heat Planning and Supervision | Government Guidance | Create heat-illness prevention plan; monitor conditions; respond to NWS heat advisories/warnings | https://www.osha.gov/heat-exposure/planning |
+| OSHA Heat Training | Heat Training | Government Guidance | Worker/supervisor training: signs/symptoms, first aid, emergency contact, acclimatization, risk factors, fluid replacement, work/rest cycles | https://www.osha.gov/heat-exposure/training |
+| OSHA Heat Illness Poster | Prevent Heat Illness at Work Poster | Government Guidance | Cool water, recovery breaks in shade/cool location, gradual acclimatization, immediate cooling + 911 for heat emergency, stay with worker | https://www.osha.gov/sites/default/files/publications/3431_WKSITEPOSTER_EN.pdf |
+| NIOSH Heat Recommendations | Heat-Stress Workplace Recommendations | Government Guidance | Gradually increase heat exposure over 7–14 days; closer supervision of new workers first 14 days/until fully acclimatized | https://www.cdc.gov/niosh/heat-stress/recommendations/index.html |
+| NIOSH Acclimatization | Acclimatization Guidance | Government Guidance | New workers: max 20% of usual duration day 1, then +20% daily; experienced workers: faster 4-day progression | https://www.cdc.gov/niosh/heat-stress/recommendations/acclimatization.html |
+
+#### Government Guidance — Cold
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| NIOSH Cold Illness | Preventing Cold-Related Illness, Injury, and Death | Government Guidance | Cold-illness prevention program: engineering controls, work/rest, training, suitable cold-weather clothing | https://www.cdc.gov/niosh/publications/numbered/2019-113.html |
+| NIOSH Cold Stress | Cold Stress Science Bulletin | Government Guidance | Schedule cold work for warmer times; relief staffing; warm break areas/liquids; layered loose clothing; waterproof insulated boots; ear/face/hand/foot protection | https://www.cdc.gov/niosh/bulletin/2012/cold-stress.html |
+
+#### Government Guidance — Severe Weather
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA Severe Weather Poster | Severe Weather Safety Awareness Poster | Government Guidance | Lightning, tornadoes, high winds, flooding; if thunder heard, seek shelter immediately in substantial building or hard-topped metal vehicle | https://www.osha.gov/sites/default/files/SevereWeatherPoster.pdf |
+| NWS Lightning Safety | Lightning Safety Overview | Government Guidance | Wait at least 30 minutes after last observed lightning or heard thunder before resuming outdoor activity | https://www.weather.gov/safety/lightning-safety-overview |
+
+#### Heat Controls (per Perplexity analysis)
+
+| Control | Principle | Application to Course 1 |
+|---------|-----------|-------------------------|
+| **Water, rest, shade** | Build potable-water points, shade/AC recovery areas, scheduled breaks, heat-emergency communication into call sheet and site layout. Encourage water every 15 minutes during hot work. | Outdoor load-in/strike: ask where water and shade are; take breaks when offered; report signs of heat illness (dizziness, confusion, nausea, cessation of sweating). |
+| **Acclimatization** | Treat new hires, returning crews, arrivals from cooler climates, reassigned workers as potentially unacclimatized; progressively introduce full-heat workloads. | New to outdoor work or returning after time away? Expect reduced initial schedule; gradual increase over 7–14 days. Do not start with full-shift load-in. |
+| **Monitoring** | Use forecasts and site conditions; NIOSH recommends wet-bulb globe temperature where feasible for acclimatized/unacclimatized exposure limits. | If weather forecast shows 90°F+ or "heat advisory," expect water/shade/rest infrastructure and modified work schedule. |
+| **Emergency response** | Suspected heat stroke: call 911, start rapid cooling with water or ice, remain with worker until help arrives. | Heat emergency signs: confusion, disorientation, nausea, cessation of sweating, weakness → stop work, cool person immediately, call 911. |
+
+#### Cold Controls (per Perplexity analysis)
+
+| Control | Principle | Application to Course 1 |
+|---------|-----------|-------------------------|
+| **Keep dry and warm** | Layered clothing, waterproof insulated boots, dry spare gloves/socks, hats, warm liquids, heated recovery spaces. | Outdoor work in cold? Dress in layers; bring extra gloves/socks; warm liquids available; know where to warm up if you get cold. |
+| **Reduce exposure** | Schedule demanding outdoor work for warmer part of day; add relief workers; limit time during extreme cold; use buddy system. | Buddy-monitor teammates for signs of cold stress (shivering, difficulty speaking, confusion, clumsiness); report to supervisor if someone is not okay. |
+| **Protect task performance** | Cold affects grip, dexterity, balance, judgment; prevent bare-skin contact with cold metal; adjust lifting/rigging/dock/equipment work. | Cold grip/dexterity matters for rigging, trussing, load-in work; be aware safety-critical tasks degrade in cold; alert supervisor if conditions are unsafe. |
+
+#### Severe-Weather Triggers (per Perplexity analysis)
+
+| Condition | Trigger | Action | Source(s) |
+|-----------|---------|--------|-----------|
+| **Lightning** | Thunder heard at any time | Immediately evacuate exposed stages, towers, roofs, open fields, metal structures, water-adjacent areas to shelter (substantial building or hard-topped metal vehicle). Resume work 30 minutes after last thunder/lightning observed. | OSHA [3], NWS [9] |
+| **High winds** | Manufacturer or event-plan limit exceeded | Suspend aerial lifts, suspended loads, temporary structures, elevated work, large soft goods, unsecured equipment. Follow equipment-specific limits. | OSHA [3][15] |
+| **Rain / flooding** | Visible pooling, saturated ground, electrical exposure | Watch for slip/trip, vehicle instability, contaminated ground, electrocution hazards. Moisture + electrical = recognized hazard; report wet electrical to electrician. | OSHA [16], OSHA [3] |
+
+#### Event-Plan Evidence (per Perplexity analysis)
+
+Look for:
+- Written weather-monitoring protocol (forecast checks at what frequency?)
+- Heat/cold plan (water/shade/acclimatization strategy, triggers for work pause/alteration)
+- Shelter map (buildings, vehicles, locations by stage/area)
+- Pause/evacuation authority (who calls a stop if conditions deteriorate?)
+- Crew communication procedure (radio channel, announcement method)
+- First-aid and EMS plan (where medics positioned, how to access)
+- Water/rest/shade provisions (locations, quantity, timing)
+- Documentation of weather briefings (crew gathered, plan reviewed)
 
 ---
 
@@ -368,7 +435,11 @@ Maps sources to multiple topics (as they emerge).
 | OSHA 1910.305 | — | — | — | Temporary Electrical |
 | OSHA 1910.334 | — | — | — | Temporary Electrical |
 | OSHA 1910.95 | — | — | — | Noise / Hearing |
+| OSHA Heat Planning | — | — | — | Heat / Cold / Weather |
+| OSHA Severe Weather | — | — | — | Heat / Cold / Weather |
 | OSHA 1926.405 | — | — | — | Temporary Electrical |
+| NIOSH Heat / Cold | — | — | — | Heat / Cold / Weather |
+| NWS Lightning | — | — | — | Heat / Cold / Weather |
 | ANSI E1.4 | — | — | — | Suspended Load / Overhead |
 | ANSI ES1.18 | — | — | — | Suspended Load / Overhead |
 | ASME B30 Family | — | — | — | Suspended Load / Overhead |
@@ -387,4 +458,4 @@ Maps sources to multiple topics (as they emerge).
 - **Course 1 application:** Each source should tie to a specific lesson/section and support the "recognize → follow → stay within bounds" model
 - **Assessment design:** Use sources to create judgment-quality test items (not just recall)
 
-**Last updated:** 2026-08-21 — Prompts 1–7 results logged
+**Last updated:** 2026-08-21 — Prompts 1–8 results logged
