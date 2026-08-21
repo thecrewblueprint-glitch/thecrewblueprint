@@ -181,7 +181,43 @@ Consolidated source compilation from Perplexity research (2026-08-21 onward). Ma
 
 ## PROMPT 5: Suspended-Load / Overhead-Work Awareness
 
-**Prompt:** (awaiting results)
+**Prompt:** "What OSHA CFR 1926 requirements and ANSI rigging standards apply to overhead-work hazard recognition and exclusion zones for non-rigging personnel?"
+
+**Coverage:** Fall zones, suspended loads, rigging awareness, exclusion zones, non-rigger boundaries, overhead-work safety.
+
+**Key finding:** Core rule for non-riggers: **Do not enter or work beneath a suspended load or in the fall zone unless essential to the operation and authorized under the lift plan.** OSHA expressly limits fall-zone access.
+
+### Sources
+
+#### Regulation
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA 1926.1425 | 29 CFR 1926.1425: Keeping Clear of the Load | Regulation | Employees generally may not be in fall zone when suspended load is stationary; narrow exceptions for hooking/unhooking/guiding/initial attachment/concrete-bucket work | https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1425 |
+| OSHA Cranes Fact Sheet | Cranes and Derricks in Construction Fact Sheet | Government Guidance | Only employees needed to receive landing load may be in fall zone; workers may not be directly under tilt-up or tilt-down loads | https://www.osha.gov/sites/default/files/publications/OSHA3433.pdf |
+| OSHA 1926.1425 Interp | 1926.1425 Interpretation: Essential Employees | Regulation Interpretation | "Essential" fall-zone personnel limited to those who must guide, monitor load, give movement instructions, or make initial attachment/detachment when task cannot be done outside fall zone | https://www.osha.gov/laws-regs/standardinterpretations/1999-10-21-0 |
+| OSHA 1926.1424 | 29 CFR 1926.1424: Work-Area Control | Regulation | Supports planned boundaries and controlled access where cranes/derricks operate within each other's working radius | https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1424 |
+| OSHA Cranes FAQ | Cranes and Derricks FAQ | Government Guidance | Explains that construction crane standard covers power-operated equipment used to hoist, lower, horizontally move suspended loads | https://www.osha.gov/cranes-derricks-construction/faq |
+
+#### Standards (Rigging / Entertainment)
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| ANSI/ASSP A10.48-2023 | A10.48-2023: Communication Structures | Consensus Standard | Addresses safety practices for communications-structure work; includes pre-job planning, rigging, hoists, loading, fall protection; relevant to tower/structure rigging patterns | https://natehome.com/product/ansi-asse-a10-48-2023/ |
+| A10.48 Overview | A10.48-2023 Standard Overview | Standards Explainer | Describes lift-planning inputs: gross load, attachment points, hoist/tag locations, staging, obstructions, proof testing, special procedures | https://blog.ansi.org/ansi/ansi-assp-a10-48-2023-communication-structures/ |
+| ASME B30 Family | ASME B30 Safety-Standard Family Overview | Consensus Standard Family | Comprises standards for safe construction and use of lifting machinery: cranes, derricks, hoists, hooks, slings; use applicable current B30 volume for equipment in use | https://blog.ansi.org/ansi/asme-b30-volumes-safety-standard-lifting-equipment/ |
+| ANSI E1.4 | E1.4: Manual Counterweight Rigging Systems | Entertainment Rigging Standard | Applies to permanently installed, manually operated stage-rigging systems; addresses raising, lowering, suspending scenery, lighting, similar loads | https://nutheatrestock.org/training/wp-content/uploads/sites/5/2021/08/Counterweight-Rigging-ANSI_E1_4-1-2016_secure.pdf |
+| ANSI ES1.18 | ES1.18-2022: Electric Chain Hoists for Entertainment Rigging | Entertainment Rigging Standard | Addresses inspection and maintenance of electric chain hoists used in entertainment-industry suspended rigging systems | https://static1.squarespace.com/static/6154c1e0c2f7b519ccf2e2a9/t/649dc23552394e751859ea33/1688060472871/ANSI+ES1.18+-+2022+Event+Safety+-+Rigging.pdf |
+
+#### Non-Rigger Boundaries (per Perplexity analysis)
+
+| Finding | Source(s) | Application to Course 1 |
+|---------|-----------|-------------------------|
+| **Fall-zone definition** | OSHA 1926.1425 [1], Cranes Fact Sheet [2] | Fall zone = area where dropped, swinging, shifting, or partially released load could strike—not only area directly under hook. *Do not enter without authorization.* |
+| **Essential vs. non-essential** | OSHA 1926.1425 Interp [3] | Essential personnel = those who must guide, monitor, give movement instructions, make initial attachment. Non-rigger stagehands are not essential to rigging operations. |
+| **Do not improvise access** | OSHA 1926.1425 [1], Cranes Fact Sheet [2] | Non-riggers do not walk under, steady by hand, climb on, attach to, detach from, or pass items beneath overhead load. Wait for rigger/lift director to release area. |
+| **Respect exclusion controls** | OSHA 1926.1424 [4], Cranes FAQ [5] | Barricades, tape, cones, spotters, signage, radio calls, controlled doors are access controls—not optional. Work-area-control principle supports maintaining boundaries. |
+| **Report and stay clear** | OSHA 1926.1425 [1], Cranes Fact Sheet [2] | Report uncontrolled load, damaged rigging, unexpected movement, people below overhead operation, or compromised barricade to supervisor/rigger. Move outside exclusion zone; do not attempt to correct. |
 
 ---
 
@@ -240,6 +276,11 @@ Maps sources to multiple topics (as they emerge).
 | IATSE | — | — | Cable Handling | — |
 | USITT | — | — | Cable Handling | — |
 | OSHA 1910.178 | Manual Handling | Road Cases | — | Powered Equipment |
+| OSHA 1926.1425 | — | — | — | Suspended Load / Overhead |
+| OSHA 1926.1424 | — | — | — | Suspended Load / Overhead |
+| ANSI E1.4 | — | — | — | Suspended Load / Overhead |
+| ANSI ES1.18 | — | — | — | Suspended Load / Overhead |
+| ASME B30 Family | — | — | — | Suspended Load / Overhead |
 | JLG (Manufacturer) | — | — | — | Powered Equipment |
 | Genie (Manufacturer) | — | — | — | Powered Equipment |
 | (more as results arrive) | | | | |
@@ -253,4 +294,4 @@ Maps sources to multiple topics (as they emerge).
 - **Course 1 application:** Each source should tie to a specific lesson/section and support the "recognize → follow → stay within bounds" model
 - **Assessment design:** Use sources to create judgment-quality test items (not just recall)
 
-**Last updated:** 2026-08-21 — Prompts 1–4 results logged
+**Last updated:** 2026-08-21 — Prompts 1–5 results logged
