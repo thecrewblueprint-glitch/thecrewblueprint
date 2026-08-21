@@ -133,7 +133,49 @@ Consolidated source compilation from Perplexity research (2026-08-21 onward). Ma
 
 ## PROMPT 4: Powered Material-Handling Boundaries
 
-**Prompt:** (awaiting results)
+**Prompt:** "What OSHA regulations and manufacturer guidance distinguish operator certification (forklifts, lifts) from non-operator recognition of powered equipment hazards in entertainment venues?"
+
+**Coverage:** Forklift operators, lift operators (MEWP), aerial lifts, scissor lifts, operator training/certification, non-operator hazard recognition, venue controls.
+
+**Key finding:** OSHA sharply distinguishes **trained, evaluated, documented operators** from other workers. Non-operators do not become authorized operators by receiving hazard-awareness instruction alone.
+
+### Sources
+
+#### Regulation
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA 1910.178 | 29 CFR 1910.178: Powered Industrial Trucks | Regulation | Design, maintenance, use of forks, tractors, platform lift trucks, powered industrial trucks | https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.178 |
+| OSHA PIT Training | Powered Industrial Truck Operator Training Requirements | Regulation Guidance | Only trained drivers with formal instruction, practical exercises, workplace performance evaluation may operate; training records required | https://www.osha.gov/training/library/powered-industrial-trucks/construction |
+| OSHA PIT Cert Interp | PIT Operator Certification Interpretation | Regulation Interpretation | Certification records must identify operator, training date, evaluation date, trainer/evaluator names; employers may prohibit untrained personnel from operating | https://www.osha.gov/laws-regs/standardinterpretations/2000-04-10-1 |
+| OSHA Aerial Lift / Scissor Interp | Aerial-Lift Requirements and Scissor-Lift Distinction | Regulation Interpretation | Scissor lifts NOT covered by construction aerial-lift provision (1926.453); in construction they are work platforms subject to scaffold requirements | https://www.osha.gov/laws-regs/standardinterpretations/2000-08-01-0 |
+
+#### Manufacturer
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| JLG Operation Manual | Operation & Safety Manual | Manufacturer | Addressed to owners, users, operators, lessors, lessees; precautions and operating procedures; model-specific—obtain manual for exact equipment | https://dam.jlg.com/DigizuiteCore/LegacyService/api/assetstream/87469/51365.pdf |
+| Genie Safe-Use Plan | MEWP Safe Use Plan: Occupant Instruction | Manufacturer | Addresses operator and occupant instruction, vehicle/pedestrian right-of-way, hazard discussion | https://www.genielift.com/en/aerialpros/mewp-safe-use-occupant-instruction |
+| Genie Training Resources | Aerial-Lift Safety Training Resources | Manufacturer | Model documentation with operator, service, technical training resources | https://www.genielift.com/en/support/lift-connect |
+| JLG ANSI A92 Overview | ANSI A92 Standards Overview | Manufacturer / Standards Explainer | MEWP operators must be familiarized with specific model; identifies operator/occupant safety duties under ANSI A92 framework | https://dam.jlg.com/DigizuiteCore/LegacyService/api/assetstream/168383/-1.pdf |
+
+#### Hazard-Awareness Boundary (per Perplexity analysis)
+
+| Role | Permitted Activity | Minimum Expectation | Source(s) |
+|------|-------------------|----------------------|-----------|
+| **Authorized forklift operator** | Drive, load, unload, maneuver, perform assigned functions | Complete formal and practical training; pass workplace evaluation; be documented by employer | OSHA 1910.178 [1][2] |
+| **Authorized lift/MEWP operator** | Operate only trained/authorized lift types and models | Follow specific manufacturer manual; inspect machine/work area; use prescribed practices | Manufacturer [3][8], OSHA [5] |
+| **Authorized platform occupant** | Work from platform as directed under site safe-use plan | Receive applicable occupant instruction; understand emergency, fall-protection, work-area rules | Manufacturer [6][8] |
+| **Non-operator / General crew** | Recognize hazards, maintain separation, report defects, follow traffic controls | Do NOT drive, reposition, override controls, ride, or assist from platform unless explicitly trained for that role. OSHA requires only trained drivers to operate PITs. | OSHA 1910.178 [1][2] |
+
+#### Venue Controls (per Perplexity analysis)
+
+| Control | Principle | Application to Course 1 |
+|---------|-----------|-------------------------|
+| **Separate people from equipment** | Establish pedestrian lanes, exclusion zones, spotter/traffic-control rules, blind-corner protocols, clear communication | General crew stays out of operator zone. Recognize when you're near moving equipment and move away. |
+| **Control movement** | Operators account for pedestrians, load obstruction, speed, turns, ramps, dock edges, tip-over exposure | Report unsafe operation, defects (damaged tires, leaks, failed brakes, controls), or unauthorized persons at controls. Do not troubleshoot. |
+| **Treat defects as stop-work** | Pre-shift inspections and adherence to manufacturer instructions are required safeguards | Non-operators recognize and report defects; they do not repair powered equipment. |
+| **Production-specific rule** | Rigger, audio, lighting, video, or stagehand may work near powered equipment but never direct its operation unless assigned as trained spotter/signal person under venue plan | OSHA core rule: independent truck operation is restricted to trained operators. |
 
 ---
 
@@ -197,6 +239,9 @@ Maps sources to multiple topics (as they emerge).
 | Neutrik Connectors | — | — | Cable Handling | — |
 | IATSE | — | — | Cable Handling | — |
 | USITT | — | — | Cable Handling | — |
+| OSHA 1910.178 | Manual Handling | Road Cases | — | Powered Equipment |
+| JLG (Manufacturer) | — | — | — | Powered Equipment |
+| Genie (Manufacturer) | — | — | — | Powered Equipment |
 | (more as results arrive) | | | | |
 
 ---
@@ -208,4 +253,4 @@ Maps sources to multiple topics (as they emerge).
 - **Course 1 application:** Each source should tie to a specific lesson/section and support the "recognize → follow → stay within bounds" model
 - **Assessment design:** Use sources to create judgment-quality test items (not just recall)
 
-**Last updated:** 2026-08-21 — Prompts 1–3 results logged
+**Last updated:** 2026-08-21 — Prompts 1–4 results logged
