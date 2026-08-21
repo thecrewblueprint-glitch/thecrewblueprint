@@ -42,3 +42,14 @@ generic AI-sounding text and ensure practitioner authenticity:
   something works or it doesn't. State facts directly.
 - **Speak like a practitioner:** Use real crew language, field terminology, 
   and direct instruction. If it sounds like a LinkedIn post, rewrite it.
+
+## Paired with 50yearroadmap
+
+This repo is governed by `50yearroadmap`'s `companies/crew-blueprint/`
+folder. Every session should have both repos attached. If this is a fresh
+session: read `50yearroadmap`'s `AGENT_ORIENTATION.md` first, then this
+file, then `companies/crew-blueprint/13_sops.md` for the day-to-day
+shipping checklist. Write access to `50yearroadmap` requires an explicit
+ask and grant, even at session-end — see `governance/WRITE_ACCESS_PROTOCOL.md`
+there. Full governance package for this repo specifically: pending a
+dedicated owner-directed pass, not yet built beyond this file.
