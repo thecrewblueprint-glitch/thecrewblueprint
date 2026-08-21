@@ -264,7 +264,58 @@ Consolidated source compilation from Perplexity research (2026-08-21 onward). Ma
 
 ## PROMPT 7: Noise / Hearing Protection
 
-**Prompt:** (awaiting results)
+**Prompt:** "What OSHA 1910.95 occupational noise standards apply to live-event workers? What hearing-protection requirements do concert venues, festivals, and touring companies publish?"
+
+**Coverage:** Occupational noise exposure, hearing-conservation programs, audiometric testing, hearing protectors, noise monitoring, noise-source controls.
+
+**Key finding:** OSHA 1910.95 triggers a hearing-conservation program at 85 dBA 8-hour TWA (action level). Feasible engineering/administrative controls required above 90 dBA TWA. Hearing protection at no cost when exposure is at or above 85 dBA.
+
+### Sources
+
+#### Regulation
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| OSHA 1910.95 | 29 CFR 1910.95: Occupational Noise Exposure | Regulation | Hearing-conservation program required at 85 dBA 8-hour TWA; feasible engineering/admin controls required above 90 dBA TWA | https://www.osha.gov/noise |
+| OSHA Noise Technical Manual | Occupational Noise Exposure Technical Manual | Government Guidance | Confirms 90 dBA 8-hour permissible exposure limit, 85 dBA action level, 5-dBA exchange rate, 80-dBA threshold for measurement | https://www.osha.gov/otm/section-3-health-hazards/chapter-5 |
+| OSHA 1910.95 Interp | 1910.95 Interpretation: Exposure Duration & Controls | Regulation Interpretation | 95 dBA exposure reaches 90 dBA criterion in 4 hours; when feasible controls cannot reduce sufficiently, employers must provide and require hearing protectors | https://www.osha.gov/laws-regs/standardinterpretations/1986-04-10 |
+| OSHA Hearing Conservation Directive | Hearing Conservation Program Directive | Enforcement Directive | Confirms covered workers require hearing-conservation program at 85 dBA TWA or greater | https://www.osha.gov/enforcement/directives/04-00-004 |
+| OSHA Protection Availability Interp | Hearing-Protection Availability Interpretation | Regulation Interpretation | Employers must provide hearing protectors at no cost to employees exposed at or above 85 dBA TWA; exposure includes continuous, intermittent, impulsive noise 80–130 dB | https://www.osha.gov/laws-regs/standardinterpretations/2025-07-30 |
+
+#### Government Guidance
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| CDC Safe Listening | Safe Listening at Venues and Events with Amplified Music | Government Guidance | CDC identifies amplified-music venues as hearing-risk environments; recommends limiting sound levels, posting warnings, providing earplugs with instructions | https://www.cdc.gov/mmwr/volumes/72/wr/mm7213a3.htm |
+
+#### Venue/Festival Practice
+
+| Source | Citation | Type | Coverage | URL |
+|--------|----------|------|----------|-----|
+| Coachella Activities | Activities & Amenities | Festival Policy | Coachella publicly offers official Loop earplugs at booths; audience-facing availability (does NOT constitute employee hearing-conservation program) | https://coachella.com/activities-amenities |
+| Madison Square Garden FAQ | Madison Square Garden FAQ | Venue Public Information | General guest information; employee policy requires documentation through venue management, labor agreements, or employer safety program | https://www.thegarden.com/faq.html |
+
+#### What an Employer Must Do (per Perplexity analysis)
+
+| Requirement | Source(s) | Course 1 Application |
+|-------------|-----------|----------------------|
+| **Noise monitoring** | OSHA 1910.95 [1], Technical Manual [3] | Employer must measure representative jobs: FOH/monitor engineers, stagehands near PA, barricade/security, backline, generators, pyro-adjacent crews, compressed-air/impact-noise workers. Include continuous, intermittent, impulsive sound 80–130 dB. |
+| **Worker notification** | OSHA 1910.95 [1], Directive [4] | Workers must be notified if exposure meets or exceeds 85 dBA TWA action level and must understand implications and protections. |
+| **Audiometric testing** | OSHA 1910.95 [1], Directive [4] | Baseline and periodic audiometry required; records maintained per OSHA. |
+| **Hearing protectors** | OSHA 1910.95 [1], Interp [5] | Provided at no cost; workers trained on fitting, use, care, limitations; replacement available. *Audience earplug sales ≠ employee compliance.* [7] |
+| **Engineering/admin controls** | OSHA 1910.95 [1], Interp [2] | When exposure > 90 dBA TWA, use speaker aiming, system tuning, source isolation, distance, rotation, task scheduling, quiet recovery areas, reduced time in high-level zones—BEFORE relying only on earplugs. |
+| **Training & recordkeeping** | OSHA 1910.95 [1], Directive [4] | Documentation of exposure assessment, dosimetry records, hearing-conservation plan, training records, audiometric provider, PPE issue records. |
+
+#### Practical Stagehand Controls (per Perplexity analysis)
+
+| Scenario | Noise Source | Expected Range | Stagehand Action |
+|----------|---|---|---|
+| **FOH / monitor position** | Main PA, monitoring, mixing | 90–100+ dBA | Hear-protection required; rotation/quiet recovery recommended. |
+| **PA rigging / stage floor** | Nearfield speakers, backline amps | 95–105 dBA | Hearing protection mandatory; minimize duration near source. |
+| **Barricade / security** | Continuous festival/show sound | 85–95 dBA | Hearing protection at 85+ dBA. |
+| **Backline setup** | Instrument amps, drums, comp. air | 90–100 dBA | Hearing protection required; source isolation where feasible. |
+| **Generator / power** | Generator engine, cooling | 80–90 dBA | At action level; protection provided; rotation helpful. |
+| **Pyrotechnics / impacts** | Pyro ignition, air-tools, nailing | 100–130+ dB impulse | Impulse-rated protection required; double-protection (plugs + muffs) common. |
 
 ---
 
@@ -316,10 +367,12 @@ Maps sources to multiple topics (as they emerge).
 | OSHA 1910.304 | — | — | — | Temporary Electrical |
 | OSHA 1910.305 | — | — | — | Temporary Electrical |
 | OSHA 1910.334 | — | — | — | Temporary Electrical |
+| OSHA 1910.95 | — | — | — | Noise / Hearing |
 | OSHA 1926.405 | — | — | — | Temporary Electrical |
 | ANSI E1.4 | — | — | — | Suspended Load / Overhead |
 | ANSI ES1.18 | — | — | — | Suspended Load / Overhead |
 | ASME B30 Family | — | — | — | Suspended Load / Overhead |
+| CDC | — | — | — | Noise / Hearing |
 | NFPA 70 / NEC Article 590 | — | — | — | Temporary Electrical |
 | JLG (Manufacturer) | — | — | — | Powered Equipment |
 | Genie (Manufacturer) | — | — | — | Powered Equipment |
@@ -334,4 +387,4 @@ Maps sources to multiple topics (as they emerge).
 - **Course 1 application:** Each source should tie to a specific lesson/section and support the "recognize → follow → stay within bounds" model
 - **Assessment design:** Use sources to create judgment-quality test items (not just recall)
 
-**Last updated:** 2026-08-21 — Prompts 1–6 results logged
+**Last updated:** 2026-08-21 — Prompts 1–7 results logged
