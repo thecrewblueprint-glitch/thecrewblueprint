@@ -32,6 +32,8 @@
   .top-left { display: flex; align-items: center; gap: 16px; }
   .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   .top-actions { display: flex; gap: 12px; }
+  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
   .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
   .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
@@ -109,6 +111,9 @@
   <div class="top-left">
     <div class="top-title">Supporting an Audio Load-In</div>
   </div>
+  <div class="progbox">
+    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
+  </div>
   <div class="top-actions">
     <a href="../courses.html" class="btn">← Exit Course</a>
   </div>
@@ -119,10 +124,10 @@
 <div class="shell">
   <nav class="side">
     <div class="side-nav" id="sidebar"></div>
-    <select class="mobile-select" id="mobileSelect"></select>
   </nav>
 
   <div class="main">
+    <select class="mobile-select" id="mobileSelect"></select>
     <div class="hero">
       <h1>Supporting an Audio Load-In</h1>
       <p>The Audio pathway starts here: move it, stage it, carry it, run it, and connect it only when directed. Reconfiguring, tuning, or troubleshooting stays with the audio department — this course is about everything you genuinely can do.</p>
@@ -351,8 +356,11 @@ function render(idx) {
 
   const progress = (currentLesson / totalLessons) * 100;
   document.querySelector('.progress-fill').style.width = progress + '%';
+  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+  document.getElementById('pct').textContent = Math.round(progress) + '%';
 
   renderFooterNav(mod, lesson, idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderFooterNav(mod, lesson, idx) {
