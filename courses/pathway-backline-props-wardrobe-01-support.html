@@ -32,6 +32,8 @@
   .top-left { display: flex; align-items: center; gap: 16px; }
   .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   .top-actions { display: flex; gap: 12px; }
+  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
   .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
   .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
@@ -75,15 +77,17 @@
   .split-col ul { margin: 0; padding-left: 20px; }
   .split-col li { font-size: 13px; margin: 6px 0; }
 
-  .quiz-list { display: grid; gap: 10px; margin: 18px 0; }
-  .quiz-item { padding: 16px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); list-style: none; }
-  .quiz-item summary::-webkit-details-marker { display: none; }
-  .quiz-item summary::before { content: '▸ '; color: var(--cb-gold); margin-right: 8px; transition: transform 180ms ease; }
-  .quiz-item[open] summary::before { transform: rotate(90deg); }
-  .quiz-item summary:hover { color: var(--cb-gold); }
-  .quiz-item[open] summary { color: var(--cb-gold); margin-bottom: 8px; }
-  .quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; font-weight: 400; }
+  .quiz-block { margin: 14px 0 22px; }
+  .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+  .options { display: grid; gap: 10px; }
+  .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: var(--cb-radius-md); padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+  .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-card); }
+  .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
+  .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
+  .opt:disabled { opacity: 0.75; cursor: not-allowed; }
+  .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-panel); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+  .coach.show { display: block; }
+  .coach strong { color: var(--cb-gold-strong); }
 
   .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
   .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
@@ -112,6 +116,9 @@
   <div class="top-left">
     <div class="top-title">Supporting Backline, Props & Wardrobe</div>
   </div>
+  <div class="progbox">
+    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
+  </div>
   <div class="top-actions">
     <a href="../courses.html" class="btn">← Exit Course</a>
   </div>
@@ -122,10 +129,10 @@
 <div class="shell">
   <nav class="side">
     <div class="side-nav" id="sidebar"></div>
-    <select class="mobile-select" id="mobileSelect"></select>
   </nav>
 
   <div class="main">
+    <select class="mobile-select" id="mobileSelect"></select>
     <div class="hero">
       <h1>Supporting Backline, Props & Wardrobe</h1>
       <p>These three departments don't share one set of rules, but they share one skill: knowing when an item is sensitive, preset, or performer-owned — and treating that status as part of the job. Moving an assigned item is labor. Changing it is department work.</p>
@@ -214,28 +221,56 @@ const modules = [
         obj: 'Test your understanding of ownership sensitivity.',
         content: `
           <h2>Quick Knowledge Check</h2>
-          <p>Click a question to check your answer.</p>
-          <div class="quiz-list">
-            <details class="quiz-item">
-              <summary>You've been asked to move a musician's amp. Can you also adjust the settings while you're at it?</summary>
-              <p>No — moving the amp is labor, changing its settings is backline's decision, not yours.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>A prop is sitting alone on a table backstage and looks out of place. Should you tidy it away?</summary>
-              <p>No — its exact location can be part of the show. Ask before moving anything you think is a preset.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>You're moving a closed wardrobe trunk. Can you open it to check what's inside?</summary>
-              <p>No — treat the closed trunk as freight and leave the contents to wardrobe unless you're told otherwise.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>What's the difference between "moving" and "changing" an item?</summary>
-              <p>Moving an assigned item where directed is labor. Changing its settings, contents, preset, or condition is department work.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>According to the ownership-sensitivity scale, which requires the most explicit direction before you touch it?</summary>
-              <p>A performer-owned or performer-specific item — the highest sensitivity level, above general production items, department gear, and show-critical presets.</p>
-            </details>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You've been asked to move a musician's amp. Can you also adjust the settings while you're at it?</p>
+            <div class="options" data-q="bq1">
+              <button class="opt" data-c="0">Yes, small adjustments save time later.</button>
+              <button class="opt" data-c="1">No. Moving it is labor; changing its settings is backline's decision.</button>
+              <button class="opt" data-c="0">Yes, as long as you remember the original settings.</button>
+            </div>
+            <div class="coach" id="bq1c"><strong>Why:</strong> Moving an assigned item where directed is labor. Changing its settings, contents, preset, or condition is department work unless you're specifically told otherwise.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A prop is sitting alone on a table backstage and looks out of place. Should you tidy it away?</p>
+            <div class="options" data-q="bq2">
+              <button class="opt" data-c="1">No. Ask before moving anything you think is a preset.</button>
+              <button class="opt" data-c="0">Yes — clutter backstage is always a hazard to clear.</button>
+              <button class="opt" data-c="0">Yes, and put it back if someone asks about it later.</button>
+            </div>
+            <div class="coach" id="bq2c"><strong>Why:</strong> Its exact location can be part of the show. A prop that looks out of place to you may be exactly where the show needs it.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You're moving a closed wardrobe trunk. Can you open it to check what's inside?</p>
+            <div class="options" data-q="bq3">
+              <button class="opt" data-c="0">Yes, so you know how to handle it properly.</button>
+              <button class="opt" data-c="0">Yes, if you close it again exactly as you found it.</button>
+              <button class="opt" data-c="1">No. Treat the closed trunk as freight and leave the contents to wardrobe.</button>
+            </div>
+            <div class="coach" id="bq3c"><strong>Why:</strong> Wardrobe contents are department work, not yours to check. Leave the trunk closed unless you're told otherwise.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">What's the difference between "moving" and "changing" an item?</p>
+            <div class="options" data-q="bq4">
+              <button class="opt" data-c="0">There isn't one — both are the same level of responsibility.</button>
+              <button class="opt" data-c="1">Moving an assigned item where directed is labor. Changing its settings, contents, preset, or condition is department work.</button>
+              <button class="opt" data-c="0">Moving requires more training than changing something.</button>
+            </div>
+            <div class="coach" id="bq4c"><strong>Why:</strong> This is the core rule across backline, props, and wardrobe. You can carry, stage, and place an item under direction — but its configuration stays with the department that owns it.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">According to the ownership-sensitivity scale, which requires the most explicit direction before you touch it?</p>
+            <div class="options" data-q="bq5">
+              <button class="opt" data-c="0">A general production item like a table or work light.</button>
+              <button class="opt" data-c="0">Department-owned gear like a road case or speaker cabinet.</button>
+              <button class="opt" data-c="1">A performer-owned item — instruments, clothing, personal equipment.</button>
+            </div>
+            <div class="coach" id="bq5c"><strong>Why:</strong> The scale rises from general production item to department gear to show-critical preset to performer-owned item. Performer-owned items sit at the top and need explicit permission every time.</div>
           </div>
         `
       },
@@ -326,8 +361,11 @@ function render(idx) {
 
   const progress = (currentLesson / totalLessons) * 100;
   document.querySelector('.progress-fill').style.width = progress + '%';
+  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+  document.getElementById('pct').textContent = Math.round(progress) + '%';
 
   renderFooterNav(mod, lesson, idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderFooterNav(mod, lesson, idx) {
@@ -362,6 +400,17 @@ function renderFooterNav(mod, lesson, idx) {
 buildSidebar();
 render('1.1');
 document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
 </script>
 
 </body>

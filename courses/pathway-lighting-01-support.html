@@ -32,6 +32,8 @@
   .top-left { display: flex; align-items: center; gap: 16px; }
   .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   .top-actions { display: flex; gap: 12px; }
+  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
   .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
   .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
@@ -70,15 +72,17 @@
   .split-col ul { margin: 0; padding-left: 20px; }
   .split-col li { font-size: 13px; margin: 6px 0; }
 
-  .quiz-list { display: grid; gap: 10px; margin: 18px 0; }
-  .quiz-item { padding: 16px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); list-style: none; }
-  .quiz-item summary::-webkit-details-marker { display: none; }
-  .quiz-item summary::before { content: '▸ '; color: var(--cb-gold); margin-right: 8px; transition: transform 180ms ease; }
-  .quiz-item[open] summary::before { transform: rotate(90deg); }
-  .quiz-item summary:hover { color: var(--cb-gold); }
-  .quiz-item[open] summary { color: var(--cb-gold); margin-bottom: 8px; }
-  .quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; font-weight: 400; }
+  .quiz-block { margin: 14px 0 22px; }
+  .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+  .options { display: grid; gap: 10px; }
+  .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: var(--cb-radius-md); padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+  .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-card); }
+  .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
+  .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
+  .opt:disabled { opacity: 0.75; cursor: not-allowed; }
+  .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-panel); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+  .coach.show { display: block; }
+  .coach strong { color: var(--cb-gold-strong); }
 
   .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
   .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
@@ -107,6 +111,9 @@
   <div class="top-left">
     <div class="top-title">Supporting a Lighting Hang</div>
   </div>
+  <div class="progbox">
+    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
+  </div>
   <div class="top-actions">
     <a href="../courses.html" class="btn">← Exit Course</a>
   </div>
@@ -117,10 +124,10 @@
 <div class="shell">
   <nav class="side">
     <div class="side-nav" id="sidebar"></div>
-    <select class="mobile-select" id="mobileSelect"></select>
   </nav>
 
   <div class="main">
+    <select class="mobile-select" id="mobileSelect"></select>
     <div class="hero">
       <h1>Supporting a Lighting Hang</h1>
       <p>Learn what a ground hand actually does to support a lighting load-in and hang. This is where the Lighting pathway begins — not by teaching you to be a lighting technician, but by teaching you to be genuinely useful to one.</p>
@@ -211,28 +218,56 @@ const modules = [
         obj: 'Test your understanding of lighting support fundamentals.',
         content: `
           <h2>Quick Knowledge Check</h2>
-          <p>Click a question to check your answer.</p>
-          <div class="quiz-list">
-            <details class="quiz-item">
-              <summary>You're carrying a fixture. What should you hold it by?</summary>
-              <p>The fixture's actual handle — never the lens, the yoke lock, or its cable.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>A fixture looks crooked. Should you straighten it?</summary>
-              <p>No — it may be exactly where the lighting department focused it. Ask the lighting lead instead of adjusting it yourself.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Is there one universal hand-signal system used for entertainment rigging everywhere?</summary>
-              <p>No — crews and venues run their own. What's universal is that STOP always means stop, and you re-establish communication before continuing if it breaks down.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Who connects and energizes temporary electrical/feeder power for the lighting rig?</summary>
-              <p>The Head Electrician or another qualified, assigned person — not a general ground hand, even if you're asked to move or stage the equipment.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Truss is moving to trim overhead. What's your job?</summary>
-              <p>Listen for the designated caller, stay clear of the moving system, watch for obvious snags or cable conflicts and report them — not operate the hoist or fly system.</p>
-            </details>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You're carrying a fixture. What should you hold it by?</p>
+            <div class="options" data-q="lq1">
+              <button class="opt" data-c="0">The lens — it's the sturdiest part.</button>
+              <button class="opt" data-c="1">The fixture's actual handle, never the lens, yoke lock, or cable.</button>
+              <button class="opt" data-c="0">The yoke lock, since it's designed to hold weight.</button>
+            </div>
+            <div class="coach" id="lq1c"><strong>Why:</strong> The lens, yoke lock, and cable aren't handling points. Grabbing them can throw off focus, damage the lock mechanism, or strain the cable connection.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A fixture looks crooked. Should you straighten it?</p>
+            <div class="options" data-q="lq2">
+              <button class="opt" data-c="0">Yes — a crooked fixture is obviously a mistake.</button>
+              <button class="opt" data-c="1">No. Ask the lighting lead instead of adjusting it yourself.</button>
+              <button class="opt" data-c="0">Yes, but only nudge it slightly.</button>
+            </div>
+            <div class="coach" id="lq2c"><strong>Why:</strong> It may be exactly where the lighting department focused it. If you didn't set it, don't fix it — ask instead.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Is there one universal hand-signal system used for entertainment rigging everywhere?</p>
+            <div class="options" data-q="lq3">
+              <button class="opt" data-c="0">Yes — every crew uses the same signals.</button>
+              <button class="opt" data-c="1">No. Crews and venues run their own — only STOP is universal.</button>
+              <button class="opt" data-c="0">Yes, it's set by OSHA nationwide.</button>
+            </div>
+            <div class="coach" id="lq3c"><strong>Why:</strong> Crews and venues run their own signal conventions. What's universal is that STOP always means stop, and you re-establish communication before continuing if it breaks down.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Who connects and energizes temporary electrical/feeder power for the lighting rig?</p>
+            <div class="options" data-q="lq4">
+              <button class="opt" data-c="0">Any ground hand who's asked to stage the cable.</button>
+              <button class="opt" data-c="1">The Head Electrician or another qualified, assigned person.</button>
+              <button class="opt" data-c="0">Whoever gets to it first during load-in.</button>
+            </div>
+            <div class="coach" id="lq4c"><strong>Why:</strong> You may move or stage cable and power equipment, but you don't energize, reconfigure, or troubleshoot it. That stays with a qualified, assigned person.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Truss is moving to trim overhead. What's your job?</p>
+            <div class="options" data-q="lq5">
+              <button class="opt" data-c="0">Operate the hoist controls if no one else is nearby.</button>
+              <button class="opt" data-c="1">Listen for the designated caller, stay clear, and report snags or cable conflicts.</button>
+              <button class="opt" data-c="0">Guide the truss into place by hand as it descends.</button>
+            </div>
+            <div class="coach" id="lq5c"><strong>Why:</strong> You're not operating the hoist or fly system. Your job is watching for obvious snags or cable conflicts, staying clear of the moving system, and listening for the designated caller.</div>
           </div>
         `
       },
@@ -339,8 +374,11 @@ function render(idx) {
 
   const progress = (currentLesson / totalLessons) * 100;
   document.querySelector('.progress-fill').style.width = progress + '%';
+  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+  document.getElementById('pct').textContent = Math.round(progress) + '%';
 
   renderFooterNav(mod, lesson, idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderFooterNav(mod, lesson, idx) {
@@ -375,6 +413,17 @@ function renderFooterNav(mod, lesson, idx) {
 buildSidebar();
 render('1.1');
 document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
 </script>
 
 </body>

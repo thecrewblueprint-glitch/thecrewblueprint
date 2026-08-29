@@ -32,6 +32,8 @@
   .top-left { display: flex; align-items: center; gap: 16px; }
   .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   .top-actions { display: flex; gap: 12px; }
+  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
   .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
   .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
@@ -70,15 +72,17 @@
   .split-col ul { margin: 0; padding-left: 20px; }
   .split-col li { font-size: 13px; margin: 6px 0; }
 
-  .quiz-list { display: grid; gap: 10px; margin: 18px 0; }
-  .quiz-item { padding: 16px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); list-style: none; }
-  .quiz-item summary::-webkit-details-marker { display: none; }
-  .quiz-item summary::before { content: '▸ '; color: var(--cb-gold); margin-right: 8px; transition: transform 180ms ease; }
-  .quiz-item[open] summary::before { transform: rotate(90deg); }
-  .quiz-item summary:hover { color: var(--cb-gold); }
-  .quiz-item[open] summary { color: var(--cb-gold); margin-bottom: 8px; }
-  .quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; font-weight: 400; }
+  .quiz-block { margin: 14px 0 22px; }
+  .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+  .options { display: grid; gap: 10px; }
+  .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: var(--cb-radius-md); padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+  .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-card); }
+  .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
+  .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
+  .opt:disabled { opacity: 0.75; cursor: not-allowed; }
+  .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-panel); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+  .coach.show { display: block; }
+  .coach strong { color: var(--cb-gold-strong); }
 
   .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
   .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
@@ -107,6 +111,9 @@
   <div class="top-left">
     <div class="top-title">Supporting Staging & Carpentry</div>
   </div>
+  <div class="progbox">
+    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
+  </div>
   <div class="top-actions">
     <a href="../courses.html" class="btn">← Exit Course</a>
   </div>
@@ -117,10 +124,10 @@
 <div class="shell">
   <nav class="side">
     <div class="side-nav" id="sidebar"></div>
-    <select class="mobile-select" id="mobileSelect"></select>
   </nav>
 
   <div class="main">
+    <select class="mobile-select" id="mobileSelect"></select>
     <div class="hero">
       <h1>Supporting Staging & Carpentry</h1>
       <p>Move deck, risers, stairs, and scenic pieces, and assemble the modular components you've actually been shown — under direction. Structural decisions, fabrication, and final acceptance stay with the carpentry lead.</p>
@@ -209,28 +216,56 @@ const modules = [
         obj: 'Test your understanding of staging support.',
         content: `
           <h2>Quick Knowledge Check</h2>
-          <p>Click a question to check your answer.</p>
-          <div class="quiz-list">
-            <details class="quiz-item">
-              <summary>You've assembled a deck section correctly. Does that mean you can decide it's safe to use?</summary>
-              <p>No — final leveling, load capacity, and acceptance are the qualified lead's call, not yours.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>You know how one manufacturer's staging system locks together. Can you assume another brand works the same way?</summary>
-              <p>No — modular staging hardware is product-specific. Identify the current system and follow its own procedure.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>A guardrail component is missing from an otherwise-assembled platform. What do you do?</summary>
-              <p>Stop and report it — don't assume the deck is finished just because the surface is assembled.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>You want to move a scenic piece faster. Can you drag it by a finished painted edge?</summary>
-              <p>No — scenic pieces are finished production assets. Ask where it can safely be gripped.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Can a ground hand substitute hardware if the correct piece isn't handy?</summary>
-              <p>No — substituting hardware, cutting, drilling, or modifying structural components stays with qualified/authorized roles.</p>
-            </details>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You've assembled a deck section correctly. Does that mean you can decide it's safe to use?</p>
+            <div class="options" data-q="sq1">
+              <button class="opt" data-c="0">Yes — if it's assembled correctly, it's ready to use.</button>
+              <button class="opt" data-c="1">No. Final leveling, load capacity, and acceptance are the qualified lead's call.</button>
+              <button class="opt" data-c="0">Yes, as long as it doesn't wobble when you push on it.</button>
+            </div>
+            <div class="coach" id="sq1c"><strong>Why:</strong> An assembled deck isn't automatically a finished one. Recognize obvious problems and report them instead of deciding they're fine.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You know how one manufacturer's staging system locks together. Can you assume another brand works the same way?</p>
+            <div class="options" data-q="sq2">
+              <button class="opt" data-c="1">No. Identify the current system and follow its own procedure.</button>
+              <button class="opt" data-c="0">Yes — modular staging hardware is standardized across brands.</button>
+              <button class="opt" data-c="0">Yes, if the pieces look the same size.</button>
+            </div>
+            <div class="coach" id="sq2c"><strong>Why:</strong> Modular staging hardware is product-specific — systems like Bil-Jax's AS2100 and ST8100 use different hardware from each other. Don't assume one system works like another.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A guardrail component is missing from an otherwise-assembled platform. What do you do?</p>
+            <div class="options" data-q="sq3">
+              <button class="opt" data-c="0">Finish the rest of the assembly — the missing piece isn't urgent.</button>
+              <button class="opt" data-c="0">Use whatever spare hardware is on hand to fill the gap.</button>
+              <button class="opt" data-c="1">Stop and report it.</button>
+            </div>
+            <div class="coach" id="sq3c"><strong>Why:</strong> Guardrails, stairs, and access points are part of the system, not cosmetic accessories. Don't assume the deck is finished just because the surface is assembled.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You want to move a scenic piece faster. Can you drag it by a finished painted edge?</p>
+            <div class="options" data-q="sq4">
+              <button class="opt" data-c="0">Yes, as long as the edge looks sturdy.</button>
+              <button class="opt" data-c="1">No. Ask where the piece can safely be gripped.</button>
+              <button class="opt" data-c="0">Yes — it's faster and the paint can be touched up later.</button>
+            </div>
+            <div class="coach" id="sq4c"><strong>Why:</strong> Scenic pieces are finished production assets, not construction lumber. Don't drag finished faces or edges.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Can a ground hand substitute hardware if the correct piece isn't handy?</p>
+            <div class="options" data-q="sq5">
+              <button class="opt" data-c="0">Yes, if the substitute bolt or pin looks close enough in size.</button>
+              <button class="opt" data-c="0">Yes, as long as you tell the lead afterward.</button>
+              <button class="opt" data-c="1">No. Substituting hardware stays with qualified/authorized roles.</button>
+            </div>
+            <div class="coach" id="sq5c"><strong>Why:</strong> Substituting hardware, cutting, drilling, or modifying structural components changes the system's engineered configuration. That decision isn't a ground hand's to make.</div>
           </div>
         `
       },
@@ -321,8 +356,11 @@ function render(idx) {
 
   const progress = (currentLesson / totalLessons) * 100;
   document.querySelector('.progress-fill').style.width = progress + '%';
+  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+  document.getElementById('pct').textContent = Math.round(progress) + '%';
 
   renderFooterNav(mod, lesson, idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderFooterNav(mod, lesson, idx) {
@@ -357,6 +395,17 @@ function renderFooterNav(mod, lesson, idx) {
 buildSidebar();
 render('1.1');
 document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
 </script>
 
 </body>

@@ -32,6 +32,8 @@
   .top-left { display: flex; align-items: center; gap: 16px; }
   .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   .top-actions { display: flex; gap: 12px; }
+  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
   .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
   .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
@@ -70,15 +72,17 @@
   .split-col ul { margin: 0; padding-left: 20px; }
   .split-col li { font-size: 13px; margin: 6px 0; }
 
-  .quiz-list { display: grid; gap: 10px; margin: 18px 0; }
-  .quiz-item { padding: 16px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); list-style: none; }
-  .quiz-item summary::-webkit-details-marker { display: none; }
-  .quiz-item summary::before { content: '▸ '; color: var(--cb-gold); margin-right: 8px; transition: transform 180ms ease; }
-  .quiz-item[open] summary::before { transform: rotate(90deg); }
-  .quiz-item summary:hover { color: var(--cb-gold); }
-  .quiz-item[open] summary { color: var(--cb-gold); margin-bottom: 8px; }
-  .quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; font-weight: 400; }
+  .quiz-block { margin: 14px 0 22px; }
+  .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+  .options { display: grid; gap: 10px; }
+  .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: var(--cb-radius-md); padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+  .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-card); }
+  .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
+  .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
+  .opt:disabled { opacity: 0.75; cursor: not-allowed; }
+  .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-panel); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+  .coach.show { display: block; }
+  .coach strong { color: var(--cb-gold-strong); }
 
   .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
   .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
@@ -107,6 +111,9 @@
   <div class="top-left">
     <div class="top-title">Supporting an LED Video Wall Build</div>
   </div>
+  <div class="progbox">
+    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
+  </div>
   <div class="top-actions">
     <a href="../courses.html" class="btn">← Exit Course</a>
   </div>
@@ -117,10 +124,10 @@
 <div class="shell">
   <nav class="side">
     <div class="side-nav" id="sidebar"></div>
-    <select class="mobile-select" id="mobileSelect"></select>
   </nav>
 
   <div class="main">
+    <select class="mobile-select" id="mobileSelect"></select>
     <div class="hero">
       <h1>Supporting an LED Video Wall Build</h1>
       <p>LED walls are some of the most fragile, expensive gear on a call. Learn how to protect that gear while helping build it — not to become a video engineer overnight.</p>
@@ -209,28 +216,56 @@ const modules = [
         obj: 'Verify your understanding of LED wall support.',
         content: `
           <h2>Quick Knowledge Check</h2>
-          <p>Click a question to check your answer.</p>
-          <div class="quiz-list">
-            <details class="quiz-item">
-              <summary>You've built one brand of LED wall before. Does that mean you know how the next one locks and cases?</summary>
-              <p>No — different LED brands lock, connect, and store completely differently. Learn the system in front of you instead of assuming it matches the last one.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Can you touch the LED face directly, carefully, while positioning a cabinet?</summary>
-              <p>No — never touch, press, or lean on the LED face. Use the product's actual handles instead.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>An LED panel looks dark or damaged mid-build. What do you do?</summary>
-              <p>Report it to the video/LED lead. Diagnosing or fixing it yourself is outside a ground hand's role.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Two panels are approaching each other with magnet-assisted alignment. What's the right technique?</summary>
-              <p>Guide them together deliberately — don't let them snap together uncontrolled, which can damage the LEDs on impact.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Where does each cabinet go during strike?</summary>
-              <p>Back into the exact case, slot, and orientation it came from — not an improvised stack.</p>
-            </details>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You've built one brand of LED wall before. Does that mean you know how the next one locks and cases?</p>
+            <div class="options" data-q="vq1">
+              <button class="opt" data-c="0">Yes — locking mechanisms are basically the same across brands.</button>
+              <button class="opt" data-c="1">No. Different brands lock, connect, and store completely differently.</button>
+              <button class="opt" data-c="0">Yes, as long as the panel size looks similar.</button>
+            </div>
+            <div class="coach" id="vq1c"><strong>Why:</strong> Assuming a wall works like the last one you built is exactly how gear gets damaged. Learn the system in front of you: how it locks, what connector it uses, how it's cased.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Can you touch the LED face directly, carefully, while positioning a cabinet?</p>
+            <div class="options" data-q="vq2">
+              <button class="opt" data-c="0">Yes, as long as you're gentle and only touch the edge pixels.</button>
+              <button class="opt" data-c="0">Yes, if you're wearing gloves.</button>
+              <button class="opt" data-c="1">No. Never touch, press, or lean on the LED face — use the actual handles.</button>
+            </div>
+            <div class="coach" id="vq2c"><strong>Why:</strong> The pixels are delicate and on some panels are static-sensitive. The face is the one thing you never touch, no matter how confident you are with the rest of the build.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">An LED panel looks dark or damaged mid-build. What do you do?</p>
+            <div class="options" data-q="vq3">
+              <button class="opt" data-c="0">Pull it and swap it with a spare yourself.</button>
+              <button class="opt" data-c="0">Tap it a few times to see if it reconnects.</button>
+              <button class="opt" data-c="1">Report it to the video/LED lead.</button>
+            </div>
+            <div class="coach" id="vq3c"><strong>Why:</strong> Diagnosing or fixing a damaged panel is outside a ground hand's role. Report it and let the lead decide what happens next.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Two panels are approaching each other with magnet-assisted alignment. What's the right technique?</p>
+            <div class="options" data-q="vq4">
+              <button class="opt" data-c="0">Let the magnets pull them together on their own — that's what they're for.</button>
+              <button class="opt" data-c="1">Guide them together deliberately — don't let them snap together uncontrolled.</button>
+              <button class="opt" data-c="0">Push them together quickly before the magnets can misalign them.</button>
+            </div>
+            <div class="coach" id="vq4c"><strong>Why:</strong> An uncontrolled magnet snap can damage the LEDs on impact. Guide the panels in with control instead of letting the magnets do the last part of the work.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Where does each cabinet go during strike?</p>
+            <div class="options" data-q="vq5">
+              <button class="opt" data-c="0">Into whichever case has room left.</button>
+              <button class="opt" data-c="1">Back into the exact case, slot, and orientation it came from.</button>
+              <button class="opt" data-c="0">Stacked by size, largest cabinets first.</button>
+            </div>
+            <div class="coach" id="vq5c"><strong>Why:</strong> Cases are built around a specific packing plan. An improvised stack risks damage in transit and slows the next load-in trying to figure out what goes where.</div>
           </div>
         `
       },
@@ -322,8 +357,11 @@ function render(idx) {
 
   const progress = (currentLesson / totalLessons) * 100;
   document.querySelector('.progress-fill').style.width = progress + '%';
+  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+  document.getElementById('pct').textContent = Math.round(progress) + '%';
 
   renderFooterNav(mod, lesson, idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderFooterNav(mod, lesson, idx) {
@@ -358,6 +396,17 @@ function renderFooterNav(mod, lesson, idx) {
 buildSidebar();
 render('1.1');
 document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
 </script>
 
 </body>

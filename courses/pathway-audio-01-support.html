@@ -32,6 +32,8 @@
   .top-left { display: flex; align-items: center; gap: 16px; }
   .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   .top-actions { display: flex; gap: 12px; }
+  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
   .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
   .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
@@ -70,15 +72,17 @@
   .split-col ul { margin: 0; padding-left: 20px; }
   .split-col li { font-size: 13px; margin: 6px 0; }
 
-  .quiz-list { display: grid; gap: 10px; margin: 18px 0; }
-  .quiz-item { padding: 16px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); list-style: none; }
-  .quiz-item summary::-webkit-details-marker { display: none; }
-  .quiz-item summary::before { content: '▸ '; color: var(--cb-gold); margin-right: 8px; transition: transform 180ms ease; }
-  .quiz-item[open] summary::before { transform: rotate(90deg); }
-  .quiz-item summary:hover { color: var(--cb-gold); }
-  .quiz-item[open] summary { color: var(--cb-gold); margin-bottom: 8px; }
-  .quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; font-weight: 400; }
+  .quiz-block { margin: 14px 0 22px; }
+  .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+  .options { display: grid; gap: 10px; }
+  .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: var(--cb-radius-md); padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+  .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-card); }
+  .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
+  .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
+  .opt:disabled { opacity: 0.75; cursor: not-allowed; }
+  .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-panel); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+  .coach.show { display: block; }
+  .coach strong { color: var(--cb-gold-strong); }
 
   .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
   .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
@@ -107,6 +111,9 @@
   <div class="top-left">
     <div class="top-title">Supporting an Audio Load-In</div>
   </div>
+  <div class="progbox">
+    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
+  </div>
   <div class="top-actions">
     <a href="../courses.html" class="btn">← Exit Course</a>
   </div>
@@ -117,10 +124,10 @@
 <div class="shell">
   <nav class="side">
     <div class="side-nav" id="sidebar"></div>
-    <select class="mobile-select" id="mobileSelect"></select>
   </nav>
 
   <div class="main">
+    <select class="mobile-select" id="mobileSelect"></select>
     <div class="hero">
       <h1>Supporting an Audio Load-In</h1>
       <p>The Audio pathway starts here: move it, stage it, carry it, run it, and connect it only when directed. Reconfiguring, tuning, or troubleshooting stays with the audio department — this course is about everything you genuinely can do.</p>
@@ -209,28 +216,56 @@ const modules = [
         obj: 'Test your audio support knowledge.',
         content: `
           <h2>Quick Knowledge Check</h2>
-          <p>Click a question to check your answer.</p>
-          <div class="quiz-list">
-            <details class="quiz-item">
-              <summary>A cable looks unused during a PA build. Can you strike it?</summary>
-              <p>Not until the audio lead clears it — it may still be patched, powered, or needed for testing.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>You're carrying a speaker cabinet. What should you grab?</summary>
-              <p>The cabinet's actual handle — not grilles, rigging pins, or connectors.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>A microphone is already placed on stage. Can you move it if it looks like it's in your way?</summary>
-              <p>No — treat a placed microphone as deliberate and move it only if you're told to.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>A connector doesn't seat normally. What do you do?</summary>
-              <p>Stop and ask — don't force it. Forcing a connector can damage contacts, shells, or locking mechanisms.</p>
-            </details>
-            <details class="quiz-item">
-              <summary>Who decides system EQ, RF coordination, and amplifier settings?</summary>
-              <p>The audio department — these stay off-limits for a ground hand regardless of how confident you feel.</p>
-            </details>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A cable looks unused during a PA build. Can you strike it?</p>
+            <div class="options" data-q="aq1">
+              <button class="opt" data-c="0">Yes — if it looks unused, it's fair game to strike.</button>
+              <button class="opt" data-c="1">No. Wait for the audio lead to clear it first.</button>
+              <button class="opt" data-c="0">Coil it loosely so it's easy to reconnect if you're wrong.</button>
+            </div>
+            <div class="coach" id="aq1c"><strong>Why:</strong> A cable that looks unused might still be patched, powered, or needed for testing. Wait for the audio lead to clear it before you disconnect, coil, or move it.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You're carrying a speaker cabinet. What should you grab?</p>
+            <div class="options" data-q="aq2">
+              <button class="opt" data-c="0">Whatever grip feels most stable in the moment.</button>
+              <button class="opt" data-c="0">The rigging pin — it's built to bear weight.</button>
+              <button class="opt" data-c="1">The cabinet's actual handle, not the grille, a rigging pin, or a connector.</button>
+            </div>
+            <div class="coach" id="aq2c"><strong>Why:</strong> Grilles, rigging pins, and connectors aren't handling points. Grabbing them can damage the cabinet or the rigging hardware, and they weren't designed to carry the load.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A microphone is already placed on stage and it looks like it's in your way. Can you move it?</p>
+            <div class="options" data-q="aq3">
+              <button class="opt" data-c="0">Yes — move it and put it back after you're done.</button>
+              <button class="opt" data-c="1">No. Treat a placed microphone as deliberate and move it only if you're told to.</button>
+              <button class="opt" data-c="0">Yes, as long as you remember exactly where it was.</button>
+            </div>
+            <div class="coach" id="aq3c"><strong>Why:</strong> A mic that's already placed was positioned for a reason you may not see — a pickup pattern, a mark for a performer, a level check already done. Ask before you touch it.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A connector doesn't seat normally. What do you do?</p>
+            <div class="options" data-q="aq4">
+              <button class="opt" data-c="0">Apply a bit more pressure — connectors are built to take it.</button>
+              <button class="opt" data-c="0">Try a different angle until it clicks.</button>
+              <button class="opt" data-c="1">Stop and ask. Don't force it.</button>
+            </div>
+            <div class="coach" id="aq4c"><strong>Why:</strong> Forcing a connector that won't seat can damage contacts, shells, or locking mechanisms — and a damaged connector can take a channel down mid-show. Stop and ask instead.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Who decides system EQ, RF coordination, and amplifier settings?</p>
+            <div class="options" data-q="aq5">
+              <button class="opt" data-c="0">Whoever's standing closest to the console when a change is needed.</button>
+              <button class="opt" data-c="0">You can, if you're confident you know what you're doing.</button>
+              <button class="opt" data-c="1">The audio department. These stay off-limits for a ground hand.</button>
+            </div>
+            <div class="coach" id="aq5c"><strong>Why:</strong> These settings affect the whole system, not just one speaker or one cable. They stay with the audio department regardless of how confident you feel about them.</div>
           </div>
         `
       },
@@ -321,8 +356,11 @@ function render(idx) {
 
   const progress = (currentLesson / totalLessons) * 100;
   document.querySelector('.progress-fill').style.width = progress + '%';
+  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+  document.getElementById('pct').textContent = Math.round(progress) + '%';
 
   renderFooterNav(mod, lesson, idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderFooterNav(mod, lesson, idx) {
@@ -357,6 +395,17 @@ function renderFooterNav(mod, lesson, idx) {
 buildSidebar();
 render('1.1');
 document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
 </script>
 
 </body>

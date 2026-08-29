@@ -237,6 +237,19 @@ footer {
 
 .section-header { display: none; }
 .section-header.show { display: block; }
+
+.cb-quiz-list { display: grid; gap: 20px; margin-top: 8px; }
+.cb-quiz-item { padding: 16px 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: 8px; }
+.cb-quiz-item .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+.cb-quiz-item .options { display: grid; gap: 10px; }
+.cb-quiz-item .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: 8px; padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+.cb-quiz-item .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-bg-light); }
+.cb-quiz-item .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
+.cb-quiz-item .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
+.cb-quiz-item .opt:disabled { opacity: 0.75; cursor: not-allowed; }
+.cb-quiz-item .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-bg-light); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+.cb-quiz-item .coach.show { display: block; }
+.cb-quiz-item .coach strong { color: var(--cb-gold-strong); }
 </style>
 </head>
 
@@ -321,10 +334,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>What is the best beginner description of a large LED wall?</summary>
-            <p>An integrated system of structure, panels, power, receiving electronics, processing, transport, sources, and personnel — failures often occur at the interfaces between these subsystems.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">What is the best beginner description of a large LED wall?</p>
+            <div class="options" data-q="v2q1">
+              <button class="opt" data-c="0">A single device — the panels themselves.</button>
+              <button class="opt" data-c="1">An integrated system of structure, panels, power, electronics, processing, transport, and sources.</button>
+              <button class="opt" data-c="0">Whatever the processor is programmed to output.</button>
+            </div>
+            <div class="coach" id="v2q1c"><strong>Why:</strong> Failures often occur at the interfaces between these subsystems, not inside any one part. Thinking in systems, not just panels, is what makes troubleshooting possible.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -380,10 +398,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>Which statement about pixel pitch is most accurate?</summary>
-            <p>Pixel pitch affects pixel density and practical viewing distance — it's one selection factor, not the automatic determinant of image quality, safety, or processing workflow.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">Which statement about pixel pitch is most accurate?</p>
+            <div class="options" data-q="v2q2">
+              <button class="opt" data-c="0">A smaller pitch always means a better wall for the job.</button>
+              <button class="opt" data-c="1">It affects pixel density and viewing distance — one selection factor among several.</button>
+              <button class="opt" data-c="0">It determines the processor's frame rate.</button>
+            </div>
+            <div class="coach" id="v2q2c"><strong>Why:</strong> Pixel pitch is not the automatic determinant of image quality, safety, or processing workflow. It's one factor weighed against viewing distance, content, and budget.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -439,10 +462,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>A media server usually does which job?</summary>
-            <p>Renders or plays back content — the LED processor maps and distributes that content to the physical raster, which is a different job.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">A media server usually does which job?</p>
+            <div class="options" data-q="v2q3">
+              <button class="opt" data-c="0">Maps content to the physical raster of the wall.</button>
+              <button class="opt" data-c="1">Renders or plays back content.</button>
+              <button class="opt" data-c="0">Distributes power to the LED cabinets.</button>
+            </div>
+            <div class="coach" id="v2q3c"><strong>Why:</strong> The LED processor maps and distributes that content to the physical raster — a different job from rendering or playback, which is the media server's role.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -498,10 +526,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>Why is average power consumption not enough for electrical planning?</summary>
-            <p>It ignores maximum demand and startup conditions such as inrush — planning from average consumption can underestimate the actual load.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">Why is average power consumption not enough for electrical planning?</p>
+            <div class="options" data-q="v2q4">
+              <button class="opt" data-c="0">It's actually the industry-standard planning figure.</button>
+              <button class="opt" data-c="1">It ignores maximum demand and startup conditions such as inrush.</button>
+              <button class="opt" data-c="0">Average consumption only matters for outdoor walls.</button>
+            </div>
+            <div class="coach" id="v2q4c"><strong>Why:</strong> Planning from average consumption can underestimate the actual load. Peak demand and inrush at startup are what electrical distribution has to be sized for.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -557,10 +590,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>A clean image on the LED wall proves what?</summary>
-            <p>That the signal path is producing an image — nothing about structural approval, electrical code compliance, or the wind plan.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">A clean image on the LED wall proves what?</p>
+            <div class="options" data-q="v2q5">
+              <button class="opt" data-c="0">That the rigging and structural support are approved.</button>
+              <button class="opt" data-c="1">That the signal path is producing an image.</button>
+              <button class="opt" data-c="0">That the electrical distribution meets code.</button>
+            </div>
+            <div class="coach" id="v2q5c"><strong>Why:</strong> A clean image says nothing about structural approval, electrical code compliance, or the wind plan. Those are separate systems with their own qualified sign-off.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -616,10 +654,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>What does an IP rating primarily describe?</summary>
-            <p>Ingress protection against solids and water — it doesn't prove all-weather suitability or structural wind safety.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">What does an IP rating primarily describe?</p>
+            <div class="options" data-q="v2q6">
+              <button class="opt" data-c="0">The wall's overall wind rating for outdoor use.</button>
+              <button class="opt" data-c="1">Ingress protection against solids and water.</button>
+              <button class="opt" data-c="0">A guarantee of all-weather suitability.</button>
+            </div>
+            <div class="coach" id="v2q6c"><strong>Why:</strong> An IP rating only describes ingress protection against solids and water — it doesn't prove all-weather suitability or structural wind safety on its own.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -675,10 +718,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>Which item belongs in the advance for an LED wall?</summary>
-            <p>Wall dimensions, cabinet model, raster, processor, input format, power, support mode, access, weather plan, and responsible leads.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">Which item belongs in the advance for an LED wall?</p>
+            <div class="options" data-q="v2q7">
+              <button class="opt" data-c="0">Just the wall's overall square footage.</button>
+              <button class="opt" data-c="1">Wall dimensions, cabinet model, raster, processor, power, support mode, access, and weather plan.</button>
+              <button class="opt" data-c="0">Only the content that will play on it.</button>
+            </div>
+            <div class="coach" id="v2q7c"><strong>Why:</strong> A real advance covers the whole system — not just the wall's size, but how it's built, powered, supported, accessed, and who's responsible for each part.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -734,10 +782,15 @@ footer {
       <div class="cb-section">
         <h2>Quick Knowledge Check</h2>
         <div class="cb-quiz-list">
-          <details class="cb-quiz-item">
-            <summary>Four cabinets downstream from one cabinet go dark. Which category should be considered early?</summary>
-            <p>A possible data-chain interruption near the first affected cabinet — a failure near the start of a chain can affect everything downstream from it.</p>
-          </details>
+          <div class="cb-quiz-item">
+            <p class="quiz-q">Four cabinets downstream from one cabinet go dark. Which category should be considered early?</p>
+            <div class="options" data-q="v2q8">
+              <button class="opt" data-c="0">A power issue with each of the four dark cabinets individually.</button>
+              <button class="opt" data-c="1">A possible data-chain interruption near the first affected cabinet.</button>
+              <button class="opt" data-c="0">A content or media-server playback error.</button>
+            </div>
+            <div class="coach" id="v2q8c"><strong>Why:</strong> A failure near the start of a chain can affect everything downstream from it. Check the upstream connection before assuming each dark cabinet has its own separate problem.</div>
+          </div>
         </div>
       </div>
       <div class="cb-section">
@@ -796,6 +849,17 @@ if (window.innerWidth <= 820) {
   document.getElementById('mobileSelect').classList.add('show');
   document.getElementById('sidebar').style.display = 'none';
 }
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
 </script>
 
 </body>
