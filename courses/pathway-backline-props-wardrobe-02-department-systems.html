@@ -4,13 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Backline, Props & Wardrobe Pathway · Course 2: Department Systems | The Crew Blueprint</title>
-<meta name="description" content="Understand how backline, props, and wardrobe departments operate at scale, from pre-production planning through show execution and load-out." />
+<meta name="description" content="Move from moving assigned items to junior-specialist accountability: asset identity and state, setup readiness, and closed-loop escalation for backline, props, and wardrobe." />
 <link rel="icon" href="../images/logo.png" type="image/png">
 <link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-backline-props-wardrobe-02-department-systems/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="The Crew Blueprint" />
 <meta property="og:title" content="Backline, Props & Wardrobe Pathway · Course 2: Department Systems | The Crew Blueprint" />
-<meta property="og:description" content="Understand how backline, props, and wardrobe departments operate at scale." />
+<meta property="og:description" content="Asset identity and state, setup readiness, and closed-loop escalation for backline, props, and wardrobe." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -54,6 +54,7 @@ body {
   align-items: center;
   padding: 0 20px;
   justify-content: space-between;
+  gap: 18px;
 }
 
 .top-title {
@@ -61,6 +62,9 @@ body {
   font-weight: 700;
   color: var(--cb-gold);
 }
+
+.progress-bar { position: fixed; top: 64px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
+.progress-fill { height: 100%; background: var(--cb-gold); width: 0%; transition: width 300ms ease; }
 
 .exit-btn {
   padding: 8px 16px;
@@ -73,6 +77,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 .exit-btn:hover {
   background: rgba(245,180,0,0.1);
@@ -83,8 +88,8 @@ body {
 .shell {
   display: grid;
   grid-template-columns: 240px 1fr;
-  margin-top: 64px;
-  min-height: calc(100vh - 64px);
+  margin-top: 67px;
+  min-height: calc(100vh - 67px);
 }
 
 .side {
@@ -93,13 +98,14 @@ body {
   padding: 32px 0;
   position: fixed;
   left: 0;
-  top: 64px;
+  top: 67px;
   width: 240px;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 67px);
   overflow-y: auto;
 }
 
 .content {
+  grid-column: 2;
   padding: 40px;
   max-width: 900px;
   margin: 0 auto;
@@ -116,6 +122,9 @@ body {
 .card.progress {
   background: linear-gradient(135deg, rgba(245,180,0,0.08) 0%, rgba(245,180,0,0.02) 100%);
   border: 1px solid var(--cb-gold-border);
+  position: sticky;
+  top: 84px;
+  z-index: 40;
 }
 
 .rule {
@@ -150,6 +159,11 @@ body {
   font-size: 13px;
   transition: all 0.2s;
   cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
 }
 
 .lesson-link:hover {
@@ -173,20 +187,19 @@ h1 {
 h2 {
   font-size: 22px;
   font-weight: 700;
-  margin: 32px 0 16px 0;
+  margin: 0 0 16px 0;
   font-family: 'Space Grotesk', sans-serif;
 }
 
-p { margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 700; margin: 0 0 10px 0; color: var(--cb-gold-strong); }
+
+p { margin-bottom: 16px; color: var(--cb-text); }
 ul { margin-left: 20px; margin-bottom: 16px; }
 li { margin-bottom: 8px; }
 
 strong { font-weight: 600; color: var(--cb-gold-strong); }
 
-.cb-section {
-  margin-bottom: 32px;
-}
-
+.cb-section { margin-bottom: 32px; }
 .cb-list { list-style: disc; }
 .cb-list li { color: var(--cb-text); }
 
@@ -198,6 +211,36 @@ strong { font-weight: 600; color: var(--cb-gold-strong); }
   margin-top: 8px;
 }
 
+.explainer { background: var(--cb-panel); border-left: 4px solid var(--cb-gold-border); border-radius: 8px; padding: 18px 20px; margin-bottom: 16px; }
+.explainer p:last-child { margin-bottom: 0; }
+
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.split-col { padding: 18px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: 8px; }
+.split-col h4 { font-size: 13px; font-weight: 700; margin: 0 0 10px; color: var(--cb-gold-strong); }
+.split-col ul { margin: 0; padding-left: 20px; }
+.split-col li { font-size: 13px; margin: 6px 0; }
+
+.key-takeaway { background: rgba(2,132,199,0.1); border: 1px solid rgba(2,132,199,0.35); border-left: 4px solid #0284c7; padding: 14px 16px; border-radius: 8px; margin-top: 16px; font-size: 13px; }
+.key-takeaway strong { color: #38bdf8; }
+
+.quiz-block { margin: 14px 0 22px; }
+.quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+.options { display: grid; gap: 10px; }
+.opt { border: 1px solid var(--cb-border-strong); background: var(--cb-panel); color: var(--cb-text); border-radius: 8px; padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+.opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-bg-light); }
+.opt.correct { border-color: #39b979; background: rgba(57,185,121,0.14); }
+.opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.14); }
+.opt:disabled { opacity: 0.75; cursor: not-allowed; }
+.coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-bg-light); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+.coach.show { display: block; }
+.coach strong { color: var(--cb-gold-strong); }
+
+.footer-nav { display: grid; gap: 16px; margin: 8px 0 40px 0; }
+.footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border-strong); border-radius: 12px; text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
+.footer-nav-card:hover { border-color: var(--cb-gold); }
+.footer-nav-card .label { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); display: block; margin-bottom: 6px; }
+.footer-nav-card h3 { margin: 0; color: var(--cb-text); }
+
 footer {
   background: var(--cb-bg);
   border-top: 1px solid var(--cb-border);
@@ -205,83 +248,350 @@ footer {
   text-align: center;
   color: var(--cb-muted-2);
   font-size: 13px;
-  margin-top: 64px;
+  margin-top: 40px;
 }
+
+.mobile-select { display: none; }
 
 @media (max-width: 820px) {
   .shell { grid-template-columns: 1fr; }
   .side { display: none; }
+  .content { grid-column: 1; padding: 20px; }
   .top { flex-direction: column; height: auto; padding: 12px 20px; gap: 12px; }
-  .content { padding: 20px; }
+  .progress-bar { top: auto; }
   h1 { font-size: 28px; }
   h2 { font-size: 20px; }
+  .split-grid { grid-template-columns: 1fr; }
 
   .mobile-select {
+    display: block;
     width: 100%;
-    padding: 8px 12px;
+    padding: 10px 12px;
     background: var(--cb-card);
     color: var(--cb-gold);
     border: 1px solid var(--cb-border-strong);
     border-radius: 6px;
     font-weight: 600;
+    margin-bottom: 16px;
   }
 }
-
-.section-header { display: none; }
-.section-header.show { display: block; }
 </style>
 </head>
 <body>
 
 <div class="top">
-  <div class="top-title">Backline, Props & Wardrobe Pathway · Course 2</div>
-  <a href="../courses.html" class="exit-btn">← Back to Courses</a>
+  <div class="top-title">Department Systems</div>
+  <a href="../courses.html" class="exit-btn">← Exit Course</a>
 </div>
 
+<div class="progress-bar"><div class="progress-fill"></div></div>
+
 <div class="shell">
-  <div class="side" id="sidebar">
-    <div class="module-nav">
-      <div class="module-title">Department Systems</div>
-      <span class="lesson-link" style="color: var(--cb-muted-2); font-style: italic; padding-left: 8px;">Coming Soon</span>
-    </div>
-  </div>
+  <nav class="side">
+    <div class="module-nav" id="sidebar"></div>
+  </nav>
 
   <div class="content">
-    <h1>Backline, Props & Wardrobe Pathway · Course 2</h1>
-    <p>This course is under development. It will cover how backline, props, and wardrobe departments operate at scale, from pre-production planning through show execution and load-out.</p>
+    <select class="mobile-select" id="mobileSelect"></select>
 
-    <div class="cb-section">
-      <h2>Course Overview</h2>
-      <p>This comprehensive course will teach you how backline, props, and wardrobe departments function within large-scale production environments — understanding their unique workflows, cross-department coordination, and the critical role they play in show success.</p>
-      <div class="cb-panel">
-        <p style="margin: 0; color: var(--cb-muted);">Check back soon for the complete course content with lessons on department structure, ownership and custody, pre-production workflows, build protocols, and show discipline.</p>
-      </div>
+    <div class="card progress" id="progressCard">
+      <div class="rule" id="objective">Select a lesson to begin</div>
     </div>
 
-    <div class="cb-section">
-      <h2>Planned Lessons</h2>
-      <ul class="cb-list">
-        <li>Department Roles and Responsibilities</li>
-        <li>Ownership, Custody, and Accountability</li>
-        <li>Pre-Production Planning and Documentation</li>
-        <li>Build, Setup, and Configuration Workflows</li>
-        <li>Equipment Maintenance and Condition Tracking</li>
-        <li>Show Operation and Safe Load-Out</li>
-      </ul>
-    </div>
+    <div id="lessonContent"></div>
 
-    <div class="cb-section">
-      <h2>Back to Courses</h2>
-      <div class="cb-panel">
-        <p style="margin: 0; color: var(--cb-muted);"><a href="../courses.html" style="color: var(--cb-gold);">Return to the Courses page</a> to explore other learning pathways.</p>
-      </div>
-    </div>
+    <div class="footer-nav" id="footerNav"></div>
   </div>
 </div>
 
 <footer>
   <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
 </footer>
+
+<script>
+const modules = [
+  {
+    id: '1',
+    name: 'Asset Ownership, Identity & State',
+    lessons: [
+      {
+        id: '1.1',
+        name: 'Custody, Not Ownership',
+        obj: 'Understand assigned custody, and answer the ten questions that define accountability for a show-critical asset.',
+        content: `
+          <h2>Custody, Not Ownership</h2>
+          <div class="explainer">Course 1 taught you to move what you're told. Course 2 is about a different responsibility: <strong>you begin to become accountable for whether an assigned asset is the correct item, in the correct state, in the correct location, at the correct time, and returned or handed off correctly.</strong> This is <strong>assigned custody</strong>, not ownership in the legal sense — a department head keeps final authority, while you're responsible for a defined, assigned scope.</div>
+          <p>For any asset in your scope, you should be able to answer: what exactly is this item? Who or what does it belong to in the show workflow? What condition or preset/state should it be in? Where does it go? When must it be ready? What may I change without approval? How do I know it's ready? Who receives the handoff? Where does it return after use? What discrepancy requires immediate escalation?</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">Not every asset needs the same level of attention. Distinguish generic consumable/support items from rental-house assets, production-owned assets, venue/house assets, performer-owned or performer-specific items, show-specific props/costumes, and preset-dependent equipment. The point isn't legal title — it's that different assets have different tolerance for substitution, adjustment, damage, loss, or unauthorized use.</p>
+          <div class="key-takeaway"><strong>Key principle:</strong> The progression from Course 1 is move what you're told → understand what you're responsible for → verify and preserve its intended show state.</div>
+        `
+      },
+      {
+        id: '1.2',
+        name: 'State Is Part of the Asset',
+        obj: "Recognize that an asset's condition, settings, and location are part of what makes it show-ready.",
+        content: `
+          <h2>State Is Part of the Asset</h2>
+          <p>For show-critical equipment, "the item is present" isn't enough. Relevant state can include physical condition, orientation/location, accessory set, labels/identifiers, settings or adjustments, packing arrangement, performer assignment, preset location, clean/dirty/repair status, and charged/battery status where it applies.</p>
+          <div class="explainer">Course 1 already established that you shouldn't casually alter a sensitive show item. Here's why: <strong>the configured state can be part of what makes the asset show-ready.</strong> An amp set to a specific tone, a prop sitting at a specific mark, a costume hung in a specific order — the state isn't incidental, it's the point.</div>
+          <p>Practice a simple handoff discipline for anything whose loss, substitution, damage, or wrong preset could disrupt the show: <strong>received from → verified → used/staged → handed to → returned to.</strong> This doesn't need to become bureaucratic paperwork for every cable or stand — apply it proportionately, in line with what actually matters for that asset.</p>
+        `
+      }
+    ]
+  },
+  {
+    id: '2',
+    name: 'Setup Workflow & Readiness',
+    lessons: [
+      {
+        id: '2.1',
+        name: 'Setup Accountability: Backline & Props',
+        obj: 'Move from carrying gear carefully to verifying it is the right item, correctly placed, and ready.',
+        content: `
+          <h2>Setup Accountability: Backline &amp; Props</h2>
+          <p><strong>Backline</strong> setup-accountability goes beyond "carry the instrument or amp carefully." You identify the correct rig/item for the correct performer or position, preserve existing settings unless you're specifically assigned to change them, verify required accessories and components are present, place equipment according to the stage plot or department instruction, keep performer-owned items controlled and protected, and confirm readiness with the responsible technician or department lead.</p>
+          <div class="explainer">Helping place a rig doesn't authorize you to alter an artist's instrument setup, amplifier configuration, pedalboard, drum tuning, or other performer-specific settings. Setup is distinct from tuning, repair, or custom adjustment — and that line doesn't move just because you're the one who happened to place the gear.</div>
+          <p><strong>Props</strong> is a continuity-sensitive department, not a load-in labor pool — traveling shows carry a dedicated Head Prop-Person and local crews specifically because props stay show-critical through performance and strike. Your job: confirm correct prop identity, correct preset location, orientation and readiness, safe handoff and reset, and prompt damage/missing-item reporting. Never substitute or modify a prop without approval, and remember a prop's exact placement can carry timing, performer, scenic, effects, or safety implications that aren't obvious just from looking at it.</p>
+        `
+      },
+      {
+        id: '2.2',
+        name: 'Setup Accountability: Wardrobe & Reconciliation',
+        obj: 'Apply the same accountability model to wardrobe, and build the habit of reconciling assigned items at strike.',
+        content: `
+          <h2>Setup Accountability: Wardrobe &amp; Reconciliation</h2>
+          <p>Wardrobe departments on tour routinely carry substantial dedicated performance crews and a separate laundry assignment — this is workflow well beyond unloading costume cases. Track performer assignment, preset/location, condition and repair status, and the change/reset sequence between scenes or shows. Separate clean, used, and repair-needed items according to your department's actual procedure, treat accessories as part of the complete costume package, and escalate fit, damage, missing-item, or contamination issues rather than deciding on your own how to handle them.</p>
+          <div class="explainer">Strike isn't complete just because equipment is offstage. <strong>Reconciliation</strong> is the habit that closes the loop: <strong>what should be here → what is actually here → what condition is it in → what action is required before closeout.</strong> At a junior level this might be a checklist, a case count, a labeled-position check, or a lead-directed inventory pass — not a universal touring standard, but a habit that matters every time.</div>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">Correct packing, case assignment, count, condition reporting, and handoff matter because the next venue or next performance depends on them. A case that's merely "loaded on the truck" hasn't actually been reconciled.</p>
+          <div class="key-takeaway"><strong>Key principle:</strong> Backline, props, and wardrobe are separate crafts, but the underlying discipline is the same — identify, verify, preserve, and reconcile.</div>
+        `
+      }
+    ]
+  },
+  {
+    id: '3',
+    name: 'Escalation & Exception Handling',
+    lessons: [
+      {
+        id: '3.1',
+        name: 'The Discrepancy Ladder',
+        obj: 'Respond to a missing, damaged, or mismatched asset with accurate escalation instead of improvisation.',
+        content: `
+          <h2>The Discrepancy Ladder</h2>
+          <div class="explainer">The single most important Course 2 behavior: <strong>do not silently improvise around a discrepancy.</strong> Work the ladder in order: <strong>stop the affected setup/reset if continuing could create the wrong show state → identify the discrepancy precisely → preserve the current condition rather than making a speculative change → notify the assigned lead/head/technician → record or mark the issue using the department's actual workflow if instructed → resume only after the responsible person gives direction.</strong></div>
+          <p>Scenarios worth thinking through in advance: the correct case is present but one expected accessory is missing; two visually similar props carry conflicting labels; a performer-specific backline item arrives with an unfamiliar setting; a costume component gets damaged during reset; a preset location is occupied or unsafe; an item turns up in the wrong case at strike; a rental asset's identifier doesn't match the expected package.</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">The desired behavior in every one of these is <strong>accurate escalation, not heroics.</strong> Guessing your way past a discrepancy to keep things moving is exactly the failure mode this ladder exists to prevent.</p>
+        `
+      },
+      {
+        id: '3.2',
+        name: 'Closed-Loop Communication',
+        obj: 'Report a discrepancy in a format the lead can act on immediately.',
+        content: `
+          <h2>Closed-Loop Communication</h2>
+          <p>A vague report like "something is wrong with the prop case" wastes time and forces the lead to re-investigate what you already know. Use a format that closes the loop on its own: <strong>asset + location + observed state + action already taken + requested decision.</strong></p>
+          <div class="explainer">Example: <em>"Guitar rack B, stage right: the labeled power supply is not in the case. I have not substituted anything. Who should verify the spare?"</em> That single sentence names the asset, the location, the problem, confirms nothing was improvised, and asks a specific question the lead can answer immediately.</div>
+          <p>State what has and hasn't been changed, repeat critical instructions back when it matters, and confirm completion once you've acted on direction. This is a Crew Blueprint communication framework, not a quoted industry standard — but the underlying habit, specific over vague, holds in every department.</p>
+        `
+      }
+    ]
+  },
+  {
+    id: '4',
+    name: 'Knowledge Check',
+    lessons: [
+      {
+        id: '4.1',
+        name: 'Quick Knowledge Check',
+        obj: 'Test your understanding of custody, state, and escalation.',
+        content: `
+          <h2>Quick Knowledge Check</h2>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">What does "assigned custody" mean for a junior specialist?</p>
+            <div class="options" data-q="bp2q1">
+              <button class="opt" data-c="0">You now own the asset in the legal/property sense.</button>
+              <button class="opt" data-c="1">You're responsible for a defined scope while the department head keeps final authority.</button>
+              <button class="opt" data-c="0">You can make any change you think improves the setup.</button>
+            </div>
+            <div class="coach" id="bp2q1c"><strong>Why:</strong> Assigned custody is accountability for a defined subset of assets or tasks, not ownership and not unlimited authority over them.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">You're asked to place a performer's amp. Does that authorize you to adjust its settings?</p>
+            <div class="options" data-q="bp2q2">
+              <button class="opt" data-c="0">Yes, small adjustments are part of setup.</button>
+              <button class="opt" data-c="1">No. Preserve existing settings unless you're specifically assigned to change them.</button>
+              <button class="opt" data-c="0">Yes, as long as you remember the original settings.</button>
+            </div>
+            <div class="coach" id="bp2q2c"><strong>Why:</strong> Setup is distinct from tuning, repair, or custom adjustment. Placing the gear doesn't move that line.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Is strike complete once equipment is offstage?</p>
+            <div class="options" data-q="bp2q3">
+              <button class="opt" data-c="0">Yes — once it's off the stage, the job is done.</button>
+              <button class="opt" data-c="1">No. Reconciliation confirms what should be here, what's actually here, and its condition.</button>
+              <button class="opt" data-c="0">Yes, as long as it's somewhere in the truck.</button>
+            </div>
+            <div class="coach" id="bp2q3c"><strong>Why:</strong> The next venue or next performance depends on correct packing, count, and condition reporting — not just gear being physically offstage.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">An expected accessory is missing from an otherwise-correct case. What's the right response?</p>
+            <div class="options" data-q="bp2q4">
+              <button class="opt" data-c="0">Substitute something similar so setup can continue.</button>
+              <button class="opt" data-c="0">Finish the rest of the setup and mention it later if it comes up.</button>
+              <button class="opt" data-c="1">Stop, identify the discrepancy precisely, and notify the lead.</button>
+            </div>
+            <div class="coach" id="bp2q4c"><strong>Why:</strong> The discrepancy ladder exists specifically to prevent silent improvisation. Preserve the current condition and escalate instead of guessing.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Which report follows the closed-loop communication format?</p>
+            <div class="options" data-q="bp2q5">
+              <button class="opt" data-c="0">"Something's off with the prop case."</button>
+              <button class="opt" data-c="1">"Guitar rack B, stage right: the labeled power supply is missing. I haven't substituted anything. Who should verify the spare?"</button>
+              <button class="opt" data-c="0">"I think someone should check the backline setup at some point."</button>
+            </div>
+            <div class="coach" id="bp2q5c"><strong>Why:</strong> That report names the asset, the location, the observed state, confirms nothing was improvised, and asks a specific, answerable question — a vague report forces the lead to re-investigate from scratch.</div>
+          </div>
+        `
+      },
+      {
+        id: '4.2',
+        name: 'Key Takeaways',
+        obj: 'Remember the core principles of ownership and accountability.',
+        content: `
+          <h2>Key Takeaways</h2>
+          <ul class="cb-list">
+            <li>The progression from Course 1 is move what you're told → understand what you're responsible for → verify and preserve its intended show state.</li>
+            <li>Assigned custody is accountability for a defined scope, not legal ownership and not unlimited authority.</li>
+            <li>An asset's state — condition, settings, location, preset — is part of what makes it show-ready, not incidental detail.</li>
+            <li>Backline, props, and wardrobe are separate crafts that share one discipline: identify, verify, preserve, reconcile.</li>
+            <li>Setup accountability never includes unauthorized tuning, repair, or custom adjustment of a performer-specific item.</li>
+            <li>Do not silently improvise around a discrepancy — work the ladder: stop, identify, preserve, notify, record if instructed, resume only on direction.</li>
+            <li>Report with the closed-loop format: asset + location + observed state + action already taken + requested decision.</li>
+            <li>This course does not make you a Head Prop-Person, Head Wardrobe, artist instrument technician, department supervisor, or independent repair specialist.</li>
+          </ul>
+        `
+      },
+      {
+        id: '4.3',
+        name: 'Sources & References',
+        obj: 'Explore the research behind this course.',
+        content: `
+          <h2>Sources</h2>
+          <p>This course was built from research citing current touring department structures and specialist role descriptions. Verify current applicability before relying on any of these for an actual job.</p>
+          <ul class="cb-list">
+            <li><strong>IATSE — The Outsiders Tour</strong> — <a href="https://iatse.net/shows/the-outsiders-tour/" target="_blank" rel="noopener noreferrer">iatse.net</a></li>
+            <li><strong>IATSE — The Notebook Tour</strong> — <a href="https://iatse.net/shows/the-notebook/" target="_blank" rel="noopener noreferrer">iatse.net</a></li>
+            <li><strong>IATSE — Suffs</strong> — <a href="https://iatse.net/shows/suffs/" target="_blank" rel="noopener noreferrer">iatse.net</a></li>
+            <li><strong>IATSE — Hamilton – Philip Tour</strong> — <a href="https://iatse.net/shows/hamilton-philip-tour/" target="_blank" rel="noopener noreferrer">iatse.net</a></li>
+            <li><strong>IATSE — Beauty and the Beast North American Tour</strong> — <a href="https://iatse.net/shows/beauty-and-the-beast-north-american-tour/" target="_blank" rel="noopener noreferrer">iatse.net</a></li>
+            <li><strong>PRG Crew Portal — Backline Technician classification</strong> — <a href="https://crew.prg.com/en/" target="_blank" rel="noopener noreferrer">crew.prg.com</a></li>
+          </ul>
+          <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong>What this course does not do:</strong> it does not authorize or qualify you to act as a Head Prop-Person, Head Wardrobe, artist instrument technician, department supervisor, or independent repair specialist. There is no single national U.S. standard for asset accountability across these departments — practices vary by production, rental vendor, artist, venue, and union local. This course teaches a transferable reasoning framework, not a substitute for your department's actual procedure.</p>
+        `
+      }
+    ]
+  }
+];
+
+function buildSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const select = document.getElementById('mobileSelect');
+  sidebar.innerHTML = '';
+  select.innerHTML = '';
+
+  modules.forEach(mod => {
+    const modDiv = document.createElement('div');
+    modDiv.innerHTML = `<div class="module-title">${mod.name}</div>`;
+
+    mod.lessons.forEach(lesson => {
+      const link = document.createElement('button');
+      link.className = 'lesson-link';
+      link.textContent = lesson.name;
+      link.dataset.idx = lesson.id;
+      link.onclick = () => render(lesson.id);
+      modDiv.appendChild(link);
+
+      const opt = document.createElement('option');
+      opt.value = lesson.id;
+      opt.textContent = `${mod.name} > ${lesson.name}`;
+      select.appendChild(opt);
+    });
+    sidebar.appendChild(modDiv);
+  });
+}
+
+function getModuleLesson(idx) {
+  const [modIdx, lesIdx] = idx.split('.');
+  const mod = modules.find(m => m.id === modIdx);
+  const lesson = mod.lessons.find(l => l.id.endsWith('.' + lesIdx));
+  return { mod, lesson };
+}
+
+function render(idx) {
+  const { mod, lesson } = getModuleLesson(idx);
+  document.getElementById('objective').textContent = lesson.obj;
+  document.getElementById('lessonContent').innerHTML = lesson.content;
+  document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+  const activeLink = document.querySelector(`[data-idx="${idx}"]`);
+  if (activeLink) activeLink.classList.add('active');
+  document.getElementById('mobileSelect').value = idx;
+
+  const allLessons = [];
+  modules.forEach(m => m.lessons.forEach(l => allLessons.push({ ...l, modId: m.id })));
+  const currentIdx = allLessons.findIndex(l => l.id === lesson.id);
+
+  document.querySelector('.progress-fill').style.width = ((currentIdx + 1) / allLessons.length) * 100 + '%';
+
+  renderFooterNav(allLessons, currentIdx);
+  window.scrollTo(0, 0);
+}
+
+function renderFooterNav(allLessons, currentIdx) {
+  const nav = document.getElementById('footerNav');
+  nav.innerHTML = '';
+
+  if (currentIdx > 0) {
+    const prev = allLessons[currentIdx - 1];
+    const prevLink = document.createElement('a');
+    prevLink.href = '#';
+    prevLink.className = 'footer-nav-card';
+    prevLink.innerHTML = `<span class="label">← Previous</span><h3>${prev.name}</h3>`;
+    prevLink.onclick = e => { e.preventDefault(); render(prev.id); };
+    nav.appendChild(prevLink);
+  }
+
+  if (currentIdx < allLessons.length - 1) {
+    const next = allLessons[currentIdx + 1];
+    const nextLink = document.createElement('a');
+    nextLink.href = '#';
+    nextLink.className = 'footer-nav-card';
+    nextLink.innerHTML = `<span class="label">Next →</span><h3>${next.name}</h3>`;
+    nextLink.onclick = e => { e.preventDefault(); render(next.id); };
+    nav.appendChild(nextLink);
+  }
+}
+
+buildSidebar();
+render('1.1');
+document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
+</script>
 
 </body>
 </html>
