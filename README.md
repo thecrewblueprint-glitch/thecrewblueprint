@@ -73,6 +73,7 @@ for the current public owner-review state, run:
 ```bash
 node scripts/build-tiered-courses.mjs --owner-review-live
 node scripts/apply-owner-review-live.mjs
+node scripts/validate-fundamentals-sequence.mjs
 node scripts/validate-tiered-courses.mjs
 node scripts/validate-owner-review-live.mjs
 ```

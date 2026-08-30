@@ -43,6 +43,7 @@ export const fieldCourses = [
           objective: 'Form consistent over and under loops without forcing twist or violating the directed coil diameter.',
           blocks: [
             { type: 'evidence', paragraphs: ['QSC demonstrates a repeatable over-loop and under-loop motion. Hosa explains why it works: repeated over-over loops add twist in one direction, while the under loop counters the twist added by the prior loop.'] },
+            { type: 'evidence', heading: 'Watch the hand motion before practicing', paragraphs: ['<a class="video-demo-link" href="https://training.qsc.com/mod/book/tool/print/index.php?id=1715" target="_blank" rel="noopener noreferrer">Watch QSC’s “How to properly roll a cable” demonstration →</a><span class="video-demo-note">The official QSC page includes the visual demonstration and a time-coded transcript. External video opens only when you choose it.</span>'] },
             { heading: 'Controlled sequence', type: 'sequence', items: ['Hold the receiving end and let the cable relax.', 'Gather a length that matches the technician-directed diameter.', 'Form the first over loop by letting the cable fall into its natural curve.', 'Reverse the working-hand orientation and form the under loop.', 'Continue alternating without twisting the jacket into place.', 'When a loop resists, lower tension and let the cable rotate naturally. If it still resists, stop and ask.'] },
             { type: 'callout', heading: 'What the observer should see', paragraphs: ['The loops stay relaxed and similar in size. The cable does not fight the learner. The connectors remain controlled. A left-handed learner may mirror the motion; the observable skill is the alternating lay, not one required hand.'] }
           ]
@@ -88,7 +89,7 @@ export const fieldCourses = [
       checklist: ['Technician confirms cable and method.', 'Learner completes six controlled alternating loops.', 'Observer checks connector control, relaxed lay, coil diameter, tie, destination, and stop judgment.', 'Employer or department authorization, if any, remains a separate record.']
     },
     sources: [
-      { label: 'QSC — Cable coiling training', url: 'https://training.qsc.com/mod/book/tool/print/index.php?id=1715' },
+      { label: 'QSC — How to properly roll a cable (video and transcript)', url: 'https://training.qsc.com/mod/book/tool/print/index.php?id=1715' },
       { label: 'Hosa Technology — How to wrap a cable', url: 'https://hosatech.com/press-release/how-to-wrap-a-cable/' },
       { label: 'Neutrik — opticalCON handling FAQ', url: 'https://www.neutrik.com/en/neutrik/faq/opticalcon' },
       { label: 'Belden — Cable installation and bend awareness', url: 'https://www.belden.com/blog/copper-cable-installation-best-practices-be-aware-of-the-why' }

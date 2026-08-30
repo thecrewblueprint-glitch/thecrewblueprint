@@ -20,27 +20,27 @@ const packetGroups = [
       ['02 Map', '02-source-master-map.md', 'Canonical evidence map', 'Modules 1–10', 'Active crosswalk'],
       ['P14', '14-stagehand-fundamentals-original-source.md', 'Original course source archive', 'Modules 1–10', 'Lineage archive'],
       ['P14A', '14A-stagehand-fundamentals-module-1-source.json.md', 'Original Module 1 source archive', 'Module 1', 'Lineage archive'],
-      ['P15', '15-stagehand-fundamentals-entry-level-role-validation.md', 'Entry-level role validation', 'Modules 1 and 6', 'Active evidence'],
+      ['P15', '15-stagehand-fundamentals-entry-level-role-validation.md', 'Entry-level role validation', 'Modules 1 and 5', 'Active evidence'],
       ['P16', '16-stagehand-fundamentals-safety-ppe-validation.md', 'Safety and PPE validation', 'Modules 2 and 3', 'Active evidence'],
       ['P17', '17-stagehand-fundamentals-jobsite-hazard-awareness-validation.md', 'Jobsite hazard-awareness validation', 'Module 4', 'Active evidence'],
-      ['P18', '18-stagehand-fundamentals-load-in-load-out-validation.md', 'Load-in and load-out validation', 'Modules 5 and 9', 'Active evidence'],
-      ['P19', '19-stagehand-fundamentals-tools-handling-hiring-career-growth-validation.md', 'Tools, handling, hiring, and career-growth validation', 'Modules 8 and 10', 'Active evidence'],
+      ['P18', '18-stagehand-fundamentals-load-in-load-out-validation.md', 'Load-in and load-out validation', 'Modules 6 and 8', 'Active evidence'],
+      ['P19', '19-stagehand-fundamentals-tools-handling-hiring-career-growth-validation.md', 'Tools, handling, hiring, and career-growth validation', 'Modules 7 and 10', 'Active evidence'],
       ['P20', '20-stagehand-fundamentals-gap-audit-and-supplemental-validation.md', 'Canonical gap audit and supplemental validation', 'Modules 1–10', 'Active evidence'],
       ['P20A', '20A-stagehand-fundamentals-gap-audit-addendum.md', 'Targeted gap-audit addendum', 'Modules 1–10', 'Active companion'],
       ['CBR-021-SHF-AUDIT', '21-stagehand-fundamentals-authenticity-audit-and-bibliography.md', 'Authenticity audit and bibliography evidence', 'Modules 1–10', 'Active audit'],
     ],
   },
   {
-    name: 'Module 7 department-awareness support',
+    name: 'Module 9 department-awareness support',
     description: 'Department packets used to keep the awareness-level overview accurate without teaching specialist authority.',
     packets: [
-      ['P07', '07-ground-hand-lighting-support.md', 'Lighting support boundaries', 'Module 7', 'Active evidence'],
-      ['P08', '08-ground-hand-video-wall-support.md', 'Video-wall support boundaries', 'Module 7', 'Active evidence'],
-      ['P08A', '08A-note-led-wall-model-specific-handling-boundaries.md', 'LED-wall model-specific clarification', 'Module 7', 'Active companion'],
-      ['P09', '09-ground-hand-audio-support.md', 'Audio support boundaries', 'Module 7', 'Active evidence'],
-      ['P10', '10-ground-hand-staging-carpentry-support.md', 'Staging and carpentry support boundaries', 'Module 7', 'Active evidence'],
-      ['P11', '11-ground-hand-backline-props-wardrobe-support.md', 'Backline, props, and wardrobe support boundaries', 'Module 7', 'Active evidence'],
-      ['P11A', '11A-note-sensitive-show-items-and-performer-owned-gear.md', 'Sensitive and performer-owned item clarification', 'Module 7', 'Active companion'],
+      ['P07', '07-ground-hand-lighting-support.md', 'Lighting support boundaries', 'Module 9', 'Active evidence'],
+      ['P08', '08-ground-hand-video-wall-support.md', 'Video-wall support boundaries', 'Module 9', 'Active evidence'],
+      ['P08A', '08A-note-led-wall-model-specific-handling-boundaries.md', 'LED-wall model-specific clarification', 'Module 9', 'Active companion'],
+      ['P09', '09-ground-hand-audio-support.md', 'Audio support boundaries', 'Module 9', 'Active evidence'],
+      ['P10', '10-ground-hand-staging-carpentry-support.md', 'Staging and carpentry support boundaries', 'Module 9', 'Active evidence'],
+      ['P11', '11-ground-hand-backline-props-wardrobe-support.md', 'Backline, props, and wardrobe support boundaries', 'Module 9', 'Active evidence'],
+      ['P11A', '11A-note-sensitive-show-items-and-performer-owned-gear.md', 'Sensitive and performer-owned item clarification', 'Module 9', 'Active companion'],
     ],
   },
   {
@@ -48,11 +48,11 @@ const packetGroups = [
     description: 'Earlier research that informs course positioning, career context, safety sequencing, department branching, and training boundaries. It is context, not a claim that every finding appears in a lesson.',
     packets: [
       ['P01', '01-general-stagehand-career-levels-us-live-events.md', 'General stagehand career levels', 'Modules 1 and 10 context', 'Background research'],
-      ['P02', '02-department-skill-progressions-us-live-events.md', 'Department skill progressions', 'Modules 7 and 10 context', 'Background research'],
+      ['P02', '02-department-skill-progressions-us-live-events.md', 'Department skill progressions', 'Modules 9 and 10 context', 'Background research'],
       ['P03', '03-live-events-career-lanes-warehouse-touring-venue.md', 'Warehouse, touring, and venue career lanes', 'Modules 1 and 10 context', 'Background research'],
       ['P04', '04-safety-training-timing-crowd-weather-electrical-risk-assessment.md', 'Safety-training timing and risk awareness', 'Modules 2–4 context', 'Background research'],
       ['P04A', '04A-note-stagehand-public-area-material-interaction-awareness.md', 'Public-area interaction clarification', 'Module 4 context', 'Active companion'],
-      ['P05', '05-stage-management-and-cross-cutting-production-leadership.md', 'Stage management and production leadership', 'Modules 1 and 6 context', 'Background research'],
+      ['P05', '05-stage-management-and-cross-cutting-production-leadership.md', 'Stage management and production leadership', 'Modules 1 and 5 context', 'Background research'],
       ['P06', '06-training-certification-curriculum-progression-models.md', 'Training and certification progression models', 'Course-boundary context', 'Background research'],
     ],
   },
@@ -252,7 +252,7 @@ const sourceRows = sortedSources.map((source) => {
 const provenanceHtml = `<!-- GENERATED:FUNDAMENTALS_PROVENANCE:START -->
 <div class="section" id="research-packets">
   <h2>📚 Complete Research Packet Lineage</h2>
-  <p><strong>${allPackets.length} Fundamentals-relevant research, archive, map, audit, and companion records are indexed below.</strong> Direct evidence, Module 7 department support, and background curriculum context are labeled separately so a background packet is not mistaken for proof of every current lesson claim.</p>
+  <p><strong>${allPackets.length} Fundamentals-relevant research, archive, map, audit, and companion records are indexed below.</strong> Direct evidence, Module 9 department support, and background curriculum context are labeled separately so a background packet is not mistaken for proof of every current lesson claim.</p>
   <div class="warning-box"><strong>Scope:</strong> This course page includes every collected packet used for Stagehand Fundamentals lineage, validation, department-awareness support, or documented curriculum context. Research written only for later Course 2, Course 3, lead, supervisor, strategic, or field-skill courses is not presented as Fundamentals evidence. The complete project-wide 60-file inventory remains available in the Research Corpus Run Log below.</div>
   ${packetGroups.map(renderPacketGroup).join('\n')}
   <h3>Related provenance and architecture records</h3>
@@ -344,6 +344,29 @@ const generatedScript = `<!-- GENERATED:FUNDAMENTALS_PROVENANCE_SCRIPT:START -->
 <!-- GENERATED:FUNDAMENTALS_PROVENANCE_SCRIPT:END -->`;
 
 let page = await readFile(bibliographyPath, 'utf8');
+
+const canonicalModuleMap = new Map([
+  [1, 1], [2, 2], [3, 3], [4, 4], [5, 6],
+  [6, 5], [7, 9], [8, 7], [9, 8], [10, 10]
+]);
+const provenanceStart = '<!-- GENERATED:FUNDAMENTALS_PROVENANCE:START -->';
+const provenanceIndex = page.indexOf(provenanceStart);
+if (provenanceIndex < 0) throw new Error('Could not find the generated provenance start marker.');
+const numberingMarker = '<!-- FUNDAMENTALS_NUMBERING:CANONICAL -->';
+let curatedSection = page.slice(0, provenanceIndex);
+if (!curatedSection.includes(numberingMarker)) {
+  const stillUsesLegacyLabels = curatedSection.includes('Communication Phrases (Module 6)')
+    || curatedSection.includes('Modules 5, 8, 9')
+    || curatedSection.includes('Hand & Power Tools</td><td>Module 8');
+  if (stillUsesLegacyLabels) {
+    curatedSection = curatedSection.replace(
+      /\b(Modules?) (\d+(?:(?:,\s*| and )\d+)*)/g,
+      (match, label, numbers) => `${label} ${numbers.replace(/\d+/g, (value) => String(canonicalModuleMap.get(Number(value)) ?? value))}`,
+    );
+  }
+  curatedSection = `${curatedSection}${numberingMarker}`;
+}
+page = `${curatedSection}${page.slice(provenanceIndex)}`;
 
 page = page.replace(
   /<nav>.*?<\/nav>/s,

@@ -33,7 +33,7 @@ a:hover { color: #ffe36d; }
 .top {
   position: fixed;
   inset: 0 0 auto 0;
-  min-height: 68px;
+  min-height: 94px;
   z-index: 100;
   display: grid;
   grid-template-columns: minmax(220px, 1fr) minmax(240px, 340px) auto;
@@ -44,8 +44,16 @@ a:hover { color: #ffe36d; }
   border-bottom: 1px solid var(--cb-border-strong);
 }
 
-.brand { font-weight: 900; font-size: 15px; }
-.brand span, .top-title { color: var(--cb-gold); }
+.brand {
+  width: 180px;
+  height: 52px;
+  overflow: hidden;
+  background: url("../images/crew-blueprint-logo-master.jpeg") center -126px / 180px auto no-repeat;
+  color: transparent;
+  font-size: 0;
+  white-space: nowrap;
+}
+.brand span { color: transparent; }
 .top-title {
   margin-top: 2px;
   font-size: 12px;
@@ -86,12 +94,12 @@ a:hover { color: #ffe36d; }
 .shell {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
-  min-height: calc(100vh - 68px);
-  padding-top: 68px;
+  min-height: calc(100vh - 94px);
+  padding-top: 94px;
 }
 .side {
   position: fixed;
-  top: 68px;
+  top: 94px;
   bottom: 0;
   left: 0;
   width: 260px;
@@ -279,6 +287,21 @@ strong { color: var(--cb-gold-strong); }
 .source-list { overflow-wrap: anywhere; }
 .source-list li { margin-bottom: 12px; color: var(--cb-muted); }
 .source-list a { font-weight: 700; }
+.video-demo-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin: 2px 0 9px;
+  padding: 10px 14px;
+  color: var(--cb-bg-deep);
+  background: var(--cb-gold);
+  border-radius: 8px;
+  font-weight: 900;
+  text-decoration: none;
+}
+.video-demo-link:hover,
+.video-demo-link:focus-visible { color: var(--cb-bg-deep); background: var(--cb-gold-strong); }
+.video-demo-note { display: block; color: var(--cb-muted); font-size: 13px; }
 .footer-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
 .footer-nav-card {
   min-height: 94px;
