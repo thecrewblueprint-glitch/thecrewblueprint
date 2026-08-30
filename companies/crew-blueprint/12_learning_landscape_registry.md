@@ -5,6 +5,10 @@
 
 ---
 
+> **Current authority note (2026-08-30):** This is a historical form registry, not the current curriculum-build authority. Use `research/RESEARCH_QUEUE.md`, `research/STAGEHAND_FUNDAMENTALS_ARCHITECTURE_AUDIT_2026-08-30.md`, and `research/CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md` for current status and release gates. A prototype, source packet, course completion, or simulation result does not establish practical competency, employer authorization, qualification, or certification. Field Skills and advanced-responsibility material remain gated where those records say so.
+
+---
+
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -24,9 +28,9 @@ Three distinct pedagogical approaches were designed, built, and tested for the C
 
 | Form | Structure | Pedagogy | Audience | Cognitive Load | Status |
 |------|-----------|----------|----------|-----------------|--------|
-| **1** | Single-file SPA, 40 micro-lessons (1.1–10.4) | Retrieval practice + spacing + dual-coding | Level 1: Zero-experience ground hands | Low | ✓ Deployed |
+| **1** | Part-filtered SPA, 34 micro-lessons across 10 modules | Retrieval practice + spacing + dual-coding | Foundation: Zero-experience ground hands | Low | ✓ Deployed; four-part revision under review |
 | **2** | WebGL 3D first-person scenes (Three.js), safe-failure mechanics | Embodied learning + consequential feedback + learn-do-check-debrief | Level 2–3: Specialist skill atoms + workflows | High | ⚠️ Prototype (Lighting Hand complete, others queued) |
-| **3** | Multi-page courses with quizzes, glossaries, scenario drills | Conceptual depth + spaced retrieval + scenario simulation | Level 2–3: Department specialization + mastery | Medium | ✓ Partial deployment (5 Course 1s, 2 Course 2s live) |
+| **3** | Department courses with quizzes, glossaries, and scenario drills | Conceptual depth + spaced retrieval + scenario simulation | Department Support and Department Systems, both under responsible-lead authority | Medium | ✓ 5 Course 1s and 5 Course 2s live |
 
 Each form excels at different skill levels, has inherent scaling limits, and requires pedagogical adaptation for higher complexity levels. This registry documents all three and provides decision framework for building Level 4+ content.
 
@@ -42,9 +46,9 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 
 ### Architecture
 - Single self-contained HTML file (all CSS/JS inlined, no external dependencies)
-- 40 micro-lessons organized as 1.1–10.4 across 10 modules
+- 34 micro-lessons organized across 10 modules and four focused delivery parts
 - Attempt-before-reveal decision scenarios (learner commits answer before seeing explanation)
-- localStorage-based progress tracking
+- In-session position display for the selected part; no durable completion record is claimed
 - Mobile-responsive navigation (desktop sidebar + mobile select dropdown)
 - Progress bar showing overall completion % and lesson index
 
@@ -56,7 +60,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 - Safe-failure scenarios: judgment tested without real-world consequences
 
 **Evidence:**
-- Micro-module design (40 vs. 10) reduces per-lesson cognitive load
+- Micro-module design (34 lessons across 10 modules) reduces per-view cognitive load
 - Attempt-before-reveal pattern leverages retrieval practice
 - SVG diagrams (venue layout, load-in sequence, department boundaries, etc.) support spatial learning
 - Delayed retrieval (Module 1 concepts reappear in Modules 4, 6, 9 in changed contexts)
@@ -76,7 +80,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 - ✓ Low prerequisite knowledge (works for truly novice audiences with no prior event experience)
 - ✓ Safe-failure scenarios teach judgment without physical risk
 - ✓ Self-paced, discrete training event (can be completed in one sitting or spread over several)
-- ✓ Breadth coverage (40 lessons touch all major operational concepts)
+- ✓ Breadth coverage (34 lessons touch the major entry-level operational concepts)
 - ✓ Dual-coding visual support (diagrams reinforce spatial reasoning)
 - ✓ Mobile-accessible (responsive design)
 
@@ -100,6 +104,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 | v1.0 | 2026-08-15 | GitHub Live | Archived | First full deployment (10 modules, no diagrams) |
 | v1.1 | 2026-08-16 | GitHub Live | Archived | Added visual diagrams (Tier 1-3, 8 SVGs total); sourcing audit; skill-level fixes |
 | v2.0 | 2026-08-17 | GitHub Live | **Current** | Complete + tested; all 8 diagrams integrated; practitioner-reviewed |
+| v2.1 | 2026-08-30 | Review branch | **Proposed** | Four-part navigation; accurate 34-lesson count; visible source and authority boundaries |
 
 ### Archive Locations
 - **Current live:** `courses/stagehand-fundamentals.html`
@@ -270,12 +275,12 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 ## Form 3: Traditional Structured Department Courses
 
 ### Deployment Status
-- **Live courses:** 5 Course 1s + 2 Course 2s deployed on thecrewblueprint/courses/
-- **Audience:** Entry-level stagehands ready for specialization (Course 1) and intermediates (Course 2)
-- **Skill level:** Level 2–3 (Department support → independent operation)
+- **Live courses:** 5 Course 1s and 5 Course 2s deployed on thecrewblueprint/courses/
+- **Audience:** Entry-level stagehands ready for Department Support (Course 1) and Department Systems understanding (Course 2)
+- **Skill level:** Assigned work and systems understanding under responsible-lead authority
 
 ### Architecture
-- **Format:** Multi-page HTML course sequence (one main page + 5–8 lesson pages)
+- **Format:** Structured HTML course delivered either as a lesson sequence or a single-page module/lesson shell
 - **Components:** Course overview, lesson pages with Q&A sections, quiz banks, glossaries, scenario drills, sources sections
 - **Interactivity:** In-page quiz (Likert-scale or multiple-choice), glossary tooltips, scenario read-throughs
 - **Progression:** Linear (lesson 1 → 2 → ... → n); quizzes are self-check only (not gated)
@@ -307,14 +312,14 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 | pathway-backline-01-support | Backline, Props, Wardrobe Support | 1 | Backline | 2 | 5 | 12 | 2 | Live | 2026-08-16 |
 | pathway-lighting-02-production-flow | Lighting Production Flow | 2 | Lighting | 5 | 12 | 18 | 5 | Live | 2026-08-16 |
 | pathway-video-02-led-video-systems | Large-Scale LED Video Systems | 2 | Video | 8 | 15 | 20 | 6 | Live | 2026-08-16 |
+| pathway-audio-02-live-systems | Live Sound Systems | 2 | Audio | 1 | 5 | — | — | Live | 2026-08-30 inventory |
+| pathway-staging-carpentry-02-deck-systems | Modular Deck Systems | 2 | Staging | 1 | 5 | — | — | Live | 2026-08-30 inventory |
+| pathway-backline-props-wardrobe-02-department-systems | Department Systems | 2 | Backline | 1 | 5 | — | — | Live | 2026-08-30 inventory |
 
-**Queued/Planned Courses:**
+**Remaining research-gated course:**
 
 | Course ID | Title | Level | Dept | Status | Notes |
 |-----------|-------|-------|------|--------|-------|
-| pathway-audio-02-live-sound | Live Sound Production | 2 | Audio | Not Started | Research exists (research/12–13A); 3–4 weeks to build |
-| pathway-staging-02-deck-rigging | Deck & Modular Rigging | 2 | Staging | Not Started | Research exists; 3–4 weeks to build |
-| pathway-backline-02-support-mastery | Backline Support Mastery | 2 | Backline | Not Started | Research exists; 3–4 weeks to build |
 | pathway-predictive-hazard-recognition | Predictive Hazard Recognition | 4 | Cross-dept | Not Started | Research exists (research/06); needs lead/crew-chief tier container design; new scope |
 
 ### Course Detail: Lighting Production Flow (v1.0)
@@ -343,7 +348,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 - ✓ Breadth (can teach 5–8 major concepts per course)
 - ✓ Scenario transfer (drills teach judgment in non-embodied contexts; good for pre-work prep)
 - ✓ Reference quality (glossaries, sources for future lookup; learners can return to course as job reference)
-- ✓ Fits expertise tiers (Course 1 = assist level; Course 2 = independent level)
+- ✓ Fits bounded tiers (Course 1 = assigned support; Course 2 = systems understanding)
 - ✓ Scalable for breadth (can build ~10–15 courses using established template)
 - ✓ Research-grounded (deep research packets behind each course + real source citations)
 
@@ -365,8 +370,9 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 | Version | Date | Deployment | Status | Notes |
 |---------|------|-----------|---------|-------|
 | v0.1 | 2026-08-15 | Draft | Archived | 5 Course 1 pathways drafted from research; not reviewed |
-| v1.0 | 2026-08-16 | GitHub Live | Current | 5 Course 1s + 2 Course 2s (Lighting, Video) deployed; reviewed + sources added |
-| v1.1 | Planned | TBD | Planned | After first learner feedback; troubleshooting case-study expansion; career-transition content |
+| v1.0 | 2026-08-16 | GitHub Live | Historical baseline | 5 Course 1s + 2 Course 2s (Lighting, Video) deployed; reviewed + sources added |
+| v1.1 | 2026-08-30 | GitHub Live | Current inventory | 5 Department Support Course 1s + 5 Department Systems Course 2s live; current Audio, Staging, and Backline handoffs are Packages 43–45 |
+| v1.2 | Planned | TBD | Planned | After first learner feedback; troubleshooting case-study expansion; career-transition content |
 
 ### Archive Strategy
 - **Current live:** `courses/pathway-{dept}-{level}-*.html`
@@ -377,7 +383,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 ### Scaling Assessment
 
 **To Level 3 (Independent specialist):** ⚠️ Partial
-- 2 Course 2s live but don't address career-transition question
+- All 5 Course 2s are live; career-transition and real learner-validation questions remain open
 - Teach systems knowledge but not judgment/troubleshooting
 - Recommendation: Redesign Course 2 to address career transition + add troubleshooting case studies; shift quiz from knowledge → diagnostic reasoning
 
@@ -403,7 +409,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 **Failure mode:** Unsafe behavior, missed hazards, communication breakdown
 
 **Pedagogical fit:** Form 1 (Micro-module hybrid) ✓
-- **Why:** Needs breadth (40 lessons), not depth; safety-first framing; spaced judgment practice
+- **Why:** Needs breadth (34 lessons), not depth; safety-first framing; spaced judgment practice
 - **Goal:** ~70% retention (enough for safe direction-following + employer onboarding)
 - **Status:** ✓ Complete & live (2026-08-17)
 
@@ -490,7 +496,7 @@ Each form excels at different skill levels, has inherent scaling limits, and req
 
 | Aspect | Level 1 | Level 2 | Level 3 | Level 4+ |
 |--------|---------|---------|---------|----------|
-| **Structure** | 40×5min lessons | 20×10min lessons | 10×20min + case studies | Mentorship-based |
+| **Structure** | 34 short lessons | 20×10min lessons | 10×20min + case studies | Mentorship-based |
 | **Quiz complexity** | 3–4 binary scenarios | 8–12 multi-choice | Diagnostic reasoning | Real decisions |
 | **Visual scaffolding** | High (8 diagrams) | Very high (system diagrams) | Essential (architecture diagrams) | Not applicable |
 | **Scaling verdict** | ✓ Complete | ✓ With modifications | ⚠️ Limited | ✗ No |

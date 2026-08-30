@@ -16,22 +16,22 @@ pace, language, safety mindset, and crew expectations behind load-ins, show
 calls, and load-outs — the real-world basics nobody hands you before your
 first call.
 
-The flagship course, **Stagehand Fundamentals**, is a 10-module orientation
-course covering what a stagehand actually does, safety mindset, PPE, venue
-and jobsite awareness, load-in/load-out fundamentals, crew communication,
-department basics, tools/gear handling, and getting hired and called back.
-Beyond that, department-specific **Pathway courses** (Lighting, Video, Audio,
-Staging & Carpentry, Backline/Props/Wardrobe) go deeper into ground-hand
-support for each discipline, with a second, more technical course tier for
-Lighting and Video already live.
+The flagship course, **Stagehand Fundamentals**, retains 10 modules and 34
+micro-lessons while presenting them through four focused parts. It covers what
+a stagehand actually does, safety mindset, PPE, venue and jobsite awareness,
+load-in/load-out fundamentals, crew communication, department basics,
+tools/gear handling, and getting hired and called back. Beyond that, five
+department-specific **Course 1: Department Support** pathways teach assigned
+work under direction, and five **Course 2: Department Systems** pathways build
+systems understanding without implying independent operating authority.
 
 ## Structure
 
 - **Root** (`index.html`, `about.html`, `courses.html`, `resources.html`,
   `contact.html`, plus legal pages) — the public marketing site.
-- **`/courses`** — Stagehand Fundamentals (10 modules), the five Course 1
-  department pathway pages, and the Lighting/Video Course 2 pathway courses
-  (overview + numbered lesson pages).
+- **`/courses`** — Stagehand Fundamentals (four parts, 10 modules, 34 lessons),
+  five Department Support Course 1 pathways, and five Department Systems
+  Course 2 pathways.
 - **`/resources`** — the Resource Hub: fast-facts reference pages (gear and
   tools, load-in/load-out quick reference, field hand-signal guide, pay and
   call-sheet basics, and more).
@@ -45,7 +45,7 @@ Lighting and Video already live.
 - **`/css`** — the shared site stylesheet (`theme.css`) — dark/gold design
   system, shared component classes (cards, panels, diagrams, icon rows).
 - **`/images`**, **`/js`** — site assets and the shared nav/interaction script.
-- **`lms-dashboard.html`** — a lightweight learner-progress dashboard.
+- **`lms-dashboard.html`** — the four-part Stagehand Fundamentals course map.
 
 ## Content Sourcing
 

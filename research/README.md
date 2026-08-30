@@ -14,6 +14,11 @@ Research files collected here are intended to be:
 
 Current priorities, dependencies, accepted curriculum direction, and completion criteria are tracked in [RESEARCH_QUEUE.md](RESEARCH_QUEUE.md).
 
+The current implementation handoff is split into two records:
+
+- [Stagehand Fundamentals Architecture Audit](STAGEHAND_FUNDAMENTALS_ARCHITECTURE_AUDIT_2026-08-30.md) — the no-loss 34-lesson crosswalk into four focused parts, assessment boundary, learner-state model, and review checklist.
+- [Curriculum Tier and Build Matrix](CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md) — the allowed learner claim, build status, evidence lineage, and release gate for Foundation, Field Skills, Department Support, Department Systems, and later advanced responsibility.
+
 This README remains the evidence-library guide and source hierarchy. Historical prompt trackers and roadmap snapshots do not define current task status unless they have been reconciled through RQ-000. The reconciled pre-queue 60-file corpus, collision-free semantic registry, course lineage, and file-by-file execution record are in [RESEARCH_CORPUS_RUN_LOG_2026-08-30.md](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md).
 
 ## Claude handoff order

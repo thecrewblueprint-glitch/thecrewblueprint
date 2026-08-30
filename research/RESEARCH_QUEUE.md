@@ -32,6 +32,8 @@ The following product decisions are already accepted and are not open research q
 
 ## Target learning structure
 
+The implementation status and claim boundary for every layer are recorded in the [Curriculum Tier and Build Matrix](CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md).
+
 | Layer | Purpose | Proposed organization |
 |---|---|---|
 | Stagehand Fundamentals | Shared entry knowledge and work behavior | Four smaller parts: First Call Readiness; Jobsite Awareness and Crew Conduct; Load-In and Load-Out; Departments and Career Direction |
@@ -110,8 +112,11 @@ A course already existing does not make its underlying research item completed. 
 
 ### RQ-100 — Stagehand Fundamentals architecture audit
 
-**Status:** queued  
+**Status:** practitioner_review — architecture deliverables prepared; owner, novice-learner, and safety-sensitive review pending
 **Goal:** Split the current ten-module course into smaller, navigable parts without losing essential content or silently changing safety boundaries.
+
+**Architecture deliverable:** [Stagehand Fundamentals Architecture Audit](STAGEHAND_FUNDAMENTALS_ARCHITECTURE_AUDIT_2026-08-30.md)
+**Tier classification:** [Curriculum Tier and Build Matrix](CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md)
 
 **Questions to answer**
 

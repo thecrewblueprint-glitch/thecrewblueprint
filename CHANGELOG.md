@@ -4,6 +4,20 @@ All notable changes to Stagehand Fundamentals content, research, and resources a
 
 ---
 
+## 2026-08-30
+
+### Four-Part Foundation and Curriculum Tiers
+
+- Counted the live Stagehand Fundamentals data and corrected the course total from 40 to 34 micro-lessons.
+- Grouped the existing 10 modules into four focused delivery parts without deleting or renumbering lessons.
+- Added a four-part course map, part-to-part navigation, and direct access to the learner-facing bibliography.
+- Qualified show-blacks, communication-language, early-call, beginner-assignment, and specialization claims using the completed Fundamentals audit.
+- Classified the five Course 1 pathways as Department Support and the five Course 2 pathways as Department Systems.
+- Placed the five proposed Stagehand Field Skills in the learning sequence as practitioner-review-gated work rather than publishing unreviewed practical instruction.
+- Added the architecture audit and curriculum tier/build matrix to the active research handoff.
+
+---
+
 ## 2026-08-17
 
 ### Audit & Bibliography
