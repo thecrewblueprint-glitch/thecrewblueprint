@@ -120,8 +120,9 @@ Each completed research document should preserve source links/citations, disting
 - **Package 48** — Flatbed cargo-securement support under driver or qualified load-lead direction.
 - **Package 49** — Model-specific barricade setup under barricade/venue-lead direction.
 - **Package 50** — Model-, traffic-, and accessibility-aware cable-ramp/protector setup under department/venue direction.
+- **Package 51** — Owner-directed redesign discovery for a shorter, visual, task-first post-Fundamentals sequence; preserves the existing five builds while practitioner interviews drive one-task-at-a-time replacement.
 
-Packages 46–50 are source packets, not proof of field competency or independent work authorization. Their current status is `practitioner_review` in the [active queue](RESEARCH_QUEUE.md).
+Packages 46–50 are source packets, not proof of field competency or independent work authorization. Their current status is `practitioner_review` in the [active queue](RESEARCH_QUEUE.md). Package 51 is a curriculum-design discovery record, not learner-facing instruction.
 
 ## Current research set
 
