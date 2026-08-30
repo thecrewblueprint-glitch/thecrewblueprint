@@ -1,8 +1,8 @@
 # The Crew Blueprint — Active Research Queue
 
-**Status:** Proposed active queue  
+**Status:** Active  
 **Prepared:** 2026-08-30  
-**Repository baseline:** main at 211036689311b13ccc3ceadf0b5450d0f07612c9  
+**Repository baseline:** queue merged to main at 6b8a441c21ac230112352dbe1936bd2d035e1b29  
 **Scope:** Research, validation, visual planning, and curriculum handoff readiness. This file does not authorize course or production-site changes.
 
 ## Purpose and authority
@@ -60,7 +60,7 @@ A course already existing does not make its underlying research item completed. 
 
 - Stagehand Fundamentals currently contains ten modules.
 - Five Course 1 and five Course 2 departmental pathways are live.
-- The research directory contains **60 Markdown files** at this baseline.
+- The pre-queue research corpus contains **60 Markdown files**. The merged queue became file 61; this execution run adds the corpus log and Packages 46–50.
 - Three unrelated files use Package 21:
   - 21-audio-course-2-sound-engineering-console-basics.md
   - 21-lighting-department-body-of-knowledge-gap-coverage-research.md
@@ -69,15 +69,16 @@ A course already existing does not make its underlying research item completed. 
 - Older planning records describe Audio, Staging/Carpentry, and Backline/Props/Wardrobe Course 2 as pending even though they are live.
 - NotebookLM-named material remains in the library, but the current workflow note treats that wording as legacy and uses the repository research library as the evidence handoff.
 - Existing Fundamentals content mentions or lightly covers some field-skill topics, but it does not yet provide a complete, dedicated practical sequence for any of the five initial units.
-- Package numbers through 45 are already present. New work uses RQ IDs until RQ-000 establishes a collision-free package registry.
+- Package numbers through 45 remain as historical filenames. RQ-000 assigns collision-free semantic keys to duplicate/rerun records, and new Field Skills research continues as Packages 46–50.
 
 ## Priority 0 — establish one trustworthy research system
 
 ### RQ-000 — Research corpus reconciliation
 
-**Status:** queued  
+**Status:** source_pack_complete; cross-repository roadmap synchronization remains pending  
 **Priority:** blocking  
-**Goal:** Make the current evidence library, package registry, trackers, and course lineage agree before new package numbers are assigned.
+**Goal:** Make the current evidence library, package registry, trackers, and course lineage agree before new package numbers are assigned.  
+**Run log:** [60-file corpus registry, collision crosswalk, lineage matrix, and execution record](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md)
 
 **Research and audit tasks**
 
@@ -92,6 +93,7 @@ A course already existing does not make its underlying research item completed. 
 
 **Deliverables**
 
+- [Completed corpus registry and execution log](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md).
 - Collision-free package registry and legacy-to-current crosswalk.
 - Accurate status correction for the prompt tracker and master map.
 - Course-to-evidence lineage matrix.
@@ -108,7 +110,7 @@ A course already existing does not make its underlying research item completed. 
 
 ### RQ-100 — Stagehand Fundamentals architecture audit
 
-**Status:** queued after RQ-000 inventory  
+**Status:** queued  
 **Goal:** Split the current ten-module course into smaller, navigable parts without losing essential content or silently changing safety boundaries.
 
 **Questions to answer**
@@ -155,7 +157,8 @@ Every Field Skill packet must cover:
 
 ### RQ-SFS-01 — Over-under cable coiling
 
-**Status:** queued; partial evidence exists in Package 20A  
+**Status:** practitioner_review  
+**Research packet:** [Package 46 — Over-under cable coiling](46-stagehand-field-skills-over-under-cable-coiling.md)  
 **Pilot reason:** Low equipment burden, visually teachable, and common across departments.
 
 **Research questions**
@@ -186,7 +189,8 @@ The technician chooses the method for the actual cable. The learner does not ove
 
 ### RQ-SFS-02 — Ratchet straps
 
-**Status:** queued  
+**Status:** practitioner_review  
+**Research packet:** [Package 47 — Ratchet straps](47-stagehand-field-skills-ratchet-straps.md)  
 **Goal:** Teach inspection and basic use without presenting a general hand as the authority for anchors, routing, final tension, or load securement.
 
 **Research questions**
@@ -216,7 +220,8 @@ The responsible lead determines whether the strap is suitable and controls ancho
 
 ### RQ-SFS-03 — Flatbed cargo-securement support
 
-**Status:** queued after RQ-SFS-02  
+**Status:** practitioner_review  
+**Research packet:** [Package 48 — Flatbed cargo-securement support](48-stagehand-field-skills-flatbed-cargo-securement-support.md)  
 **Goal:** Teach a stagehand to assist a driver or qualified load lead without implying cargo-securement authority.
 
 **Research questions**
@@ -247,7 +252,8 @@ The driver, motor carrier, or qualified load lead owns the securement plan and f
 
 ### RQ-SFS-04 — Barricade setup
 
-**Status:** queued  
+**Status:** practitioner_review  
+**Research packet:** [Package 49 — Barricade setup](49-stagehand-field-skills-barricade-setup.md)  
 **Goal:** Teach safe assistance while preserving differences among equipment families and event layouts.
 
 **Research questions**
@@ -277,7 +283,8 @@ The designated lead controls line, gates, corners, bracing, public/emergency acc
 
 ### RQ-SFS-05 — Cable ramps and cable protectors
 
-**Status:** queued  
+**Status:** practitioner_review  
+**Research packet:** [Package 50 — Cable ramps and cable protectors](50-stagehand-field-skills-cable-ramps-protectors.md)  
 **Goal:** Teach correct handling and assembly under an approved route, not independent cable-routing authority.
 
 **Research questions**
