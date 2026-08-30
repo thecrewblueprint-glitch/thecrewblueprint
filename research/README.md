@@ -14,10 +14,12 @@ Research files collected here are intended to be:
 
 Current priorities, dependencies, accepted curriculum direction, and completion criteria are tracked in [RESEARCH_QUEUE.md](RESEARCH_QUEUE.md).
 
-The current implementation handoff is split into two records:
+The current implementation handoff is split into four records:
 
 - [Stagehand Fundamentals Architecture Audit](STAGEHAND_FUNDAMENTALS_ARCHITECTURE_AUDIT_2026-08-30.md) — the no-loss 34-lesson crosswalk into four focused parts, assessment boundary, learner-state model, and review checklist.
 - [Curriculum Tier and Build Matrix](CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md) — the allowed learner claim, build status, evidence lineage, and release gate for Foundation, Field Skills, Department Support, Department Systems, and later advanced responsibility.
+- [Expanded Curriculum Build Register](EXPANDED_CURRICULUM_BUILD_REGISTER_2026-08-30.md) — the exact route, source packet, tier, learner-stop count, assessment, and release gate for the 21 new review builds.
+- [Expanded Curriculum Research Queue](EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md) — the release-focused practitioner, visual, portfolio, learner-validation, record, and source-freshness work that remains after the build.
 
 This README remains the evidence-library guide and source hierarchy. Historical prompt trackers and roadmap snapshots do not define current task status unless they have been reconciled through RQ-000. The reconciled pre-queue 60-file corpus, collision-free semantic registry, course lineage, and file-by-file execution record are in [RESEARCH_CORPUS_RUN_LOG_2026-08-30.md](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md).
 
@@ -25,7 +27,7 @@ This README remains the evidence-library guide and source hierarchy. Historical 
 
 Keep the research files as **separate Markdown sources** rather than merging them into one document. This preserves source-level traceability during Claude synthesis.
 
-The ordered list below preserves the original early handoff sequence through Package 21; it is not the complete current catalog. Use the [corpus run log](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md) for all 60 pre-queue records, semantic collision keys, and current-versus-superseded decisions. Packages 43–45 are the current deeper Course 2 reruns. Packages 46–50 are the new Stagehand Field Skills source packets and remain gated for the named practitioner reviews before curriculum work.
+The ordered list below preserves the original early handoff sequence through Package 21; it is not the complete current catalog. Use the [corpus run log](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md) for all 60 pre-queue records, semantic collision keys, and current-versus-superseded decisions. Packages 43–45 are the current deeper Course 2 reruns. Packages 46–50 now support five learner-facing review builds, but the named practitioner and observed-practice gates remain open before release.
 
 Recommended handoff order:
 

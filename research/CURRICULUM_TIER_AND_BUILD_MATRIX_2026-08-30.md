@@ -9,10 +9,14 @@
 | Tier | Learner claim allowed | Current build status | Evidence and gate |
 |---|---|---|---|
 | Foundation — Stagehand Fundamentals | Shared entry knowledge, work behavior, safety awareness, and stop-and-ask judgment | Live; four-part delivery proposal prepared with all 10 modules and 34 lessons retained | Packages 14–21. Owner, novice-learner, and safety-sensitive review remain required for the proposed architecture. |
-| Stagehand Field Skills | Knowledge plus observed practice on a named physical task under the responsible lead | Not published as learner courses | Packages 46–50 are complete source packets in `practitioner_review`. Each needs the named field authority, real-equipment variation review, and an observation standard. |
+| Stagehand Field Skills | Knowledge plus observed practice on a named physical task under the responsible lead | Five learner-facing review builds; public release remains gated | Packages 46–50 support the knowledge build, source lineage, quiz, and draft observation checklist. Each needs the named field authority, real-equipment variation review, and an observed-practice standard. |
 | Department Support — Course 1 | Recognize equipment and perform assigned support work under direction | Five courses live | Packages 7–11 and companion boundary notes support Lighting, Video, Audio, Staging/Carpentry, and Backline/Props/Wardrobe. |
 | Department Systems — Course 2 | Explain system flow, handoffs, boundaries, and when the problem belongs to a technician or lead | Five courses live | Lighting: Packages 12/12A and the Lighting Body of Knowledge. Video: Packages 13/13A. Audio: Package 43. Staging/Carpentry: Package 44. Backline/Props/Wardrobe: Package 45. |
-| Advanced Responsibility — later levels | Bounded preparation for leadership, design, supervision, specialist troubleshooting, or other named responsibility | Research-gated; no course publication authorized | Packages 24–39 and queue items RQ-450, RQ-460, and RQ-470. Qualified review, learner demand, and a delivery model appropriate to the responsibility are required. |
+| Lead Tier | Plan, assign, communicate, verify, control change, and escalate inside a named department or work package | Seven learner-facing review builds | Packages 24–30. Current practitioner review and observed bounded leadership remain required. |
+| Supervisor Tier | Predict the next work state and coordinate event-wide interfaces without replacing craft authority | Two learner-facing review builds | Packages 31–32. Employer safety-program and event/venue supervisor review remain required. |
+| Advanced Systems — Course 3 | Translate requirements into documented architecture, commissioning evidence, failure-domain reasoning, and controlled change | Five learner-facing review builds | Packages 33–37. Qualified portfolio review and separate specialist authority remain required. |
+| Production Infrastructure | Recognize shared power infrastructure, warning signs, interfaces, and prohibited actions | One awareness review build | Package 38. It grants no electrical authority and includes no live-power practical. |
+| Production & Coordination | Compare and enter parallel Stage Management, Production Management, and Venue/Event Operations tracks | One career-branch review build | Package 39. Track-specific practitioner review and experience remain required. |
 
 ## Tier boundaries
 
@@ -44,14 +48,18 @@ Advanced material must name its limits. It cannot substitute for a license, cert
 - Places the five proposed Field Skills between Fundamentals and department specialization, but shows their practitioner-review gate instead of linking unfinished courses.
 - Replaces “independent operation” implications with systems-understanding and lead-authority language.
 - Makes source boundaries and the Fundamentals bibliography easier to reach.
+- Adds 21 full review builds, 153 learner stops, and 105 coached questions from completed Packages 24–39 and 46–50.
+- Adds a standalone build register with an exact course-to-packet, route, tier, and release-gate map.
 
-## What the current build deliberately does not build
+## What the current build deliberately does not claim
 
-- It does not convert Packages 46–50 into practical courses before practitioner review.
-- It does not claim that reading, a quiz, or a simulated action proves field competency.
-- It does not publish lead, rigging, electrics, design, or other advanced-responsibility courses from research alone.
+- It does not label the new review pages as practitioner-approved or publicly ready.
+- It does not claim that reading, a quiz, or a simulated action proves field competency or lead readiness.
+- It does not provide novice physical rigging or live-power technical instruction.
 - It does not create a credential, qualification, or worksite authorization state.
 - It does not invent persistent completion records in a static page that currently records only the learner's position in the selected part.
+
+See the [Expanded Curriculum Build Register](EXPANDED_CURRICULUM_BUILD_REGISTER_2026-08-30.md) for every new route and release dependency.
 
 ## Current course inventory
 
