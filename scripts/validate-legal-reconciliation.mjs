@@ -25,7 +25,7 @@ requireText(terms, 'third-party claims', 'narrowed indemnification scope');
 requireText(terms, 'reasonable defense costs and attorneys&rsquo; fees', 'indemnification costs');
 requireText(terms, 'require a fresh affirmative acceptance', 'Terms change acceptance');
 requireText(limitation, 'require a fresh affirmative acceptance', 'Limitation change acceptance');
-requireText(consent, "var CONSENT_VERSION = '2026-08-30'", 'consent version');
+requireText(consent, "var CONSENT_VERSION = '2026-08-30.2'", 'consent version');
 
 if (/mandatory binding arbitration|class action waiver/i.test(terms + limitation)) {
   errors.push('unreviewed mandatory arbitration or class-action waiver language is present');

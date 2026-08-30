@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var CONSENT_VERSION = '2026-08-30';
+  var CONSENT_VERSION = '2026-08-30.2';
   var STORAGE_KEY = 'cbCourseConsent.v1';
   var scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
   var siteRoot = new URL('../', scriptUrl);

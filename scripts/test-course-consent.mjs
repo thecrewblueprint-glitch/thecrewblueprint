@@ -187,7 +187,7 @@ submit.trigger('click');
 assert.equal(fresh.document.body.children.length, 1, 'accepted gate should be removed');
 assert.equal(fresh.document.body.classList.contains('cb-consent-open'), false);
 const savedRecord = JSON.parse(fresh.getStoredValue());
-assert.equal(savedRecord.version, '2026-08-30');
+assert.equal(savedRecord.version, '2026-08-30.2');
 assert.equal(savedRecord.termsAccepted, true);
 assert.equal(savedRecord.safetyLimitsAccepted, true);
 assert.match(savedRecord.acceptedAt, /^\d{4}-\d{2}-\d{2}T/);
