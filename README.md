@@ -76,6 +76,9 @@ node scripts/apply-owner-review-live.mjs
 node scripts/validate-fundamentals-sequence.mjs
 node scripts/validate-tiered-courses.mjs
 node scripts/validate-owner-review-live.mjs
+node scripts/test-course-consent.mjs
+node scripts/validate-course-consent.mjs
+node scripts/validate-legal-reconciliation.mjs
 ```
 
 The previous content-free publication lock remains available as a reversible
