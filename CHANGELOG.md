@@ -6,6 +6,14 @@ All notable changes to Stagehand Fundamentals content, research, and resources a
 
 ## 2026-08-30
 
+### Public Owner-Audit Review
+
+- Recorded the owner's decision to supersede the post-Fundamentals publication lock and make the complete curriculum available on the live GitHub Pages site for personal audit.
+- Restored full content at all 46 post-Fundamentals routes from the preserved owner-audit checkpoint.
+- Marked every restored route `Owner Review · Public Audit Copy` and `noindex,follow`; public visibility does not represent practitioner approval, qualification, or final learner release.
+- Published the shared tiered-course player assets while keeping research records, curriculum data modules, build scripts, and archived snapshots outside the generated site.
+- Added deterministic preparation and validation scripts for the public owner-review state while preserving the content-free lock workflow as a rollback.
+
 ### Expanded Tiered Curriculum Review Build
 
 - Built 21 standalone review courses from completed research Packages 24–39 and 46–50.

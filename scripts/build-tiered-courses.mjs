@@ -10,8 +10,8 @@ const rootDir = path.resolve(scriptDir, '..');
 const outputDir = path.join(rootDir, 'courses');
 const sourceCourses = [...fieldCourses, ...leadCourses, ...advancedCourses];
 
-if (!process.argv.includes('--owner-audit')) {
-  throw new Error('Refusing to publish review curriculum. Re-run with --owner-audit only on a protected owner-review branch, then apply publication locks before merging to the live branch.');
+if (!process.argv.includes('--owner-audit') && !process.argv.includes('--owner-review-live')) {
+  throw new Error('Choose an explicit publication mode: --owner-audit for the preserved review branch or --owner-review-live for the public noindex audit copy.');
 }
 
 function moveAnswer(question, targetIndex) {

@@ -957,7 +957,7 @@ img { max-width: 100%; display: block; }
 
 #learning-layers a[href^="courses/"]::after,
 #advanced-training a[href^="courses/"]::after {
-  content: "Owner audit locked";
+  content: "Owner audit review";
   display: block;
   margin-left: auto;
   color: var(--cb-gold);

@@ -3,30 +3,648 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Audio Pathway · Course 2: Live Sound Systems — Owner Audit Required | The Crew Blueprint</title>
-<meta name="description" content="This Crew Blueprint course remains locked until the owner completes its curriculum audit." />
-<meta name="robots" content="noindex,nofollow,noarchive" />
-<link rel="canonical" href="https://thecrewblueprint.com/courses/" />
-<link rel="icon" href="../images/logo.png" type="image/png" />
+<meta name="robots" content="noindex,follow" />
+<title>Audio Pathway · Course 2: Live Sound Systems | The Crew Blueprint</title>
+<meta name="description" content="Trace a live audio signal path from source to speaker, read a mixing console as signal flow, and troubleshoot audio faults by isolating the signal path instead of guessing." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-audio-02-live-systems/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Audio Pathway · Course 2: Live Sound Systems | The Crew Blueprint" />
+<meta property="og:description" content="Trace a live audio signal path, read a console as signal flow, and troubleshoot by isolating the path." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link href="../css/theme.css" rel="stylesheet" />
+<style>
+:root {
+  --cb-bg-deep: #0a0e17;
+  --cb-bg: #0f1219;
+  --cb-bg-light: #1a1f2b;
+  --cb-card: #161b27;
+  --cb-panel: rgba(255,255,255,0.03);
+  --cb-border: rgba(255,255,255,0.06);
+  --cb-border-strong: rgba(255,255,255,0.12);
+  --cb-text: #e8eef5;
+  --cb-muted: #a8b5c9;
+  --cb-muted-2: #7a85a0;
+  --cb-gold: #f5b400;
+  --cb-gold-strong: #ffd700;
+  --cb-gold-border: rgba(245,180,0,0.4);
+  --cb-radius-pill: 999px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cb-bg-deep);
+  color: var(--cb-text);
+  line-height: 1.6;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--cb-bg);
+  border-bottom: 1px solid var(--cb-border);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.top-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cb-gold);
+}
+
+.brand { font-weight: 900; font-size: 15px; }
+.brand span { color: var(--cb-gold); }
+.progbox { width: min(320px, 40vw); }
+.progrow { display: flex; justify-content: space-between; font-size: 11px; color: var(--cb-muted-2); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; margin-bottom: 4px; }
+.bar { height: 6px; background: var(--cb-border); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--cb-gold); }
+
+.exit-btn {
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 6px;
+  color: var(--cb-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.exit-btn:hover {
+  background: rgba(245,180,0,0.1);
+  color: var(--cb-gold-strong);
+  border-color: var(--cb-gold-strong);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  margin-top: 67px;
+  min-height: calc(100vh - 67px);
+}
+
+.side {
+  background: var(--cb-bg);
+  border-right: 1px solid var(--cb-border);
+  padding: 32px 0;
+  position: fixed;
+  left: 0;
+  top: 67px;
+  width: 240px;
+  height: calc(100vh - 67px);
+  overflow-y: auto;
+}
+
+.content {
+  grid-column: 2;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--cb-card);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card.progress {
+  background: linear-gradient(135deg, rgba(245,180,0,0.08) 0%, rgba(245,180,0,0.02) 100%);
+  border: 1px solid var(--cb-gold-border);
+  position: sticky;
+  top: 84px;
+  z-index: 40;
+}
+
+.rule {
+  font-weight: 700;
+  color: var(--cb-gold-strong);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.module-nav {
+  padding: 0 14px;
+}
+
+.mod { display: flex; gap: 10px; align-items: center; padding: 9px; border-radius: 11px; color: var(--cb-muted); margin-bottom: 4px; }
+.num { width: 27px; height: 27px; border-radius: 50%; display: grid; place-items: center; background: var(--cb-bg-light); font-weight: 800; font-size: 12px; flex-shrink: 0; }
+.mod.active .num { background: var(--cb-gold); color: var(--cb-bg-deep); }
+.module-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cb-text);
+}
+.module-count {
+  font-size: 11px;
+  color: var(--cb-muted-2);
+}
+
+.sub { margin: 0 0 16px 23px; padding-left: 13px; border-left: 1px solid var(--cb-border); }
+
+.lesson-link {
+  display: block;
+  padding: 8px 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  color: var(--cb-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.lesson-link:hover {
+  color: var(--cb-gold);
+}
+
+.lesson-link.active {
+  color: var(--cb-gold-strong);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h3 { font-size: 16px; font-weight: 700; margin: 0 0 10px 0; color: var(--cb-gold-strong); }
+
+p { margin-bottom: 16px; color: var(--cb-text); }
+ul { margin-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 8px; }
+
+strong { font-weight: 600; color: var(--cb-gold-strong); }
+
+.cb-section { margin-bottom: 32px; }
+.cb-list { list-style: disc; }
+.cb-list li { color: var(--cb-text); }
+
+.cb-panel {
+  background: var(--cb-panel);
+  border: 1px solid var(--cb-border);
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin-top: 8px;
+}
+
+.explainer { background: var(--cb-panel); border-left: 4px solid var(--cb-gold-border); border-radius: 8px; padding: 18px 20px; margin-bottom: 16px; }
+.explainer p:last-child { margin-bottom: 0; }
+
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.split-col { padding: 18px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: 8px; }
+.split-col h4 { font-size: 13px; font-weight: 700; margin: 0 0 10px; color: var(--cb-gold-strong); }
+.split-col ul { margin: 0; padding-left: 20px; }
+.split-col li { font-size: 13px; margin: 6px 0; }
+
+.key-takeaway { background: rgba(2,132,199,0.1); border: 1px solid rgba(2,132,199,0.35); border-left: 4px solid #0284c7; padding: 14px 16px; border-radius: 8px; margin-top: 16px; font-size: 13px; }
+.key-takeaway strong { color: #38bdf8; }
+
+.quiz-block { margin: 14px 0 22px; }
+.quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
+.options { display: grid; gap: 10px; }
+.opt { border: 1px solid var(--cb-border-strong); background: var(--cb-panel); color: var(--cb-text); border-radius: 8px; padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
+.opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-bg-light); }
+.opt.correct { border-color: #39b979; background: rgba(57,185,121,0.14); }
+.opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.14); }
+.opt:disabled { opacity: 0.75; cursor: not-allowed; }
+.coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-bg-light); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
+.coach.show { display: block; }
+.coach strong { color: var(--cb-gold-strong); }
+
+.footer-nav { display: grid; gap: 16px; margin: 8px 0 40px 0; }
+.footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border-strong); border-radius: 12px; text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
+.footer-nav-card:hover { border-color: var(--cb-gold); }
+.footer-nav-card .label { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); display: block; margin-bottom: 6px; }
+.footer-nav-card h3 { margin: 0; color: var(--cb-text); }
+
+footer {
+  background: var(--cb-bg);
+  border-top: 1px solid var(--cb-border);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--cb-muted-2);
+  font-size: 13px;
+  margin-top: 40px;
+}
+
+.mobile-select { display: none; }
+
+@media (max-width: 820px) {
+  .shell { grid-template-columns: 1fr; }
+  .side { display: none; }
+  .content { grid-column: 1; padding: 20px; }
+  .top { flex-direction: column; height: auto; padding: 12px 20px; gap: 12px; }
+  .progress-bar { top: auto; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+  .split-grid { grid-template-columns: 1fr; }
+
+  .mobile-select {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--cb-card);
+    color: var(--cb-gold);
+    border: 1px solid var(--cb-border-strong);
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+}
+</style>
+<style id="ownerReviewBadgeStyle">
+.owner-review-badge{position:fixed;right:12px;bottom:12px;z-index:9999;padding:7px 10px;border:1px solid rgba(245,180,0,.55);border-radius:999px;background:rgba(9,12,16,.94);box-shadow:0 8px 24px rgba(0,0,0,.35);color:#f5b400;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+</style>
 </head>
-<body class="course-lock-page" data-course-lock="owner-audit" data-course-title="Audio Pathway · Course 2: Live Sound Systems">
-<main class="course-lock-shell">
-  <article class="course-lock-card" aria-labelledby="lock-title">
-    <a class="course-lock-brand" href="../index.html">The Crew <span>Blueprint</span></a>
-    <span class="course-lock-status">Owner Audit Required</span>
-    <p class="course-lock-name">Audio Pathway · Course 2: Live Sound Systems</p>
-    <h1 id="lock-title">This course is not open yet.</h1>
-    <p>The curriculum exists, but the owner has not released it. The course stays locked while its accuracy, sources, questions, visuals, and field boundaries receive a personal audit.</p>
-    <p><strong>Stagehand Fundamentals is the only course currently open to learners.</strong></p>
-    <div class="course-lock-actions">
-      <a class="cb-btn cb-btn-primary" href="stagehand-fundamentals.html">Open Stagehand Fundamentals</a>
-      <a class="cb-btn cb-btn-secondary" href="../courses.html">Return to Courses</a>
+<body data-publication-state="owner-review-live" class="course-tier course-tier-department-systems">
+<div class="owner-review-badge" role="note">Owner Review · Public Audit Copy</div>
+
+<div class="top">
+  <div><div class="brand">The Crew <span>Blueprint</span></div><div class="top-title" style="font-size:12px;color:var(--cb-muted)">Audio Pathway — Department Systems Tier · Course 2: Live Sound Systems</div></div>
+  <div class="progbox"><div class="progrow"><span id="progtext">Lesson 1.1 of 9</span><span id="pcttext">11%</span></div><div class="bar"><i id="progbar" style="width:11%"></i></div></div>
+  <a href="../courses.html" class="exit-btn">← Exit Course</a>
+</div>
+
+<div class="shell">
+  <nav class="side">
+    <div class="module-nav" id="sidebar"></div>
+  </nav>
+
+  <div class="content">
+    <select class="mobile-select" id="mobileSelect"></select>
+
+    <div class="card progress" id="progressCard">
+      <div class="rule" id="objective">Select a lesson to begin</div>
     </div>
-  </article>
-</main>
+
+    <div id="lessonContent"></div>
+
+    <div class="footer-nav" id="footerNav"></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
+</footer>
+
+<script>
+const modules = [
+  {
+    id: '1',
+    name: 'Signal Flow & System Fundamentals',
+    lessons: [
+      {
+        id: '1.1',
+        name: 'From Source to Listener',
+        obj: 'Trace a live audio signal from its source to the room, and recognize the connections and levels along the way.',
+        content: `
+          <h2>From Source to Listener</h2>
+          <div class="explainer">
+            <p>Every live sound system moves a signal along the same basic chain: <strong>source → transducer/input → preamp/gain → processing → routing/buses → output processing → amplification → loudspeaker → listener</strong>. A stage box, a digital network, DSP, or a wireless link might sit inside that chain, but they're extensions of it, not separate systems you learn one at a time. Before you learn what a control does, know where the signal is right now, what's happening to it, where it's going next, and how you'd confirm it got there.</p>
+          </div>
+          <p>A microphone or a DI box turns physical sound or an instrument's signal into an electrical signal at the very start of that chain. Different sources produce different signal levels — <strong>microphone level</strong>, <strong>instrument level</strong>, and <strong>line level</strong> aren't interchangeable, and an input built for one doesn't automatically handle another cleanly. That's why matching source to input matters more than memorizing one voltage number.</p>
+          <p>You'll see XLR, TS, and TRS connectors constantly, but the connector shape doesn't tell you the signal type — a TRS jack carries different things depending on the gear on each end. Balanced connections are standard in professional audio because they reject noise over long cable runs far better than unbalanced ones.</p>
+          <figure class="split-grid">
+            <div class="split-col">
+              <h4>The Chain, In Order</h4>
+              <ul>
+                <li>Source (voice, instrument, DI)</li>
+                <li>Preamp / gain stage</li>
+                <li>Processing (EQ, dynamics)</li>
+                <li>Routing / buses</li>
+                <li>Output → amplifier → speaker</li>
+              </ul>
+            </div>
+            <div class="split-col">
+              <h4>Four Questions, Every Stage</h4>
+              <ul>
+                <li>Where is the signal right now?</li>
+                <li>What's happening to it here?</li>
+                <li>Where does it go next?</li>
+                <li>How do I confirm it arrived?</li>
+              </ul>
+            </div>
+          </figure>
+        `
+      },
+      {
+        id: '1.2',
+        name: 'Gain, Headroom, and Where the Signal Goes',
+        obj: 'Explain gain structure and headroom, and recognize that one input can feed several destinations.',
+        content: `
+          <h2>Gain, Headroom, and Where the Signal Goes</h2>
+          <div class="explainer">Gain structure connects almost everything else in this course — noise, distortion, headroom, and troubleshooting all trace back to it. The preamp sets a usable signal level for everything downstream; the channel fader doesn't fix a badly set input gain, it just makes a bad signal louder or quieter.</div>
+          <p><strong>Headroom</strong> is the operating margin between a healthy signal and overload. There's no single meter number that works everywhere — meter scales and calibration differ by console — but the principle holds regardless: run low enough that peaks don't overload the path, and high enough that noise doesn't dominate.</p>
+          <p>One input rarely feeds just one place. The same channel can go to the front-of-house mix, one or more monitor mixes, a recording or broadcast feed, and a matrix output, all at once and often at different points in the signal path. Understanding that a single source has multiple destinations is what makes buses and pre/post-fader routing make sense later.</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">A stage box or snake carries multiple stage signals to the console and returns outputs to the stage — either as an analog snake or as stage I/O converted to digital audio and moved over a network. And know the difference between a <strong>powered</strong> loudspeaker, which has its own amplification built in, and a <strong>passive</strong> one, which needs an external amp — that changes where the signal path actually ends, and it changes what you check first when something goes quiet.</p>
+          <div class="key-takeaway"><strong>Key principle:</strong> Set gain first, verify headroom, then remember that one input can feed several destinations at once.</div>
+        `
+      }
+    ]
+  },
+  {
+    id: '2',
+    name: 'Console Operation & Basic Mixing',
+    lessons: [
+      {
+        id: '2.1',
+        name: 'Reading a Console as Signal Flow',
+        obj: 'Read a mixing console as a routing and processing environment, not a wall of unrelated knobs.',
+        content: `
+          <h2>Reading a Console as Signal Flow</h2>
+          <p>A console is a signal-routing and signal-processing environment. The vocabulary transfers between Yamaha, Allen &amp; Heath, Midas, DiGiCo, Soundcraft, and everything else you'll ever touch: input channel, preamp/gain, pad, phantom power, high-pass filter, EQ, dynamics, fader, mute, pan, PFL/AFL/solo/cue, aux/mix bus, group, main bus, monitor send, output master, patch, scene/snapshot, meter, headroom. Learn that vocabulary first. A specific console's layout is just where that vocabulary happens to live on that particular surface.</p>
+          <div class="explainer">The order matters: <strong>configure the input → set gain → verify the signal → apply filtering or processing → route it → balance with faders.</strong> Input gain comes before mix balance, not after. A fader can't rescue a signal that was never set up correctly at the preamp.</div>
+          <p>A high-pass filter and EQ are frequency-selective tools, not a magic fix for a bad sound. At this level, know boost versus cut, broad versus narrow adjustment, and why stacking too much processing on a channel tends to create a new problem instead of solving the first one. Detailed system tuning is its own skill — this course gives you the vocabulary and the reasoning, not a tuning credential.</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">A fader and the input gain aren't the same control. <strong>Unity</strong> is the reference point where a fader neither boosts nor cuts relative to its calibrated path — exact workflow varies by console, but the concept holds everywhere.</p>
+        `
+      },
+      {
+        id: '2.2',
+        name: 'Buses, Routing, and PFL',
+        obj: 'Explain buses, pre/post-fader sends, and how PFL verifies a signal before it reaches the fader.',
+        content: `
+          <h2>Buses, Routing, and PFL</h2>
+          <p>A <strong>bus</strong> is a destination or combination path that channels get sent to — main L/R, a monitor aux, an effects send, a subgroup, a matrix output. Mixing is really just answering one question over and over: which input is going to which destination, and at what point in its channel path?</p>
+          <div class="explainer">A <strong>pre-fader</strong> send stays independent of where the channel's main fader is sitting; a <strong>post-fader</strong> send follows that fader. That single distinction is the reason most monitor mixes and effects sends behave the way they do — get it backwards and a monitor mix moves every time someone rides the house fader.</div>
+          <p><strong>PFL (pre-fader listen)</strong> does more work than any other single control on the console. It lets you hear and meter a channel before its fader, which means you can use it to verify a signal actually arrived, set gain correctly, and isolate noise or a fault — all without touching the house mix while you do it. Use PFL constantly, from your first console exercise through every troubleshooting scenario in this course.</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">A <strong>scene</strong> or <strong>snapshot</strong> is a stored console state. Recalling one can change many parameters at once — know that before you touch a scene recall mid-show, and confirm before you commit to one.</p>
+          <div class="key-takeaway"><strong>Key principle:</strong> PFL first. Verify before you adjust, and know whether a send is pre-fader or post-fader before you rely on it.</div>
+        `
+      }
+    ]
+  },
+  {
+    id: '3',
+    name: 'Troubleshooting & Operational Awareness',
+    lessons: [
+      {
+        id: '3.1',
+        name: 'Troubleshooting by Signal Path',
+        obj: 'Apply a repeatable method to isolate an audio fault instead of adjusting controls at random.',
+        content: `
+          <h2>Troubleshooting by Signal Path</h2>
+          <div class="explainer">Replace random knob-turning with a method: <strong>define the symptom precisely → decide local or global → recall the expected signal path → find a known-good point → verify one stage at a time → change one variable at a time → confirm the result → escalate when the fault is outside your authority or training.</strong> A <strong>local</strong> problem hits one or a few channels; a <strong>global</strong> problem hits the whole system — knowing which one you're dealing with changes where you start looking.</div>
+          <p>Use the diagnostic ladder: <strong>source → cable/connection → stage I/O → input patch → preamp/gain → channel processing → channel routing → bus/master → output patch/processing → amplifier → loudspeaker.</strong> For a wireless source, insert <strong>transmitter → RF path → receiver → receiver audio output</strong> before the console. For networked audio, insert the digital transport and routing stage.</p>
+          <p>Common no-signal causes: a wrong or failed cable, the wrong physical input selected, a muted channel, missing routing or assignment, a fader or master left down, a wrong digital patch, a condenser mic without the phantom power it needs, a powered device that isn't actually powered, or a wireless receiver with RF but no usable audio. The goal isn't memorizing that list — it's finding the last known-good point in the chain and working from there.</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">Digital consoles add a failure mode analog gear doesn't have: the physical cable can be correct while the software patch isn't. <strong>Physical connection and logical routing are separate layers</strong> — checking one doesn't confirm the other.</p>
+        `
+      },
+      {
+        id: '3.2',
+        name: 'Feedback, Wireless, and Networked Audio',
+        obj: 'Treat feedback as a system problem, separate the audio and RF domains in a wireless path, and know the scope of Dante-level awareness.',
+        content: `
+          <h2>Feedback, Wireless, and Networked Audio</h2>
+          <p>Feedback isn't "hear a squeal, grab the EQ." It's a loop — loudspeaker output re-enters an open microphone and gets amplified again and again. Work the loop in order: identify it, consider microphone and source placement, consider the mic-to-speaker geometry, consider excessive gain and unnecessary open microphones, consider the room's response, and only then use EQ carefully as part of the fix — never as a substitute for correcting an obvious physical problem. EQ can't repair a system-design or acoustic issue by itself.</p>
+          <div class="explainer">A wireless signal path has <strong>two separate domains</strong>: <strong>source → transmitter → RF path → receiver → receiver audio output → console.</strong> A fault before or after the RF link isn't the same thing as an RF-coordination problem, and treating them the same wastes time chasing the wrong half of the chain.</div>
+          <p>Networked audio — Dante and similar systems — means a stage box or console can be network-connected, with devices, channels, and routing configured in software like Dante Controller. At this level, know that network routing can be the reason a physically connected system has no audio, and that clocking and network state matter. Detailed IP addressing, VLAN design, and advanced network engineering are specialist skills that come later — this course gives you enough to understand what a network technician is looking at, not enough to configure the network yourself.</p>
+          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;"><strong>Hearing safety:</strong> OSHA sets an 85 dBA 8-hour time-weighted-average action level that triggers hearing-conservation requirements, and a 90 dBA 8-hour permissible exposure limit. Follow your employer's and the site's hearing-protection rules, and escalate when exposure is uncertain rather than deciding it yourself from a phone app.</p>
+          <div class="key-takeaway"><strong>Key principle:</strong> Feedback is a system problem, wireless has two domains, and networked audio needs awareness before it needs configuration.</div>
+        `
+      }
+    ]
+  },
+  {
+    id: '4',
+    name: 'Knowledge Check',
+    lessons: [
+      {
+        id: '4.1',
+        name: 'Quick Knowledge Check',
+        obj: 'Test your understanding of signal flow, console operation, and troubleshooting.',
+        content: `
+          <h2>Quick Knowledge Check</h2>
+          <p>Pick an answer for each question.</p>
+
+          <div class="quiz-block">
+            <p class="quiz-q">Before learning what every console control does, what should you know first?</p>
+            <div class="options" data-q="a2q1">
+              <button class="opt" data-c="0">The brand and model of the console.</button>
+              <button class="opt" data-c="1">Where the signal is supposed to go.</button>
+              <button class="opt" data-c="0">Every fader's exact unity position.</button>
+            </div>
+            <div class="coach" id="a2q1c"><strong>Why:</strong> Know where the signal is now, what's happening to it, where it's going next, and how to confirm it arrived — before you learn manufacturer-specific navigation.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A channel sounds noisy and thin. Where should you look first?</p>
+            <div class="options" data-q="a2q2">
+              <button class="opt" data-c="0">The main output EQ.</button>
+              <button class="opt" data-c="1">The input gain / preamp stage.</button>
+              <button class="opt" data-c="0">The reverb send level.</button>
+            </div>
+            <div class="coach" id="a2q2c"><strong>Why:</strong> Gain structure sits upstream of almost every other problem. A fader can't fix a signal that was never set up correctly at the preamp.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">What's the difference between a pre-fader and a post-fader send?</p>
+            <div class="options" data-q="a2q3">
+              <button class="opt" data-c="0">Pre-fader sends are always louder.</button>
+              <button class="opt" data-c="1">A pre-fader send stays independent of the channel fader; a post-fader send follows it.</button>
+              <button class="opt" data-c="0">Post-fader sends only work on digital consoles.</button>
+            </div>
+            <div class="coach" id="a2q3c"><strong>Why:</strong> Get this backwards and a monitor mix built from a post-fader send moves every time the house fader moves — usually right when the performer needs it stable.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A physical cable checks out fine on a digital console, but there's still no signal. What should you check next?</p>
+            <div class="options" data-q="a2q4">
+              <button class="opt" data-c="0">Swap the cable again — it must be bad.</button>
+              <button class="opt" data-c="1">The software patch or logical routing.</button>
+              <button class="opt" data-c="0">The loudspeaker's power switch.</button>
+            </div>
+            <div class="coach" id="a2q4c"><strong>Why:</strong> Physical connection and logical routing are separate layers on a digital console. A correct cable doesn't guarantee a correct patch.</div>
+          </div>
+
+          <div class="quiz-block">
+            <p class="quiz-q">A monitor wedge starts to feedback. What's the right first move?</p>
+            <div class="options" data-q="a2q5">
+              <button class="opt" data-c="0">Cut a narrow EQ notch immediately.</button>
+              <button class="opt" data-c="1">Check the mic-to-speaker geometry and gain before reaching for EQ.</button>
+              <button class="opt" data-c="0">Turn the whole monitor mix down and leave it there.</button>
+            </div>
+            <div class="coach" id="a2q5c"><strong>Why:</strong> Feedback is an acoustic loop. Work placement, geometry, and gain first — EQ is part of the fix, never a substitute for correcting an obvious physical cause.</div>
+          </div>
+        `
+      },
+      {
+        id: '4.2',
+        name: 'Key Takeaways',
+        obj: 'Remember the core principles of live sound systems.',
+        content: `
+          <h2>Key Takeaways</h2>
+          <ul class="cb-list">
+            <li>Signal flow is the mental model for this entire course: know where the signal is, what's happening to it, where it's going, and how to confirm it arrived.</li>
+            <li>Gain structure comes first. It affects noise, distortion, headroom, and every troubleshooting step that follows.</li>
+            <li>A console's vocabulary transfers between brands even when the layout doesn't — learn the concepts before the specific surface.</li>
+            <li>Use PFL constantly: to verify a signal, set gain, and isolate a fault, all without touching the house mix.</li>
+            <li>Troubleshoot by isolating the signal path one stage at a time — don't turn knobs at random.</li>
+            <li>Physical connection and logical routing are separate layers on a digital console. Checking one doesn't confirm the other.</li>
+            <li>Feedback is a system/acoustic problem, not an EQ-only problem. Wireless has two separate domains: audio and RF.</li>
+            <li>This course builds vocabulary, workflow understanding, and a troubleshooting method — it does not certify or authorize independent FOH/monitor engineering, system tuning, RF coordination, network design, or electrical work.</li>
+          </ul>
+        `
+      },
+      {
+        id: '4.3',
+        name: 'Sources & References',
+        obj: 'Explore the research and standards behind this course.',
+        content: `
+          <h2>Sources</h2>
+          <p>This course was built from research citing manufacturer training materials, professional audio documentation, and OSHA standards. Verify current applicability before relying on any of these for an actual job.</p>
+          <ul class="cb-list">
+            <li><strong>Yamaha — How To Mix Live Music</strong> — <a href="https://usa.yamaha.com/products/contents/proaudio/training_support/how_to_mix_live_music/index.html" target="_blank" rel="noopener noreferrer">usa.yamaha.com</a></li>
+            <li><strong>Yamaha — Live Sound Interconnections 101</strong> — <a href="https://hub.yamaha.com/proaudio/livesound/interconnections-101/" target="_blank" rel="noopener noreferrer">hub.yamaha.com</a></li>
+            <li><strong>Yamaha — Gain Staging</strong> — <a href="https://hub.yamaha.com/proaudio/livesound/gain-staging/" target="_blank" rel="noopener noreferrer">hub.yamaha.com</a></li>
+            <li><strong>Yamaha — Using Solo During Live Mixing</strong> — <a href="https://hub.yamaha.com/proaudio/livesound/using-solo/" target="_blank" rel="noopener noreferrer">hub.yamaha.com</a></li>
+            <li><strong>Yamaha — Live Sound Troubleshooting Tips, Parts 1 &amp; 2</strong> — <a href="https://hub.yamaha.com/proaudio/livesound/live-sound-troubleshooting-tips-part-1/" target="_blank" rel="noopener noreferrer">hub.yamaha.com</a></li>
+            <li><strong>Shure — What is Phantom Power?</strong> — <a href="https://service.shure.com/articles/en_US/Knowledge/what-is-phantom-power" target="_blank" rel="noopener noreferrer">service.shure.com</a></li>
+            <li><strong>Shure — How do I fix my feedback problem?</strong> — <a href="https://service.shure.com/articles/en_US/Knowledge/how-do-i-fix-my-feedback-problem" target="_blank" rel="noopener noreferrer">service.shure.com</a></li>
+            <li><strong>Shure — Wireless Workbench Quick Start Guide</strong> — <a href="https://www.shure.com/en-US/docs/quickstart/WIRELESS-WORKBENCH" target="_blank" rel="noopener noreferrer">shure.com</a></li>
+            <li><strong>Audinate — Dante Certification / Training Program</strong> — <a href="https://www.audinate.com/press/audinate-launches-completely-revamped-dante-training-program/" target="_blank" rel="noopener noreferrer">audinate.com</a></li>
+            <li><strong>OSHA 29 CFR 1910.95 — Occupational Noise Exposure</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
+          </ul>
+          <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;"><strong>What this course does not do:</strong> it does not authorize or qualify you to independently engineer FOH or monitor mixes for complex shows, tune or align a system, design loudspeaker coverage, coordinate RF frequencies, design a Dante network, or perform electrical work. Those stay with your employer, the venue, and qualified, authorized personnel. This course does not replace employer training, union apprenticeships, or professional certifications.</p>
+        `
+      }
+    ]
+  }
+];
+
+function buildSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const select = document.getElementById('mobileSelect');
+  sidebar.innerHTML = '';
+  select.innerHTML = '';
+
+  const { lesson: currentLesson } = getModuleLesson(current || '1.1');
+
+  modules.forEach((mod, mi) => {
+    const isActive = mod.lessons.some(l => currentLesson && l.id === currentLesson.id);
+    const modHeader = document.createElement('div');
+    modHeader.className = 'mod' + (isActive ? ' active' : '');
+    modHeader.innerHTML = `<span class="num">${mi + 1}</span><div><div class="module-title">${mod.name}</div><div class="module-count">${mod.lessons.length} lessons</div></div>`;
+    sidebar.appendChild(modHeader);
+
+    const subDiv = document.createElement('div');
+    subDiv.className = 'sub';
+    mod.lessons.forEach(lesson => {
+      const link = document.createElement('button');
+      link.className = 'lesson-link' + (lesson.id === current ? ' active' : '');
+      link.textContent = lesson.name;
+      link.dataset.idx = lesson.id;
+      link.onclick = () => render(lesson.id);
+      subDiv.appendChild(link);
+
+      const opt = document.createElement('option');
+      opt.value = lesson.id;
+      opt.textContent = `${mod.name} > ${lesson.name}`;
+      select.appendChild(opt);
+    });
+    sidebar.appendChild(subDiv);
+  });
+}
+
+function getModuleLesson(idx) {
+  const [modIdx, lesIdx] = idx.split('.');
+  const mod = modules.find(m => m.id === modIdx);
+  const lesson = mod.lessons.find(l => l.id.endsWith('.' + lesIdx));
+  return { mod, lesson };
+}
+
+let current = '1.1';
+
+function render(idx) {
+  current = idx;
+  const { mod, lesson } = getModuleLesson(idx);
+  document.getElementById('objective').textContent = lesson.obj;
+  document.getElementById('lessonContent').innerHTML = lesson.content;
+  document.getElementById('mobileSelect').value = idx;
+
+  const allLessons = [];
+  modules.forEach(m => m.lessons.forEach(l => allLessons.push({ ...l, modId: m.id })));
+  const currentIdx = allLessons.findIndex(l => l.id === lesson.id);
+
+  document.getElementById('progtext').textContent = `Lesson ${lesson.id} of ${allLessons.length}`;
+  document.getElementById('pcttext').textContent = Math.round(((currentIdx + 1) / allLessons.length) * 100) + '%';
+  document.getElementById('progbar').style.width = ((currentIdx + 1) / allLessons.length) * 100 + '%';
+
+  renderFooterNav(allLessons, currentIdx);
+  buildSidebar();
+  window.scrollTo(0, 0);
+}
+
+function renderFooterNav(allLessons, currentIdx) {
+  const nav = document.getElementById('footerNav');
+  nav.innerHTML = '';
+
+  if (currentIdx > 0) {
+    const prev = allLessons[currentIdx - 1];
+    const prevLink = document.createElement('a');
+    prevLink.href = '#';
+    prevLink.className = 'footer-nav-card';
+    prevLink.innerHTML = `<span class="label">← Previous</span><h3>${prev.name}</h3>`;
+    prevLink.onclick = e => { e.preventDefault(); render(prev.id); };
+    nav.appendChild(prevLink);
+  }
+
+  if (currentIdx < allLessons.length - 1) {
+    const next = allLessons[currentIdx + 1];
+    const nextLink = document.createElement('a');
+    nextLink.href = '#';
+    nextLink.className = 'footer-nav-card';
+    nextLink.innerHTML = `<span class="label">Next →</span><h3>${next.name}</h3>`;
+    nextLink.onclick = e => { e.preventDefault(); render(next.id); };
+    nav.appendChild(nextLink);
+  }
+}
+
+buildSidebar();
+render('1.1');
+document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+
+document.getElementById('lessonContent').addEventListener('click', e => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const group = btn.closest('.options');
+  if ([...group.children].some(x => x.disabled)) return;
+  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
+  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
+  const coach = document.getElementById(group.dataset.q + 'c');
+  if (coach) coach.classList.add('show');
+});
+</script>
+
 </body>
 </html>

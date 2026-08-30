@@ -11,5 +11,3 @@ exclude:
   - design
   - research
   - scripts
-  - css/tiered-course.css
-  - js/tiered-course.js
