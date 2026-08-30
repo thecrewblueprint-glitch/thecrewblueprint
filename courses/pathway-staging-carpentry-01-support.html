@@ -11,402 +11,250 @@
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', system-ui, sans-serif; background: var(--cb-bg); color: var(--cb-text); line-height: 1.6; }
-  :root {
-    --cb-bg: #050606;
-    --cb-text: #f5f5f5;
-    --cb-muted: #b3b3b3;
-    --cb-muted-2: #808080;
-    --cb-card: #0f1112;
-    --cb-border: #1a1d20;
-    --cb-gold: #f5b400;
-    --cb-gold-strong: #f5b400;
-    --cb-panel: #0a0b0d;
-    --cb-radius-md: 8px;
-    --cb-radius-lg: 12px;
-  }
-
-  .top { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: var(--cb-bg); border-bottom: 1px solid var(--cb-border); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
-  .top-left { display: flex; align-items: center; gap: 16px; }
-  .top-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-  .top-actions { display: flex; gap: 12px; }
-  .progbox { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
-  .progrow { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-muted-2); }
-  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--cb-panel); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); font-size: 14px; font-weight: 600; color: var(--cb-text); cursor: pointer; text-decoration: none; transition: all 180ms ease; }
-  .btn:hover { border-color: var(--cb-gold); color: var(--cb-gold); }
-  .progress-bar { position: fixed; top: 72px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
-  .progress-fill { height: 100%; background: var(--cb-gold); width: 0%; transition: width 300ms ease; }
-
-  .shell { display: grid; grid-template-columns: 240px 1fr; gap: 0; padding-top: 72px; min-height: 100vh; }
-  .side { position: fixed; top: 72px; left: 0; width: 240px; height: calc(100vh - 72px); background: var(--cb-card); border-right: 1px solid var(--cb-border); overflow-y: auto; padding: 24px 0; z-index: 50; }
-  .side-nav { display: grid; gap: 0; }
-  .side-mod { padding: 0; }
-  .side-mod-title { display: block; padding: 12px 24px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cb-muted-2); }
-  .side-lesson { display: block; padding: 10px 24px; font-size: 13px; color: var(--cb-muted); text-decoration: none; border-left: 2px solid transparent; transition: all 180ms ease; }
-  .side-lesson:hover { color: var(--cb-gold); border-left-color: var(--cb-gold); }
-  .side-lesson.active { color: var(--cb-gold); border-left-color: var(--cb-gold); font-weight: 600; }
-
-  .main { grid-column: 2; padding-left: 0; }
-  .hero { padding: clamp(32px, 6vw, 60px) clamp(20px, 6vw, 60px); background: var(--cb-panel); border-bottom: 1px solid var(--cb-border); }
-  .hero h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 16px; line-height: 1.1; letter-spacing: -0.03em; }
-  .hero p { font-size: clamp(16px, 2vw, 18px); color: var(--cb-muted); margin: 0; max-width: 700px; line-height: 1.65; }
-
-  .card { margin: 24px clamp(20px, 6vw, 60px) 0; padding: 22px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .card.progress { position: sticky; top: 90px; margin-top: 24px; z-index: 40; }
-  .rule { font-size: 14px; font-weight: 700; color: var(--cb-gold); background: rgba(245, 180, 0, 0.08); padding: 12px; border-radius: 6px; border-left: 3px solid var(--cb-gold); }
-
-  .content { padding: clamp(20px, 6vw, 60px); }
-  .content h2 { font-size: clamp(24px, 4vw, 32px); margin: 32px 0 16px 0; line-height: 1.2; }
-  .content h2:first-child { margin-top: 0; }
-  .content p { color: var(--cb-muted); margin: 0 0 16px 0; line-height: 1.7; }
-  .content ul { color: var(--cb-muted); margin: 16px 0; padding-left: 24px; }
-  .content li { margin: 8px 0; }
-  .content a { color: var(--cb-gold); text-decoration: none; }
-  .content a:hover { text-decoration: underline; }
-
-  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
-  .split-col { padding: 18px; background: rgba(5, 7, 8, 0.5); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); }
-  .split-col h4 { font-size: 14px; font-weight: 700; margin: 0 0 12px; color: var(--cb-gold); }
-  .split-col ul { margin: 0; padding-left: 20px; }
-  .split-col li { font-size: 13px; margin: 6px 0; }
-
-  .quiz-block { margin: 14px 0 22px; }
-  .quiz-q { font-weight: 700; color: var(--cb-text); margin-bottom: 10px; }
-  .options { display: grid; gap: 10px; }
-  .opt { border: 1px solid var(--cb-border); background: var(--cb-panel); color: var(--cb-text); border-radius: var(--cb-radius-md); padding: 12px 14px; text-align: left; cursor: pointer; font-size: 14px; transition: all 180ms ease; }
-  .opt:hover:not(:disabled) { border-color: var(--cb-gold); background: var(--cb-card); }
-  .opt.correct { border-color: #39b979; background: rgba(57,185,121,0.12); }
-  .opt.incorrect { border-color: #e26868; background: rgba(226,104,104,0.12); }
-  .opt:disabled { opacity: 0.75; cursor: not-allowed; }
-  .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-panel); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
-  .coach.show { display: block; }
-  .coach strong { color: var(--cb-gold-strong); }
-
-  .footer-nav { display: grid; gap: 16px; margin: 40px 0 60px 0; }
-  .footer-nav-card { padding: 20px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); text-decoration: none; color: inherit; transition: all 180ms ease; display: block; }
-  .footer-nav-card:hover { border-color: var(--cb-gold); }
-  .footer-nav-card .label { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); display: block; margin-bottom: 6px; }
-  .footer-nav-card h3 { margin: 0; font-size: 18px; }
-
-  .mobile-select { display: none; }
-  @media (max-width: 820px) {
-    .shell { grid-template-columns: 1fr; }
-    .side { display: none; }
-    .main { grid-column: 1; }
-    .mobile-select { display: block; margin: 0 0 16px 0; width: 100%; padding: 12px; background: var(--cb-card); border: 1px solid var(--cb-border); border-radius: var(--cb-radius-md); color: var(--cb-text); font-size: 14px; font-weight: 600; cursor: pointer; }
-    .split-grid { grid-template-columns: 1fr; }
-    .top { flex-direction: column; height: auto; padding: 12px 16px; gap: 12px; }
-    .top-left { flex-direction: column; width: 100%; }
-    .top-title { font-size: 16px; }
-    .progress-bar { top: auto; }
-    .top-actions { width: 100%; }
-  }
-</style>
-</head>
-<body>
-
-<div class="top">
-  <div class="top-left">
-    <div class="top-title">Supporting Staging & Carpentry</div>
-  </div>
-  <div class="progbox">
-    <div class="progrow"><span id="progtext">Lesson 1 of 1</span><span id="pct">0%</span></div>
-  </div>
-  <div class="top-actions">
-    <a href="../courses.html" class="btn">← Exit Course</a>
-  </div>
-</div>
-
-<div class="progress-bar"><div class="progress-fill"></div></div>
-
-<div class="shell">
-  <nav class="side">
-    <div class="side-nav" id="sidebar"></div>
-  </nav>
-
-  <div class="main">
-    <select class="mobile-select" id="mobileSelect"></select>
-    <div class="hero">
-      <h1>Supporting Staging & Carpentry</h1>
-      <p>Move deck, risers, stairs, and scenic pieces, and assemble the modular components you've actually been shown — under direction. Structural decisions, fabrication, and final acceptance stay with the carpentry lead.</p>
-    </div>
-
-    <div class="card progress" id="progressCard">
-      <div class="rule" id="objective">Select a lesson to begin</div>
-    </div>
-
-    <div class="content" id="lessonContent"></div>
-
-    <div class="footer-nav" id="footerNav"></div>
-  </div>
-</div>
+:root{--bg:#090c10;--panel:#121820;--panel2:#18212b;--text:#f1f4f7;--muted:#aab5c0;--line:#2b3641;--gold:#f5b400;--gold2:#ffd45a;--good:#39b979;--bad:#e26868;--info:#0284c7}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#090c10,#0b0f14);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:20;background:#090c10ee;border-bottom:1px solid var(--line)}.topin{max-width:1400px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:900}.brand span,.eyebrow{color:var(--gold)}.small{font-size:.78rem;color:var(--muted)}.progbox{width:min(360px,45vw)}.progrow{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.bar{height:8px;background:#222b34;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}.shell{max-width:1400px;margin:auto;padding:22px 18px 60px}.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}.side{position:sticky;top:86px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:calc(100vh-100px);overflow-y:auto}.mod{display:flex;gap:10px;align-items:center;padding:9px;border-radius:11px;color:var(--muted);cursor:pointer;transition:all 200ms}.mod:hover{background:#1a2430}.mod.active{background:#211d0e;color:var(--text);border:1px solid #65551f}.num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#232c35;font-weight:800;font-size:12px}.active .num{background:var(--gold);color:#111}.sub{margin:8px 0 10px 23px;padding-left:13px;border-left:1px solid var(--line)}.sub button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--muted);padding:8px 0;cursor:pointer;font-size:13px;transition:color 200ms}.sub button:hover{color:var(--gold2)}.sub button.active{color:var(--gold2);font-weight:800}.hero,.card{background:linear-gradient(var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.03;margin:.3rem 0}.hero p{color:var(--muted);max-width:880px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900}.objective{border-left:4px solid var(--gold)}.visual-section{background:#0f1419;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:300px;overflow-x:auto}.visual-section svg{max-width:100%;height:auto;display:block}.visual-section img{max-width:100%;height:auto}.explainer{background:#0f1419;border-left:4px solid var(--info);padding:16px;border-radius:8px;margin-bottom:14px;font-size:14px;line-height:1.7;color:var(--text)}.explainer strong{color:var(--gold2)}.reference{background:#0f1419;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px;font-size:13px}.reference strong{color:var(--gold2)}.reference ul{margin:8px 0;padding-left:20px}.reference li{margin:6px 0}.reference-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;font-weight:800}h3{margin:14px 0 8px 0;font-size:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#1b2530;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:13px}.mini strong{color:var(--gold2)}.quiz-q{font-weight:700;margin-bottom:10px}.options{display:grid;gap:10px}.opt{border:1px solid var(--line);background:#10151a;color:var(--text);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-size:13px;transition:all 200ms}.opt:hover:not(:disabled){border-color:var(--gold);background:#0f1a1f}.opt.correct{border-color:var(--good);background:#123026}.opt.incorrect{border-color:var(--bad);background:#321919}.opt:disabled{opacity:.7;cursor:not-allowed}.coach{display:none;margin-top:12px;padding:14px;border-left:4px solid var(--gold);background:#0e1419;border-radius:10px;font-size:13px;line-height:1.6}.coach.show{display:block}.coach strong{color:var(--gold2)}.rule{background:#211d0f;border:2px solid #66561f;padding:16px;border-radius:12px;text-align:center;font-weight:900;color:var(--gold2);margin-bottom:14px}.key-takeaway{background:#0e3a54;border:1px solid #1a5a7a;border-left:4px solid #0284c7;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;color:#e0f2fe}.key-takeaway strong{color:#0284c7}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:800;font-size:13px;transition:all 200ms}.btn:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--gold);color:#111}.primary:hover:not(:disabled){background:#ffc700;transform:translateY(-1px)}.secondary{background:#11161c;color:var(--text)}.secondary:hover:not(:disabled){background:#1a2430}.mobile{display:none}@media(max-width:1000px){.layout{grid-template-columns:1fr}.side{display:none}.mobile{display:block;margin-bottom:12px}.mobile select{width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;font-size:13px}.grid2{grid-template-columns:1fr}.hero{padding:17px}.card{padding:17px}.actions{flex-direction:column-reverse}.btn{width:100%}.visual-section{min-height:200px}}
+</style></head><body>
+<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small">Staging &amp; Carpentry Pathway — Course 1: Supporting Staging &amp; Carpentry</div></div><div class="progbox"><div class="progrow"><span id="progtext">Lesson 1.1 of 6</span><span id="pct">17%</span></div><div class="bar"><i id="bar" style="width:17%"></i></div></div><a href="../courses.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Exit Course</a></div></header>
+<div class="shell"><div class="mobile"><select id="mobile" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
+<aside class="side" id="sidebar"></aside>
+<main id="main"></main>
+</div></div>
 
 <script>
 const modules = [
-  {
-    id: '1',
-    name: 'Support Fundamentals',
-    lessons: [
-      {
-        id: '1.1',
-        name: 'What You Can Help With',
-        obj: 'Recognize assembly labor as real, valuable work.',
-        content: `
-          <h2>What You Can Help With, Under Direction</h2>
-          <p>Assembly labor is real, valuable work — it just isn't the same thing as structural authority.</p>
-          <p>You can move and stage deck sections, risers, stairs, guardrails, and scenic pieces exactly where the lead wants them, using a team carry for anything heavy or awkward. You can help assemble a modular staging system's assigned components — legs, sleeves, base pads, bracing, guardrail locks — once you've been shown that specific manufacturer's method; systems like Bil-Jax's AS2100 and ST8100 use different hardware from each other, so don't assume one system works like another. You can install guardrail or stair components under the lead's direction, follow a layout or drawing at the level you're assigned, and help strike, case, cart, and load the system afterward.</p>
-          <figure class="split-grid">
-            <div class="split-col split-can">
-              <h4>You Can Help With</h4>
-              <ul>
-                <li>Moving/staging decks, risers, stairs, guardrails</li>
-                <li>Assembling assigned modular staging components</li>
-                <li>Installing guardrail/stair components under direction</li>
-                <li>Striking, casing, carting, loading the system</li>
-              </ul>
-            </div>
-            <div class="split-col split-cant">
-              <h4>Stays Off-Limits</h4>
-              <ul>
-                <li>Cutting or altering deck/scenic components</li>
-                <li>Drilling new attachment points</li>
-                <li>Changing bracing or support geometry</li>
-                <li>Deciding leveling, load capacity, final acceptance</li>
-              </ul>
-            </div>
-          </figure>
-        `
-      },
-      {
-        id: '1.2',
-        name: 'What Stays Off-Limits',
-        obj: 'Understand structural authority and final acceptance.',
-        content: `
-          <h2>What Stays Off-Limits Without Direction</h2>
-          <p>The hand assembling a piece is not automatically the person authorized to decide its structural configuration.</p>
-          <div class="card" style="background: rgba(245, 180, 0, 0.08); border: 1px solid rgba(245, 180, 0, 0.32); margin: 16px 0;">
-            <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">An assembled deck isn't automatically a finished one</strong>
-            <p style="margin: 0; color: var(--cb-muted);">A platform can look solid with a component missing. Leveling, bracing decisions, load capacity, guardrail requirements, and final acceptance belong to the qualified lead — recognize obvious problems and report them instead of deciding they're fine.</p>
-          </div>
-          <p>Cutting or altering deck/scenic components, drilling new attachment points, changing bracing or support geometry, substituting hardware, modifying stairs or guardrails, and repairing structural elements all stay off-limits without direction and specific training — regardless of how comfortable you are with tools. Scenic pieces are finished production assets, not construction lumber: follow handling instructions, don't drag finished faces or edges, and don't use scenic pieces as worktables.</p>
-        `
-      },
-      {
-        id: '1.3',
-        name: 'Common Mistakes & Awareness',
-        obj: 'Master the structural discipline of staging work.',
-        content: `
-          <h2>Common Mistakes and Structural Awareness</h2>
-          <p>The mistake to guard against isn't forgetting to lock the deck — it's assuming a familiar locking method applies to today's system.</p>
-          <p>Identify the current product/system before you start, and follow the lead's or manufacturer's procedure for it. Clear the route before a carry, use enough people for the size and weight, communicate before lifting or setting down, and protect fingers at mating edges. Stage pieces so the next crew can access them without rehandling, and never leave a heavy section leaning or balanced insecurely.</p>
-          <p style="margin-top: 12px; color: var(--cb-muted); font-size: 14px;">Know that structural capacity exists without being trained to calculate it: legs, frames, bracing, base pads, and connections all contribute to the intended configuration, and a missing component can change safety even if the deck "feels solid." Guardrails, stairs, and access points are part of the system, not cosmetic accessories — incorrectly installed handrails can cause serious injury. If the build doesn't match the instruction or something looks unsafe, stop and report it.</p>
-        `
-      }
-    ]
-  },
-  {
-    id: '2',
-    name: 'Knowledge Check',
-    lessons: [
-      {
-        id: '2.1',
-        name: 'Quick Knowledge Check',
-        obj: 'Test your understanding of staging support.',
-        content: `
-          <h2>Quick Knowledge Check</h2>
-          <p>Pick an answer for each question.</p>
-
-          <div class="quiz-block">
-            <p class="quiz-q">You've assembled a deck section correctly. Does that mean you can decide it's safe to use?</p>
-            <div class="options" data-q="sq1">
-              <button class="opt" data-c="0">Yes — if it's assembled correctly, it's ready to use.</button>
-              <button class="opt" data-c="1">No. Final leveling, load capacity, and acceptance are the qualified lead's call.</button>
-              <button class="opt" data-c="0">Yes, as long as it doesn't wobble when you push on it.</button>
-            </div>
-            <div class="coach" id="sq1c"><strong>Why:</strong> An assembled deck isn't automatically a finished one. Recognize obvious problems and report them instead of deciding they're fine.</div>
-          </div>
-
-          <div class="quiz-block">
-            <p class="quiz-q">You know how one manufacturer's staging system locks together. Can you assume another brand works the same way?</p>
-            <div class="options" data-q="sq2">
-              <button class="opt" data-c="1">No. Identify the current system and follow its own procedure.</button>
-              <button class="opt" data-c="0">Yes — modular staging hardware is standardized across brands.</button>
-              <button class="opt" data-c="0">Yes, if the pieces look the same size.</button>
-            </div>
-            <div class="coach" id="sq2c"><strong>Why:</strong> Modular staging hardware is product-specific — systems like Bil-Jax's AS2100 and ST8100 use different hardware from each other. Don't assume one system works like another.</div>
-          </div>
-
-          <div class="quiz-block">
-            <p class="quiz-q">A guardrail component is missing from an otherwise-assembled platform. What do you do?</p>
-            <div class="options" data-q="sq3">
-              <button class="opt" data-c="0">Finish the rest of the assembly — the missing piece isn't urgent.</button>
-              <button class="opt" data-c="0">Use whatever spare hardware is on hand to fill the gap.</button>
-              <button class="opt" data-c="1">Stop and report it.</button>
-            </div>
-            <div class="coach" id="sq3c"><strong>Why:</strong> Guardrails, stairs, and access points are part of the system, not cosmetic accessories. Don't assume the deck is finished just because the surface is assembled.</div>
-          </div>
-
-          <div class="quiz-block">
-            <p class="quiz-q">You want to move a scenic piece faster. Can you drag it by a finished painted edge?</p>
-            <div class="options" data-q="sq4">
-              <button class="opt" data-c="0">Yes, as long as the edge looks sturdy.</button>
-              <button class="opt" data-c="1">No. Ask where the piece can safely be gripped.</button>
-              <button class="opt" data-c="0">Yes — it's faster and the paint can be touched up later.</button>
-            </div>
-            <div class="coach" id="sq4c"><strong>Why:</strong> Scenic pieces are finished production assets, not construction lumber. Don't drag finished faces or edges.</div>
-          </div>
-
-          <div class="quiz-block">
-            <p class="quiz-q">Can a ground hand substitute hardware if the correct piece isn't handy?</p>
-            <div class="options" data-q="sq5">
-              <button class="opt" data-c="0">Yes, if the substitute bolt or pin looks close enough in size.</button>
-              <button class="opt" data-c="0">Yes, as long as you tell the lead afterward.</button>
-              <button class="opt" data-c="1">No. Substituting hardware stays with qualified/authorized roles.</button>
-            </div>
-            <div class="coach" id="sq5c"><strong>Why:</strong> Substituting hardware, cutting, drilling, or modifying structural components changes the system's engineered configuration. That decision isn't a ground hand's to make.</div>
-          </div>
-        `
-      },
-      {
-        id: '2.2',
-        name: 'Key Takeaways',
-        obj: 'Solidify the principles of staging support.',
-        content: `
-          <h2>Key Takeaways</h2>
-          <ul style="margin: 16px 0; color: var(--cb-muted); list-style: disc; padding-left: 24px;">
-            <li>Move it, stage it, assemble the components you've been shown — under direction. Structural configuration and final acceptance stay with the lead.</li>
-            <li>Modular staging hardware is product-specific; follow the current system's own procedure instead of assuming.</li>
-            <li>Recognize obvious incomplete or unsafe conditions — missing rails, uneven support — and report them instead of deciding they're fine.</li>
-            <li>Preserve finished scenic surfaces; ask where a piece can safely be gripped instead of guessing.</li>
-          </ul>
-        `
-      },
-      {
-        id: '2.3',
-        name: 'Sources & References',
-        obj: 'Explore the research behind staging safety.',
-        content: `
-          <h2>Sources</h2>
-          <p>This course was built from research citing real crew postings, IATSE tour data, modular staging manufacturer documentation, and OSHA standards. Verify current applicability before relying on any of these for an actual job.</p>
-          <ul style="margin: 16px 0; color: var(--cb-muted); list-style: none; padding-left: 0;">
-            <li style="margin: 10px 0;"><strong>Live Nation — Union Stagehand</strong> — <a href="https://livenation.wd503.myworkdayjobs.com/en-US/LNExternalSite/job/Union-Stagehand--VB-Amphitheater-_JR-87529" target="_blank" rel="noopener noreferrer">livenation.wd503.myworkdayjobs.com</a></li>
-            <li style="margin: 10px 0;"><strong>Bil-Jax Event Staging</strong> — <a href="https://biljax.com/product-category/event/event-staging" target="_blank" rel="noopener noreferrer">biljax.com</a></li>
-            <li style="margin: 10px 0;"><strong>Bil-Jax AS2100 Aluminum Stage</strong> — <a href="https://biljax.com/product-category/event/event-staging/as2100" target="_blank" rel="noopener noreferrer">biljax.com</a></li>
-            <li style="margin: 10px 0;"><strong>Bil-Jax ST8100 Steel Multi-Stage</strong> — <a href="https://biljax.com/product-category/event/event-staging/st8100" target="_blank" rel="noopener noreferrer">biljax.com</a></li>
-            <li style="margin: 10px 0;"><strong>OSHA 29 CFR 1926.451 — General scaffold requirements</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.451" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
-            <li style="margin: 10px 0;"><strong>OSHA 29 CFR 1926.1431 — Hoisting personnel</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1431" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
-          </ul>
-        `
-      }
-    ]
-  }
+  {num:1,title:"Support Fundamentals",lessons:[
+    {id:"1.1",name:"What You Can Help With",obj:"Recognize assembly labor as real, valuable work."},
+    {id:"1.2",name:"What Stays Off-Limits",obj:"Understand structural authority and final acceptance."},
+    {id:"1.3",name:"Common Mistakes & Awareness",obj:"Master the structural discipline of staging work."}
+  ]},
+  {num:2,title:"Knowledge Check",lessons:[
+    {id:"2.1",name:"Quick Knowledge Check",obj:"Test your understanding of staging support."},
+    {id:"2.2",name:"Key Takeaways",obj:"Solidify the principles of staging support."},
+    {id:"2.3",name:"Sources & References",obj:"Explore the research behind staging safety."}
+  ]}
 ];
 
-function buildSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const select = document.getElementById('mobileSelect');
-  sidebar.innerHTML = '';
-  select.innerHTML = '';
+let current = 0;
+let total = modules.reduce((sum,m)=>sum+m.lessons.length,0);
 
-  modules.forEach(mod => {
-    const modDiv = document.createElement('div');
-    modDiv.className = 'side-mod';
-    modDiv.innerHTML = `<div class="side-mod-title">${mod.name}</div>`;
-
-    mod.lessons.forEach(lesson => {
-      const link = document.createElement('a');
-      link.href = '#';
-      link.className = 'side-lesson';
-      link.textContent = lesson.name;
-      link.dataset.idx = `${mod.id}.${lesson.id.split('.')[1]}`;
-      link.onclick = e => { e.preventDefault(); render(link.dataset.idx); };
-      modDiv.appendChild(link);
-
-      const opt = document.createElement('option');
-      opt.value = `${mod.id}.${lesson.id.split('.')[1]}`;
-      opt.textContent = `${mod.name} > ${lesson.name}`;
-      select.appendChild(opt);
+function buildSidebar(){
+  const s = document.getElementById('sidebar');
+  let h='<div class="small" style="padding:5px 8px 10px;text-transform:uppercase;letter-spacing:.12em">Supporting Staging &amp; Carpentry</div>';
+  modules.forEach((m,mi)=>{
+    const isActive = current>=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<modules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
+    h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
+    h+=`<div class="sub">`;
+    m.lessons.forEach((l,li)=>{
+      const idx = modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0)+li;
+      h+=`<button class="nav ${idx===current?'active':''}" onclick="goLesson(${idx})">${l.id} ${l.name}</button>`;
     });
-    sidebar.appendChild(modDiv);
+    h+=`</div>`;
   });
+  s.innerHTML=h;
+  buildMobileSelect();
 }
 
-function getModuleLesson(idx) {
-  const [modIdx, lesIdx] = idx.split('.');
-  const mod = modules.find(m => m.id === modIdx);
-  const lesson = mod.lessons.find(l => l.id.endsWith(lesIdx));
-  return { mod, lesson };
+function buildMobileSelect(){
+  const m=document.getElementById('mobile');
+  m.innerHTML='';
+  let idx=0;
+  modules.forEach(mod=>{
+    mod.lessons.forEach(l=>{
+      const opt=document.createElement('option');
+      opt.value=idx;
+      opt.textContent=`${l.id} ${l.name}`;
+      if(idx===current)opt.selected=true;
+      m.appendChild(opt);
+      idx++;
+    });
+  });
+  m.onchange=e=>goLesson(+e.target.value);
 }
 
-function render(idx) {
-  const { mod, lesson } = getModuleLesson(idx);
-  document.getElementById('objective').textContent = lesson.obj;
-  document.getElementById('lessonContent').innerHTML = lesson.content;
-  document.querySelectorAll('.side-lesson').forEach(l => l.classList.remove('active'));
-  document.querySelector(`[data-idx="${idx}"]`).classList.add('active');
-  document.getElementById('mobileSelect').value = idx;
-
-  const totalLessons = modules.reduce((sum, m) => sum + m.lessons.length, 0);
-  let currentLesson = 0;
-  modules.forEach(m => m.lessons.forEach(l => { currentLesson++; if (l.id === lesson.id) return; }));
-  let count = 0;
-  modules.forEach(m => m.lessons.forEach(l => { count++; if (l.id === lesson.id) currentLesson = count; }));
-
-  const progress = (currentLesson / totalLessons) * 100;
-  document.querySelector('.progress-fill').style.width = progress + '%';
-  document.getElementById('progtext').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
-  document.getElementById('pct').textContent = Math.round(progress) + '%';
-
-  renderFooterNav(mod, lesson, idx);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function renderFooterNav(mod, lesson, idx) {
-  const nav = document.getElementById('footerNav');
-  nav.innerHTML = '';
-
-  const allLessons = [];
-  modules.forEach(m => m.lessons.forEach(l => allLessons.push({...l, modId: m.id})));
-  const currentIdx = allLessons.findIndex(l => l.id === lesson.id);
-
-  if (currentIdx > 0) {
-    const prev = allLessons[currentIdx - 1];
-    const prevLink = document.createElement('a');
-    prevLink.href = '#';
-    prevLink.className = 'footer-nav-card';
-    prevLink.innerHTML = `<span class="label">← Previous</span><h3>${prev.name}</h3>`;
-    prevLink.onclick = e => { e.preventDefault(); render(`${prev.modId}.${prev.id.split('.')[1]}`); };
-    nav.appendChild(prevLink);
+function getModuleLesson(idx){
+  let count=0;
+  for(let m of modules){
+    if(count+m.lessons.length>idx)return [m,m.lessons[idx-count]];
+    count+=m.lessons.length;
   }
+  return [modules[0],modules[0].lessons[0]];
+}
 
-  if (currentIdx < allLessons.length - 1) {
-    const next = allLessons[currentIdx + 1];
-    const nextLink = document.createElement('a');
-    nextLink.href = '#';
-    nextLink.className = 'footer-nav-card';
-    nextLink.innerHTML = `<span class="label">Next →</span><h3>${next.name}</h3>`;
-    nextLink.onclick = e => { e.preventDefault(); render(`${next.modId}.${next.id.split('.')[1]}`); };
-    nav.appendChild(nextLink);
-  }
+function goLesson(idx){
+  current=Math.max(0,Math.min(idx,total-1));
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function goModule(mi){
+  const idx=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0);
+  goLesson(idx);
+}
+
+function render(){
+  const [mod,lesson]=getModuleLesson(current);
+  document.getElementById('progtext').textContent=`Lesson ${lesson.id} of ${total}`;
+  document.getElementById('pct').textContent=Math.round((current+1)/total*100)+'%';
+  document.getElementById('bar').style.width=(current+1)/total*100+'%';
+
+  let html=`<section class="hero">
+    <div class="eyebrow">Module ${mod.num} • Lesson ${lesson.id}</div>
+    <h1>${lesson.name}</h1>
+    <p><b>Objective:</b> ${lesson.obj}</p>
+    <div class="rule">${lesson.obj}</div>
+  </section>`;
+
+  if(lesson.id==='1.1')html+=renderL11();
+  else if(lesson.id==='1.2')html+=renderL12();
+  else if(lesson.id==='1.3')html+=renderL13();
+  else if(lesson.id==='2.1')html+=renderL21();
+  else if(lesson.id==='2.2')html+=renderL22();
+  else if(lesson.id==='2.3')html+=renderL23();
+
+  html+=`<div class="actions">
+    <button class="btn secondary" ${current===0?'disabled':''} onclick="goLesson(${current-1})">← Previous</button>
+    <button class="btn primary" ${current===total-1?'disabled':''} onclick="goLesson(${current+1})">Next →</button>
+  </div>`;
+
+  document.getElementById('main').innerHTML=html;
+  buildSidebar();
+}
+
+function renderL11(){
+  return `<div class="card objective">
+    <h3>What You Can Help With, Under Direction</h3>
+    <div class="explainer">Assembly labor is real, valuable work — it just isn't the same thing as structural authority. You can move and stage deck sections, risers, stairs, guardrails, and scenic pieces exactly where the lead wants them, using a team carry for anything heavy or awkward. You can help assemble a modular staging system's assigned components — legs, sleeves, base pads, bracing, guardrail locks — once you've been shown that specific manufacturer's method; systems like Bil-Jax's AS2100 and ST8100 use different hardware from each other, so don't assume one system works like another. You can install guardrail or stair components under the lead's direction, follow a layout or drawing at the level you're assigned, and help strike, case, cart, and load the system afterward.</div>
+  </div>
+  <div class="card">
+    <div class="grid2">
+      <div class="mini"><strong>You Can Help With</strong>
+        <ul>
+          <li>Moving/staging decks, risers, stairs, guardrails</li>
+          <li>Assembling assigned modular staging components</li>
+          <li>Installing guardrail/stair components under direction</li>
+          <li>Striking, casing, carting, loading the system</li>
+        </ul>
+      </div>
+      <div class="mini"><strong>Stays Off-Limits</strong>
+        <ul>
+          <li>Cutting or altering deck/scenic components</li>
+          <li>Drilling new attachment points</li>
+          <li>Changing bracing or support geometry</li>
+          <li>Deciding leveling, load capacity, final acceptance</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderL12(){
+  return `<div class="card objective">
+    <h3>What Stays Off-Limits Without Direction</h3>
+    <div class="explainer">The hand assembling a piece is not automatically the person authorized to decide its structural configuration.</div>
+    <div class="reference"><span class="reference-label">An assembled deck isn't automatically a finished one</span>A platform can look solid with a component missing. Leveling, bracing decisions, load capacity, guardrail requirements, and final acceptance belong to the qualified lead — recognize obvious problems and report them instead of deciding they're fine.</div>
+    <p style="color:var(--muted)">Cutting or altering deck/scenic components, drilling new attachment points, changing bracing or support geometry, substituting hardware, modifying stairs or guardrails, and repairing structural elements all stay off-limits without direction and specific training — regardless of how comfortable you are with tools. Scenic pieces are finished production assets, not construction lumber: follow handling instructions, don't drag finished faces or edges, and don't use scenic pieces as worktables.</p>
+  </div>`;
+}
+
+function renderL13(){
+  return `<div class="card objective">
+    <h3>Common Mistakes and Structural Awareness</h3>
+    <div class="explainer">The mistake to guard against isn't forgetting to lock the deck — it's assuming a familiar locking method applies to today's system. Identify the current product/system before you start, and follow the lead's or manufacturer's procedure for it. Clear the route before a carry, use enough people for the size and weight, communicate before lifting or setting down, and protect fingers at mating edges. Stage pieces so the next crew can access them without rehandling, and never leave a heavy section leaning or balanced insecurely.</div>
+    <div class="reference"><span class="reference-label">Structural awareness without structural authority</span>Legs, frames, bracing, base pads, and connections all contribute to the intended configuration, and a missing component can change safety even if the deck "feels solid." Guardrails, stairs, and access points are part of the system, not cosmetic accessories — incorrectly installed handrails can cause serious injury. If the build doesn't match the instruction or something looks unsafe, stop and report it.</div>
+  </div>`;
+}
+
+function renderL21(){
+  return `<div class="card">
+    <h3>Quick Knowledge Check</h3>
+    <p>Pick an answer for each question.</p>
+
+    <div class="quiz-q">You've assembled a deck section correctly. Does that mean you can decide it's safe to use?</div>
+    <div class="options" data-q="sq1">
+      <button class="opt" data-c="0">Yes — if it's assembled correctly, it's ready to use.</button>
+      <button class="opt" data-c="1">No. Final leveling, load capacity, and acceptance are the qualified lead's call.</button>
+      <button class="opt" data-c="0">Yes, as long as it doesn't wobble when you push on it.</button>
+    </div>
+    <div class="coach" id="sq1c"><strong>Why:</strong> An assembled deck isn't automatically a finished one. Recognize obvious problems and report them instead of deciding they're fine.</div>
+
+    <div class="quiz-q" style="margin-top:20px">You know how one manufacturer's staging system locks together. Can you assume another brand works the same way?</div>
+    <div class="options" data-q="sq2">
+      <button class="opt" data-c="1">No. Identify the current system and follow its own procedure.</button>
+      <button class="opt" data-c="0">Yes — modular staging hardware is standardized across brands.</button>
+      <button class="opt" data-c="0">Yes, if the pieces look the same size.</button>
+    </div>
+    <div class="coach" id="sq2c"><strong>Why:</strong> Modular staging hardware is product-specific — systems like Bil-Jax's AS2100 and ST8100 use different hardware from each other. Don't assume one system works like another.</div>
+
+    <div class="quiz-q" style="margin-top:20px">A guardrail component is missing from an otherwise-assembled platform. What do you do?</div>
+    <div class="options" data-q="sq3">
+      <button class="opt" data-c="0">Finish the rest of the assembly — the missing piece isn't urgent.</button>
+      <button class="opt" data-c="0">Use whatever spare hardware is on hand to fill the gap.</button>
+      <button class="opt" data-c="1">Stop and report it.</button>
+    </div>
+    <div class="coach" id="sq3c"><strong>Why:</strong> Guardrails, stairs, and access points are part of the system, not cosmetic accessories. Don't assume the deck is finished just because the surface is assembled.</div>
+
+    <div class="quiz-q" style="margin-top:20px">You want to move a scenic piece faster. Can you drag it by a finished painted edge?</div>
+    <div class="options" data-q="sq4">
+      <button class="opt" data-c="0">Yes, as long as the edge looks sturdy.</button>
+      <button class="opt" data-c="1">No. Ask where the piece can safely be gripped.</button>
+      <button class="opt" data-c="0">Yes — it's faster and the paint can be touched up later.</button>
+    </div>
+    <div class="coach" id="sq4c"><strong>Why:</strong> Scenic pieces are finished production assets, not construction lumber. Don't drag finished faces or edges.</div>
+
+    <div class="quiz-q" style="margin-top:20px">Can a ground hand substitute hardware if the correct piece isn't handy?</div>
+    <div class="options" data-q="sq5">
+      <button class="opt" data-c="0">Yes, if the substitute bolt or pin looks close enough in size.</button>
+      <button class="opt" data-c="0">Yes, as long as you tell the lead afterward.</button>
+      <button class="opt" data-c="1">No. Substituting hardware stays with qualified/authorized roles.</button>
+    </div>
+    <div class="coach" id="sq5c"><strong>Why:</strong> Substituting hardware, cutting, drilling, or modifying structural components changes the system's engineered configuration. That decision isn't a ground hand's to make.</div>
+  </div>`;
+}
+
+function renderL22(){
+  return `<div class="card">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Move it, stage it, assemble the components you've been shown — under direction. Structural configuration and final acceptance stay with the lead.</li>
+      <li>Modular staging hardware is product-specific; follow the current system's own procedure instead of assuming.</li>
+      <li>Recognize obvious incomplete or unsafe conditions — missing rails, uneven support — and report them instead of deciding they're fine.</li>
+      <li>Preserve finished scenic surfaces; ask where a piece can safely be gripped instead of guessing.</li>
+    </ul>
+    <div class="key-takeaway"><strong>Key principle:</strong> Move it, assemble it, and report what's missing — the structural call stays with the lead.</div>
+  </div>`;
+}
+
+function renderL23(){
+  return `<div class="card">
+    <h3>Sources</h3>
+    <div class="reference">
+      <p>This course was built from research citing real crew postings, IATSE tour data, modular staging manufacturer documentation, and OSHA standards. Verify current applicability before relying on any of these for an actual job.</p>
+      <ul>
+        <li><strong>Live Nation — Union Stagehand</strong> — <a href="https://livenation.wd503.myworkdayjobs.com/en-US/LNExternalSite/job/Union-Stagehand--VB-Amphitheater-_JR-87529" target="_blank" rel="noopener noreferrer">livenation.wd503.myworkdayjobs.com</a></li>
+        <li><strong>Bil-Jax Event Staging</strong> — <a href="https://biljax.com/product-category/event/event-staging" target="_blank" rel="noopener noreferrer">biljax.com</a></li>
+        <li><strong>Bil-Jax AS2100 Aluminum Stage</strong> — <a href="https://biljax.com/product-category/event/event-staging/as2100" target="_blank" rel="noopener noreferrer">biljax.com</a></li>
+        <li><strong>Bil-Jax ST8100 Steel Multi-Stage</strong> — <a href="https://biljax.com/product-category/event/event-staging/st8100" target="_blank" rel="noopener noreferrer">biljax.com</a></li>
+        <li><strong>OSHA 29 CFR 1926.451 — General scaffold requirements</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.451" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
+        <li><strong>OSHA 29 CFR 1926.1431 — Hoisting personnel</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1431" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
+      </ul>
+    </div>
+  </div>`;
 }
 
 buildSidebar();
-render('1.1');
-document.getElementById('mobileSelect').addEventListener('change', e => render(e.target.value));
+render();
 
-document.getElementById('lessonContent').addEventListener('click', e => {
-  const btn = e.target.closest('.opt');
-  if (!btn) return;
-  const group = btn.closest('.options');
-  if ([...group.children].some(x => x.disabled)) return;
-  [...group.children].forEach(x => { x.disabled = true; if (x.dataset.c === '1') x.classList.add('correct'); });
-  if (btn.dataset.c !== '1') btn.classList.add('incorrect');
-  const coach = document.getElementById(group.dataset.q + 'c');
-  if (coach) coach.classList.add('show');
-});
+setInterval(()=>{
+  document.querySelectorAll('.options').forEach(g=>{
+    [...g.children].forEach(b=>b.onclick=()=>{
+      if([...g.children].some(x=>x.disabled))return;
+      [...g.children].forEach(x=>{x.disabled=true;if(x.dataset.c==='1')x.classList.add('correct')});
+      if(b.dataset.c!=='1')b.classList.add('incorrect');
+      const cid=g.dataset.q+'c';
+      const coach=document.getElementById(cid);
+      if(coach)coach.classList.add('show');
+    });
+  });
+},100);
 </script>
-
 </body>
 </html>
