@@ -10,6 +10,12 @@ Research files collected here are intended to be:
 2. Kept as separate, source-traceable research packages.
 3. Handed directly to Claude for curriculum architecture, synthesis, and downstream content development.
 
+## Active execution queue
+
+Current priorities, dependencies, accepted curriculum direction, and completion criteria are tracked in [RESEARCH_QUEUE.md](RESEARCH_QUEUE.md).
+
+This README remains the evidence-library guide and source hierarchy. Historical prompt trackers and roadmap snapshots do not define current task status unless they have been reconciled through RQ-000. The library now contains packages beyond the handoff list below; RQ-000 will produce a collision-free registry and course-to-source crosswalk before this catalog is expanded.
+
 ## Claude handoff order
 
 Keep the research files as **separate Markdown sources** rather than merging them into one document. This preserves source-level traceability during Claude synthesis.
