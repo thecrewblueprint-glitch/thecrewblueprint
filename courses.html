@@ -92,11 +92,6 @@
     text-transform: uppercase;
   }
 
-  .cb-dept-branches {
-    color: var(--cb-muted-2);
-    margin: 48px 0;
-  }
-
   .cb-progression-intro {
     max-width: 780px;
     margin: 0 auto 32px;
@@ -193,150 +188,6 @@
         After Stagehand Fundamentals, choose a department pathway to develop deeper knowledge and hands-on capability.
       </p>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" class="cb-dept-branches cb-diagram">
-        <defs>
-          <linearGradient id="branch-fade-vertical" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.3" />
-            <stop offset="50%" style="stop-color:currentColor;stop-opacity:0.5" />
-            <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.3" />
-          </linearGradient>
-        </defs>
-
-        <!-- Central node: Stagehand Fundamentals -->
-        <g>
-          <circle cx="600" cy="80" r="45" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-          <text x="600" y="85" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.9">Stagehand</text>
-          <text x="600" y="105" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.9">Fundamentals</text>
-        </g>
-
-        <!-- Connector lines from foundation to departments -->
-        <g stroke="currentColor" stroke-width="1.5" opacity="0.35">
-          <line x1="560" y1="125" x2="280" y2="220"/>
-          <line x1="575" y1="125" x2="400" y2="220"/>
-          <line x1="600" y1="125" x2="600" y2="220"/>
-          <line x1="625" y1="125" x2="800" y2="220"/>
-          <line x1="640" y1="125" x2="920" y2="220"/>
-        </g>
-
-        <!-- Department Nodes (Top of 3-tier progression) -->
-        <g>
-          <rect x="220" y="220" width="120" height="50" rx="8" fill="currentColor" opacity="0.06" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-          <text x="280" y="250" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.85">Lighting</text>
-        </g>
-
-        <g>
-          <rect x="340" y="220" width="120" height="50" rx="8" fill="currentColor" opacity="0.06" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-          <text x="400" y="250" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.85">Video</text>
-        </g>
-
-        <g>
-          <rect x="540" y="220" width="120" height="50" rx="8" fill="currentColor" opacity="0.06" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-          <text x="600" y="250" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.85">Audio</text>
-        </g>
-
-        <g>
-          <rect x="740" y="220" width="120" height="50" rx="8" fill="currentColor" opacity="0.06" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-          <text x="800" y="250" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.85">Staging</text>
-        </g>
-
-        <g>
-          <rect x="860" y="220" width="120" height="50" rx="8" fill="currentColor" opacity="0.06" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-          <text x="920" y="250" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" opacity="0.85">Backline</text>
-        </g>
-
-        <!-- Vertical progression lines from each department -->
-        <g stroke="url(#branch-fade-vertical)" stroke-width="1" opacity="0.35">
-          <line x1="280" y1="270" x2="280" y2="350"/>
-          <line x1="400" y1="270" x2="400" y2="350"/>
-          <line x1="600" y1="270" x2="600" y2="350"/>
-          <line x1="800" y1="270" x2="800" y2="350"/>
-          <line x1="920" y1="270" x2="920" y2="350"/>
-        </g>
-
-        <!-- Course 1 Level (middle tier) -->
-        <g opacity="0.7">
-          <text x="110" y="380" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="currentColor" opacity="0.6" text-transform="uppercase" letter-spacing="0.08em">Course 1</text>
-          <text x="110" y="395" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="currentColor" opacity="0.7">Learn to</text>
-          <text x="110" y="410" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="currentColor" opacity="0.7">Perform</text>
-        </g>
-
-        <g>
-          <rect x="220" y="350" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="280" y="378" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Support</text>
-          <text x="280" y="395" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">&amp; Execute</text>
-        </g>
-
-        <g>
-          <rect x="340" y="350" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="400" y="378" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Support</text>
-          <text x="400" y="395" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">&amp; Execute</text>
-        </g>
-
-        <g>
-          <rect x="540" y="350" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="600" y="378" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Support</text>
-          <text x="600" y="395" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">&amp; Execute</text>
-        </g>
-
-        <g>
-          <rect x="740" y="350" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="800" y="378" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Support</text>
-          <text x="800" y="395" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">&amp; Execute</text>
-        </g>
-
-        <g>
-          <rect x="860" y="350" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="920" y="378" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Support</text>
-          <text x="920" y="395" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">&amp; Execute</text>
-        </g>
-
-        <!-- Course 2 Level (bottom tier) -->
-        <g opacity="0.7">
-          <text x="110" y="520" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="currentColor" opacity="0.6" text-transform="uppercase" letter-spacing="0.08em">Course 2</text>
-          <text x="110" y="535" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="currentColor" opacity="0.7">Understand</text>
-          <text x="110" y="550" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="currentColor" opacity="0.7">Systems</text>
-        </g>
-
-        <!-- Progression lines from Course 1 to Course 2 -->
-        <g stroke="currentColor" stroke-width="1" opacity="0.25" stroke-dasharray="4,4">
-          <line x1="280" y1="410" x2="280" y2="480"/>
-          <line x1="400" y1="410" x2="400" y2="480"/>
-          <line x1="600" y1="410" x2="600" y2="480"/>
-          <line x1="800" y1="410" x2="800" y2="480"/>
-          <line x1="920" y1="410" x2="920" y2="480"/>
-        </g>
-
-        <g>
-          <rect x="220" y="480" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="280" y="508" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Systems</text>
-          <text x="280" y="525" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Understanding</text>
-        </g>
-
-        <g>
-          <rect x="340" y="480" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="400" y="508" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Systems</text>
-          <text x="400" y="525" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Understanding</text>
-        </g>
-
-        <g>
-          <rect x="540" y="480" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="600" y="508" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Systems</text>
-          <text x="600" y="525" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Understanding</text>
-        </g>
-
-        <g>
-          <rect x="740" y="480" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="800" y="508" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Systems</text>
-          <text x="800" y="525" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Understanding</text>
-        </g>
-
-        <g>
-          <rect x="860" y="480" width="120" height="60" rx="6" fill="currentColor" opacity="0.04" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-          <text x="920" y="508" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Systems</text>
-          <text x="920" y="525" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="currentColor" opacity="0.75">Understanding</text>
-        </g>
-      </svg>
-
       <div class="cb-dept-grid">
         <article class="cb-panel cb-dept-card">
           <h3>Lighting</h3>
@@ -432,7 +283,7 @@
             </li>
           </ul>
         </article>
-      </svg>
+      </div>
 
       <div class="cb-progression-intro">
         <strong>Course 1: Learn to Perform Assigned Work</strong>
@@ -446,28 +297,6 @@
         <p>How the department's systems work, why procedures matter, how your work fits into the larger production. Course 2 develops systems-level understanding of your department.</p>
       </div>
     </section>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="120" preserveAspectRatio="xMidYMid meet" class="cb-truss-divider" style="display: block; margin: 0 auto; color: var(--cb-muted-2);">
-      <defs>
-        <linearGradient id="truss-fade-courses" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:currentColor;stop-opacity:0" />
-          <stop offset="10%" style="stop-color:currentColor;stop-opacity:1" />
-          <stop offset="90%" style="stop-color:currentColor;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:currentColor;stop-opacity:0" />
-        </linearGradient>
-      </defs>
-      <line x1="0" y1="30" x2="1200" y2="30" stroke="url(#truss-fade-courses)" stroke-width="1.5" opacity="0.7"/>
-      <line x1="0" y1="90" x2="1200" y2="90" stroke="url(#truss-fade-courses)" stroke-width="1.5" opacity="0.7"/>
-      <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
-        <line x1="60" y1="30" x2="60" y2="90"/><line x1="120" y1="30" x2="120" y2="90"/><line x1="180" y1="30" x2="180" y2="90"/><line x1="240" y1="30" x2="240" y2="90"/><line x1="300" y1="30" x2="300" y2="90"/><line x1="360" y1="30" x2="360" y2="90"/><line x1="420" y1="30" x2="420" y2="90"/><line x1="480" y1="30" x2="480" y2="90"/><line x1="540" y1="30" x2="540" y2="90"/><line x1="600" y1="30" x2="600" y2="90"/><line x1="660" y1="30" x2="660" y2="90"/><line x1="720" y1="30" x2="720" y2="90"/><line x1="780" y1="30" x2="780" y2="90"/><line x1="840" y1="30" x2="840" y2="90"/><line x1="900" y1="30" x2="900" y2="90"/><line x1="960" y1="30" x2="960" y2="90"/><line x1="1020" y1="30" x2="1020" y2="90"/><line x1="1080" y1="30" x2="1080" y2="90"/><line x1="1140" y1="30" x2="1140" y2="90"/>
-      </g>
-      <g stroke="currentColor" stroke-width="1" opacity="0.45">
-        <line x1="0" y1="30" x2="60" y2="90"/><line x1="60" y1="90" x2="120" y2="30"/><line x1="120" y1="30" x2="180" y2="90"/><line x1="180" y1="90" x2="240" y2="30"/><line x1="240" y1="30" x2="300" y2="90"/><line x1="300" y1="90" x2="360" y2="30"/><line x1="360" y1="30" x2="420" y2="90"/><line x1="420" y1="90" x2="480" y2="30"/><line x1="480" y1="30" x2="540" y2="90"/><line x1="540" y1="90" x2="600" y2="30"/><line x1="600" y1="30" x2="660" y2="90"/><line x1="660" y1="90" x2="720" y2="30"/><line x1="720" y1="30" x2="780" y2="90"/><line x1="780" y1="90" x2="840" y2="30"/><line x1="840" y1="30" x2="900" y2="90"/><line x1="900" y1="90" x2="960" y2="30"/><line x1="960" y1="30" x2="1020" y2="90"/><line x1="1020" y1="90" x2="1080" y2="30"/><line x1="1080" y1="30" x2="1140" y2="90"/><line x1="1140" y1="90" x2="1200" y2="30"/>
-      </g>
-      <g fill="currentColor" class="cb-truss-accent" opacity="0.3">
-        <circle cx="300" cy="60" r="2.5"/><circle cx="600" cy="60" r="2.5"/><circle cx="900" cy="60" r="2.5"/>
-      </g>
-    </svg>
 
     <section class="cb-section">
       <h2>Future training paths</h2>
