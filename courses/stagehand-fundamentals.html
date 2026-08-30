@@ -269,7 +269,9 @@ function hazardRiskModel(){
 }
 
 function svgStagePlan(){
-  return `<svg viewBox="0 0 800 600" style="width:100%;max-width:900px">
+  return `<svg viewBox="0 0 800 600" role="img" aria-labelledby="stage-plan-title stage-plan-desc" style="width:100%;max-width:900px">
+    <title id="stage-plan-title">Stage and house direction map</title>
+    <desc id="stage-plan-desc">The diagram is viewed from the audience facing the stage. House left is on the image's left and house right is on the image's right. Because stage directions use the performer's perspective facing the audience, stage right is on the image's left and stage left is on the image's right. Upstage is away from the audience and downstage is closest to the audience.</desc>
     <defs><style>
       .stage{fill:#2b3a4a;stroke:#f5b400;stroke-width:2}
       .house{fill:#1a2a3a;stroke:#0284c7;stroke-width:2}
@@ -277,18 +279,31 @@ function svgStagePlan(){
       .hazard{fill:none;stroke:#e26868;stroke-width:2;stroke-dasharray:4}
       .label{font-size:14px;font-weight:bold;fill:#f5b400;text-anchor:middle}
       .sublabel{font-size:11px;fill:#aab5c0;text-anchor:middle}
-      .hazard-label{font-size:10px;fill:#e26868}
+      .stage-direction{font-size:13px;font-weight:bold;fill:#f5b400;text-anchor:middle}
+      .house-direction{font-size:13px;font-weight:bold;fill:#45b9ff;text-anchor:middle}
+      .direction-note{font-size:10px;fill:#d3dae1;text-anchor:middle}
+      .hazard-label{font-size:10px;fill:#e26868;text-anchor:middle}
     </style></defs>
-    <rect class="stage" x="150" y="100" width="500" height="250"/><text class="label" x="400" y="240">STAGE</text>
-    <text class="sublabel" x="180" y="120" style="fill:#f5b400">Stage Left</text><text class="sublabel" x="620" y="120" style="fill:#f5b400">Stage Right</text>
-    <line x1="400" y1="100" x2="400" y2="350" stroke="#666" stroke-width="1" stroke-dasharray="2"/>
-    <text class="sublabel" x="400" y="90" style="fill:#999">(Center Line)</text>
-    <rect class="house" x="150" y="360" width="500" height="140"/><text class="label" x="400" y="440">HOUSE / AUDIENCE</text>
-    <rect class="crew" x="50" y="100" width="80" height="250"/><text class="sublabel" x="90" y="240">Wings &</text><text class="sublabel" x="90" y="255">Crew</text>
-    <rect class="crew" x="670" y="100" width="80" height="250"/><text class="sublabel" x="710" y="240">Wings &</text><text class="sublabel" x="710" y="255">Crew</text>
+    <rect class="stage" x="150" y="100" width="500" height="270"/>
+    <text class="stage-direction" x="400" y="126">UPSTAGE</text>
+    <text class="direction-note" x="400" y="143">Away from the audience</text>
+    <line x1="400" y1="100" x2="400" y2="370" stroke="#66727e" stroke-width="1" stroke-dasharray="2"/>
+    <text class="sublabel" x="400" y="90" style="fill:#999">CENTER LINE</text>
+    <text class="label" x="400" y="225">STAGE</text>
+    <text class="direction-note" x="400" y="247">Performer faces the audience ↓</text>
+    <text class="stage-direction" x="225" y="347">STAGE RIGHT</text>
+    <text class="stage-direction" x="575" y="347">STAGE LEFT</text>
+    <text class="stage-direction" x="400" y="306">DOWNSTAGE</text>
+    <text class="direction-note" x="400" y="323">Closest to the audience</text>
+    <rect class="house" x="150" y="390" width="500" height="150"/>
+    <text class="house-direction" x="245" y="423">HOUSE LEFT</text>
+    <text class="house-direction" x="555" y="423">HOUSE RIGHT</text>
+    <text class="label" x="400" y="470" style="fill:#45b9ff">HOUSE / AUDIENCE</text>
+    <text class="direction-note" x="400" y="493">Audience faces the stage ↑</text>
+    <rect class="crew" x="50" y="100" width="80" height="270"/><text class="sublabel" x="90" y="240">Wings &amp;</text><text class="sublabel" x="90" y="255">Crew</text>
+    <rect class="crew" x="670" y="100" width="80" height="270"/><text class="sublabel" x="710" y="240">Wings &amp;</text><text class="sublabel" x="710" y="255">Crew</text>
     <rect class="crew" x="150" y="20" width="500" height="50"/><text class="sublabel" x="400" y="50">LOADING DOCK</text>
-    <polyline class="hazard" points="50,350 750,350"/><text class="hazard-label" x="760" y="355">Audience edge</text>
-    <polyline class="hazard" points="670,100 670,350"/><text class="hazard-label" x="650" y="85">Stage edge</text>
+    <polyline class="hazard" points="50,370 750,370"/><text class="hazard-label" x="400" y="383">AUDIENCE EDGE</text>
   </svg>`;
 }
 
@@ -870,14 +885,14 @@ function renderM42(){
   return `<div class="card objective">
     <h3>Venue Vocabulary: Consistent Location Language</h3>
     <div class="visual-section">${svgStagePlan()}</div>
-    <div class="explainer">Venues use consistent location language that repeats across every show you work. <strong>Stage left/right (performer's perspective), house left/right (audience perspective), FOH (front-of-house control area), upstage/downstage (away from/toward audience), dock, backstage.</strong> This vocabulary is stable. Once you learn it, it works everywhere. Stage left is always stage left, no matter the venue.</div>
+    <div class="explainer">Venues use consistent location language that repeats across every show you work. <strong>Stage left/right (performer's perspective), house left/right (audience perspective), FOH (front-of-house control area), upstage/downstage (away from/toward audience), dock, backstage.</strong> This diagram is viewed from the audience, so stage right appears on the image's left and stage left appears on the image's right. Once you learn the perspectives, the vocabulary works everywhere.</div>
     <div class="reference">
       <span class="reference-label">Venue Directions Explained</span>
       <ul>
-        <li><strong>Stage Left/Right:</strong> Using the performer's perspective facing the audience. If you are standing on stage facing where the audience is, stage left is to your left. For someone in the audience, stage left looks like it is on the right. This is why it matters—it is not a direction; it is a perspective.</li>
-        <li><strong>House Left/Right:</strong> Using the audience's perspective facing the stage. If you are sitting in the audience, house left is your left.</li>
+        <li><strong>Stage Left/Right:</strong> Use the performer's perspective while facing the audience. From the audience-facing view in the diagram, stage right is on the image's left and stage left is on the image's right.</li>
+        <li><strong>House Left/Right:</strong> Use the audience's perspective while facing the stage. In the diagram, house left is on the image's left and house right is on the image's right.</li>
         <li><strong>FOH (Front-of-House):</strong> The control/production area in the audience seating area. Where sound, lighting, and production control sits during a show. It is not stage left or right; it is a zone.</li>
-        <li><strong>Upstage/Downstage:</strong> Away from audience / toward audience. Upstage is farther from the audience, downstage is closer.</li>
+        <li><strong>Upstage/Downstage:</strong> Upstage is the rear of the stage, away from the audience. Downstage is the front edge, closest to the audience.</li>
         <li><strong>Dock/Loading Dock:</strong> Where trucks back up to load/unload. Usually at the rear or side of the venue.</li>
         <li><strong>Backstage:</strong> Everything behind or to the sides of the stage. Not the stage itself, but the areas crew uses.</li>
       </ul>
