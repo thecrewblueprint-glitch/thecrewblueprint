@@ -14,6 +14,9 @@ function requireText(haystack, needle, label) {
 }
 
 requireText(terms, 'educational brand operated by Deadhang Labor LLC', 'operator identity');
+requireText(limitation, 'educational brand operated by Deadhang Labor LLC', 'release-page operator identity');
+requireText(terms, 'at least 18 years old', 'adult course-access restriction');
+requireText(limitation, '<h1>Assumption of Risk, Release, and Limitation of Liability</h1>', 'release-page title');
 requireText(terms, 'Copyright complaints.', 'copyright-notice procedure');
 requireText(terms, 'does not state that Deadhang Labor LLC has registered a designated agent', 'DMCA-status accuracy');
 requireText(terms, 'circumstances beyond our reasonable control', 'force-majeure language');
@@ -25,7 +28,8 @@ requireText(terms, 'third-party claims', 'narrowed indemnification scope');
 requireText(terms, 'reasonable defense costs and attorneys&rsquo; fees', 'indemnification costs');
 requireText(terms, 'require a fresh affirmative acceptance', 'Terms change acceptance');
 requireText(limitation, 'require a fresh affirmative acceptance', 'Limitation change acceptance');
-requireText(consent, "var CONSENT_VERSION = '2026-08-30.2'", 'consent version');
+requireText(consent, "var CONSENT_VERSION = '2026-08-30.3'", 'consent version');
+requireText(consent, 'ageMajorityConfirmed: true', 'adult eligibility record');
 
 if (/mandatory binding arbitration|class action waiver/i.test(terms + limitation)) {
   errors.push('unreviewed mandatory arbitration or class-action waiver language is present');
