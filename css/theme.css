@@ -863,6 +863,188 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------------------------------------------------
+   10A. CURRICULUM TIER SYSTEM
+   Named learning layers keep Course 1/Course 2 numbering clear
+   while distinguishing research-ready, review-gated, and live work.
+   --------------------------------------------------------- */
+
+.cb-tier-stack { display: grid; gap: 32px; margin-top: 32px; }
+
+.cb-tier {
+  position: relative;
+  padding: 28px;
+  text-align: left;
+}
+
+.cb-tier-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.cb-tier-heading h3 { margin: 4px 0 6px; color: var(--cb-text); font-size: 24px; }
+.cb-tier-heading p { margin: 0; max-width: 760px; color: var(--cb-muted); font-size: 14px; }
+
+.cb-tier-kicker {
+  display: inline-block;
+  color: var(--cb-gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cb-tier-status {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--cb-gold-border);
+  border-radius: var(--cb-radius-pill);
+  background: rgba(245,180,0,0.08);
+  color: var(--cb-gold-strong);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cb-tier-status.cb-tier-status-review {
+  border-color: var(--cb-border-strong);
+  background: rgba(255,255,255,0.04);
+  color: var(--cb-muted);
+}
+
+.cb-field-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.cb-field-skill-card {
+  display: block;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-md);
+  background: rgba(255,255,255,0.025);
+  text-decoration: none;
+  transition: border-color var(--cb-transition), background var(--cb-transition), transform var(--cb-transition);
+}
+
+.cb-field-skill-card:hover,
+.cb-field-skill-card:focus-visible {
+  border-color: var(--cb-gold-border);
+  background: rgba(245,180,0,0.06);
+  transform: translateY(-2px);
+}
+
+.cb-field-skill-card strong { display: block; margin-bottom: 6px; color: var(--cb-text); font-size: 14px; }
+.cb-field-skill-card span { display: block; color: var(--cb-muted-2); font-size: 11px; line-height: 1.45; }
+
+.cb-owner-audit-notice {
+  margin: 0 0 32px;
+  padding: 18px 20px;
+  border: 1px solid var(--cb-gold-border);
+  border-left: 4px solid var(--cb-gold);
+  border-radius: var(--cb-radius-md);
+  background: rgba(245, 180, 0, 0.07);
+  color: var(--cb-muted);
+}
+
+.cb-owner-audit-notice strong { color: var(--cb-gold-strong); }
+
+#learning-layers a[href^="courses/"]::after,
+#advanced-training a[href^="courses/"]::after {
+  content: "Owner audit locked";
+  display: block;
+  margin-left: auto;
+  color: var(--cb-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.course-lock-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(245, 180, 0, 0.09), transparent 36%),
+    var(--cb-bg);
+}
+
+.course-lock-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.course-lock-card {
+  width: min(680px, 100%);
+  padding: clamp(28px, 6vw, 54px);
+  border: 1px solid var(--cb-border-strong);
+  border-top: 4px solid var(--cb-gold);
+  border-radius: var(--cb-radius-lg);
+  background: var(--cb-panel);
+  box-shadow: var(--cb-shadow-lg);
+}
+
+.course-lock-brand {
+  display: inline-block;
+  margin-bottom: 38px;
+  color: var(--cb-text);
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.course-lock-brand span,
+.course-lock-status { color: var(--cb-gold); }
+
+.course-lock-status {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.course-lock-name { margin: 0 0 10px; color: var(--cb-muted-2); font-weight: 700; }
+.course-lock-card h1 { margin: 0 0 18px; font-size: clamp(34px, 7vw, 58px); line-height: 0.98; }
+.course-lock-card > p { color: var(--cb-muted); }
+.course-lock-card > p strong { color: var(--cb-text); }
+.course-lock-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+@media (max-width: 560px) {
+  .course-lock-actions { flex-direction: column; }
+  .course-lock-actions .cb-btn { width: 100%; }
+}
+
+.cb-tier-gate {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--cb-gold);
+  background: rgba(245,180,0,0.045);
+  color: var(--cb-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .cb-field-skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .cb-tier { padding: 20px; }
+  .cb-tier-heading { flex-direction: column; }
+  .cb-field-skill-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------
    11. BLUEPRINT LINE SYSTEM & VISUAL MOTIFS
    Thin technical lines, nodes, connectors inspired by production
    drawings, signal paths, rigging diagrams, and stage plots.

@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stagehand Fundamentals — Comprehensive Hybrid Course</title>
+<title>Stagehand Fundamentals — Four-Part Foundation Course</title>
 <style>
 :root{--bg:#090c10;--panel:#121820;--panel2:#18212b;--text:#f1f4f7;--muted:#aab5c0;--line:#2b3641;--gold:#f5b400;--gold2:#ffd45a;--good:#39b979;--bad:#e26868;--info:#0284c7}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#090c10,#0b0f14);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:20;background:#090c10ee;border-bottom:1px solid var(--line)}.topin{max-width:1400px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:900}.brand span,.eyebrow{color:var(--gold)}.small{font-size:.78rem;color:var(--muted)}.progbox{width:min(360px,45vw)}.progrow{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.bar{height:8px;background:#222b34;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}.shell{max-width:1400px;margin:auto;padding:22px 18px 60px}.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}.side{position:sticky;top:86px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:calc(100vh-100px);overflow-y:auto}.mod{display:flex;gap:10px;align-items:center;padding:9px;border-radius:11px;color:var(--muted);cursor:pointer;transition:all 200ms}.mod:hover{background:#1a2430}.mod.active{background:#211d0e;color:var(--text);border:1px solid #65551f}.num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#232c35;font-weight:800;font-size:12px}.active .num{background:var(--gold);color:#111}.sub{margin:8px 0 10px 23px;padding-left:13px;border-left:1px solid var(--line)}.sub button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--muted);padding:8px 0;cursor:pointer;font-size:13px;transition:color 200ms}.sub button:hover{color:var(--gold2)}.sub button.active{color:var(--gold2);font-weight:800}.hero,.card{background:linear-gradient(var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.03;margin:.3rem 0}.hero p{color:var(--muted);max-width:880px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900}.lesson{display:none}.lesson.active{display:block}.objective{border-left:4px solid var(--gold)}.visual-section{background:#0f1419;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:300px;overflow-x:auto}.visual-section svg{max-width:100%;height:auto;display:block}.visual-section img{max-width:100%;height:auto}.explainer{background:#0f1419;border-left:4px solid var(--info);padding:16px;border-radius:8px;margin-bottom:14px;font-size:14px;line-height:1.7;color:var(--text)}.explainer strong{color:var(--gold2)}.reference{background:#0f1419;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px;font-size:13px}.reference strong{color:var(--gold2)}.reference ul{margin:8px 0;padding-left:20px}.reference li{margin:6px 0}.reference-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;font-weight:800}h3{margin:14px 0 8px 0;font-size:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#1b2530;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:13px}.mini strong{color:var(--gold2)}.options{display:grid;gap:10px}.opt{border:1px solid var(--line);background:#10151a;color:var(--text);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-size:13px;transition:all 200ms}.opt:hover:not(:disabled){border-color:var(--gold);background:#0f1a1f}.opt.correct{border-color:var(--good);background:#123026}.opt.incorrect{border-color:var(--bad);background:#321919}.opt:disabled{opacity:.7;cursor:not-allowed}.coach{display:none;margin-top:12px;padding:14px;border-left:4px solid var(--gold);background:#0e1419;border-radius:10px;font-size:13px;line-height:1.6}.coach.show{display:block}.coach strong{color:var(--gold2)}.rule{background:#211d0f;border:2px solid #66561f;padding:16px;border-radius:12px;text-align:center;font-weight:900;color:var(--gold2);margin-bottom:14px}.key-takeaway{background:#0e3a54;border:1px solid #1a5a7a;border-left:4px solid #0284c7;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;color:#e0f2fe}.key-takeaway strong{color:#0284c7}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:800;font-size:13px;transition:all 200ms}.btn:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--gold);color:#111}.primary:hover:not(:disabled){background:#ffc700;transform:translateY(-1px)}.secondary{background:#11161c;color:var(--text)}.secondary:hover:not(:disabled){background:#1a2430}.mobile{display:none}@media(max-width:1000px){.layout{grid-template-columns:1fr}.side{display:none}.mobile{display:block;margin-bottom:12px}.mobile select{width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;font-size:13px}.grid2{grid-template-columns:1fr}.hero{padding:17px}.card{padding:17px}.actions{flex-direction:column-reverse}.btn{width:100%}.visual-section{min-height:200px}}
-</style></head><body>
-<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small">Stagehand Fundamentals — Comprehensive Learning Course</div></div><div class="progbox"><div class="progrow"><span id="progtext">Module 1.1 of 40</span><span id="pct">2%</span></div><div class="bar"><i id="bar" style="width:2%"></i></div></div><a href="../courses.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Exit Course</a></div></header>
-<div class="shell"><div class="mobile"><select id="mobile" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
+.part-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}.part-tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font:inherit;transition:all 180ms}.part-tab:hover{border-color:var(--gold);color:var(--text)}.part-tab:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}.part-tab.active{background:#211d0e;border-color:#65551f;color:var(--text)}.part-tab b{display:block;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.part-tab span{display:block;font-size:13px;line-height:1.35;margin-top:3px}.part-summary{padding:8px 8px 14px;border-bottom:1px solid var(--line);margin-bottom:8px}.part-summary strong{display:block;color:var(--gold2)}.part-summary a,.course-boundary a{color:var(--gold2)}.course-boundary{border-left:4px solid var(--gold);font-size:13px}.course-boundary p{margin:0 0 8px}.course-boundary p:last-child{margin-bottom:0}@media(max-width:760px){.part-tabs{display:flex;overflow-x:auto;padding-bottom:4px}.part-tab{min-width:210px}}
+</style></head><body class="course-tier course-tier-foundation">
+<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small" id="courseContext">Foundation Tier — Stagehand Fundamentals</div></div><div class="progbox"><div class="progrow"><span id="progtext">Part 1 · Lesson 1 of 11</span><span id="pct">9%</span></div><div class="bar"><i id="bar" style="width:9%"></i></div></div><a href="../lms-dashboard.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Course Map</a></div></header>
+<div class="shell"><nav class="part-tabs" id="partTabs" aria-label="Stagehand Fundamentals parts"></nav><div class="mobile"><select id="mobile" aria-label="Choose a lesson" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
 <aside class="side" id="sidebar"></aside>
 <main id="main"></main>
 </div></div>
@@ -66,22 +67,65 @@ const modules = [
     {id:"10.1",name:"Getting Hired",obj:"Communicate honestly about skills."},
     {id:"10.2",name:"Reputation Patterns",obj:"Understand what drives callbacks."},
     {id:"10.3",name:"Into Specialization",obj:"Find your pathway into departments."},
-    {id:"10.4",name:"First Month & Beyond",obj:"Prioritize fundamentals and growth."}
+    {id:"10.4",name:"Early Calls & Beyond",obj:"Prioritize fundamentals and growth."}
   ],rule:"GETTING HIRED OPENS THE DOOR. RELIABILITY KEEPS IT OPEN. HONEST LEARNING IS HOW YOU MOVE FORWARD."}
 ];
 
-let current = 0;
-let total = modules.reduce((sum,m)=>sum+m.lessons.length,0);
+const courseParts = [
+  {
+    num: 1,
+    title: "First Call Readiness",
+    description: "Know the job, arrive prepared, and make safe decisions before work starts.",
+    moduleNumbers: [1, 2, 3]
+  },
+  {
+    num: 2,
+    title: "Jobsite Awareness and Crew Conduct",
+    description: "Read the room, communicate clearly, and stay useful inside the crew structure.",
+    moduleNumbers: [4, 6]
+  },
+  {
+    num: 3,
+    title: "Load-In and Load-Out",
+    description: "Move gear under direction, protect the path, handle equipment, and finish the call cleanly.",
+    moduleNumbers: [5, 8, 9]
+  },
+  {
+    num: 4,
+    title: "Departments and Career Direction",
+    description: "Recognize department boundaries, build trust, and choose a responsible next step.",
+    moduleNumbers: [7, 10]
+  }
+];
+
+const requestedPart = Number.parseInt(new URLSearchParams(window.location.search).get('part'), 10);
+let activePartIndex = Number.isInteger(requestedPart) && requestedPart >= 1 && requestedPart <= courseParts.length ? requestedPart - 1 : 0;
+let activeModules = getActiveModules();
+let current = new URLSearchParams(window.location.search).get('end') === '1'
+  ? activeModules.reduce((sum,m)=>sum+m.lessons.length,0) - 1
+  : 0;
+let total = activeModules.reduce((sum,m)=>sum+m.lessons.length,0);
+
+function getActiveModules(){
+  const included = new Set(courseParts[activePartIndex].moduleNumbers);
+  return modules.filter(module => included.has(module.num));
+}
+
+function buildPartTabs(){
+  const tabs = document.getElementById('partTabs');
+  tabs.innerHTML = courseParts.map((part,index)=>`<button type="button" class="part-tab ${index===activePartIndex?'active':''}" ${index===activePartIndex?'aria-current="step"':''} onclick="goPart(${index})"><b>Part ${part.num}</b><span>${part.title}</span></button>`).join('');
+}
 
 function buildSidebar(){
   const s = document.getElementById('sidebar');
-  let h='<div class="small" style="padding:5px 8px 10px;text-transform:uppercase;letter-spacing:.12em">Stagehand Fundamentals</div>';
-  modules.forEach((m,mi)=>{
-    const isActive = current>=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<modules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
+  const part = courseParts[activePartIndex];
+  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../visuals/stagehand-fundamentals/bibliography.html">Sources &amp; course boundaries</a></div>`;
+  activeModules.forEach((m,mi)=>{
+    const isActive = current>=activeModules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<activeModules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
     h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
     h+=`<div class="sub">`;
     m.lessons.forEach((l,li)=>{
-      const idx = modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0)+li;
+      const idx = activeModules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0)+li;
       h+=`<button class="nav ${idx===current?'active':''}" onclick="goLesson(${idx})">${l.id} ${l.name}</button>`;
     });
     h+=`</div>`;
@@ -94,7 +138,7 @@ function buildMobileSelect(){
   const m=document.getElementById('mobile');
   m.innerHTML='';
   let idx=0;
-  modules.forEach(mod=>{
+  activeModules.forEach(mod=>{
     mod.lessons.forEach(l=>{
       const opt=document.createElement('option');
       opt.value=idx;
@@ -109,11 +153,11 @@ function buildMobileSelect(){
 
 function getModuleLesson(idx){
   let count=0;
-  for(let m of modules){
+  for(let m of activeModules){
     if(count+m.lessons.length>idx)return [m,m.lessons[idx-count]];
     count+=m.lessons.length;
   }
-  return [modules[0],modules[0].lessons[0]];
+  return [activeModules[0],activeModules[0].lessons[0]];
 }
 
 function goLesson(idx){
@@ -123,8 +167,16 @@ function goLesson(idx){
 }
 
 function goModule(mi){
-  const idx=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0);
+  const idx=activeModules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0);
   goLesson(idx);
+}
+
+function goPart(partIndex,startAtEnd=false){
+  const url = new URL(window.location.href);
+  url.searchParams.set('part',String(partIndex+1));
+  if(startAtEnd) url.searchParams.set('end','1');
+  else url.searchParams.delete('end');
+  window.location.href = url.toString();
 }
 
 function svgVenueComparison(){
@@ -219,7 +271,7 @@ function svgLoadInSequence(){
     <g id="phase3"><rect class="phase" x="330" y="50" width="110" height="120"/><path d="M 385 70 L 375 100 L 395 100 Z" fill="#39b979" stroke="#39b979" stroke-width="1"/><text class="phase-label" x="385" y="135">3. Move</text><text class="phase-desc" x="385" y="150">to stage</text><text class="phase-desc" x="385" y="163">with spotters</text></g>
     <polyline class="arrow" points="440,110 480,110"/>
     <g id="phase4"><rect class="phase" x="490" y="50" width="110" height="120"/><rect class="case" x="505" y="75" width="25" height="25"/><rect class="case" x="535" y="75" width="25" height="25"/><rect class="case" x="505" y="105" width="25" height="25"/><rect class="case" x="535" y="105" width="25" height="25"/><text class="phase-label" x="545" y="135">4. Position</text><text class="phase-desc" x="545" y="150">on stage at</text><text class="phase-desc" x="545" y="163">marked spot</text></g>
-    <g id="rules"><rect x="10" y="190" width="590" height="90" fill="none" stroke="#0284c7" stroke-width="1" stroke-dasharray="3" rx="4"/><text style="font-size:11px;font-weight:bold;fill:#0284c7" x="20" y="210">Key Rules Throughout:</text><text style="font-size:10px;fill:#aab5c0" x="20" y="227">✓ Clear path ahead  ✓ Call spotters  ✓ One handler leads  ✓ Set down, don't drop</text><text style="font-size:10px;fill:#aab5c0" x="20" y="242">✓ Back-to-front from truck  ✓ Report when positioned  ✓ Stay with load until released</text><text style="font-size:10px;fill:#e26868" x="20" y="260">✗ Never reach under/over moving gear  ✗ Don't force tight fits  ✗ Ask if unsure about placement</text></g>
+    <g id="load-path-rules"><rect x="10" y="190" width="590" height="90" fill="none" stroke="#0284c7" stroke-width="1" stroke-dasharray="3" rx="4"/><text style="font-size:11px;font-weight:bold;fill:#0284c7" x="20" y="210">Key Rules Throughout:</text><text style="font-size:10px;fill:#aab5c0" x="20" y="227">✓ Clear path ahead  ✓ Call spotters  ✓ One handler leads  ✓ Set down, don't drop</text><text style="font-size:10px;fill:#aab5c0" x="20" y="242">✓ Back-to-front from truck  ✓ Report when positioned  ✓ Stay with load until released</text><text style="font-size:10px;fill:#e26868" x="20" y="260">✗ Never reach under/over moving gear  ✗ Don't force tight fits  ✗ Ask if unsure about placement</text></g>
   </svg>`;
 }
 
@@ -291,7 +343,7 @@ function svgRoadCaseHazards(){
     <g class="hardware"><rect x="50" y="100" width="20" height="20" fill="#999" stroke="#555" stroke-width="1"/><text class="label" x="80" y="115">Shock mount</text></g>
     <circle class="hazard-circle" cx="125" cy="140" r="15" opacity="0.8"/><text class="hazard-label" x="145" y="145">Stored energy</text><text class="hazard-label" x="145" y="158">(springs)</text>
     </g>
-    <g id="rules"><rect x="50" y="310" width="650" height="200" fill="none" stroke="#0284c7" stroke-width="1" stroke-dasharray="3" rx="4"/><text style="font-size:12px;font-weight:bold;fill:#f5b400" x="70" y="335">Safe Road Case Handling</text>
+    <g id="road-case-rules"><rect x="50" y="310" width="650" height="200" fill="none" stroke="#0284c7" stroke-width="1" stroke-dasharray="3" rx="4"/><text style="font-size:12px;font-weight:bold;fill:#f5b400" x="70" y="335">Safe Road Case Handling</text>
     <text style="font-size:10px;fill:#39b979;font-weight:bold" x="70" y="355">✓ Check before moving</text><text style="font-size:9px;fill:#aab5c0" x="85" y="368">- Look for cracks, loose hardware, broken wheels</text>
     <text style="font-size:10px;fill:#39b979;font-weight:bold" x="70" y="388">✓ Use handles properly</text><text style="font-size:9px;fill:#aab5c0" x="85" y="401">- Grip in middle, watch fingers at hinges</text>
     <text style="font-size:10px;fill:#39b979;font-weight:bold" x="70" y="421">✓ Stack carefully</text><text style="font-size:9px;fill:#aab5c0" x="85" y="434">- Largest base first, 3 cases max, strap if needed</text>
@@ -336,16 +388,22 @@ function svgStrikeSequence(){
 
 function render(){
   const [mod,lesson]=getModuleLesson(current);
-  document.getElementById('progtext').textContent=`${lesson.id} of ${total} lessons`;
+  const part=courseParts[activePartIndex];
+  document.getElementById('courseContext').textContent=`Foundation Tier — Part ${part.num}: ${part.title}`;
+  document.getElementById('progtext').textContent=`Part ${part.num} · Lesson ${current+1} of ${total}`;
   document.getElementById('pct').textContent=Math.round((current+1)/total*100)+'%';
   document.getElementById('bar').style.width=(current+1)/total*100+'%';
 
   let html=`<section class="hero">
-    <div class="eyebrow">Module ${mod.num} • Lesson ${lesson.id}</div>
+    <div class="eyebrow">Foundation Tier • Part ${part.num} of ${courseParts.length} • Module ${mod.num} • Lesson ${lesson.id}</div>
     <h1>${lesson.name}</h1>
     <p><b>Objective:</b> ${lesson.obj}</p>
     <div class="rule">${lesson.obj}</div>
   </section>`;
+
+  if(current===0){
+    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../visuals/stagehand-fundamentals/bibliography.html">Review the course sources and qualifications.</a></p></div>`;
+  }
 
   if(lesson.id==='1.1')html+=renderM11();
   else if(lesson.id==='1.2')html+=renderM12();
@@ -382,12 +440,21 @@ function render(){
   else if(lesson.id==='10.3')html+=renderM103();
   else if(lesson.id==='10.4')html+=renderM104();
 
-  html+=`<div class="actions">
-    <button class="btn secondary" ${current===0?'disabled':''} onclick="goLesson(${current-1})">← Previous</button>
-    <button class="btn primary" ${current===total-1?'disabled':''} onclick="goLesson(${current+1})">Next →</button>
-  </div>`;
+  const previousButton = current>0
+    ? `<button class="btn secondary" onclick="goLesson(${current-1})">← Previous</button>`
+    : activePartIndex>0
+      ? `<button class="btn secondary" onclick="goPart(${activePartIndex-1},true)">← Previous Part</button>`
+      : `<button class="btn secondary" disabled>← Previous</button>`;
+  const nextButton = current<total-1
+    ? `<button class="btn primary" onclick="goLesson(${current+1})">Next →</button>`
+    : activePartIndex<courseParts.length-1
+      ? `<button class="btn primary" onclick="goPart(${activePartIndex+1})">Continue to Part ${activePartIndex+2} →</button>`
+      : `<button class="btn primary" onclick="window.location.href='../courses.html#department-pathways'">Continue to Department Courses →</button>`;
+
+  html+=`<div class="actions">${previousButton}${nextButton}</div>`;
 
   document.getElementById('main').innerHTML=html;
+  buildPartTabs();
   buildSidebar();
 }
 
@@ -406,11 +473,12 @@ function renderM11(){
     <div class="visual-section">${svgVenueComparison()}</div>
     <div class="reference">
       <span class="reference-label">Environment Context</span>
+      <p>These are common planning examples, not fixed rules. Pace, access, hazards, and crew structure change with the show, employer, venue, and day.</p>
       <ul>
-        <li><strong>Arenas:</strong> Large, loud, fast-paced. Heavy gear movement, lots of crew, high traffic. New hands watch for moving equipment and follow direction closely.</li>
-        <li><strong>Theaters:</strong> Tighter backstage spaces, more precise work, show systems matter. Never touch rigging or fly systems unless trained and authorized.</li>
-        <li><strong>Conventions:</strong> Freight and forklift traffic, quick room turnarounds. Watch for forklifts, pallet jacks, and marked traffic paths.</li>
-        <li><strong>Outdoor:</strong> Weather exposure, uneven ground, different sight lines. Same job looks different when footing changes or weather comes in.</li>
+        <li><strong>Arenas:</strong> Often involve large work areas, heavy gear movement, many crew members, and active traffic paths.</li>
+        <li><strong>Theaters:</strong> Often involve tighter backstage spaces and established show systems. Never touch rigging or fly systems unless trained, assigned, and authorized.</li>
+        <li><strong>Conventions:</strong> Often involve freight, forklifts, pallet jacks, and rapid room turnover. Follow marked traffic and material routes.</li>
+        <li><strong>Outdoor:</strong> Weather, uneven ground, changing sight lines, and temporary infrastructure can change the risk around familiar work.</li>
       </ul>
     </div>
   </div>
@@ -435,9 +503,9 @@ function renderM12(){
     <div class="reference">
       <span class="reference-label">Phase Breakdown</span>
       <ul>
-        <li><strong>Load-In (Before event):</strong> Gear enters the venue and the show gets built. New hands are very likely to work load-in. This is where speed and safety matter most because the room is full of moving equipment and people unfamiliar with each other.</li>
-        <li><strong>Show Call (During event):</strong> Crew supports the live performance. Less likely for beginners because it requires timing, familiarity with that production, and trust. Mistakes during a show are visible to the audience.</li>
-        <li><strong>Load-Out (After event):</strong> Gear is struck, packed, and loaded into trucks. New hands are very likely to work load-out. Fatigue, urgency, and darkness make safety discipline critical.</li>
+        <li><strong>Load-In (Before event):</strong> Gear enters the venue and the show gets built. Many new hands encounter load-in early, but assignments vary by employer, venue, local, production, and demonstrated ability. Moving equipment and overlapping crews make direction and path awareness critical.</li>
+        <li><strong>Show Call (During event):</strong> Crew supports the live performance. Some productions reserve show-call work for people who already know the timing and workflow; others assign new hands under close direction. Never treat a show-call assignment as guaranteed.</li>
+        <li><strong>Load-Out (After event):</strong> Gear is struck, packed, and loaded into trucks. New hands may work load-out, but assignment patterns vary. Fatigue, urgency, reduced visibility, and dense movement can raise risk, so keep the same discipline you used at load-in.</li>
       </ul>
     </div>
   </div>
@@ -651,7 +719,7 @@ function renderM31(){
       <span class="reference-label">Call Sheet Context</span>
       <ul>
         <li><strong>If it says "early load-in":</strong> Expect 2-4 hours building before show call. Wear load-in PPE: work clothes, hard hat if overhead, gloves, closed-toe shoes.</li>
-        <li><strong>If it says "show blacks required":</strong> You will be visible during the performance. Bring black clothing separate from work gear.</li>
+        <li><strong>If it says "show blacks required":</strong> The production expects low-visibility performance clothing. Show blacks are a show-specific clothing convention, not PPE. Bring them separately from work gear.</li>
         <li><strong>If it says both:</strong> Bring both outfits. Change when the phase changes. Do not show up in one and improvise the other.</li>
         <li><strong>If it is outdoors:</strong> Weather gear, better traction, longer sleeves, hat. Environment changes what PPE means.</li>
       </ul>
@@ -936,7 +1004,7 @@ function renderM54(){
 function renderM61(){
   return `<div class="card objective">
     <h3>Clarity Over Social Pressure</h3>
-    <div class="explainer">A lead gives a fast instruction. You catch only half. Social pressure says "copy" anyway. <strong>Brief clarification is professional, not weak.</strong> Saying "copy" to an instruction you did not understand creates mistakes. Professionals ask for clarification. This is not weakness; it is how you protect the production and crew.</div>
+    <div class="explainer">A lead gives a fast instruction. You catch only half. Social pressure says "copy" anyway. <strong>Brief clarification is professional, not weak.</strong> Never use a confirmation word unless you understood the instruction. The sample phrases below are common examples, not universal language; follow the radio and communication protocol used on the current call.</div>
     <div class="reference">
       <span class="reference-label">Clarification Strategies</span>
       <ul>
@@ -1347,7 +1415,7 @@ function renderM103(){
         <li><strong>Express interest:</strong> Tell your lead or the department: "I am interested in learning [specialty]. What is the first step?"</li>
         <li><strong>Ask questions:</strong> Get books, videos, online courses. Ask department members to explain concepts. Do not pretend to understand.</li>
         <li><strong>Support assignments:</strong> "Can I assist [department] during load-in? I want to learn." Accept unglamorous support work first. That is how you learn the workflow.</li>
-        <li><strong>Training and authorization:</strong> Once a department invites you formally, training and certification follow. This is the real pathway.</li>
+        <li><strong>Training and authorization:</strong> A department may offer training, supervised practice, or support assignments. The employer or responsible lead decides what you may do. External credentials apply only where the role, employer, or jurisdiction requires them.</li>
       </ul>
     </div>
   </div>
@@ -1367,10 +1435,10 @@ function renderM103(){
 
 function renderM104(){
   return `<div class="card objective">
-    <h3>First Month: Prioritize Fundamentals</h3>
-    <div class="explainer">You have limited time and want to learn everything. <strong>First month belongs to preparation, communication, etiquette, case/cable awareness, department recognition, and observation.</strong> Specialization comes later. This is how you become low-risk. Master the fundamentals, and everything else becomes easier.</div>
+    <h3>Early Calls: Prioritize Fundamentals</h3>
+    <div class="explainer">You have limited time and want to learn everything. <strong>On your early calls, focus on preparation, communication, etiquette, case/cable awareness, department recognition, and observation.</strong> This is Crew Blueprint's suggested development sequence, not a universal 30-day probation plan. Your employer, venue, union local, and prior experience may set a different pace.</div>
     <div class="reference">
-      <span class="reference-label">First-Month Focus</span>
+      <span class="reference-label">Suggested Early-Call Focus</span>
       <ul>
         <li><strong>Preparation:</strong> Show up with gear, dressed right, on time, ready to be directed.</li>
         <li><strong>Communication:</strong> Ask questions. Confirm direction. Report completion. Communicate fatigue or confusion.</li>
@@ -1378,14 +1446,14 @@ function renderM104(){
         <li><strong>Case/cable awareness:</strong> Know how to move cases safely. Understand cable is not to be touched. Recognize hazards.</li>
         <li><strong>Department recognition:</strong> Know the departments. Understand boundaries. Know who to ask for what.</li>
         <li><strong>Observation:</strong> Watch how experienced crew work. Notice communication patterns. Learn the rhythm of calls.</li>
-        <li><strong>Do not specialize yet:</strong> Do not try to learn rigging, lighting, or audio in month one. Learn to be a reliable fundamentals crew member first.</li>
+        <li><strong>Build the base first:</strong> Take department support opportunities only through the responsible lead. Do not claim specialist authority because you watched or helped once.</li>
       </ul>
     </div>
   </div>
 
   <div class="card">
-    <h3>First-Month Priority</h3>
-    <p>Your first month has limited time. You could learn every department or focus on core fundamentals.</p>
+    <h3>Early-Call Priority</h3>
+    <p>Your early calls offer limited learning time. You could chase every department at once or build core fundamentals first.</p>
     <div class="options" data-q="q104">
       <button class="opt" data-c="0">Learn every department simultaneously to become versatile.</button>
       <button class="opt" data-c="1">Prioritize: preparation, etiquette, communication, gear awareness, department recognition, feedback, observation.</button>
@@ -1393,10 +1461,9 @@ function renderM104(){
     </div>
     <div class="coach" id="q104c"><strong>Why:</strong> Mastering fundamentals is how you become low-risk. Specialization is what follows reliability and observation. Depth before breadth.</div>
   </div>
-  <div class="key-takeaway"><strong>Key principle:</strong> Fundamentals are the foundation for everything else.</strong></div>`;
+  <div class="key-takeaway"><strong>Key principle:</strong> Fundamentals are the foundation for everything else.</div>`;
 }
 
-buildSidebar();
 render();
 
 setInterval(()=>{

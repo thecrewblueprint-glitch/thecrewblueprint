@@ -32,6 +32,8 @@ The following product decisions are already accepted and are not open research q
 
 ## Target learning structure
 
+The implementation status and claim boundary for every layer are recorded in the [Curriculum Tier and Build Matrix](CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md).
+
 | Layer | Purpose | Proposed organization |
 |---|---|---|
 | Stagehand Fundamentals | Shared entry knowledge and work behavior | Four smaller parts: First Call Readiness; Jobsite Awareness and Crew Conduct; Load-In and Load-Out; Departments and Career Direction |
@@ -110,8 +112,11 @@ A course already existing does not make its underlying research item completed. 
 
 ### RQ-100 — Stagehand Fundamentals architecture audit
 
-**Status:** queued  
+**Status:** practitioner_review — architecture deliverables prepared; owner, novice-learner, and safety-sensitive review pending
 **Goal:** Split the current ten-module course into smaller, navigable parts without losing essential content or silently changing safety boundaries.
+
+**Architecture deliverable:** [Stagehand Fundamentals Architecture Audit](STAGEHAND_FUNDAMENTALS_ARCHITECTURE_AUDIT_2026-08-30.md)
+**Tier classification:** [Curriculum Tier and Build Matrix](CURRICULUM_TIER_AND_BUILD_MATRIX_2026-08-30.md)
 
 **Questions to answer**
 
@@ -368,16 +373,18 @@ The learner record must distinguish: **knowledge completed**, **practice observe
 
 ## Carried-forward research and build backlog
 
+The 21-course build exposed a smaller, release-focused queue. Use the [Expanded Curriculum Research Queue](EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md) for practitioner review, visuals, portfolio depth, assessment validity, record states, and source freshness. The [Expanded Curriculum Build Register](EXPANDED_CURRICULUM_BUILD_REGISTER_2026-08-30.md) maps every new course to its research and release gate.
+
 | ID | Work | Current disposition |
 |---|---|---|
 | RQ-400 | Competency and role graph replacing a single universal job hierarchy | queued after RQ-000; preserve employer, local, venue, touring, and regional variation |
-| RQ-410 | Electrics research program | future; specialist boundaries and code/authorization distinctions required |
-| RQ-420 | Infrastructure research program | future; define power, networking, structures, logistics, and site-service boundaries before building |
-| RQ-430 | Production research program | future; distinguish stage management, production management, event operations, and concert/festival title variation |
+| RQ-410 | Electrics research program | Packages 30, 36, and 38 support three review builds; ECQ-10 and ECQ-12 now target qualified review, jurisdiction/authority mapping, and awareness validation |
+| RQ-420 | Infrastructure research program | Power awareness review build exists; networking, load-bearing systems, logistics, and site-service branches remain future decisions |
+| RQ-430 | Production research program | Package 39 supports the three-track orientation build; ECQ-13 now targets track-specific sources, practitioner evidence, and scenarios |
 | RQ-440 | Business and risk program | future; insurance, contracting, compliance, records, data governance, and market-entry evidence |
-| RQ-450 | Predictive Hazard Recognition | research largely present in Package 31; perform lineage/review audit, then treat as curriculum-ready rather than commissioning duplicate research |
-| RQ-460 | Rigging | deferred; existing research does not authorize instruction or qualification. Requires qualified-rigger governance and review |
-| RQ-470 | Course 3+ expansion | gated behind RQ-000, learner validation, practitioner review, and demonstrated demand |
+| RQ-450 | Predictive Hazard Recognition | Review build complete from Package 31; ECQ-05 performs the evolving-scenario validation needed for release |
+| RQ-460 | Rigging | Decision-only Lead review build complete; physical instruction remains deferred and requires qualified-rigger governance |
+| RQ-470 | Course 3+ expansion | Five Course 3 review builds complete from Packages 33–37; ECQ-07 through ECQ-11 define portfolio-depth and qualified-review work |
 
 ## Execution waves
 

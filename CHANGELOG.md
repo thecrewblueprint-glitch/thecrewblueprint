@@ -4,6 +4,40 @@ All notable changes to Stagehand Fundamentals content, research, and resources a
 
 ---
 
+## 2026-08-30
+
+### Expanded Tiered Curriculum Review Build
+
+- Built 21 standalone review courses from completed research Packages 24–39 and 46–50.
+- Added five Stagehand Field Skills with authority rules, stop conditions, five-question knowledge checks, and equipment-specific observed-practice gates.
+- Added seven Lead courses and two Supervisor courses centered on planning, crew assignment, verification, status, change control, and escalation.
+- Added five Department Course 3 system/design courses with portfolio gates instead of credential or job-authority claims.
+- Added Production Power Awareness and the Production & Coordination three-track career branch.
+- Added 153 learner stops and 105 coached scenario questions across the new builds.
+- Matched the existing dark/gold course-player language with a desktop sidebar, mobile lesson selector, fixed progress card, source lineage, and previous/next navigation.
+- Added the Expanded Curriculum Build Register and the release-focused Expanded Curriculum Research Queue.
+- Kept practitioner approval, observed practice, employer authorization, external credentials, rigging qualification, and electrical qualification as separate states.
+
+### Owner-Audit Publication Lock
+
+- Preserved the complete post-Fundamentals curriculum on `curriculum/owner-audit-2026-08-30`.
+- Kept Stagehand Fundamentals and its ten module routes open on the public site.
+- Replaced every Course 1, Course 2, Course 3, Field Skill, Lead, Supervisor, Infrastructure, Production/Coordination, lesson, and template route after Fundamentals with a content-free owner-audit lock page.
+- Removed locked course routes from the sitemap and added a Fundamentals-only publication validator.
+- Excluded curriculum data modules, research records, build scripts, archived pages, and owner-review player assets from the generated GitHub Pages site.
+
+### Four-Part Foundation and Curriculum Tiers
+
+- Counted the live Stagehand Fundamentals data and corrected the course total from 40 to 34 micro-lessons.
+- Grouped the existing 10 modules into four focused delivery parts without deleting or renumbering lessons.
+- Added a four-part course map, part-to-part navigation, and direct access to the learner-facing bibliography.
+- Qualified show-blacks, communication-language, early-call, beginner-assignment, and specialization claims using the completed Fundamentals audit.
+- Classified the five Course 1 pathways as Department Support and the five Course 2 pathways as Department Systems.
+- Placed the five proposed Stagehand Field Skills in the learning sequence as practitioner-review-gated work rather than publishing unreviewed practical instruction.
+- Added the architecture audit and curriculum tier/build matrix to the active research handoff.
+
+---
+
 ## 2026-08-17
 
 ### Audit & Bibliography
