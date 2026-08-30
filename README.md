@@ -23,15 +23,20 @@ load-in/load-out fundamentals, crew communication, department basics,
 tools/gear handling, and getting hired and called back. Beyond that, five
 department-specific **Course 1: Department Support** pathways teach assigned
 work under direction, and five **Course 2: Department Systems** pathways build
-systems understanding without implying independent operating authority.
+systems understanding without implying independent operating authority. A
+review curriculum layer now adds five Stagehand Field Skills, seven Lead
+courses, two Supervisor courses, five Department Course 3 system courses,
+Production Power Awareness, and a Production & Coordination career branch.
+Those 21 pages remain explicitly gated by practitioner review, observed
+practice, qualified portfolio review, or employer authority as appropriate.
 
 ## Structure
 
 - **Root** (`index.html`, `about.html`, `courses.html`, `resources.html`,
   `contact.html`, plus legal pages) — the public marketing site.
 - **`/courses`** — Stagehand Fundamentals (four parts, 10 modules, 34 lessons),
-  five Department Support Course 1 pathways, and five Department Systems
-  Course 2 pathways.
+  five Department Support Course 1 pathways, five Department Systems Course 2
+  pathways, and 21 tiered review builds from completed research.
 - **`/resources`** — the Resource Hub: fast-facts reference pages (gear and
   tools, load-in/load-out quick reference, field hand-signal guide, pay and
   call-sheet basics, and more).
@@ -45,7 +50,14 @@ systems understanding without implying independent operating authority.
 - **`/css`** — the shared site stylesheet (`theme.css`) — dark/gold design
   system, shared component classes (cards, panels, diagrams, icon rows).
 - **`/images`**, **`/js`** — site assets and the shared nav/interaction script.
+- **`/scripts`** — structured curriculum records plus the deterministic builder
+  and validator for the 21 standalone tiered-course pages.
 - **`lms-dashboard.html`** — the four-part Stagehand Fundamentals course map.
+
+See `research/EXPANDED_CURRICULUM_BUILD_REGISTER_2026-08-30.md` for the full
+course-to-packet, tier, route, assessment, and release-gate map. Remaining
+evidence work is listed in
+`research/EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md`.
 
 ## Content Sourcing
 

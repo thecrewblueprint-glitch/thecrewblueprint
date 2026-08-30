@@ -923,11 +923,21 @@ img { max-width: 100%; display: block; }
 }
 
 .cb-field-skill-card {
+  display: block;
   min-width: 0;
   padding: 15px;
   border: 1px solid var(--cb-border);
   border-radius: var(--cb-radius-md);
   background: rgba(255,255,255,0.025);
+  text-decoration: none;
+  transition: border-color var(--cb-transition), background var(--cb-transition), transform var(--cb-transition);
+}
+
+.cb-field-skill-card:hover,
+.cb-field-skill-card:focus-visible {
+  border-color: var(--cb-gold-border);
+  background: rgba(245,180,0,0.06);
+  transform: translateY(-2px);
 }
 
 .cb-field-skill-card strong { display: block; margin-bottom: 6px; color: var(--cb-text); font-size: 14px; }

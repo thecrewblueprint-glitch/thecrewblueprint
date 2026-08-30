@@ -6,6 +6,18 @@ All notable changes to Stagehand Fundamentals content, research, and resources a
 
 ## 2026-08-30
 
+### Expanded Tiered Curriculum Review Build
+
+- Built 21 standalone review courses from completed research Packages 24–39 and 46–50.
+- Added five Stagehand Field Skills with authority rules, stop conditions, five-question knowledge checks, and equipment-specific observed-practice gates.
+- Added seven Lead courses and two Supervisor courses centered on planning, crew assignment, verification, status, change control, and escalation.
+- Added five Department Course 3 system/design courses with portfolio gates instead of credential or job-authority claims.
+- Added Production Power Awareness and the Production & Coordination three-track career branch.
+- Added 153 learner stops and 105 coached scenario questions across the new builds.
+- Matched the existing dark/gold course-player language with a desktop sidebar, mobile lesson selector, fixed progress card, source lineage, and previous/next navigation.
+- Added the Expanded Curriculum Build Register and the release-focused Expanded Curriculum Research Queue.
+- Kept practitioner approval, observed practice, employer authorization, external credentials, rigging qualification, and electrical qualification as separate states.
+
 ### Four-Part Foundation and Curriculum Tiers
 
 - Counted the live Stagehand Fundamentals data and corrected the course total from 40 to 34 micro-lessons.
