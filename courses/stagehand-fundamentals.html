@@ -22,7 +22,7 @@ const modules = [
     {id:"1.4",name:"First-Call Integration",obj:"Apply Module 1 concepts in context."}
   ],rule:"SHOW UP READY. KNOW WHO IS LEADING YOU. FOLLOW DIRECTION. ASK BEFORE YOU GUESS. WORK SAFELY."},
   {num:2,title:"Safety Mindset Before Skillset",lessons:[
-    {id:"2.1",name:"Hazard vs. Risk vs. Behavior",obj:"Distinguish three related concepts."},
+    {id:"2.1",name:"Hazard vs. Risk vs. Behavior",obj:"Explain how hazards, exposure, behavior, and controls affect risk."},
     {id:"2.2",name:"Notice & Classify",obj:"Apply the NCCE decision model."},
     {id:"2.3",name:"Under Pressure",obj:"Keep safety judgment active."},
     {id:"2.4",name:"Hazard Integration",obj:"Identify hazards in complex scenes."}
@@ -98,17 +98,50 @@ const courseParts = [
   }
 ];
 
-const requestedPart = Number.parseInt(new URLSearchParams(window.location.search).get('part'), 10);
-let activePartIndex = Number.isInteger(requestedPart) && requestedPart >= 1 && requestedPart <= courseParts.length ? requestedPart - 1 : 0;
+const courseUrlParams = new URLSearchParams(window.location.search);
+const requestedLesson = courseUrlParams.get('lesson');
+const requestedLessonModule = modules.find(module => module.lessons.some(lesson => lesson.id === requestedLesson));
+const requestedLessonPartIndex = requestedLessonModule
+  ? courseParts.findIndex(part => part.moduleNumbers.includes(requestedLessonModule.num))
+  : -1;
+const requestedPart = Number.parseInt(courseUrlParams.get('part'), 10);
+let activePartIndex = requestedLessonPartIndex >= 0
+  ? requestedLessonPartIndex
+  : Number.isInteger(requestedPart) && requestedPart >= 1 && requestedPart <= courseParts.length
+    ? requestedPart - 1
+    : 0;
 let activeModules = getActiveModules();
-let current = new URLSearchParams(window.location.search).get('end') === '1'
-  ? activeModules.reduce((sum,m)=>sum+m.lessons.length,0) - 1
-  : 0;
 let total = activeModules.reduce((sum,m)=>sum+m.lessons.length,0);
+const requestedLessonIndex = findLessonIndex(requestedLesson,activeModules);
+let current = requestedLessonIndex >= 0
+  ? requestedLessonIndex
+  : courseUrlParams.get('end') === '1'
+    ? total - 1
+    : 0;
 
 function getActiveModules(){
   const included = new Set(courseParts[activePartIndex].moduleNumbers);
   return modules.filter(module => included.has(module.num));
+}
+
+function findLessonIndex(lessonId,sourceModules){
+  let idx=0;
+  for(const module of sourceModules){
+    for(const lesson of module.lessons){
+      if(lesson.id===lessonId)return idx;
+      idx++;
+    }
+  }
+  return -1;
+}
+
+function syncCourseUrl(){
+  const [,lesson]=getModuleLesson(current);
+  const url=new URL(window.location.href);
+  url.searchParams.set('part',String(courseParts[activePartIndex].num));
+  url.searchParams.set('lesson',lesson.id);
+  url.searchParams.delete('end');
+  window.history.replaceState(null,'',`${url.pathname}${url.search}${url.hash}`);
 }
 
 function bibliographyHref(){
@@ -179,6 +212,7 @@ function goModule(mi){
 function goPart(partIndex,startAtEnd=false){
   const url = new URL(window.location.href);
   url.searchParams.set('part',String(partIndex+1));
+  url.searchParams.delete('lesson');
   if(startAtEnd) url.searchParams.set('end','1');
   else url.searchParams.delete('end');
   window.location.href = url.toString();
@@ -217,22 +251,21 @@ function svgCallPhases(){
   </svg>`;
 }
 
-function svgHazardFlow(){
-  return `<svg viewBox="0 0 500 240" style="width:100%;max-width:600px">
-    <defs><style>
-      .box{fill:#0f1419;stroke:#0284c7;stroke-width:2;rx:6}
-      .label{font-size:12px;font-weight:bold;fill:#f5b400;text-anchor:middle}
-      .desc{font-size:10px;fill:#aab5c0;text-anchor:middle;line-height:12}
-      .arrow{fill:none;stroke:#0284c7;stroke-width:2;marker-end:url(#arrowhead)}
-    </style><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#0284c7"/></marker></defs>
-    <rect class="box" x="20" y="20" width="100" height="70"/><text class="label" x="70" y="45">Hazard</text><text class="desc" x="70" y="62" width="90">What can cause harm</text><text class="desc" x="70" y="75">(wet floor)</text>
-    <polyline class="arrow" d="M 120 55 L 150 55"/>
-    <rect class="box" x="160" y="20" width="100" height="70"/><text class="label" x="210" y="45">Risk</text><text class="desc" x="210" y="62">Likelihood given</text><text class="desc" x="210" y="75">conditions (traffic?)</text>
-    <polyline class="arrow" d="M 260 55 L 290 55"/>
-    <rect class="box" x="300" y="20" width="100" height="70"/><text class="label" x="350" y="45">Behavior</text><text class="desc" x="350" y="62">Unsafe action that</text><text class="desc" x="350" y="75">creates exposure</text>
-    <polyline class="arrow" d="M 350 90 L 350 130"/>
-    <rect class="box" x="270" y="140" width="160" height="70"/><text class="label" x="350" y="165">Control</text><text class="desc" x="350" y="182">Action that reduces risk:</text><text class="desc" x="350" y="195">clear path, warning,</text><text class="desc" x="350" y="208">safer route, help</text>
-  </svg>`;
+function hazardRiskModel(){
+  const coreCard = 'flex:1 1 190px;min-height:128px;background:#0f1419;border:2px solid #0284c7;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;text-align:center';
+  const supportingCard = 'flex:1 1 270px;min-height:122px;background:#0f1419;border:2px solid #f5b400;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;text-align:center';
+  return `<div role="group" aria-label="Hazard and exposure determine risk. Behavior can raise or lower exposure. Controls reduce the hazard or exposure and lower risk." style="width:100%;max-width:920px">
+    <div style="margin:0 auto 14px;padding:10px 14px;border-radius:999px;background:#111a22;color:#f1f4f7;text-align:center;font-weight:900;letter-spacing:.02em">Hazard <span style="color:#f5b400">+</span> Exposure &amp; Conditions <span style="color:#0284c7">→</span> Risk</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch">
+      <div style="${coreCard}"><strong style="color:#f5b400;font-size:1rem">Hazard</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Source or condition that can cause harm</span><small style="margin-top:9px;color:#f1f4f7">Example: wet floor</small></div>
+      <div style="${coreCard}"><strong style="color:#f5b400;font-size:1rem">Exposure &amp; Conditions</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Who or what can contact the hazard</span><small style="margin-top:9px;color:#f1f4f7">Traffic • duration • task</small></div>
+      <div style="${coreCard}"><strong style="color:#f5b400;font-size:1rem">Risk</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Likelihood and severity of harm in this context</span><small style="margin-top:9px;color:#f1f4f7">Risk changes with exposure</small></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;align-items:stretch">
+      <div style="${supportingCard}"><strong style="color:#f5b400;font-size:1rem">Behavior</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Your action can raise or lower exposure.</span><small style="margin-top:9px;color:#f1f4f7">Changes exposure ↑ or ↓</small></div>
+      <div style="${supportingCard};border-color:#39b979"><strong style="color:#39b979;font-size:1rem">Control / Response</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Remove or isolate the hazard, reduce exposure, or escalate.</span><small style="margin-top:9px;color:#f1f4f7">Act only within your training and assigned authority</small></div>
+    </div>
+  </div>`;
 }
 
 function svgStagePlan(){
@@ -394,6 +427,7 @@ function svgStrikeSequence(){
 function render(){
   const [mod,lesson]=getModuleLesson(current);
   const part=courseParts[activePartIndex];
+  syncCourseUrl();
   document.title=`Part ${part.num}: ${part.title} — Stagehand Fundamentals`;
   document.getElementById('courseContext').textContent=`Part ${part.num} of ${courseParts.length} — ${part.title}`;
   document.getElementById('progtext').textContent=`Lesson ${current+1} of ${total}`;
@@ -607,19 +641,20 @@ function renderM14(){
 function renderM21(){
   return `<div class="card objective">
     <h3>Three Concepts That Are Connected But Different</h3>
-    <div class="explainer">Safety judgment requires distinguishing <strong>the hazard (what can cause harm), the risk (likelihood and severity given conditions), and the unsafe behavior (what creates exposure)</strong>. Understanding the difference teaches you how to classify hazards and respond correctly. A wet floor is always a hazard. Whether the risk is low or high depends on who is around it and what they are doing there.</div>
+    <div class="explainer">Safety judgment starts with three distinctions: <strong>the hazard (what can cause harm), the risk (how likely and serious harm could be in the current conditions), and behavior (an action that can raise or lower exposure)</strong>. Crew Blueprint uses behavior as instructional language; OSHA does not define these as one official three-part taxonomy. A wet floor remains a hazard. Traffic, exposure, behavior, and controls change the risk.</div>
   </div>
 
   <div class="card">
-    <h3>The Three Concepts</h3>
-    <div class="visual-section">${svgHazardFlow()}</div>
+    <h3>How the Concepts Connect</h3>
+    <div class="visual-section">${hazardRiskModel()}</div>
     <div class="reference">
-      <span class="reference-label">Applying the Concepts</span>
+      <span class="reference-label">Apply It to a Wet Floor</span>
       <ul>
-        <li><strong>Hazard:</strong> Wet floor, forklift, suspended load, unplugged cable, sharp edge, combustible material. The thing that can cause harm.</li>
-        <li><strong>Risk:</strong> The likelihood and severity given current conditions. Wet floor in an empty hallway at 9 AM (low risk) vs. wet floor in a busy case route at 4 PM (high risk). Risk is hazard + exposure.</li>
-        <li><strong>Unsafe behavior:</strong> Walking through the wet floor (unsafe). Going around or over it (safe). Same hazard, different behavior.</li>
-        <li><strong>Control:</strong> The action reducing risk. Clear signage, better traction, closed path, warning, escort, or alternative route. Hazard stays (wet floor), but risk reduces.</li>
+        <li><strong>Hazard:</strong> A wet floor, moving forklift, suspended load, cable across a travel path, sharp edge, or combustible material can cause harm.</li>
+        <li><strong>Exposure and conditions:</strong> Traffic, duration, visibility, and the task change who or what may contact the hazard.</li>
+        <li><strong>Risk:</strong> Judge the potential severity, the likelihood of an incident or exposure, and how many people the hazard could reach. OSHA describes risk as the product of hazard and exposure. An empty hallway presents less risk than a busy case route, not zero risk.</li>
+        <li><strong>Behavior:</strong> Walking into the wet area raises exposure. Stopping and using the assigned dry route lowers exposure. Crew Blueprint uses “behavior” as teaching language, not as a formal OSHA category or the only cause of an incident.</li>
+        <li><strong>Control or response:</strong> Drying the floor removes the hazard. Closing, marking, or rerouting the path reduces exposure. Use only controls within your training and assigned authority. Otherwise, keep clear, warn nearby crew, and tell your lead.</li>
       </ul>
     </div>
   </div>
@@ -629,11 +664,11 @@ function renderM21(){
     <p>Wet floor in empty hallway (9 AM) vs. same floor in busy case route (4 PM). What changed?</p>
     <div class="options" data-q="q21">
       <button class="opt" data-c="0">The hazard. Different situations have different hazards.</button>
-      <button class="opt" data-c="1">The risk. Same hazard, different traffic and exposure changes the risk level.</button>
+      <button class="opt" data-c="1">The risk. The same hazard creates a different risk level when traffic and exposure change.</button>
     </div>
-    <div class="coach" id="q21c"><strong>Why:</strong> The wet surface is the hazard. It does not change. Exposure (traffic, people working nearby, equipment moving) changes the risk. Report and correct according to procedure based on current risk, not just hazard.</div>
+    <div class="coach" id="q21c"><strong>Why:</strong> The wet surface remains the hazard. Exposure and conditions—traffic, people working nearby, and equipment moving—change the risk. Use an assigned control within your authority. If you cannot control it safely, keep clear and tell your lead.</div>
   </div>
-  <div class="key-takeaway"><strong>Key principle:</strong> Same hazard, different context = different risk level requiring different response.</div>`;
+  <div class="key-takeaway"><strong>Key principle:</strong> The same hazard can create different risk as exposure and conditions change. Use safe behavior and authorized controls to reduce exposure; escalate what you cannot control.</div>`;
 }
 
 function renderM22(){

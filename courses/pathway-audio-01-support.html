@@ -38,8 +38,17 @@ const modules = [
   ]}
 ];
 
-let current = 0;
+const requestedLesson = new URLSearchParams(window.location.search).get('lesson');
+const lessonIds = modules.flatMap(module => module.lessons.map(lesson => lesson.id));
+let current = Math.max(0,lessonIds.indexOf(requestedLesson));
 let total = modules.reduce((sum,m)=>sum+m.lessons.length,0);
+
+function syncCourseUrl(){
+  const [,lesson]=getModuleLesson(current);
+  const url=new URL(window.location.href);
+  url.searchParams.set('lesson',lesson.id);
+  window.history.replaceState(null,'',`${url.pathname}${url.search}${url.hash}`);
+}
 
 function buildSidebar(){
   const s = document.getElementById('sidebar');
@@ -97,6 +106,7 @@ function goModule(mi){
 
 function render(){
   const [mod,lesson]=getModuleLesson(current);
+  syncCourseUrl();
   document.getElementById('progtext').textContent=`Lesson ${lesson.id} of ${total}`;
   document.getElementById('pct').textContent=Math.round((current+1)/total*100)+'%';
   document.getElementById('bar').style.width=(current+1)/total*100+'%';
