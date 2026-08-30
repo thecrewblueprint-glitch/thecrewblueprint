@@ -111,6 +111,11 @@ function getActiveModules(){
   return modules.filter(module => included.has(module.num));
 }
 
+function bibliographyHref(){
+  const returnPath = `${window.location.pathname}${window.location.search}`;
+  return `../visuals/stagehand-fundamentals/bibliography.html?return=${encodeURIComponent(returnPath)}`;
+}
+
 function buildPartTabs(){
   const tabs = document.getElementById('partTabs');
   tabs.innerHTML = courseParts.map((part,index)=>`<button type="button" class="part-tab ${index===activePartIndex?'active':''}" ${index===activePartIndex?'aria-current="step"':''} onclick="goPart(${index})"><b>Part ${part.num}</b><span>${part.title}</span></button>`).join('');
@@ -119,7 +124,7 @@ function buildPartTabs(){
 function buildSidebar(){
   const s = document.getElementById('sidebar');
   const part = courseParts[activePartIndex];
-  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../visuals/stagehand-fundamentals/bibliography.html">Sources &amp; course boundaries</a></div>`;
+  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../visuals/stagehand-fundamentals/bibliography.html" onclick="this.href=bibliographyHref()">Sources &amp; course boundaries</a></div>`;
   activeModules.forEach((m,mi)=>{
     const isActive = current>=activeModules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<activeModules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
     h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
@@ -404,7 +409,7 @@ function render(){
   </section>`;
 
   if(current===0){
-    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../visuals/stagehand-fundamentals/bibliography.html">Review the course sources and qualifications.</a></p></div>`;
+    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../visuals/stagehand-fundamentals/bibliography.html" onclick="this.href=bibliographyHref()">Review the course sources and qualifications.</a></p></div>`;
   }
 
   if(lesson.id==='1.1')html+=renderM11();
