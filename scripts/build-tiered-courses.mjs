@@ -58,6 +58,7 @@ function page(course) {
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="../css/tiered-course.css" rel="stylesheet" />
+<link href="../css/course-consent.css" rel="stylesheet" />
 </head>
 <body class="course-tier ${course.tierClass}">
 <header class="top">
@@ -78,6 +79,7 @@ function page(course) {
 <footer><p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p></footer>
 <script type="application/json" id="courseData">${cleanJson(course)}</script>
 <script src="../js/tiered-course.js"></script>
+<script src="../js/course-consent.js"></script>
 </body>
 </html>
 `;
