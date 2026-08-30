@@ -20,7 +20,7 @@ const terms = await readFile(path.join(rootDir, 'terms-and-conditions.html'), 'u
 const limitation = await readFile(path.join(rootDir, 'limitation-of-liability.html'), 'utf8');
 
 const version = consentRuntime.match(/CONSENT_VERSION = '([^']+)'/)?.[1];
-check(version === '2026-08-30', `unexpected consent version: ${version || 'missing'}`);
+check(version === '2026-08-30.2', `unexpected consent version: ${version || 'missing'}`);
 check(consentRuntime.includes('cbCourseConsent.v1'), 'runtime is missing its versioned local-storage key');
 check(consentRuntime.includes('type="checkbox"'), 'runtime is missing affirmative checkboxes');
 check(!consentRuntime.includes('type="checkbox" checked'), 'consent checkboxes must not be preselected');
