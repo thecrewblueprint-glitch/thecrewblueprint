@@ -63,8 +63,12 @@ body {
   color: var(--cb-gold);
 }
 
-.progress-bar { position: fixed; top: 64px; left: 0; right: 0; height: 3px; background: var(--cb-border); z-index: 99; }
-.progress-fill { height: 100%; background: var(--cb-gold); width: 0%; transition: width 300ms ease; }
+.brand { font-weight: 900; font-size: 15px; }
+.brand span { color: var(--cb-gold); }
+.progbox { width: min(320px, 40vw); }
+.progrow { display: flex; justify-content: space-between; font-size: 11px; color: var(--cb-muted-2); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; margin-bottom: 4px; }
+.bar { height: 6px; background: var(--cb-border); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--cb-gold); }
 
 .exit-btn {
   padding: 8px 16px;
@@ -135,25 +139,29 @@ body {
 }
 
 .module-nav {
-  margin-bottom: 32px;
-  padding: 0 20px;
+  padding: 0 14px;
 }
 
+.mod { display: flex; gap: 10px; align-items: center; padding: 9px; border-radius: 11px; color: var(--cb-muted); margin-bottom: 4px; }
+.num { width: 27px; height: 27px; border-radius: 50%; display: grid; place-items: center; background: var(--cb-bg-light); font-weight: 800; font-size: 12px; flex-shrink: 0; }
+.mod.active .num { background: var(--cb-gold); color: var(--cb-bg-deep); }
 .module-title {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--cb-muted-2);
-  margin-bottom: 12px;
-  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cb-text);
 }
+.module-count {
+  font-size: 11px;
+  color: var(--cb-muted-2);
+}
+
+.sub { margin: 0 0 16px 23px; padding-left: 13px; border-left: 1px solid var(--cb-border); }
 
 .lesson-link {
   display: block;
-  padding: 10px 8px;
-  margin-bottom: 4px;
-  border-radius: 6px;
+  padding: 8px 0;
+  margin-bottom: 0;
+  border-radius: 0;
   color: var(--cb-muted);
   text-decoration: none;
   font-size: 13px;
@@ -167,14 +175,12 @@ body {
 }
 
 .lesson-link:hover {
-  background: rgba(245,180,0,0.1);
   color: var(--cb-gold);
 }
 
 .lesson-link.active {
-  background: rgba(245,180,0,0.15);
   color: var(--cb-gold-strong);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1 {
@@ -280,11 +286,10 @@ footer {
 <body>
 
 <div class="top">
-  <div class="top-title">Modular Deck Systems</div>
+  <div><div class="brand">The Crew <span>Blueprint</span></div><div class="top-title" style="font-size:12px;color:var(--cb-muted)">Staging &amp; Carpentry Pathway — Course 2: Modular Deck Systems</div></div>
+  <div class="progbox"><div class="progrow"><span id="progtext">Lesson 1.1 of 9</span><span id="pcttext">11%</span></div><div class="bar"><i id="progbar" style="width:11%"></i></div></div>
   <a href="../courses.html" class="exit-btn">← Exit Course</a>
 </div>
-
-<div class="progress-bar"><div class="progress-fill"></div></div>
 
 <div class="shell">
   <nav class="side">
@@ -538,24 +543,29 @@ function buildSidebar() {
   sidebar.innerHTML = '';
   select.innerHTML = '';
 
-  modules.forEach(mod => {
-    const modDiv = document.createElement('div');
-    modDiv.innerHTML = `<div class="module-title">${mod.name}</div>`;
+  modules.forEach((mod, mi) => {
+    const isActive = mod.lessons.some(l => l.id === current);
+    const modHeader = document.createElement('div');
+    modHeader.className = 'mod' + (isActive ? ' active' : '');
+    modHeader.innerHTML = `<span class="num">${mi + 1}</span><div><div class="module-title">${mod.name}</div><div class="module-count">${mod.lessons.length} lessons</div></div>`;
+    sidebar.appendChild(modHeader);
 
+    const subDiv = document.createElement('div');
+    subDiv.className = 'sub';
     mod.lessons.forEach(lesson => {
       const link = document.createElement('button');
-      link.className = 'lesson-link';
+      link.className = 'lesson-link' + (lesson.id === current ? ' active' : '');
       link.textContent = lesson.name;
       link.dataset.idx = lesson.id;
       link.onclick = () => render(lesson.id);
-      modDiv.appendChild(link);
+      subDiv.appendChild(link);
 
       const opt = document.createElement('option');
       opt.value = lesson.id;
       opt.textContent = `${mod.name} > ${lesson.name}`;
       select.appendChild(opt);
     });
-    sidebar.appendChild(modDiv);
+    sidebar.appendChild(subDiv);
   });
 }
 
@@ -566,22 +576,25 @@ function getModuleLesson(idx) {
   return { mod, lesson };
 }
 
+let current = '1.1';
+
 function render(idx) {
+  current = idx;
   const { mod, lesson } = getModuleLesson(idx);
   document.getElementById('objective').textContent = lesson.obj;
   document.getElementById('lessonContent').innerHTML = lesson.content;
-  document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-  const activeLink = document.querySelector(`[data-idx="${idx}"]`);
-  if (activeLink) activeLink.classList.add('active');
   document.getElementById('mobileSelect').value = idx;
 
   const allLessons = [];
   modules.forEach(m => m.lessons.forEach(l => allLessons.push({ ...l, modId: m.id })));
   const currentIdx = allLessons.findIndex(l => l.id === lesson.id);
 
-  document.querySelector('.progress-fill').style.width = ((currentIdx + 1) / allLessons.length) * 100 + '%';
+  document.getElementById('progtext').textContent = `Lesson ${lesson.id} of ${allLessons.length}`;
+  document.getElementById('pcttext').textContent = Math.round(((currentIdx + 1) / allLessons.length) * 100) + '%';
+  document.getElementById('progbar').style.width = ((currentIdx + 1) / allLessons.length) * 100 + '%';
 
   renderFooterNav(allLessons, currentIdx);
+  buildSidebar();
   window.scrollTo(0, 0);
 }
 
