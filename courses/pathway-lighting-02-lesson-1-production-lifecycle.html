@@ -3,30 +3,358 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lesson 1: The Lighting Production Lifecycle — Owner Audit Required | The Crew Blueprint</title>
-<meta name="description" content="This Crew Blueprint course remains locked until the owner completes its curriculum audit." />
-<meta name="robots" content="noindex,nofollow,noarchive" />
-<link rel="canonical" href="https://thecrewblueprint.com/courses/" />
-<link rel="icon" href="../images/logo.png" type="image/png" />
+<meta name="robots" content="noindex,follow" />
+<title>Lesson 1: The Lighting Production Lifecycle | The Crew Blueprint</title>
+<meta name="description" content="Why the console is only one part of a lighting system, and the full chain from creative intent to load-out — Lesson 1 of the Lighting Pathway's Course 2." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-02-lesson-1-production-lifecycle/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Lesson 1: The Lighting Production Lifecycle | The Crew Blueprint" />
+<meta property="og:description" content="Why the console is only one part of a lighting system, and the full chain from creative intent to load-out." />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+
+  .cb-lesson-progress { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  .cb-lesson-progress-track { flex: 1; min-width: 160px; height: 6px; border-radius: var(--cb-radius-pill); background: rgba(255,255,255,0.08); overflow: hidden; }
+  .cb-lesson-progress-fill { width: 20%; height: 100%; background: var(--cb-gold); }
+  .cb-lesson-progress-label { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); white-space: nowrap; }
+
+  .cb-guide-index { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+  .cb-guide-index a.cb-tag {
+    display: inline-flex; align-items: center; padding: 8px 14px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
+
+  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+  .cb-quiz-item { padding: 16px 20px; }
+  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
+  .cb-lesson-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .cb-lesson-nav-card { padding: 22px; text-align: left; display: flex; flex-direction: column; gap: 6px; }
+  .cb-lesson-nav-card span.cb-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cb-muted-2); }
+  .cb-lesson-nav-card h3 { margin: 0; font-size: 17px; }
+
+  @media (max-width: 820px) { .cb-lesson-nav { grid-template-columns: 1fr; } }
+</style>
+<style id="ownerReviewBadgeStyle">
+.owner-review-badge{position:fixed;right:12px;bottom:12px;z-index:9999;padding:7px 10px;border:1px solid rgba(245,180,0,.55);border-radius:999px;background:rgba(9,12,16,.94);box-shadow:0 8px 24px rgba(0,0,0,.35);color:#f5b400;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+</style>
 </head>
-<body class="course-lock-page" data-course-lock="owner-audit" data-course-title="Lesson 1: The Lighting Production Lifecycle">
-<main class="course-lock-shell">
-  <article class="course-lock-card" aria-labelledby="lock-title">
-    <a class="course-lock-brand" href="../index.html">The Crew <span>Blueprint</span></a>
-    <span class="course-lock-status">Owner Audit Required</span>
-    <p class="course-lock-name">Lesson 1: The Lighting Production Lifecycle</p>
-    <h1 id="lock-title">This course is not open yet.</h1>
-    <p>The curriculum exists, but the owner has not released it. The course stays locked while its accuracy, sources, questions, visuals, and field boundaries receive a personal audit.</p>
-    <p><strong>Stagehand Fundamentals is the only course currently open to learners.</strong></p>
-    <div class="course-lock-actions">
-      <a class="cb-btn cb-btn-primary" href="stagehand-fundamentals.html">Open Stagehand Fundamentals</a>
-      <a class="cb-btn cb-btn-secondary" href="../courses.html">Return to Courses</a>
-    </div>
-  </article>
+<body data-publication-state="owner-review-live">
+<div class="owner-review-badge" role="note">Owner Review · Public Audit Copy</div>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="pathway-lighting-02-production-flow.html">Lighting Pathway &middot; Course 2</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Lesson 1</span>
+    </nav>
+
+    <section class="cb-hero" style="padding-top: 8px;">
+      <div class="cb-lesson-progress" style="max-width: 620px; margin: 0 auto 18px;">
+        <span class="cb-lesson-progress-label">Lesson 1 of 5</span>
+        <span class="cb-lesson-progress-track"><span class="cb-lesson-progress-fill"></span></span>
+      </div>
+      <span class="cb-label">Lighting Pathway &middot; Course 2</span>
+      <h1>The Lighting Production Lifecycle</h1>
+      <p>
+        Lighting production flow is the organized process that turns a visual idea into a working,
+        documented, safe, and repeatable system &mdash; creative intent, technical design,
+        documentation, installation, testing, programming, live operation, and load-out. New crew
+        are most useful once they understand where their task fits in that chain.
+      </p>
+      <div class="cb-guide-index">
+        <a class="cb-tag" href="#what-youll-learn">What You'll Learn</a>
+        <a class="cb-tag" href="#real-call">On a Real Call</a>
+        <a class="cb-tag" href="#mistakes">Beginner Mistakes</a>
+        <a class="cb-tag" href="#habit-safety">Habit &amp; Safety</a>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="what-youll-learn">
+      <h2>What You'll Learn</h2>
+      <ul class="cb-list">
+        <li>Recognize the full path from creative intent to load-out.</li>
+        <li>Explain why the console is only one part of the lighting system.</li>
+        <li>Identify the main phases of planning, installation, testing, operation, and removal.</li>
+        <li>Understand why standardized process matters even when every venue is different.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section cb-section-left" id="real-call">
+      <h2>On a Real Call</h2>
+      <p class="cb-section-intro">
+        The chain looks different in scale depending on the room, but not in shape.
+      </p>
+      <p>
+        On a corporate ballroom load-in, the lighting crew may start with cases, truss, fixtures,
+        cable, and a plot. By show time, that equipment has to become front light, scenic color,
+        camera-friendly looks, cue lists, and a clean room for presenters. In an arena, the same
+        concept scales into touring trusses, roof points, local labor, console files, and daily
+        repeatability. On a festival, the workflow also has to support short artist changeovers and
+        guest lighting packages.
+      </p>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">The governing idea</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          Large-scale lighting production is a chain of translations: creative intent becomes a
+          technical design, the design becomes a documented system, and that system is installed,
+          tested, programmed, operated, and safely removed. Standardize the process; adapt the
+          implementation to the room.
+        </p>
+      </div>
+    </section>
+
+    <figure class="cb-diagram">
+      <span class="cb-diagram-label">Diagram &mdash; The Production Lifecycle</span>
+      <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="l2-1-title l2-1-desc">
+        <title id="l2-1-title">The eight-stage lighting production lifecycle</title>
+        <desc id="l2-1-desc">Creative Intent leads to Technical Design, then Documentation, Installation, Testing, Programming, Live Operation, and finally Load-Out.</desc>
+
+        <g font-family="inherit">
+          <!-- Row 1 -->
+          <rect x="20" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="34" cy="16" r="9" fill="var(--cb-gold)"/><text x="34" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">1</text>
+          <text x="90" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Creative Intent</text>
+
+          <path d="M160,45 L178,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M178,45 L170,40 L170,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="180" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="194" cy="16" r="9" fill="var(--cb-gold)"/><text x="194" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">2</text>
+          <text x="250" y="42" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Technical</text>
+          <text x="250" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Design</text>
+
+          <path d="M320,45 L338,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M338,45 L330,40 L330,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="340" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="354" cy="16" r="9" fill="var(--cb-gold)"/><text x="354" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">3</text>
+          <text x="410" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Documentation</text>
+
+          <path d="M480,45 L498,45" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M498,45 L490,40 L490,50 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="500" y="20" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="514" cy="16" r="9" fill="var(--cb-gold)"/><text x="514" y="19.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">4</text>
+          <text x="570" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Installation</text>
+
+          <!-- Wrap connector -->
+          <path d="M660,45 L660,120 L90,120 L90,168" fill="none" stroke="var(--cb-gold-border)" stroke-width="2"/>
+          <path d="M90,168 L85,158 L95,158 Z" fill="var(--cb-gold-border)"/>
+
+          <!-- Row 2 -->
+          <rect x="20" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="34" cy="166" r="9" fill="var(--cb-gold)"/><text x="34" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">5</text>
+          <text x="90" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Testing</text>
+
+          <path d="M160,195 L178,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M178,195 L170,190 L170,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="180" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="194" cy="166" r="9" fill="var(--cb-gold)"/><text x="194" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">6</text>
+          <text x="250" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Programming</text>
+
+          <path d="M320,195 L338,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M338,195 L330,190 L330,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="340" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="354" cy="166" r="9" fill="var(--cb-gold)"/><text x="354" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">7</text>
+          <text x="410" y="192" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Live</text>
+          <text x="410" y="208" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Operation</text>
+
+          <path d="M480,195 L498,195" stroke="var(--cb-gold-border)" stroke-width="2"/><path d="M498,195 L490,190 L490,200 Z" fill="var(--cb-gold-border)"/>
+
+          <rect x="500" y="170" width="140" height="50" rx="8" fill="var(--cb-card)" stroke="var(--cb-border-strong)" stroke-width="1.5"/>
+          <circle cx="514" cy="166" r="9" fill="var(--cb-gold)"/><text x="514" y="169.5" text-anchor="middle" font-size="10" font-weight="900" fill="var(--cb-bg-deep)">8</text>
+          <text x="570" y="200" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--cb-text)">Load-Out</text>
+        </g>
+      </svg>
+      <figcaption class="cb-diagram-caption">
+        Same eight stages on every scale of show &mdash; a ballroom and an arena both move through
+        this chain, just with more people and more paperwork at the bigger end.
+      </figcaption>
+    </figure>
+
+    <section class="cb-section cb-section-left" id="mistakes">
+      <h2>Beginner Mistakes</h2>
+      <ul class="cb-list">
+        <li><strong>Thinking the console is the whole system.</strong> The console depends on power, data, patching, addressing, networking, fixtures, paperwork, and crew execution.</li>
+        <li><strong>Ignoring the production critical path.</strong> Overhead work, power, stage release, and rehearsal access usually control the schedule.</li>
+        <li><strong>Treating paperwork as office work only.</strong> Documentation is how the crew knows what was intended, what changed, and what must be tested.</li>
+        <li><strong>Assuming every venue works like the last one.</strong> The process stays consistent, but roof points, access, power, labor, and rules change.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section cb-section-left" id="habit-safety">
+      <h2>Professional Habit &amp; Safety Notes</h2>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Before starting a task, ask three questions</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          What phase are we in, who owns this decision, and what does this task affect next? Useful
+          crew members protect the flow of work instead of only completing isolated tasks.
+        </p>
+      </div>
+      <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">
+        <strong style="color: var(--cb-text);">Safety notes:</strong> Do not perform work you have
+        not been trained or authorized to do. Rigging, temporary power, lift operation,
+        fall-protection work, and weather decisions must be performed or supervised by competent,
+        appropriately qualified personnel. Production pressure never justifies bypassing
+        inspection, exclusion zones, protective devices, engineered limits, or de-energization
+        procedures.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Quick Knowledge Check</h2>
+      <p class="cb-section-intro">Click a question to check your answer.</p>
+      <div class="cb-quiz-list">
+        <details class="cb-panel cb-quiz-item">
+          <summary>What is the best description of lighting production flow?</summary>
+          <p>The full process from creative intent through load-out &mdash; not just console programming. It includes design, documentation, installation, testing, programming, operation, and load-out.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>What does this awareness-level training not provide?</summary>
+          <p>Formal authorization to perform restricted work. It builds vocabulary, workflow understanding, and safer decision-making habits &mdash; it does not certify or authorize rigging, electrical, lift, or fall-protection work.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Key Takeaway</h2>
+      <div class="cb-panel" style="padding: 20px 22px;">
+        <p style="margin: 0; color: var(--cb-muted);">The lighting rig is not built by the console; it is built by a coordinated workflow.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Think About It</h2>
+      <ul class="cb-list">
+        <li>Where does your assigned task fit in the larger lighting production chain?</li>
+        <li>What could happen if the crew skips documentation during a fast load-in?</li>
+        <li>Why does a standardized process still need site-specific adaptation?</li>
+      </ul>
+    </section>
+
+    <section class="cb-section">
+      <h2 style="text-align: left; margin-bottom: 16px;">Continue Learning</h2>
+      <div class="cb-lesson-nav">
+        <a class="cb-panel cb-lesson-nav-card" href="pathway-lighting-02-lesson-2-advancing-and-documentation.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">Up Next</span>
+          <h3>Lesson 2: Advancing, Documentation, and Shop Preparation</h3>
+        </a>
+        <a class="cb-panel cb-lesson-nav-card" href="../resources.html" style="color: inherit; text-decoration: none;">
+          <span class="cb-eyebrow">In the Meantime</span>
+          <h3 style="color: var(--cb-gold-strong);">Explore the Resource Hub &rarr;</h3>
+        </a>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Back to the course overview.</h2>
+          <p>See all five lessons in Lighting Pathway Course 2.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="pathway-lighting-02-production-flow.html">Course Overview</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>

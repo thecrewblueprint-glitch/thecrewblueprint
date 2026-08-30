@@ -9,14 +9,14 @@
 | Tier | Learner claim allowed | Current build status | Evidence and gate |
 |---|---|---|---|
 | Foundation — Stagehand Fundamentals | Shared entry knowledge, work behavior, safety awareness, and stop-and-ask judgment | Live; four-part delivery proposal prepared with all 10 modules and 34 lessons retained | Packages 14–21. Owner, novice-learner, and safety-sensitive review remain required for the proposed architecture. |
-| Stagehand Field Skills | Knowledge plus observed practice on a named physical task under the responsible lead | Five owner-review builds; public routes locked | Packages 46–50 support the knowledge build, source lineage, quiz, and draft observation checklist. Each needs the named field authority, real-equipment variation review, and an observed-practice standard. |
-| Department Support — Course 1 | Recognize equipment and perform assigned support work under direction | Five owner-review builds; public routes locked | Packages 7–11 and companion boundary notes support Lighting, Video, Audio, Staging/Carpentry, and Backline/Props/Wardrobe. |
-| Department Systems — Course 2 | Explain system flow, handoffs, boundaries, and when the problem belongs to a technician or lead | Five owner-review builds; public routes locked | Lighting: Packages 12/12A and the Lighting Body of Knowledge. Video: Packages 13/13A. Audio: Package 43. Staging/Carpentry: Package 44. Backline/Props/Wardrobe: Package 45. |
-| Lead Tier | Plan, assign, communicate, verify, control change, and escalate inside a named department or work package | Seven owner-review builds; public routes locked | Packages 24–30. Current practitioner review and observed bounded leadership remain required. |
-| Supervisor Tier | Predict the next work state and coordinate event-wide interfaces without replacing craft authority | Two owner-review builds; public routes locked | Packages 31–32. Employer safety-program and event/venue supervisor review remain required. |
-| Advanced Systems — Course 3 | Translate requirements into documented architecture, commissioning evidence, failure-domain reasoning, and controlled change | Five owner-review builds; public routes locked | Packages 33–37. Qualified portfolio review and separate specialist authority remain required. |
-| Production Infrastructure | Recognize shared power infrastructure, warning signs, interfaces, and prohibited actions | One owner-review build; public route locked | Package 38. It grants no electrical authority and includes no live-power practical. |
-| Production & Coordination | Compare and enter parallel Stage Management, Production Management, and Venue/Event Operations tracks | One owner-review build; public route locked | Package 39. Track-specific practitioner review and experience remain required. |
+| Stagehand Field Skills | Knowledge plus observed practice on a named physical task under the responsible lead | Five public owner-review builds; `noindex` | Packages 46–50 support the knowledge build, source lineage, quiz, and draft observation checklist. Each needs the named field authority, real-equipment variation review, and an observed-practice standard. |
+| Department Support — Course 1 | Recognize equipment and perform assigned support work under direction | Five public owner-review builds; `noindex` | Packages 7–11 and companion boundary notes support Lighting, Video, Audio, Staging/Carpentry, and Backline/Props/Wardrobe. |
+| Department Systems — Course 2 | Explain system flow, handoffs, boundaries, and when the problem belongs to a technician or lead | Five public owner-review builds; `noindex` | Lighting: Packages 12/12A and the Lighting Body of Knowledge. Video: Packages 13/13A. Audio: Package 43. Staging/Carpentry: Package 44. Backline/Props/Wardrobe: Package 45. |
+| Lead Tier | Plan, assign, communicate, verify, control change, and escalate inside a named department or work package | Seven public owner-review builds; `noindex` | Packages 24–30. Current practitioner review and observed bounded leadership remain required. |
+| Supervisor Tier | Predict the next work state and coordinate event-wide interfaces without replacing craft authority | Two public owner-review builds; `noindex` | Packages 31–32. Employer safety-program and event/venue supervisor review remain required. |
+| Advanced Systems — Course 3 | Translate requirements into documented architecture, commissioning evidence, failure-domain reasoning, and controlled change | Five public owner-review builds; `noindex` | Packages 33–37. Qualified portfolio review and separate specialist authority remain required. |
+| Production Infrastructure | Recognize shared power infrastructure, warning signs, interfaces, and prohibited actions | One public owner-review build; `noindex` | Package 38. It grants no electrical authority and includes no live-power practical. |
+| Production & Coordination | Compare and enter parallel Stage Management, Production Management, and Venue/Event Operations tracks | One public owner-review build; `noindex` | Package 39. Track-specific practitioner review and experience remain required. |
 
 ## Tier boundaries
 
@@ -45,10 +45,10 @@ Advanced material must name its limits. It cannot substitute for a license, cert
 - Repackages Stagehand Fundamentals into four focused entry points without deleting or renumbering lessons.
 - Corrects the live lesson count from 40 to 34.
 - Labels all five Course 1 pathways as Department Support and all five Course 2 pathways as Department Systems.
-- Places the five proposed Field Skills between Fundamentals and department specialization, with every link ending at an owner-audit lock page on the public site.
+- Places the five proposed Field Skills between Fundamentals and department specialization, with every link opening a labeled, `noindex` owner-review page on the public site.
 - Replaces “independent operation” implications with systems-understanding and lead-authority language.
 - Makes source boundaries and the Fundamentals bibliography easier to reach.
-- Preserves 21 full review builds, 153 learner stops, and 105 coached questions from completed Packages 24–39 and 46–50 on the owner-audit branch.
+- Preserves and publicly serves for audit 21 full review builds, 153 learner stops, and 105 coached questions from completed Packages 24–39 and 46–50; the owner-audit checkpoint remains available.
 - Adds a standalone build register with an exact course-to-packet, route, tier, and release-gate map.
 
 ## What the current build deliberately does not claim
