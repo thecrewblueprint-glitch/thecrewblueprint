@@ -14,11 +14,13 @@ Research files collected here are intended to be:
 
 Current priorities, dependencies, accepted curriculum direction, and completion criteria are tracked in [RESEARCH_QUEUE.md](RESEARCH_QUEUE.md).
 
-This README remains the evidence-library guide and source hierarchy. Historical prompt trackers and roadmap snapshots do not define current task status unless they have been reconciled through RQ-000. The library now contains packages beyond the handoff list below; RQ-000 will produce a collision-free registry and course-to-source crosswalk before this catalog is expanded.
+This README remains the evidence-library guide and source hierarchy. Historical prompt trackers and roadmap snapshots do not define current task status unless they have been reconciled through RQ-000. The reconciled pre-queue 60-file corpus, collision-free semantic registry, course lineage, and file-by-file execution record are in [RESEARCH_CORPUS_RUN_LOG_2026-08-30.md](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md).
 
 ## Claude handoff order
 
 Keep the research files as **separate Markdown sources** rather than merging them into one document. This preserves source-level traceability during Claude synthesis.
+
+The ordered list below preserves the original early handoff sequence through Package 21; it is not the complete current catalog. Use the [corpus run log](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md) for all 60 pre-queue records, semantic collision keys, and current-versus-superseded decisions. Packages 43–45 are the current deeper Course 2 reruns. Packages 46–50 are the new Stagehand Field Skills source packets and remain gated for the named practitioner reviews before curriculum work.
 
 Recommended handoff order:
 
@@ -102,6 +104,17 @@ Naming convention:
 Companion notes may use suffixes such as `04A`, `08A`, `11A`, or `20A` when they clarify or supplement a numbered package without replacing its underlying research.
 
 Each completed research document should preserve source links/citations, distinguish sourced findings from analysis, and include the research date when information may change over time.
+
+## Current supplemental handoff
+
+- **Packages 43–45** — Deeper current Course 2 reruns for Audio, Staging/Carpentry, and Backline/Props/Wardrobe; retain the earlier packets for lineage.
+- **Package 46** — Over-under cable coiling under technician direction.
+- **Package 47** — Ratchet-strap inspection and basic use under responsible-lead direction.
+- **Package 48** — Flatbed cargo-securement support under driver or qualified load-lead direction.
+- **Package 49** — Model-specific barricade setup under barricade/venue-lead direction.
+- **Package 50** — Model-, traffic-, and accessibility-aware cable-ramp/protector setup under department/venue direction.
+
+Packages 46–50 are source packets, not proof of field competency or independent work authorization. Their current status is `practitioner_review` in the [active queue](RESEARCH_QUEUE.md).
 
 ## Current research set
 
