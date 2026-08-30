@@ -18,6 +18,14 @@ All notable changes to Stagehand Fundamentals content, research, and resources a
 - Added the Expanded Curriculum Build Register and the release-focused Expanded Curriculum Research Queue.
 - Kept practitioner approval, observed practice, employer authorization, external credentials, rigging qualification, and electrical qualification as separate states.
 
+### Owner-Audit Publication Lock
+
+- Preserved the complete post-Fundamentals curriculum on `curriculum/owner-audit-2026-08-30`.
+- Kept Stagehand Fundamentals and its ten module routes open on the public site.
+- Replaced every Course 1, Course 2, Course 3, Field Skill, Lead, Supervisor, Infrastructure, Production/Coordination, lesson, and template route after Fundamentals with a content-free owner-audit lock page.
+- Removed locked course routes from the sitemap and added a Fundamentals-only publication validator.
+- Excluded curriculum data modules, research records, build scripts, archived pages, and owner-review player assets from the generated GitHub Pages site.
+
 ### Four-Part Foundation and Curriculum Tiers
 
 - Counted the live Stagehand Fundamentals data and corrected the course total from 40 to 34 micro-lessons.

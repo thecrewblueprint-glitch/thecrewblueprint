@@ -27,7 +27,7 @@ This README remains the evidence-library guide and source hierarchy. Historical 
 
 Keep the research files as **separate Markdown sources** rather than merging them into one document. This preserves source-level traceability during Claude synthesis.
 
-The ordered list below preserves the original early handoff sequence through Package 21; it is not the complete current catalog. Use the [corpus run log](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md) for all 60 pre-queue records, semantic collision keys, and current-versus-superseded decisions. Packages 43–45 are the current deeper Course 2 reruns. Packages 46–50 now support five learner-facing review builds, but the named practitioner and observed-practice gates remain open before release.
+The ordered list below preserves the original early handoff sequence through Package 21; it is not the complete current catalog. Use the [corpus run log](RESEARCH_CORPUS_RUN_LOG_2026-08-30.md) for all 60 pre-queue records, semantic collision keys, and current-versus-superseded decisions. Packages 43–45 are the current deeper Course 2 reruns. Packages 46–50 support five owner-review builds preserved on `curriculum/owner-audit-2026-08-30`; their public routes remain locked while the named practitioner and observed-practice gates stay open.
 
 Recommended handoff order:
 

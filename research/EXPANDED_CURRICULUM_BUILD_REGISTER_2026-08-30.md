@@ -1,12 +1,13 @@
 # Expanded Curriculum Build Register
 
 **Prepared:** 2026-08-30  
-**Branch:** `curriculum/tiered-course-build-2026-08-30`  
-**State:** Review build; not a public-release or qualification claim
+**Owner-review branch:** `curriculum/owner-audit-2026-08-30`
+
+**Public state:** Content-free lock pages after Stagehand Fundamentals; no public-release or qualification claim
 
 ## What was built
 
-Completed research Packages 24–39 and 46–50 now map to **21 learner-facing review builds**:
+Completed research Packages 24–39 and 46–50 map to **21 owner-review course builds** preserved on the owner-audit branch:
 
 - 5 Stagehand Field Skills courses;
 - 7 Lead courses;
@@ -22,7 +23,7 @@ Together, the pages contain:
 - approximately **21,200 learner-facing words** across lessons, assessments, and practice gates;
 - a source-lineage section, authority boundary, and practice or qualified-review gate on every course.
 
-The new pages use the same dark, gold, fixed-progress, desktop-sidebar, mobile-selector, card, quiz, and previous/next design language as Stagehand Fundamentals and the department courses.
+On the owner-audit branch, the review pages use the same dark, gold, fixed-progress, desktop-sidebar, mobile-selector, card, quiz, and previous/next design language as Stagehand Fundamentals and the department courses. Their public routes show only the audit lock.
 
 ## Claim states
 
@@ -98,7 +99,7 @@ The review build passes its repeatable structural audit. The audit covers all 21
 | Answer-position balance | Pass | Generated pages contain 35 correct answers in each of the three positions |
 | Answer-key reasoning | Editorial pass | Every keyed answer follows the course's authority, sequence, verification, change-control, or stop-work rule; qualified practitioners still need to review field truth and local variation |
 | Source lineage | Pass with release gate | 95 course-to-packet mappings across 64 unique URLs; every mapped URL appears in the exact research packet. ECQ-17 still needs dates, versions, applicability, rights, owners, and freshness triggers |
-| Internal routes | Pass | 78 live HTML files and 1,203 local references; no missing target. Archived snapshots stay outside the live-link audit |
+| Owner-review internal routes | Pass | The preserved owner-review build checked 78 HTML files and 1,203 local references with no missing target. Archived snapshots stayed outside that audit |
 | HTML and identifiers | Pass | The catalog and 21 new pages parse without errors or duplicate IDs; the audit also corrected one pre-existing duplicate ID in Stagehand Fundamentals |
 | Static accessibility | Pass with browser gate | Text colors meet WCAG AA contrast against the main background; keyboard focus is visible; quiz feedback uses text as well as color; controls meet a 44-pixel minimum where the learner interacts |
 | Visual instruction | Not release-ready | Model-specific field diagrams and demonstration video need ECQ-01 acceptance before ECQ-02 production |
@@ -107,26 +108,28 @@ The review build passes its repeatable structural audit. The audit covers all 21
 ### Rating
 
 - **Curriculum material as a review build: 8.4 / 10.** The set is substantive, tiered, source-mapped, scenario-assessed, and unusually careful about authority boundaries. Practitioner corrections, deeper Course 3 portfolio cases, and some repeated Lead-tier assessment patterns keep it below release quality.
-- **Public-release readiness: 5.8 / 10.** The pages work as review builds, but original reviewed visuals, field observation reliability, qualified department review, learner testing, source-freshness records, durable learner states, and a real desktop/mobile browser pass remain open.
+- **Public-release readiness: 5.8 / 10 before the publication lock.** The pages work as owner-review builds, but original reviewed visuals, field observation reliability, qualified department review, learner testing, source-freshness records, durable learner states, and a real desktop/mobile browser pass remain open. The public site therefore serves lock pages instead of this material.
 - **Measured learning-retention rating: not yet available.** Assigning a high score before ECQ-15 would manufacture evidence that the project does not have.
 
-The release decision should remain **review only / noindex** until the course-specific gates in this register close.
+The release decision remains **owner review only / public content locked** until the owner closes the course-specific gates in this register.
 
 ## Build method and maintenance
 
 - `scripts/course-data-field.mjs` is the source record for the five Field Skills builds.
 - `scripts/course-data-lead.mjs` is the source record for the nine Lead/Supervisor builds.
 - `scripts/course-data-advanced.mjs` is the source record for the seven advanced and cross-functional builds.
-- `scripts/build-tiered-courses.mjs` writes the 21 standalone HTML pages.
+- `scripts/build-tiered-courses.mjs --owner-audit` writes the 21 standalone HTML pages and refuses to run without the owner-audit flag.
 - `scripts/validate-tiered-courses.mjs` checks course structure, quiz keys, answer-position balance, source-packet lineage, generated files, and live internal links.
 - `css/tiered-course.css` and `js/tiered-course.js` provide the shared course player.
 - Generated HTML carries its full course record in the page. A generated page is not an empty redirect or a placeholder.
 
-After changing curriculum data, run:
+After changing curriculum data on the owner-audit branch, run:
 
 ```bash
-node scripts/build-tiered-courses.mjs
+node scripts/build-tiered-courses.mjs --owner-audit
 node scripts/validate-tiered-courses.mjs
 ```
 
-Then complete the browser check before committing the generated pages.
+Then complete the owner review and browser check. Before merging toward the
+public site, run `node scripts/apply-publication-locks.mjs` followed by
+`node scripts/validate-publication-locks.mjs`.

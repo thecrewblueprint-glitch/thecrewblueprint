@@ -3,260 +3,30 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lighting Pathway Course 1: Supporting a Lighting Hang | The Crew Blueprint</title>
-<meta name="description" content="Learn what a ground hand actually does to support a lighting load-in and hang, and where the line sits between helping and adjusting." />
-<link rel="icon" href="../images/logo.png" type="image/png">
-<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-01-support/" />
+<title>Lighting Pathway Course 1: Supporting a Lighting Hang — Owner Audit Required | The Crew Blueprint</title>
+<meta name="description" content="This Crew Blueprint course remains locked until the owner completes its curriculum audit." />
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<link rel="canonical" href="https://thecrewblueprint.com/courses/" />
+<link rel="icon" href="../images/logo.png" type="image/png" />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-:root{--bg:#090c10;--panel:#121820;--panel2:#18212b;--text:#f1f4f7;--muted:#aab5c0;--line:#2b3641;--gold:#f5b400;--gold2:#ffd45a;--good:#39b979;--bad:#e26868;--info:#0284c7}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#090c10,#0b0f14);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:20;background:#090c10ee;border-bottom:1px solid var(--line)}.topin{max-width:1400px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:900}.brand span,.eyebrow{color:var(--gold)}.small{font-size:.78rem;color:var(--muted)}.progbox{width:min(360px,45vw)}.progrow{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.bar{height:8px;background:#222b34;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}.shell{max-width:1400px;margin:auto;padding:22px 18px 60px}.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}.side{position:sticky;top:86px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:calc(100vh-100px);overflow-y:auto}.mod{display:flex;gap:10px;align-items:center;padding:9px;border-radius:11px;color:var(--muted);cursor:pointer;transition:all 200ms}.mod:hover{background:#1a2430}.mod.active{background:#211d0e;color:var(--text);border:1px solid #65551f}.num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#232c35;font-weight:800;font-size:12px}.active .num{background:var(--gold);color:#111}.sub{margin:8px 0 10px 23px;padding-left:13px;border-left:1px solid var(--line)}.sub button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--muted);padding:8px 0;cursor:pointer;font-size:13px;transition:color 200ms}.sub button:hover{color:var(--gold2)}.sub button.active{color:var(--gold2);font-weight:800}.hero,.card{background:linear-gradient(var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.03;margin:.3rem 0}.hero p{color:var(--muted);max-width:880px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900}.objective{border-left:4px solid var(--gold)}.visual-section{background:#0f1419;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:300px;overflow-x:auto}.visual-section svg{max-width:100%;height:auto;display:block}.visual-section img{max-width:100%;height:auto}.explainer{background:#0f1419;border-left:4px solid var(--info);padding:16px;border-radius:8px;margin-bottom:14px;font-size:14px;line-height:1.7;color:var(--text)}.explainer strong{color:var(--gold2)}.reference{background:#0f1419;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px;font-size:13px}.reference strong{color:var(--gold2)}.reference ul{margin:8px 0;padding-left:20px}.reference li{margin:6px 0}.reference-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;font-weight:800}h3{margin:14px 0 8px 0;font-size:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#1b2530;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:13px}.mini strong{color:var(--gold2)}.quiz-q{font-weight:700;margin-bottom:10px}.options{display:grid;gap:10px}.opt{border:1px solid var(--line);background:#10151a;color:var(--text);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-size:13px;transition:all 200ms}.opt:hover:not(:disabled){border-color:var(--gold);background:#0f1a1f}.opt.correct{border-color:var(--good);background:#123026}.opt.incorrect{border-color:var(--bad);background:#321919}.opt:disabled{opacity:.7;cursor:not-allowed}.coach{display:none;margin-top:12px;padding:14px;border-left:4px solid var(--gold);background:#0e1419;border-radius:10px;font-size:13px;line-height:1.6}.coach.show{display:block}.coach strong{color:var(--gold2)}.rule{background:#211d0f;border:2px solid #66561f;padding:16px;border-radius:12px;text-align:center;font-weight:900;color:var(--gold2);margin-bottom:14px}.key-takeaway{background:#0e3a54;border:1px solid #1a5a7a;border-left:4px solid #0284c7;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;color:#e0f2fe}.key-takeaway strong{color:#0284c7}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:800;font-size:13px;transition:all 200ms}.btn:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--gold);color:#111}.primary:hover:not(:disabled){background:#ffc700;transform:translateY(-1px)}.secondary{background:#11161c;color:var(--text)}.secondary:hover:not(:disabled){background:#1a2430}.mobile{display:none}@media(max-width:1000px){.layout{grid-template-columns:1fr}.side{display:none}.mobile{display:block;margin-bottom:12px}.mobile select{width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;font-size:13px}.grid2{grid-template-columns:1fr}.hero{padding:17px}.card{padding:17px}.actions{flex-direction:column-reverse}.btn{width:100%}.visual-section{min-height:200px}}
-</style></head><body class="course-tier course-tier-department-support">
-<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small">Lighting Pathway — Department Support Tier · Course 1: Supporting a Lighting Hang</div></div><div class="progbox"><div class="progrow"><span id="progtext">Lesson 1.1 of 6</span><span id="pct">17%</span></div><div class="bar"><i id="bar" style="width:17%"></i></div></div><a href="../courses.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Exit Course</a></div></header>
-<div class="shell"><div class="mobile"><select id="mobile" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
-<aside class="side" id="sidebar"></aside>
-<main id="main"></main>
-</div></div>
-
-<script>
-const modules = [
-  {num:1,title:"Support Fundamentals",lessons:[
-    {id:"1.1",name:"What You Can Help With",obj:"Recognize real support work and how to do your part correctly."},
-    {id:"1.2",name:"What Stays Off-Limits",obj:"Understand the strict line between helping and adjusting."},
-    {id:"1.3",name:"Common Mistakes & Communication",obj:"Identify habits that slow a hang and learn how crews actually communicate."}
-  ]},
-  {num:2,title:"Knowledge Check",lessons:[
-    {id:"2.1",name:"Quick Knowledge Check",obj:"Test your understanding of lighting support fundamentals."},
-    {id:"2.2",name:"Key Takeaways",obj:"Solidify the core principles of lighting support."},
-    {id:"2.3",name:"Sources & References",obj:"Explore the research and standards behind this course."}
-  ]}
-];
-
-let current = 0;
-let total = modules.reduce((sum,m)=>sum+m.lessons.length,0);
-
-function buildSidebar(){
-  const s = document.getElementById('sidebar');
-  let h='<div class="small" style="padding:5px 8px 10px;text-transform:uppercase;letter-spacing:.12em">Supporting a Lighting Hang</div>';
-  modules.forEach((m,mi)=>{
-    const isActive = current>=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<modules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
-    h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
-    h+=`<div class="sub">`;
-    m.lessons.forEach((l,li)=>{
-      const idx = modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0)+li;
-      h+=`<button class="nav ${idx===current?'active':''}" onclick="goLesson(${idx})">${l.id} ${l.name}</button>`;
-    });
-    h+=`</div>`;
-  });
-  s.innerHTML=h;
-  buildMobileSelect();
-}
-
-function buildMobileSelect(){
-  const m=document.getElementById('mobile');
-  m.innerHTML='';
-  let idx=0;
-  modules.forEach(mod=>{
-    mod.lessons.forEach(l=>{
-      const opt=document.createElement('option');
-      opt.value=idx;
-      opt.textContent=`${l.id} ${l.name}`;
-      if(idx===current)opt.selected=true;
-      m.appendChild(opt);
-      idx++;
-    });
-  });
-  m.onchange=e=>goLesson(+e.target.value);
-}
-
-function getModuleLesson(idx){
-  let count=0;
-  for(let m of modules){
-    if(count+m.lessons.length>idx)return [m,m.lessons[idx-count]];
-    count+=m.lessons.length;
-  }
-  return [modules[0],modules[0].lessons[0]];
-}
-
-function goLesson(idx){
-  current=Math.max(0,Math.min(idx,total-1));
-  render();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function goModule(mi){
-  const idx=modules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0);
-  goLesson(idx);
-}
-
-function render(){
-  const [mod,lesson]=getModuleLesson(current);
-  document.getElementById('progtext').textContent=`Lesson ${lesson.id} of ${total}`;
-  document.getElementById('pct').textContent=Math.round((current+1)/total*100)+'%';
-  document.getElementById('bar').style.width=(current+1)/total*100+'%';
-
-  let html=`<section class="hero">
-    <div class="eyebrow">Department Support Tier • Module ${mod.num} • Lesson ${lesson.id}</div>
-    <h1>${lesson.name}</h1>
-    <p><b>Objective:</b> ${lesson.obj}</p>
-    <div class="rule">${lesson.obj}</div>
-  </section>`;
-
-  if(lesson.id==='1.1')html+=renderL11();
-  else if(lesson.id==='1.2')html+=renderL12();
-  else if(lesson.id==='1.3')html+=renderL13();
-  else if(lesson.id==='2.1')html+=renderL21();
-  else if(lesson.id==='2.2')html+=renderL22();
-  else if(lesson.id==='2.3')html+=renderL23();
-
-  html+=`<div class="actions">
-    <button class="btn secondary" ${current===0?'disabled':''} onclick="goLesson(${current-1})">← Previous</button>
-    <button class="btn primary" ${current===total-1?'disabled':''} onclick="goLesson(${current+1})">Next →</button>
-  </div>`;
-
-  document.getElementById('main').innerHTML=html;
-  buildSidebar();
-}
-
-function renderL11(){
-  return `<div class="card objective">
-    <h3>What You Can Help With, Under Direction</h3>
-    <div class="explainer">A ground hand genuinely helps build a lighting rig — this isn't just standing nearby and passing things along. Real support work includes assembling truss, un-casing and re-casing fixtures, running and dressing cable, passing tools to someone working overhead, and staying alert while truss or battens move to trim. When you carry a fixture, use its actual handle — not the lens, the yoke lock, or its cable. When you coil cable, use the method your crew actually runs; over-under is common on a lot of entertainment cable, but don't assume every cable or every crew handles it the same way.</div>
-    <div class="explainer">Ground support during a trim — when truss or a batten moves from working height to its final position — is real work too. You're not operating the hoist or fly system. You're watching for obvious snags or cable conflicts, staying clear of the moving system, and listening for the designated caller.</div>
-  </div>
-  <div class="card">
-    <div class="grid2">
-      <div class="mini"><strong>You Can Help With</strong>
-        <ul>
-          <li>Assembling truss</li>
-          <li>Un-casing and re-casing fixtures</li>
-          <li>Running and dressing cable</li>
-          <li>Ground support during a trim</li>
-        </ul>
-      </div>
-      <div class="mini"><strong>Stays Off-Limits</strong>
-        <ul>
-          <li>Focus, tilt, shutters, barn doors</li>
-          <li>DMX addressing and patch</li>
-          <li>Console settings</li>
-          <li>Feeder and electrical connections</li>
-        </ul>
-      </div>
+<link href="../css/theme.css" rel="stylesheet" />
+</head>
+<body class="course-lock-page" data-course-lock="owner-audit" data-course-title="Lighting Pathway Course 1: Supporting a Lighting Hang">
+<main class="course-lock-shell">
+  <article class="course-lock-card" aria-labelledby="lock-title">
+    <a class="course-lock-brand" href="../index.html">The Crew <span>Blueprint</span></a>
+    <span class="course-lock-status">Owner Audit Required</span>
+    <p class="course-lock-name">Lighting Pathway Course 1: Supporting a Lighting Hang</p>
+    <h1 id="lock-title">This course is not open yet.</h1>
+    <p>The curriculum exists, but the owner has not released it. The course stays locked while its accuracy, sources, questions, visuals, and field boundaries receive a personal audit.</p>
+    <p><strong>Stagehand Fundamentals is the only course currently open to learners.</strong></p>
+    <div class="course-lock-actions">
+      <a class="cb-btn cb-btn-primary" href="stagehand-fundamentals.html">Open Stagehand Fundamentals</a>
+      <a class="cb-btn cb-btn-secondary" href="../courses.html">Return to Courses</a>
     </div>
-  </div>`;
-}
-
-function renderL12(){
-  return `<div class="card objective">
-    <h3>What Stays Off-Limits Without Direction</h3>
-    <div class="explainer">This is where the line is strict, and where most beginner mistakes actually happen. A fixture that looks crooked might be exactly where the lighting department wants it. Focus, tilt, shutters, barn doors, and gel or color that's already installed are the lighting department's call, not yours — even if straightening it seems harmless. Same goes for DMX addressing, patch, console settings, and feeder/electrical connections. If something looks wrong, ask the lighting lead instead of adjusting it yourself.</div>
-    <div class="reference"><span class="reference-label">If you didn't set it, don't fix it</span>Electrical distribution and feeder connections are especially strict — that stays with the Head Electrician or whoever's qualified and assigned, full stop. You may be asked to move or stage cable and power equipment; you don't energize, reconfigure, or troubleshoot it.</div>
-  </div>`;
-}
-
-function renderL13(){
-  return `<div class="card objective">
-    <h3>Common Mistakes, and How Lighting Crews Actually Communicate</h3>
-    <div class="explainer">A few habits separate a hand who speeds up a hang from one who slows it down. The most common ways a hand damages gear or slows a hang: grabbing a fixture by the lens or yoke lock instead of its handle, touching a lamp's glass with bare skin (contamination can damage some lamps), tangled or incorrect cable coiling, and "correcting" a fixture or cable that was already placed on purpose.</div>
-    <div class="explainer">There's no single nationwide hand-signal system for entertainment rigging — crews and venues run their own. What is universal: <strong>STOP</strong> always means stop. Know who's calling the move before it starts, keep clear of the moving system, and if communication breaks down, stop and re-establish it before anything continues.</div>
-    <div class="reference"><span class="reference-label">PPE reality check</span>PPE for lighting support is site- and task-specific, but expect hard hats where overhead work requires them, work gloves, protective footwear, and hearing or eye protection where the task or site calls for it. Follow whatever the call's hazard assessment requires rather than assuming one kit covers every venue.</div>
-  </div>`;
-}
-
-function renderL21(){
-  return `<div class="card">
-    <h3>Quick Knowledge Check</h3>
-    <p>Pick an answer for each question.</p>
-
-    <div class="quiz-q">You're carrying a fixture. What should you hold it by?</div>
-    <div class="options" data-q="lq1">
-      <button class="opt" data-c="0">The lens — it's the sturdiest part.</button>
-      <button class="opt" data-c="1">The fixture's actual handle, never the lens, yoke lock, or cable.</button>
-      <button class="opt" data-c="0">The yoke lock, since it's designed to hold weight.</button>
-    </div>
-    <div class="coach" id="lq1c"><strong>Why:</strong> The lens, yoke lock, and cable aren't handling points. Grabbing them can throw off focus, damage the lock mechanism, or strain the cable connection.</div>
-
-    <div class="quiz-q" style="margin-top:20px">A fixture looks crooked. Should you straighten it?</div>
-    <div class="options" data-q="lq2">
-      <button class="opt" data-c="0">Yes — a crooked fixture is obviously a mistake.</button>
-      <button class="opt" data-c="1">No. Ask the lighting lead instead of adjusting it yourself.</button>
-      <button class="opt" data-c="0">Yes, but only nudge it slightly.</button>
-    </div>
-    <div class="coach" id="lq2c"><strong>Why:</strong> It may be exactly where the lighting department focused it. If you didn't set it, don't fix it — ask instead.</div>
-
-    <div class="quiz-q" style="margin-top:20px">Is there one universal hand-signal system used for entertainment rigging everywhere?</div>
-    <div class="options" data-q="lq3">
-      <button class="opt" data-c="0">Yes — every crew uses the same signals.</button>
-      <button class="opt" data-c="1">No. Crews and venues run their own — only STOP is universal.</button>
-      <button class="opt" data-c="0">Yes, it's set by OSHA nationwide.</button>
-    </div>
-    <div class="coach" id="lq3c"><strong>Why:</strong> Crews and venues run their own signal conventions. What's universal is that STOP always means stop, and you re-establish communication before continuing if it breaks down.</div>
-
-    <div class="quiz-q" style="margin-top:20px">Who connects and energizes temporary electrical/feeder power for the lighting rig?</div>
-    <div class="options" data-q="lq4">
-      <button class="opt" data-c="0">Any ground hand who's asked to stage the cable.</button>
-      <button class="opt" data-c="1">The Head Electrician or another qualified, assigned person.</button>
-      <button class="opt" data-c="0">Whoever gets to it first during load-in.</button>
-    </div>
-    <div class="coach" id="lq4c"><strong>Why:</strong> You may move or stage cable and power equipment, but you don't energize, reconfigure, or troubleshoot it. That stays with a qualified, assigned person.</div>
-
-    <div class="quiz-q" style="margin-top:20px">Truss is moving to trim overhead. What's your job?</div>
-    <div class="options" data-q="lq5">
-      <button class="opt" data-c="0">Operate the hoist controls if no one else is nearby.</button>
-      <button class="opt" data-c="1">Listen for the designated caller, stay clear, and report snags or cable conflicts.</button>
-      <button class="opt" data-c="0">Guide the truss into place by hand as it descends.</button>
-    </div>
-    <div class="coach" id="lq5c"><strong>Why:</strong> You're not operating the hoist or fly system. Your job is watching for obvious snags or cable conflicts, staying clear of the moving system, and listening for the designated caller.</div>
-  </div>`;
-}
-
-function renderL22(){
-  return `<div class="card">
-    <h3>Key Takeaways</h3>
-    <ul>
-      <li>Real lighting support: truss assembly, cable running/dressing, fixture handling, staying alert during a trim — all under direction.</li>
-      <li>Focus, addressing, patch, console settings, and electrical connections stay with the lighting department. If it looks wrong, ask before you touch it.</li>
-      <li>There's no universal hand-signal system for entertainment rigging — only STOP is a safe assumption everywhere.</li>
-      <li>Common mistakes are handling errors, not knowledge gaps: wrong grip points, poor cable coiling, "fixing" something already set.</li>
-    </ul>
-    <div class="key-takeaway"><strong>Key principle:</strong> Support the physical workflow. Preserve the technical or show-critical setup.</div>
-  </div>`;
-}
-
-function renderL23(){
-  return `<div class="card">
-    <h3>Sources</h3>
-    <div class="reference">
-      <p>This course was built from research citing real crew postings, union locals, manufacturer documentation, and OSHA standards. Verify current applicability before relying on any of these for an actual job.</p>
-      <ul>
-        <li><strong>PRG Crew Portal</strong> — <a href="https://crew.prg.com/en/" target="_blank" rel="noopener noreferrer">crew.prg.com</a></li>
-        <li><strong>IATSE Local 114 Positions</strong> — <a href="https://www.ia114.com/positions" target="_blank" rel="noopener noreferrer">ia114.com</a></li>
-        <li><strong>IATSE Local 122 Stagehand Skills Primer</strong> — <a href="https://www.iatse122.org/event/primer-20-stagehand-skills-primer-3/" target="_blank" rel="noopener noreferrer">iatse122.org</a></li>
-        <li><strong>IATSE Local 193 Lighting Basics</strong> — <a href="https://www.iatselocal193.com/lighting-basics" target="_blank" rel="noopener noreferrer">iatselocal193.com</a></li>
-        <li><strong>IATSE Local 822 Crew Hierarchy</strong> — <a href="https://iatse822.com/resources/people-we-work-with" target="_blank" rel="noopener noreferrer">iatse822.com</a></li>
-        <li><strong>OSHA 29 CFR 1926.1419 — Signals</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1419" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
-        <li><strong>OSHA 29 CFR 1926.753 — Hoisting/Rigging</strong> — <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.753" target="_blank" rel="noopener noreferrer">osha.gov</a></li>
-      </ul>
-    </div>
-  </div>`;
-}
-
-buildSidebar();
-render();
-
-setInterval(()=>{
-  document.querySelectorAll('.options').forEach(g=>{
-    [...g.children].forEach(b=>b.onclick=()=>{
-      if([...g.children].some(x=>x.disabled))return;
-      [...g.children].forEach(x=>{x.disabled=true;if(x.dataset.c==='1')x.classList.add('correct')});
-      if(b.dataset.c!=='1')b.classList.add('incorrect');
-      const cid=g.dataset.q+'c';
-      const coach=document.getElementById(cid);
-      if(coach)coach.classList.add('show');
-    });
-  });
-},100);
-</script>
+  </article>
+</main>
 </body>
 </html>

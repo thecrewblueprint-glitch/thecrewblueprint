@@ -1,0 +1,15 @@
+# Public GitHub Pages boundary. Repository working material stays out of the
+# generated site; only learner-facing pages and their required assets publish.
+exclude:
+  - AGENTS.md
+  - CHANGELOG.md
+  - CLAUDE.md
+  - README.md
+  - SNAPSHOT_PRE_REDESIGN.md
+  - companies
+  - courses/_archived
+  - design
+  - research
+  - scripts
+  - css/tiered-course.css
+  - js/tiered-course.js
