@@ -17,23 +17,9 @@ Added:
 - 17 SUPPORT_EDGE records separating direct, partial and corroborating evidence;
 - exact OSHA support added for the electrical portion of the existing Lighting systems authority boundary.
 
-Key result:
+Key result: electrical-hazard awareness training, OSHA qualified-person status, ETCP certification, employer/venue authorization, and local licensure/code/AHJ authority are separate evidence/authority layers.
 
-- electrical-hazard awareness training;
-- OSHA qualified-person status;
-- ETCP certification;
-- employer/venue authorization;
-- local licensure/code/AHJ authority
-
-are now treated as separate evidence/authority layers.
-
-Still open:
-
-- exact NEC/NFPA provisions only where a learner-facing claim actually depends on them;
-- state/local adoption and AHJ evidence;
-- venue/employer authority evidence where wording depends on local practice;
-- manufacturer/system documentation for product-specific claims;
-- qualified electrical practitioner review before release-strength claims.
+Still open: exact NEC/NFPA provisions only where a learner-facing claim depends on them; state/local adoption; venue/employer authority; manufacturer/system documentation; qualified electrical practitioner review.
 
 ## HR-02 — Rigging / Work at Height
 
@@ -45,21 +31,11 @@ Added:
 - 5 high-risk CONTENT claim/boundary records for Rigging Lead;
 - 10 SUPPORT_EDGE records.
 
-Key result:
+Key result: ETCP targets experienced riggers and separates Arena and Theatre bodies of knowledge. The matrix supports an entry awareness/interface route only; it does not support a novice physical-rigging qualification path.
 
-ETCP itself targets experienced riggers and separates Arena and Theatre bodies of knowledge. The matrix therefore supports an entry awareness/interface route only; it does not support a novice physical-rigging qualification path.
+Current external gate: `GATE-RIG-TRAINING/AUTH`.
 
-Current external gate remains:
-
-`GATE-RIG-TRAINING/AUTH`
-
-Still open:
-
-- employer/venue/local qualification evidence;
-- exact manufacturer documentation when a hardware/system-specific claim is introduced;
-- full controlling standard text where detailed requirements are asserted;
-- experienced-rigger/practitioner review;
-- any work-at-height claim must retain applicability/scope review rather than one universal entertainment-stage rule.
+Still open: employer/venue/local qualification evidence; manufacturer documentation for hardware/system-specific claims; controlling standard text where detailed requirements are asserted; experienced-rigger review; work-at-height applicability review.
 
 ## HR-03 — Modular Deck / Staging / Temporary Structures
 
@@ -71,18 +47,11 @@ Added:
 - 5 high-risk CONTENT claim/boundary records across Modular Deck Systems and Staging Lead;
 - 7 SUPPORT_EDGE records.
 
-Key result:
+Key result: the current generic modular-deck route is not tied to a named manufacturer/model, so no manufacturer manual has been invented or falsely generalized.
 
-The current `pathway-staging-carpentry-02-deck-systems.html` route is not tied to a named manufacturer/model. Therefore no manufacturer manual has been invented or falsely generalized.
+Before model-specific practical staging content can move toward stronger release, the matrix needs the exact manufacturer/model manual, exact system/version, responsible staging/structural practitioner review, and venue/AHJ/engineering evidence where acceptance depends on those authorities.
 
-Before any model-specific practical staging lesson can move toward stronger release, the matrix must contain:
-
-1. the exact manufacturer/model manual;
-2. the exact system/version shown to the learner;
-3. responsible staging/structural practitioner review;
-4. venue/AHJ/engineering evidence where acceptance depends on those authorities.
-
-ANSI E1.21-2024 is retained only for its actual outdoor temporary-structure scope, and ANSI E1.2-2021 only for its aluminum truss/tower scope. Neither is treated as a universal modular-deck manual.
+ANSI E1.21-2024 remains limited to its outdoor temporary-structure scope; ANSI E1.2-2021 remains limited to aluminum truss/tower scope.
 
 ## HR-04 — Cargo / Transport Responsibility
 
@@ -90,33 +59,16 @@ ANSI E1.21-2024 is retained only for its actual outdoor temporary-structure scop
 
 Added:
 
-- 6 SOURCE records covering current 49 CFR 392.9, 393.100 and 393.104 plus FMCSA regulatory guidance and applicability context;
+- 6 SOURCE records covering current 49 CFR 392.9, 393.100 and 393.104 plus FMCSA guidance and applicability context;
 - 7 high-risk CONTENT claim/boundary records across Flatbed Cargo-Securement Support and Ratchet Straps Under Direction;
 - 10 SUPPORT_EDGE records;
-- 6 COMPETENCY_CONTENT_EDGE records connecting helper-level competencies to `GATE-DRIVER/CARGO` and the model-review gate.
+- 6 COMPETENCY_CONTENT_EDGE records connecting helper-level competencies to `GATE-DRIVER/CARGO` and model review.
 
-Key result:
+Key result: assigned helper work, motor-carrier responsibility, driver regulatory responsibility, public-road load acceptance, product/model-specific practice, and Crew Blueprint course/practice state are separate.
 
-The matrix now separates:
+The existing ratchet-strap practical contains model-specific physical content without a named manufacturer/model source in the matrix. That practical remains blocked from stronger release until exact product documentation and qualified review exist.
 
-- assigned physical helper work;
-- motor-carrier responsibility;
-- driver regulatory responsibility;
-- public-road load acceptance;
-- product/model-specific equipment practice;
-- Crew Blueprint course/practice state.
-
-FMCSA guidance supports that a covered driver need not personally perform every loading/securement act while retaining responsibilities under the rule. That does not transfer regulatory acceptance to a helper.
-
-The existing `field-skill-ratchet-straps.html` route also contains a model-specific practical sequence without a named manufacturer/model source in the matrix. That portion is now explicitly marked `needs_model_or_jurisdiction_scope` / practitioner review before stronger release.
-
-Still open:
-
-- exact manufacturer/model documentation for any device-specific learner practice;
-- employer/load-lead/driver workflow evidence where course wording depends on company practice;
-- state/local requirements outside the federal CMV scope;
-- qualified practitioner review;
-- no Crew Blueprint state may traverse `GATE-DRIVER/CARGO` into driver/load-acceptance authority.
+Still open: exact manufacturer/model documentation; employer/load-lead/driver workflow evidence; state/local requirements outside federal CMV scope; qualified practitioner review.
 
 ## HR-05 — Public Routes / Barricades / Cable Protectors
 
@@ -124,35 +76,75 @@ Still open:
 
 Added:
 
-- 3 SOURCE records covering DOJ 2010 ADA Standards, U.S. Access Board accessible-route criteria, and a current NPS National Capital Region public-event/AHJ requirements example;
+- 3 SOURCE records covering DOJ 2010 ADA Standards, U.S. Access Board accessible-route criteria, and an NPS National Capital Region public-event/AHJ example;
 - 6 high-risk CONTENT claim/boundary records across Barricade Setup and Cable Ramps & Protectors;
 - 7 SUPPORT_EDGE records;
-- 6 COMPETENCY_CONTENT_EDGE records linking the field skills to `CMP-CORE-018` public/accessibility-route awareness and explicit review gates.
+- 6 COMPETENCY_CONTENT_EDGE records linking field skills to public/accessibility-route awareness and explicit review gates.
+
+Key result: physical stagehand support is separate from event layout ownership, crowd/security management, emergency egress/life-safety approval, accessibility compliance/approval, traffic authority, and AHJ/venue acceptance.
+
+The NPS source remains jurisdiction-specific and is not generalized nationally. Existing model/setup practicals are not extended by this matrix pass and remain blocked from stronger release pending exact product/model documentation and qualified public-route/practitioner review.
+
+## HR-10 — Assessment / Authority States
+
+**State:** `content-lineage + review baseline operational; full assessment inventory and validity remain open`
+
+Added:
+
+- MDQ-001B CONTENT_LINEAGE_EDGE extension for normalized CONTENT → CONTENT relationships;
+- 5 HR-10 CONTENT records: two existing scored Road Case questions, their two answer rationales, and one canonical assessment/authority boundary;
+- 6 CONTENT_LINEAGE_EDGE records creating explicit `Q → QR → CL` chains for the two seeded questions;
+- 1 professional testing SOURCE record from AERA / APA / NCME;
+- 1 SUPPORT_EDGE preserving that source as context for conservative score interpretation rather than as the source of Crew Blueprint's authority-state taxonomy;
+- 5 REVIEW records covering assessment traceability and blocked practical-release conditions from HR-04/HR-05.
 
 Key result:
 
-The matrix separates:
+The matrix now distinguishes:
 
-- physical stagehand support;
-- event layout ownership;
-- crowd/security management;
-- emergency egress and life-safety approval;
-- accessibility-route compliance/approval;
-- traffic/vehicle-control authority;
-- AHJ/venue acceptance.
+- viewed/content-access state;
+- knowledge-check performance;
+- course completion;
+- observed practice;
+- verified work experience;
+- employer/venue authorization;
+- external certification;
+- licensure/regulatory authority.
 
-The 2010 ADA Standards expressly include temporary as well as permanent buildings/facilities within their scope where applicable and establish technical accessible-route criteria. A cable-protector label or visual appearance does not establish that an entire temporary route is compliant.
+The first normalized assessment chains are real repository data rather than a prose requirement. A correct quiz answer cannot terminate at “the course says so” when the underlying claim requires external evidence.
 
-The NPS National Capital Region source is retained only as a jurisdiction-specific example showing that event plans, egress, crowd management and occupancy/AHJ approval may sit outside stagehand authority. It is not generalized nationally.
+Still open:
 
-Both current practical routes contain product/model setup content. This matrix pass does not extend those procedures. Stronger release requires exact product/model documentation plus qualified adult workplace/practitioner and event-route authority review.
+- inventory and lineage every scored question across all 33 canonical routes;
+- practitioner review for scenario authenticity;
+- novice comprehension/ambiguity testing;
+- reliability/validity evidence where scores are used for stronger decisions;
+- owner review of assessment-state semantics;
+- backend implementation must preserve the distinct states rather than collapsing them into one completion/certification flag.
+
+## Validator state
+
+`scripts/validate-research-matrix.mjs` now validates CONTENT_LINEAGE_EDGE and REVIEW records, strict canonical SOURCE evidence/authority enums, cross-table references, assessment-chain completeness, root-link misuse, and the existing competency/content relationships.
+
+A prior partition-loader collision was corrected so `content_lineage_edges*.jsonl` cannot be mistaken for CONTENT merely because the filename begins with `content_`.
+
+The current execution environment cannot clone the branch to run Node against a local checkout, so a runtime PASS is not claimed from this session. Repository-side structural checks show no remaining instances of the known pre-normalization SOURCE taxonomy labels searched during this pass.
 
 ## Next active item
 
-**HR-10 — Assessment / Authority States**
+**HR-06 — General Field Skill physical-task claims**
 
-The next pass should establish question → rationale → claim → source lineage and the REVIEW table, while keeping viewed, knowledge-checked, observed practice, verified experience, employer authorization, external credential and licensure as distinct record states.
+Next work should backfill bounded, low-risk Stagehand Field Skills in this order:
+
+1. team lift / carry / set-down;
+2. carts / dollies / hand trucks;
+3. cable deployment / gathering;
+4. case / boneyard / work-area organization;
+5. work-area reset / handoff;
+6. soft goods, pipe-and-drape, riser/deck support and ordinary tool handling where evidence allows.
+
+Do not invent universal weight limits, crew sizes, exact phrases or one mandatory method from generalized ergonomic evidence. Powered equipment and controlled specialist work remain outside the general practical path.
 
 ## Program status
 
-HR-01 through HR-05 are **not publication-closed**. They are substantially better sourced and now carry explicit unresolved dependencies instead of generic bibliography links or implied authority.
+HR-01 through HR-05 and HR-10 are **substantially matrixed but not publication-closed**. The next liability-priority work is HR-06, followed by HR-07 Lighting, HR-08 Audio, and HR-09 Video.
