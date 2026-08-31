@@ -85,6 +85,43 @@ Key result: physical stagehand support is separate from event layout ownership, 
 
 The NPS source remains jurisdiction-specific and is not generalized nationally. Existing model/setup practicals are not extended by this matrix pass and remain blocked from stronger release pending exact product/model documentation and qualified public-route/practitioner review.
 
+## HR-06 — General Field Skill Physical-Task Claims
+
+**State:** `core U01–U05 research-to-matrix baseline complete; learner-facing builds and practitioner review remain open`
+
+Added:
+
+- 17 HR-06 SOURCE records, including current OSHA, NIOSH, CCOHS, HSE, Belden, Neutrik and the five Crew Blueprint SFS source packets;
+- 5 planned course CONTENT records for Team Lift, Cart/Dolly Movement, Cable Deployment/Gathering, Case/Boneyard Organization and Work-Area Reset/Handoff;
+- 18 bounded claim/boundary CONTENT records;
+- 27 SUPPORT_EDGE records separating external facts, cross-source patterns and Crew Blueprint framing;
+- 6 COMPETENCY_CONTENT_EDGE records linking planned course homes to `CMP-FLD-002`, `CMP-FLD-003`, `CMP-FLD-005`, `CMP-FLD-007`, `CMP-FLD-008`, plus the shared `CMP-CORE-012` reset competency.
+
+Key result:
+
+The owner-facing graph can now distinguish **researched/planned** Field Skills from **actually built** Field Skills using real matrix state instead of manual coloring.
+
+The five planned skills are intentionally not inserted into the 33-route current course inventory. They are research-complete/planned nodes, not learner-facing routes.
+
+Important evidence dispositions:
+
+- no universal OSHA stagehand lift-weight or fixed crew-count rule is created;
+- OSHA's approximately-50-pound eTool language remains explicitly context-specific guidance, not a universal legal threshold;
+- non-powered carts/dollies are separated from powered-equipment authorization;
+- cable ownership/release and technical-system authority remain department/practitioner-dependent Crew Blueprint workflow boundaries;
+- Belden/Neutrik evidence is used to demonstrate cable-family/model variability, not to create one universal cable-handling procedure;
+- workplace aisle/exit/storage claims use exact OSHA sources where applicable;
+- reset/handoff completion remains separate from department, venue or life-safety acceptance.
+
+Still open:
+
+- practitioner/workplace review of U01–U05 live-event examples and wording;
+- novice comprehension testing;
+- original reviewed visuals/demonstrations;
+- practice-rubric review;
+- U06–U09 and later specialty Field Skill matrix backfill where evidence supports a safe bounded learner route;
+- any powered equipment, rigging, electrical, machinery or other controlled work remains outside the general Field Skill practical path.
+
 ## HR-10 — Assessment / Authority States
 
 **State:** `content-lineage + review baseline operational; full assessment inventory and validity remain open`
@@ -100,16 +137,7 @@ Added:
 
 Key result:
 
-The matrix now distinguishes:
-
-- viewed/content-access state;
-- knowledge-check performance;
-- course completion;
-- observed practice;
-- verified work experience;
-- employer/venue authorization;
-- external certification;
-- licensure/regulatory authority.
+The matrix now distinguishes viewed/content-access state, knowledge-check performance, course completion, observed practice, verified work experience, employer/venue authorization, external certification, and licensure/regulatory authority.
 
 The first normalized assessment chains are real repository data rather than a prose requirement. A correct quiz answer cannot terminate at “the course says so” when the underlying claim requires external evidence.
 
@@ -132,19 +160,19 @@ The current execution environment cannot clone the branch to run Node against a 
 
 ## Next active item
 
-**HR-06 — General Field Skill physical-task claims**
+**HR-07 — Lighting control / network / protocol claims**
 
-Next work should backfill bounded, low-risk Stagehand Field Skills in this order:
+Next work should normalize exact current standard/specification sources and map only the claims actually present in learner-facing Lighting routes. Priority targets:
 
-1. team lift / carry / set-down;
-2. carts / dollies / hand trucks;
-3. cable deployment / gathering;
-4. case / boneyard / work-area organization;
-5. work-area reset / handoff;
-6. soft goods, pipe-and-drape, riser/deck support and ordinary tool handling where evidence allows.
+1. DMX512 / ANSI E1.11 current version;
+2. RDM / ANSI E1.20 current version;
+3. sACN / ANSI E1.31 current version;
+4. RDMnet and related standards only where a learner claim uses them;
+5. GDTF/MVR current specifications where data-exchange claims exist;
+6. manufacturer/platform documentation only where product behavior or screenshots are actually taught.
 
-Do not invent universal weight limits, crew sizes, exact phrases or one mandatory method from generalized ergonomic evidence. Powered equipment and controlled specialist work remain outside the general practical path.
+Do not turn standards scope or protocol literacy into electrical, rigging, laser or employer-system authority.
 
 ## Program status
 
-HR-01 through HR-05 and HR-10 are **substantially matrixed but not publication-closed**. The next liability-priority work is HR-06, followed by HR-07 Lighting, HR-08 Audio, and HR-09 Video.
+HR-01 through HR-06 and HR-10 are **substantially matrixed but not publication-closed**. The next liability-priority work is HR-07 Lighting, followed by HR-08 Audio and HR-09 Video.
