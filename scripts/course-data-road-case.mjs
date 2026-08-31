@@ -47,6 +47,7 @@ export const roadCaseCourse = {
         name: 'Doors, Corners, Thresholds, and Slopes',
         objective: 'Treat every changed condition as a new movement and stop when the original plan no longer controls the case.',
         blocks: [
+          { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/road-case-turn-threshold.jpg" alt="Two stagehands keep their hands high on a road case while controlling a turn and crossing a doorway threshold together."><figcaption>Visual sequence: slow before the turn, keep hands and feet clear, then cross the threshold squarely. AI-generated training visual; the actual case, route, and lead control the move.</figcaption></figure>' },
           { type: 'demo', heading: 'Wrong move / controlled move', steps: [
             { heading: 'Blind corner', text: 'Wrong: keep rolling. Controlled: stop, clear the far side, call the turn, then move.' },
             { heading: 'Door', text: 'Wrong: one person fights the door and case. Controlled: assign one person to the door and one to the case.' },
@@ -64,8 +65,8 @@ export const roadCaseCourse = {
         name: 'Park, Report, and Ask for the Demonstration',
         objective: 'Place the case where directed, secure it with the provided method, report the move, and repeat the sequence under observation.',
         blocks: [
+          { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/road-case-park-brake.jpg" alt="Two standing stagehands stabilize a parked road case while one engages a caster brake with the toe of a work shoe."><figcaption>Parking sequence: stop fully, stabilize the case, then use the provided parking control without putting hands near the casters. AI-generated training visual; verify the actual brake and parking method before use.</figcaption></figure>' },
           { type: 'sequence', items: ['Stop at the assigned location.', 'Square the case with the staging or truck-pack plan.', 'Set the approved brake, chock, or other provided parking control.', 'Keep aisles, exits, doors, work paths, and access routes clear.', 'Tell the lead the move is complete and report any defect or route problem.'] },
-          { type: 'practice', heading: 'Learn, do, teach', paragraphs: ['Read the move. Watch the lead demonstrate it on the exact case and route. Perform it with a partner. Then explain the sequence back while the observer checks your decisions.'], bullets: ['Inspect the actual case and route.', 'Repeat destination, roles, pace, transitions, and stop word.', 'Start, travel, turn, stop, and park under control.', 'Protect hands and feet.', 'Stop when conditions change.', 'Ask instead of guessing when the demonstration and the real task do not match.'] },
           { type: 'authority', paragraphs: ['Record the case, route, surface, transitions, partner, observer, and result. Passing this observation does not create standing employer authorization for other cases or routes.'] }
         ]
       }]

@@ -173,6 +173,27 @@ a:hover { color: #ffe36d; }
   background: #211d0f;
   border-color: var(--cb-gold-border);
 }
+
+.course-training-visual {
+  margin: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #0b1016;
+}
+
+.course-training-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.course-training-visual figcaption {
+  padding: 12px 15px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
 .rule { color: var(--cb-gold-strong); font-size: 14px; font-weight: 800; }
 
 .course-hero {
