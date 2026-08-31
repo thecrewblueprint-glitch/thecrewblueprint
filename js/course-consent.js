@@ -9,6 +9,22 @@
   var limitationUrl = new URL('limitation-of-liability.html', siteRoot).href;
   var coursesUrl = new URL('courses.html', siteRoot).href;
 
+  function installCourseShell() {
+    if (!document.querySelector('link[data-cb-course-shell]')) {
+      var stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = new URL('css/course-shell.css', siteRoot).href;
+      stylesheet.dataset.cbCourseShell = 'true';
+      document.head.appendChild(stylesheet);
+    }
+    if (!document.querySelector('script[data-cb-course-shell]')) {
+      var shell = document.createElement('script');
+      shell.src = new URL('js/course-shell.js', siteRoot).href;
+      shell.dataset.cbCourseShell = 'true';
+      document.head.appendChild(shell);
+    }
+  }
+
   function hasCurrentConsent() {
     try {
       var record = JSON.parse(window.localStorage.getItem(STORAGE_KEY));
@@ -136,5 +152,6 @@
     ageCheckbox.focus();
   }
 
+  installCourseShell();
   if (!hasCurrentConsent()) showConsentGate();
 }());
