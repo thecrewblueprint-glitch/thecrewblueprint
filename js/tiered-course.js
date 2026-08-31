@@ -7,6 +7,7 @@
   const course = JSON.parse(dataElement.textContent);
   const sidebar = document.getElementById('sidebar');
   const mobileSelect = document.getElementById('mobileSelect');
+  const courseHero = document.getElementById('courseHero');
   const lessonContent = document.getElementById('lessonContent');
   const objective = document.getElementById('objective');
   const footerNav = document.getElementById('footerNav');
@@ -63,11 +64,11 @@
   }
 
   function renderLesson(lesson) {
-    return `<article><h2>${lesson.name}</h2>${renderBlocks(lesson.blocks)}</article>`;
+    return `<article>${renderBlocks(lesson.blocks)}</article>`;
   }
 
   function renderQuiz() {
-    return `<article><h2>Knowledge Check</h2><p>Choose the strongest response in each situation. These questions measure course understanding; they do not record field qualification.</p>${course.quiz.map((question, index) => {
+    return `<article><p>Choose the strongest response in each situation. These questions measure course understanding; they do not record field qualification.</p>${course.quiz.map((question, index) => {
       const qid = `q${index + 1}`;
       return `<div class="quiz-block"><p class="quiz-q">${index + 1}. ${question.question}</p><div class="options" data-q="${qid}">${question.options.map((option, optionIndex) => `<button class="opt" type="button" data-c="${optionIndex === question.answer ? '1' : '0'}">${option}</button>`).join('')}</div><div class="coach" id="${qid}c" role="status" aria-live="polite"><strong class="answer-result"></strong><span><strong>Why:</strong> ${question.coaching}</span></div></div>`;
     }).join('')}</article>`;
@@ -77,7 +78,7 @@
     const practice = course.practice
       ? `<div class="practice-box"><h3>${course.practice.heading}</h3>${paragraphList(course.practice.paragraphs)}${bulletList(course.practice.checklist)}</div>`
       : '';
-    return `<article><h2>Practice Gate &amp; Sources</h2>${practice}<div class="authority"><h3>Course boundary</h3><p>${course.boundary}</p></div><h3>Source lineage</h3><p>This review build traces to <strong>${course.packet}</strong>. Confirm current manufacturer, employer, venue, legal, and production requirements before real work.</p><ul class="source-list">${course.sources.map((source) => `<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label}</a>${source.note ? ` — ${source.note}` : ''}</li>`).join('')}</ul></article>`;
+    return `<article>${practice}<div class="authority"><h3>Course boundary</h3><p>${course.boundary}</p></div><h3>Source lineage</h3><p>This review build traces to <strong>${course.packet}</strong>. Confirm current manufacturer, employer, venue, legal, and production requirements before real work.</p><ul class="source-list">${course.sources.map((source) => `<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label}</a>${source.note ? ` — ${source.note}` : ''}</li>`).join('')}</ul></article>`;
   }
 
   function getCurrentId() {
@@ -125,25 +126,25 @@
     });
 
     if (!course.inlineAssessment) {
-    const assessmentHeader = document.createElement('div');
-    assessmentHeader.className = `mod${currentId === 'quiz' || currentId === 'sources' ? ' active' : ''}`;
-    assessmentHeader.innerHTML = `<span class="num">${course.modules.length + 1}</span><div><div class="module-title">Assessment &amp; Evidence</div><div class="module-count">2 lessons</div></div>`;
-    sidebar.appendChild(assessmentHeader);
-    const assessmentSub = document.createElement('div');
-    assessmentSub.className = 'sub';
-    [['quiz', 'Knowledge Check'], ['sources', 'Practice Gate & Sources']].forEach(([id, label]) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = `lesson-link${id === currentId ? ' active' : ''}`;
-      button.textContent = label;
-      button.addEventListener('click', () => render(id));
-      assessmentSub.appendChild(button);
-      const option = document.createElement('option');
-      option.value = id;
-      option.textContent = `Assessment & Evidence > ${label}`;
-      mobileSelect.appendChild(option);
-    });
-    sidebar.appendChild(assessmentSub);
+      const assessmentHeader = document.createElement('div');
+      assessmentHeader.className = `mod${currentId === 'quiz' || currentId === 'sources' ? ' active' : ''}`;
+      assessmentHeader.innerHTML = `<span class="num">${course.modules.length + 1}</span><div><div class="module-title">Assessment &amp; Evidence</div><div class="module-count">2 lessons</div></div>`;
+      sidebar.appendChild(assessmentHeader);
+      const assessmentSub = document.createElement('div');
+      assessmentSub.className = 'sub';
+      [['quiz', 'Knowledge Check'], ['sources', 'Practice Gate & Sources']].forEach(([id, label]) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `lesson-link${id === currentId ? ' active' : ''}`;
+        button.textContent = label;
+        button.addEventListener('click', () => render(id));
+        assessmentSub.appendChild(button);
+        const option = document.createElement('option');
+        option.value = id;
+        option.textContent = `Assessment & Evidence > ${label}`;
+        mobileSelect.appendChild(option);
+      });
+      sidebar.appendChild(assessmentSub);
     }
     mobileSelect.value = currentId;
   }
@@ -172,6 +173,25 @@
     }
   }
 
+  function renderHero(item) {
+    let meta = 'Assessment & Evidence';
+    let title = item.name;
+    let description = '';
+
+    if (item.type === 'lesson') {
+      const lesson = lessons.find((candidate) => candidate.id === item.id);
+      meta = `${lesson.moduleName} · Lesson ${lesson.id}`;
+      title = lesson.name;
+      description = lesson.objective;
+    } else if (item.type === 'quiz') {
+      description = 'Use authority, sequence, verification, and stop-work judgment to select each answer.';
+    } else if (item.type === 'sources') {
+      description = 'Keep learning completion, observed practice, and jobsite authorization as separate states.';
+    }
+
+    courseHero.innerHTML = `<div class="tier-row"><span class="tier-pill">${escapeHtml(course.tier)}</span><span class="tier-pill status">${escapeHtml(course.status)}</span></div><div class="lesson-meta">${escapeHtml(meta)}</div><h1>${escapeHtml(title)}</h1><p class="lead"><strong>Objective:</strong> ${escapeHtml(description)}</p><div class="rule">${escapeHtml(description)}</div>`;
+  }
+
   function render(id, pushHash = true) {
     const item = navigationItems().find((candidate) => candidate.id === id) || navigationItems()[0];
     if (item.type === 'quiz') {
@@ -185,6 +205,8 @@
       objective.textContent = lesson.objective;
       lessonContent.innerHTML = renderLesson(lesson);
     }
+
+    renderHero(item);
 
     const items = navigationItems();
     const index = items.findIndex((candidate) => candidate.id === item.id);
@@ -200,7 +222,6 @@
 
   document.title = `${course.title} | The Crew Blueprint`;
   document.getElementById('topTitle').textContent = `${course.tier} · ${course.title}`;
-  document.getElementById('courseHero').innerHTML = `<div class="tier-row"><span class="tier-pill">${escapeHtml(course.tier)}</span><span class="tier-pill status">${escapeHtml(course.status)}</span></div><h1>${escapeHtml(course.title)}</h1><p class="lead">${escapeHtml(course.description)}</p><div class="authority"><strong>Authority rule:</strong> ${course.boundary}</div>`;
 
   mobileSelect.addEventListener('change', (event) => render(event.target.value));
   lessonContent.addEventListener('click', (event) => {
