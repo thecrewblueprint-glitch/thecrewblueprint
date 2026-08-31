@@ -538,18 +538,14 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border: 1px solid var(--cb-gold-border);
-  border-radius: var(--cb-radius-md);
-  background: var(--cb-card);
-  color: var(--cb-gold);
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 800;
-  font-size: 20px;
+  display: inline-block;
+  width: 48px;
+  height: 72px;
+  flex: 0 0 48px;
+  overflow: hidden;
+  background: url("../images/crew-blueprint-mark.png") center / contain no-repeat;
+  color: transparent;
+  font-size: 0;
 }
 
 .footer-wordmark {
