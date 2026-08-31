@@ -19,9 +19,9 @@ function readJsonl(filePath) {
 function readPartitions(prefix) {
   if (!fs.existsSync(matrixDir)) return [];
   const re = prefix === 'competency_content_edges'
-    ? /^competency_content_edges(?:_higher_tiers|_hr\d+.*|_stagehand.*)?\.jsonl$/
+    ? /^competency_content_edges(?:_[^.]+)?\.jsonl$/
     : prefix === 'content'
-      ? /^content(?:_higher_tiers|_hr\d+.*|_stagehand.*)?\.jsonl$/
+      ? /^content(?:_(?!lineage_edges)[^.]+)?\.jsonl$/
       : null;
   if (!re) return [];
   return fs.readdirSync(matrixDir).filter((name) => re.test(name)).sort().flatMap((name) => readJsonl(path.join(matrixDir, name)));
@@ -167,7 +167,14 @@ fs.mkdirSync(viewsDir, { recursive: true });
 const out = path.join(viewsDir, 'owner-competency-state.md');
 const table = rows.map((row) => `| ${esc(row.competency_id)} | ${esc(row.node_type)} | ${esc(row.state)} | ${esc(row.research_state)} | ${esc(row.owner_color_role)} | ${esc(row.graph_context)} | ${esc(row.content_ids.join(', '))} | ${esc(row.research_files.join(', '))} | ${row.learner_visible_edges} | ${esc(row.notes)} |`).join('\n');
 
-const markdown = `# Owner Competency State — Everything Map Data View\n\n**Generated view. Canonical graph + matrix records remain source of truth.**\n\nThis view implements the owner-map state logic requested for the full-scale industry map.\n\n## Display semantics\n\n- **bright** — at least one drafted/current built content edge exists. This does **not** mean practitioner-reviewed, learner-validated or publication-ready.\n- **muted** — competency is graph-mapped, research-only, or researched/planned but not currently built to the stronger state.\n- **gate** — external qualification/authorization boundary.\n- **white route** is not stored as a completion state; it is computed by a future map renderer from graph adjacency and the selected current-position node(s).\n\n`RESEARCH_COMPETENCY_EDGE` allows a node to show real research coverage without inventing a course container.\n\n| Competency / Gate | Node type | Content state | Research state | Owner color role | Graph context | Linked content | Research evidence | Learner-visible edges | Notes |\n|---|---|---|---|---|---|---|---|---:|---|\n${table}\n`;
+const counts = rows.reduce((acc, row) => {
+  acc[row.owner_color_role] = (acc[row.owner_color_role] || 0) + 1;
+  acc[row.state] = (acc[row.state] || 0) + 1;
+  return acc;
+}, {});
+
+const markdown = `# Owner Competency State — Everything Map Data View\n\n**Generated view. Canonical graph + matrix records remain source of truth.**\n\nThis view implements the owner-map state logic requested for the full-scale industry map.\n\n## Display semantics\n\n- **bright** — at least one drafted/current built content edge exists. This does **not** mean practitioner-reviewed, learner-validated or publication-ready.\n- **muted** — competency is graph-mapped, research-only, or researched/planned but not currently built to the stronger state.\n- **gate** — external qualification/authorization boundary.\n- **white route** is not stored as a completion state; it is computed by a future map renderer from graph adjacency and the selected current-position node(s).\n\n`RESEARCH_COMPETENCY_EDGE` allows a node to show real research coverage without inventing a course container.\n\n## Current distribution\n\n- Bright: ${counts.bright || 0}\n- Muted: ${counts.muted || 0}\n- External gates: ${counts.gate || 0}\n- Research-only nodes: ${counts.research_only || 0}\n- Researched/planned content nodes: ${counts.researched_planned || 0}\n- Graph-only nodes: ${counts.mapped_only || 0}\n\n| Competency / Gate | Node type | Content state | Research state | Owner color role | Graph context | Linked content | Research evidence | Learner-visible edges | Notes |\n|---|---|---|---|---|---|---|---|---:|---|\n${table}\n`;
 fs.writeFileSync(out, markdown, 'utf8');
 
 console.log(`Generated ${rows.length} owner-map competency/gate states at ${path.relative(root, out)}`);
+console.log(`Bright ${counts.bright || 0} · Muted ${counts.muted || 0} · Gates ${counts.gate || 0}`);
