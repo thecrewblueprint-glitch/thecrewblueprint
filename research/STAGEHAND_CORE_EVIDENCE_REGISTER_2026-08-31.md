@@ -1,179 +1,179 @@
 # Stagehand Core — Canonical Evidence Register
 
 **Prepared:** 2026-08-31  
-**Status:** Active canonical index for Stagehand/general-hand evidence  
-**Purpose:** Put the complete Stagehand evidence state in one place before any final curriculum-structure decision.
+**Status:** Active canonical Stagehand/general-hand evidence index  
+**Purpose:** Keep the complete Stagehand evidence state in one place before any final curriculum-structure decision.
 
-This register does **not** replace detailed research packets. It is the control plane for them: what exists, what each evidence family supports, what is strong enough to draft from, what remains context-specific, and what still needs research.
+This register is the control plane. Detailed source-traceable packets remain the evidence records.
 
 ## 1. Evidence-state vocabulary
 
 | State | Meaning |
 |---|---|
-| `identified` | Topic is known to matter but has not been researched enough. |
-| `partial` | Useful evidence exists but important roles/models/sectors/authority layers remain unresolved. |
+| `identified` | Topic matters but is not researched enough. |
+| `partial` | Useful evidence exists; important scope/role/model/authority gaps remain. |
 | `researched` | Evidence is sufficient to describe the bounded subject accurately. |
-| `draftable` | Evidence is strong enough for an initial learner-facing draft with stated limits. |
-| `matrix_ready` | Claim families and source relationships are explicit enough to enter MDQ-001. |
-| `practitioner_gate` | Research is adequate, but field/practitioner review is required before stronger publication claims. |
-| `external_boundary` | General education can cover awareness/interfaces, but practical authority remains external. |
+| `draftable` | Strong enough for an initial learner-facing draft with explicit limits. |
+| `matrix_ready` | Claim/source relationships are explicit enough for MDQ-001 backfill. |
+| `practitioner_gate` | Evidence is adequate but practitioner review is required before stronger publication claims. |
+| `external_boundary` | General education can cover awareness/interfaces but practical authority remains external. |
 
-## 2. Stagehand role, career and work-environment evidence
+---
 
-| Evidence family | Current corpus | Main claim families supported | State | Next research |
-|---|---|---|---|---|
-| General stagehand career levels and work | Package 01; Package 15 | Entry duties, general-hand role, reliability, crew behavior, progression | researched | Expand current hiring/customer demand and role combinations by sector |
-| Department progression and boundaries | Package 02 | General hand → department support → technical/specialist/lead distinctions | researched | Reconcile with deeper department research waves |
-| Warehouse / touring / venue lanes | Package 03 | Career-lane differences, shop/logistics, touring and fixed-site transferability | researched | Expand warehouse/rental-shop practicals and employer demand |
-| Safety/risk and context | Package 04; 04A | Hazard awareness, public-area interfaces, weather/crowd/electrical boundaries | partial/researched | Expand outdoor/public-area and accessibility evidence |
-| Entry-level role validation | Package 15 | Load/unload, cases, risers/staging, scenery/props, department support, cleanup, call phases | draftable | Maintain freshness of employer/municipal sources |
-| Readiness / work behavior | Packages 16–17 and Fundamentals lineage | PPE/readiness, communication, first-call behavior | researched | Compare employer/local variations before national wording |
-| Load-in / load-out | Package 18 | Truck/case movement, manual handling, docks, material storage, load-out, powered-equipment awareness | draftable | Continue model/site-specific dock and trailer evidence |
-| Career / callbacks / growth | Packages 19, 40–42 + Module 10 lineage | Hiring, reputation, career navigation, strategic growth | partial/researched | Add customer/employer research on what actually drives repeat hiring |
-| General stagehand gap validation | Packages 20/20A | Existing Fundamentals gaps, field-practice needs, task universe | researched | Reconcile against MDQ-010 and future operational evidence |
+# 2. Core Stagehand evidence families
 
-## 3. Current beginner/general-stagehand practical evidence
-
-| Skill / topic | Detailed evidence | Current learner coverage | State | Key boundary / unresolved issue |
-|---|---|---|---|---|
-| Move a road case with partner | Package 52 | live/review Field Skill | draftable + practitioner_gate | Equipment, route and crew plan control exact method |
-| Team lift / carry / set down | SFS-U01 | not yet live | draftable | No universal OSHA lift limit; mechanical aids/employer controls matter |
-| Cart / dolly / hand truck | SFS-U02 | not yet live | draftable | Cart type/load/route changes handling; exclude powered equipment |
-| Cable coiling / over-under | Package 46 | live/review Field Skill | draftable + practitioner_gate | Cable family/manufacturer/department can override generic technique |
-| Cable deployment / gathering | SFS-U03 | not yet live | draftable | Released line/route only; no patching/energization/testing/repair authority |
-| Cable ramps / protectors | Package 50 | live/review Field Skill | draftable + practitioner_gate | Approved route, exact protector/system, public/egress interfaces |
-| Case / boneyard organization | SFS-U04 | not yet live | draftable | Directed destination, stable storage and clear paths; no invented placement |
-| Work-area reset / handoff | SFS-U05 | not yet live | draftable | Final department/venue acceptance remains with responsible authority |
-| Barricade handling/setup | Package 49 | live/review Field Skill | draftable + practitioner_gate | Exact system/site/lead plan; public/crowd interface |
-| Ratchet straps | Package 47 | live/review Field Skill | draftable + practitioner_gate | Assigned bounded use; not universal cargo responsibility |
-| Flatbed cargo-securement support | Package 48 | live/review Field Skill | draftable + external_boundary | Driver/load-lead/regulatory responsibility remains external |
-| Soft goods | package references + IATSE Local 193/Local 15 evidence | thin | partial | Needs dedicated handling/storage/cleanliness/orientation packet |
-| Pipe-and-drape | package references + IATSE Local 193/Local 15 evidence | thin | partial | Product/system stability, public route and manufacturer boundaries |
-| Riser/deck/platform support | Packages 15/18 + staging corpus | conceptual | partial | Carry/place/support vs structural leveling/locking/signoff |
-| Scenery / flats | Packages 15 and theatre/staging corpus | conceptual | partial | Assigned movement vs carpentry/fly/structural authority |
-| Stagehand hand tools | Local 84/98/118 + current resource pages | resource only | partial | Call-specific tools; separate powered/specialist/rigging/electrical work |
-| Tape / labels | scattered Fundamentals/field evidence | partial | partial | Local/department conventions vary; needs a bounded transferable packet |
-| Dock / ramp / trailer interfaces | Package 18 | awareness | partial/researched | Pedestrian/manual handling vs powered-equipment/driver/load-lead authority |
-| Radio/headset/readback | Fundamentals + department evidence | conceptual | partial | Needs dedicated general communication-system research |
-
-## 4. Operational behavior evidence — call lifecycle
-
-| Operational question | Current evidence | State | Gap |
+| Evidence family | Main corpus | State | What it supports |
 |---|---|---|---|
-| Preparing for a call | Fundamentals + Packages 15–17 | researched | Market/employer variation refresh |
-| Arrival/check-in | IATSE/local + employer evidence scattered across corpus | partial | Compare union/nonunion/labor-provider/venue/app-based check-in models |
-| Finding chain of command | Package 15 + IATSE touring/local evidence | researched | Map sector/title variation more systematically |
-| Receiving an assignment | Fundamentals communication/workflow evidence | partial | Stronger direct evidence for assignment ownership, completion criteria and readback |
-| Knowing when equipment is released/ready | department and safety packets | partial | Cross-department release/handoff patterns |
-| Reporting task completion | Fundamentals + SFS-U04/U05 | partial | Direct employer/local evidence for report-back and reassignment |
-| Seeking next task | mostly Crew Blueprint framing + scattered field practice | identified/partial | Dedicated evidence required |
-| Standby / waiting | sparse | identified | Dedicated employer/local/CBA/show-work research required |
-| Break / meal periods | highly variable | identified | Separate operational practice from federal/state/local/CBA/employer rules |
-| Show-call waiting / changeovers | Package 15 + show-call references | partial | Timing-sensitive backstage/cue/reassignment behavior |
-| Actual release from call | sparse | identified | Distinguish task done, department release, crew release, leave authorization |
-| Clock-out / timekeeping | sparse | identified | Employer/local/venue systems + jurisdiction-aware wage/timekeeping research |
-| Time-record correction/dispute | minimal | identified | General educational route without legal overreach |
+| General role / first-call reality | Packages 01, 15, 16–20A | researched/draftable | Entry duties, call phases, reliability, crew behavior, readiness, environment differences |
+| Department boundaries / career paths | Packages 02, 19, 40–42 | researched | General hand → department exposure/support → technical/specialist/lead paths without one universal ladder |
+| Load-in/load-out/material handling | Package 18 | draftable | Cases, manual handling, docks, storage, trailer/powered-equipment awareness, strike/load-out context |
+| Fundamentals authenticity | Package 21 + architecture audit | researched | Claim qualification, source strength, learner-state boundaries |
+| Existing field skills | Packages 46–50, 52 | draftable + practitioner gates | Cable coiling, straps, flatbed support, barricade, cable protectors, road-case movement |
+| New field-skill evidence | SFS-U01–U12 | draftable by bounded topic | Team handling, carts, cable deployment, organization, reset, soft goods, pipe/drape, risers, tools, marking, scenery, docks |
+| Operational call behavior | SFS-O01–O08 | draftable with local/legal qualifiers | Check-in, assignment ownership, report-back, reassignment, standby/break distinctions, show-call behavior, release, timekeeping |
 
-## 5. Controlled-work / external-boundary evidence
+---
 
-| Topic | Current evidence | General Stagehand treatment | Deeper home |
+# 3. Complete early-career/general-stagehand practical evidence map
+
+| ID / topic | Detailed evidence | State | Key boundary |
 |---|---|---|---|
-| Rigging / hoists / overhead loads | Package 02/04/29 + ETCP/OSHA/ESTA sources | Recognition, zones, handoff, stop/escalate only | MDQ-060–066 |
-| Temporary production power | Packages 04/30/36/38 + lighting BOK | Recognition, route/protection, qualified-person boundary | MDQ-070–077 |
-| Forklifts / powered industrial trucks | Package 18 + OSHA PIT | Pedestrian/traffic awareness only | Credential/employer training research |
-| MEWPs | safety/credential corpus | Awareness only | MDQ-122 + employer training |
-| Stage automation machinery | staging/advanced corpus | Interface/zone awareness | MDQ-056 / MDQ-101 |
-| Pyro/flame/cryo/lasers | lighting/special-effects corpus | Awareness/avoid/escalate | MDQ-102–104 |
-| Regulated driving/cargo acceptance | logistics/cargo corpus | Support/recognition only | MDQ-012 + external driver/load-lead authority |
+| Road-case movement | Package 52 | draftable + practitioner_gate | Named case/route/team plan controls exact method |
+| SFS-U01 Team lift/carry/set-down | SFS-U01 | draftable | No universal OSHA lift limit; mechanical aids/employer controls matter |
+| SFS-U02 Cart/dolly/hand-truck movement | SFS-U02 | draftable | Cart/load/route changes behavior; powered equipment excluded |
+| Cable coiling / over-under | Package 46 | draftable + practitioner_gate | Cable family/manufacturer/department may override generic technique |
+| SFS-U03 Cable deployment/gathering | SFS-U03 | draftable | Released line/route only; no patching/energization/testing/repair authority |
+| Cable ramps/protectors | Package 50 | draftable + practitioner_gate | Approved route/exact protector/public-egress interfaces |
+| SFS-U04 Case/boneyard organization | SFS-U04 | draftable | Directed destinations/stable storage/clear paths |
+| SFS-U05 Work-area reset/handoff | SFS-U05 | draftable | Final department/venue acceptance remains external to learner |
+| Barricade | Package 49 | draftable + practitioner_gate | Exact system/site/lead plan; crowd/public interface |
+| Ratchet straps | Package 47 | draftable + practitioner_gate | Assigned bounded use; not universal cargo responsibility |
+| Flatbed cargo support | Package 48 | draftable + external_boundary | Driver/load-lead/regulatory responsibility remains external |
+| SFS-U06 Ground-level soft goods | SFS-U06 | draftable | Handling/storage/orientation under assigned authority; no fly/overhead authority |
+| SFS-U07 Pipe-and-drape support | SFS-U07 | draftable + practitioner_gate | Exact product/system/manufacturer/site stability controls |
+| SFS-U08 Riser/deck/platform support | SFS-U08 | draftable + practitioner_gate | Component support vs structural leveling/locking/signoff |
+| SFS-U09 Stagehand tool recognition/handoff/storage | SFS-U09 | draftable | Call-specific; powered/specialist/rigging/electrical work separated |
+| SFS-U10 Tape/label/marking conventions | `SFS-U10-U12...` | draftable | No universal color code; preserve controlled/manufacturer/safety labels |
+| SFS-U11 Scenery/flat/wagon movement | `SFS-U10-U12...` | draftable | Ground-supported assigned movement; fly/automation/structural authority excluded |
+| SFS-U12 Dock/ramp/trailer handoff awareness | `SFS-U10-U12...` | draftable + external_boundary | Pedestrian/manual flow only; powered-equipment/driver/load-lead authority external |
+| Radio/headset/readback | Fundamentals + department evidence | partial | Dedicated communications-system research remains MDQ-013/037 |
 
-## 6. Primary/current external evidence families already in the Stagehand corpus
+## Stagehand evidence conclusion
 
-### Government / regulator / public authority
+The current corpus supports a broad view of early-career work. Pipe-and-drape, barricades, soft goods, risers/deck support, scenery movement, cable protection, carts, cases, ordinary hand tools, labels/marks and dock/trailer interfaces are **not inherently advanced simply because they are context-dependent**. They are ordinary early-career/general-stagehand subject matter when bounded to assigned work, exact equipment and controlling authority.
 
-- OSHA — 29 CFR 1910.176, material handling/storage, ergonomics and materials-handling guidance.
-- OSHA — Powered Industrial Trucks / loading docks / pedestrian traffic guidance.
-- OSHA — interpretations confirming no single federal maximum manual-lift weight.
-- Municipal stagehand classifications including Bloomington, Eugene and La Mirada.
-- Public-sector production-crew postings such as Maryland-National Capital Park and Planning Commission.
+---
 
-### Labor / union / industry-primary
+# 4. Operational work-behavior evidence — SFS-O01–O08
 
-- IATSE International — touring structure and local-crew role evidence.
-- IATSE Local 15 — Entry Test Study Guide.
-- IATSE Local 84 — apprentice/reference material.
-- IATSE Local 98 — job basics.
-- IATSE Local 118 — stagehand tools.
-- IATSE Local 122 — Stagehand Skills training.
-- IATSE Local 193 — stagehand expectations, cable basics and soft goods.
-- Other local hiring/referral/expectation materials already cited in the Fundamentals corpus.
+| ID | Topic | State | Evidence / conclusion |
+|---|---|---|---|
+| O01 | Arrival/check-in/reporting point | draftable | Multiple IATSE locals require check-in/reporting before work; exact early-arrival rule varies |
+| O02 | Assignment ownership | draftable | Steward/lead/head structures control assignments; conflicting instructions route through call hierarchy |
+| O03 | Task completion/report-back/handoff | draftable | Physical motion completed is not always assignment accepted as complete |
+| O04 | Reassignment / next legitimate task | draftable as cross-source pattern | When work is complete, report back and become available rather than self-assign across departments |
+| O05 | Standby/downtime/break/meal | draftable with legal/CBA qualifier | Industry practice varies; DOL distinguishes controlled waiting, short breaks and bona fide meal periods for covered employees |
+| O06 | Show-call/changeover behavior | draftable with production qualifier | Timing, presets, cues, show-critical boundaries and department release matter; exact procedure varies |
+| O07 | Department release vs call release | draftable | Task done ≠ department released ≠ call released |
+| O08 | Timekeeping/clock-out | draftable with classification/jurisdiction qualifier | Sign-in/out/time records matter; exact system varies; federal recordkeeping applies to covered employment relationships |
 
-### Employers / production operators
+## Defensible cross-source work rhythm
 
-- Live Nation stagehand postings.
-- AEG event-production/stagehand postings.
-- ASM Global / Legends Global stagehand postings.
-- Feld Entertainment touring/event operations postings.
-- Encore warehouse/AV/rigging role evidence where relevant.
+> **Check in → report to the assigned authority → work the assigned task/department → verify/report/hand off → remain available for the next legitimate assignment → follow the controlling break/standby/show process → continue until released → complete the controlling timekeeping/sign-out process.**
 
-### Manufacturer / technical product evidence
+This is a cross-source industry pattern, not one national contract clause.
 
-- QSC — cable-coiling demonstration evidence.
-- Hosa — cable twist/coiling explanation.
-- Neutrik — opticalCON handling/coiling limits.
-- Belden — bend-radius/installation limits and cable-specific evidence.
-- Exact manufacturer/product sources used in barricade, cable-protector, cargo and other field packets.
+Do not teach either extreme:
 
-### International safety cross-checks
+- constant visible busywork as professionalism; or
+- task completion as automatic free time/release.
 
-- HSE manual-handling guidance.
-- CCOHS manual-material-handling guidance.
+The evidence supports: **do available assigned work well; report back when it is done; remain appropriately available when production is waiting.**
 
-These sources may support transferable safety concepts but do not override U.S. jurisdiction/employer/manufacturer rules.
+---
 
-## 7. Evidence-strength rules
+# 5. Primary evidence families currently supporting Stagehand research
 
-1. One employer/local/manufacturer procedure does not become a national industry standard.
-2. A current job posting is useful for real-role/task evidence but is not a safety standard.
-3. OSHA/general safety evidence can support hazard/control principles but not every live-event-specific workflow detail.
-4. Manufacturer instructions control exact product/model claims where applicable.
-5. Practitioner convention must be labeled practitioner evidence unless independently supported.
-6. Crew Blueprint teaching frameworks must remain identified as Crew Blueprint framing.
-7. Physical-task completion does not establish employer authorization.
-8. Online instruction does not create regulated/specialist qualification.
+## Government / public authority
 
-## 8. Immediate Stagehand evidence queue
+- OSHA 29 CFR 1910.176 material handling/storage/aisles.
+- OSHA powered-industrial-truck loading-dock/pedestrian guidance.
+- OSHA ergonomics/material-handling guidance and no-universal-lift-limit interpretation.
+- U.S. DOL WHD Fact Sheets #21/#22 for correctly scoped wage/hour/timekeeping claims.
+- municipal/public stagehand classifications and production-crew postings.
 
-### Physical/general-hand packets
+## Labor / union / industry-primary
 
-- SFS-U06 — Ground-Level Soft Goods.
-- SFS-U07 — Pipe-and-Drape Support.
-- SFS-U08 — Riser/Deck Component Support.
-- SFS-U09 — Basic Stagehand Tool Handling.
-- SFS-U10 — Jobsite Tape / Label / Marking Conventions.
-- SFS-U11 — Scenery / Flat Movement.
-- SFS-U12 — Dock / Ramp / Trailer Handoff Awareness.
+- IATSE International touring guidance.
+- IATSE Local 15 Entry Test Study Guide.
+- IATSE Local 25 Stagehand Expectations.
+- IATSE Local 84 apprentice/reference resources.
+- IATSE Local 98 Job Basics.
+- IATSE Local 101 Hiring Hall Referral & Work Rules.
+- IATSE Local 118 stagehand tools.
+- IATSE Local 122 Stagehand Skills training.
+- IATSE Local 193 expectations/cable/soft-goods/carpentry resources.
 
-### Operational/call-behavior packets
+## Employer / production
 
-- SFS-O01 — Arrival / Check-In / Crew Placement.
-- SFS-O02 — Assignment Receipt / Confirmation / Ownership.
-- SFS-O03 — Task Completion / Handoff / Report-Back.
-- SFS-O04 — Reassignment / Seeking Next Work.
-- SFS-O05 — Standby / Break / Meal / Show-Wait Distinctions.
-- SFS-O06 — Show Call / Changeover Beginner Behavior.
-- SFS-O07 — Final Handoff / Release From Call.
-- SFS-O08 — Timekeeping / Clock-Out / Correction Pathways.
+- Live Nation.
+- AEG.
+- ASM Global / Legends Global.
+- Feld Entertainment.
+- Encore where relevant.
 
-## 9. Definition of Stagehand content-evidence completion
+## Manufacturer / product
 
-Do not declare the Stagehand content research complete until:
+- exact product evidence used by cable, barricade, protector, cargo and other packets;
+- representative manufacturer material must remain model/context-specific.
 
-- the general task universe has no obvious uncovered high-frequency beginner task family;
-- the full call lifecycle has evidence for operational behavior, not only physical tasks;
-- sector differences are documented where they materially change the lesson;
-- specialist/regulated boundaries are explicit;
-- each draftable claim family has exact source lineage in MDQ-001 terms;
-- unresolved practitioner/manufacturer/employer/local/jurisdiction questions are visible rather than silently generalized;
-- current evidence can be synthesized into competencies without relying on the current website structure.
+---
 
-Only then should the project choose the highest-potential Stagehand course/catalog/competency architecture.
+# 6. Controlled-work / external-boundary map
+
+| Topic | Stagehand treatment | Deeper research home |
+|---|---|---|
+| Rigging / hoists / overhead loads | recognition, zones, ownership, stop/escalate | MDQ-060–066 |
+| Temporary production power | hazard/interface awareness; route/protection; qualified-person boundary | MDQ-070–077 |
+| Forklift/PIT/MEWP operation | pedestrian awareness only | employer qualification / credential research |
+| Stage automation/machinery | interface/zone awareness only | MDQ-056 / 101 |
+| Pyro/flame/cryo/laser operation | awareness/avoid/escalate only | MDQ-102–104 |
+| Commercial driving/cargo acceptance | support/recognition only | MDQ-012 + driver/load-lead authority |
+
+---
+
+# 7. What remains before Stagehand content research can be called complete
+
+The high-frequency task and operational-call universes are now substantially researched. Remaining work is primarily **depth, matrixing, variation and validation**, not discovering obvious beginner task families from scratch.
+
+Remaining Stagehand research priorities:
+
+1. MDQ-011 warehouse/rental-shop operations.
+2. MDQ-012 logistics/truck/case/cargo role architecture beyond learner-safe Stagehand interfaces.
+3. MDQ-013 communications/intercom/radio/readback systems.
+4. MDQ-014 outdoor/weather/public-area transfer.
+5. sector comparison across arena, theatre, corporate/convention, festival/outdoor, venue/house, warehouse/shop and touring.
+6. full MDQ-001 claim/source/question/visual/practice matrix backfill.
+7. practitioner review of physical task packets and safety-critical visuals.
+8. learner testing/retention/transfer studies.
+9. source freshness and exact manufacturer/model review.
+
+---
+
+# 8. Structure decision remains deferred
+
+Do **not** choose the final Stagehand format yet.
+
+The evidence can later be synthesized into whichever architecture best fits learner/customer/product research:
+
+- linear course;
+- modular task catalog;
+- call-cycle experience;
+- competency graph;
+- adaptive pathway;
+- hybrid/reference mode;
+- another evidence-supported structure.
+
+The call-cycle work remains useful as a research lens, not a locked information architecture.
+
+**Current Stagehand evidence state:** `substantial / draftable / matrix-backfill-and-validation next`.
