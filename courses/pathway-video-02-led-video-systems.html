@@ -268,6 +268,11 @@ footer {
 .cb-quiz-item .coach { display: none; margin-top: 12px; padding: 14px; border-left: 3px solid var(--cb-gold); background: var(--cb-bg-light); border-radius: 8px; font-size: 14px; line-height: 1.6; color: var(--cb-muted); }
 .cb-quiz-item .coach.show { display: block; }
 .cb-quiz-item .coach strong { color: var(--cb-gold-strong); }
+
+.cb-glossary-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; margin-top: 8px; }
+.cb-glossary-item { padding: 16px 18px; background: rgba(5,7,8,0.42); border: 1px solid var(--cb-border); border-radius: 10px; }
+.cb-glossary-item strong { display: block; color: var(--cb-gold-strong); margin-bottom: 4px; font-size: 14px; }
+.cb-glossary-item span { display: block; color: var(--cb-muted); font-size: 13px; line-height: 1.5; }
 </style>
 <style id="ownerReviewBadgeStyle">
 .owner-review-badge{position:fixed;right:12px;bottom:12px;z-index:9999;padding:7px 10px;border:1px solid rgba(245,180,0,.55);border-radius:999px;background:rgba(9,12,16,.94);box-shadow:0 8px 24px rgba(0,0,0,.35);color:#f5b400;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
@@ -296,6 +301,7 @@ footer {
         <a class="lesson-link" onclick="switchLesson(5)">6. Outdoor & Weather</a>
         <a class="lesson-link" onclick="switchLesson(6)">7. Build & Commissioning</a>
         <a class="lesson-link" onclick="switchLesson(7)">8. Troubleshooting & Ops</a>
+        <a class="lesson-link" onclick="switchLesson(8)">9. Sources & Glossary</a>
       </div>
     </div>
   </div>
@@ -311,13 +317,14 @@ footer {
         <option value="5">Lesson 6: Outdoor & Weather</option>
         <option value="6">Lesson 7: Build & Commissioning</option>
         <option value="7">Lesson 8: Troubleshooting & Ops</option>
+        <option value="8">Sources & Glossary</option>
       </select>
     </div>
 
     <!-- LESSON 1 -->
     <div id="lesson-0" class="lesson-content active">
       <h1>LED Walls Are Integrated Systems</h1>
-      <p>A large LED wall is a connected production system. The visible wall is built from LED cabinets or tiles, but the finished display depends on structural support, power distribution, receiving electronics, processors, signal transport, source systems, cooling, weather protection, and crew workflow.</p>
+      <p>A large LED wall is a connected production system. Crews build the visible wall from LED cabinets or tiles, but the finished display depends on structural support, power distribution, receiving electronics, processors, signal transport, source systems, cooling, weather protection, and crew workflow.</p>
       <div class="card progress">
         <div class="rule" id="rule-0">Recognize the major subsystems in a large LED wall.</div>
       </div>
@@ -397,7 +404,7 @@ footer {
       </div>
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>The right panel gets selected against the job, not against one isolated spec. For an executive meeting, a fine-pitch wall may be needed because the front row is close and text has to be readable on camera. For an arena IMAG wall, a moderate pitch may be acceptable because the audience is farther away. For a stadium or outdoor festival, brightness, weather resistance, wind behavior, weight, service access, and long-distance viewing may matter more than fine detail.</p>
+        <p>The team selects the right panel against the job, not against one isolated spec. For an executive meeting, a fine-pitch wall may be needed because the front row is close and text has to be readable on camera. For an arena IMAG wall, a moderate pitch may be acceptable because the audience is farther away. For a stadium or outdoor festival, brightness, weather resistance, wind behavior, weight, service access, and long-distance viewing may matter more than fine detail.</p>
         <div class="cb-panel">
           <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Native resolution is not the same as wall size</strong>
           <p style="margin: 0; color: var(--cb-muted);">Native resolution is the total physical pixel count of the assembled wall. A large, coarse-pitch wall can have fewer pixels than a smaller fine-pitch one.</p>
@@ -525,7 +532,7 @@ footer {
       </div>
       <div class="cb-section">
         <h2>On a Real Call</h2>
-        <p>Data distribution may use copper for short processor-to-wall and cabinet-to-cabinet paths, while fiber is often preferred for long FOH-to-stage or processor-backbone runs. On a ballroom general session, power may come from building service and the data path may be short. On an outdoor festival, the wall may be fed from generators and temporary distribution, with long fiber paths from front of house.</p>
+        <p>Data distribution may use copper for short processor-to-wall and cabinet-to-cabinet paths; crews often prefer fiber for long FOH-to-stage or processor-backbone runs. On a ballroom general session, power may come from building service and the data path may be short. On an outdoor festival, the wall may be fed from generators and temporary distribution, with long fiber paths from front of house.</p>
         <div class="cb-panel">
           <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Fiber can fail even when it looks fine</strong>
           <p style="margin: 0; color: var(--cb-muted);">Dirty ends, wrong mode, wrong transceiver, tight bends, or damaged connectors can all cause failures that aren't visible from the outside.</p>
@@ -573,7 +580,7 @@ footer {
     <!-- LESSON 5 -->
     <div id="lesson-4" class="lesson-content">
       <h1>Structural Support, Rigging, and Load-Path Awareness</h1>
-      <p>LED walls can be ground-supported, flown from approved points, roof-supported, mounted to temporary structures, built on mobile trailers, or installed in custom engineered systems. The structural concern is never just panel weight.</p>
+      <p>Crews can ground-support LED walls, fly them from approved points, roof-support them, mount them to temporary structures, build them on mobile trailers, or install them in custom engineered systems. The structural concern is never just panel weight.</p>
       <div class="card progress">
         <div class="rule" id="rule-4">Understand why panel weight alone is not enough for structural decisions.</div>
       </div>
@@ -826,6 +833,62 @@ footer {
       </div>
     </div>
 
+    <!-- LESSON 9 -->
+    <div id="lesson-8" class="lesson-content">
+      <h1>Sources &amp; Glossary</h1>
+      <p>This course gives you systems-understanding, not independent authority. Read the boundary below before you rely on anything else in this course.</p>
+      <div class="card progress">
+        <div class="rule" id="rule-8">Keep systems-understanding and independent authority as separate states.</div>
+      </div>
+      <div class="cb-section">
+        <h2>What this course does NOT do</h2>
+        <div class="cb-panel">
+          <p style="margin: 0; color: var(--cb-muted);">It does not authorize or qualify you to independently operate systems, troubleshoot problems, configure equipment, modify procedures, or perform restricted rigging, electrical, weather-protection, or engineered work. Those stay with your employer, the venue, and qualified, authorized personnel. This course does not replace employer training, manufacturer instructions, union apprenticeships, equipment certifications, or OSHA/ANSI/ESTA/NFPA/NEC requirements.</p>
+        </div>
+      </div>
+      <div class="cb-section">
+        <h2>Glossary</h2>
+        <p>Terms used throughout this course. Come back to this list any time.</p>
+        <div class="cb-glossary-list">
+          <div class="cb-glossary-item"><strong>LED cabinet / tile / panel</strong><span>Modular enclosure containing LED modules, power supplies, receiving electronics, connectors, and locks.</span></div>
+          <div class="cb-glossary-item"><strong>LED module</strong><span>Smaller serviceable pixel assembly within a cabinet, may be replaced from front or rear.</span></div>
+          <div class="cb-glossary-item"><strong>Pixel pitch</strong><span>Center-to-center spacing between pixels, usually in millimeters &mdash; helps determine pixel density and viewing distance.</span></div>
+          <div class="cb-glossary-item"><strong>Native resolution</strong><span>Total physical pixel count of the assembled wall; defines the raster the processor must map.</span></div>
+          <div class="cb-glossary-item"><strong>Nit</strong><span>Unit of luminance equal to one candela per square meter, used to discuss display brightness.</span></div>
+          <div class="cb-glossary-item"><strong>Refresh rate</strong><span>How often LED driver electronics refresh the image; affects flicker and camera behavior.</span></div>
+          <div class="cb-glossary-item"><strong>Scan rate</strong><span>Multiplexing method used to drive LEDs; can affect brightness, efficiency, and camera artifacts.</span></div>
+          <div class="cb-glossary-item"><strong>LED processor / sending device</strong><span>Device that scales, maps, synchronizes, processes, and distributes LED data &mdash; the bridge between sources and receiving cards.</span></div>
+          <div class="cb-glossary-item"><strong>Receiving card</strong><span>Electronics in the cabinet that receive mapped LED data and drive outputs; must match configuration and hardware.</span></div>
+          <div class="cb-glossary-item"><strong>Mapping</strong><span>Assignment of processor outputs and data paths to physical cabinets; bad mapping causes missing, reversed, or displaced imagery.</span></div>
+          <div class="cb-glossary-item"><strong>EDID</strong><span>Display-identification data communicated to a video source; can affect resolution, refresh rate, and compatibility.</span></div>
+          <div class="cb-glossary-item"><strong>Genlock</strong><span>Common timing reference for synchronized video devices, helping avoid tearing or timing mismatch.</span></div>
+          <div class="cb-glossary-item"><strong>Frame synchronization</strong><span>Buffering/timing conversion to align asynchronous sources; can stabilize switching but may add latency.</span></div>
+          <div class="cb-glossary-item"><strong>IP rating</strong><span>Ingress-protection rating against solids and water &mdash; not a full weather approval or wind rating.</span></div>
+          <div class="cb-glossary-item"><strong>Redundancy</strong><span>Backup signal, processor, data, or power path &mdash; useful only when configured, current, and tested.</span></div>
+          <div class="cb-glossary-item"><strong>Ground support</strong><span>Structure supported from the ground with towers, frames, bases, ballast, or outriggers.</span></div>
+          <div class="cb-glossary-item"><strong>Flown wall</strong><span>LED array suspended from overhead rigging points or temporary roof systems, requiring qualified rigging personnel.</span></div>
+          <div class="cb-glossary-item"><strong>Dead load</strong><span>Permanent gravitational weight of the system and support hardware &mdash; includes more than panel weight.</span></div>
+          <div class="cb-glossary-item"><strong>Dynamic load</strong><span>Load created by motion, stopping, wind, impact, or oscillation &mdash; can exceed the static weight.</span></div>
+          <div class="cb-glossary-item"><strong>Fiber hygiene</strong><span>Cleaning, inspecting, protecting, and handling fiber correctly &mdash; dirty or damaged fiber can cause signal failures.</span></div>
+        </div>
+      </div>
+      <div class="cb-section">
+        <h2>Sources &amp; Standards</h2>
+        <p>This course was built from a structured research packet that names the standards bodies and regulations its safety-sensitive claims are grounded in. Standards, codes, and manufacturer documentation change &mdash; verify the current adopted edition and local applicability before relying on any of these for an actual job. None of this replaces engineered plans, manufacturer instructions, or direction from qualified, authorized personnel.</p>
+        <div class="cb-glossary-list">
+          <div class="cb-glossary-item"><strong>ANSI E1.21</strong><span>Minimum design and performance requirements for temporary ground-supported outdoor entertainment structures. <a href="https://tsp.esta.org/tsp/documents/published_docs.php" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">ESTA Technical Standards Program</a></span></div>
+          <div class="cb-glossary-item"><strong>ANSI E1.56</strong><span>Permanent rigging support points attached to facility structures. <a href="https://tsp.esta.org/tsp/documents/published_docs.php" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">ESTA Technical Standards Program</a></span></div>
+          <div class="cb-glossary-item"><strong>ANSI E1.6 family</strong><span>Powered-hoist systems &mdash; selection, inspection, maintenance, controls, and use. <a href="https://tsp.esta.org/tsp/documents/published_docs.php" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">ESTA Technical Standards Program</a></span></div>
+          <div class="cb-glossary-item"><strong>ANSI ES1.7</strong><span>Weather-preparedness strategies for live events and temporary event structures. <a href="https://tsp.esta.org/tsp/documents/published_docs.php" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">ESTA Technical Standards Program</a></span></div>
+          <div class="cb-glossary-item"><strong>ANSI E1.58</strong><span>Temporary outdoor use of portable stage and studio electrical equipment. <a href="https://tsp.esta.org/tsp/documents/published_docs.php" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">ESTA Technical Standards Program</a></span></div>
+          <div class="cb-glossary-item"><strong>OSHA 29 CFR 1926.404</strong><span>Wiring design, grounding, overcurrent protection, generators, and GFCI in covered construction settings. <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.404" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">osha.gov</a></span></div>
+          <div class="cb-glossary-item"><strong>NFPA 70 / NEC</strong><span>Provisions for temporary wiring, cords, overcurrent protection, grounding, generators, and stage/studio equipment. <a href="https://www.nfpa.org/codes-and-standards/nfpa-70-standard-development/70" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">nfpa.org</a></span></div>
+          <div class="cb-glossary-item"><strong>AVIXA Standards</strong><span>Audiovisual system performance, documentation, measurement, verification, and commissioning. <a href="https://www.avixa.org/standards" target="_blank" rel="noopener noreferrer" style="color: var(--cb-gold-strong);">avixa.org</a></span></div>
+        </div>
+        <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">This course does not cite specific standard clauses inline &mdash; it teaches the underlying concepts (integrated-systems thinking, load paths, power planning, weather awareness) at an awareness level, and points here to where the enforceable detail actually lives.</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -842,7 +905,8 @@ const lessons = [
   { id: 4, obj: "Understand why panel weight alone is not enough for structural decisions." },
   { id: 5, obj: "Explain why outdoor-rated does not mean safe in all weather." },
   { id: 6, obj: "Understand why the first cabinet, orientation, and port mapping matter." },
-  { id: 7, obj: "Classify LED failures before replacing parts." }
+  { id: 7, obj: "Classify LED failures before replacing parts." },
+  { id: 8, obj: "Keep systems-understanding and independent authority as separate states." }
 ];
 
 let currentLesson = 0;
