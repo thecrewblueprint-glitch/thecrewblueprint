@@ -23,6 +23,8 @@ jobs:
         run: node scripts/validate-research-matrix.mjs
       - name: Validate ecosystem curriculum
         run: node scripts/validate-ecosystem-curriculum.mjs
+      - name: Validate course consent coverage
+        run: node scripts/validate-course-consent.mjs
       - name: Generate matrix views
         run: |
           node scripts/generate-research-matrix-views.mjs
