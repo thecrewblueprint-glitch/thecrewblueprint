@@ -8,7 +8,7 @@
     var title=text('#topTitle',text('#courseContext',document.title.replace(/\s*[|—-].*$/,'')));
     var context=text('#courseContext',document.title);
     var header=document.createElement('header');header.className='cb-course-shell-header';
-    var brand=document.createElement('div');brand.className='cb-course-shell-brand';brand.innerHTML='<span class="cb-course-shell-logo" role="img" aria-label="The Crew Blueprint"></span><div class="cb-course-shell-context"></div>';brand.querySelector('.cb-course-shell-context').textContent=context||title;
+    var brand=document.createElement('div');brand.className='cb-course-shell-brand';brand.innerHTML='<a class="cb-course-shell-logo" href="../index.html" aria-label="The Crew Blueprint home"></a><div class="cb-course-shell-context"></div>';brand.querySelector('.cb-course-shell-context').textContent=context||title;
     var progress=document.createElement('div');progress.className='cb-course-shell-progress';if(oldProgress)progress.appendChild(oldProgress);
     var exit=document.createElement('a');exit.className='cb-course-shell-exit';exit.href=oldExit?oldExit.getAttribute('href'):'../lms-dashboard.html';exit.textContent=oldExit?oldExit.textContent.trim():'← Exit Course';
     header.append(brand,progress,exit);document.body.prepend(header);document.body.classList.add('cb-course-shell-ready');
