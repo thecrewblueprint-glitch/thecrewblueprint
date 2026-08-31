@@ -21,19 +21,43 @@ Owner approval given in conversation may satisfy the owner-review step when the 
 
 ## Repository operating model
 
-This repository inherits the system-wide change-control policy from `50yearroadmap`.
+`AGENTS.md` is the local canonical operating rule for this repository. `main` is accepted state.
 
-For substantive agent-authored work:
+During the current Crew Blueprint build phase, use the same visible-content versus structural-work split recorded in `AGENTS.md` and `50yearroadmap/governance/CHANGE_CONTROL.md`.
 
-**current canonical `main` → dedicated work branch → coherent checkpoint commits → draft PR → audit/review → required owner approval → merge → verification/record**
+### Visible, directly rendered work
 
-- `main` is this repository's canonical accepted state.
-- A work branch and PR contain proposed/in-progress state.
-- Opening or updating a PR is not approval and does not grant permission to merge.
-- Preserve meaningful work on the branch/PR before an agent session or workspace can disappear.
-- If another authorized agent continues an unfinished PR, inspect the existing diff/history and preserve provenance rather than silently replacing predecessor work.
-- Trivial, emergency, runtime-generated-data, and explicit owner-override exceptions come from `50yearroadmap/governance/CHANGE_CONTROL.md`.
-- PR-first governance does not authorize paid CI, metered runners, external validation services, or other cost-incurring automation.
+Changes the owner can directly inspect on the published site go through the validated direct-to-`main` path. This includes:
+
+- course pages;
+- public copy;
+- front-end structure;
+- styling;
+- directly rendered diagrams and other visible page content.
+
+For direct owner-requested visible work, the request itself authorizes canonical integration unless the owner explicitly asks for a proposal, review-only result, or work-branch-only result. Finish means: make the focused change, run proportionate validation, update `main`, and verify the published GitHub Pages result.
+
+The owner's live review of the published site is the audit step for this category. Keep owner-review badges, `noindex`, disclaimer/boundary language, and other publication-state labels accurate whenever they apply.
+
+### Below-the-surface structural work
+
+Changes the owner cannot directly verify by looking at the rendered site remain PR-first. This includes:
+
+- data/schema architecture;
+- build or validation pipelines;
+- admission/security logic;
+- governance/instruction-surface changes;
+- other structural behavior below the visible site surface.
+
+Use:
+
+**current canonical `main` → dedicated work branch → coherent checkpoint commits → draft PR → technical audit/review → required owner approval → authorized merge → verification/record**
+
+A work branch or PR is proposed state. Opening or updating a PR does not by itself grant merge authority. Preserve meaningful work before an agent workspace can disappear, and never overwrite unexplained predecessor work.
+
+Trivial, emergency, runtime-generated-data, factual-currency, and explicit owner exceptions come from the current `50yearroadmap/governance/CHANGE_CONTROL.md` and repository-local rules.
+
+PR-first governance does not authorize paid CI, metered runners, external validation services, or other cost-incurring automation.
 
 Git identity for commits in this repository remains:
 
@@ -41,9 +65,11 @@ Git identity for commits in this repository remains:
 
 ## Shipping and validation
 
-Every content or diagram change gets link-checked across all HTML files with zero broken links before it is proposed as ready to ship.
+Every content or diagram change gets link-checked across **all HTML files** with zero broken internal links before it is represented as shipped or ready to ship. Run the repository's other proportionate validators for the affected surface.
 
-After accepted Crew Blueprint changes are merged and verified, relevant durable state is synchronized into `50yearroadmap` tracking (`companies/crew-blueprint/`, `roadmap.json` where applicable, and `CHANGELOG.md`). Write access to `50yearroadmap` requires a separate explicit owner ask/grant; finishing work here does not authorize writing there.
+For structural changes, complete the applicable PR-first validation before integration.
+
+After accepted Crew Blueprint changes are verified, synchronize relevant durable state into `50yearroadmap` according to the **current** `50yearroadmap/governance/WRITE_ACCESS_PROTOCOL.md`. Do not rely on older copied wording about roadmap write authority when the top-level protocol has changed. Narrow factual tracking/current-state synchronization and substantive roadmap/governance work remain distinct authority categories.
 
 ## Anti-Robot Course Writing Rule
 
@@ -66,4 +92,4 @@ At the start of a substantive session:
 4. read `50yearroadmap/companies/crew-blueprint/13_sops.md` for Crew Blueprint shipping rules;
 5. inspect current `main` and any existing PR/branch for the task before creating duplicate work.
 
-Repository write authority and merge authority remain separate. A Crew Blueprint PR can be fully prepared for review without implying permission to merge it.
+When wording conflicts, preserve the accepted local Crew Blueprint visible/structural split from `AGENTS.md` and use the newest applicable top-level authority rule for cross-repository tracking. Repository evidence outranks stale copied instructions.
