@@ -25,6 +25,8 @@ jobs:
         run: node scripts/validate-ecosystem-curriculum.mjs
       - name: Validate course consent coverage
         run: node scripts/validate-course-consent.mjs
+      - name: Validate accessibility structural baseline
+        run: node scripts/validate-accessibility-baseline.mjs
       - name: Generate matrix views
         run: |
           node scripts/generate-research-matrix-views.mjs
