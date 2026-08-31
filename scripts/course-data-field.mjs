@@ -279,6 +279,7 @@ export const fieldCourses = [
     },
     sources: [
       { label: 'FMCSA — Cargo securement rules', url: 'https://www.fmcsa.dot.gov/regulations/cargo-securement/cargo-securement-rules' },
+      { label: 'FMCSA — Interpretation: driver reliance on others to load and tie down cargo', url: 'https://www.fmcsa.dot.gov/regulations/question-4-there-requirement-driver-must-personally-load-block-brace-and-tie-down-cargo' },
       { label: '49 CFR 392.9 — Driver inspection and securement duties', url: 'https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-392/subpart-A/section-392.9' },
       { label: '49 CFR 393 Subpart I — Protection against shifting and falling cargo', url: 'https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-393/subpart-I' },
       { label: '49 CFR 393.104 — Devices, systems, and tiedowns', url: 'https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-393/subpart-I/section-393.104' },
