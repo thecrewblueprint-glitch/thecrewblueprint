@@ -110,6 +110,7 @@ requireFields(supportEdges, ['edge_id', 'content_id', 'source_id', 'support_stre
 requireFields(competencyEdges, ['competency_content_edge_id', 'competency_id', 'content_id', 'relationship_type', 'coverage_depth', 'authority_class', 'evidence_state'], 'COMPETENCY_CONTENT_EDGE', errors);
 requireFields(lineageEdges, ['content_lineage_edge_id', 'from_content_id', 'to_content_id', 'relationship_type', 'required', 'review_status'], 'CONTENT_LINEAGE_EDGE', errors);
 requireFields(reviews, ['review_id', 'content_id_or_domain_id', 'review_type', 'reviewer_name_or_role', 'review_date', 'disposition', 'findings'], 'REVIEW', errors);
+requireFields(media, ['media_id', 'file_path_or_url', 'media_type', 'content_ids_supported', 'asset_owner', 'license_permission', 'alt_text', 'caption', 'text_fallback_complete', 'safety_critical', 'freshness_trigger', 'status'], 'MEDIA', errors);
 requireFields(courseInventory, ['course_id', 'title', 'route_file', 'domain_id_primary', 'tier_learning', 'inventory_state', 'publication_state'], 'course_inventory.jsonl', errors);
 requireFields(fundamentalsMap, ['lesson_id', 'lesson_name', 'module_id', 'primary_competency_id', 'coverage_state'], 'fundamentals_lesson_competency_map.jsonl', errors);
 
@@ -209,6 +210,26 @@ assertEnum(reviews, 'disposition', [
   'superseded',
 ], 'REVIEW', errors);
 
+assertEnum(media, 'media_type', [
+  'photo',
+  'diagram',
+  'sequence',
+  'video',
+  'animation',
+  'screenshot',
+  'audio',
+  'document_excerpt',
+], 'MEDIA', errors);
+
+assertEnum(media, 'status', [
+  'draft',
+  'owner_review',
+  'practitioner_reviewed',
+  'approved',
+  'replace',
+  'retired',
+], 'MEDIA', errors);
+
 const contentById = new Map(content.map((row) => [row.content_id, row]));
 const contentIds = new Set(contentById.keys());
 const sourceIds = new Set(sources.map((row) => row.source_id));
@@ -233,6 +254,33 @@ for (const review of reviews) {
   const target = review.content_id_or_domain_id;
   if (!contentIds.has(target) && !/^D-[A-Z0-9-]+$/.test(target)) {
     errors.push(`${location(review, 'REVIEW')}: ${review.review_id} references unknown content/domain target ${target}`);
+  }
+}
+
+for (const asset of media) {
+  if (!Array.isArray(asset.content_ids_supported) || !asset.content_ids_supported.length) {
+    errors.push(`${location(asset, 'MEDIA')}: ${asset.media_id} requires at least one content_ids_supported reference`);
+  } else {
+    for (const contentId of asset.content_ids_supported) {
+      if (!contentIds.has(contentId)) errors.push(`${location(asset, 'MEDIA')}: ${asset.media_id} references missing content ${contentId}`);
+    }
+  }
+
+  if (typeof asset.text_fallback_complete !== 'boolean') {
+    errors.push(`${location(asset, 'MEDIA')}: ${asset.media_id} text_fallback_complete must be boolean`);
+  }
+  if (typeof asset.safety_critical !== 'boolean') {
+    errors.push(`${location(asset, 'MEDIA')}: ${asset.media_id} safety_critical must be boolean`);
+  }
+
+  if (asset.safety_critical && ['practitioner_reviewed', 'approved'].includes(asset.status)) {
+    if (!asset.reviewer || !asset.reviewed_at) {
+      errors.push(`${location(asset, 'MEDIA')}: safety-critical ${asset.media_id} cannot be ${asset.status} without reviewer and reviewed_at`);
+    }
+  }
+
+  if (asset.status === 'approved' && !asset.text_fallback_complete) {
+    errors.push(`${location(asset, 'MEDIA')}: approved ${asset.media_id} requires a complete text fallback`);
   }
 }
 
