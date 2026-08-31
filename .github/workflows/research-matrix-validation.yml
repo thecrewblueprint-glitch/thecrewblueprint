@@ -1,0 +1,45 @@
+name: Research Matrix Validation
+
+on:
+  pull_request:
+    paths:
+      - 'research/**'
+      - 'scripts/validate-research-matrix.mjs'
+      - 'scripts/generate-research-matrix-views.mjs'
+      - 'scripts/generate-owner-competency-state-view.mjs'
+      - '.github/workflows/research-matrix-validation.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'research/**'
+      - 'scripts/validate-research-matrix.mjs'
+      - 'scripts/generate-research-matrix-views.mjs'
+      - 'scripts/generate-owner-competency-state-view.mjs'
+      - '.github/workflows/research-matrix-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Validate matrix data
+        run: node scripts/validate-research-matrix.mjs
+
+      - name: Generate audit views
+        run: |
+          node scripts/generate-research-matrix-views.mjs
+          node scripts/generate-owner-competency-state-view.mjs
+
+      - name: Verify generated owner view
+        run: test -s research/matrix/views/owner-competency-state.md
