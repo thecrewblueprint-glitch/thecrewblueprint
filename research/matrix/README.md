@@ -1,138 +1,151 @@
 # Crew Blueprint Evidence Matrix
 
-**Status:** Active sitewide backfill — broad research complete, high-risk claim matrix in progress  
+**Status:** Broad research complete — normalized sitewide matrix and audit production active  
 **Canonical schema:** `research/MDQ-001_SOURCE_CITATION_CONTENT_MATRIX_SCHEMA_2026-08-31.md`  
 **Competency extension:** `research/MDQ-001A_COMPETENCY_CONTENT_EDGE_EXTENSION_2026-08-31.md`  
 **Content-lineage extension:** `research/MDQ-001B_CONTENT_LINEAGE_EDGE_EXTENSION_2026-08-31.md`  
-**Pilot audit:** `research/MATRIX_PILOT_AUDIT_2026-08-31.md`  
 **High-risk status:** `research/MATRIX_HIGH_RISK_BACKFILL_STATUS_2026-08-31.md`
 
-This directory is the repository-readable normalized evidence store connecting **industry competencies → Crew Blueprint content → claims → sources → assessment lineage → review/authority state**.
+This directory is the repository-readable normalized evidence store connecting **industry competencies → Crew Blueprint content → claims → sources → assessment lineage → media → review/authority state**.
 
 ## Logical record families
 
-- `content*.jsonl` — MDQ-001 CONTENT records.
-- `sources*.jsonl` — SOURCE records.
+- `content*.jsonl` — CONTENT records for courses, claims, boundaries, questions and rationales.
+- `sources*.jsonl` — normalized SOURCE records.
 - `support_edges*.jsonl` — claim/source evidence relationships.
 - `competency_content_edges*.jsonl` — competency/content relationships from MDQ-001A.
 - `content_lineage_edges*.jsonl` — CONTENT → CONTENT semantic lineage from MDQ-001B, including question → rationale → claim.
 - `reviews*.jsonl` — owner/practitioner/legal/safety/learner/accessibility/citation/freshness/rights review events.
-- `course_inventory.jsonl` — canonical current route inventory.
+- `media*.jsonl` — visual/audio/video rights, equipment/procedure scope, reviewer, fallback and release state.
+- `course_inventory.jsonl` — canonical current learner-route inventory.
 - `fundamentals_lesson_competency_map.jsonl` — all 34 current Fundamentals lessons mapped to competencies.
 - `route_compatibility_inventory.jsonl` — legacy/deep-link/supersession candidates that must not be counted as separate canonical courses.
 - `competency_id_aliases.jsonl` — deprecated IDs mapped to canonical IDs.
-- later: `media*.jsonl` — visual/audio/video rights, model/version, reviewer, fallback and content relationships.
 
-A logical table may be physically partitioned (`content.jsonl`, `content_higher_tiers.jsonl`, `content_hr01_electrics.jsonl`, etc.). `scripts/validate-research-matrix.mjs` treats those partitions as one logical table and validates IDs/references globally.
+A logical table may be physically partitioned (`content_hr09_video.jsonl`, etc.). `scripts/validate-research-matrix.mjs` treats partitions as one logical table and validates references globally.
 
-JSONL is used because it is diff-friendly, appendable, scriptable and easy to export into CSV/HTML/database views later.
+## Current learner-facing route coverage
 
-## Current coverage
+All **33 current primary course/review routes** are inventoried and represented at course level:
 
-### Canonical current routes
+- Stagehand Fundamentals;
+- six current Field Skills;
+- five Department Support C1 routes;
+- five Department Systems C2 routes;
+- seven Lead routes;
+- two Supervisor routes;
+- five Advanced/C3 routes;
+- Production Power Awareness;
+- Production & Coordination Career Branch.
 
-All **33 current primary course/review routes** are inventoried. Course-level CONTENT records cover Stagehand Fundamentals, six current Field Skills, five Department Support C1 courses, five Department Systems C2 courses, seven Lead courses, two Supervisor courses, five Advanced/C3 courses, Production Power Awareness, and the Production & Coordination Career Branch.
+All **34 Stagehand Fundamentals lessons** have stable lesson → competency mappings.
 
-### Researched/planned nodes
+## Researched/planned Stagehand Field Skills
 
-The matrix now also carries content objects that are **researched/planned but not learner-facing builds**. These do not enter the 33-route current inventory.
+Research coverage and built learner coverage are deliberately separate states.
 
-Current examples:
+The Stagehand Field Skills universe now has planned/researched nodes for all remaining U01–U12 skill families:
 
 - `C-FLD-TEAM-LIFT` → `CMP-FLD-002`;
 - `C-FLD-CART-DOLLY-MOVEMENT` → `CMP-FLD-003`;
 - `C-FLD-CABLE-DEPLOY-GATHER` → `CMP-FLD-005`;
 - `C-FLD-CASE-BONEYARD-ORG` → `CMP-FLD-007`;
-- `C-FLD-WORK-AREA-RESET` → `CMP-FLD-008`.
+- `C-FLD-WORK-AREA-RESET` → `CMP-FLD-008`;
+- `C-FLD-PIPE-DRAPE` → `CMP-FLD-010`;
+- `C-FLD-SOFT-GOODS` → `CMP-FLD-011`;
+- `C-FLD-RISER-DECK-SUPPORT` → `CMP-FLD-012`;
+- `C-FLD-SCENERY-MOVEMENT` → `CMP-FLD-013`;
+- `C-FLD-TOOLS-READINESS` → `CMP-FLD-014`;
+- `C-FLD-MARKING-LABELING` → `CMP-FLD-015`;
+- `C-FLD-DOCK-HANDOFF` → `CMP-FLD-016`.
 
-This state distinction is intended to power the owner-facing progression map: built coverage, researched/planned coverage and external-gate coverage must not share one visual state.
+These are **not added to the 33-route current inventory** because learner-facing course pages do not yet exist. Owner-map edges use `evidence_state: researched`, `display_on_owner_map: true`, `display_on_learner_map: false`.
 
-### Fundamentals
+The six already-built Field Skills retain their current built-route state separately.
 
-All **34 current Fundamentals lessons** have stable lesson → competency mappings. The mapping supports targeted additions rather than a wholesale replacement of Fundamentals.
+## Liability-priority source baseline
 
-### High-risk source backfill
+HR-01 through HR-10 now have a first substantive claim/source baseline:
 
-Substantial claim-level baselines now exist for:
+1. Electrics / Production Power;
+2. Rigging / Work at Height;
+3. Staging / Structures;
+4. Cargo / Transport Responsibility;
+5. Public Routes / Barricades / Cable Protectors;
+6. General Field Skills, including U01–U12 planned evidence nodes;
+7. Lighting controls/protocols;
+8. Audio RF/network/hearing-safety;
+9. Video / LED / display systems;
+10. Assessment / authority states.
 
-1. HR-01 Electrics / Production Power;
-2. HR-02 Rigging / Work at Height;
-3. HR-03 Staging / Structures;
-4. HR-04 Cargo / Transport Responsibility;
-5. HR-05 Public Routes / Barricades / Cable Protectors;
-6. HR-06 General Field Skills — core U01–U05;
-7. HR-07 Lighting control / network / protocol claims;
-8. HR-10 Assessment / Authority States.
+They remain **not publication-closed**. Model, jurisdiction, practitioner, owner, learner, accessibility, media and release dependencies remain explicit.
 
-These are **not publication-closed**. Exact model, jurisdiction, practitioner, owner and learner-validation dependencies remain explicit where applicable.
+## Assessment lineage
 
-### Lighting current-state result
-
-HR-07 normalizes current learner-facing protocol claims against:
-
-- ANSI E1.11-2024 / DMX512-A;
-- ANSI E1.20-2025 / RDM;
-- ANSI E1.31-2025 / sACN;
-- current Art-Net 4 specification.
-
-The current Lighting C2/C3 audit does **not** find GDTF/MVR learner instruction. GDTF/MVR therefore remain research/competency coverage rather than built-course coverage. The broad learner sentence combining IP addressing, routing, casting, priority, merging, VLANs and switch configuration remains blocked for experienced lighting-network practitioner review because protocol standards do not themselves mandate one VLAN/switch architecture.
-
-### Assessment lineage
-
-Normalized scored-question chains now exist as:
+Normalized scored-question chains use:
 
 `Q-*` → `QR-*` → `CL-*` → `SUPPORT_EDGE` → `SOURCE`
 
-The Road Case pilot includes work-control and evidence-state/authorization questions. HR-07 adds the existing Lighting DMX-universe question and rationale. REVIEW records explicitly distinguish AI-assisted structural audit from practitioner, legal, learner or owner approval.
+Current seeded examples exist across Road Case, Lighting, Audio and Video. Traceability does not establish psychometric validity, field competence or employer authorization.
+
+## MEDIA / visual evidence
+
+MEDIA is operational. Initial normalized records include:
+
+- the owned inline Lighting control-flow diagram;
+- two existing AI-generated Road Case training visuals.
+
+Safety-critical visuals cannot become `practitioner_reviewed` or `approved` without reviewer + review date. Approved media also requires complete text fallback. AI-generated physical-task visuals remain owner-review only until a qualified practitioner validates the depiction in the intended equipment/context.
 
 ## Validator
 
 `scripts/validate-research-matrix.mjs` checks:
 
 - JSONL parsing and unique IDs;
-- logical-table partition selection without treating `content_lineage_edges*` as CONTENT;
-- required fields;
-- strict canonical SOURCE `evidence_type` and `authority_level` enums;
-- SUPPORT_EDGE strength/state values, including temporary descriptive aliases already present in early HR packets;
-- CONTENT, SOURCE, COMPETENCY_CONTENT_EDGE and CONTENT_LINEAGE_EDGE references;
-- REVIEW target/reference structure;
+- logical partition selection;
+- required fields and canonical SOURCE enums;
+- CONTENT/SOURCE/COMPETENCY/LINEAGE/REVIEW/MEDIA references;
+- assessment `Q → QR → claim/boundary` completeness;
+- adequate evidence on externally-backed assessed claims;
 - primary-home collisions;
-- generic OSHA/USITT/ESTA root-link misuse;
-- scored-question `Q → QR → claim/boundary` completeness;
-- adequate claim/source support when the assessed claim requires external evidence.
+- generic root-link misuse;
+- MEDIA type/status and safety-critical release gates.
 
-The current execution environment cannot clone the remote branch to execute the Node validator locally, so a runtime PASS is **not claimed** from this session. Repository-side file/reference/taxonomy checks continue until a checkout/CI environment runs the script.
+The current tool environment has not executed the validator against a local checkout, so a runtime PASS is **not claimed** here.
 
-## Rules
+## Generated audit views
 
-1. Never infer `direct` support merely because a source appears in a bibliography.
-2. Crew Blueprint frameworks may have no external source edge when clearly labeled as internal framing.
-3. Safety/authority qualifiers live on the content record and support edge; they must survive wording changes.
-4. Competency mapping does not mean course completion establishes job competency or authority.
-5. External gates (`GATE-*`) are mapped as `boundary_only` relationships.
-6. Existing source-data and lesson IDs remain authoritative; matrix IDs wrap them.
-7. A source/version update creates source lineage rather than silently rewriting history.
-8. One competency may appear in many courses, but a given depth should normally have one canonical `primary_home`.
-9. Legacy/deep-link pages remain preserved until content/link/supersession audits prove their correct disposition.
-10. High-risk claims are backfilled before low-risk descriptive copy.
-11. Assessment completion never equals observed practice, verified work experience, employer authorization, external certification or licensure.
-12. Model-specific practical content requires the exact product/version evidence and appropriate qualified review before stronger release.
-13. Research coverage and learner-facing built coverage are separate states.
-14. Protocol literacy does not itself establish product-specific configuration authority or employer appointment.
+`scripts/generate-research-matrix-views.mjs` generates eight human-readable audit surfaces from canonical JSONL:
 
-## Active backfill order
+1. unsupported / needs-primary-source;
+2. qualification-sensitive;
+3. visual evidence / rights / reviewer / fallback;
+4. route → claim → source;
+5. source → affected content;
+6. assessment rationale completeness;
+7. supersession / legacy routes;
+8. domain completeness / planned-vs-built.
 
-See `research/MATRIX_HIGH_RISK_SOURCE_BACKFILL_QUEUE_2026-08-31.md`.
+Generated views are audit surfaces only; JSONL remains canonical.
 
-Completed to current baseline: **HR-01 through HR-07, plus HR-10**.
+## Core rules
 
-Next:
+1. Bibliography presence does not equal direct support.
+2. Crew Blueprint frameworks remain labeled internal framing.
+3. Safety/authority qualifiers must survive wording changes.
+4. Competency mapping/course completion does not establish job authority.
+5. External gates remain external.
+6. Research coverage and built learner coverage are separate states.
+7. Model-specific practical content requires exact product/version evidence and qualified review.
+8. Assessment completion does not equal observed practice, verified experience, employer authorization, certification or licensure.
+9. Safety-critical visuals require rights, context, reviewer state and a text fallback.
+10. Final course/backend structure will be informed by the matrix rather than by current page structure.
 
-1. HR-08 Audio RF/network/system claims;
-2. HR-09 Video LED/network/structural interfaces;
-3. expand MEDIA records;
-4. expand REVIEW and practitioner/learner validation records;
-5. generate unsupported / needs-primary-source / duplicate-primary-home / external-gate audit views;
-6. connect remaining research-only competencies to planned content IDs before new drafting.
+## Next active matrix work
 
-The resulting graph/matrix should inform final course structure, backend implementation and owner-facing progression views rather than allowing current page structure to dictate the domain model.
+- normalize Stagehand operational-call evidence O01–O08 onto `CMP-CORE-*` nodes;
+- expand full scored-question lineage across current routes;
+- expand MEDIA inventory across existing course diagrams/images;
+- use generated audit views to prioritize unsupported/qualification-sensitive claims;
+- connect remaining research-only department competencies to planned content IDs;
+- collect practitioner, learner and customer validation before final course/backend architecture decisions.
