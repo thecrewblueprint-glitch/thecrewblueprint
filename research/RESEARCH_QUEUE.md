@@ -379,7 +379,7 @@ The 21-course build exposed a smaller, release-focused queue. Use the [Expanded 
 
 | ID | Work | Current disposition |
 |---|---|---|
-| RQ-400 | Competency and role graph replacing a single universal job hierarchy | queued after RQ-000; preserve employer, local, venue, touring, and regional variation |
+| RQ-400 | Competency and role graph replacing a single universal job hierarchy | **completed 2026-08-31** — see [RQ-400 Competency Graph and Coverage Map](RQ-400-role-competency-graph-and-coverage-map_2026-08-31.md); surfaces Rigging Course 1/2/3 and Electrics Course 1/2 as the two priority gaps |
 | RQ-410 | Electrics research program | Packages 30, 36, and 38 support three review builds; ECQ-10 and ECQ-12 now target qualified review, jurisdiction/authority mapping, and awareness validation |
 | RQ-420 | Infrastructure research program | Power awareness review build exists; networking, load-bearing systems, logistics, and site-service branches remain future decisions |
 | RQ-430 | Production research program | Package 39 supports the three-track orientation build; ECQ-13 now targets track-specific sources, practitioner evidence, and scenarios |
