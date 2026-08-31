@@ -22,10 +22,22 @@ function readJsonl(name) {
     });
 }
 
-function readPartitions(prefix) {
+const logicalTablePatterns = {
+  content: /^content(?:_higher_tiers|_hr\d+.*)?\.jsonl$/,
+  sources: /^sources(?:_hr\d+.*)?\.jsonl$/,
+  support_edges: /^support_edges(?:_hr\d+.*)?\.jsonl$/,
+  competency_content_edges: /^competency_content_edges(?:_higher_tiers|_hr\d+.*)?\.jsonl$/,
+  content_lineage_edges: /^content_lineage_edges(?:_hr\d+.*)?\.jsonl$/,
+  reviews: /^reviews(?:_hr\d+.*)?\.jsonl$/,
+  media: /^media(?:_hr\d+.*)?\.jsonl$/,
+};
+
+function readLogicalTable(name) {
   if (!fs.existsSync(matrixDir)) return [];
+  const pattern = logicalTablePatterns[name];
+  if (!pattern) throw new Error(`No logical-table pattern registered for ${name}`);
   return fs.readdirSync(matrixDir)
-    .filter((name) => name.endsWith('.jsonl') && (name === `${prefix}.jsonl` || name.startsWith(`${prefix}_`)))
+    .filter((fileName) => pattern.test(fileName))
     .sort()
     .flatMap(readJsonl);
 }
@@ -60,14 +72,25 @@ function requireFields(records, fields, tableName, errors) {
   });
 }
 
+function assertEnum(records, field, allowedValues, tableName, errors) {
+  const allowed = new Set(allowedValues);
+  for (const row of records) {
+    if (row[field] !== undefined && row[field] !== null && !allowed.has(row[field])) {
+      errors.push(`${location(row, tableName)}: invalid ${field}=${row[field]}; allowed: ${[...allowed].join(', ')}`);
+    }
+  }
+}
+
 const errors = [];
 const warnings = [];
 
-// Logical tables may be partitioned physically as table.jsonl + table_<partition>.jsonl.
-const content = readPartitions('content');
-const sources = readPartitions('sources');
-const supportEdges = readPartitions('support_edges');
-const competencyEdges = readPartitions('competency_content_edges');
+const content = readLogicalTable('content');
+const sources = readLogicalTable('sources');
+const supportEdges = readLogicalTable('support_edges');
+const competencyEdges = readLogicalTable('competency_content_edges');
+const lineageEdges = readLogicalTable('content_lineage_edges');
+const reviews = readLogicalTable('reviews');
+const media = readLogicalTable('media');
 const courseInventory = readJsonl('course_inventory.jsonl');
 const fundamentalsMap = readJsonl('fundamentals_lesson_competency_map.jsonl');
 
@@ -75,6 +98,9 @@ assertUnique(content, 'content_id', 'CONTENT', errors);
 assertUnique(sources, 'source_id', 'SOURCE', errors);
 assertUnique(supportEdges, 'edge_id', 'SUPPORT_EDGE', errors);
 assertUnique(competencyEdges, 'competency_content_edge_id', 'COMPETENCY_CONTENT_EDGE', errors);
+assertUnique(lineageEdges, 'content_lineage_edge_id', 'CONTENT_LINEAGE_EDGE', errors);
+assertUnique(reviews, 'review_id', 'REVIEW', errors);
+assertUnique(media, 'media_id', 'MEDIA', errors);
 assertUnique(courseInventory, 'course_id', 'course_inventory.jsonl', errors);
 assertUnique(fundamentalsMap, 'lesson_id', 'fundamentals_lesson_competency_map.jsonl', errors);
 
@@ -82,10 +108,100 @@ requireFields(content, ['content_id', 'domain_id_primary', 'content_type', 'cour
 requireFields(sources, ['source_id', 'source_owner', 'title', 'evidence_type', 'authority_level', 'freshness_class', 'source_status'], 'SOURCE', errors);
 requireFields(supportEdges, ['edge_id', 'content_id', 'source_id', 'support_strength', 'review_status'], 'SUPPORT_EDGE', errors);
 requireFields(competencyEdges, ['competency_content_edge_id', 'competency_id', 'content_id', 'relationship_type', 'coverage_depth', 'authority_class', 'evidence_state'], 'COMPETENCY_CONTENT_EDGE', errors);
+requireFields(lineageEdges, ['content_lineage_edge_id', 'from_content_id', 'to_content_id', 'relationship_type', 'required', 'review_status'], 'CONTENT_LINEAGE_EDGE', errors);
+requireFields(reviews, ['review_id', 'content_id_or_domain_id', 'review_type', 'reviewer_name_or_role', 'review_date', 'disposition', 'findings'], 'REVIEW', errors);
 requireFields(courseInventory, ['course_id', 'title', 'route_file', 'domain_id_primary', 'tier_learning', 'inventory_state', 'publication_state'], 'course_inventory.jsonl', errors);
 requireFields(fundamentalsMap, ['lesson_id', 'lesson_name', 'module_id', 'primary_competency_id', 'coverage_state'], 'fundamentals_lesson_competency_map.jsonl', errors);
 
-const contentIds = new Set(content.map((row) => row.content_id));
+assertEnum(sources, 'evidence_type', [
+  'law_regulation',
+  'consensus_standard',
+  'official_spec',
+  'credential_job_analysis',
+  'manufacturer',
+  'employer',
+  'union_local',
+  'association',
+  'academic',
+  'government_guidance',
+  'trade_secondary',
+  'practitioner',
+  'public_unverified',
+  'internal_research',
+  'crew_blueprint_framework',
+], 'SOURCE', errors);
+
+assertEnum(sources, 'authority_level', [
+  'controlling',
+  'high',
+  'contextual',
+  'supporting',
+  'unverified',
+  'internal_framing',
+], 'SOURCE', errors);
+
+assertEnum(supportEdges, 'support_strength', [
+  'direct',
+  'partial',
+  'corroborating',
+  'context_only',
+  'framing_only',
+  'contradicts',
+  'unresolved',
+], 'SUPPORT_EDGE', errors);
+
+assertEnum(supportEdges, 'review_status', [
+  'unreviewed',
+  'mapped',
+  'verified',
+  'needs_practitioner',
+  'needs_primary_source',
+  'rejected',
+  'superseded',
+], 'SUPPORT_EDGE', errors);
+
+assertEnum(lineageEdges, 'relationship_type', [
+  'has_rationale',
+  'rationale_derived_from_claim',
+  'assesses_claim',
+  'explains',
+  'practice_observes',
+  'visual_depicts',
+  'contextualizes',
+], 'CONTENT_LINEAGE_EDGE', errors);
+
+assertEnum(lineageEdges, 'review_status', [
+  'unreviewed',
+  'matrixed',
+  'verified',
+  'needs_practitioner',
+  'rejected',
+  'superseded',
+], 'CONTENT_LINEAGE_EDGE', errors);
+
+assertEnum(reviews, 'review_type', [
+  'owner',
+  'practitioner',
+  'legal',
+  'safety',
+  'learner',
+  'accessibility',
+  'citation',
+  'freshness',
+  'rights',
+], 'REVIEW', errors);
+
+assertEnum(reviews, 'disposition', [
+  'accepted',
+  'accepted_with_qualification',
+  'revise',
+  'blocked',
+  'not_applicable',
+  'superseded',
+], 'REVIEW', errors);
+
+const contentById = new Map(content.map((row) => [row.content_id, row]));
+const contentIds = new Set(contentById.keys());
 const sourceIds = new Set(sources.map((row) => row.source_id));
 const courseIds = new Set(courseInventory.map((row) => row.course_id));
 
@@ -97,6 +213,18 @@ for (const edge of supportEdges) {
 for (const edge of competencyEdges) {
   if (!contentIds.has(edge.content_id)) errors.push(`${location(edge, 'COMPETENCY_CONTENT_EDGE')}: ${edge.competency_content_edge_id} references missing content ${edge.content_id}`);
   if (!/^(CMP|GATE)-/.test(edge.competency_id)) errors.push(`${location(edge, 'COMPETENCY_CONTENT_EDGE')}: invalid competency/gate ID ${edge.competency_id}`);
+}
+
+for (const edge of lineageEdges) {
+  if (!contentIds.has(edge.from_content_id)) errors.push(`${location(edge, 'CONTENT_LINEAGE_EDGE')}: ${edge.content_lineage_edge_id} references missing from_content_id ${edge.from_content_id}`);
+  if (!contentIds.has(edge.to_content_id)) errors.push(`${location(edge, 'CONTENT_LINEAGE_EDGE')}: ${edge.content_lineage_edge_id} references missing to_content_id ${edge.to_content_id}`);
+}
+
+for (const review of reviews) {
+  const target = review.content_id_or_domain_id;
+  if (!contentIds.has(target) && !/^D-[A-Z0-9-]+$/.test(target)) {
+    errors.push(`${location(review, 'REVIEW')}: ${review.review_id} references unknown content/domain target ${target}`);
+  }
 }
 
 for (const row of content) {
@@ -133,7 +261,55 @@ for (const edge of supportEdges) {
   }
 }
 
-console.log(`Research matrix validation\n- CONTENT: ${content.length}\n- SOURCE: ${sources.length}\n- SUPPORT_EDGE: ${supportEdges.length}\n- COMPETENCY_CONTENT_EDGE: ${competencyEdges.length}\n- COURSE inventory: ${courseInventory.length}\n- Fundamentals lesson mappings: ${fundamentalsMap.length}`);
+// Assessment traceability: each matrixed scored question must resolve Q → QR → CL/Boundary.
+const sourceRequiredClassifications = new Set([
+  'external_fact',
+  'source_backed_instruction',
+  'cross_source_pattern',
+  'practitioner_convention',
+  'manufacturer_or_model_procedure',
+  'employer_or_venue_procedure',
+  'safety_boundary',
+]);
+const adequateEvidenceStrength = new Set(['direct', 'partial', 'corroborating']);
+
+for (const question of content.filter((row) => row.content_type === 'question')) {
+  const rationaleEdges = lineageEdges.filter((edge) => edge.from_content_id === question.content_id && edge.relationship_type === 'has_rationale');
+  if (rationaleEdges.length !== 1) {
+    errors.push(`${location(question, 'CONTENT')}: question ${question.content_id} requires exactly one has_rationale edge; found ${rationaleEdges.length}`);
+    continue;
+  }
+
+  const rationale = contentById.get(rationaleEdges[0].to_content_id);
+  if (!rationale || rationale.content_type !== 'answer_rationale') {
+    errors.push(`${location(rationaleEdges[0], 'CONTENT_LINEAGE_EDGE')}: has_rationale target must be answer_rationale CONTENT`);
+    continue;
+  }
+
+  const claimEdges = lineageEdges.filter((edge) => edge.from_content_id === rationale.content_id && edge.relationship_type === 'rationale_derived_from_claim');
+  if (!claimEdges.length) {
+    errors.push(`${location(rationale, 'CONTENT')}: rationale ${rationale.content_id} has no rationale_derived_from_claim edge`);
+    continue;
+  }
+
+  for (const claimEdge of claimEdges) {
+    const claim = contentById.get(claimEdge.to_content_id);
+    if (!claim || !['claim', 'boundary'].includes(claim.content_type)) {
+      errors.push(`${location(claimEdge, 'CONTENT_LINEAGE_EDGE')}: rationale target ${claimEdge.to_content_id} must be claim or boundary CONTENT`);
+      continue;
+    }
+
+    if (claim.content_classification === 'crew_blueprint_framework') continue;
+    if (!sourceRequiredClassifications.has(claim.content_classification)) continue;
+
+    const evidence = supportEdges.filter((edge) => edge.content_id === claim.content_id && adequateEvidenceStrength.has(edge.support_strength));
+    if (!evidence.length) {
+      errors.push(`${location(claim, 'CONTENT')}: assessment claim ${claim.content_id} has no direct/partial/corroborating SUPPORT_EDGE`);
+    }
+  }
+}
+
+console.log(`Research matrix validation\n- CONTENT: ${content.length}\n- SOURCE: ${sources.length}\n- SUPPORT_EDGE: ${supportEdges.length}\n- COMPETENCY_CONTENT_EDGE: ${competencyEdges.length}\n- CONTENT_LINEAGE_EDGE: ${lineageEdges.length}\n- REVIEW: ${reviews.length}\n- MEDIA: ${media.length}\n- COURSE inventory: ${courseInventory.length}\n- Fundamentals lesson mappings: ${fundamentalsMap.length}`);
 
 if (warnings.length) {
   console.log(`\nWarnings (${warnings.length}):`);
