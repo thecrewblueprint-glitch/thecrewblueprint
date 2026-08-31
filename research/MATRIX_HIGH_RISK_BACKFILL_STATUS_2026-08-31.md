@@ -4,7 +4,7 @@
 **Branch:** `research/mdq-010-stagehand-field-skills-universe`  
 **Purpose:** Track actual completion state of the liability-first MDQ-001 claim/source backfill.
 
-This status file records source-traceability progress only. It does not grant learner qualification, jobsite authority, certification, licensure, structural acceptance, electrical authority, rigging authority, driver/load acceptance, or employer appointment.
+This status file records source-traceability progress only. It does not grant learner qualification, jobsite authority, certification, licensure, structural acceptance, electrical authority, rigging authority, driver/load acceptance, crowd-management authority, accessibility approval, or employer appointment.
 
 ## HR-01 — Electrics / Production Power
 
@@ -118,12 +118,41 @@ Still open:
 - qualified practitioner review;
 - no Crew Blueprint state may traverse `GATE-DRIVER/CARGO` into driver/load-acceptance authority.
 
+## HR-05 — Public Routes / Barricades / Cable Protectors
+
+**State:** `accessibility + event-authority baseline mapped; model/public-route practical release blocked`
+
+Added:
+
+- 3 SOURCE records covering DOJ 2010 ADA Standards, U.S. Access Board accessible-route criteria, and a current NPS National Capital Region public-event/AHJ requirements example;
+- 6 high-risk CONTENT claim/boundary records across Barricade Setup and Cable Ramps & Protectors;
+- 7 SUPPORT_EDGE records;
+- 6 COMPETENCY_CONTENT_EDGE records linking the field skills to `CMP-CORE-018` public/accessibility-route awareness and explicit review gates.
+
+Key result:
+
+The matrix separates:
+
+- physical stagehand support;
+- event layout ownership;
+- crowd/security management;
+- emergency egress and life-safety approval;
+- accessibility-route compliance/approval;
+- traffic/vehicle-control authority;
+- AHJ/venue acceptance.
+
+The 2010 ADA Standards expressly include temporary as well as permanent buildings/facilities within their scope where applicable and establish technical accessible-route criteria. A cable-protector label or visual appearance does not establish that an entire temporary route is compliant.
+
+The NPS National Capital Region source is retained only as a jurisdiction-specific example showing that event plans, egress, crowd management and occupancy/AHJ approval may sit outside stagehand authority. It is not generalized nationally.
+
+Both current practical routes contain product/model setup content. This matrix pass does not extend those procedures. Stronger release requires exact product/model documentation plus qualified adult workplace/practitioner and event-route authority review.
+
 ## Next active item
 
-**HR-05 — Public Routes / Barricades / Cable Protectors**
+**HR-10 — Assessment / Authority States**
 
-The next pass should map accessibility, egress/life-safety, venue/event-plan and model-specific authority boundaries without turning physical support lessons into crowd-management, traffic-control, accessibility-approval or public-safety authority.
+The next pass should establish question → rationale → claim → source lineage and the REVIEW table, while keeping viewed, knowledge-checked, observed practice, verified experience, employer authorization, external credential and licensure as distinct record states.
 
 ## Program status
 
-HR-01 through HR-04 are **not publication-closed**. They are substantially better sourced and now carry explicit unresolved dependencies instead of generic bibliography links or implied authority.
+HR-01 through HR-05 are **not publication-closed**. They are substantially better sourced and now carry explicit unresolved dependencies instead of generic bibliography links or implied authority.
