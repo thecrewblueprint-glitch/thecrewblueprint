@@ -19,14 +19,14 @@ function readJsonl(name) {
 }
 
 const logicalTablePatterns = {
-  content: /^content(?:_higher_tiers|_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  sources: /^sources(?:_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  support_edges: /^support_edges(?:_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  competency_content_edges: /^competency_content_edges(?:_higher_tiers|_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  content_lineage_edges: /^content_lineage_edges(?:_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  reviews: /^reviews(?:_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  media: /^media(?:_hr\d+.*|_stagehand.*)?\.jsonl$/,
-  research_competency_edges: /^research_competency_edges(?:_.*)?\.jsonl$/,
+  content: /^content(?:_(?!lineage_edges)[^.]+)?\.jsonl$/,
+  sources: /^sources(?:_[^.]+)?\.jsonl$/,
+  support_edges: /^support_edges(?:_[^.]+)?\.jsonl$/,
+  competency_content_edges: /^competency_content_edges(?:_[^.]+)?\.jsonl$/,
+  content_lineage_edges: /^content_lineage_edges(?:_[^.]+)?\.jsonl$/,
+  reviews: /^reviews(?:_[^.]+)?\.jsonl$/,
+  media: /^media(?:_[^.]+)?\.jsonl$/,
+  research_competency_edges: /^research_competency_edges(?:_[^.]+)?\.jsonl$/,
 };
 
 function readLogicalTable(name) {
