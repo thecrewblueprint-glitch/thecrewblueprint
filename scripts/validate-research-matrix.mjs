@@ -82,7 +82,7 @@ assertUnique(researchCompetencyEdges, 'research_competency_edge_id', 'RESEARCH_C
 assertUnique(courseInventory, 'course_id', 'course_inventory.jsonl', errors);
 assertUnique(fundamentalsMap, 'lesson_id', 'fundamentals_lesson_competency_map.jsonl', errors);
 
-requireFields(content, ['content_id','domain_id_primary','content_type','course_id','tier_learning','authority_class','learner_facing_text','content_classification','publication_state'], 'CONTENT', errors);
+requireFields(content, ['content_id','domain_id_primary','content_type','tier_learning','authority_class','learner_facing_text','content_classification','publication_state'], 'CONTENT', errors);
 requireFields(sources, ['source_id','source_owner','title','evidence_type','authority_level','freshness_class','source_status'], 'SOURCE', errors);
 requireFields(supportEdges, ['edge_id','content_id','source_id','support_strength','review_status'], 'SUPPORT_EDGE', errors);
 requireFields(competencyEdges, ['competency_content_edge_id','competency_id','content_id','relationship_type','coverage_depth','authority_class','evidence_state'], 'COMPETENCY_CONTENT_EDGE', errors);
@@ -142,7 +142,7 @@ for (const asset of media) {
   if (asset.status === 'approved' && !asset.text_fallback_complete) errors.push(`${location(asset,'MEDIA')}: approved ${asset.media_id} requires a complete text fallback`);
 }
 
-for (const row of content) if (!courseIds.has(row.course_id) && row.publication_state !== 'planned') warnings.push(`${location(row,'CONTENT')}: course_id ${row.course_id} not yet in course_inventory.jsonl`);
+for (const row of content) if (row.course_id && !courseIds.has(row.course_id) && row.publication_state !== 'planned') warnings.push(`${location(row,'CONTENT')}: course_id ${row.course_id} not yet in course_inventory.jsonl`);
 for (const course of courseInventory) if (!content.find((row) => row.content_id === course.course_id && row.content_type === 'course')) warnings.push(`course ${course.course_id}: canonical inventory exists but CONTENT course record has not yet been backfilled`);
 for (const row of fundamentalsMap) for (const id of [row.primary_competency_id,...(row.secondary_competency_ids || [])]) if (!validCompetencyId(id)) errors.push(`${location(row,'fundamentals map')}: invalid competency ID ${id}`);
 
