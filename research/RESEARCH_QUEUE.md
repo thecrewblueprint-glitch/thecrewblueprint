@@ -16,6 +16,8 @@ This is the source repository's active execution queue for Crew Blueprint resear
 
 ## Accepted direction
 
+**Current Field Skills direction — 2026-08-31:** The task-first redesign will reshape every Field Skill. Each physical-task lesson should use a concise explain-and-show format with written instruction, visual/narrated demonstration, and explicit in-field reinforcement. Research runs before owner review; public/unverified claims, cross-source patterns, and inference must be labeled so the owner reviews only the uncertain field-practice points. Package 51 records the redesign and Package 52 starts the replacement sequence with **Move a Road Case With a Partner**. The older five Field Skill builds and RQ-SFS-01 through RQ-SFS-05 remain preserved evidence and optional/special-assignment material; they no longer define the immediate core sequence.
+
 The following product decisions are already accepted and are not open research questions:
 
 1. **Stagehand Fundamentals should be divided into smaller, focused learning parts.**
