@@ -102,6 +102,7 @@ const contentClassifications = [
   'employer_or_venue_procedure',
   'safety_boundary',
   'crew_blueprint_framework',
+  'assessment_prompt',
 ];
 const competencyEvidenceStates = [
   'mapped',
@@ -180,7 +181,7 @@ for (const [key, list] of primaryHomes) if (list.length > 1) warnings.push(`mult
 const rootLinkIds = new Set(['S-OSHA-ROOT-CURRENT','S-USITT-ROOT-CURRENT','S-ESTA-TSP-ROOT-CURRENT']);
 for (const edge of supportEdges) if (rootLinkIds.has(edge.source_id) && ['direct','corroborating'].includes(edge.support_strength)) errors.push(`${location(edge,'SUPPORT_EDGE')}: organization/root link ${edge.source_id} cannot be treated as ${edge.support_strength} without exact-source review`);
 
-const sourceRequiredClassifications = new Set(contentClassifications.filter((value) => value !== 'crew_blueprint_framework'));
+const sourceRequiredClassifications = new Set(contentClassifications.filter((value) => !['crew_blueprint_framework','assessment_prompt'].includes(value)));
 const adequateEvidenceStrength = new Set(['direct','partial','corroborating']);
 for (const question of content.filter((row) => row.content_type === 'question')) {
   const rationaleEdges = lineageEdges.filter((edge) => edge.from_content_id === question.content_id && edge.relationship_type === 'has_rationale');
