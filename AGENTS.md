@@ -22,6 +22,8 @@ Substantive agent-authored work normally uses:
 
 `work branch → coherent commits → draft PR → audit/review → required approval → merge → verify`
 
+For direct owner-requested work inside The Crew Blueprint, the request itself authorizes canonical integration unless the owner explicitly asks for a proposal, review, or work-branch-only result. In that path, finish means: make the focused change, run proportionate validation, update `main`, and verify the GitHub Pages result. Do not leave completed owner-requested work only on a branch or send the owner a PR for review.
+
 A branch or PR is proposed/in-progress state. Opening a PR is not permission to merge. Repository write authority, PR authority, and merge authority remain separate.
 
 If a session may end before completion, preserve coherent work and update the PR with completed work, unfinished work, validation performed, known issues, and the exact continuation step. Leave interrupted work unmerged.
@@ -54,6 +56,8 @@ Follow the Anti-Robot Course Writing Rule in `CLAUDE.md`. Course writing should 
 For content or diagram changes, link-check all HTML and resolve broken internal links before representing the PR as ready to ship.
 
 Validate the affected pages/content proportionately to the change. Do not restore or enable paid CI, metered runners, external validation services, or other cost-incurring automation without explicit owner authorization.
+
+Keep execution proportionate: prefer one inspection pass, one focused edit or shared implementation, one relevant validation batch, and one canonical checkpoint. Avoid repetitive per-file commands when a shared component or bounded batch can safely produce the same result.
 
 After an accepted Crew Blueprint change is merged and verified, synchronize durable ecosystem state into `50yearroadmap` only after the owner explicitly switches repository write authority. A merge here does not authorize writes there.
 
