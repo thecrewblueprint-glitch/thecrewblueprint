@@ -4,25 +4,25 @@
 **Status:** Detailed source-grounded research packet; suitable for competency synthesis and bounded drafting, not publication release  
 **Domain:** `D-VID` Video / LED / Broadcast  
 **Depends on:** MDQ-000–003, MDQ-040 role architecture, Packages 08/08A/13/13A, current Video C1/C2 materials  
-**Purpose:** Close major curriculum gaps across LED display systems, signal standards/flow, switching/scaling/screen management, media/playback, camera/broadcast interfaces, projection, AV-over-IP/networking, sector workflows and department leadership.
+**Purpose:** Close major curriculum gaps across LED display systems, signal standards/flow, processing/switching/screen management, projection, camera/broadcast interfaces, media/playback/show control, AV-over-IP/networking, documentation/commissioning and department leadership.
+
+> **Canonical-ID correction:** This file follows the master queue exactly: MDQ-044 = Projection; MDQ-045 = Cameras/Broadcast; MDQ-046 = Media Servers/Playback/Graphics/Show Control; MDQ-047 = AV-over-IP; MDQ-048 = Documentation/Commissioning/Leadership.
 
 ---
 
 ## 1. Controlling curriculum principle
 
-Video is a collection of adjacent systems rather than one ladder.
+Video is a collection of adjacent systems rather than one ladder. Parallel pathways include:
 
-Parallel pathways include:
-
-1. **video utility / cable / support**;
-2. **LED display technician / processing**;
-3. **switching / presentation / screen management**;
-4. **playback / media server**;
-5. **camera / CCU / shading / broadcast utility**;
-6. **projection**;
-7. **video engineering / signal / sync**;
-8. **AV-over-IP / network video**;
-9. **lead / EIC / system-design responsibility**.
+1. video utility / cable / support;
+2. LED display technician / processing;
+3. switching / presentation / screen management;
+4. projection;
+5. camera / CCU / shading / broadcast utility;
+6. playback / media server / graphics;
+7. video engineering / signal / sync;
+8. AV-over-IP / network video;
+9. lead / EIC / system-design responsibility.
 
 A learner can be advanced in one branch and junior in another. Course completion does not appoint a learner as EIC, TD, camera shader, LED lead, projectionist, media-server operator, network engineer or other employer-controlled role.
 
@@ -30,69 +30,23 @@ A learner can be advanced in one branch and junior in another. Course completion
 
 # MDQ-041 — LED display hardware and build systems
 
-## Scope
+## System map
 
-Teach LED displays as a system architecture and role interface, not as an unsupervised structural-build manual.
-
-## Component/system map
-
-Learners should recognize:
-
-- panel/cabinet/module families;
-- receiving electronics;
-- processor/controller;
-- power/data topology concepts;
-- signal distribution;
-- support/rigging/ground-support interfaces;
-- service/spare modules;
-- calibration/data relationships;
-- environmental/model-specific limits.
+Learners should recognize panel/cabinet/module families, receiving electronics, processor/controller, power/data topology concepts, signal distribution, support/rigging/ground-support interfaces, spares/service modules, calibration relationships and model/environment limits.
 
 ## Responsibility layers
 
-### Support / utility
+**Support / utility** — identify component families, preserve labels/orientation, protect connectors, follow the assigned system/lead, report mismatches/damage, and recognize structural/electrical boundaries.
 
-- identify panel/case/component families;
-- preserve labels/orientation;
-- follow the assigned lead and exact system;
-- protect connectors/data/power interfaces;
-- report damage or mismatched components;
-- recognize controlled structural/electrical boundaries.
+**LED technician** — system topology, processor/receiving-card relationships, mapping/canvas concepts, resolution/pixel-density relationships, configuration/version awareness, verification concepts, spare/component boundaries, calibration/color-uniformity concepts.
 
-### LED technician
+**Lead / engineer** — system specification, compatibility, processing strategy, redundancy/spares, signal/power/support interfaces, QC/acceptance and change control.
 
-Conceptual competencies include:
+Brompton Tessera and NovaStar are representative professional processing ecosystems. Product-specific workflows remain manufacturer/version specific.
 
-- system topology;
-- processor/receiving-card relationships;
-- mapping/canvas concepts;
-- resolution/pixel-density relationships;
-- model/configuration/version awareness;
-- test/verification concepts;
-- spare/component replacement boundaries;
-- calibration and color-uniformity concepts.
+Structural support, flown-display rigging and temporary power remain controlled external responsibilities.
 
-### Lead / engineer
-
-- system specification;
-- model compatibility;
-- processing strategy;
-- redundancy/spares;
-- signal/power/support interfaces;
-- acceptance/QC;
-- documentation/change control.
-
-## Current manufacturer evidence
-
-Brompton Tessera documentation demonstrates mature processor-side concepts including panel mapping, test patterns, calibration, HDR-related processing and thermal/color compensation. NovaStar documentation demonstrates an alternate professional processing/configuration ecosystem.
-
-These are representative product ecosystems, not universal operating procedures.
-
-## Boundary
-
-Structural support, flown-display rigging, temporary power and other controlled work remain with the responsible qualified/authorized personnel and exact manufacturer/system documentation.
-
-**State:** `draftable` for architecture/recognition/role content; model-specific practicals require manufacturer/practitioner review.
+**State:** `draftable` for architecture/recognition/roles; model-specific practicals need manufacturer/practitioner review.
 
 ---
 
@@ -104,50 +58,19 @@ Structural support, flown-display rigging, temporary power and other controlled 
 
 ## Core concepts
 
-Teach:
-
-- resolution;
-- frame rate;
+- resolution and frame rate;
 - progressive/interlaced awareness;
 - aspect ratio;
-- color space/colorimetry awareness;
-- bit depth;
-- chroma sampling;
-- signal reference/sync;
+- color-space/colorimetry awareness;
+- bit depth and chroma-sampling concepts;
+- reference/sync;
 - conversion/scaling;
 - metadata/handshake constraints;
-- cable/transport limits as product/system-specific.
+- product/system-specific transport limits.
 
-## Transport families
+Transport families include SDI, HDMI, DisplayPort, fiber/optical transport, IP/network video and smaller-system USB/webcam-style interfaces.
 
-Recognize major families without turning connector memorization into the curriculum:
-
-- SDI;
-- HDMI;
-- DisplayPort;
-- optical/fiber transport;
-- IP/network video;
-- USB/webcam-style interfaces in smaller systems.
-
-## Failure categories
-
-Teach layered diagnosis:
-
-- source/content;
-- format mismatch;
-- transport/cabling;
-- conversion;
-- routing;
-- sync/reference;
-- processing/scaling;
-- destination/display;
-- control/network layer.
-
-## Curriculum disposition
-
-- Department Support: signal-chain recognition and cable ownership.
-- Department Systems: format/routing/conversion/sync reasoning.
-- Advanced/Engineer: complex distribution, redundancy and system design.
+Troubleshooting should be layered by source/content, format, transport, conversion, routing, sync/reference, processing, destination and control/network layers.
 
 **State:** `draftable`.
 
@@ -157,101 +80,53 @@ Teach layered diagnosis:
 
 ## System families
 
-- live production switchers;
+- live-production switchers;
 - presentation switchers;
 - scalers;
 - routers;
 - multiviewers;
 - LED processors;
 - screen-management systems;
-- confidence / DSM feed systems;
+- confidence / DSM feeds;
 - record/stream outputs.
 
-## Transferable switcher mental model
+## Transferable switcher model
 
-Teach:
+Teach inputs/sources, program vs preview, buses/layers/keys, transitions, graphics/stills, aux outputs, monitoring, macros/automation concepts, configuration/show-file concepts and downstream destinations.
 
-- inputs/sources;
-- program vs preview;
-- buses/layers/keys;
-- transitions;
-- stills/graphics;
-- aux outputs;
-- multiview monitoring;
-- macros/automation concepts;
-- snapshot/configuration/show-file concepts;
-- downstream destinations.
+Blackmagic ATEM is one accessible example; product menus are not the transferable curriculum.
 
-Blackmagic ATEM documentation provides one accessible example of program/preview and multi-camera switching, but product menus must remain vendor-specific.
-
-## Scaling/screen management
-
-Concepts:
-
-- source canvas vs destination canvas;
-- scaling/cropping;
-- aspect management;
-- multi-screen layouts;
-- output mapping;
-- confidence/presenter feeds;
-- EDID/HDCP awareness as compatibility/security constraints;
-- genlock/reference where applicable.
-
-## Curriculum disposition
-
-- Department Systems: switching/scaling/screen-management mental model.
-- Operator branch: vendor/product-family workflow.
-- Advanced/Engineer: system architecture, redundancy and timing.
+Scaling/screen-management concepts include source vs destination canvas, scaling/cropping, aspect management, multi-screen layouts, output mapping, confidence feeds, EDID/HDCP awareness and reference/genlock where applicable.
 
 **State:** `draftable`.
 
 ---
 
-# MDQ-044 — Playback and media-server systems
-
-## Scope
-
-Media playback is an operator/specialist branch crossing video, lighting, broadcast and show control.
+# MDQ-044 — Projection systems
 
 ## Transferable concepts
 
-- media asset;
-- codec/container awareness;
-- resolution/frame-rate relationship;
-- alpha/key/fill awareness;
-- playlist/cue/timeline concepts;
-- multiple outputs/canvases;
-- synchronization/timecode/trigger interfaces;
-- redundant playback concepts;
-- output routing;
-- versioned content and show-file packages.
+- projector / lens / surface relationship;
+- throw/lens-ratio awareness;
+- image size and placement;
+- brightness/contrast as environment/system concepts;
+- focus/geometry;
+- blend/warp concepts;
+- content resolution/frame rate;
+- color matching;
+- scenic/surface interaction;
+- environmental-light interaction;
+- media-server ownership/handoff.
 
-## Media-server branch
+## Boundary
 
-Advanced systems may include:
+Exact hanging/rigging, temporary power, laser-source service, high-access work and model-specific service remain with authorized personnel/manufacturer pathways.
 
-- mapping and compositing;
-- real-time content;
-- tracking/data interfaces;
-- LED/projection canvases;
-- genlock/sync;
-- network control;
-- show control;
-- redundancy/failover.
-
-Do not treat any one vendor platform as the transferable curriculum model.
-
-## Curriculum disposition
-
-- Department Systems: playback/sync/signal concepts.
-- Operator/Specialist: media-server workflow.
-- Advanced: multi-system integration and redundancy.
-
-**State:** `draftable`; current platform comparisons remain a later freshness task.
+**State:** `draftable` for conceptual/system content; specialist alignment/operation needs reviewed product-specific practice.
 
 ---
 
-# MDQ-045 — Camera, broadcast and video-engineering interfaces
+# MDQ-045 — Cameras and live/broadcast interface
 
 ## Role families
 
@@ -261,189 +136,102 @@ Do not treat any one vendor platform as the transferable curriculum model.
 - video engineer;
 - technical director/switcher operator;
 - EIC / engineer-in-charge context;
-- playback/replay;
 - record/stream engineering;
-- graphics interfaces.
+- replay/graphics interfaces.
 
 ## Camera/system concepts
 
-Teach conceptually:
-
-- image sensor/lens path;
-- exposure;
-- frame rate/shutter interaction;
-- white balance/color temperature/tint;
-- focus/depth-of-field awareness;
-- camera return/tally/comms;
-- SDI/IP transport;
-- reference/genlock;
-- shading/matching as a specialist role.
+Teach image sensor/lens path, exposure, frame-rate/shutter interaction, white balance/color temperature/tint, focus/depth-of-field awareness, return/tally/comms, SDI/IP transport, reference/genlock and shading/matching as a specialist role.
 
 ## Broadcast/IP convergence
 
-SMPTE ST 2110 is a central current source family for professional media over managed IP networks. The suite treats video, audio and ancillary data as separately timed IP essence streams referenced to common timing.
+SMPTE ST 2110 is a central professional-media-over-IP source family. It treats video, audio and ancillary data as separately timed IP essence streams referenced to common timing. It is a professional managed-media architecture, not a universal requirement for every event.
 
-ST 2110 should be taught as a professional-media network architecture, not as a universal requirement for every event.
-
-## Current standard context
-
-SMPTE identifies ST 2110 as an actively developed multipart suite; core documents were revised around 2022/2023 and the suite continues to expand.
-
-## Curriculum disposition
-
-- Department Support: camera/video-chain recognition.
-- Department Systems: sync/format/routing/broadcast interfaces.
-- Camera/Engineering specialist branches: deeper operation/configuration under employer assignment.
-
-**State:** `draftable` for architecture and interfaces.
+**State:** `draftable` for architecture/interfaces; specialist operation remains employer-assigned.
 
 ---
 
-# MDQ-046 — Projection systems and visual-environment interfaces
-
-## Scope
-
-Projection should be its own video branch while remaining adjacent to lighting/scenic/media.
+# MDQ-046 — Media servers, playback, graphics and show control
 
 ## Transferable concepts
 
-- projector/lens/surface relationship;
-- throw/lens-ratio awareness;
-- image size and placement;
-- brightness/contrast as environmental/system concepts;
-- focus/geometry;
-- edge blend / warp concepts;
-- content resolution/frame-rate;
-- color matching;
-- scenic/surface interaction;
-- environmental light interaction;
-- media-server ownership/handoff.
+- media asset and content version;
+- codec/container awareness;
+- resolution/frame-rate relationships;
+- alpha/key/fill awareness;
+- playlist/cue/timeline concepts;
+- multi-output/canvas concepts;
+- synchronization/timecode/trigger interfaces;
+- output routing;
+- graphics/CG interfaces;
+- redundant-playback concepts;
+- show-file/package versioning.
 
-## Boundary
+Advanced media-server systems may add mapping/compositing, real-time content, tracking/data interfaces, LED/projection canvases, genlock/sync, network control, show-control integration and failover.
 
-Exact hanging/rigging, temporary power, laser-source service, high-access work and model-specific service remain with the appropriate authorized personnel/manufacturer pathway.
+Do not treat any one platform as the transferable curriculum model. QLab, Resolume and other platform families should be versioned vendor/product branches.
 
-## Curriculum disposition
-
-- Department Systems: projection architecture and signal interfaces.
-- Specialist: projection alignment/blending/system operation with reviewed model-specific practice.
-
-**State:** `draftable` for conceptual/system content.
+**State:** `draftable`; current platform comparisons remain freshness work.
 
 ---
 
-# MDQ-047 — AV-over-IP, network video and synchronization
+# MDQ-047 — AV-over-IP and video networking
 
 ## Standards landscape
 
-Current professional-video networking is not one protocol.
+Professional network video is not one protocol. Relevant families include:
 
-Relevant families include:
+- SMPTE ST 2110;
+- IPMX/open AV-over-IP ecosystems;
+- NDI and proprietary ecosystems;
+- RTP-based transport families;
+- AES67 audio interoperability within broader professional-media networks.
 
-- SMPTE ST 2110 for managed professional-media IP;
-- IPMX as an emerging/open AV-over-IP ecosystem related to ST 2110 concepts;
-- NDI and proprietary vendor ecosystems;
-- RTP and other network transport families;
-- AES67 for audio interoperability within broader professional-media networks.
+## Mental model
 
-## SMPTE ST 2110 mental model
+Teach independent media flows, common timing, managed IP transport, unicast/multicast concepts, PTP/reference timing, bandwidth/capacity, switching/network topology, QoS/traffic engineering awareness, redundancy, access/security/change control and monitoring/documentation.
 
-Teach:
+AVIXA resources reinforce that AV-over-IP transforms distribution from simple point-to-point paths into encoder/network/decoder architectures.
 
-- independent audio/video/data flows;
-- common reference timing;
-- managed IP network;
-- RTP-based transport;
-- unicast/multicast concepts;
-- PTP timing;
-- bandwidth/capacity planning;
-- discovery/connection management as adjacent ecosystem functions.
-
-SMPTE documentation notes cooperation with AES, IEEE, AMWA/NMOS, EBU and VSF in the broader interoperability ecosystem.
-
-## Network-video fundamentals
-
-- address/subnet awareness;
-- switch/network topology;
-- bandwidth;
-- multicast;
-- QoS/traffic engineering awareness;
-- PTP/reference timing;
-- redundancy;
-- access/security/change control;
-- monitoring/documentation.
-
-AVIXA resources reinforce that AV-over-IP changes video distribution from simple point-to-point paths into networked encoder/switch/decoder architectures.
-
-## Curriculum disposition
-
-- Department Systems: network-video fundamentals.
-- Engineer/Network specialist: managed-media IP, sync, redundancy and interoperability.
-
-**State:** `draftable`; exact product/network configuration stays vendor/system specific.
+**State:** `draftable`; exact network/product configuration remains system-specific.
 
 ---
 
-# MDQ-048 — Video sector workflows and department leadership
+# MDQ-048 — Video documentation, commissioning and leadership
 
-## Touring / festival
+## Documentation families
 
-- LED/display package advance;
-- processor/screen-management handoff;
-- guest video/playback/camera interfaces;
-- compressed changeovers;
-- screen/content routing;
-- record/stream interfaces;
-- spares/redundancy.
+- signal-flow diagrams;
+- screen maps/canvases;
+- processor/configuration backups;
+- EDID/configuration records where relevant;
+- camera plots;
+- content/version inventories;
+- router/switcher/output maps;
+- network diagrams;
+- test-pattern/QC records;
+- change/revision logs;
+- advance documents;
+- show reports / damage / unresolved issues.
 
-## Corporate/convention
+## Commissioning / QC concepts
 
-- presentation switching;
-- confidence/DSM;
-- laptops/content compatibility;
-- projection/LED display;
-- breakout/general-session workflow;
-- show-caller/client communication;
-- streaming/recording.
+Teach verification of expected sources/destinations, configuration/version consistency, image/screen mapping, monitoring/test patterns, handoff and punch-list/change documentation. Structural, electrical or other controlled-system signoff remains with the applicable responsible authority.
 
-## Broadcast/sports
-
-- camera/shading;
-- switcher/TD;
-- replay/graphics;
-- comms;
-- reference/sync;
-- ST 2110 or SDI infrastructure depending system;
-- engineering/EIC responsibility.
-
-## Theatre/worship/venue
-
-- installed systems;
-- recurring content/show files;
-- camera/stream integration;
-- projection/LED;
-- lighting/scenic/media handoffs.
-
-## Rental shop
-
-- panel/cable/processor prep;
-- camera/switcher/router prep;
-- firmware/configuration/version awareness;
-- case/inventory/QC;
-- return/service triage.
-
-## Lead responsibilities
+## Leadership responsibilities
 
 - advance/specification;
-- crew/labor sequencing;
-- signal-flow and system documentation;
+- labor/crew sequencing;
+- signal/system documentation;
 - screen/canvas planning;
 - content ownership/versioning;
 - spares/redundancy;
 - vendor/client communication;
-- QC and acceptance;
+- QC/acceptance;
 - change management;
-- show reports/damage/issues.
+- show reports and closeout.
+
+Sector examples include touring/festival, corporate/convention, broadcast/sports, theatre/worship/venue and rental-shop workflows, but sector detail belongs primarily in MDQ-110–116 overlays.
 
 **State:** `draftable`; practitioner validation required.
 
@@ -459,9 +247,9 @@ From there:
 
 - LED Technician → Processing / Calibration / LED Lead;
 - Switcher / Presentation Operator → TD / screen-management specialist;
-- Playback Operator → Media Server / real-time specialist;
-- Camera Utility → Camera Operator → CCU/Shading / broadcast-camera specialist;
 - Projection Technician → projection specialist;
+- Camera Utility → Camera Operator → CCU/Shading / broadcast-camera specialist;
+- Playback Operator → Media Server / graphics / real-time specialist;
 - Video Engineer → signal/sync/network engineering → EIC/system design;
 - Shop Technician → prep/QC/service triage;
 - Video Lead → advance/labor/vendor/QC leadership.
@@ -477,8 +265,9 @@ Parallel branches can transfer laterally; they are not one rank ladder.
 | Cable/display support | T3 | A1 assigned support |
 | LED/signal/switching concepts | T4 | A0/A1 education |
 | LED-processing knowledge | T4/operator branch | actual system responsibility external |
-| Camera/switching knowledge | T4/operator branch | show responsibility external |
 | Projection knowledge | T4/specialist | exact setup/operation assigned externally |
+| Camera/switching knowledge | T4/operator branch | show responsibility external |
+| Media-server/playback knowledge | T4/operator branch | actual show responsibility external |
 | Network-video knowledge | T4/T7 | system/network authority external |
 | Rigging/power interfaces | awareness | controlled external boundary |
 | Lead workflow | T5 | does not appoint learner as lead |
@@ -489,56 +278,35 @@ Parallel branches can transfer laterally; they are not one rank ladder.
 # 12. Current official source ledger — core additions
 
 ## SMPTE
-
 - ST 2110 Suite: https://www.smpte.org/standards/st2110
 - ST 2110 FAQ: https://www.smpte.org/smpte-st-2110-faq
 
-Supports professional-media-over-IP architecture, timing, video/audio/data essence and current standards-suite status.
-
 ## AVIXA
-
 - https://www.avixa.org/
 - ANSI/AVIXA D401.01:2023 documentation standard
 
-Supports professional AV system documentation, networked AV and AV/IT interface evidence.
-
 ## Brompton Technology
-
 - https://www.bromptontech.com/online-help/
 
-Representative primary source for Tessera LED processing, mapping, test patterns, calibration and color-processing concepts. Product-specific.
-
 ## NovaStar
-
 - https://www.novastar.tech/
 
-Representative alternate LED processing/configuration ecosystem. Product-specific.
-
 ## Blackmagic Design
-
 - https://www.blackmagicdesign.com/products/atemsdi
 
-Representative live-production switching/program-preview/camera-control ecosystem. Product-specific.
-
-## GDTF/MVR / cross-domain data
-
-The Lighting MDQ packet covers current GDTF/MVR standards; these remain relevant to video/media/scenic device/scene data exchange where supported.
-
-## Media-server / playback vendors
-
-Maintain current primary docs/training from representative live-event media platforms. Vendor-specific claims must remain versioned.
+Manufacturer/platform sources support model-specific claims only and must remain versioned.
 
 ---
 
 # 13. Remaining unresolved Video evidence
 
 1. current LED processor/model ecosystem comparison;
-2. practitioner validation of panel/build/QC handoffs;
+2. practitioner validation of LED build/QC handoffs;
 3. signal-standard/version matrix for SDI/HDMI/DisplayPort/fiber/AV-over-IP;
 4. projection manufacturer/system comparison;
-5. media-server platform comparison;
-6. camera/broadcast title and workflow validation across touring/corporate/sports/worship;
-7. current NMOS/IPMX/NDI/interoperability source mapping;
+5. media-server/platform comparison;
+6. camera/broadcast title/workflow validation;
+7. current NMOS/IPMX/NDI/interoperability mapping;
 8. HDR/color-management/virtual-production branch;
 9. original/reviewed diagrams and visuals;
 10. assessment validity and learner usability;
@@ -551,7 +319,3 @@ Maintain current primary docs/training from representative live-event media plat
 **MDQ-041–048 state:** `researched` → largely `draftable` for bounded initial curriculum architecture.
 
 Not publication-ready: practitioner review, learner testing, exact model/standard verification, visual review, source freshness and claim-level matrixing remain required.
-
-## Next execution
-
-Use MDQ-040 + this packet for the Video competency/dependency graph and source crosswalk, then continue MDQ-051–057 Staging / Carpentry / Scenic detailed research.
