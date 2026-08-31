@@ -6,7 +6,11 @@
 
 ## Owner direction
 
-The five current field-skill builds are too long and devote too much space to compliance framing for single physical tasks. Rebuild them one task at a time with the owner describing normal jobsite practice before final instructional wording is written. The learner experience should show **how the task is done**, while preserving only the safety and authority boundaries needed to prevent a dangerous misunderstanding.
+The five current field-skill builds are too long and devote too much space to compliance framing for single physical tasks. Rebuild them one task at a time. The learner experience should show **how the task is done**, while preserving only the safety and authority boundaries needed to prevent a dangerous misunderstanding.
+
+**Owner clarification — 2026-08-31:** Use a research-first process. Search authoritative, industry-primary, industry-secondary, and public sources before asking the owner to reconstruct ordinary task knowledge. Label public/unverified claims, cross-source patterns, and inference at claim level so the owner can review only the uncertain field-practice points. The task-first redesign will reshape all Field Skills. These physical-task lessons use a concise explain-and-show format with in-field reinforcement rather than the retention model used for the broader awareness curriculum.
+
+Package 52 applies this method to **Move a Road Case With a Partner** and supersedes the interview-first dependency below. Preserve the original questions as a focused owner-review checklist only where research remains variable or unresolved.
 
 ## Evidence summary
 
