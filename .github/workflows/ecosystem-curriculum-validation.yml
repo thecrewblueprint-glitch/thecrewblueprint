@@ -1,0 +1,38 @@
+name: Ecosystem Curriculum Validation
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  validate:
+    if: ${{ !contains(github.event.head_commit.message || '', '[matrix-generated]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate ecosystem matrix
+        run: node scripts/generate-ecosystem-matrix.mjs
+      - name: Validate normalized research matrix
+        run: node scripts/validate-research-matrix.mjs
+      - name: Validate ecosystem curriculum
+        run: node scripts/validate-ecosystem-curriculum.mjs
+      - name: Generate matrix views
+        run: |
+          node scripts/generate-research-matrix-views.mjs
+          node scripts/generate-owner-competency-state-view.mjs
+      - name: Commit generated matrix state
+        if: github.event_name == 'push'
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/matrix research/ECOSYSTEM_COURSE_EVIDENCE_MATRIX_2026-08-31.md
+          git commit -m 'chore: sync ecosystem matrix [matrix-generated]'
+          git push
