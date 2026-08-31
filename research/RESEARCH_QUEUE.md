@@ -323,7 +323,7 @@ The department or venue lead controls the cable route and protector placement. T
 
 ### RQ-200 — Field Skills visual system
 
-**Status:** queued in parallel with the first Field Skill packet  
+**Status:** phase-one AI visual pass complete in Package 53; exact-equipment footage, licensing registry, learner testing, and qualified review remain queued
 **Goal:** Make physical skills understandable on a phone while keeping every safety-critical visual traceable to real equipment and reviewed procedure.
 
 **Deliverables**
