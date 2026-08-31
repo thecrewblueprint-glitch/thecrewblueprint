@@ -1,0 +1,716 @@
+<title>Loading Dock</title>
+<meta name="description" content="A from-scratch visual concept for The Crew Blueprint, built around the real training hierarchy." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Big+Shoulders+Text:wght@600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ============ TOKENS ============ */
+:root{
+  --ground:#e7e1d3;
+  --ground-2:#dcd4c1;
+  --panel:#d6cdb8;
+  --panel-2:#c9beA4;
+  --ink:#1c1712;
+  --ink-dim:#4a4238;
+  --steel:#414d55;
+  --steel-dim:#6b7680;
+  --amber:#c97a1f;
+  --amber-ink:#1c1712;
+  --rust:#9c3b26;
+  --line:rgba(28,23,18,0.18);
+  --line-strong:rgba(28,23,18,0.32);
+  --shadow:0 1px 0 rgba(28,23,18,0.06), 0 8px 20px -12px rgba(28,23,18,0.35);
+  --radius:2px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#14181b;
+    --ground-2:#191e22;
+    --panel:#1e2529;
+    --panel-2:#252d32;
+    --ink:#ece6d8;
+    --ink-dim:#a8a196;
+    --steel:#8a949c;
+    --steel-dim:#5c6871;
+    --amber:#e2953c;
+    --amber-ink:#14181b;
+    --rust:#d9694a;
+    --line:rgba(236,230,216,0.12);
+    --line-strong:rgba(236,230,216,0.24);
+    --shadow:0 1px 0 rgba(0,0,0,0.4), 0 12px 28px -14px rgba(0,0,0,0.65);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#14181b;
+  --ground-2:#191e22;
+  --panel:#1e2529;
+  --panel-2:#252d32;
+  --ink:#ece6d8;
+  --ink-dim:#a8a196;
+  --steel:#8a949c;
+  --steel-dim:#5c6871;
+  --amber:#e2953c;
+  --amber-ink:#14181b;
+  --rust:#d9694a;
+  --line:rgba(236,230,216,0.12);
+  --line-strong:rgba(236,230,216,0.24);
+  --shadow:0 1px 0 rgba(0,0,0,0.4), 0 12px 28px -14px rgba(0,0,0,0.65);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Archivo",system-ui,-apple-system,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;}
+[hidden]{display:none!important;}
+h1,h2,h3,h4{
+  font-family:"Big Shoulders Display","Big Shoulders Text",system-ui,sans-serif;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+  text-wrap:balance;
+  color:var(--ink);
+  margin:0;
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;}
+p{margin:0 0 1em; max-width:62ch;}
+a{color:inherit;}
+:focus-visible{outline:3px solid var(--amber); outline-offset:2px;}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:.001ms!important; transition-duration:.001ms!important;} }
+
+/* diamond-plate texture, used sparingly */
+.plate-tex{
+  background-image:
+    radial-gradient(circle at 8px 8px, rgba(0,0,0,0.10) 1.4px, transparent 1.6px),
+    radial-gradient(circle at 20px 20px, rgba(0,0,0,0.10) 1.4px, transparent 1.6px);
+  background-size:24px 24px;
+  background-position:0 0, 12px 12px;
+}
+
+/* ============ NAV ============ */
+.beam{
+  position:sticky; top:0; z-index:40;
+  background:var(--ink);
+  color:var(--ground);
+  border-bottom:6px solid var(--amber);
+}
+.beam-inner{
+  max-width:1180px; margin:0 auto; padding:0 20px;
+  display:flex; align-items:center; gap:28px; min-height:64px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:"Big Shoulders Display",sans-serif; font-weight:900;
+  font-size:22px; letter-spacing:0.02em; text-transform:uppercase;
+  color:var(--ground); text-decoration:none; white-space:nowrap;
+}
+.brand .bolt{
+  width:11px;height:11px;border-radius:50%;
+  background:var(--amber);
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.35), 0 0 0 2px rgba(0,0,0,.25);
+  flex:none;
+}
+.navlinks{display:flex; gap:2px; flex:1; overflow-x:auto;}
+.navlinks a{
+  font-family:"Big Shoulders Text",sans-serif; font-weight:700;
+  font-size:15px; text-transform:uppercase; letter-spacing:0.04em;
+  color:rgba(231,225,211,0.75); text-decoration:none;
+  padding:22px 14px; white-space:nowrap; border-bottom:3px solid transparent;
+  transition:color 140ms ease, border-color 140ms ease;
+}
+.navlinks a:hover{color:var(--ground);}
+.navlinks a.active{color:var(--ground); border-color:var(--amber);}
+.beam-cta{
+  flex:none; font-family:"Big Shoulders Text",sans-serif; font-weight:700;
+  font-size:14px; text-transform:uppercase; letter-spacing:0.04em;
+  background:var(--amber); color:var(--amber-ink);
+  padding:10px 18px; text-decoration:none; white-space:nowrap;
+}
+.beam-cta:hover{filter:brightness(1.08);}
+@media (max-width:860px){ .navlinks{display:none;} }
+
+/* ============ LAYOUT SHELL ============ */
+.page{max-width:1180px; margin:0 auto; padding:0 20px;}
+.wide{max-width:1180px; margin:0 auto; padding:0 20px;}
+section.block{padding:64px 0;}
+.flange{
+  height:14px;
+  background:repeating-linear-gradient(90deg, var(--steel) 0 2px, transparent 2px 34px);
+  opacity:0.55;
+}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:12px;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--steel-dim);
+  display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow::before{content:""; width:22px; height:2px; background:var(--amber); display:block;}
+
+/* ============ HERO ============ */
+.hero{
+  background:
+    linear-gradient(180deg, rgba(28,23,18,0) 0%, var(--ground) 92%),
+    var(--ground-2);
+  border-bottom:1px solid var(--line);
+  position:relative; overflow:hidden;
+}
+.hero-inner{
+  max-width:1180px; margin:0 auto; padding:88px 20px 72px;
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(260px,0.85fr); gap:56px; align-items:end;
+}
+.hero h1{font-size:clamp(42px,7vw,84px); line-height:0.94;}
+.hero h1 em{font-style:normal; color:var(--amber);}
+.hero-sub{font-size:19px; color:var(--ink-dim); max-width:46ch; margin-top:22px;}
+.hero-actions{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
+.btn{
+  font-family:"Big Shoulders Text",sans-serif; font-weight:700; font-size:15px;
+  text-transform:uppercase; letter-spacing:0.04em;
+  padding:14px 26px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+  border:2px solid var(--ink); color:var(--ink);
+}
+.btn.solid{background:var(--ink); color:var(--ground); border-color:var(--ink);}
+.btn.solid:hover{background:var(--amber); border-color:var(--amber); color:var(--amber-ink);}
+.btn.ghost:hover{background:var(--ink); color:var(--ground);}
+
+.hero-plate{
+  border:2px solid var(--line-strong); background:var(--panel);
+  padding:22px; box-shadow:var(--shadow); position:relative;
+}
+.hero-plate::before,.hero-plate::after{
+  content:""; position:absolute; width:9px; height:9px; border-radius:50%;
+  background:var(--steel-dim); box-shadow:inset 0 -1px 0 rgba(0,0,0,.3);
+  top:10px;
+}
+.hero-plate::before{left:10px;}
+.hero-plate::after{right:10px;}
+.hero-plate .mono{font-size:12px; letter-spacing:0.08em; color:var(--steel-dim); text-transform:uppercase;}
+.hero-plate h3{font-size:20px; margin:8px 0 12px;}
+.hero-plate ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+.hero-plate li{display:flex; justify-content:space-between; font-size:14px; border-top:1px solid var(--line); padding-top:9px;}
+.hero-plate li:first-child{border-top:0; padding-top:0;}
+.hero-plate .tag{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--steel-dim);}
+
+/* ============ CARD GRID ============ */
+.grid{display:grid; gap:18px;}
+.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+@media (max-width:900px){ .grid.cols-3,.grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr));} .hero-inner{grid-template-columns:1fr;} }
+@media (max-width:600px){ .grid.cols-3,.grid.cols-4{grid-template-columns:1fr;} }
+
+.plate{
+  background:var(--panel); border:1px solid var(--line-strong);
+  padding:22px; position:relative; box-shadow:var(--shadow);
+}
+.plate::before,.plate::after{
+  content:""; position:absolute; top:9px; width:7px; height:7px; border-radius:50%;
+  background:var(--steel-dim); box-shadow:inset 0 -1px 0 rgba(0,0,0,.3);
+}
+.plate::before{left:9px;} .plate::after{right:9px;}
+.plate h3{font-size:21px; margin:6px 0 8px;}
+.plate p{font-size:14.5px; color:var(--ink-dim); margin-bottom:0;}
+.plate .num{font-family:"IBM Plex Mono",monospace; color:var(--amber); font-size:13px; font-weight:600;}
+
+/* ============ TRAINING MAP (ladder) ============ */
+.ladder{display:flex; flex-direction:column-reverse; gap:0; margin-top:36px;}
+.rung{
+  display:grid; grid-template-columns:230px 1fr; gap:0;
+  border-top:1px solid var(--line);
+}
+.rung:first-child{border-top:2px solid var(--line-strong);}
+.rung-label{
+  padding:26px 22px; background:var(--ground-2);
+  border-right:1px solid var(--line);
+  display:flex; flex-direction:column; justify-content:center; gap:6px;
+}
+.rung-label .lvl{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--amber); font-weight:600; letter-spacing:0.08em;}
+.rung-label h4{font-size:19px; line-height:1.05;}
+.rung-label p{font-size:13px; color:var(--steel-dim); margin:6px 0 0; max-width:none;}
+.rung-body{padding:22px; display:flex; flex-wrap:wrap; gap:10px; align-content:center;}
+.chip{
+  font-family:"Big Shoulders Text",sans-serif; font-weight:700; font-size:14px;
+  text-transform:uppercase; letter-spacing:0.02em;
+  padding:10px 14px; background:var(--panel); border:1px solid var(--line-strong);
+  text-decoration:none; color:var(--ink); display:inline-flex; align-items:center; gap:8px;
+  cursor:pointer;
+}
+.chip:hover{border-color:var(--amber);}
+.chip.gap{background:transparent; border-style:dashed; color:var(--steel-dim); cursor:default;}
+.chip.gap:hover{border-color:var(--line-strong);}
+.chip .dot{width:7px;height:7px;border-radius:50%; background:var(--amber); flex:none;}
+.chip.gap .dot{background:var(--rust);}
+@media (max-width:760px){ .rung{grid-template-columns:1fr;} .rung-label{border-right:0; border-bottom:1px solid var(--line);} }
+
+.legend{display:flex; gap:24px; flex-wrap:wrap; margin-top:18px;}
+.legend span{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ink-dim);}
+.legend .dot{width:8px;height:8px;border-radius:50%;}
+
+/* ============ DEPARTMENT DETAIL ============ */
+.dept-hero{
+  display:grid; grid-template-columns:1fr; gap:8px; padding:34px 0 18px; border-bottom:1px solid var(--line); margin-bottom:34px;
+}
+.dept-hero h2{font-size:clamp(30px,5vw,52px);}
+.track{display:flex; flex-direction:column; gap:0; border:1px solid var(--line-strong);}
+.track-row{
+  display:grid; grid-template-columns:96px 1fr 160px; gap:18px; align-items:center;
+  padding:20px 22px; border-top:1px solid var(--line);
+}
+.track-row:first-child{border-top:0;}
+.track-row .stage{
+  font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:13px; color:var(--steel-dim);
+}
+.track-row h4{font-size:18px; margin-bottom:4px;}
+.track-row p{font-size:13.5px; color:var(--ink-dim); margin:0;}
+.status{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.06em;
+  padding:6px 10px; text-align:center; border:1px solid var(--line-strong); white-space:nowrap;
+}
+.status.live{color:var(--amber-ink); background:var(--amber); border-color:var(--amber);}
+.status.pending{color:var(--rust); border-color:var(--rust); background:transparent;}
+@media (max-width:640px){ .track-row{grid-template-columns:1fr; gap:8px;} }
+
+/* ============ SAMPLE COURSE PAGE ============ */
+.course-shell{display:grid; grid-template-columns:270px 1fr; gap:0; border:1px solid var(--line-strong); margin-top:8px;}
+.course-side{background:var(--ground-2); border-right:1px solid var(--line); padding:22px;}
+.course-side h5{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:0.1em; color:var(--steel-dim); text-transform:uppercase; margin-bottom:14px;}
+.les{
+  display:block; width:100%; text-align:left; background:none; border:0; cursor:pointer;
+  font-family:"Archivo",sans-serif; font-size:14px; font-weight:600; color:var(--ink-dim);
+  padding:10px 0; border-bottom:1px solid var(--line);
+}
+.les.active{color:var(--amber);}
+.les .n{font-family:"IBM Plex Mono",monospace; font-size:12px; margin-right:8px; color:var(--steel-dim);}
+.course-main{padding:30px 34px;}
+.progress-plate{
+  border:1px solid var(--line-strong); background:var(--panel); padding:12px 16px;
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;
+  font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--steel-dim);
+}
+.bar-track{flex:1; height:6px; background:var(--ground-2); margin:0 16px; position:relative;}
+.bar-fill{position:absolute; inset:0; width:33%; background:var(--amber);}
+@media (max-width:760px){ .course-shell{grid-template-columns:1fr;} .course-side{border-right:0; border-bottom:1px solid var(--line);} }
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink); color:var(--ground); margin-top:80px;}
+.foot-inner{max-width:1180px; margin:0 auto; padding:52px 20px 30px; display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:32px;}
+footer h5{font-family:"Big Shoulders Text",sans-serif; font-size:14px; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); margin-bottom:14px;}
+footer a{display:block; color:rgba(231,225,211,0.75); text-decoration:none; font-size:14px; padding:5px 0;}
+footer a:hover{color:var(--ground);}
+.foot-bottom{border-top:1px solid rgba(231,225,211,0.15); max-width:1180px; margin:0 auto; padding:20px 20px; font-size:12px; color:rgba(231,225,211,0.55); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+@media (max-width:760px){ .foot-inner{grid-template-columns:1fr 1fr;} }
+
+/* misc */
+.section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:8px; flex-wrap:wrap;}
+.section-head h2{font-size:clamp(28px,4.5vw,44px);}
+.section-head p{color:var(--ink-dim); font-size:15px; margin:0;}
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+@media (max-width:820px){ .two-col{grid-template-columns:1fr;} }
+.note{
+  border-left:3px solid var(--rust); background:var(--panel); padding:16px 18px; font-size:14px; color:var(--ink-dim); margin-top:10px;
+}
+.note strong{color:var(--ink);}
+</style>
+
+<div class="beam">
+  <div class="beam-inner">
+    <a href="#home" class="brand" data-nav><span class="bolt"></span>The Crew Blueprint</a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#home" data-nav>Home</a>
+      <a href="#map" data-nav>Training Map</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#resources" data-nav>Resources</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <a class="beam-cta" href="#map">Start Training</a>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="brand" style="margin-bottom:14px;"><span class="bolt"></span>The Crew Blueprint</div>
+      <p style="max-width:36ch; color:rgba(231,225,211,0.7); font-size:14px;">Training built at the level of the load-in, not the lecture hall. For the people who build the show and strike it again the next morning.</p>
+    </div>
+    <div>
+      <h5>Training</h5>
+      <a href="#map" data-nav>Training Map</a>
+      <a href="#dept-lighting" data-nav>Departments</a>
+      <a href="#map" data-nav>Field Skills</a>
+      <a href="#map" data-nav>Lead Tier</a>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <a href="#about" data-nav>About</a>
+      <a href="#resources" data-nav>Resources</a>
+      <a href="#contact" data-nav>Contact</a>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <a href="#legal" data-nav>Terms &amp; Conditions</a>
+      <a href="#legal" data-nav>Assumption of Risk &amp; Liability</a>
+      <a href="#legal" data-nav>Privacy Policy</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 The Crew Blueprint — concept build, not the production site.</span>
+    <span class="mono">CONCEPT / REV-01</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+var DEPARTMENTS = {
+  lighting: {
+    name: "Lighting",
+    blurb: "Fixtures, focus, control data, and the load-in choreography that gets a rig from truck to trim.",
+    tracks: [
+      {stage:"C1", title:"Supporting a Lighting Hang", desc:"Handle, hang, and cable a lighting rig under a lead's direction.", status:"live"},
+      {stage:"C2", title:"Lighting Production Flow", desc:"Read the full production lifecycle: advance, install, test, program, operate, load-out.", status:"live"},
+      {stage:"C3", title:"Lighting Control-System Design", desc:"System architecture, power/data planning, and commissioning literacy.", status:"live"},
+      {stage:"Lead", title:"Lighting Lead", desc:"Plan, assign, and verify lighting work inside a named scope.", status:"live"}
+    ]
+  },
+  audio: {
+    name: "Audio",
+    blurb: "Signal flow, gain structure, and the difference between plugging something in and understanding why it works.",
+    tracks: [
+      {stage:"C1", title:"Supporting an Audio Load-In", desc:"Move, stage, and cable audio gear correctly under direction.", status:"live"},
+      {stage:"C2", title:"Live Sound Systems", desc:"Signal chain, gain staging, troubleshooting order, and system boundaries.", status:"live"},
+      {stage:"C3", title:"Audio System &amp; Network Architecture", desc:"Network topology, RF coordination, and system-design literacy.", status:"live"},
+      {stage:"Lead", title:"Audio Lead", desc:"Plan and verify audio department work; escalate what isn't yours to decide.", status:"live"}
+    ]
+  },
+  video: {
+    name: "Video",
+    blurb: "LED walls, processors, and signal paths — the wall is a system, not a stack of panels.",
+    tracks: [
+      {stage:"C1", title:"Supporting an LED Video Wall Build", desc:"Assist a controlled LED build without touching processor configuration.", status:"live"},
+      {stage:"C2", title:"Large-Scale LED Video Systems", desc:"Pixel pitch, signal flow, redundancy, and structural-load awareness.", status:"live"},
+      {stage:"C3", title:"Video Display-System Architecture", desc:"Processing, camera interface, and system-design literacy.", status:"live"},
+      {stage:"Lead", title:"Video Lead", desc:"Own the plan for a video build; verify readiness before doors.", status:"live"}
+    ]
+  },
+  staging: {
+    name: "Staging &amp; Carpentry",
+    blurb: "Deck systems, ground support, and the structural judgment that keeps a stage a stage.",
+    tracks: [
+      {stage:"C1", title:"Supporting Staging &amp; Carpentry", desc:"Assist assembly of decks, legs, rails, and ramps under direction.", status:"live"},
+      {stage:"C2", title:"Modular Deck Systems", desc:"System recognition, load-in workflow, and supervised-assembly judgment.", status:"live"},
+      {stage:"C3", title:"Staging / Carpentry Design Coordination", desc:"Drawings, interface coordination, and change-control literacy.", status:"live"},
+      {stage:"Lead", title:"Staging &amp; Carpentry Lead", desc:"Plan and verify a build; own the section you're assigned.", status:"live"}
+    ]
+  },
+  backline: {
+    name: "Backline, Props &amp; Wardrobe",
+    blurb: "Custody, not ownership — the discipline of handling things that belong to someone else's show.",
+    tracks: [
+      {stage:"C1", title:"Supporting Backline, Props &amp; Wardrobe", desc:"Move, stage, and account for assigned items under direction.", status:"live"},
+      {stage:"C2", title:"Department Systems", desc:"Custody model, discrepancy handling, and closed-loop reporting.", status:"live"},
+      {stage:"C3", title:"Design Coordination", desc:"No Course 3 packet exists yet for this combined pathway.", status:"pending"}
+    ]
+  },
+  rigging: {
+    name: "Rigging",
+    blurb: "The department with the clearest national certification path — and currently the thinnest Crew Blueprint coverage.",
+    tracks: [
+      {stage:"C1", title:"Supporting Rigging Work", desc:"Ground-rigger awareness and assist duties. Not yet built.", status:"pending"},
+      {stage:"C2", title:"Rigging Systems", desc:"Points, hardware, and load paths at a systems-literacy level. Not yet built.", status:"pending"},
+      {stage:"C3", title:"Rigging Design Coordination", desc:"Not yet built.", status:"pending"},
+      {stage:"Lead", title:"Rigging Lead", desc:"Decision-only leadership content. No physical rigging instruction.", status:"live"}
+    ]
+  },
+  electrics: {
+    name: "Electrics",
+    blurb: "Entertainment power distribution — distinct from lighting, and still missing its own entry point.",
+    tracks: [
+      {stage:"C1", title:"Supporting Electrics", desc:"Assigned power-distribution support. Not yet built.", status:"pending"},
+      {stage:"C2", title:"Electrics Systems", desc:"Distribution and load literacy. Not yet built.", status:"pending"},
+      {stage:"C3", title:"Electrics System &amp; Load-Planning Literacy", desc:"Document and decision-level literacy. No live-power procedure.", status:"live"},
+      {stage:"Lead", title:"Electrics Lead", desc:"Plan and verify power work; energization stays with the qualified authority.", status:"live"}
+    ]
+  }
+};
+
+var COURSE_LESSONS = [
+  {n:"1.1", title:"Before You Touch the Rig", body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+  {n:"1.2", title:"Handles, Not Lenses", body:"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
+  {n:"1.3", title:"Cable, Data, and Accessory Runs", body:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."},
+  {n:"2.1", title:"Knowledge Check", body:"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+  {n:"2.2", title:"Key Takeaways", body:"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."},
+  {n:"2.3", title:"Sources", body:"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores."}
+];
+
+function esc(s){ return s; }
+
+function renderHome(){
+  return ''
+  +'<div class="hero">'
+    +'<div class="hero-inner">'
+      +'<div>'
+        +'<div class="eyebrow">Concept Build &middot; Rev 01</div>'
+        +'<h1>Built where<br>the show gets<br><em>built.</em></h1>'
+        +'<p class="hero-sub">The Crew Blueprint trains stagehands the way a department actually runs one: assist first, understand the system second, lead only once you\'ve done both. No lecture-hall filler &mdash; every course maps to a real crew role.</p>'
+        +'<div class="hero-actions">'
+          +'<a class="btn solid" href="#map" data-nav>See the Training Map</a>'
+          +'<a class="btn ghost" href="#about" data-nav>Why It\'s Built This Way</a>'
+        +'</div>'
+      +'</div>'
+      +'<div class="hero-plate">'
+        +'<div class="mono">Current Build &middot; Live Status</div>'
+        +'<h3>Coverage Plate</h3>'
+        +'<ul>'
+          +'<li><span>Foundation</span><span class="tag">4 PARTS</span></li>'
+          +'<li><span>Field Skills</span><span class="tag">6 UNITS</span></li>'
+          +'<li><span>Department Tracks</span><span class="tag">7 LINES</span></li>'
+          +'<li><span>Lead Tier</span><span class="tag">7 ROLES</span></li>'
+          +'<li><span>Supervisor Tier</span><span class="tag">2 ROLES</span></li>'
+        +'</ul>'
+      +'</div>'
+    +'</div>'
+  +'</div>'
+  +'<div class="flange"></div>'
+  +'<section class="block wide">'
+    +'<div class="section-head"><h2>Assist. Understand. Lead.</h2><p style="max-width:34ch;">Three plates, one progression &mdash; the same shape every department in this industry actually uses.</p></div>'
+    +'<div class="grid cols-3" style="margin-top:32px;">'
+      +'<div class="plate"><div class="num">01</div><h3>Assist</h3><p>Recognize equipment, follow direction, perform assigned setup and strike work without redesigning anything.</p></div>'
+      +'<div class="plate"><div class="num">02</div><h3>Understand</h3><p>Trace the system end to end &mdash; handoffs, boundaries, and exactly when a problem stops being yours to solve.</p></div>'
+      +'<div class="plate"><div class="num">03</div><h3>Lead</h3><p>Plan the work, assign the crew, verify the result, and answer for the department\'s outcome.</p></div>'
+    +'</div>'
+  +'</section>'
+  +'<div class="flange"></div>'
+  +'<section class="block wide">'
+    +'<div class="section-head"><h2>Seven Working Departments</h2><p style="max-width:30ch;">Built from real title research, not a guessed job ladder.</p></div>'
+    +'<div class="grid cols-4" style="margin-top:32px;">'
+    + Object.keys(DEPARTMENTS).map(function(key){
+        var d = DEPARTMENTS[key];
+        var liveCount = d.tracks.filter(function(t){return t.status==="live";}).length;
+        return '<a href="#dept-'+key+'" data-nav class="plate" style="text-decoration:none; display:block;">'
+          +'<div class="num">'+liveCount+' / '+d.tracks.length+' LIVE</div>'
+          +'<h3>'+d.name+'</h3>'
+          +'<p>'+d.blurb+'</p>'
+        +'</a>';
+      }).join('')
+    +'</div>'
+  +'</section>'
+  +'<div class="flange"></div>'
+  +'<section class="block wide">'
+    +'<div class="two-col">'
+      +'<div>'
+        +'<div class="eyebrow">Field Skills</div>'
+        +'<h2 style="font-size:34px;">Six repeatable tasks, taught the way they\'re actually done.</h2>'
+        +'<p style="color:var(--ink-dim); margin-top:16px;">Over-under cable coiling. Ratchet straps. Flatbed cargo securement. Barricade setup. Cable ramps. Moving a road case with a partner. Small, physical, and always under a named authority\'s direction.</p>'
+        +'<a class="btn ghost" href="#map" data-nav style="margin-top:10px;">Open the Training Map</a>'
+      +'</div>'
+      +'<div class="plate">'
+        +'<div class="num">SPEC</div>'
+        +'<h3>What Field Skills Is Not</h3>'
+        +'<p>It is not a substitute for a technician, driver, or venue lead\'s final say. Every unit ends in a practice gate reviewed by the person who actually controls the equipment.</p>'
+      +'</div>'
+    +'</div>'
+  +'</section>';
+}
+
+function renderMap(){
+  var order = [
+    {key:"foundation", label:"Foundation", sub:"Shared entry knowledge every crew member starts with.", items:[{title:"Stagehand Fundamentals", status:"live"}]},
+    {key:"field", label:"Field Skills", sub:"Repeatable physical tasks, performed under direction.", items:[
+      {title:"Over-Under Cable Coiling", status:"live"},
+      {title:"Ratchet Straps Under Direction", status:"live"},
+      {title:"Flatbed Cargo-Securement Support", status:"live"},
+      {title:"Barricade Setup Under Direction", status:"live"},
+      {title:"Cable Ramps &amp; Protectors", status:"live"},
+      {title:"Move a Road Case With a Partner", status:"live"}
+    ]},
+    {key:"dept", label:"Department Tracks", sub:"Support &rarr; systems &rarr; design, per department.", items:Object.keys(DEPARTMENTS).map(function(k){
+      var live = DEPARTMENTS[k].tracks.filter(function(t){return t.status==="live";}).length;
+      var total = DEPARTMENTS[k].tracks.length;
+      return {title:DEPARTMENTS[k].name, status: live===total? "live":"partial", href:"dept-"+k};
+    })},
+    {key:"lead", label:"Lead Tier", sub:"Plan, assign, verify, escalate &mdash; inside a named scope.", items:[
+      {title:"Lead / Crew Chief Foundations", status:"live"},
+      {title:"Lighting Lead", status:"live"},
+      {title:"Audio Lead", status:"live"},
+      {title:"Video Lead", status:"live"},
+      {title:"Staging &amp; Carpentry Lead", status:"live"},
+      {title:"Rigging Lead", status:"live"},
+      {title:"Electrics Lead", status:"live"}
+    ]},
+    {key:"adv", label:"Supervisor &amp; Advanced", sub:"Cross-department judgment and system-level literacy.", items:[
+      {title:"Predictive Hazard Recognition", status:"live"},
+      {title:"Event Operations &amp; Production Coordination", status:"live"},
+      {title:"Production Power Awareness", status:"live"},
+      {title:"Production &amp; Coordination Career Branch", status:"live"}
+    ]}
+  ];
+
+  var html = ''
+  +'<section class="block wide">'
+    +'<div class="eyebrow">Training Map</div>'
+    +'<h2 style="font-size:clamp(32px,5vw,52px);">One ladder, climbed department by department.</h2>'
+    +'<p style="color:var(--ink-dim); max-width:60ch; margin-top:14px;">Every rung is a real competency level, not a marketing tier. Solid chips are live and built. Dashed chips are named gaps &mdash; departments where the workforce research shows real demand for that level, but Crew Blueprint hasn\'t built it yet.</p>'
+    +'<div class="legend"><span><span class="dot" style="background:var(--amber);"></span>Live course</span><span><span class="dot" style="background:var(--rust);"></span>Named gap, not yet built</span></div>'
+    +'<div class="ladder">'
+    + order.map(function(row){
+        return '<div class="rung">'
+          +'<div class="rung-label"><div class="lvl">LEVEL</div><h4>'+row.label+'</h4><p>'+row.sub+'</p></div>'
+          +'<div class="rung-body">'
+          + row.items.map(function(it){
+              var isGap = it.status==="pending";
+              var cls = "chip"+(isGap?" gap":"");
+              var inner = '<span class="dot"></span>'+it.title;
+              if(it.href){ return '<a class="'+cls+'" href="#'+it.href+'" data-nav>'+inner+'</a>'; }
+              if(isGap){ return '<span class="'+cls+'">'+inner+'</span>'; }
+              return '<a class="'+cls+'" href="#course-sample" data-nav>'+inner+'</a>';
+            }).join('')
+          +'</div>'
+        +'</div>';
+      }).join('')
+    +'</div>'
+  +'</section>';
+  return html;
+}
+
+function renderDept(key){
+  var d = DEPARTMENTS[key];
+  if(!d){ return '<section class="block wide"><h2>Not found</h2></section>'; }
+  return ''
+  +'<section class="block wide">'
+    +'<div class="dept-hero">'
+      +'<div class="eyebrow">Department Track</div>'
+      +'<h2>'+d.name+'</h2>'
+      +'<p style="color:var(--ink-dim); max-width:60ch;">'+d.blurb+'</p>'
+    +'</div>'
+    +'<div class="track">'
+    + d.tracks.map(function(t){
+        var isLive = t.status==="live";
+        return '<div class="track-row">'
+          +'<div class="stage">'+t.stage+'</div>'
+          +'<div><h4>'+t.title+'</h4><p>'+t.desc+'</p></div>'
+          +'<div class="status '+(isLive?"live":"pending")+'">'+(isLive?"Live":"Not Built")+'</div>'
+        +'</div>';
+      }).join('')
+    +'</div>'
+    +(d.tracks.some(function(t){return t.status==="pending";})
+      ? '<div class="note"><strong>Coverage note:</strong> the dashed stages above are named, evidence-based gaps from the current curriculum research, not oversights &mdash; they show real workforce demand that this track doesn\'t serve yet.</div>'
+      : '')
+    +'<a class="btn ghost" href="#map" data-nav style="margin-top:28px; display:inline-flex;">&larr; Back to Training Map</a>'
+  +'</section>';
+}
+
+function renderCourseSample(){
+  return ''
+  +'<section class="block wide">'
+    +'<div class="eyebrow">Sample Course Page</div>'
+    +'<h2 style="font-size:clamp(28px,4.5vw,44px);">Supporting a Lighting Hang</h2>'
+    +'<p style="color:var(--ink-dim); max-width:60ch; margin-top:10px;">Department Support &middot; Course 1 &middot; a working mock-up of the course shell &mdash; body copy below is placeholder text, the structure is real.</p>'
+    +'<div class="course-shell">'
+      +'<div class="course-side">'
+        +'<h5>Lessons</h5>'
+        + COURSE_LESSONS.map(function(l,i){
+            return '<button class="les'+(i===0?" active":"")+'" data-lesson="'+i+'"><span class="n">'+l.n+'</span>'+l.title+'</button>';
+          }).join('')
+      +'</div>'
+      +'<div class="course-main" id="course-main">'
+      +'</div>'
+    +'</div>'
+    +'<a class="btn ghost" href="#map" data-nav style="margin-top:28px; display:inline-flex;">&larr; Back to Training Map</a>'
+  +'</section>';
+}
+
+function fillCourseLesson(i){
+  var el = document.getElementById('course-main');
+  if(!el) return;
+  var l = COURSE_LESSONS[i];
+  el.innerHTML = ''
+    +'<div class="progress-plate"><span>LESSON '+l.n+' OF 2.3</span><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(((i+1)/COURSE_LESSONS.length)*100)+'%;"></div></div><span>'+Math.round(((i+1)/COURSE_LESSONS.length)*100)+'%</span></div>'
+    +'<h3 style="font-size:26px; margin-bottom:14px;">'+l.title+'</h3>'
+    +'<p>'+l.body+'</p>'
+    +'<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>';
+  document.querySelectorAll('.les').forEach(function(b,idx){ b.classList.toggle('active', idx===i); });
+}
+
+function renderAbout(){
+  return '<section class="block wide">'
+    +'<div class="eyebrow">About</div>'
+    +'<h2 style="font-size:clamp(30px,5vw,50px); max-width:14ch;">Built by people who\'ve struck a show at 2am.</h2>'
+    +'<div class="two-col" style="margin-top:30px;">'
+      +'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>'
+      +'<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+    +'</div>'
+  +'</section>';
+}
+function renderResources(){
+  return '<section class="block wide">'
+    +'<div class="eyebrow">Resources</div>'
+    +'<h2 style="font-size:clamp(30px,5vw,50px);">Reference Shelf</h2>'
+    +'<div class="grid cols-3" style="margin-top:30px;">'
+      +'<div class="plate"><h3>Glossary</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p></div>'
+      +'<div class="plate"><h3>Source Library</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p></div>'
+      +'<div class="plate"><h3>Gear Reference</h3><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p></div>'
+    +'</div>'
+  +'</section>';
+}
+function renderContact(){
+  return '<section class="block wide">'
+    +'<div class="eyebrow">Contact</div>'
+    +'<h2 style="font-size:clamp(30px,5vw,50px);">Get In Touch</h2>'
+    +'<p style="margin-top:16px;">thecrewblueprint@gmail.com &mdash; concept build placeholder text.</p>'
+  +'</section>';
+}
+function renderLegal(){
+  return '<section class="block wide">'
+    +'<div class="eyebrow">Legal</div>'
+    +'<h2 style="font-size:clamp(30px,5vw,50px);">Terms, Risk &amp; Liability</h2>'
+    +'<p style="margin-top:16px; max-width:60ch;">This concept doesn\'t reproduce the live legal pages &mdash; it links out to where they\'d sit in this navigation. Lorem ipsum placeholder for layout only.</p>'
+  +'</section>';
+}
+
+var ROUTES = {
+  home: renderHome,
+  map: renderMap,
+  about: renderAbout,
+  resources: renderResources,
+  contact: renderContact,
+  legal: renderLegal,
+  "course-sample": renderCourseSample
+};
+
+function route(){
+  var hash = (location.hash || '#home').slice(1);
+  var app = document.getElementById('app');
+  var html;
+  if(hash.indexOf('dept-') === 0){
+    html = renderDept(hash.slice(5));
+  } else if(ROUTES[hash]){
+    html = ROUTES[hash]();
+  } else {
+    html = renderHome();
+    hash = 'home';
+  }
+  app.innerHTML = html;
+  document.querySelectorAll('[data-nav]').forEach(function(a){
+    var href = a.getAttribute('href').replace('#','');
+    a.classList.toggle('active', href === hash);
+  });
+  if(hash === 'course-sample'){ fillCourseLesson(0); }
+  window.scrollTo({top:0, behavior:'auto'});
+}
+
+document.addEventListener('click', function(e){
+  var les = e.target.closest('.les');
+  if(les){ fillCourseLesson(parseInt(les.dataset.lesson,10)); }
+});
+
+window.addEventListener('hashchange', route);
+route();
+})();
+</script>
