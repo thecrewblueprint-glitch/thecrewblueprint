@@ -150,6 +150,8 @@ assertEnum(supportEdges, 'support_strength', [
   'unresolved',
 ], 'SUPPORT_EDGE', errors);
 
+// Canonical MDQ-001 states plus temporary descriptive aliases already used by the HR backfill.
+// New work should prefer canonical states; aliases preserve historical readability until a dedicated migration.
 assertEnum(supportEdges, 'review_status', [
   'unreviewed',
   'mapped',
@@ -158,6 +160,13 @@ assertEnum(supportEdges, 'review_status', [
   'needs_primary_source',
   'rejected',
   'superseded',
+  'mapped_exact_source',
+  'mapped_with_qualification',
+  'mapped_exact_scope',
+  'mapped_context_only',
+  'mapped_contextual_authority',
+  'needs_model_source',
+  'needs_practitioner_and_scope',
 ], 'SUPPORT_EDGE', errors);
 
 assertEnum(lineageEdges, 'relationship_type', [
