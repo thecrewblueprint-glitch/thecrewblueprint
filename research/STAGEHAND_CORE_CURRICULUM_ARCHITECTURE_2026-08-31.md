@@ -5,398 +5,117 @@
 **Branch:** `research/mdq-010-stagehand-field-skills-universe`  
 **Purpose:** Teach a new stagehand how to move through an actual call from arrival through release, while integrating the practical tasks they are likely to encounter during their first months without confusing course completion with employer authorization or specialist qualification.
 
-## 1. Architecture decision
+## Architecture decision
 
-Create one umbrella learning program named **Stagehand Core** organized around the **life cycle of a real work call**.
+Stagehand Core is organized around the actual life cycle of a work call:
 
-The primary learner progression is linear:
+> **Prepare → Arrive → Check in → Orient → Get assigned → Understand the task → Do the task well → Verify and hand off → Find the next task → Remain productively available / take directed breaks → Repeat → Strike / load out → Final handoff → Get released → Clock out correctly → Grow**
 
-> **Prepare → Arrive → Check in → Orient → Get assigned → Understand the task → Do the task well → Verify and hand off → Find the next task → Remain productively available / take directed breaks → Repeat → Strike / load out → Final handoff → Get released → Clock out correctly**
+The physical skill library is embedded inside that progression. Barricade, pipe-and-drape, soft goods, risers/deck support, carts, road cases, cable work, cable protection, scenery movement, ordinary hand tools, ratchet straps and similar assigned tasks are **beginner/general-stagehand work** when bounded to the actual equipment, lead and conditions. Context affects frequency and method; context does not create seniority.
 
-This is the organizing spine of the beginner curriculum.
+Operational work that cannot be safely separated from qualification/authorization remains awareness-only in Stagehand Core, including overhead rigging, energized temporary-power work, powered industrial-truck/MEWP operation, stage automation operation and similar controlled work.
 
-The physical skills are not a separate “specialty” layer after Fundamentals. Road cases, carts, cable, barricade, pipe-and-drape, soft goods, risers/deck components, work-area organization and similar tasks are all normal beginner work. A new general stagehand may encounter many or all of them during the first several months depending on calls, venue, employer and market.
+## Professional work rhythm
 
-The curriculum should therefore teach **how to work a call**, and place practical skills at the points in that workflow where the learner will actually use them.
+Crew Blueprint should teach:
 
-## 2. Core behavioral model
+1. Know who you are working for and where you belong.
+2. Get a clear assignment before acting.
+3. Do the assigned work correctly and safely.
+4. Finish the task instead of abandoning it halfway through.
+5. Verify the result or hand it back to the person who owns it.
+6. When the task is finished, make yourself available for the next legitimate assignment.
+7. If no work is ready, remain available rather than inventing work, disappearing or interfering with another department.
+8. Take breaks, standby time and release according to the actual employer, steward, lead, venue rules or agreement.
+9. Leave/clock out only through the controlling release/timekeeping process.
 
-The site should teach a simple professional rhythm:
+The site should not teach constant visible activity. Live production naturally includes intense work, dependencies, holds, rehearsals, changeovers and downtime. The professional distinction is between **doing available assigned work well** and **remaining appropriately available when the production itself is waiting**.
 
-1. **Know who you are working for and where you belong.**
-2. **Get a clear assignment before acting.**
-3. **Do the assigned work correctly and safely.**
-4. **Finish the task instead of wandering away halfway through it.**
-5. **Verify the result or hand it back to the person who owns it.**
-6. **When the task is finished, look for the next legitimate assignment.**
-7. **If no work is ready, remain available rather than inventing work, disappearing or interfering with another department.**
-8. **Take breaks, standby time and release according to the actual call structure, employer, steward, lead, venue rules or agreement.**
-9. **Do not clock out or leave merely because your immediate task ended; leave when the controlling authority releases you.**
+## Universal task loop
 
-The goal is not to teach constant visible activity. Live production naturally contains bursts of intense work, dependencies, waits, holds, rehearsals, changeovers and downtime. A good stagehand understands the difference between:
+Every beginner practical lesson should use the same mental model:
 
-- assigned work that needs to be completed;
-- legitimate waiting/standby because another dependency controls the next move;
-- an authorized break;
-- useful housekeeping or preparation that is actually within scope;
-- disappearing, distracting the crew or avoiding available work.
+> **Receive → Confirm → Inspect → Plan → Execute → Protect → Verify → Hand off → Reset → Seek next assignment**
 
-Crew Blueprint should teach **professional availability**, not performative busyness.
+This transferable loop is the spine of the practical curriculum.
 
-## 3. One call-cycle curriculum
-
-### Phase 0 — Before the call
-
-Learner questions:
-
-- What is the call?
-- Where am I going?
-- What time do I need to be there?
-- What clothing/PPE/tools are actually expected?
-- Who issued the call and how do I communicate a problem?
-- What should I bring, and what should I not assume?
-
-Existing Fundamentals material on first-call readiness, PPE, clothing, punctuality, directions and preparation belongs here.
-
-### Phase 1 — Arrive and check in
-
-Teach:
-
-- arrive with enough time to find the correct entrance/check-in point;
-- identify the employer/local/production/venue structure controlling the call;
-- check in with the designated steward, crew chief, lead, house head, department head, stage manager, production manager or other assigned authority;
-- confirm department or work-group assignment;
-- do not self-deploy merely because gear is visible;
-- find out where personal items, water, tools and PPE belong;
-- understand call-time versus arrival/check-in expectations without pretending every employer uses the same procedure.
-
-### Phase 2 — Orient to the workspace
-
-Teach a fast first scan:
-
-- dock / truck / staging area;
-- stage and backstage;
-- work zones;
-- pedestrian and equipment routes;
-- exits and egress;
-- restrooms / water / break location if communicated;
-- where cases, carts and department gear are being staged;
-- overhead work / powered equipment / temporary power / public areas / restricted areas;
-- who controls the work around you.
-
-The learner outcome is not “memorize the building.” It is **know enough to move without becoming a hazard or getting in the way**.
-
-### Phase 3 — Get the assignment
-
-Before touching equipment, the learner should be able to answer:
-
-- Who gave me this task?
-- What exactly am I moving/building/handling?
-- Where is it going?
-- Who owns the equipment or final result?
-- Is it released/ready for me to handle?
-- Who am I working with?
-- Is there an order or sequence that matters?
-- What condition means I should stop and ask?
-- What does “done” look like?
-
-This becomes a reusable assignment-confirmation pattern across every physical skill.
-
-## 4. The universal task loop
-
-Every practical Stagehand Core skill should teach the same mental loop:
-
-> **Receive → Confirm → Inspect → Plan the move/task → Execute → Protect people/equipment → Verify → Hand off → Reset → Seek next assignment**
-
-This loop is more important than memorizing isolated tricks because it transfers across calls and departments.
-
-### Receive
-
-Listen to the actual assignment and identify the responsible lead/person.
-
-### Confirm
-
-Clarify destination, sequence, equipment, partner, route, orientation and acceptance condition when needed.
-
-### Inspect
-
-Look for obvious damage, missing pieces, blocked routes, hazards or conditions that make the demonstrated method inappropriate.
-
-### Plan
-
-Know where you are going before moving the object, cable, barricade, drape, riser or cart.
-
-### Execute
-
-Perform the bounded task using the correct method for the actual equipment and instruction received.
-
-### Protect
-
-Maintain control of the equipment, your body, coworkers, public routes and adjacent work.
-
-### Verify
-
-Check the observable result or return it to the person who owns final acceptance.
-
-### Hand off
-
-Communicate completion, problem, missing material or next dependency.
-
-### Reset
-
-Clear loose material, return tools if required, keep the path usable and leave the work area ready for the next step.
-
-### Seek next assignment
-
-Return to the appropriate lead/steward/crew chief/work group or otherwise follow the call's established system for obtaining more work.
-
-## 5. Beginner practical skill catalog
-
-The following should all be treated as **beginner/general-stagehand skills**, not as advanced specialties, when the task can be taught within a clear lead/equipment boundary.
-
-### Material movement and logistics
-
-- Move and park road cases with a partner.
-- Team lift/carry/set down awkward production items.
-- Move carts, dollies, hand trucks and flatbed carts.
-- Recognize labels/destinations and stage cases where directed.
-- Maintain a usable case/boneyard/workbox area.
-- Move scenery/flats or other assigned production items under the appropriate lead.
-- Loading-dock/ramp/trailer pedestrian and handoff awareness.
-
-### Cable and floor-route work
-
-- Coil and stage flexible production cable under department direction.
-- Lay/run/gather released cable under direction.
-- Dress or organize cable only to the level actually assigned and supported by the department's method.
-- Apply approved cable protection/ramps after route decisions are made by the responsible authority.
-- Apply labeling/tape conventions when assigned and documented.
-- Protect connectors and report damage instead of repairing/testing without authority.
-
-### Stage / scenic / room setup support
-
-- Barricade component handling and lead-directed setup on the exact system.
-- Pipe-and-drape component handling and lead-directed setup.
-- Ground-level soft-goods handling, passing, folding and storage.
-- Riser/deck/platform component handling and placement support.
-- Basic scenery/flat movement.
-- Basic non-powered hand-tool handling and handoff for ordinary assigned stagehand work.
-
-These are beginner tasks even though their exact frequency varies by show type. The catalog should tag context, but **context tags must not imply “advanced.”**
-
-### Beginner awareness boundaries
-
-A beginner also needs to recognize controlled work they may encounter without receiving operational authority from the course:
-
-- overhead rigging / hoists / load paths;
-- temporary production power and energized systems;
-- forklifts / powered industrial trucks;
-- MEWPs / lifts;
-- automation / moving machinery;
-- special effects;
-- regulated cargo/driver responsibility.
-
-Awareness belongs in Stagehand Core because the learner will work around these systems. Operational qualification remains separate.
-
-## 6. How the learner should progress through Stagehand Core
-
-The curriculum should feel linear even though different calls expose the learner to different physical tasks.
+## Stagehand Core learner parts
 
 ### Part 1 — Show Up Ready
 
-- What a stagehand is.
-- Call information.
-- Punctuality/check-in.
-- PPE/clothing/tools.
-- What “ready to work” actually means.
+Current Fundamentals readiness/safety/PPE material.
 
-### Part 2 — Enter the Jobsite Correctly
+### Part 2 — Arrive, Check In & Find Your Place
 
-- Check in.
-- Find the correct crew/department/work group.
-- Read the workspace.
-- Understand chain of command.
-- Avoid self-assigning.
-- Recognize controlled work and obvious hazards.
+Arrival, check-in, chain of command, workspace orientation, department/work-group placement, controlled-work awareness.
 
-### Part 3 — Work the Assignment
+### Part 3 — Get the Assignment & Work It
 
-- Receive/confirm/inspect/plan/execute/verify/handoff.
-- Material-handling fundamentals.
-- Communication during a task.
-- Working with a partner/team.
-- Stop-and-ask decisions.
+Assignment confirmation, communication, material handling, task execution, stop/ask decisions and universal task loop.
 
-### Part 4 — Core Tasks You Will Encounter
+### Part 4 — Beginner Field Skills
 
-This is the visual practical catalog, but it sits **inside the Stagehand Core progression** rather than outside Fundamentals.
+Visual task library embedded in the progression:
 
-Skill cards/modules include:
+- road cases;
+- team lifts/carries;
+- carts/dollies/hand trucks;
+- cable coiling;
+- cable deployment/gathering;
+- cable ramps/protection;
+- case/boneyard organization;
+- work-area reset/handoff;
+- barricade;
+- pipe-and-drape;
+- soft goods;
+- risers/deck/platform support;
+- scenery/flat movement;
+- ordinary stagehand hand tools;
+- jobsite tape/label use;
+- dock/ramp/trailer awareness;
+- ratchet straps when assigned;
+- flatbed cargo-securement support when assigned.
 
-1. Road cases.
-2. Team lifts/carries.
-3. Carts/dollies/hand trucks.
-4. Cable coiling.
-5. Cable deployment/gathering.
-6. Cable ramps/protection.
-7. Case/boneyard organization.
-8. Work-area reset/handoff.
-9. Barricade.
-10. Pipe-and-drape.
-11. Soft goods.
-12. Risers/deck/platform support.
-13. Basic scenery/flat movement.
-14. Basic stagehand hand tools.
-15. Jobsite tape/label use.
-16. Dock/ramp/trailer awareness.
-17. Ratchet straps when assigned.
-18. Flatbed cargo-securement support when assigned.
+Real calls expose learners to these in different orders. The **call behavior is linear; the task library is modular**.
 
-The learner does not need to encounter these in exactly this numbered order on a real call. The **call-cycle behavior is linear; the task catalog is modular.**
+### Part 5 — Finish, Hand Off & Find the Next Task
 
-### Part 5 — Finish One Task and Find the Next
+Task completion, acceptance/handoff, cleanup/reset, report-back and reassignment.
 
-Teach explicitly:
+### Part 6 — Breaks, Standby & Show Rhythm
 
-- communicate that the task is complete when the work structure requires it;
-- return borrowed tools/components;
-- clear debris/packaging/loose material;
-- preserve exits and routes;
-- do not leave an incomplete hazard for another crew;
-- ask/return for the next assignment;
-- avoid wandering into another department and “helping” without direction;
-- use genuine downtime appropriately when there is no available task.
+Distinguish task completion, dependency/hold, standby, directed break/meal period, show-call waiting and actual release. Avoid universal claims about break schedules or pay rules because employer/local/CBA/venue/jurisdiction practices vary.
 
-### Part 6 — Breaks, Standby and the Rhythm of a Call
+### Part 7 — Load Out, Finish Strong & Get Released
 
-This section should be realistic without pretending there is one national schedule.
+Strike discipline, fatigue/urgency, packing/routing, final sweep, unresolved issues, crew/department release and timekeeping/clock-out process.
 
-Teach:
+### Part 8 — Build a Reputation & Choose Your Next Direction
 
-- calls contain bursts of work and periods of waiting;
-- waiting may occur because trucks, rigging, power, soundcheck, rehearsal, client decisions or another department control the next step;
-- the worker should remain reachable/available according to the call structure;
-- breaks, meal periods and standby practices vary by employer, collective bargaining agreement, local, venue, production and jurisdiction;
-- never present a local practice as universal;
-- do not disappear from the work group or leave the property without understanding the release/break rules;
-- when directed to break, actually take the break and return when required;
-- “nothing to do right now” is different from “the call is over.”
+Connect reliable general-hand behavior to more varied assignments, department exposure, supervised technical growth and eventual specialist/lead/management paths without promising one universal promotion ladder.
 
-### Part 7 — Show Call / Changeover / Hold Work
+## Visual standard
 
-Where relevant, introduce:
-
-- staying quiet/clear when needed;
-- timing-sensitive tasks;
-- waiting for cues/direction;
-- changeovers;
-- resetting for the next act/session/show;
-- not touching show-critical gear without assignment;
-- maintaining attention during downtime because timing can change quickly.
-
-This remains a general orientation; department-specific show operation lives in department pathways.
-
-### Part 8 — Load-Out / Strike
-
-Teach the same task loop under strike conditions:
-
-- confirm release before disconnecting/removing equipment;
-- dismantle/pack/move only assigned items;
-- protect equipment and connectors;
-- maintain paths and truck/dock awareness;
-- return items to the correct case/truck/area;
-- do not assume a faster pace removes normal boundaries;
-- fatigue/time pressure are reasons for better communication, not improvisation.
-
-### Part 9 — Final Sweep, Release and Clock-Out
-
-Teach:
-
-- finish the actual assigned work;
-- return/secure tools and borrowed equipment as directed;
-- report damage/missing items/problems;
-- confirm whether the crew/department is released;
-- follow the employer/local/venue process for timekeeping;
-- do not independently change time records or leave before release because your personal task ended;
-- know who to contact if your recorded time or release status appears wrong.
-
-## 7. Realistic work ethic without fake busyness
-
-The course should communicate a real production truth:
-
-> **When there is work, do the work well. When the task is complete, make yourself available for the next legitimate task. When the production is waiting, wait professionally.**
-
-Do not teach:
-
-- constantly walk around pretending to be busy;
-- take work from another department without permission;
-- bypass a lead because you see something that could be done;
-- hide to avoid assignments;
-- leave because one task is complete;
-- skip or work through directed breaks merely to appear dedicated.
-
-A strong stagehand is useful because they can be trusted to **work hard when work exists, stop when the job requires a stop, and remain available without creating problems during downtime.**
-
-## 8. Catalog UX
-
-The Stagehand Core dashboard should visually follow the accepted Stagehand Fundamentals pattern.
-
-The dashboard should present the call lifecycle first, not a taxonomy first.
-
-Recommended top-level sequence:
-
-1. **Prepare for the Call**
-2. **Arrive & Check In**
-3. **Orient & Get Assigned**
-4. **Do the Work**
-5. **Field Skills Library**
-6. **Finish / Handoff / Next Task**
-7. **Breaks, Standby & Show Rhythm**
-8. **Load-Out / Strike**
-9. **Release & Clock-Out**
-10. **Where You Can Go Next**
-
-The Field Skills Library can be filtered by equipment/context, but every card should also show where it fits in the call cycle.
-
-## 9. Standard practical skill pattern
-
-Every skill uses the same user-friendly rhythm:
-
-1. **What assignment did you receive?**
-2. **Who owns the equipment/result?**
-3. **What should you inspect/confirm first?**
-4. **Where is it going / what is the route?**
-5. **Watch the skill visually.**
-6. **Perform the bounded sequence.**
-7. **Know what good looks like.**
-8. **Recognize common mistakes.**
-9. **Know when to stop and ask.**
-10. **Verify and hand off.**
-11. **Reset and seek the next assignment.**
-12. **Record observed practice separately from employer authorization.**
-
-## 10. Visual instruction standard
-
-Use visual material heavily for beginner physical work:
+Physical beginner material should be deliberately visual:
 
 - labeled equipment/components;
 - route diagrams;
-- hand/body positioning when safe and appropriate;
+- safe movement/positioning illustrations where appropriate;
 - sequence panels;
+- before/after states;
 - good-versus-bad examples;
-- before/after work-area states;
 - pinch/crush/no-go-zone diagrams;
-- short videos or animations where movement matters;
-- decision graphics for stop/ask/continue;
+- short video/animation where movement matters;
+- stop/ask/continue decision graphics;
 - call-flow diagrams showing assignment → task → handoff → next assignment.
 
-Every safety-critical or model-specific visual retains source, rights, model/context, reviewer and replacement information in the source matrix.
+Every safety-critical/model-specific visual retains source, rights, model/context, reviewer and replacement metadata in the evidence matrix.
 
-## 11. Evidence and liability architecture
+## Evidence/liability states
 
-Keep these states separate:
+Keep separate:
 
-1. Viewed / position recorded.
+1. Viewed / lesson position recorded.
 2. Knowledge check completed.
 3. Skill prepared for practice.
 4. Observed practice completed on named equipment/conditions.
@@ -405,80 +124,20 @@ Keep these states separate:
 
 No earlier state implies a later state.
 
-### Critical drafting rule
+## Career progression message
 
-Teach what a good general hand can safely recognize, carry, move, assemble/support, communicate, reset and hand off under direction.
-
-Do not transform “a beginner may encounter this” into “an online learner is authorized to perform every version of this task.”
-
-## 12. Career progression
-
-Stagehand Core should end by showing how reliable general-hand behavior creates access to more responsibility.
-
-A useful progression is:
+A useful learner map is:
 
 > **Reliable on calls → trusted with more varied general tasks → repeated department exposure → Department Support → systems knowledge → authorized technician/operator/specialist work → lead/advanced specialist/design/management paths**
 
-This is not a universal promotion ladder. It is a learner map explaining how consistently doing ordinary work well can create opportunities to learn more.
+This is educational guidance, not a guaranteed promotion sequence.
 
-Department/career branches remain:
+## Migration rule
 
-- Lighting
-- Audio
-- Video / LED / Camera / Media
-- Staging / Carpentry / Scenic
-- Rigging awareness and external qualification path
-- Electrics / Production Power awareness and qualified path
-- Backline
-- Props
-- Wardrobe
-- Production / Stage Management / Venue Operations
-- Warehouse / Rental Shop / Logistics
-- Crew Chief / Leadership
+Preserve existing Stagehand Fundamentals lesson IDs, Field Skill deep links, source lineage and department pathways during migration. Reorganize them into the call-cycle architecture only after crosswalk/matrix verification proves nothing was lost.
 
-## 13. Migration from the current site
+## Decision summary
 
-### Preserve
+The future Stagehand Core experience should teach:
 
-- existing Stagehand Fundamentals source lineage;
-- existing Field Skill deep links;
-- current department pathways;
-- existing practical packets and matrix IDs.
-
-### Reorganize
-
-Stagehand Fundamentals and Field Skills should become parts of the same **Stagehand Core call-cycle curriculum**.
-
-Do not present barricade, pipe-and-drape, soft goods, risers/deck or similar ordinary beginner tasks as advanced merely because they are context-dependent.
-
-Ratchet straps and flatbed support remain beginner-accessible **when actually assigned**, but their lower cross-call frequency and stronger logistics/transport boundaries mean they can appear later in the task library without being labeled advanced.
-
-### Add
-
-A unified Stagehand Core dashboard/catalog that makes the call lifecycle the primary navigation and the practical task library the embedded skill layer.
-
-## 14. Build sequence
-
-1. Finish source packets for the high-frequency beginner task catalog.
-2. Add packets for barricade, pipe-and-drape, soft goods, riser/deck support, scenery/flat movement, tools and labeling where current evidence is insufficient.
-3. Crosswalk every existing Fundamentals lesson into the call lifecycle.
-4. Crosswalk every current Field Skill into the task library and call phase.
-5. Remove duplicated explanations while preserving source lineage and stable IDs.
-6. Draft the unified Stagehand Core dashboard and call-cycle navigation.
-7. Build visual task cards and lesson sequences.
-8. Matrix every claim/question/visual/practice gate/boundary.
-9. Run owner and practitioner review.
-10. Enhance with reviewed original diagrams/photos/video.
-11. Use the later `audit` branch for final publication review when directed.
-
-## 15. Decision summary
-
-**Stagehand Core should be linear around the real life of a work call.**
-
-The correct model is:
-
-> **Show up ready → check in → orient → get assigned → do the task well → verify/handoff → find the next task → use legitimate downtime/breaks appropriately → repeat → load out → final handoff → get released → clock out → grow into more responsibility.**
-
-The physical task library is modular because no two calls expose a beginner to the same tasks in the same order, but all tasks use the same professional work loop.
-
-That combination provides the strongest balance of realism, usefulness, accuracy, career development and liability control.
+> **Show up ready. Check in. Know where you belong. Understand the assignment. Do it well. Finish and hand it off. Find the next task. If nothing is ready, stay available. Take breaks when the call says to. Repeat until strike is done. Get released. Clock out correctly. Then come back and do it better next time.**
