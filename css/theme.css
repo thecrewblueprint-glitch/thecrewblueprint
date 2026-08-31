@@ -155,14 +155,17 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-logo-text {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  display: block;
+  width: 180px;
+  height: 52px;
+  overflow: hidden;
+  background: url("../images/crew-blueprint-logo-master.jpeg") center -126px / 180px auto no-repeat;
+  color: transparent;
+  font-size: 0;
   white-space: nowrap;
 }
 
-.nav-logo-text span { color: var(--cb-gold); }
+.nav-logo-text span { color: transparent; }
 
 .nav-links {
   display: flex;
@@ -254,6 +257,15 @@ img { max-width: 100%; display: block; }
   .nav-links.open { display: flex; }
 
   .nav-links a { width: 100%; }
+}
+
+@media (max-width: 390px) {
+  .nav-logo-text {
+    width: 150px;
+    height: 44px;
+    background-size: 150px auto;
+    background-position: center -105px;
+  }
 }
 
 /* ---------------------------------------------------------
@@ -526,18 +538,14 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border: 1px solid var(--cb-gold-border);
-  border-radius: var(--cb-radius-md);
-  background: var(--cb-card);
-  color: var(--cb-gold);
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 800;
-  font-size: 20px;
+  display: inline-block;
+  width: 48px;
+  height: 72px;
+  flex: 0 0 48px;
+  overflow: hidden;
+  background: url("../images/crew-blueprint-mark.png") center / contain no-repeat;
+  color: transparent;
+  font-size: 0;
 }
 
 .footer-wordmark {

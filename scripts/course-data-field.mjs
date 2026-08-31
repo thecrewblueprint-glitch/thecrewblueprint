@@ -1,10 +1,12 @@
+import { roadCaseCourse } from './course-data-road-case.mjs';
+
 export const fieldCourses = [
   {
     slug: 'field-skill-over-under-cable-coiling',
     title: 'Over-Under Cable Coiling',
     tier: 'Stagehand Field Skills',
     tierClass: 'course-tier-field-skill',
-    status: 'Knowledge Build · Practice Gate',
+    status: 'Explain · Show · Practice Gate',
     packet: 'Research Package 46 — Stagehand Field Skills: Over-Under Cable Coiling',
     description: 'Learn the common over-under hand sequence, protect the cable and connectors, and recognize when the technician or manufacturer calls for another method.',
     boundary: 'The responsible technician chooses the method, coil diameter, connector treatment, tie convention, destination, and acceptance standard for the actual cable. This lesson never authorizes disconnection, testing, repair, or handling of live or show-critical lines.',
@@ -42,7 +44,9 @@ export const fieldCourses = [
           name: 'Form Relaxed Alternating Loops',
           objective: 'Form consistent over and under loops without forcing twist or violating the directed coil diameter.',
           blocks: [
+            { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/field-over-under-sequence.jpg" alt="Four-panel sequence showing cable inspection, a relaxed over loop, a relaxed under loop, and a finished secured coil."><figcaption>Visual sequence: clear the cable, follow its natural lay, alternate relaxed loops, and secure the finished coil without loading the connectors. AI-generated training visual based on Package 46; the cable owner and manufacturer instructions control exceptions.</figcaption></figure>' },
             { type: 'evidence', paragraphs: ['QSC demonstrates a repeatable over-loop and under-loop motion. Hosa explains why it works: repeated over-over loops add twist in one direction, while the under loop counters the twist added by the prior loop.'] },
+            { type: 'evidence', heading: 'Watch the hand motion before practicing', paragraphs: ['<a class="video-demo-link" href="https://training.qsc.com/mod/book/tool/print/index.php?id=1715" target="_blank" rel="noopener noreferrer">Watch QSC’s “How to properly roll a cable” demonstration →</a><span class="video-demo-note">The official QSC page includes the visual demonstration and a time-coded transcript. External video opens only when you choose it.</span>'] },
             { heading: 'Controlled sequence', type: 'sequence', items: ['Hold the receiving end and let the cable relax.', 'Gather a length that matches the technician-directed diameter.', 'Form the first over loop by letting the cable fall into its natural curve.', 'Reverse the working-hand orientation and form the under loop.', 'Continue alternating without twisting the jacket into place.', 'When a loop resists, lower tension and let the cable rotate naturally. If it still resists, stop and ask.'] },
             { type: 'callout', heading: 'What the observer should see', paragraphs: ['The loops stay relaxed and similar in size. The cable does not fight the learner. The connectors remain controlled. A left-handed learner may mirror the motion; the observable skill is the alternating lay, not one required hand.'] }
           ]
@@ -88,7 +92,7 @@ export const fieldCourses = [
       checklist: ['Technician confirms cable and method.', 'Learner completes six controlled alternating loops.', 'Observer checks connector control, relaxed lay, coil diameter, tie, destination, and stop judgment.', 'Employer or department authorization, if any, remains a separate record.']
     },
     sources: [
-      { label: 'QSC — Cable coiling training', url: 'https://training.qsc.com/mod/book/tool/print/index.php?id=1715' },
+      { label: 'QSC — How to properly roll a cable (video and transcript)', url: 'https://training.qsc.com/mod/book/tool/print/index.php?id=1715' },
       { label: 'Hosa Technology — How to wrap a cable', url: 'https://hosatech.com/press-release/how-to-wrap-a-cable/' },
       { label: 'Neutrik — opticalCON handling FAQ', url: 'https://www.neutrik.com/en/neutrik/faq/opticalcon' },
       { label: 'Belden — Cable installation and bend awareness', url: 'https://www.belden.com/blog/copper-cable-installation-best-practices-be-aware-of-the-why' }
@@ -99,7 +103,7 @@ export const fieldCourses = [
     title: 'Ratchet Straps Under Direction',
     tier: 'Stagehand Field Skills',
     tierClass: 'course-tier-field-skill',
-    status: 'Knowledge Build · Practice Gate',
+    status: 'Explain · Show · Practice Gate',
     packet: 'Research Package 47 — Stagehand Field Skills: Ratchet Straps',
     description: 'Inspect and operate one identified ratchet-strap assembly after the lead selects the strap, anchors, route, edge protection, sequence, and stop point.',
     boundary: 'The responsible lead selects suitability, connection points, route, edge protection, sequence, tension, and final acceptance. This course never permits a cargo strap to serve as lifting, rigging, fall-protection, towing, recovery, or personnel-restraint equipment.',
@@ -149,6 +153,7 @@ export const fieldCourses = [
           name: 'Operate the Exact Mechanism',
           objective: 'Thread, remove slack, tension, and lock one model-specific ratchet while staying clear of pinch and recoil paths.',
           blocks: [
+            { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/field-ratchet-strap-sequence.jpg" alt="Four-panel sequence showing strap inspection, threading, slack removal, and a locked ratchet strap with edge protection."><figcaption>Visual sequence: inspect the complete assembly, thread the demonstrated mechanism, remove slack by hand, then tension and lock under direction. AI-generated training visual based on Package 47; it is not a substitute for the exact manufacturer procedure.</figcaption></figure>' },
             { type: 'evidence', paragraphs: ['Mechanisms and release designs vary. The reviewing lead must demonstrate the exact strap used in practice. The sequence below gives the control points; the manufacturer’s direction controls hand position and webbing travel.'] },
             { type: 'sequence', items: ['Open the ratchet to the demonstrated loading position.', 'Feed the free end through the mandrel slot in the demonstrated direction.', 'Pull most slack through by hand before moving the handle.', 'Take stable footing and clear everyone from the line of action.', 'Move the handle smoothly and watch the strap, anchors, edge protection, and load.', 'Stop at the lead’s directed point.', 'Close the handle into its locked position and request inspection.'] },
             { type: 'stop', heading: 'Never add unapproved force', paragraphs: ['Do not add a pipe, bar, tool, body weight, or second person to force more tension. Stop if the mechanism binds, will not lock, overfills with webbing, or if any load or structure begins to move or deform.'] }
@@ -192,7 +197,7 @@ export const fieldCourses = [
     title: 'Flatbed Cargo-Securement Support',
     tier: 'Stagehand Field Skills',
     tierClass: 'course-tier-field-skill',
-    status: 'Knowledge Build · Driver Practice Gate',
+    status: 'Explain · Show · Driver Practice Gate',
     packet: 'Research Package 48 — Stagehand Field Skills: Flatbed Cargo-Securement Support',
     description: 'Assist a driver or qualified load lead by recognizing the securement system, following the approved plan, staying clear of stored-force zones, and reporting change.',
     boundary: 'The motor carrier, driver, or qualified load lead owns the securement plan and final acceptance as applicable. Completion is not a CDL, driver qualification, cargo-securement certification, or permission to approve a public-road load.',
@@ -215,6 +220,7 @@ export const fieldCourses = [
           name: 'Recognize the Parts of the Plan',
           objective: 'Identify common securement components and know which ones require separate instruction.',
           blocks: [
+            { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/field-flatbed-support-sequence.jpg" alt="Three-panel overview showing a load lead briefing a helper, a helper inspecting a strap from the ground, and final driver inspection of a secured flatbed load."><figcaption>System view: the qualified lead controls the plan, the helper works from the assigned safe zone, and acceptance returns to the driver or load lead. AI-generated training visual based on Package 48; tiedown count, routing, tension, and legal acceptance are not learner decisions.</figcaption></figure>' },
             { type: 'columns', columns: [
               { heading: 'Helper may handle as assigned', bullets: ['Ratchet or winch straps after model instruction', 'Edge protection', 'Directed dunnage, blocking, or chocks', 'Approved anchor points named by the lead', 'Loose tails and final housekeeping'] },
               { heading: 'Separate authority or training', bullets: ['Securement calculations and tiedown count', 'Anchor suitability decisions', 'Chains and binders', 'Tarping with wind or fall exposure', 'Commodity-specific rules', 'Vehicle and load acceptance'] }
@@ -285,7 +291,7 @@ export const fieldCourses = [
     title: 'Barricade Setup Under Direction',
     tier: 'Stagehand Field Skills',
     tierClass: 'course-tier-field-skill',
-    status: 'Knowledge Build · Model Practice Gate',
+    status: 'Explain · Show · Model Practice Gate',
     packet: 'Research Package 49 — Stagehand Field Skills: Barricade Setup',
     description: 'Identify the barricade family, use the exact manufacturer procedure, protect hands and routes, and preserve the lead’s layout without improvising.',
     boundary: 'The designated barricade, crowd, security, event-operations, or venue lead controls layout, audience orientation, gates, corners, wedges, bracing, public and emergency access, surface acceptance, sequence, and final inspection.',
@@ -335,6 +341,7 @@ export const fieldCourses = [
           name: 'Follow the Exact Model Procedure',
           objective: 'Deploy and connect only the identified model with its specified hardware and close visual verification.',
           blocks: [
+            { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/field-barricade-model-sequence.jpg" alt="Four-panel example showing a barricade lead identifying one panel system, two-person handling, model-specific connection, and final line inspection."><figcaption>Example model only: identify the system, use the reviewed handling points, fully engage its connector, and stop for final inspection. AI-generated training visual based on Package 49; never copy this pictured sequence to a different barricade family or model.</figcaption></figure>' },
             { type: 'evidence', paragraphs: ['For the CC-500 only, StageRight directs users to lift the barrier, slide the upright barrier forward until it stops, lower the step until it rests horizontally and locks, then join units with the model’s lock bars and faspins. Another product requires another sequence.'] },
             { type: 'sequence', items: ['Call out the model and confirm the applicable procedure.', 'Clear the opening, lowering, and connection zones.', 'Deploy under one lead’s commands with hands in reviewed positions.', 'Bring units together without fingers in the joint.', 'Install only the specified connector and approved parts.', 'Confirm pins, bars, locks, stops, and fasteners show full engagement.', 'Hold the lead’s line; stop at any conflict instead of bending around it.'] },
             { type: 'stop', paragraphs: ['Do not copy the CC-500 sequence to a Mojo, Sentinel, temporary fence, folding panel, vehicle barrier, or any unverified system.'] }
@@ -376,7 +383,7 @@ export const fieldCourses = [
     title: 'Cable Ramps & Protectors',
     tier: 'Stagehand Field Skills',
     tierClass: 'course-tier-field-skill',
-    status: 'Knowledge Build · Route Practice Gate',
+    status: 'Explain · Show · Route Practice Gate',
     packet: 'Research Package 50 — Stagehand Field Skills: Cable Ramps and Protectors',
     description: 'Install an assigned cable-protection system along an approved route while preserving cable limits, pedestrian access, traffic controls, and the lead’s final inspection.',
     boundary: 'The department or venue lead controls the route, product family and model, traffic class, channel assignment, service separation, accessible-route solution, surface acceptance, and final inspection. The learner never chooses a vehicle rating or accessibility solution from appearance alone.',
@@ -414,6 +421,7 @@ export const fieldCourses = [
           name: 'Build the Line Before Closing It',
           objective: 'Connect compatible units, place the assigned lines without forcing them, and close every section fully.',
           blocks: [
+            { type: 'html', html: '<figure class="course-training-visual"><img src="../images/course-visuals/field-cable-protector-sequence.jpg" alt="Four-panel sequence showing cable-protector inspection, section connection, cable placement in channels, and final route inspection."><figcaption>Visual sequence: inspect compatible sections, build the line, place assigned services without forcing them, close every lid, and inspect the entire crossing. AI-generated training visual based on Package 50; the exact product rating, route, traffic, and accessibility plan control use.</figcaption></figure>' },
             { type: 'sequence', items: ['Place the first unit at the lead’s start point and orientation.', 'Connect only compatible units with the manufacturer’s connector method.', 'Keep the line seated on the accepted surface and maintain the planned crossing angle.', 'Open lids or channels without placing hands under a dropping lid or between moving sections.', 'Place only assigned cables or hoses in their assigned channels.', 'Preserve connector clearance, bend limits, and service separation.', 'Close or seat every lid, insert, ramp, cap, and connector.', 'Walk the complete line and report gaps, rocking, raised lids, exposed lines, or route drift.'] },
             { type: 'callout', paragraphs: ['Never force a connector, plug, breakout, or bend into a channel. A protector that crushes or sharply bends the service line creates a different failure.'] }
           ]
@@ -463,5 +471,6 @@ export const fieldCourses = [
       { label: 'OSHA 1910.22 — Walking-working surfaces', url: 'https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.22' },
       { label: 'OSHA 1910.305 — Wiring methods, components, and equipment', url: 'https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.305' }
     ]
-  }
+  },
+  roadCaseCourse
 ];

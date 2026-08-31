@@ -50,6 +50,10 @@
       if (block.type === 'stop') return `<div class="stop-box">${heading}${paragraphList(block.paragraphs)}${bulletList(block.bullets)}</div>`;
       if (block.type === 'practice') return `<div class="practice-box">${heading}${paragraphList(block.paragraphs)}${bulletList(block.bullets, Boolean(block.ordered), block.ordered ? 'sequence' : '')}</div>`;
       if (block.type === 'evidence') return `<div class="evidence-box">${heading}${paragraphList(block.paragraphs)}${bulletList(block.bullets)}</div>`;
+      if (block.type === 'demo') {
+        return `<div class="demo-box">${heading}${paragraphList(block.paragraphs)}<div class="demo-steps">${(block.steps || []).map((step, index) => `<div class="demo-step"><span class="demo-step-number">${index + 1}</span><strong>${step.heading}</strong><span>${step.text}</span></div>`).join('')}</div></div>`;
+      }
+      if (block.type === 'html') return block.html || '';
       if (block.type === 'sequence') return `${heading}${paragraphList(block.paragraphs)}${bulletList(block.items, true, 'sequence')}`;
       if (block.type === 'columns') {
         return `${heading}<div class="${block.columns.length === 3 ? 'three-grid' : 'split-grid'}">${block.columns.map((column) => `<div class="split-col"><h4>${column.heading}</h4>${paragraphList(column.paragraphs)}${bulletList(column.bullets)}</div>`).join('')}</div>`;
@@ -84,11 +88,14 @@
   }
 
   function navigationItems() {
-    return [
-      ...lessons.map((lesson) => ({ id: lesson.id, name: lesson.name, moduleName: lesson.moduleName, type: 'lesson' })),
-      { id: 'quiz', name: 'Knowledge Check', moduleName: 'Assessment', type: 'quiz' },
-      { id: 'sources', name: 'Practice Gate & Sources', moduleName: 'Assessment', type: 'sources' }
-    ];
+    const items = lessons.map((lesson) => ({ id: lesson.id, name: lesson.name, moduleName: lesson.moduleName, type: 'lesson' }));
+    if (!course.inlineAssessment) {
+      items.push(
+        { id: 'quiz', name: 'Knowledge Check', moduleName: 'Assessment', type: 'quiz' },
+        { id: 'sources', name: 'Practice Gate & Sources', moduleName: 'Assessment', type: 'sources' }
+      );
+    }
+    return items;
   }
 
   function buildSidebar(currentId) {
@@ -117,6 +124,7 @@
       sidebar.appendChild(sub);
     });
 
+    if (!course.inlineAssessment) {
     const assessmentHeader = document.createElement('div');
     assessmentHeader.className = `mod${currentId === 'quiz' || currentId === 'sources' ? ' active' : ''}`;
     assessmentHeader.innerHTML = `<span class="num">${course.modules.length + 1}</span><div><div class="module-title">Assessment &amp; Evidence</div><div class="module-count">2 lessons</div></div>`;
@@ -136,6 +144,7 @@
       mobileSelect.appendChild(option);
     });
     sidebar.appendChild(assessmentSub);
+    }
     mobileSelect.value = currentId;
   }
 

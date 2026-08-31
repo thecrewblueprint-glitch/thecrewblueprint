@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Stagehand Fundamentals — Four-Part Foundation Course</title>
+<link href="../css/course-consent.css" rel="stylesheet">
 <style>
-:root{--bg:#090c10;--panel:#121820;--panel2:#18212b;--text:#f1f4f7;--muted:#aab5c0;--line:#2b3641;--gold:#f5b400;--gold2:#ffd45a;--good:#39b979;--bad:#e26868;--info:#0284c7}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#090c10,#0b0f14);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:20;background:#090c10ee;border-bottom:1px solid var(--line)}.topin{max-width:1400px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:900}.brand span,.eyebrow{color:var(--gold)}.small{font-size:.78rem;color:var(--muted)}.progbox{width:min(360px,45vw)}.progrow{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.bar{height:8px;background:#222b34;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}.shell{max-width:1400px;margin:auto;padding:22px 18px 60px}.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}.side{position:sticky;top:86px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:calc(100vh-100px);overflow-y:auto}.mod{display:flex;gap:10px;align-items:center;padding:9px;border-radius:11px;color:var(--muted);cursor:pointer;transition:all 200ms}.mod:hover{background:#1a2430}.mod.active{background:#211d0e;color:var(--text);border:1px solid #65551f}.num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#232c35;font-weight:800;font-size:12px}.active .num{background:var(--gold);color:#111}.sub{margin:8px 0 10px 23px;padding-left:13px;border-left:1px solid var(--line)}.sub button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--muted);padding:8px 0;cursor:pointer;font-size:13px;transition:color 200ms}.sub button:hover{color:var(--gold2)}.sub button.active{color:var(--gold2);font-weight:800}.hero,.card{background:linear-gradient(var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.03;margin:.3rem 0}.hero p{color:var(--muted);max-width:880px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900}.lesson-meta{color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.08em;margin-top:2px;text-transform:uppercase}.lesson{display:none}.lesson.active{display:block}.objective{border-left:4px solid var(--gold)}.visual-section{background:#0f1419;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:300px;overflow-x:auto}.visual-section svg{max-width:100%;height:auto;display:block}.visual-section img{max-width:100%;height:auto}.explainer{background:#0f1419;border-left:4px solid var(--info);padding:16px;border-radius:8px;margin-bottom:14px;font-size:14px;line-height:1.7;color:var(--text)}.explainer strong{color:var(--gold2)}.reference{background:#0f1419;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px;font-size:13px}.reference strong{color:var(--gold2)}.reference ul{margin:8px 0;padding-left:20px}.reference li{margin:6px 0}.reference-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;font-weight:800}h3{margin:14px 0 8px 0;font-size:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#1b2530;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:13px}.mini strong{color:var(--gold2)}.options{display:grid;gap:10px}.opt{border:1px solid var(--line);background:#10151a;color:var(--text);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-size:13px;transition:all 200ms}.opt:hover:not(:disabled){border-color:var(--gold);background:#0f1a1f}.opt.correct{border-color:var(--good);background:#123026}.opt.incorrect{border-color:var(--bad);background:#321919}.opt:disabled{opacity:.7;cursor:not-allowed}.coach{display:none;margin-top:12px;padding:14px;border-left:4px solid var(--gold);background:#0e1419;border-radius:10px;font-size:13px;line-height:1.6}.coach.show{display:block}.coach strong{color:var(--gold2)}.rule{background:#211d0f;border:2px solid #66561f;padding:16px;border-radius:12px;text-align:center;font-weight:900;color:var(--gold2);margin-bottom:14px}.key-takeaway{background:#0e3a54;border:1px solid #1a5a7a;border-left:4px solid #0284c7;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;color:#e0f2fe}.key-takeaway strong{color:#0284c7}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:800;font-size:13px;transition:all 200ms}.btn:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--gold);color:#111}.primary:hover:not(:disabled){background:#ffc700;transform:translateY(-1px)}.secondary{background:#11161c;color:var(--text)}.secondary:hover:not(:disabled){background:#1a2430}.mobile{display:none}@media(max-width:1000px){.layout{grid-template-columns:1fr}.side{display:none}.mobile{display:block;margin-bottom:12px}.mobile select{width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;font-size:13px}.grid2{grid-template-columns:1fr}.hero{padding:17px}.card{padding:17px}.actions{flex-direction:column-reverse}.btn{width:100%}.visual-section{min-height:200px}}
-.part-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}.part-tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font:inherit;transition:all 180ms}.part-tab:hover{border-color:var(--gold);color:var(--text)}.part-tab:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}.part-tab.active{background:#211d0e;border-color:#65551f;color:var(--text)}.part-tab b{display:block;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.part-tab span{display:block;font-size:13px;line-height:1.35;margin-top:3px}.part-summary{padding:8px 8px 14px;border-bottom:1px solid var(--line);margin-bottom:8px}.part-summary strong{display:block;color:var(--gold2)}.part-summary a,.course-boundary a{color:var(--gold2)}.course-boundary{border-left:4px solid var(--gold);font-size:13px}.course-boundary p{margin:0 0 8px}.course-boundary p:last-child{margin-bottom:0}@media(max-width:760px){.part-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.part-tab{min-width:0;padding:10px}.part-tab span{font-size:12px}}
+:root{--bg:#090c10;--panel:#121820;--panel2:#18212b;--text:#f1f4f7;--muted:#aab5c0;--line:#2b3641;--gold:#f5b400;--gold2:#ffd45a;--good:#39b979;--bad:#e26868;--info:#0284c7}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#090c10,#0b0f14);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}.top{position:sticky;top:0;z-index:20;background:#090c10ee;border-bottom:1px solid var(--line)}.topin{max-width:1400px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{width:180px;height:52px;overflow:hidden;background:url("../images/crew-blueprint-logo-master.jpeg") center -126px/180px auto no-repeat;color:transparent;font-size:0;white-space:nowrap}.brand span{color:transparent}.brand span,.eyebrow{color:var(--gold)}.small{font-size:.78rem;color:var(--muted)}.progbox{width:min(360px,45vw)}.progrow{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.bar{height:8px;background:#222b34;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}.shell{max-width:1400px;margin:auto;padding:22px 18px 60px}.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}.side{position:sticky;top:106px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:calc(100vh-120px);overflow-y:auto}.mod{display:flex;gap:10px;align-items:center;padding:9px;border-radius:11px;color:var(--muted);cursor:pointer;transition:all 200ms}.mod:hover{background:#1a2430}.mod.active{background:#211d0e;color:var(--text);border:1px solid #65551f}.num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#232c35;font-weight:800;font-size:12px}.active .num{background:var(--gold);color:#111}.sub{margin:8px 0 10px 23px;padding-left:13px;border-left:1px solid var(--line)}.sub button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--muted);padding:8px 0;cursor:pointer;font-size:13px;transition:color 200ms}.sub button:hover{color:var(--gold2)}.sub button.active{color:var(--gold2);font-weight:800}.hero,.card{background:linear-gradient(var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.03;margin:.3rem 0}.hero p{color:var(--muted);max-width:880px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900}.lesson-meta{color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.08em;margin-top:2px;text-transform:uppercase}.lesson{display:none}.lesson.active{display:block}.objective{border-left:4px solid var(--gold)}.visual-section{background:#0f1419;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:300px;overflow-x:auto}.visual-section svg{max-width:100%;height:auto;display:block}.visual-section img{max-width:100%;height:auto}.training-photo{width:100%;margin:0 0 16px;overflow:hidden;background:#0f1419;border:1px solid var(--line);border-radius:12px}.training-photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.training-photo figcaption{padding:11px 14px;color:var(--muted);font-size:12px;line-height:1.5}.explainer{background:#0f1419;border-left:4px solid var(--info);padding:16px;border-radius:8px;margin-bottom:14px;font-size:14px;line-height:1.7;color:var(--text)}.explainer strong{color:var(--gold2)}.reference{background:#0f1419;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px;font-size:13px}.reference strong{color:var(--gold2)}.reference ul{margin:8px 0;padding-left:20px}.reference li{margin:6px 0}.reference-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;font-weight:800}h3{margin:14px 0 8px 0;font-size:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#1b2530;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:13px}.mini strong{color:var(--gold2)}.options{display:grid;gap:10px}.opt{border:1px solid var(--line);background:#10151a;color:var(--text);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font-size:13px;transition:all 200ms}.opt:hover:not(:disabled){border-color:var(--gold);background:#0f1a1f}.opt.correct{border-color:var(--good);background:#123026}.opt.incorrect{border-color:var(--bad);background:#321919}.opt:disabled{opacity:.7;cursor:not-allowed}.coach{display:none;margin-top:12px;padding:14px;border-left:4px solid var(--gold);background:#0e1419;border-radius:10px;font-size:13px;line-height:1.6}.coach.show{display:block}.coach strong{color:var(--gold2)}.rule{background:#211d0f;border:2px solid #66561f;padding:16px;border-radius:12px;text-align:center;font-weight:900;color:var(--gold2);margin-bottom:14px}.key-takeaway{background:#0e3a54;border:1px solid #1a5a7a;border-left:4px solid #0284c7;padding:12px;border-radius:8px;margin-top:12px;font-size:13px;color:#e0f2fe}.key-takeaway strong{color:#0284c7}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;cursor:pointer;font-weight:800;font-size:13px;transition:all 200ms}.btn:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--gold);color:#111}.primary:hover:not(:disabled){background:#ffc700;transform:translateY(-1px)}.secondary{background:#11161c;color:var(--text)}.secondary:hover:not(:disabled){background:#1a2430}.mobile{display:none}@media(max-width:1000px){.layout{grid-template-columns:1fr}.side{display:none}.mobile{display:block;margin-bottom:12px}.mobile select{width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;font-size:13px}.grid2{grid-template-columns:1fr}.hero{padding:17px}.card{padding:17px}.actions{flex-direction:column-reverse}.btn{width:100%}.visual-section{min-height:200px}}
+.part-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}.part-tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font:inherit;transition:all 180ms}.part-tab:hover{border-color:var(--gold);color:var(--text)}.part-tab:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}.part-tab.active{background:#211d0e;border-color:#65551f;color:var(--text)}.part-tab b{display:block;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.part-tab span{display:block;font-size:13px;line-height:1.35;margin-top:3px}.part-summary{padding:8px 8px 14px;border-bottom:1px solid var(--line);margin-bottom:8px}.part-summary strong{display:block;color:var(--gold2)}.part-summary a,.course-boundary a{color:var(--gold2)}.course-boundary{border-left:4px solid var(--gold);font-size:13px}.course-boundary p{margin:0 0 8px}.course-boundary p:last-child{margin-bottom:0}@media(max-width:760px){.topin{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding:8px 12px}.topin>div:first-child{min-width:0}.brand{width:150px;height:44px;background-size:150px auto;background-position:center -105px}.topin>a{grid-column:2;grid-row:1}.progbox{grid-column:1/-1;grid-row:2;width:100%}.part-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.part-tab{min-width:0;padding:10px}.part-tab span{font-size:12px}}
+.brand span{color:transparent!important}
 </style></head><body class="course-tier course-tier-foundation">
 <header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small" id="courseContext">Part 1 of 4 — First Call Readiness</div></div><div class="progbox"><div class="progrow"><span id="progtext">Lesson 1 of 11</span><span id="pct">9%</span></div><div class="bar"><i id="bar" style="width:9%"></i></div></div><a href="../lms-dashboard.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Course Map</a></div></header>
 <div class="shell"><nav class="part-tabs" id="partTabs" aria-label="Stagehand Fundamentals parts"></nav><div class="mobile"><select id="mobile" aria-label="Choose a lesson" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
@@ -15,14 +17,14 @@
 
 <script>
 const modules = [
-  {num:1,title:"Welcome to Live Event World",lessons:[
+  {num:1,title:"Welcome to the Live Event World",lessons:[
     {id:"1.1",name:"The Job & The Room",obj:"Recognize how environment changes risk."},
     {id:"1.2",name:"The Shape of a Call",obj:"Understand the three-phase structure."},
     {id:"1.3",name:"Crew, Direction & Value",obj:"Identify who leads and what matters."},
     {id:"1.4",name:"First-Call Integration",obj:"Apply Module 1 concepts in context."}
   ],rule:"SHOW UP READY. KNOW WHO IS LEADING YOU. FOLLOW DIRECTION. ASK BEFORE YOU GUESS. WORK SAFELY."},
   {num:2,title:"Safety Mindset Before Skillset",lessons:[
-    {id:"2.1",name:"Hazard vs. Risk vs. Behavior",obj:"Distinguish three related concepts."},
+    {id:"2.1",name:"Hazard vs. Risk vs. Behavior",obj:"Explain how hazards, exposure, behavior, and controls affect risk."},
     {id:"2.2",name:"Notice & Classify",obj:"Apply the NCCE decision model."},
     {id:"2.3",name:"Under Pressure",obj:"Keep safety judgment active."},
     {id:"2.4",name:"Hazard Integration",obj:"Identify hazards in complex scenes."}
@@ -37,31 +39,31 @@ const modules = [
     {id:"4.2",name:"Read the Space",obj:"Navigate using venue vocabulary."},
     {id:"4.3",name:"Hazard Recognition",obj:"Spot multiple hazards in scenes."}
   ],rule:"ORIENT FIRST. KNOW WHERE YOU ARE, WHO IS LEADING YOU, WHAT IS MOVING, AND WHAT YOU MUST STAY OUT OF."},
-  {num:5,title:"Load-In Fundamentals",lessons:[
-    {id:"5.1",name:"The Sequence",obj:"Understand truck-to-room workflow."},
-    {id:"5.2",name:"Control & Visibility",obj:"Move with awareness and spotters."},
-    {id:"5.3",name:"Pinch Points & Coordination",obj:"Handle gear safely with a team."},
-    {id:"5.4",name:"Load-In Integration",obj:"Apply concepts through full sequence."}
+  {num:6,title:"Load-In Fundamentals",lessons:[
+    {id:"6.1",name:"The Sequence",obj:"Understand truck-to-room workflow."},
+    {id:"6.2",name:"Control & Visibility",obj:"Move with awareness and spotters."},
+    {id:"6.3",name:"Pinch Points & Coordination",obj:"Handle gear safely with a team."},
+    {id:"6.4",name:"Load-In Integration",obj:"Apply concepts through full sequence."}
   ],rule:"MOVE WHAT YOU ARE ASSIGNED, IN THE ORDER YOU ARE GIVEN, WITH A CLEAR PATH AND CONTROL OF THE LOAD."},
-  {num:6,title:"Communication & Crew Etiquette",lessons:[
-    {id:"6.1",name:"Clarity First",obj:"Communicate clearly and briefly."},
-    {id:"6.2",name:"Confirm & Report",obj:"Confirm what you heard and check in."},
-    {id:"6.3",name:"Professional Presence",obj:"Respond to correction and respect teams."}
+  {num:5,title:"Communication & Crew Etiquette",lessons:[
+    {id:"5.1",name:"Clarity First",obj:"Communicate clearly and briefly."},
+    {id:"5.2",name:"Confirm & Report",obj:"Confirm what you heard and check in."},
+    {id:"5.3",name:"Professional Presence",obj:"Respond to correction and respect teams."}
   ],rule:"BE CLEAR, BRIEF, AND HONEST: CONFIRM WHAT YOU HEARD, ASK WHEN YOU DO NOT UNDERSTAND, AND CHECK BACK IN WHEN THE TASK IS DONE."},
-  {num:7,title:"Department Basics",lessons:[
-    {id:"7.1",name:"Physical Support vs. Technical",obj:"Know the boundary you cannot cross."},
-    {id:"7.2",name:"Permission Levels",obj:"Classify objects by what you can do."},
-    {id:"7.3",name:"Classification Practice",obj:"Apply permission levels to new scenes."}
+  {num:9,title:"Department Basics",lessons:[
+    {id:"9.1",name:"Physical Support vs. Technical",obj:"Know the boundary you cannot cross."},
+    {id:"9.2",name:"Permission Levels",obj:"Classify objects by what you can do."},
+    {id:"9.3",name:"Classification Practice",obj:"Apply permission levels to new scenes."}
   ],rule:"SUPPORT THE PHYSICAL WORKFLOW. PRESERVE THE TECHNICAL OR SHOW-CRITICAL SETUP."},
-  {num:8,title:"Tools, Gear & Handling",lessons:[
-    {id:"8.1",name:"Recognize It",obj:"Distinguish recognition from authorization."},
-    {id:"8.2",name:"Check It",obj:"Inspect before using or moving."},
-    {id:"8.3",name:"Use It Safely",obj:"Coordinate team handling and methods."}
+  {num:7,title:"Tools, Gear & Handling",lessons:[
+    {id:"7.1",name:"Recognize It",obj:"Distinguish recognition from authorization."},
+    {id:"7.2",name:"Check It",obj:"Inspect before using or moving."},
+    {id:"7.3",name:"Use It Safely",obj:"Coordinate team handling and methods."}
   ],rule:"RECOGNIZE IT, CHECK IT, THEN USE OR MOVE IT ONLY THE WAY YOU WERE ASSIGNED."},
-  {num:9,title:"Load-Out Fundamentals",lessons:[
-    {id:"9.1",name:"Strike Discipline",obj:"Wait for clearance despite urgency."},
-    {id:"9.2",name:"Fatigue & Urgency",obj:"Maintain discipline under pressure."},
-    {id:"9.3",name:"Finish Strong",obj:"Complete the job with care."}
+  {num:8,title:"Load-Out Fundamentals",lessons:[
+    {id:"8.1",name:"Strike Discipline",obj:"Wait for clearance despite urgency."},
+    {id:"8.2",name:"Fatigue & Urgency",obj:"Maintain discipline under pressure."},
+    {id:"8.3",name:"Finish Strong",obj:"Complete the job with care."}
   ],rule:"FINISH WITH THE SAME DISCIPLINE YOU STARTED WITH: WAIT FOR CLEARANCE, CONTROL THE LOAD, COMMUNICATE, AND STAY USEFUL UNTIL RELEASED."},
   {num:10,title:"Getting Hired, Called Back & Growing",lessons:[
     {id:"10.1",name:"Getting Hired",obj:"Communicate honestly about skills."},
@@ -82,33 +84,85 @@ const courseParts = [
     num: 2,
     title: "Jobsite Awareness and Crew Conduct",
     description: "Read the room, communicate clearly, and stay useful inside the crew structure.",
-    moduleNumbers: [4, 6]
+    moduleNumbers: [4, 5]
   },
   {
     num: 3,
     title: "Load-In and Load-Out",
     description: "Move gear under direction, protect the path, handle equipment, and finish the call cleanly.",
-    moduleNumbers: [5, 8, 9]
+    moduleNumbers: [6, 7, 8]
   },
   {
     num: 4,
     title: "Departments and Career Direction",
     description: "Recognize department boundaries, build trust, and choose a responsible next step.",
-    moduleNumbers: [7, 10]
+    moduleNumbers: [9, 10]
   }
 ];
 
-const requestedPart = Number.parseInt(new URLSearchParams(window.location.search).get('part'), 10);
-let activePartIndex = Number.isInteger(requestedPart) && requestedPart >= 1 && requestedPart <= courseParts.length ? requestedPart - 1 : 0;
+const courseUrlParams = new URLSearchParams(window.location.search);
+const legacyToCanonicalModule = new Map([
+  [1, 1], [2, 2], [3, 3], [4, 4], [5, 6],
+  [6, 5], [7, 9], [8, 7], [9, 8], [10, 10]
+]);
+
+function canonicalizeLegacyLesson(lessonId){
+  if(!lessonId || courseUrlParams.get('numbering')==='canonical')return lessonId;
+  const match=lessonId.match(/^(\d+)\.(\d+)$/);
+  if(!match)return lessonId;
+  const canonicalModule=legacyToCanonicalModule.get(Number(match[1]));
+  return canonicalModule ? `${canonicalModule}.${match[2]}` : lessonId;
+}
+
+const requestedLesson = canonicalizeLegacyLesson(courseUrlParams.get('lesson'));
+const requestedLessonModule = modules.find(module => module.lessons.some(lesson => lesson.id === requestedLesson));
+const requestedLessonPartIndex = requestedLessonModule
+  ? courseParts.findIndex(part => part.moduleNumbers.includes(requestedLessonModule.num))
+  : -1;
+const requestedPart = Number.parseInt(courseUrlParams.get('part'), 10);
+let activePartIndex = requestedLessonPartIndex >= 0
+  ? requestedLessonPartIndex
+  : Number.isInteger(requestedPart) && requestedPart >= 1 && requestedPart <= courseParts.length
+    ? requestedPart - 1
+    : 0;
 let activeModules = getActiveModules();
-let current = new URLSearchParams(window.location.search).get('end') === '1'
-  ? activeModules.reduce((sum,m)=>sum+m.lessons.length,0) - 1
-  : 0;
 let total = activeModules.reduce((sum,m)=>sum+m.lessons.length,0);
+const requestedLessonIndex = findLessonIndex(requestedLesson,activeModules);
+let current = requestedLessonIndex >= 0
+  ? requestedLessonIndex
+  : courseUrlParams.get('end') === '1'
+    ? total - 1
+    : 0;
 
 function getActiveModules(){
   const included = new Set(courseParts[activePartIndex].moduleNumbers);
-  return modules.filter(module => included.has(module.num));
+  return modules.filter(module => included.has(module.num)).sort((a,b)=>a.num-b.num);
+}
+
+function findLessonIndex(lessonId,sourceModules){
+  let idx=0;
+  for(const module of sourceModules){
+    for(const lesson of module.lessons){
+      if(lesson.id===lessonId)return idx;
+      idx++;
+    }
+  }
+  return -1;
+}
+
+function syncCourseUrl(){
+  const [,lesson]=getModuleLesson(current);
+  const url=new URL(window.location.href);
+  url.searchParams.set('part',String(courseParts[activePartIndex].num));
+  url.searchParams.set('lesson',lesson.id);
+  url.searchParams.set('numbering','canonical');
+  url.searchParams.delete('end');
+  window.history.replaceState(null,'',`${url.pathname}${url.search}${url.hash}`);
+}
+
+function bibliographyHref(){
+  const returnPath = `${window.location.pathname}${window.location.search}`;
+  return `../visuals/stagehand-fundamentals/bibliography.html?return=${encodeURIComponent(returnPath)}`;
 }
 
 function buildPartTabs(){
@@ -119,7 +173,7 @@ function buildPartTabs(){
 function buildSidebar(){
   const s = document.getElementById('sidebar');
   const part = courseParts[activePartIndex];
-  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../visuals/stagehand-fundamentals/bibliography.html">Sources &amp; course boundaries</a></div>`;
+  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../visuals/stagehand-fundamentals/bibliography.html" onclick="this.href=bibliographyHref()">Sources &amp; course boundaries</a></div>`;
   activeModules.forEach((m,mi)=>{
     const isActive = current>=activeModules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<activeModules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
     h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
@@ -174,6 +228,8 @@ function goModule(mi){
 function goPart(partIndex,startAtEnd=false){
   const url = new URL(window.location.href);
   url.searchParams.set('part',String(partIndex+1));
+  url.searchParams.delete('lesson');
+  url.searchParams.set('numbering','canonical');
   if(startAtEnd) url.searchParams.set('end','1');
   else url.searchParams.delete('end');
   window.location.href = url.toString();
@@ -212,26 +268,27 @@ function svgCallPhases(){
   </svg>`;
 }
 
-function svgHazardFlow(){
-  return `<svg viewBox="0 0 500 240" style="width:100%;max-width:600px">
-    <defs><style>
-      .box{fill:#0f1419;stroke:#0284c7;stroke-width:2;rx:6}
-      .label{font-size:12px;font-weight:bold;fill:#f5b400;text-anchor:middle}
-      .desc{font-size:10px;fill:#aab5c0;text-anchor:middle;line-height:12}
-      .arrow{fill:none;stroke:#0284c7;stroke-width:2;marker-end:url(#arrowhead)}
-    </style><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#0284c7"/></marker></defs>
-    <rect class="box" x="20" y="20" width="100" height="70"/><text class="label" x="70" y="45">Hazard</text><text class="desc" x="70" y="62" width="90">What can cause harm</text><text class="desc" x="70" y="75">(wet floor)</text>
-    <polyline class="arrow" d="M 120 55 L 150 55"/>
-    <rect class="box" x="160" y="20" width="100" height="70"/><text class="label" x="210" y="45">Risk</text><text class="desc" x="210" y="62">Likelihood given</text><text class="desc" x="210" y="75">conditions (traffic?)</text>
-    <polyline class="arrow" d="M 260 55 L 290 55"/>
-    <rect class="box" x="300" y="20" width="100" height="70"/><text class="label" x="350" y="45">Behavior</text><text class="desc" x="350" y="62">Unsafe action that</text><text class="desc" x="350" y="75">creates exposure</text>
-    <polyline class="arrow" d="M 350 90 L 350 130"/>
-    <rect class="box" x="270" y="140" width="160" height="70"/><text class="label" x="350" y="165">Control</text><text class="desc" x="350" y="182">Action that reduces risk:</text><text class="desc" x="350" y="195">clear path, warning,</text><text class="desc" x="350" y="208">safer route, help</text>
-  </svg>`;
+function hazardRiskModel(){
+  const coreCard = 'flex:1 1 190px;min-height:128px;background:#0f1419;border:2px solid #0284c7;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;text-align:center';
+  const supportingCard = 'flex:1 1 270px;min-height:122px;background:#0f1419;border:2px solid #f5b400;border-radius:12px;padding:16px;display:flex;flex-direction:column;justify-content:center;text-align:center';
+  return `<div role="group" aria-label="Hazard and exposure determine risk. Behavior can raise or lower exposure. Controls reduce the hazard or exposure and lower risk." style="width:100%;max-width:920px">
+    <div style="margin:0 auto 14px;padding:10px 14px;border-radius:999px;background:#111a22;color:#f1f4f7;text-align:center;font-weight:900;letter-spacing:.02em">Hazard <span style="color:#f5b400">+</span> Exposure &amp; Conditions <span style="color:#0284c7">→</span> Risk</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch">
+      <div style="${coreCard}"><strong style="color:#f5b400;font-size:1rem">Hazard</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Source or condition that can cause harm</span><small style="margin-top:9px;color:#f1f4f7">Example: wet floor</small></div>
+      <div style="${coreCard}"><strong style="color:#f5b400;font-size:1rem">Exposure &amp; Conditions</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Who or what can contact the hazard</span><small style="margin-top:9px;color:#f1f4f7">Traffic • duration • task</small></div>
+      <div style="${coreCard}"><strong style="color:#f5b400;font-size:1rem">Risk</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Likelihood and severity of harm in this context</span><small style="margin-top:9px;color:#f1f4f7">Risk changes with exposure</small></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;align-items:stretch">
+      <div style="${supportingCard}"><strong style="color:#f5b400;font-size:1rem">Behavior</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Your action can raise or lower exposure.</span><small style="margin-top:9px;color:#f1f4f7">Changes exposure ↑ or ↓</small></div>
+      <div style="${supportingCard};border-color:#39b979"><strong style="color:#39b979;font-size:1rem">Control / Response</strong><span style="margin-top:7px;color:#aab5c0;font-size:.84rem">Remove or isolate the hazard, reduce exposure, or escalate.</span><small style="margin-top:9px;color:#f1f4f7">Act only within your training and assigned authority</small></div>
+    </div>
+  </div>`;
 }
 
 function svgStagePlan(){
-  return `<svg viewBox="0 0 800 600" style="width:100%;max-width:900px">
+  return `<svg viewBox="0 0 800 600" role="img" aria-labelledby="stage-plan-title stage-plan-desc" style="width:100%;max-width:900px">
+    <title id="stage-plan-title">Stage and house direction map</title>
+    <desc id="stage-plan-desc">The diagram is viewed from the audience facing the stage. House left is on the image's left and house right is on the image's right. Because stage directions use the performer's perspective facing the audience, stage right is on the image's left and stage left is on the image's right. Upstage is away from the audience and downstage is closest to the audience.</desc>
     <defs><style>
       .stage{fill:#2b3a4a;stroke:#f5b400;stroke-width:2}
       .house{fill:#1a2a3a;stroke:#0284c7;stroke-width:2}
@@ -239,18 +296,31 @@ function svgStagePlan(){
       .hazard{fill:none;stroke:#e26868;stroke-width:2;stroke-dasharray:4}
       .label{font-size:14px;font-weight:bold;fill:#f5b400;text-anchor:middle}
       .sublabel{font-size:11px;fill:#aab5c0;text-anchor:middle}
-      .hazard-label{font-size:10px;fill:#e26868}
+      .stage-direction{font-size:13px;font-weight:bold;fill:#f5b400;text-anchor:middle}
+      .house-direction{font-size:13px;font-weight:bold;fill:#45b9ff;text-anchor:middle}
+      .direction-note{font-size:10px;fill:#d3dae1;text-anchor:middle}
+      .hazard-label{font-size:10px;fill:#e26868;text-anchor:middle}
     </style></defs>
-    <rect class="stage" x="150" y="100" width="500" height="250"/><text class="label" x="400" y="240">STAGE</text>
-    <text class="sublabel" x="180" y="120" style="fill:#f5b400">Stage Left</text><text class="sublabel" x="620" y="120" style="fill:#f5b400">Stage Right</text>
-    <line x1="400" y1="100" x2="400" y2="350" stroke="#666" stroke-width="1" stroke-dasharray="2"/>
-    <text class="sublabel" x="400" y="90" style="fill:#999">(Center Line)</text>
-    <rect class="house" x="150" y="360" width="500" height="140"/><text class="label" x="400" y="440">HOUSE / AUDIENCE</text>
-    <rect class="crew" x="50" y="100" width="80" height="250"/><text class="sublabel" x="90" y="240">Wings &</text><text class="sublabel" x="90" y="255">Crew</text>
-    <rect class="crew" x="670" y="100" width="80" height="250"/><text class="sublabel" x="710" y="240">Wings &</text><text class="sublabel" x="710" y="255">Crew</text>
+    <rect class="stage" x="150" y="100" width="500" height="270"/>
+    <text class="stage-direction" x="400" y="126">UPSTAGE</text>
+    <text class="direction-note" x="400" y="143">Away from the audience</text>
+    <line x1="400" y1="100" x2="400" y2="370" stroke="#66727e" stroke-width="1" stroke-dasharray="2"/>
+    <text class="sublabel" x="400" y="90" style="fill:#999">CENTER LINE</text>
+    <text class="label" x="400" y="225">STAGE</text>
+    <text class="direction-note" x="400" y="247">Performer faces the audience ↓</text>
+    <text class="stage-direction" x="225" y="347">STAGE RIGHT</text>
+    <text class="stage-direction" x="575" y="347">STAGE LEFT</text>
+    <text class="stage-direction" x="400" y="306">DOWNSTAGE</text>
+    <text class="direction-note" x="400" y="323">Closest to the audience</text>
+    <rect class="house" x="150" y="390" width="500" height="150"/>
+    <text class="house-direction" x="245" y="423">HOUSE LEFT</text>
+    <text class="house-direction" x="555" y="423">HOUSE RIGHT</text>
+    <text class="label" x="400" y="470" style="fill:#45b9ff">HOUSE / AUDIENCE</text>
+    <text class="direction-note" x="400" y="493">Audience faces the stage ↑</text>
+    <rect class="crew" x="50" y="100" width="80" height="270"/><text class="sublabel" x="90" y="240">Wings &amp;</text><text class="sublabel" x="90" y="255">Crew</text>
+    <rect class="crew" x="670" y="100" width="80" height="270"/><text class="sublabel" x="710" y="240">Wings &amp;</text><text class="sublabel" x="710" y="255">Crew</text>
     <rect class="crew" x="150" y="20" width="500" height="50"/><text class="sublabel" x="400" y="50">LOADING DOCK</text>
-    <polyline class="hazard" points="50,350 750,350"/><text class="hazard-label" x="760" y="355">Audience edge</text>
-    <polyline class="hazard" points="670,100 670,350"/><text class="hazard-label" x="650" y="85">Stage edge</text>
+    <polyline class="hazard" points="50,370 750,370"/><text class="hazard-label" x="400" y="383">AUDIENCE EDGE</text>
   </svg>`;
 }
 
@@ -389,6 +459,7 @@ function svgStrikeSequence(){
 function render(){
   const [mod,lesson]=getModuleLesson(current);
   const part=courseParts[activePartIndex];
+  syncCourseUrl();
   document.title=`Part ${part.num}: ${part.title} — Stagehand Fundamentals`;
   document.getElementById('courseContext').textContent=`Part ${part.num} of ${courseParts.length} — ${part.title}`;
   document.getElementById('progtext').textContent=`Lesson ${current+1} of ${total}`;
@@ -404,43 +475,22 @@ function render(){
   </section>`;
 
   if(current===0){
-    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../visuals/stagehand-fundamentals/bibliography.html">Review the course sources and qualifications.</a></p></div>`;
+    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../visuals/stagehand-fundamentals/bibliography.html" onclick="this.href=bibliographyHref()">Review the course sources and qualifications.</a></p></div>`;
   }
 
-  if(lesson.id==='1.1')html+=renderM11();
-  else if(lesson.id==='1.2')html+=renderM12();
-  else if(lesson.id==='1.3')html+=renderM13();
-  else if(lesson.id==='1.4')html+=renderM14();
-  else if(lesson.id==='2.1')html+=renderM21();
-  else if(lesson.id==='2.2')html+=renderM22();
-  else if(lesson.id==='2.3')html+=renderM23();
-  else if(lesson.id==='2.4')html+=renderM24();
-  else if(lesson.id==='3.1')html+=renderM31();
-  else if(lesson.id==='3.2')html+=renderM32();
-  else if(lesson.id==='3.3')html+=renderM33();
-  else if(lesson.id==='4.1')html+=renderM41();
-  else if(lesson.id==='4.2')html+=renderM42();
-  else if(lesson.id==='4.3')html+=renderM43();
-  else if(lesson.id==='5.1')html+=renderM51();
-  else if(lesson.id==='5.2')html+=renderM52();
-  else if(lesson.id==='5.3')html+=renderM53();
-  else if(lesson.id==='5.4')html+=renderM54();
-  else if(lesson.id==='6.1')html+=renderM61();
-  else if(lesson.id==='6.2')html+=renderM62();
-  else if(lesson.id==='6.3')html+=renderM63();
-  else if(lesson.id==='7.1')html+=renderM71();
-  else if(lesson.id==='7.2')html+=renderM72();
-  else if(lesson.id==='7.3')html+=renderM73();
-  else if(lesson.id==='8.1')html+=renderM81();
-  else if(lesson.id==='8.2')html+=renderM82();
-  else if(lesson.id==='8.3')html+=renderM83();
-  else if(lesson.id==='9.1')html+=renderM91();
-  else if(lesson.id==='9.2')html+=renderM92();
-  else if(lesson.id==='9.3')html+=renderM93();
-  else if(lesson.id==='10.1')html+=renderM101();
-  else if(lesson.id==='10.2')html+=renderM102();
-  else if(lesson.id==='10.3')html+=renderM103();
-  else if(lesson.id==='10.4')html+=renderM104();
+  const lessonRenderers={
+    '1.1':renderM11,'1.2':renderM12,'1.3':renderM13,'1.4':renderM14,
+    '2.1':renderM21,'2.2':renderM22,'2.3':renderM23,'2.4':renderM24,
+    '3.1':renderM31,'3.2':renderM32,'3.3':renderM33,
+    '4.1':renderM41,'4.2':renderM42,'4.3':renderM43,
+    '5.1':renderM61,'5.2':renderM62,'5.3':renderM63,
+    '6.1':renderM51,'6.2':renderM52,'6.3':renderM53,'6.4':renderM54,
+    '7.1':renderM81,'7.2':renderM82,'7.3':renderM83,
+    '8.1':renderM91,'8.2':renderM92,'8.3':renderM93,
+    '9.1':renderM71,'9.2':renderM72,'9.3':renderM73,
+    '10.1':renderM101,'10.2':renderM102,'10.3':renderM103,'10.4':renderM104
+  };
+  html+=lessonRenderers[lesson.id]();
 
   const previousButton = current>0
     ? `<button class="btn secondary" onclick="goLesson(${current-1})">← Previous</button>`
@@ -451,7 +501,7 @@ function render(){
     ? `<button class="btn primary" onclick="goLesson(${current+1})">Next →</button>`
     : activePartIndex<courseParts.length-1
       ? `<button class="btn primary" onclick="goPart(${activePartIndex+1})">Continue to Part ${activePartIndex+2} →</button>`
-      : `<button class="btn primary" onclick="window.location.href='../courses.html#department-pathways'">Continue to Department Courses →</button>`;
+      : `<button class="btn primary" onclick="window.location.href='../courses.html#field-skills'">Continue to Extra Training →</button>`;
 
   html+=`<div class="actions">${previousButton}${nextButton}</div>`;
 
@@ -602,19 +652,20 @@ function renderM14(){
 function renderM21(){
   return `<div class="card objective">
     <h3>Three Concepts That Are Connected But Different</h3>
-    <div class="explainer">Safety judgment requires distinguishing <strong>the hazard (what can cause harm), the risk (likelihood and severity given conditions), and the unsafe behavior (what creates exposure)</strong>. Understanding the difference teaches you how to classify hazards and respond correctly. A wet floor is always a hazard. Whether the risk is low or high depends on who is around it and what they are doing there.</div>
+    <div class="explainer">Safety judgment starts with three distinctions: <strong>the hazard (what can cause harm), the risk (how likely and serious harm could be in the current conditions), and behavior (an action that can raise or lower exposure)</strong>. Crew Blueprint uses behavior as instructional language; OSHA does not define these as one official three-part taxonomy. A wet floor remains a hazard. Traffic, exposure, behavior, and controls change the risk.</div>
   </div>
 
   <div class="card">
-    <h3>The Three Concepts</h3>
-    <div class="visual-section">${svgHazardFlow()}</div>
+    <h3>How the Concepts Connect</h3>
+    <div class="visual-section">${hazardRiskModel()}</div>
     <div class="reference">
-      <span class="reference-label">Applying the Concepts</span>
+      <span class="reference-label">Apply It to a Wet Floor</span>
       <ul>
-        <li><strong>Hazard:</strong> Wet floor, forklift, suspended load, unplugged cable, sharp edge, combustible material. The thing that can cause harm.</li>
-        <li><strong>Risk:</strong> The likelihood and severity given current conditions. Wet floor in an empty hallway at 9 AM (low risk) vs. wet floor in a busy case route at 4 PM (high risk). Risk is hazard + exposure.</li>
-        <li><strong>Unsafe behavior:</strong> Walking through the wet floor (unsafe). Going around or over it (safe). Same hazard, different behavior.</li>
-        <li><strong>Control:</strong> The action reducing risk. Clear signage, better traction, closed path, warning, escort, or alternative route. Hazard stays (wet floor), but risk reduces.</li>
+        <li><strong>Hazard:</strong> A wet floor, moving forklift, suspended load, cable across a travel path, sharp edge, or combustible material can cause harm.</li>
+        <li><strong>Exposure and conditions:</strong> Traffic, duration, visibility, and the task change who or what may contact the hazard.</li>
+        <li><strong>Risk:</strong> Judge the potential severity, the likelihood of an incident or exposure, and how many people the hazard could reach. OSHA describes risk as the product of hazard and exposure. An empty hallway presents less risk than a busy case route, not zero risk.</li>
+        <li><strong>Behavior:</strong> Walking into the wet area raises exposure. Stopping and using the assigned dry route lowers exposure. Crew Blueprint uses “behavior” as teaching language, not as a formal OSHA category or the only cause of an incident.</li>
+        <li><strong>Control or response:</strong> Drying the floor removes the hazard. Closing, marking, or rerouting the path reduces exposure. Use only controls within your training and assigned authority. Otherwise, keep clear, warn nearby crew, and tell your lead.</li>
       </ul>
     </div>
   </div>
@@ -624,11 +675,11 @@ function renderM21(){
     <p>Wet floor in empty hallway (9 AM) vs. same floor in busy case route (4 PM). What changed?</p>
     <div class="options" data-q="q21">
       <button class="opt" data-c="0">The hazard. Different situations have different hazards.</button>
-      <button class="opt" data-c="1">The risk. Same hazard, different traffic and exposure changes the risk level.</button>
+      <button class="opt" data-c="1">The risk. The same hazard creates a different risk level when traffic and exposure change.</button>
     </div>
-    <div class="coach" id="q21c"><strong>Why:</strong> The wet surface is the hazard. It does not change. Exposure (traffic, people working nearby, equipment moving) changes the risk. Report and correct according to procedure based on current risk, not just hazard.</div>
+    <div class="coach" id="q21c"><strong>Why:</strong> The wet surface remains the hazard. Exposure and conditions—traffic, people working nearby, and equipment moving—change the risk. Use an assigned control within your authority. If you cannot control it safely, keep clear and tell your lead.</div>
   </div>
-  <div class="key-takeaway"><strong>Key principle:</strong> Same hazard, different context = different risk level requiring different response.</div>`;
+  <div class="key-takeaway"><strong>Key principle:</strong> The same hazard can create different risk as exposure and conditions change. Use safe behavior and authorized controls to reduce exposure; escalate what you cannot control.</div>`;
 }
 
 function renderM22(){
@@ -830,14 +881,14 @@ function renderM42(){
   return `<div class="card objective">
     <h3>Venue Vocabulary: Consistent Location Language</h3>
     <div class="visual-section">${svgStagePlan()}</div>
-    <div class="explainer">Venues use consistent location language that repeats across every show you work. <strong>Stage left/right (performer's perspective), house left/right (audience perspective), FOH (front-of-house control area), upstage/downstage (away from/toward audience), dock, backstage.</strong> This vocabulary is stable. Once you learn it, it works everywhere. Stage left is always stage left, no matter the venue.</div>
+    <div class="explainer">Venues use consistent location language that repeats across every show you work. <strong>Stage left/right (performer's perspective), house left/right (audience perspective), FOH (front-of-house control area), upstage/downstage (away from/toward audience), dock, backstage.</strong> This diagram is viewed from the audience, so stage right appears on the image's left and stage left appears on the image's right. Once you learn the perspectives, the vocabulary works everywhere.</div>
     <div class="reference">
       <span class="reference-label">Venue Directions Explained</span>
       <ul>
-        <li><strong>Stage Left/Right:</strong> Using the performer's perspective facing the audience. If you are standing on stage facing where the audience is, stage left is to your left. For someone in the audience, stage left looks like it is on the right. This is why it matters—it is not a direction; it is a perspective.</li>
-        <li><strong>House Left/Right:</strong> Using the audience's perspective facing the stage. If you are sitting in the audience, house left is your left.</li>
+        <li><strong>Stage Left/Right:</strong> Use the performer's perspective while facing the audience. From the audience-facing view in the diagram, stage right is on the image's left and stage left is on the image's right.</li>
+        <li><strong>House Left/Right:</strong> Use the audience's perspective while facing the stage. In the diagram, house left is on the image's left and house right is on the image's right.</li>
         <li><strong>FOH (Front-of-House):</strong> The control/production area in the audience seating area. Where sound, lighting, and production control sits during a show. It is not stage left or right; it is a zone.</li>
-        <li><strong>Upstage/Downstage:</strong> Away from audience / toward audience. Upstage is farther from the audience, downstage is closer.</li>
+        <li><strong>Upstage/Downstage:</strong> Upstage is the rear of the stage, away from the audience. Downstage is the front edge, closest to the audience.</li>
         <li><strong>Dock/Loading Dock:</strong> Where trucks back up to load/unload. Usually at the rear or side of the venue.</li>
         <li><strong>Backstage:</strong> Everything behind or to the sides of the stage. Not the stage itself, but the areas crew uses.</li>
       </ul>
@@ -1147,7 +1198,7 @@ function renderM72(){
 function renderM73(){
   return `<div class="card objective">
     <h3>Classification Practice: Mixed Scene</h3>
-    <div class="explainer">A realistic backstage scene has speaker carts, focused lights, deck sections, instrument cases, props, tables. <strong>You must classify each by permission level, not by comfort or familiarity.</strong> This is the judgment Module 7 builds. You are training visual pattern recognition: seeing a piece of equipment and immediately knowing your permission level with it.</div>
+    <div class="explainer">A realistic backstage scene has speaker carts, focused lights, deck sections, instrument cases, props, tables. <strong>You must classify each by permission level, not by comfort or familiarity.</strong> This is the judgment Module 9 builds. You are training visual pattern recognition: seeing a piece of equipment and immediately knowing your permission level with it.</div>
     <div class="reference">
       <span class="reference-label">Scene Classification Example</span>
       <ul>
@@ -1207,7 +1258,10 @@ function renderM81(){
 function renderM82(){
   return `<div class="card objective">
     <h3>Inspect Before Using: Look, Feel, Decide</h3>
-    <div class="visual-section">${svgRoadCaseHazards()}</div>
+    <figure class="training-photo">
+      <img src="../images/training/road-case-pre-move-inspection.jpg" alt="A stagehand in work gloves crouches beside a closed ATA touring road case and inspects one caster before moving it. The recessed handle, butterfly latches, aluminum edging, reinforced corners, and all four wheels are visible." loading="lazy">
+      <figcaption>Pre-move inspection: check the case body, hardware, handles, latches, and casters while keeping fingers clear of hinges and seams.</figcaption>
+    </figure>
     <div class="explainer">A tool has a cracked handle. A case feels light. A mechanism is slipping. <strong>Remove defective equipment from use, do not work around the defect.</strong> Do not assume contents or state by appearance or weight. Inspection is your safety checkpoint. Working around defects is how injuries happen.</div>
     <div class="reference">
       <span class="reference-label">Inspection Checklist</span>
@@ -1481,5 +1535,6 @@ setInterval(()=>{
   });
 },100);
 </script>
+<script src="../js/course-consent.js"></script>
 </body>
 </html>

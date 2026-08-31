@@ -16,6 +16,7 @@
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="../css/tiered-course.css" rel="stylesheet" />
+<link href="../css/course-consent.css" rel="stylesheet" />
 <style id="ownerReviewBadgeStyle">
 .owner-review-badge{position:fixed;right:12px;bottom:12px;z-index:9999;padding:7px 10px;border:1px solid rgba(245,180,0,.55);border-radius:999px;background:rgba(9,12,16,.94);box-shadow:0 8px 24px rgba(0,0,0,.35);color:#f5b400;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
 </style>
@@ -43,7 +44,7 @@
   "title": "Over-Under Cable Coiling",
   "tier": "Stagehand Field Skills",
   "tierClass": "course-tier-field-skill",
-  "status": "Knowledge Build · Practice Gate",
+  "status": "Explain · Show · Practice Gate",
   "packet": "Research Package 46 — Stagehand Field Skills: Over-Under Cable Coiling",
   "description": "Learn the common over-under hand sequence, protect the cable and connectors, and recognize when the technician or manufacturer calls for another method.",
   "boundary": "The responsible technician chooses the method, coil diameter, connector treatment, tie convention, destination, and acceptance standard for the actual cable. This lesson never authorizes disconnection, testing, repair, or handling of live or show-critical lines.",
@@ -141,9 +142,20 @@
           "objective": "Form consistent over and under loops without forcing twist or violating the directed coil diameter.",
           "blocks": [
             {
+              "type": "html",
+              "html": "\u003cfigure class=\"course-training-visual\">\u003cimg src=\"../images/course-visuals/field-over-under-sequence.jpg\" alt=\"Four-panel sequence showing cable inspection, a relaxed over loop, a relaxed under loop, and a finished secured coil.\">\u003cfigcaption>Visual sequence: clear the cable, follow its natural lay, alternate relaxed loops, and secure the finished coil without loading the connectors. AI-generated training visual based on Package 46; the cable owner and manufacturer instructions control exceptions.\u003c/figcaption>\u003c/figure>"
+            },
+            {
               "type": "evidence",
               "paragraphs": [
                 "QSC demonstrates a repeatable over-loop and under-loop motion. Hosa explains why it works: repeated over-over loops add twist in one direction, while the under loop counters the twist added by the prior loop."
+              ]
+            },
+            {
+              "type": "evidence",
+              "heading": "Watch the hand motion before practicing",
+              "paragraphs": [
+                "\u003ca class=\"video-demo-link\" href=\"https://training.qsc.com/mod/book/tool/print/index.php?id=1715\" target=\"_blank\" rel=\"noopener noreferrer\">Watch QSC’s “How to properly roll a cable” demonstration →\u003c/a>\u003cspan class=\"video-demo-note\">The official QSC page includes the visual demonstration and a time-coded transcript. External video opens only when you choose it.\u003c/span>"
               ]
             },
             {
@@ -314,7 +326,7 @@
   },
   "sources": [
     {
-      "label": "QSC — Cable coiling training",
+      "label": "QSC — How to properly roll a cable (video and transcript)",
       "url": "https://training.qsc.com/mod/book/tool/print/index.php?id=1715"
     },
     {
@@ -332,5 +344,6 @@
   ]
 }</script>
 <script src="../js/tiered-course.js"></script>
+<script src="../js/course-consent.js"></script>
 </body>
 </html>

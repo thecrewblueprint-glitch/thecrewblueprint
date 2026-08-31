@@ -152,7 +152,7 @@ Create original, reviewed assets:
 5. controlled floor-deployment comparison;
 6. exception panel showing reel, fiber/minimum diameter, and “ask the technician.”
 
-Video may use the QSC and Hosa pages as research references. Any embedded third-party video needs a licensing/availability record, captions, and a text/diagram fallback. The preferred final demonstration is original footage using actual Crew Blueprint gear reviewed by the responsible technician.
+The public course links learners directly to QSC's official “How to properly roll a cable” training page, which supplies the visual demonstration and a time-coded transcript. The course does not embed the player or load third-party tracking before the learner chooses the external link. QSC's transcript remains the text fallback. Any future embedded third-party video needs a licensing/availability record, captions, and a text/diagram fallback. The preferred long-term demonstration is original footage using actual Crew Blueprint gear reviewed by the responsible technician.
 
 ## Assessment plan
 

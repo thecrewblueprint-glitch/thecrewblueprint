@@ -4,11 +4,12 @@ import path from 'node:path';
 import { fieldCourses } from './course-data-field.mjs';
 import { leadCourses } from './course-data-lead.mjs';
 import { advancedCourses } from './course-data-advanced.mjs';
+import { lightingCourses } from './course-data-lighting.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
 const outputDir = path.join(rootDir, 'courses');
-const sourceCourses = [...fieldCourses, ...leadCourses, ...advancedCourses];
+const sourceCourses = [...fieldCourses.slice(0, -1), ...leadCourses, ...advancedCourses, fieldCourses.at(-1), ...lightingCourses];
 
 if (!process.argv.includes('--owner-audit') && !process.argv.includes('--owner-review-live')) {
   throw new Error('Choose an explicit publication mode: --owner-audit for the preserved review branch or --owner-review-live for the public noindex audit copy.');
@@ -24,9 +25,8 @@ function moveAnswer(question, targetIndex) {
   return { ...question, options, answer: targetIndex };
 }
 
-// Rotate answer positions across the complete 105-question set. With 21 courses
-// and five questions per course, this produces exactly 35 correct answers in
-// each of the three positions while keeping every course locally mixed.
+// Rotate answer positions across the complete question set while keeping every
+// course locally mixed and the aggregate positions balanced.
 const courses = sourceCourses.map((course, courseIndex) => ({
   ...course,
   quiz: course.quiz.map((question, questionIndex) => (
@@ -58,6 +58,7 @@ function page(course) {
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="../css/tiered-course.css" rel="stylesheet" />
+<link href="../css/course-consent.css" rel="stylesheet" />
 </head>
 <body class="course-tier ${course.tierClass}">
 <header class="top">
@@ -78,6 +79,7 @@ function page(course) {
 <footer><p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p></footer>
 <script type="application/json" id="courseData">${cleanJson(course)}</script>
 <script src="../js/tiered-course.js"></script>
+<script src="../js/course-consent.js"></script>
 </body>
 </html>
 `;

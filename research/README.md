@@ -120,8 +120,11 @@ Each completed research document should preserve source links/citations, disting
 - **Package 48** — Flatbed cargo-securement support under driver or qualified load-lead direction.
 - **Package 49** — Model-specific barricade setup under barricade/venue-lead direction.
 - **Package 50** — Model-, traffic-, and accessibility-aware cable-ramp/protector setup under department/venue direction.
+- **Package 51** — Owner-directed redesign discovery for a shorter, visual, task-first post-Fundamentals sequence; preserves the existing five builds while one-task-at-a-time replacement proceeds.
+- **Package 52** — Research-first source and claim register for **Move a Road Case With a Partner**, including the explain-and-show plan and a focused public/unverified field-review queue.
+- **Package 53** — Visual-production register for all five preserved Field Skills, including asset provenance, packet lineage, AI-image limitations, QA findings, and the remaining exact-equipment footage/reviewer work.
 
-Packages 46–50 are source packets, not proof of field competency or independent work authorization. Their current status is `practitioner_review` in the [active queue](RESEARCH_QUEUE.md).
+Packages 46–50 are source packets, not proof of field competency or independent work authorization. Their current status is `practitioner_review` in the [active queue](RESEARCH_QUEUE.md). Package 51 is a curriculum-design discovery record, not learner-facing instruction. Package 52 uses authoritative, industry, and clearly labeled public/unverified evidence so owner review concentrates on variable field practice instead of rebuilding ordinary task knowledge from memory. Package 53 records the visual translation of Packages 46–50; the AI-generated images are illustrative aids, not procedural authority.
 
 ## Current research set
 
