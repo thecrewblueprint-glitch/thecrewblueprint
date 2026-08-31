@@ -1,3 +1,5 @@
+import { roadCaseCourse } from './course-data-road-case.mjs';
+
 export const fieldCourses = [
   {
     slug: 'field-skill-over-under-cable-coiling',
@@ -463,5 +465,6 @@ export const fieldCourses = [
       { label: 'OSHA 1910.22 — Walking-working surfaces', url: 'https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.22' },
       { label: 'OSHA 1910.305 — Wiring methods, components, and equipment', url: 'https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.305' }
     ]
-  }
+  },
+  roadCaseCourse
 ];

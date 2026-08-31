@@ -41,7 +41,7 @@ const courseFiles = (await readdir(coursesDir))
   .filter((name) => name.endsWith('.html'))
   .sort();
 
-check(courseFiles.length === 57, `expected 57 top-level course routes, found ${courseFiles.length}`);
+check(courseFiles.length === 58, `expected 58 top-level course routes, found ${courseFiles.length}`);
 for (const filename of courseFiles) {
   const html = await readFile(path.join(coursesDir, filename), 'utf8');
   check(html.includes('../css/course-consent.css'), `${filename}: missing consent CSS`);

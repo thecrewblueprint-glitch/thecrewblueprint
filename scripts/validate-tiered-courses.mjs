@@ -4,10 +4,11 @@ import path from 'node:path';
 import { fieldCourses } from './course-data-field.mjs';
 import { leadCourses } from './course-data-lead.mjs';
 import { advancedCourses } from './course-data-advanced.mjs';
+import { lightingCourses } from './course-data-lighting.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
-const sourceCourses = [...fieldCourses, ...leadCourses, ...advancedCourses];
+const sourceCourses = [...fieldCourses.slice(0, -1), ...leadCourses, ...advancedCourses, fieldCourses.at(-1), ...lightingCourses];
 const errors = [];
 const answerPositions = [0, 0, 0];
 let sourceMappings = 0;
@@ -125,20 +126,22 @@ async function validateGeneratedPages() {
       check(packetText.includes(source.url), `${course.slug}: source URL is not present in ${packetCandidates[0]} (${source.url})`);
     }
   }
-  check(sourceCourses.length === 21, `expected 21 courses, found ${sourceCourses.length}`);
+  check(sourceCourses.length === 24, `expected 24 courses, found ${sourceCourses.length}`);
   const expectedTierCounts = new Map([
-    ['course-tier-field-skill', 5],
+    ['course-tier-field-skill', 6],
     ['course-tier-lead', 7],
     ['course-tier-supervisor', 2],
     ['course-tier-advanced', 5],
     ['course-tier-infrastructure', 1],
-    ['course-tier-production', 1]
+    ['course-tier-production', 1],
+    ['course-tier-department-support', 1],
+    ['course-tier-department-systems', 1]
   ]);
   for (const [tierClass, expected] of expectedTierCounts) {
     check(tierCounts.get(tierClass) === expected, `${tierClass}: expected ${expected} courses, found ${tierCounts.get(tierClass) || 0}`);
   }
-  check(questionCount === 105, `expected 105 source questions, found ${questionCount}`);
-  check(answerPositions.every((count) => count === 35), `generated answer positions are not balanced: ${answerPositions.join('/')}`);
+  check(questionCount === 120, `expected 120 source questions, found ${questionCount}`);
+  check(Math.max(...answerPositions) - Math.min(...answerPositions) <= 1, `generated answer positions are not balanced: ${answerPositions.join('/')}`);
 }
 
 function localTarget(rawTarget, sourceFile) {

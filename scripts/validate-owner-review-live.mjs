@@ -19,7 +19,7 @@ const foundationFiles = topLevelCourseFiles
 const reviewFiles = topLevelCourseFiles.filter((name) => !foundationFiles.includes(name));
 
 check(foundationFiles.length === 11, `expected 11 Fundamentals routes, found ${foundationFiles.length}`);
-check(reviewFiles.length === 46, `expected 46 owner-review routes, found ${reviewFiles.length}`);
+check(reviewFiles.length === 47, `expected 47 owner-review routes, found ${reviewFiles.length}`);
 
 let structuredCourses = 0;
 for (const filename of reviewFiles) {
@@ -36,7 +36,7 @@ for (const filename of reviewFiles) {
     check(html.includes('../js/tiered-course.js'), `${filename}: missing shared course-player runtime`);
   }
 }
-check(structuredCourses === 21, `expected 21 structured tiered courses, found ${structuredCourses}`);
+check(structuredCourses === 24, `expected 24 structured tiered courses, found ${structuredCourses}`);
 
 const catalog = await readFile(path.join(rootDir, 'courses.html'), 'utf8');
 check(catalog.includes('data-publication-policy="owner-review-live"'), 'courses.html: missing public owner-review notice');

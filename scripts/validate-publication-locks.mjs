@@ -49,7 +49,7 @@ const openCourseFiles = topLevelCourseFiles
 const lockedCourseFiles = topLevelCourseFiles.filter((name) => !openCourseFiles.includes(name));
 
 check(openCourseFiles.length === 11, `expected Stagehand Fundamentals plus 10 open modules, found ${openCourseFiles.length}`);
-check(lockedCourseFiles.length === 46, `expected 46 locked post-Fundamentals routes, found ${lockedCourseFiles.length}`);
+check(lockedCourseFiles.length === 47, `expected 47 locked post-Fundamentals routes, found ${lockedCourseFiles.length}`);
 
 for (const filename of openCourseFiles) {
   const html = await readFile(path.join(coursesDir, filename), 'utf8');
