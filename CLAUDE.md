@@ -6,6 +6,19 @@ Read this before starting work. These are standing preferences from the owner, n
 
 Do not use the `AskUserQuestion` tool or structured multiple-choice prompt UI. Converse in plain text. If a decision requires the owner, ask directly in a normal chat message.
 
+## Owner review happens in conversation
+
+The owner does not review pull requests in the GitHub interface and should not be sent PR links as an expected review action. Treat branches and PRs as internal technical audit/continuation containers.
+
+Agents must:
+
+- perform the technical diff, validation, and governance review themselves;
+- explain the material result, consequences, uncertainties, and real owner decisions in plain language in chat;
+- ask the owner for field judgment, direction, approval, or a vibe check only when it genuinely belongs to the owner;
+- never substitute “review this PR” for an understandable conversational handoff.
+
+Owner approval given in conversation may satisfy the owner-review step when the agent has already completed and truthfully reported the technical review. Merge authority remains separate unless the owner grants it or standing governance provides it.
+
 ## Repository operating model
 
 This repository inherits the system-wide change-control policy from `50yearroadmap`.
