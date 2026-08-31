@@ -93,10 +93,33 @@ requireFields(researchCompetencyEdges, ['research_competency_edge_id','competenc
 requireFields(courseInventory, ['course_id','title','route_file','domain_id_primary','tier_learning','inventory_state','publication_state'], 'course_inventory.jsonl', errors);
 requireFields(fundamentalsMap, ['lesson_id','lesson_name','module_id','primary_competency_id','coverage_state'], 'fundamentals_lesson_competency_map.jsonl', errors);
 
+const contentClassifications = [
+  'external_fact',
+  'source_backed_instruction',
+  'cross_source_pattern',
+  'practitioner_convention',
+  'manufacturer_or_model_procedure',
+  'employer_or_venue_procedure',
+  'safety_boundary',
+  'crew_blueprint_framework',
+  'assessment_prompt',
+];
+const competencyEvidenceStates = [
+  'mapped',
+  'researched',
+  'drafted',
+  'matrixed',
+  'practitioner_reviewed',
+  'learner_validated',
+  'publication_ready',
+];
+
+assertEnum(content, 'content_classification', contentClassifications, 'CONTENT', errors);
 assertEnum(sources, 'evidence_type', ['law_regulation','consensus_standard','official_spec','credential_job_analysis','manufacturer','employer','union_local','association','academic','government_guidance','trade_secondary','practitioner','public_unverified','internal_research','crew_blueprint_framework'], 'SOURCE', errors);
 assertEnum(sources, 'authority_level', ['controlling','high','contextual','supporting','unverified','internal_framing'], 'SOURCE', errors);
 assertEnum(supportEdges, 'support_strength', ['direct','partial','corroborating','context_only','framing_only','contradicts','unresolved'], 'SUPPORT_EDGE', errors);
 assertEnum(supportEdges, 'review_status', ['unreviewed','mapped','verified','needs_practitioner','needs_primary_source','rejected','superseded','mapped_exact_source','mapped_with_qualification','mapped_exact_scope','mapped_context_only','mapped_contextual_authority','needs_model_source','needs_practitioner_and_scope'], 'SUPPORT_EDGE', errors);
+assertEnum(competencyEdges, 'evidence_state', competencyEvidenceStates, 'COMPETENCY_CONTENT_EDGE', errors);
 assertEnum(lineageEdges, 'relationship_type', ['has_rationale','rationale_derived_from_claim','assesses_claim','explains','practice_observes','visual_depicts','contextualizes'], 'CONTENT_LINEAGE_EDGE', errors);
 assertEnum(lineageEdges, 'review_status', ['unreviewed','matrixed','verified','needs_practitioner','rejected','superseded'], 'CONTENT_LINEAGE_EDGE', errors);
 assertEnum(reviews, 'review_type', ['owner','practitioner','legal','safety','learner','accessibility','citation','freshness','rights'], 'REVIEW', errors);
@@ -158,7 +181,7 @@ for (const [key, list] of primaryHomes) if (list.length > 1) warnings.push(`mult
 const rootLinkIds = new Set(['S-OSHA-ROOT-CURRENT','S-USITT-ROOT-CURRENT','S-ESTA-TSP-ROOT-CURRENT']);
 for (const edge of supportEdges) if (rootLinkIds.has(edge.source_id) && ['direct','corroborating'].includes(edge.support_strength)) errors.push(`${location(edge,'SUPPORT_EDGE')}: organization/root link ${edge.source_id} cannot be treated as ${edge.support_strength} without exact-source review`);
 
-const sourceRequiredClassifications = new Set(['external_fact','source_backed_instruction','cross_source_pattern','practitioner_convention','manufacturer_or_model_procedure','employer_or_venue_procedure','safety_boundary']);
+const sourceRequiredClassifications = new Set(contentClassifications.filter((value) => !['crew_blueprint_framework','assessment_prompt'].includes(value)));
 const adequateEvidenceStrength = new Set(['direct','partial','corroborating']);
 for (const question of content.filter((row) => row.content_type === 'question')) {
   const rationaleEdges = lineageEdges.filter((edge) => edge.from_content_id === question.content_id && edge.relationship_type === 'has_rationale');
@@ -170,7 +193,7 @@ for (const question of content.filter((row) => row.content_type === 'question'))
   for (const claimEdge of claimEdges) {
     const claim = contentById.get(claimEdge.to_content_id);
     if (!claim || !['claim','boundary'].includes(claim.content_type)) { errors.push(`${location(claimEdge,'CONTENT_LINEAGE_EDGE')}: rationale target ${claimEdge.to_content_id} must be claim or boundary CONTENT`); continue; }
-    if (claim.content_classification === 'crew_blueprint_framework' || !sourceRequiredClassifications.has(claim.content_classification)) continue;
+    if (!sourceRequiredClassifications.has(claim.content_classification)) continue;
     const evidence = supportEdges.filter((edge) => edge.content_id === claim.content_id && adequateEvidenceStrength.has(edge.support_strength));
     if (!evidence.length) errors.push(`${location(claim,'CONTENT')}: assessment claim ${claim.content_id} has no direct/partial/corroborating SUPPORT_EDGE`);
   }
