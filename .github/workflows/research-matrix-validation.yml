@@ -31,12 +31,15 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Validate matrix data
         run: node scripts/validate-research-matrix.mjs
 
-      - name: Syntax-check audit generators
+      - name: Generate audit views
         run: |
-          node --check scripts/generate-research-matrix-views.mjs
-          node --check scripts/generate-owner-competency-state-view.mjs
+          node scripts/generate-research-matrix-views.mjs
+          node scripts/generate-owner-competency-state-view.mjs
+
+      - name: Verify generated owner view
+        run: test -s research/matrix/views/owner-competency-state.md
