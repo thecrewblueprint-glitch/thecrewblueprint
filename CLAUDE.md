@@ -65,7 +65,7 @@ Git identity for commits in this repository remains:
 
 ## Shipping and validation
 
-For visible content or diagram changes, link-check affected HTML and resolve broken internal links before representing the work as shipped. Run the repository's proportionate validators for the affected surface.
+Every content or diagram change gets link-checked across **all HTML files** with zero broken internal links before it is represented as shipped or ready to ship. Run the repository's other proportionate validators for the affected surface.
 
 For structural changes, complete the applicable PR-first validation before integration.
 
