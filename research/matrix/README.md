@@ -5,9 +5,11 @@
 **Competency/content extension:** `research/MDQ-001A_COMPETENCY_CONTENT_EDGE_EXTENSION_2026-08-31.md`  
 **Content-lineage extension:** `research/MDQ-001B_CONTENT_LINEAGE_EDGE_EXTENSION_2026-08-31.md`  
 **Research/competency extension:** `research/MDQ-001C_RESEARCH_COMPETENCY_EDGE_EXTENSION_2026-08-31.md`  
+**Field-practice protocol:** `research/FIELD_PRACTICE_EVIDENCE_PROTOCOL_2026-08-31.md`  
+**Retrofit status:** `research/FIELD_PRACTICE_RETROFIT_STATUS_2026-08-31.md`  
 **High-risk status:** `research/MATRIX_HIGH_RISK_BACKFILL_STATUS_2026-08-31.md`
 
-This directory is the repository-readable normalized evidence store connecting **industry competencies → research coverage → Crew Blueprint content → claims → sources → assessment lineage → media → review/authority state**.
+This directory is the repository-readable normalized evidence store connecting **industry competencies → research coverage → field-practice evidence → Crew Blueprint content → claims → sources → assessment lineage → media → review/authority state**.
 
 ## Logical record families
 
@@ -25,6 +27,29 @@ This directory is the repository-readable normalized evidence store connecting *
 - `competency_id_aliases.jsonl` — deprecated IDs mapped to canonical IDs.
 
 A logical table may be physically partitioned. `scripts/validate-research-matrix.mjs` treats recognized partitions as one logical table and validates references globally. Partition loading is generic so new valid `content_*`, `sources_*`, `support_edges_*`, `competency_content_edges_*`, `research_competency_edges_*`, `content_lineage_edges_*`, `reviews_*`, and `media_*` files are not silently omitted.
+
+## Field-practice evidence retrofit
+
+The existing research corpus now has a separate field-reality evidence layer rather than relying only on regulation, standards, manufacturers, formal training and owner correction.
+
+Canonical retrofit files include:
+
+- `research/FIELD_PRACTICE_EVIDENCE_PROTOCOL_2026-08-31.md`;
+- `research/FIELD_PRACTICE_PUBLIC_SOURCE_REGISTER_2026-08-31.md`;
+- `research/FIELD_PRACTICE_RETROACTIVE_BACKFILL_2026-08-31.md`;
+- `research/FIELD_PRACTICE_RETROFIT_STATUS_2026-08-31.md`;
+- `sources_field_practice_retrofit.jsonl`;
+- `content_field_practice_retrofit.jsonl`;
+- `support_edges_field_practice_retrofit.jsonl`;
+- `competency_content_edges_field_practice_retrofit.jsonl`.
+
+The retrofit backbone covers Stagehand/Foundation, Field Skills, warehouse/rental-shop work, Lighting, Audio, Video/LED, Staging/Scenic, Backline/Props/Wardrobe, Stage Management, Production Management, Venue Operations, Crew Leadership, sector transfer and career progression. Rigging and Electrics use public practitioner evidence for **role/career/qualification context only**; operational forum advice is deliberately excluded from general curriculum.
+
+Field-practice evidence may establish a `cross_source_pattern` or `practitioner_convention`, but it cannot override controlling legal, manufacturer, employer/venue, CBA, qualified-person, certification/licensure or AHJ evidence. One anonymous post remains anecdotal. Recurring conventions require triangulation and visible applicability limits.
+
+The intended mature evidence stack is:
+
+**field reality → cross-practitioner pattern → employer/union context → official/manufacturer verification where applicable → claim-level matrix edge → practitioner review only where unresolved.**
 
 ## Current learner-facing route coverage
 
@@ -102,11 +127,15 @@ SFS-O01–O08 is normalized as Foundation extensions rather than a forced new co
 
 The synthesis added `CMP-CORE-019 — Show-call / changeover rhythm` because performance-phase work was not adequately represented by generic standby or load-in/load-out competencies.
 
+Public practitioner/community evidence now independently corroborates the core operational pattern: **complete assigned work → report back/remain available → do not self-assign across boundaries merely to appear busy**, while exact call structure, standby, break and release rules remain employer/local/production specific.
+
 ## Structure-neutral department research
 
 `RESEARCH_COMPETENCY_EDGE` is populated across Lighting, Audio, Video/LED/Broadcast, Staging/Scenic, Rigging awareness, Electrics/Production Power literacy, Backline/Props/Wardrobe, Stage Management, Production Management, Venue/Event Operations, Crew Leadership and Show Control.
 
 This allows the owner-facing map to show **real research coverage even when no course container has been chosen**. Research coverage never implies a course exists, a learner completed it, practitioner approval, employer authorization, external certification or licensure.
+
+The field-practice retrofit adds a second independent overlay: a competency may now have **formal research coverage, field-practice corroboration, built content, validation state and external gate state** without collapsing those into one completion flag.
 
 ## Liability-priority source baseline
 
@@ -152,7 +181,7 @@ The current tool environment has not executed the validator against a complete l
 Owner-map semantics:
 
 - **bright** — drafted/current built content exists;
-- **muted** — graph-mapped, research-only, or researched/planned but not built;
+- **muted** — graph-mapped, research-only, field-practice corroborated, or researched/planned but not built;
 - **gate** — external qualification/authorization boundary;
 - **white route** — renderer-computed outward path from selected current position, not a completion state.
 
@@ -165,18 +194,22 @@ Generated views are audit surfaces only; canonical graph + JSONL remain source o
 3. Safety/authority qualifiers must survive wording changes.
 4. Competency mapping/course completion does not establish job authority.
 5. External gates remain external.
-6. Research coverage and built learner coverage are separate states.
+6. Research coverage, field-practice corroboration and built learner coverage are separate states.
 7. Model-specific practical content requires exact product/version evidence and qualified review.
 8. Assessment completion does not equal observed practice, verified experience, employer authorization, certification or licensure.
 9. Safety-critical visuals require rights, context, reviewer state and a text fallback.
 10. Research may connect directly to a competency without inventing a course container.
-11. Final course/backend structure will be informed by the completed matrix rather than by current page structure.
+11. Public practitioner/community evidence can describe recurring practice but cannot override legal/manufacturer/employer/venue/qualified-role authority.
+12. Final course/backend structure will be informed by the completed matrix rather than by current page structure.
 
 ## Next active matrix work
 
-1. Expand claim/assessment/media backfill across current Department Support C1 and Department Systems C2 routes.
-2. Expand Road Case/Field Skill practitioner and media review when qualified reviewers are available; do not bypass model/authority gates on blocked physical practicals.
-3. Expand scored-question lineage across Lead/Supervisor/C3/Production routes.
-4. Use generated audit views to prioritize unsupported and qualification-sensitive claims.
-5. Add exact model/jurisdiction/practitioner evidence only where the final retained learner content requires it.
-6. Collect practitioner, learner and customer validation before final course/backend architecture decisions.
+1. Finish claim/assessment/media backfill across current Department Support C1 routes.
+2. Backfill all five Department Systems C2 routes, attaching field-practice evidence where it explains real workflow/convention.
+3. Backfill Lead/Supervisor/C3/Production routes and their scored-question lineage.
+4. Expand MEDIA across current course assets and keep safety-critical visuals behind qualified review.
+5. Generate unsupported/qualification/contradiction/planned-vs-built/owner-state views from the full matrix.
+6. Use the resulting evidence-completeness snapshot to decide final curriculum architecture.
+7. Only after that architecture decision, enhance/rewrite/build learner-facing courses and begin practitioner/learner/customer validation.
+
+See `research/POST_RETROFIT_EXECUTION_SEQUENCE_2026-08-31.md` for the full sequence through backend and controlled releases.
