@@ -20,18 +20,18 @@ Curriculum evidence additionally uses the MDQ/ECQ states:
 
 | Stream | Canonical evidence | Current state | Main completed work | Largest remaining gap |
 |---|---|---|---|---|
-| Curriculum/domain | MDQ + ECQ + MDQ-000–003 | substantial/active | Canonical domains, matrix schema, backfill method, tier/authority normalization | Detailed MDQ domain packets + sitewide matrix |
-| Stagehand/general-hand | `STAGEHAND_CORE_EVIDENCE_REGISTER_2026-08-31.md` | substantial/draftable | Packages 15/18/46–52; SFS-U01–U12; SFS-O01–O08 | MDQ-011–014, sector comparison, matrixing, practitioner/learner validation |
-| Major technical departments | `MDQ-020-077_DEPARTMENT_EVIDENCE_EXECUTION_BASELINE_2026-08-31.md` | active | Lighting/Audio/Video/Staging/Rigging/Electrics all activated under one evidence framework | Detailed MDQ-020–077 packets |
+| Curriculum/domain | MDQ + ECQ + MDQ-000–003 | substantial/active | Canonical domains, matrix schema, backfill method, tier/authority normalization | Detailed technical/specialty MDQ packets + sitewide matrix |
+| Stagehand/general-hand | `STAGEHAND_CORE_EVIDENCE_REGISTER_2026-08-31.md` + MDQ-011–014 | substantial/draftable | SFS-U01–U12; SFS-O01–O08; warehouse/logistics/comms/outdoor baselines | Sector comparison, matrixing, practitioner/learner validation |
+| Major technical departments | `MDQ-020-077_DEPARTMENT_EVIDENCE_EXECUTION_BASELINE_2026-08-31.md` | active | Lighting/Audio/Video/Staging/Rigging/Electrics activated under one evidence framework | Detailed MDQ-020–077 packets |
 | Learner/customer/business | `PROJECT-E01_LEARNER_CUSTOMER_BUSINESS_REQUIREMENTS_BASELINE_2026-08-31.md` | partial/requirements research active | Learner/buyer hypotheses separated from validated facts; interview program defined | Primary interviews, usability, willingness-to-pay, buyer/procurement evidence |
 | Product/backend/data/security | `PROJECT-E02_BACKEND_IDENTITY_TRACKING_SECURITY_DATA_BASELINE_2026-08-31.md` | requirements baseline | Identity/auth, roles, typed evidence states, versioning, analytics, privacy, accessibility, security baselines | Customer-validated role/workflow requirements + architecture comparison |
 | Testing/release ops | `PROJECT-E03_TESTING_VERSIONING_RELEASE_OPERATIONS_BASELINE_2026-08-31.md` | requirements baseline | Testing layers, release states, version classes, pilot rings, rollback/supersession, release-calendar gates | Real cohort data, content capacity model, release cadence validation |
-| Market/competition | FPR-MKT | partial | ETCP/AVIXA/industry-pathway evidence incorporated into E01 | Systematic direct competitor/pricing/adoption landscape |
+| Market/competition | FPR-MKT | partial | ETCP/AVIXA/industry-pathway evidence incorporated into E01 | Systematic competitor/pricing/adoption landscape |
 | Risk/compliance | FPR-RSK + E02/E03 | partial | Authority boundaries, youth-privacy flag, WCAG 2.2, NIST/OWASP baselines | Full privacy/legal/insurance/contracting policy research |
 
 ---
 
-# 3. Canonical research/control files now in force
+# 3. Canonical research/control files in force
 
 ## Curriculum/evidence architecture
 
@@ -45,9 +45,10 @@ Curriculum evidence additionally uses the MDQ/ECQ states:
 ## Stagehand evidence
 
 - `STAGEHAND_CORE_EVIDENCE_REGISTER_2026-08-31.md`
-- `SFS-U01` through `SFS-U09` dedicated packets
+- SFS-U01 through SFS-U09 dedicated packets
 - `SFS-U10-U12_STAGEHAND_MARKING_SCENERY_DOCK_EVIDENCE_2026-08-31.md`
 - `SFS-O01-O08_STAGEHAND_OPERATIONAL_CALL_EVIDENCE_2026-08-31.md`
+- `MDQ-011-014_STAGEHAND_ADJACENT_OPERATIONS_EVIDENCE_2026-08-31.md`
 
 ## Department execution
 
@@ -67,7 +68,11 @@ Curriculum evidence additionally uses the MDQ/ECQ states:
 
 | Domain | Current state | Next detailed program |
 |---|---|---|
-| Stagehand Fundamentals / Field Skills | substantial/draftable | MDQ-011–014 + matrix/validation |
+| Stagehand Fundamentals / Field Skills | substantial/draftable | sector synthesis + MDQ-001 matrix + validation |
+| Warehouse/rental shop | baseline researched | deeper department prep/QC/repair role packets + matrix |
+| Logistics/truck/case/cargo | baseline researched | deeper transport/business/regulatory interface research + matrix |
+| Production communications | general-user/system-literacy baseline researched | MDQ-037 Audio comms + Stage Management/show-control applications |
+| Outdoor/weather/public-area | awareness/plan-following baseline researched | sector-specific MDQ-116 applications + accessibility/public-route matrix |
 | Lighting | deepest department evidence | MDQ-020–028 |
 | Audio | drafted + meaningful source corpus | MDQ-030–039 |
 | Video/LED/display | strong LED/display foundation | MDQ-040–048 |
@@ -83,11 +88,8 @@ Curriculum evidence additionally uses the MDQ/ECQ states:
 | Crew/labor leadership | lead/supervisor drafts | MDQ-093 + ECQ |
 | Show control | cross-department partial | MDQ-100 |
 | Automation | interface only | MDQ-056 / 101 |
-| Intercom/comms | partial | MDQ-013 / 037 |
 | RF | partial | MDQ-036 |
 | Camera/broadcast | partial | MDQ-045 / 115 |
-| Warehouse/rental/logistics | career-level evidence | MDQ-011 / 012 |
-| Outdoor/public-area | partial | MDQ-014 / 116 |
 | Career/union/credentials | good orientation evidence | MDQ-120–124 |
 | Learning/evidence system | P0 complete | MDQ-130–135 + ECQ |
 
@@ -111,7 +113,7 @@ The high-frequency beginner/general-hand task universe is now substantially rese
 - scenery/flat/wagon movement;
 - dock/ramp/trailer handoff awareness.
 
-The operational call layer is also now researched for:
+The operational call layer is researched for:
 
 - check-in;
 - assignment ownership;
@@ -122,7 +124,14 @@ The operational call layer is also now researched for:
 - department/call release;
 - timekeeping/sign-out.
 
-Remaining Stagehand work is mainly MDQ-011–014, sector variation, matrixing and validation.
+The four adjacent systems are also baseline-researched:
+
+- **MDQ-011** warehouse/rental-shop workflow and career lane;
+- **MDQ-012** logistics/truck/case/cargo role interfaces;
+- **MDQ-013** radio/intercom/production-communication system literacy;
+- **MDQ-014** outdoor/weather/public-area transfer, plan-following and escalation.
+
+Remaining Stagehand work is primarily sector synthesis, claim/source matrixing, source freshness, exact manufacturer/model review, practitioner review, learner testing, and retention/transfer validation.
 
 ---
 
@@ -135,15 +144,15 @@ Remaining Stagehand work is mainly MDQ-011–014, sector variation, matrixing an
 - learner segments as research hypotheses;
 - organization/buyer segments as hypotheses, not revenue facts;
 - buyer discovery and learner research instruments/topics;
-- pricing/packaging decisions explicitly deferred until willingness-to-pay and workflow evidence exists;
+- pricing/packaging decisions deferred until willingness-to-pay and workflow evidence exists;
 - customer-facing trust requirements: sources, scope honesty, versions, evidence states, practitioner review, accessibility, privacy/security.
 
-## Next evidence
+Next evidence:
 
 - learner interviews/usability across experience bands;
 - crew-lead/practitioner interviews;
 - labor-provider/production-company/venue/local/rental-house buyer interviews;
-- market competitor/pricing study;
+- competitor/pricing study;
 - cost-of-quality/content-capacity model;
 - willingness-to-pay and procurement research.
 
@@ -151,7 +160,7 @@ Remaining Stagehand work is mainly MDQ-011–014, sector variation, matrixing an
 
 # 7. Backend/product/data requirements state
 
-`PROJECT-E02` establishes the required semantic foundation before stack selection:
+`PROJECT-E02` establishes:
 
 - stable user/content/version IDs;
 - typed learning/evidence events rather than one completion flag;
@@ -166,19 +175,9 @@ Remaining Stagehand work is mainly MDQ-011–014, sector variation, matrixing an
 - NIST SP 800-63-4 identity guidance reference;
 - OWASP ASVS 5.0 secure-web-app reference;
 - NIST CSF 2.0 risk-management reference;
-- xAPI/Caliper considered as interoperability options only after Crew Blueprint event semantics are defined.
+- xAPI/Caliper as interoperability options only after Crew Blueprint event semantics are defined.
 
-## Architecture decisions still deferred
-
-- database type/vendor;
-- auth vendor;
-- hosting/platform;
-- custom vs LMS backend;
-- xAPI LRS vs native store;
-- organization tenancy strategy;
-- analytics warehouse/vendor;
-- mobile/PWA strategy;
-- credential/badge/wallet implementation.
+Architecture decisions remain deferred: database/vendor, auth vendor, hosting, custom-vs-LMS backend, LRS/native event store, tenancy, analytics vendor, mobile/PWA, credential wallet/badging.
 
 ---
 
@@ -196,65 +195,38 @@ Remaining Stagehand work is mainly MDQ-011–014, sector variation, matrixing an
 - backlog buffer before a timed public cadence;
 - metrics defined before launch;
 - feedback taxonomy and safety-priority triage;
-- future audit branch remains separate from operational backend versioning.
+- future audit branch separate from operational backend versioning.
 
 ---
 
-# 9. External reference baselines now explicitly incorporated
-
-## Industry/professional
-
-- IATSE International and multiple current locals.
-- ETCP / ESTA.
-- AVIXA workforce/career resources.
-- AES audio standards ecosystem.
-- ESTA Technical Standards Program.
-- representative manufacturer documentation by domain.
-
-## Government/standards/security/accessibility
-
-- OSHA.
-- U.S. DOL Wage and Hour Division.
-- NIST SP 800-63-4 Digital Identity Guidelines.
-- NIST Cybersecurity Framework 2.0 and small-business guidance.
-- OWASP ASVS 5.0.
-- W3C WCAG 2.2.
-- FTC COPPA-rule update research flag for youth/privacy scope.
-- ADL xAPI/LRS and 1EdTech Caliper as interoperability references.
-
----
-
-# 10. Active execution queue
+# 9. Active execution queue
 
 ## Content/domain
 
-1. MDQ-011 Warehouse/Rental-Shop Operations.
-2. MDQ-012 Logistics/Truck/Case/Cargo architecture.
-3. MDQ-013 Work Communication / radio/intercom/readback.
-4. MDQ-014 Outdoor/weather/public-area transfer.
-5. MDQ-020–028 Lighting detailed packets.
-6. MDQ-030–039 Audio detailed packets.
-7. MDQ-040–048 Video detailed packets.
-8. MDQ-050–057 Staging/Scenic detailed packets.
-9. MDQ-060–066 Rigging role/body-of-knowledge/qualification packets.
-10. MDQ-070–077 Electrics/production-power role/body-of-knowledge/qualification packets.
-11. Continue MDQ-080+ specialties/production/show-control/sector/career/learning waves.
-12. Sitewide MDQ-001 matrix backfill.
+1. Detailed MDQ-020–028 Lighting packets.
+2. Detailed MDQ-030–039 Audio packets.
+3. Detailed MDQ-040–048 Video packets.
+4. Detailed MDQ-050–057 Staging/Scenic packets.
+5. Detailed MDQ-060–066 Rigging role/body-of-knowledge/qualification packets.
+6. Detailed MDQ-070–077 Electrics/production-power role/body-of-knowledge/qualification packets.
+7. MDQ-080+ specialties/production/show-control/sector/career/learning waves.
+8. Stagehand sector synthesis and MDQ-001 matrix backfill.
+9. Sitewide MDQ-001 matrix backfill.
 
 ## Parallel project evidence
 
-13. Learner segmentation + first-call/usability research.
-14. Customer/buyer interviews.
-15. Competitive/pricing/product landscape.
-16. Business cost/capacity/unit-economics research.
-17. Role/data/event/privacy/security architecture research.
-18. Practitioner/novice/testing protocol execution.
-19. Content-production capacity measurement.
-20. Release-cadence/calendar validation after capacity and learner behavior are known.
+10. Learner segmentation + first-call/usability research.
+11. Customer/buyer interviews.
+12. Competitive/pricing/product landscape.
+13. Business cost/capacity/unit-economics research.
+14. Role/data/event/privacy/security architecture research.
+15. Practitioner/novice/testing protocol execution.
+16. Content-production capacity measurement.
+17. Release-cadence/calendar validation after capacity and learner behavior are known.
 
 ---
 
-# 11. Architecture decision order
+# 10. Architecture decision order
 
 When evidence is mature enough, decide:
 
@@ -271,9 +243,9 @@ This prevents software or current webpage structure from dictating educational a
 
 ---
 
-# 12. Final operating principle
+# 11. Final operating principle
 
-The project is now explicitly building **research ahead of publication**.
+The project is explicitly building **research ahead of publication**.
 
 Desired future condition:
 
