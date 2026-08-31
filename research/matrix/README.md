@@ -29,29 +29,27 @@ JSONL is used because it is diff-friendly, appendable, scriptable and easy to ex
 
 ## Current coverage
 
-### Canonical routes
+### Canonical current routes
 
-All **33 current primary course/review routes** are inventoried.
+All **33 current primary course/review routes** are inventoried. Course-level CONTENT records cover Stagehand Fundamentals, six current Field Skills, five Department Support C1 courses, five Department Systems C2 courses, seven Lead courses, two Supervisor courses, five Advanced/C3 courses, Production Power Awareness, and the Production & Coordination Career Branch.
 
-Course-level CONTENT records cover:
+### Researched/planned nodes
 
-- Stagehand Fundamentals;
-- all six current Field Skills;
-- five Department Support C1 courses;
-- five Department Systems C2 courses;
-- seven Lead courses;
-- two Supervisor courses;
-- five Advanced/C3 courses;
-- Production Power Awareness;
-- Production & Coordination Career Branch.
+The matrix now also carries content objects that are **researched/planned but not learner-facing builds**. These do not enter the 33-route current inventory.
+
+Current examples:
+
+- `C-FLD-TEAM-LIFT` → `CMP-FLD-002`;
+- `C-FLD-CART-DOLLY-MOVEMENT` → `CMP-FLD-003`;
+- `C-FLD-CABLE-DEPLOY-GATHER` → `CMP-FLD-005`;
+- `C-FLD-CASE-BONEYARD-ORG` → `CMP-FLD-007`;
+- `C-FLD-WORK-AREA-RESET` → `CMP-FLD-008`.
+
+This state distinction is intended to power the owner-facing progression map: built coverage, researched/planned coverage and external-gate coverage must not share one visual state.
 
 ### Fundamentals
 
-All **34 current Fundamentals lessons** have stable lesson → competency mappings. The mapping shows targeted additions rather than a need to discard the course.
-
-### Competency edges
-
-Field Skills, C1/C2 pathways and higher-tier routes are linked to the cross-domain competency graph. Controlled-work content terminates at canonical external `GATE-*` nodes rather than internal authorization states.
+All **34 current Fundamentals lessons** have stable lesson → competency mappings. The mapping supports targeted additions rather than a wholesale replacement of Fundamentals.
 
 ### High-risk source backfill
 
@@ -62,21 +60,34 @@ Substantial claim-level baselines now exist for:
 3. HR-03 Staging / Structures;
 4. HR-04 Cargo / Transport Responsibility;
 5. HR-05 Public Routes / Barricades / Cable Protectors;
-6. HR-10 Assessment / Authority States.
+6. HR-06 General Field Skills — core U01–U05;
+7. HR-07 Lighting control / network / protocol claims;
+8. HR-10 Assessment / Authority States.
 
 These are **not publication-closed**. Exact model, jurisdiction, practitioner, owner and learner-validation dependencies remain explicit where applicable.
 
+### Lighting current-state result
+
+HR-07 normalizes current learner-facing protocol claims against:
+
+- ANSI E1.11-2024 / DMX512-A;
+- ANSI E1.20-2025 / RDM;
+- ANSI E1.31-2025 / sACN;
+- current Art-Net 4 specification.
+
+The current Lighting C2/C3 audit does **not** find GDTF/MVR learner instruction. GDTF/MVR therefore remain research/competency coverage rather than built-course coverage. The broad learner sentence combining IP addressing, routing, casting, priority, merging, VLANs and switch configuration remains blocked for experienced lighting-network practitioner review because protocol standards do not themselves mandate one VLAN/switch architecture.
+
 ### Assessment lineage
 
-The first real scored-question chains now exist as normalized records:
+Normalized scored-question chains now exist as:
 
 `Q-*` → `QR-*` → `CL-*` → `SUPPORT_EDGE` → `SOURCE`
 
-The Road Case pilot includes both a work-control question and an evidence-state/authorization question. REVIEW records explicitly distinguish AI-assisted structural audit from practitioner, legal, learner or owner approval.
+The Road Case pilot includes work-control and evidence-state/authorization questions. HR-07 adds the existing Lighting DMX-universe question and rationale. REVIEW records explicitly distinguish AI-assisted structural audit from practitioner, legal, learner or owner approval.
 
 ## Validator
 
-`scripts/validate-research-matrix.mjs` now checks:
+`scripts/validate-research-matrix.mjs` checks:
 
 - JSONL parsing and unique IDs;
 - logical-table partition selection without treating `content_lineage_edges*` as CONTENT;
@@ -106,22 +117,22 @@ The current execution environment cannot clone the remote branch to execute the 
 10. High-risk claims are backfilled before low-risk descriptive copy.
 11. Assessment completion never equals observed practice, verified work experience, employer authorization, external certification or licensure.
 12. Model-specific practical content requires the exact product/version evidence and appropriate qualified review before stronger release.
+13. Research coverage and learner-facing built coverage are separate states.
+14. Protocol literacy does not itself establish product-specific configuration authority or employer appointment.
 
 ## Active backfill order
 
 See `research/MATRIX_HIGH_RISK_SOURCE_BACKFILL_QUEUE_2026-08-31.md`.
 
-Completed to current baseline: HR-01 → HR-05 and HR-10.
+Completed to current baseline: **HR-01 through HR-07, plus HR-10**.
 
 Next:
 
-1. HR-06 General Field Skill physical-task claims;
-2. HR-07 Lighting systems/protocols;
-3. HR-08 Audio RF/network/system claims;
-4. HR-09 Video LED/network/structural interfaces;
-5. expand MEDIA records;
-6. expand REVIEW and practitioner/learner validation records;
-7. generate unsupported / needs-primary-source / duplicate-primary-home / external-gate audit views;
-8. connect research-only competencies to planned content IDs before new drafting.
+1. HR-08 Audio RF/network/system claims;
+2. HR-09 Video LED/network/structural interfaces;
+3. expand MEDIA records;
+4. expand REVIEW and practitioner/learner validation records;
+5. generate unsupported / needs-primary-source / duplicate-primary-home / external-gate audit views;
+6. connect remaining research-only competencies to planned content IDs before new drafting.
 
 The resulting graph/matrix should inform final course structure, backend implementation and owner-facing progression views rather than allowing current page structure to dictate the domain model.
