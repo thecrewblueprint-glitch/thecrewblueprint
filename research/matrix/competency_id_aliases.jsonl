@@ -1,0 +1,2 @@
+{"alias_id":"GATE-RIG-QUALIFIED","canonical_id":"GATE-RIG-TRAINING/AUTH","status":"deprecated_alias","reason":"Earlier Lighting graph shorthand; canonical gate covers employer/union/venue training, documented experience and external authorization without implying certification alone grants authority."}
+{"alias_id":"GATE-ELC-QUALIFIED","canonical_id":"GATE-ELC-TRAINING/AUTH","status":"deprecated_alias","reason":"Earlier Lighting graph shorthand; canonical gate preserves jurisdiction/employer/AHJ/qualified-person layers."}
