@@ -540,29 +540,29 @@
 
 <script>
 const DEPARTMENTS = {
-  lighting: { name: "Lighting", glyph: "LX", hook: "Rig, patch, and focus under a lighting lead.", roleNote: "L2 handles rig/cable/focus support; L1 runs the console and owns the system.", tracks: [
-    { stage: "L2", title: "Lighting Support", status: "live", file: "pathway-lighting-01-support.html" },
-    { stage: "L1", title: "Production Flow", status: "live", file: "pathway-lighting-02-production-flow.html" },
-    { stage: "L1", title: "System Design", status: "live", file: "pathway-lighting-03-system-design.html" },
+  lighting: { name: "Lighting", glyph: "LX", hook: "Rig, patch, and focus under a lighting lead.", roleNote: "Real lighting crews rank L2 (rig/cable/focus support) below L1 (runs the console, owns the system). Support and Systems below build toward that real-world scope — neither course teaches the full L2 or L1 role on its own.", tracks: [
+    { stage: "Support", title: "Lighting Support", status: "live", file: "pathway-lighting-01-support.html" },
+    { stage: "Systems", title: "Production Flow", status: "live", file: "pathway-lighting-02-production-flow.html" },
+    { stage: "Advanced", title: "System Design", status: "live", file: "pathway-lighting-03-system-design.html" },
   ], lead: true, leadRole: "Master Electrician / LD track" },
-  audio: { name: "Audio", glyph: "AU", hook: "Cable, patch, and support a live sound system.", roleNote: "A2 handles mics/monitors/cable support; A1 mixes FOH and owns the system.", tracks: [
-    { stage: "A2", title: "Audio Support", status: "live", file: "pathway-audio-01-support.html" },
-    { stage: "A1", title: "Live Systems", status: "live", file: "pathway-audio-02-live-systems.html" },
-    { stage: "A1", title: "System Design", status: "live", file: "pathway-audio-03-system-design.html" },
+  audio: { name: "Audio", glyph: "AU", hook: "Cable, patch, and support a live sound system.", roleNote: "Real audio crews rank A2 (mics/monitors/cable support) below A1 (mixes FOH, owns the system). Support and Systems below build toward that real-world scope — neither course teaches the full A2 or A1 role on its own.", tracks: [
+    { stage: "Support", title: "Audio Support", status: "live", file: "pathway-audio-01-support.html" },
+    { stage: "Systems", title: "Live Systems", status: "live", file: "pathway-audio-02-live-systems.html" },
+    { stage: "Advanced", title: "System Design", status: "live", file: "pathway-audio-03-system-design.html" },
   ], lead: true, leadRole: "A1 / FOH engineer track" },
-  video: { name: "Video", glyph: "VI", hook: "Build and run LED walls and camera systems.", roleNote: "V2 handles wall/cable/screen support; V1 runs the system and calls the show.", tracks: [
-    { stage: "V2", title: "Video Support", status: "live", file: "pathway-video-01-support.html" },
-    { stage: "V1", title: "LED & Video Systems", status: "live", file: "pathway-video-02-led-video-systems.html" },
-    { stage: "V1", title: "System Architecture", status: "live", file: "pathway-video-03-system-architecture.html" },
+  video: { name: "Video", glyph: "VI", hook: "Build and run LED walls and camera systems.", roleNote: "Real video/LED crews rank V2 (wall/cable/screen support) below V1 (runs the system, calls the show). Support and Systems below build toward that real-world scope — neither course teaches the full V2 or V1 role on its own.", tracks: [
+    { stage: "Support", title: "Video Support", status: "live", file: "pathway-video-01-support.html" },
+    { stage: "Systems", title: "LED & Video Systems", status: "live", file: "pathway-video-02-led-video-systems.html" },
+    { stage: "Advanced", title: "System Architecture", status: "live", file: "pathway-video-03-system-architecture.html" },
   ], lead: true, leadRole: "V1 / systems engineer track" },
-  staging: { name: "Staging & Carpentry", glyph: "ST", hook: "Build deck, stairs, and scenic structure.", roleNote: "Carpenter handles build/deck work; Head Carpenter owns the build and the crew.", tracks: [
-    { stage: "Carpenter", title: "Staging Support", status: "live", file: "pathway-staging-carpentry-01-support.html" },
-    { stage: "Carpenter", title: "Deck Systems", status: "live", file: "pathway-staging-carpentry-02-deck-systems.html" },
-    { stage: "Head Carpenter", title: "Design Coordination", status: "live", file: "pathway-staging-carpentry-03-design-coordination.html" },
+  staging: { name: "Staging & Carpentry", glyph: "ST", hook: "Build deck, stairs, and scenic structure.", roleNote: "Real staging crews don't split a junior/senior Carpenter rank the way lighting/audio/video do — Carpenter is the working rank, Head Carpenter the senior one. Support and Systems below build toward Carpenter-level work; Head Carpenter is a Lead-tier role, not something either course teaches on its own.", tracks: [
+    { stage: "Support", title: "Staging & Carpentry Support", status: "live", file: "pathway-staging-carpentry-01-support.html" },
+    { stage: "Systems", title: "Deck Systems", status: "live", file: "pathway-staging-carpentry-02-deck-systems.html" },
+    { stage: "Advanced", title: "Design Coordination", status: "live", file: "pathway-staging-carpentry-03-design-coordination.html" },
   ], lead: true, leadRole: "Head Carpenter track" },
-  backline: { name: "Backline / Props / Wardrobe", glyph: "BP", hook: "Handle instruments, props, and wardrobe with custody, not ownership.", roleNote: "Real crews split this into separate guitar/drum techs, props, and wardrobe departments, each with its own supervisor — not one combined \"lead\" role. That's why there's no Lead track here.", tracks: [
-    { stage: "Tech", title: "Support", status: "live", file: "pathway-backline-props-wardrobe-01-support.html" },
-    { stage: "Tech", title: "Department Systems", status: "live", file: "pathway-backline-props-wardrobe-02-department-systems.html" },
+  backline: { name: "Backline / Props / Wardrobe", glyph: "BP", hook: "Handle instruments, props, and wardrobe with custody, not ownership.", roleNote: "Real crews split this into separate guitar/drum techs, props, and wardrobe departments, each with its own supervisor — not one combined \"lead\" role. That's why there's no Lead track here. Support and Systems below build toward that tech-level work; neither course teaches the full tech role on its own.", tracks: [
+    { stage: "Support", title: "Support", status: "live", file: "pathway-backline-props-wardrobe-01-support.html" },
+    { stage: "Systems", title: "Department Systems", status: "live", file: "pathway-backline-props-wardrobe-02-department-systems.html" },
     { stage: "—", title: "Not yet built", status: "gap", file: null },
   ], lead: false },
   rigging: { name: "Rigging", glyph: "RG", hook: "Ground-support awareness — hands-on is qualified-only.", roleNote: "Ground Rigger works the floor, Up-Rigger works aloft, Head Rigger owns the calculations and the call — all three stay gaps here since this is decision-only awareness, not hands-on rigging instruction.", tracks: [
@@ -570,10 +570,10 @@ const DEPARTMENTS = {
     { stage: "Up-Rigger", title: "Not yet built", status: "gap", file: null },
     { stage: "Head Rigger", title: "Not yet built", status: "gap", file: null },
   ], lead: true, leadRole: "Head Rigger track (decision-only)" },
-  electrics: { name: "Electrics", glyph: "EL", hook: "Production power awareness and load planning.", roleNote: "Electrician handles distro/cable under direction; Master Electrician owns power planning and compliance.", tracks: [
+  electrics: { name: "Electrics", glyph: "EL", hook: "Production power awareness and load planning.", roleNote: "Real electrics crews rank Electrician below Master Electrician (owns power planning and compliance). The one built course here (Advanced) builds toward that real-world scope — it doesn't teach the full Master Electrician role on its own.", tracks: [
     { stage: "Electrician", title: "Not yet built", status: "gap", file: null },
     { stage: "Electrician", title: "Not yet built", status: "gap", file: null },
-    { stage: "Master Electrician", title: "System Load Planning", status: "live", file: "pathway-electrics-03-system-load-planning.html" },
+    { stage: "Advanced", title: "System Load Planning", status: "live", file: "pathway-electrics-03-system-load-planning.html" },
   ], lead: true, leadRole: "Master Electrician track" },
 };
 
@@ -707,13 +707,13 @@ function homeView() {
       <div class="ladder">
         <div class="rung"><div class="tier-mark">S</div><div class="rung-bar"><strong>Supervisor</strong><span>Cross-department hazard &amp; ops authority</span></div></div>
         <div class="rung"><div class="tier-mark">L</div><div class="rung-bar"><strong>Lead</strong><span>Plan, assign, verify — 7 tracks</span></div></div>
-        <div class="rung amber"><div class="tier-mark">↑</div><div class="rung-bar"><strong>Design / Coordination</strong><span>Deeper senior-role scope — design, load planning, coordination</span></div></div>
-        <div class="rung amber"><div class="tier-mark">·</div><div class="rung-bar"><strong>Systems</strong><span>The senior on-call role — runs the system day to day (L1, A1, V1, Master Electrician, Head Carpenter…)</span></div></div>
-        <div class="rung amber"><div class="tier-mark">↓</div><div class="rung-bar"><strong>Support</strong><span>The entry role, one department (L2, A2, V2, Carpenter, Electrician…)</span></div></div>
+        <div class="rung amber"><div class="tier-mark">↑</div><div class="rung-bar"><strong>Design / Coordination</strong><span>Advanced-tier scope — design, load planning, coordination; still builds toward, not equal to, the real senior rank</span></div></div>
+        <div class="rung amber"><div class="tier-mark">·</div><div class="rung-bar"><strong>Systems</strong><span>Deeper department-specific systems knowledge, building toward the real senior on-call rank (L1, A1, V1, Master Electrician, Head Carpenter…)</span></div></div>
+        <div class="rung amber"><div class="tier-mark">↓</div><div class="rung-bar"><strong>Support</strong><span>Parallel-path department support any stagehand can start — builds toward the real entry specialist rank (L2, A2, V2, Carpenter, Electrician…)</span></div></div>
         <div class="rung"><div class="tier-mark">FS</div><div class="rung-bar"><strong>Field Skills</strong><span>18 hands-on tasks, explain → show → practice</span></div></div>
         <div class="rung"><div class="tier-mark">F</div><div class="rung-bar"><strong>Foundation</strong><span>Stagehand Fundamentals — everyone starts here</span></div></div>
       </div>
-      <p class="ladder-footnote">Support and Systems are real crew role names, not certification levels — they vary by department (a Lighting Support hand is an "L2," an Audio Support hand is an "A2"). Open a department below for its exact role names.</p>
+      <p class="ladder-footnote">Support and Systems are training tiers, not crew certifications or granted ranks. They build toward real crew roles without teaching the complete role at either tier (Lighting: L2 → L1; Audio: A2 → A1; Video: V2 → V1; Staging &amp; Carpentry: Carpenter → Head Carpenter; Electrics: Electrician → Master Electrician). Open a department below for what each course actually covers, and where its boundary sits.</p>
     </div>
   </section>
   `;
@@ -734,7 +734,7 @@ function aboutView() {
       <div style="display:flex;flex-direction:column;gap:16px;">
         <div class="about-block riveted">
           <h3>What this is</h3>
-          <p>A practical training platform for new and developing live-event workers. Stagehand Fundamentals first, then Field Skills, then department-specific Support and Systems tracks — named after the real crew roles they teach toward (L2/L1, A2/A1, V2/V1, Carpenter/Head Carpenter, Electrician/Master Electrician, Ground Rigger/Up-Rigger/Head Rigger) — then Lead and Supervisor tiers.</p>
+          <p>A practical training platform for new and developing live-event workers. Stagehand Fundamentals first, then Field Skills, then department-specific Support and Systems tracks — training tiers that build toward the real crew roles those departments use (L2/L1 in lighting, A2/A1 in audio, V2/V1 in video, Carpenter/Head Carpenter in staging &amp; carpentry, Electrician/Master Electrician in electrics, Ground Rigger/Up-Rigger/Head Rigger in rigging) without claiming to teach the complete role at either tier — then Lead and Supervisor tiers, where a bare rank name is the honest label.</p>
           <p>Every course states its boundary plainly: what it teaches you to recognize and support, and what still requires a qualified lead's direction or employer authorization.</p>
         </div>
         <div class="about-block riveted">
