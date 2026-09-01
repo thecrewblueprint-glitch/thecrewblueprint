@@ -342,6 +342,75 @@ The department or venue lead controls the cable route and protector placement. T
 - Do not crop away model identifiers or warnings that are necessary to interpret a demonstration.
 - Label model-specific sequences as model-specific.
 
+## Priority 1.5 — close the disclosed coverage gaps (Rigging, Electrics, Backline/Props/Wardrobe Course 3)
+
+**Why this exists:** the v2 redesign concept discloses that 3 departments carry unbuilt tracks — Rigging (Course 1/2/3, its entire ladder), Electrics (Course 1/2), and Backline/Props/Wardrobe (Course 3) — 6 tracks total. [RQ-400's competency graph](RQ-400-role-competency-graph-and-coverage-map_2026-08-31.md) already identified Rigging Course 1 and Electrics Course 1 as the two priority gaps back on 2026-08-31, and named the real evidence for both, but no research queue item was ever opened to actually close them — RQ-400 explicitly "does not create new course content or research packets." This section is that missing queue: closing every item here is what lets the disclosed-gap stat eventually read **0** and be removed from the site entirely, rather than kept and worded honestly around a permanent gap.
+
+### RQ-480 — Rigging Course 1: Ground Rigger awareness/assist
+
+**Status:** queued  
+**Priority:** highest of the three gaps — real, active, entry-level hiring demand exists for this exact role and Crew Blueprint currently has nothing between general Fundamentals overhead-hazard awareness and Lead-tier decision content.  
+**Goal:** Teach ground-rigging support tasks, hardware recognition, and communication using the same "recognize, assist, stay within bounds" model already used for every other department's Course 1 — **not** physical rigging technique, point selection, or independent hands-on rigging work.
+
+**Research questions**
+
+- What does a Ground Rigger actually do day-to-day, assisting a Head/Up-Rigger from the ground? ([Package 02](02-department-skill-progressions-us-live-events.md) already cites Nasco's description of Ground Riggers assisting high riggers under the Head Rigger's plan, and Universal Orlando's 2026 postings distinguishing a Tech III ground rigger from a Tech II up rigger.)
+- What hardware, hoist, and load-path terminology must a ground-level assist recognize and name correctly, without being taught to select or inspect it independently?
+- What communication protocol (hand signals, radio calls, spotting) does ground support use with the rigger working aloft?
+- What is the explicit "never" list — high work, point selection, load calculation, hardware inspection/approval, anything requiring a qualified/competent-person determination — mirrored from the existing Lead-tier Rigging course's own boundary language?
+- What stop-and-ask conditions apply specifically to ground-level rigging assist work?
+
+**Candidate primary sources**
+
+- [Nasco Special Rigging](https://www.nasco.ca/service-type/special-rigging-projects/) (Ground Rigger role description).
+- [Universal Rigging Opportunities](https://careers.pageuppeople.com/851/cw/en-us/job/655912/rigging-opportunities-universal-studios-and-islands-of-adventure) (Tech III ground rigger / Tech II up rigger distinction).
+- [Encore Event Rigger](https://jobs.encoreglobal.com/fr/emploi/mississauga/event-rigger-toronto/6228/95423040032) postings (hour-based entry requirements).
+- The existing `lead-rigging.html` boundary text itself, as the upper bound this course must never cross.
+
+**Deliverables:** source packet; recognize/assist/communicate lesson sequence matching the Course 1 pattern used elsewhere; explicit no-high-work/no-point-selection boundary statement; knowledge check.
+
+**Definition of done:** a qualified rigger reviewer confirms no question or lesson can be read as technical rigging authorization, hands-on point selection, or independent hardware judgment — same bar RQ-460's existing Lead-tier build already met.
+
+**Authority boundary:** the Head Rigger and any qualified/competent person retain all point-selection, load-calculation, hardware-inspection, and high-work authority. This course teaches ground-level assist and recognition only.
+
+### RQ-481 — Electrics Course 1: assigned electrical support
+
+**Status:** queued  
+**Priority:** second — closes the asymmetry with every other department (Electrics currently has Lead and Course 3 but nothing at Course 1/2) and gives learners heading toward Electrics Lead an actual entry point, instead of folding department-specific content into general Fundamentals/Infrastructure awareness.  
+**Goal:** Teach assigned electrical-support tasks under an electrician's direction — distro/cable handling, patch, and jobsite awareness — using the same Course 1 pattern as every other department.
+
+**Research questions**
+
+- What does an entry-level electrics assist actually do under a working electrician's direction (cable/distro handling, running power, patch, striking)?
+- What hazard recognition (overloaded circuits, damaged cable/connectors, wet conditions, ground-fault indicators) must an assist recognize and escalate, without being taught to diagnose or repair?
+- What terminology and hardware (company switches, distro boxes, feeder cable, banded/socapex connectors) does an assist need to recognize and hand off correctly?
+- What is the explicit boundary against any live-power procedure, consistent with `pathway-electrics-03-system-load-planning.html`'s own existing "literacy only, no live-power procedure" framing?
+
+**Candidate primary sources**
+
+- [Operation Mincemeat Head Electrician posting](https://playbill.com/job/head-electrician-operation-mincemeat-tour/c93251e5-f664-4f10-ab35-ab97fe1bed99) (department structure and assist role framing).
+- [ETCP Entertainment Electrician](https://etcp.esta.org/certify/certify_electrical.html) (competency-tier framing, used the same way it's already cited for Lighting).
+- Existing Packages 30, 36, and 38 (already support the Electrics Lead/Course 3 review builds — check for reusable assist-tier material before commissioning new interviews).
+
+**Deliverables:** source packet; recognize/assist/escalate lesson sequence; explicit no-live-power-procedure boundary; knowledge check.
+
+**Definition of done:** qualified entertainment-electrical reviewer confirms no question or lesson can be read as live-power authorization — same bar ECQ-10/ECQ-12 already hold Electrics Course 3 and Production Power awareness to.
+
+**Authority boundary:** the assigned electrician and qualified/licensed personnel retain all live-power, circuit-design, and diagnostic authority. This course teaches recognition, assist, and escalation only.
+
+### RQ-482 — Rigging Course 2 (Up-Rigger) and RQ-483 — Electrics Course 2 (systems)
+
+**Status:** deferred — blocked on RQ-480 and RQ-481 respectively  
+**Why deferred:** every other department's Course 2 (Systems Tier) was built after its Course 1 shipped and could bridge from real Course 1 content. Opening Course 2 research before Course 1 exists risks the same kind of gap this queue exists to close — a course that doesn't actually build on anything real. Once RQ-480/RQ-481 close, re-open these as full entries using the same template.
+
+### Rigging Course 3 (Head Rigger) — flagged, not queued
+
+Before commissioning new research here: `DEPARTMENTS.rigging.leadRole` already reads "Head Rigger track (decision-only)," and the existing Lead-tier `lead-rigging.html` build is explicitly decision-only Head Rigger content. A Course 3 slot separately labeled "Head Rigger" may be redundant with the Lead course that already exists, rather than a real missing layer — this needs an owner call on whether Rigging's ladder should end at Course 2 (Up-Rigger) with Lead absorbing the Head Rigger layer, or whether a distinct Course 3 covers something the Lead course doesn't. Not queuing speculative research until that's answered.
+
+### Backline / Props / Wardrobe Course 3 — already queued, cross-referenced here
+
+No new item needed: [ECQ-14](EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md#ecq-14--backline--props--wardrobe-course-3-decision) already covers this exact gap (a real, named "proposed — actual curriculum gap" with the combined-vs-split decision as its open research question). Its status is unchanged by this section; it's cross-referenced here so all 6 disclosed gap tracks resolve from one place.
+
 ## Priority 2 — validation and handoff
 
 ### RQ-300 — Practitioner and learner validation protocol
@@ -380,12 +449,12 @@ The 21-course build exposed a smaller, release-focused queue. Use the [Expanded 
 | ID | Work | Current disposition |
 |---|---|---|
 | RQ-400 | Competency and role graph replacing a single universal job hierarchy | **completed 2026-08-31** — see [RQ-400 Competency Graph and Coverage Map](RQ-400-role-competency-graph-and-coverage-map_2026-08-31.md); surfaces Rigging Course 1/2/3 and Electrics Course 1/2 as the two priority gaps |
-| RQ-410 | Electrics research program | Packages 30, 36, and 38 support three review builds; ECQ-10 and ECQ-12 now target qualified review, jurisdiction/authority mapping, and awareness validation |
+| RQ-410 | Electrics research program | Packages 30, 36, and 38 support three review builds; ECQ-10 and ECQ-12 now target qualified review, jurisdiction/authority mapping, and awareness validation; **Course 1 gap now queued as [RQ-481](#rq-481--electrics-course-1-assigned-electrical-support), Course 2 as [RQ-483](#rq-482--rigging-course-2-up-rigger-and-rq-483--electrics-course-2-systems) (deferred on RQ-481)** |
 | RQ-420 | Infrastructure research program | Power awareness review build exists; networking, load-bearing systems, logistics, and site-service branches remain future decisions |
 | RQ-430 | Production research program | Package 39 supports the three-track orientation build; ECQ-13 now targets track-specific sources, practitioner evidence, and scenarios |
 | RQ-440 | Business and risk program | future; insurance, contracting, compliance, records, data governance, and market-entry evidence |
 | RQ-450 | Predictive Hazard Recognition | Review build complete from Package 31; ECQ-05 performs the evolving-scenario validation needed for release |
-| RQ-460 | Rigging | Decision-only Lead review build complete; physical instruction remains deferred and requires qualified-rigger governance |
+| RQ-460 | Rigging | Decision-only Lead review build complete; physical instruction remains deferred and requires qualified-rigger governance; **Course 1 (ground-level assist, not physical technique) now queued as [RQ-480](#rq-480--rigging-course-1-ground-rigger-awarenessassist), Course 2 as [RQ-482](#rq-482--rigging-course-2-up-rigger-and-rq-483--electrics-course-2-systems) (deferred on RQ-480), Course 3 flagged — not queued — pending an owner call on Lead-tier overlap** |
 | RQ-470 | Course 3+ expansion | Five Course 3 review builds complete from Packages 33–37; ECQ-07 through ECQ-11 define portfolio-depth and qualified-review work |
 
 ## Execution waves
@@ -396,6 +465,7 @@ The 21-course build exposed a smaller, release-focused queue. Use the [Expanded 
 | 1 | RQ-100 and RQ-SFS-01 | Fundamentals architecture proposal plus one complete pilot Field Skill packet |
 | 2 | RQ-SFS-02 and RQ-SFS-05 | Ratchet strap and cable-ramp packets pass source review |
 | 3 | RQ-SFS-04 and RQ-SFS-03 | Barricade and flatbed packets pass the correct practitioner review |
+| 3.5 | RQ-480 and RQ-481 | Rigging Course 1 and Electrics Course 1 pass qualified review — the two highest-priority disclosed coverage gaps close, unblocking RQ-482/RQ-483 |
 | 4 | RQ-200 and RQ-300 | Reusable visual system and validation protocol are operational |
 | 5 | RQ-400 onward | Future programs prioritized by evidence, learner outcomes, partner demand, and implementation capacity |
 
