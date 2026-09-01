@@ -45,11 +45,13 @@ No fixed type scale table exists — sizes are set per-component with `clamp()` 
 
 ## 4. Core components
 
-### Navigation and footer
+### Navigation and footer — already global, by construction
+The nav and footer are **not per-page markup** — they're written once in the page shell (outside `<main id="app">`) and every route (`render()`'s hash-switch) only ever replaces `#app`'s contents. There is exactly one header and one footer in the entire file, shared by all 45 courses, all department pages, all legal pages, home, and about. If this becomes the real site's actual implementation (rather than a single-file SPA), the equivalent is a shared include/partial for header and footer — never let a per-page copy of either drift out of sync the way the live site's marketing pages and course pages currently do (they use two different footer markups today).
 - `nav.beam` — top nav, `position: relative` (**not sticky** — this was a real bug, fixed; do not reintroduce `position: sticky` here).
 - `.hazard-rule` — the amber diagonal-stripe divider bar under the nav. Decorative, appears once, site-wide.
 - `.brand-mark` — the real logo icon (cropped from `crew-blueprint-logo-master.jpeg`), 34px in nav, 44px (`.footer-brand img`) in footer. Not a placeholder monogram.
-- Footer has two link rows: `.footer-links` (Home/About/Courses) and `.footer-legal` (all 6 real legal pages, routed to `#/legal/<slug>`).
+- `.footer-disclaimer` — the real "Important Safety Disclaimer" text (orientation/job-readiness training, does not replace employer safety training, site-specific instruction, union training, equipment certification, OSHA 10/30, or hands-on authorization), word-for-word from the live site's footer. This was missing from an earlier pass of the concept and has been added back — never drop it.
+- Footer has two link rows below the disclaimer: `.footer-links` (Home/About/Courses) and `.footer-legal` (all 6 real legal pages, routed to `#/legal/<slug>`).
 
 ### Buttons
 - `.btn` base class, always `background: transparent` explicitly set (native `<button>` elements have a browser-default light-gray face otherwise — this was a real bug, fixed. Never remove the explicit `background` from `.btn`).
@@ -73,8 +75,8 @@ No fixed type scale table exists — sizes are set per-component with `clamp()` 
 - `.sf-pager` — Previous/Next Lesson buttons, disabled at the first/last lesson, last button reads "Course Complete" instead of "Next Lesson →".
 - `.rule-plate` — the module's real safety rule, surfaced per-lesson.
 
-### Ported real course content (43 of 45 courses)
-`tieredCourseView()` renders every course that isn't Fundamentals, driven by the `TIERED_COURSES` data object (real content extracted from the live site's JSON course data and, for the 7 bespoke courses, from their inline render functions/content strings — nothing here is written by the concept, all of it is pulled from the actual built pages).
+### Ported real course content — one global dashboard, format varies per course
+`tieredCourseView()` renders every course that isn't Fundamentals, driven by the `TIERED_COURSES` data object (real content extracted from the live site's JSON course data, the 7 bespoke courses' inline render functions/content strings, and one hub-page-with-embedded-sections architecture — nothing here is written by the concept, all of it is pulled from the actual built pages). This is the "global course dashboard" — one shell, one set of components, one quiz handler, one mobile-collapse pattern, loading whatever a given course's real content actually is. The content *format* inside a lesson varies freely (plain prose, a two-column comparison via `grid2`, a numbered sequence, a glossary grid, an embedded knowledge-check) because different subjects retain differently — the dashboard shell around it never changes. Fundamentals gets its own dashboard (`sfCourseView()`) instead of this one only because it has real 4-part/10-module depth the others don't; every other course, regardless of which of the three source architectures it came from, ends up in the same shell.
 
 - `.tc-hero` / `.tc-boundary` — course title, tier tag, description, and (when present) the real authority-boundary text in a callout.
 - `.tc-module` / `.tc-lesson` — module and lesson wrappers; lessons get anchor IDs (`#tc-m0-l0`) for the table-of-contents to jump to.
@@ -84,6 +86,28 @@ No fixed type scale table exists — sizes are set per-component with `clamp()` 
 
 ### Legal pages
 - `.legal-hero` / `.legal-doc` / `.legal-callout` — renders real extracted text (title, last-updated date, headings, paragraphs, lists, callouts) from all 6 live legal pages. Routed via `#/legal/<slug>`, linked from the footer.
+
+## 4a. Tier naming — real crew role names, not "Course 1/2/3"
+
+The catalog no longer labels department tracks "Course 1/Course 2/Course 3." That numbering was this concept's own invention, not extracted from anything, and it has a real problem: in the live industry, lower numbers mean *more* senior (an A1 outranks an A2), the reverse of what "Course 1 → Course 2 → Course 3" implies. Rather than invent a new scheme, each department's `DEPARTMENTS` entry now carries the **real role title** that department's crews actually use, researched per department rather than assumed:
+
+| Department | Support role | Senior/systems role | Source |
+|---|---|---|---|
+| Lighting | L2 | L1 | [Lasso: What Does a Lighting Engineer (L1) Do?](https://www.lasso.io/articles/what-does-a-lighting-engineer-l1-do/), [AV Labor Source: L1 vs L2 Lighting Technician](https://avlaborsourceinc.com/blog/l1-vs-l2-lighting-technician-guide-2026) |
+| Audio | A2 | A1 | [Lasso: What Does an Audio Engineer (A1) Do?](https://www.lasso.io/articles/what-does-an-a1-do/), [Shoflo: A1 Audio Engineer](https://blog.shoflo.tv/glossary/what-is-an-a1-audio) |
+| Video | V2 | V1 | [Lasso: What Does a Video Engineer (V1) Do?](https://www.lasso.io/articles/what-does-a-video-engineer-v1-do/), [AV Labor Source: AV Technician Roles A1/A2/V1/V2/L1/L2](https://avlaborsourceinc.com/blog/complete-av-technician-roles-guide-2026) |
+| Staging & Carpentry | Carpenter | Head Carpenter | [Toronto Metropolitan U. Production Handbook: Head Carpenter](https://pressbooks.library.torontomu.ca/productionhandbook/chapter/head-carpenter/) |
+| Electrics | Electrician | Master Electrician | [Electrician (theatre) — Wikipedia](https://en.wikipedia.org/wiki/Electrician_(theatre)) |
+| Rigging | Ground Rigger → Up-Rigger | Head Rigger | [Rigger (entertainment) — Wikipedia](https://en.wikipedia.org/wiki/Rigger_(entertainment)), [IATSE Local 55: Riggers](https://iatselocal55.com/riggers) |
+| Backline / Props / Wardrobe | (no single unified role — see below) | — | [Backstage Culture: Jobs and Titles on Tour](https://www.backstageculture.com/jobs-and-titles-on-tour/), [Wardrobe supervisor — Wikipedia](https://en.wikipedia.org/wiki/Wardrobe_supervisor) |
+
+**Why Backline/Props/Wardrobe has no Lead track, honestly explained rather than left unexplained**: real crews split this into separate guitar/drum/bass techs, a props department, and a wardrobe department, each with its *own* supervisor (a Wardrobe Supervisor is not a Props Manager is not a Head Backline Tech) — there is no single real "Backline/Props/Wardrobe Lead" role to name a course after, because the combined department itself is a training-convenience grouping, not how real crews are actually organized. `DEPARTMENTS.backline.roleNote` says this explicitly rather than silently having a missing tier. `lead: false` on this entry was already correct before this pass — the research explains *why* it's correct.
+
+**Where a department has two courses under the same real rank** (e.g., Lighting's Production Flow and System Design are both "L1" work), that's not a labeling gap — a working L1 and a designing/coordinating L1 are genuinely different scopes of the same real rank, not two different ranks. The course subtitle (not a fake second rank) carries that distinction.
+
+**Framing preserved everywhere this was applied**: none of this claims certification, employer authorization, or hands-on qualification — every place a role name appears, it's introduced as "the real crew role this teaches toward," with the same disclaimer language as before. `DEPARTMENTS.<dept>.roleNote` and `.leadRole` carry this framing; `deptView()` renders both.
+
+**Scope of this pass**: this relabeling changed the concept's own catalog/department-navigation labels only (`DEPARTMENTS[key].tracks[].stage`, the ladder-band home section, the About page). It did **not** alter any ported course's own extracted `tier` string (e.g., a course's real hero still says "Department Support Tier · Course 1" if that's literally what the live page's own content says) — that's real extracted site text, not this concept's invention, and rewriting it would mean altering real content rather than relabeling navigation. If the site's actual course pages get relabeled to match (changing their own on-page "Course 1/2/3" language to the real role names), that's a larger, separate content edit across the live `courses/*.html` files, not done here.
 
 ## 5. Interaction patterns
 
