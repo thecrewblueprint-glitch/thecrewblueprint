@@ -348,7 +348,7 @@ The department or venue lead controls the cable route and protector placement. T
 
 ### RQ-480 — Rigging Course 1: Ground Rigger awareness/assist
 
-**Status:** queued  
+**Status:** source_pack_complete — OSHA/consensus-standard verification pass done 2026-09-01; ready for a qualified-rigger practitioner review pass before curriculum drafting.
 **Priority:** highest of the three gaps — real, active, entry-level hiring demand exists for this exact role and Crew Blueprint currently has nothing between general Fundamentals overhead-hazard awareness and Lead-tier decision content.  
 **Goal:** Teach ground-rigging support tasks, hardware recognition, and communication using the same "recognize, assist, stay within bounds" model already used for every other department's Course 1 — **not** physical rigging technique, point selection, or independent hands-on rigging work.
 
@@ -360,12 +360,23 @@ The department or venue lead controls the cable route and protector placement. T
 - What is the explicit "never" list — high work, point selection, load calculation, hardware inspection/approval, anything requiring a qualified/competent-person determination — mirrored from the existing Lead-tier Rigging course's own boundary language?
 - What stop-and-ask conditions apply specifically to ground-level rigging assist work?
 
+**Verified findings, 2026-09-01 (OSHA-priority pass; all added to the master matrix, `sources_hr02_rigging.jsonl`)**
+
+- **Jurisdiction confirmed, double-sourced**: entertainment rigging is governed by federal **general industry** rules (29 CFR 1910), not construction (29 CFR 1926 Subpart CC — cranes/derricks, signal-person 1926.1428, qualified-rigger 1926.1425). OSHA's own 1997 standard interpretation letter, [*Fall protection for the entertainment industry*](https://www.osha.gov/laws-regs/standardinterpretations/1997-01-28) (`S-OSHA-INTERP-1997-01-28-ENTERTAINMENT-FALL`), states plainly: "OSHA does not have any industry specific standards for the entertainment industry" and directs entertainment work to 1910 Subparts D and I. This was cross-checked against current 1910.28 text directly (second source, not just the letter): 1910.28(a)(2)(iii) exempts only "the exposed perimeters of entertainment stages" from the walking-working-surfaces rule — a narrow, stage-edge-only exception, not a blanket entertainment carve-out. Overhead/ground rigging work is not the stage perimeter and stays fully covered. **This means 1926.1428 (signal person) and 1926.1425 (qualified rigger) should not be cited as controlling law for typical touring/festival/concert rigging** — they're real OSHA standards, just the wrong jurisdiction for this course; useful only as descriptive analogy, clearly labeled as such.
+- **New, general-industry, double-sourced hardware citation**: 29 CFR 1910.184 (Slings) (`S-OSHA-1910-184-CURRENT`) is real general-industry law directly on point for ground-crew hardware recognition — daily pre-use inspection by "a competent person designated by the employer," explicit rejection criteria (damage/defects, wear beyond manufacturer spec, deformation/kinking, heat damage/corrosion, cracked or bent hooks, missing ID tags), and a shock-loading prohibition. This gives Course 1 a real "recognize and report, don't sign off" duty distinct from the employer-designated competent person's formal inspection authority.
+- **1997 letter also confirms** a climbing belt/"Swiss seat" is a positioning device only, never a fall-protection device — a full body harness is required for actual fall protection at height. (Not directly Course 1 content since ground assist doesn't work at height, but relevant boundary language for what this course must not imply about the ground role's proximity to height work.)
+- Existing ETCP Rigger certification pages (already in the matrix) continue to support the specialist-gate framing — what a Ground Rigger course explicitly does not confer.
+
 **Candidate primary sources**
 
 - [Nasco Special Rigging](https://www.nasco.ca/service-type/special-rigging-projects/) (Ground Rigger role description).
 - [Universal Rigging Opportunities](https://careers.pageuppeople.com/851/cw/en-us/job/655912/rigging-opportunities-universal-studios-and-islands-of-adventure) (Tech III ground rigger / Tech II up rigger distinction).
 - [Encore Event Rigger](https://jobs.encoreglobal.com/fr/emploi/mississauga/event-rigger-toronto/6228/95423040032) postings (hour-based entry requirements).
+- [OSHA 1997 interpretation — entertainment fall protection](https://www.osha.gov/laws-regs/standardinterpretations/1997-01-28) (jurisdiction confirmation).
+- [OSHA 29 CFR 1910.184 — Slings](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.184) (hardware rejection criteria).
 - The existing `lead-rigging.html` boundary text itself, as the upper bound this course must never cross.
+
+**Not yet resolved**: attempted to check ANSI ES1.18-2022 (*Event Safety – Rigging*, Event Safety Alliance) for a possible direct ground-crew/spotter definition specific to touring rigging (as distinct from ESTA's E1.4-x series, which governs permanently-installed venue systems, not touring truss/motor rigging). The available copy is encrypted/DRM-protected and couldn't be extracted this pass. Worth a follow-up attempt with a licensed copy or direct ESA contact before curriculum drafting, but not a blocker — the OSHA + job-market evidence above is sufficient to proceed per the source hierarchy (primary/official evidence already satisfied at tier 1).
 
 **Deliverables:** source packet; recognize/assist/communicate lesson sequence matching the Course 1 pattern used elsewhere; explicit no-high-work/no-point-selection boundary statement; knowledge check.
 
@@ -375,7 +386,7 @@ The department or venue lead controls the cable route and protector placement. T
 
 ### RQ-481 — Electrics Course 1: assigned electrical support
 
-**Status:** queued  
+**Status:** source_pack_complete — OSHA/consensus-standard verification pass done 2026-09-01; ready for a qualified entertainment-electrical practitioner review pass before curriculum drafting.
 **Priority:** second — closes the asymmetry with every other department (Electrics currently has Lead and Course 3 but nothing at Course 1/2) and gives learners heading toward Electrics Lead an actual entry point, instead of folding department-specific content into general Fundamentals/Infrastructure awareness.  
 **Goal:** Teach assigned electrical-support tasks under an electrician's direction — distro/cable handling, patch, and jobsite awareness — using the same Course 1 pattern as every other department.
 
@@ -386,10 +397,18 @@ The department or venue lead controls the cable route and protector placement. T
 - What terminology and hardware (company switches, distro boxes, feeder cable, banded/socapex connectors) does an assist need to recognize and hand off correctly?
 - What is the explicit boundary against any live-power procedure, consistent with `pathway-electrics-03-system-load-planning.html`'s own existing "literacy only, no live-power procedure" framing?
 
+**Verified findings, 2026-09-01 (OSHA-priority pass; new source added to the master matrix, `sources_hr01_electrics.jsonl`)**
+
+- The existing matrix already carries the exact legal foundation this course needs: 29 CFR 1910.331 (scope), .332 (training), .333 (work-practice selection — the rule restricting work on non-deenergized parts to qualified persons), .335 (personal-protection safeguards), and .399 (defines "qualified person" as trained *and* demonstrated-competent for the specific equipment/hazards involved — qualification is task/equipment-specific, not a blanket status). These were already correctly sourced for the Lead-tier build; no correction needed, only extension to Course 1's assist-level framing.
+- **Added and double-sourced**: [NFPA 70E — Standard for Electrical Safety in the Workplace, 2024 Edition](https://www.nfpa.org/product/nfpa-70e-standard-for-electrical-safety-in-the-workplace/p0070ecode) (`S-NFPA-70E-2024`), the consensus-standard companion to the OSHA law above. 70E operationalizes the same qualified/unqualified boundary OSHA defines, into two concrete lines an assist role can be taught to recognize and stay outside of without any diagnostic training: the **Restricted Approach Boundary** (only qualified persons may cross) and the **Arc Flash Boundary** (minimum safe distance without specific PPE). This gives Course 1 a real, teachable "stay outside these boundaries, escalate what you see" lesson structure grounded in both the controlling law (OSHA) and its industry-standard elaboration (NFPA), matching the source hierarchy's own instruction to distinguish legal requirements from consensus standards rather than blend them.
+- No jurisdiction problem here analogous to Rigging's — 1910 Subpart S is general industry by design and applies directly to entertainment electrical work without a construction/general-industry scoping question to resolve.
+
 **Candidate primary sources**
 
 - [Operation Mincemeat Head Electrician posting](https://playbill.com/job/head-electrician-operation-mincemeat-tour/c93251e5-f664-4f10-ab35-ab97fe1bed99) (department structure and assist role framing).
 - [ETCP Entertainment Electrician](https://etcp.esta.org/certify/certify_electrical.html) (competency-tier framing, used the same way it's already cited for Lighting).
+- [OSHA 29 CFR 1910.331–1910.399 (Subpart S)](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.331) (qualified/unqualified person legal boundary — already in the matrix).
+- [NFPA 70E, 2024 Edition](https://www.nfpa.org/product/nfpa-70e-standard-for-electrical-safety-in-the-workplace/p0070ecode) (Restricted Approach / Arc Flash Boundaries).
 - Existing Packages 30, 36, and 38 (already support the Electrics Lead/Course 3 review builds — check for reusable assist-tier material before commissioning new interviews).
 
 **Deliverables:** source packet; recognize/assist/escalate lesson sequence; explicit no-live-power-procedure boundary; knowledge check.
@@ -449,12 +468,12 @@ The 21-course build exposed a smaller, release-focused queue. Use the [Expanded 
 | ID | Work | Current disposition |
 |---|---|---|
 | RQ-400 | Competency and role graph replacing a single universal job hierarchy | **completed 2026-08-31** — see [RQ-400 Competency Graph and Coverage Map](RQ-400-role-competency-graph-and-coverage-map_2026-08-31.md); surfaces Rigging Course 1/2/3 and Electrics Course 1/2 as the two priority gaps |
-| RQ-410 | Electrics research program | Packages 30, 36, and 38 support three review builds; ECQ-10 and ECQ-12 now target qualified review, jurisdiction/authority mapping, and awareness validation; **Course 1 gap now queued as [RQ-481](#rq-481--electrics-course-1-assigned-electrical-support), Course 2 as [RQ-483](#rq-482--rigging-course-2-up-rigger-and-rq-483--electrics-course-2-systems) (deferred on RQ-481)** |
+| RQ-410 | Electrics research program | Packages 30, 36, and 38 support three review builds; ECQ-10 and ECQ-12 now target qualified review, jurisdiction/authority mapping, and awareness validation; **Course 1 gap: [RQ-481](#rq-481--electrics-course-1-assigned-electrical-support) source-pack complete (OSHA Subpart S + NFPA 70E verified 2026-09-01), awaiting qualified-reviewer pass before curriculum drafting; Course 2 as [RQ-483](#rq-482--rigging-course-2-up-rigger-and-rq-483--electrics-course-2-systems) (deferred on RQ-481)** |
 | RQ-420 | Infrastructure research program | Power awareness review build exists; networking, load-bearing systems, logistics, and site-service branches remain future decisions |
 | RQ-430 | Production research program | Package 39 supports the three-track orientation build; ECQ-13 now targets track-specific sources, practitioner evidence, and scenarios |
 | RQ-440 | Business and risk program | future; insurance, contracting, compliance, records, data governance, and market-entry evidence |
 | RQ-450 | Predictive Hazard Recognition | Review build complete from Package 31; ECQ-05 performs the evolving-scenario validation needed for release |
-| RQ-460 | Rigging | Decision-only Lead review build complete; physical instruction remains deferred and requires qualified-rigger governance; **Course 1 (ground-level assist, not physical technique) now queued as [RQ-480](#rq-480--rigging-course-1-ground-rigger-awarenessassist), Course 2 as [RQ-482](#rq-482--rigging-course-2-up-rigger-and-rq-483--electrics-course-2-systems) (deferred on RQ-480), Course 3 flagged — not queued — pending an owner call on Lead-tier overlap** |
+| RQ-460 | Rigging | Decision-only Lead review build complete; physical instruction remains deferred and requires qualified-rigger governance; **Course 1 (ground-level assist, not physical technique): [RQ-480](#rq-480--rigging-course-1-ground-rigger-awarenessassist) source-pack complete (jurisdiction confirmed as general industry, not construction, via double-sourced OSHA verification 2026-09-01), awaiting qualified-rigger reviewer pass before curriculum drafting; Course 2 as [RQ-482](#rq-482--rigging-course-2-up-rigger-and-rq-483--electrics-course-2-systems) (deferred on RQ-480), Course 3 flagged — not queued — pending an owner call on Lead-tier overlap** |
 | RQ-470 | Course 3+ expansion | Five Course 3 review builds complete from Packages 33–37; ECQ-07 through ECQ-11 define portfolio-depth and qualified-review work |
 
 ## Execution waves
@@ -465,7 +484,7 @@ The 21-course build exposed a smaller, release-focused queue. Use the [Expanded 
 | 1 | RQ-100 and RQ-SFS-01 | Fundamentals architecture proposal plus one complete pilot Field Skill packet |
 | 2 | RQ-SFS-02 and RQ-SFS-05 | Ratchet strap and cable-ramp packets pass source review |
 | 3 | RQ-SFS-04 and RQ-SFS-03 | Barricade and flatbed packets pass the correct practitioner review |
-| 3.5 | RQ-480 and RQ-481 | Rigging Course 1 and Electrics Course 1 pass qualified review — the two highest-priority disclosed coverage gaps close, unblocking RQ-482/RQ-483 |
+| 3.5 | RQ-480 and RQ-481 | Source packs complete 2026-09-01 (OSHA/NFPA verification pass). Rigging Course 1 and Electrics Course 1 next pass qualified-practitioner review, then curriculum drafting — the two highest-priority disclosed coverage gaps close, unblocking RQ-482/RQ-483 |
 | 4 | RQ-200 and RQ-300 | Reusable visual system and validation protocol are operational |
 | 5 | RQ-400 onward | Future programs prioritized by evidence, learner outcomes, partner demand, and implementation capacity |
 
