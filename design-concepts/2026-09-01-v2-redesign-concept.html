@@ -125,12 +125,16 @@
     display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px;
     border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; cursor: pointer;
     border: 1px solid transparent; transition: transform 120ms ease, background 120ms ease;
+    font-family: inherit; background: transparent; appearance: none; -webkit-appearance: none;
   }
   .btn:hover { transform: translateY(-1px); }
+  .btn:disabled { opacity: 0.4; cursor: default; transform: none; }
   .btn-primary { background: var(--amber); color: #15181b; }
   .btn-primary:hover { background: var(--amber-strong); }
+  .btn-primary:disabled:hover { background: var(--amber); }
   .btn-ghost { border-color: var(--border-strong); color: var(--ink); }
   .btn-ghost:hover { background: var(--panel); }
+  .btn-ghost:disabled:hover { background: none; }
 
   /* attention images — home/about only, treated to sit inside the industrial palette */
   .shot {
@@ -358,6 +362,8 @@
   .rule-plate .rule-kicker { font-family: "IBM Plex Mono"; font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
   .rule-plate p { margin: 0; font-size: 13.5px; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
   .sf-note { font-size: 12.5px; color: var(--ink-faint); margin: 4px 0 22px; max-width: 62ch; }
+  .sf-pager { display: flex; justify-content: space-between; gap: 12px; padding-top: 8px; border-top: 1px solid var(--border); max-width: 68ch; }
+  @media (max-width: 480px) { .sf-pager { flex-direction: column-reverse; } .sf-pager .btn { justify-content: center; } }
 
   [hidden] { display: none !important; }
 </style>
@@ -795,14 +801,20 @@ function sfCourseView() {
         <p>${active.rule}</p>
       </div>
       <p class="sf-note">Real course structure — 4 parts, 10 modules, 34 lessons, matching the built course exactly. This view demonstrates navigation and progress only; full lesson text lives in the built page.</p>
+      <div class="sf-pager">
+        <button type="button" class="btn btn-ghost" onclick="sfSetLesson(${sfActiveIndex - 1})" ${sfActiveIndex === 0 ? "disabled" : ""}>← Previous Lesson</button>
+        <button type="button" class="btn btn-primary" onclick="sfSetLesson(${sfActiveIndex + 1})" ${sfActiveIndex === SF_FLAT.length - 1 ? "disabled" : ""}>${sfActiveIndex === SF_FLAT.length - 1 ? "Course Complete" : "Next Lesson →"}</button>
+      </div>
     </div>
   </div>
   `;
 }
 
 function sfSetLesson(i) {
+  if (i < 0 || i >= SF_FLAT.length) return;
   sfActiveIndex = i;
   document.getElementById("app").innerHTML = sfCourseView();
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
 
 function sfToggleModule(mn) {
