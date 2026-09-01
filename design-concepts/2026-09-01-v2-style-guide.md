@@ -95,10 +95,10 @@ No fixed type scale table exists — sizes are set per-component with `clamp()` 
 
 - **Real content only.** Every course, every legal page, every catalog number is pulled from the live site — nothing in this concept is placeholder copy standing in for real content, except the one course explicitly still marked as a stub (see below).
 - **Honest gaps stay honest.** Rigging (no C1/C2/C3) and Electrics (no C1/C2) show as `status-gap`/"Not Built" chips, not hidden or silently populated. If either department gets real content built on the live site, update `DEPARTMENTS` in the concept to match — don't leave the concept's gap-marking out of sync with reality.
-- **One remaining honest stub**: `pathway-video-02-led-video-systems` is not in `TIERED_COURSES` — it uses a third, separate architecture (an overview hub linking to 8 standalone lesson pages) that hasn't been ported. `courseView()` falls back to a plain "this course exists, not reproduced here" message for it, same as it would for any genuinely unported course. This is the last piece needed before the concept can be called fully content-complete.
+- **Every real course now has full content.** `pathway-video-02-led-video-systems` (a third architecture — a single hub page with 9 embedded lesson sections toggled by `switchLesson()`, distinct from both the tiered-JSON pattern and the bespoke render-function pattern) was the last one, extracted directly from its embedded `.lesson-content` sections. All 44 real courses are in `TIERED_COURSES` or `sfCourseView` (Fundamentals); none remain as a placeholder stub.
 
 ## 7. Known open items (not blockers to reading this guide, but real)
 
 - The 12 Field Skills that were orphaned on the live site (unlinked from `courses.html`/`sitemap.xml`) are now wired up on `main` directly — see the `main` branch commit fixing this, separate from this concept.
 - A real crash bug in the live site's `js/tiered-course.js` (missing `.answer-result` element assumption) is fixed in this concept's own quiz handler, and separately fixed on `main` directly.
-- `pathway-video-02-led-video-systems` + its 8 standalone lesson pages remain unported into this concept.
+- All 44 real courses have full content ported. The concept is content-complete.
