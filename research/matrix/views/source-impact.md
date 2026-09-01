@@ -59,6 +59,7 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-LACOUSTICS-KARAII-DOCS-2026 | KARA II Documentation Center / Owner and Product Documentation | manufacturer | fast_changing | active | CL-AUD-C1-002-ARRAY |
 | S-NEUTRIK-NC3MXX-CURRENT | NC3MXX XLR cable connector — current manufacturer documentation | manufacturer | version_bound | active | CL-AUD-C1-004-CONNECTOR |
 | S-NEUTRIK-OPTICALCON-FAQ-CURRENT | opticalCON FAQ | manufacturer | fast_changing | active | CL-FLD-CABLE-004-EXCEPTIONS, CL-FLD-CABLE-DEPLOY-HR06-003 |
+| S-NFPA-70E-2024 | NFPA 70E — Standard for Electrical Safety in the Workplace, 2024 Edition | consensus_standard | periodic | active | NONE |
 | S-NIOSH-ERGONOMIC-RISK-CURRENT | Step 1: Identify Risk Factors — Ergonomics | government_guidance | periodic | active | CL-FLD-CART-DOLLY-HR06-001, CL-FLD-CART-DOLLY-HR06-003 |
 | S-ECFR-49-392-9-CURRENT | 49 CFR 392.9 — Inspection of cargo, cargo securement devices and systems | law_regulation | fast_changing | active | CL-FLD-FLATBED-HR04-001, CL-FLD-FLATBED-HR04-004 |
 | S-ECFR-49-393-100-CURRENT | 49 CFR 393.100 — Applicability and general requirements of cargo securement standards | law_regulation | fast_changing | active | CL-FLD-FLATBED-HR04-002 |
@@ -70,6 +71,7 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-OSHA-1910-176-CURRENT | 29 CFR 1910.176 — Handling materials — general | law_regulation | fast_changing | active | CL-SHF-FUND-M06-BASE, CL-FLD-CASE-ORG-HR06-001, CL-FLD-CASE-ORG-HR06-002, CL-FLD-DOCK-HR06C-001 |
 | S-OSHA-1910-178-PIT-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-SHF-FUND-M02-BASE, CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-PIT-PEDESTRIAN |
 | S-OSHA-1910-178-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-FLD-DOCK-HR06C-002 |
+| S-OSHA-1910-184-CURRENT | 29 CFR 1910.184 — Slings | law_regulation | fast_changing | active | NONE |
 | S-OSHA-1910-22-CURRENT | 29 CFR 1910.22 — General requirements for walking-working surfaces | law_regulation | fast_changing | active | CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-ROUTE-VERIFY, CL-STG-DECK-HR03-001, CL-FLD-CABLE-PROTECT-HR05-001, CL-FLD-RESET-HR06-001 |
 | S-OSHA-1910-242-CURRENT | 29 CFR 1910.242 — Hand and portable powered tools and equipment, general | law_regulation | fast_changing | active | CL-SHF-FUND-L72-TOOL-CONDITION, CL-SHF-FUND-M07-BASE |
 | S-OSHA-1910-28-CURRENT | 29 CFR 1910.28 — Duty to have fall protection and falling object protection | law_regulation | fast_changing | active | CL-LEAD-RIG-HR02-001, CL-LEAD-RIG-HR02-005 |
@@ -86,6 +88,7 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-OSHA-1910-95-CURRENT | 29 CFR 1910.95 — Occupational noise exposure | law_regulation | fast_changing | active | CL-AUD-C1-005-NOISE, CL-SHF-FUND-Q-HEARING-001, CL-AUD-HR08-NOISE-001, CL-AUD-HR08-NOISE-002 |
 | S-OSHA-1926-1419-CURRENT | 29 CFR 1926.1419 — Signals — general requirements | law_regulation | fast_changing | active | CL-LTG-C1-004-SIGNALS |
 | S-OSHA-1926-416-CURRENT | 29 CFR 1926.416 — General requirements | law_regulation | fast_changing | active | CL-FLD-CABLE-DEPLOY-HR06-002 |
+| S-OSHA-INTERP-1997-01-28-ENTERTAINMENT-FALL | Fall protection for the entertainment industry under the OSH Act of 1970 | government_guidance | stable | active | NONE |
 | S-OSHA-HEAVY-LIFTING-ETOOL-CURRENT | Materials Handling — Heavy Lifting | government_guidance | periodic | active | CL-FLD-TEAM-LIFT-HR06-001, CL-FLD-TEAM-LIFT-HR06-002 |
 | S-OSHA-ROOT-CURRENT | Occupational Safety and Health Administration | government_guidance | fast_changing | active | CL-LTG-PRODUCTION-FLOW-0002 |
 | S-OSHA-OTM-ERGONOMICS-CURRENT | OSHA Technical Manual — Section VII, Chapter 1: Back Disorders and Injuries | government_guidance | periodic | active | CL-SHF-FUND-L23-PRESSURE, CL-SHF-FUND-Q-FATIGUE-001, CL-FLD-TEAM-LIFT-HR06-001 |
