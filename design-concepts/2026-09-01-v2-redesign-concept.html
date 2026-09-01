@@ -305,6 +305,20 @@
   .course-shell { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 32px 0 60px; align-items: start; }
   @media (max-width: 800px) { .course-shell { grid-template-columns: 1fr; } }
   .course-side { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; position: sticky; top: 88px; }
+  .sf-toggle-btn {
+    display: none; width: 100%; align-items: center; justify-content: space-between; gap: 10px;
+    background: var(--panel); border: 1px solid var(--border-strong); border-radius: 8px;
+    padding: 13px 16px; margin-bottom: 4px; font-family: "IBM Plex Mono"; font-size: 11.5px;
+    font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+    cursor: pointer; text-align: left;
+  }
+  .sf-toggle-btn .sf-toggle-caret { color: var(--amber-strong); font-size: 13px; transition: transform 120ms ease; flex-shrink: 0; }
+  .sf-toggle-btn.open .sf-toggle-caret { transform: rotate(180deg); }
+  @media (max-width: 800px) {
+    .sf-toggle-btn { display: flex; }
+    .course-side.sf-side { display: none; position: static; margin-bottom: 18px; }
+    .course-side.sf-side.mobile-open { display: block; }
+  }
   .course-side .les { display: block; padding: 9px 10px; border-radius: 5px; font-size: 13px; color: var(--ink-dim); cursor: pointer; text-decoration: none; }
   .course-side .les:hover { background: var(--panel-2); color: var(--ink); }
   .course-side .les.active { background: var(--amber); color: #15181b; font-weight: 700; }
@@ -757,7 +771,11 @@ function sfCourseView() {
 
   return `
   <div class="wrap course-shell">
-    <aside class="course-side sf-side">${sideHtml}</aside>
+    <button type="button" class="sf-toggle-btn" id="sfToggleBtn" onclick="sfToggleSide()">
+      <span>Course Contents — Part ${active.partNum}, Module ${String(active.moduleNum).padStart(2,'0')}</span>
+      <span class="sf-toggle-caret">▾</span>
+    </button>
+    <aside class="course-side sf-side" id="sfSide">${sideHtml}</aside>
     <div class="course-main">
       <div class="sf-crumb" id="sfCrumb">Part ${active.partNum} · Module ${String(active.moduleNum).padStart(2,'0')} — ${active.moduleTitle}</div>
       <h2 id="sfTitle">${active.name}</h2>
@@ -790,6 +808,13 @@ function sfSetLesson(i) {
 function sfToggleModule(mn) {
   const el = document.getElementById("sfmod-" + mn);
   if (el) el.classList.toggle("open");
+}
+
+function sfToggleSide() {
+  const side = document.getElementById("sfSide");
+  const btn = document.getElementById("sfToggleBtn");
+  if (side) side.classList.toggle("mobile-open");
+  if (btn) btn.classList.toggle("open");
 }
 
 function courseView(slug) {
