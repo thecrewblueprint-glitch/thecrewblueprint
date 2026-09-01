@@ -9,5 +9,6 @@ exclude:
   - companies
   - courses/_archived
   - design
+  - legal-tasks
   - research
   - scripts

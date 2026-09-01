@@ -240,9 +240,11 @@
     const coaching = document.getElementById(`${group.dataset.q}c`);
     if (coaching) {
       const result = coaching.querySelector('.answer-result');
-      result.textContent = button.dataset.c === '1'
-        ? 'Correct. '
-        : `Not quite. Correct answer: ${correctOption.textContent}. `;
+      if (result) {
+        result.textContent = button.dataset.c === '1'
+          ? 'Correct. '
+          : `Not quite. Correct answer: ${correctOption.textContent}. `;
+      }
       coaching.classList.add('show');
     }
   });
