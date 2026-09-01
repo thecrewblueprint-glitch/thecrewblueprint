@@ -382,7 +382,7 @@ The department or venue lead controls the cable route and protector placement. T
 
 **Definition of done:** a qualified rigger reviewer confirms no question or lesson can be read as technical rigging authorization, hands-on point selection, or independent hardware judgment — same bar RQ-460's existing Lead-tier build already met.
 
-**Authority boundary:** the Head Rigger and any qualified/competent person retain all point-selection, load-calculation, hardware-inspection, and high-work authority. This course teaches ground-level assist and recognition only.
+**Authority boundary:** the Head Rigger and any qualified/competent person retain all point-selection, load-calculation, hardware-inspection, and high-work authority. This course teaches ground-level assist and recognition only. **This course confers no certification, no ETCP or other credential, and no claim of authorization to perform rigging work of any kind on a real jobsite.** Educational completion, observed practical performance, employer authorization, and external certification stay separate, named claims — nothing here substitutes for site-specific, in-person employer training, and no learner should be represented, to themselves or an employer, as competent for rigging tasks based on this course alone.
 
 ### RQ-481 — Electrics Course 1: assigned electrical support
 
@@ -415,7 +415,7 @@ The department or venue lead controls the cable route and protector placement. T
 
 **Definition of done:** qualified entertainment-electrical reviewer confirms no question or lesson can be read as live-power authorization — same bar ECQ-10/ECQ-12 already hold Electrics Course 3 and Production Power awareness to.
 
-**Authority boundary:** the assigned electrician and qualified/licensed personnel retain all live-power, circuit-design, and diagnostic authority. This course teaches recognition, assist, and escalation only.
+**Authority boundary:** the assigned electrician and qualified/licensed personnel retain all live-power, circuit-design, and diagnostic authority. This course teaches recognition, assist, and escalation only. **This course confers no certification, no ETCP or other credential, and no claim of authorization to perform electrical work of any kind on a real jobsite.** Educational completion, observed practical performance, employer authorization, and external certification stay separate, named claims — nothing here substitutes for site-specific, in-person employer training, and no learner should be represented, to themselves or an employer, as a "qualified person" under OSHA/NFPA 70E based on this course alone.
 
 ### RQ-482 — Rigging Course 2 (Up-Rigger) and RQ-483 — Electrics Course 2 (systems)
 
@@ -429,6 +429,33 @@ Before commissioning new research here: `DEPARTMENTS.rigging.leadRole` already r
 ### Backline / Props / Wardrobe Course 3 — already queued, cross-referenced here
 
 No new item needed: [ECQ-14](EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md#ecq-14--backline--props--wardrobe-course-3-decision) already covers this exact gap (a real, named "proposed — actual curriculum gap" with the combined-vs-split decision as its open research question). Its status is unchanged by this section; it's cross-referenced here so all 6 disclosed gap tracks resolve from one place.
+
+## Priority 1.6 — flagged for the next update: legal/citation-accuracy sweep (2026-09-01)
+
+Owner directed the RQ-480/RQ-481 research to hold the highest standard on one specific point — no course may claim or imply certification, or authorization to perform field work on a real jobsite, without proper in-person employer training — and asked for a sweep of the rest of the content architecture for anything else needing the same tightening. Ran a repo-wide `git grep` pass across every real, **live** course page on `main` (not just the two new items) for certification/authorization/permission-adjacent language. Findings below; **nothing in this section was changed — flagged for a deliberate next-update pass, per instruction, since several of these are already-shipped, live pages.**
+
+### Finding 1 — the certification/authorization boundary itself is solid sitewide
+
+Swept every course, every legal page, and the Fundamentals course for phrases like "you are now qualified," "certifies you," "grants you," "licensed to," "permission to," and similar. Every real hit found was already correctly framed as a **denial** ("completion is not a CDL," "recognizing the tool is not permission to use it," "does not create ETCP certification"), including in quiz distractor answers explicitly teaching learners that course completion does not equal appointment, credential, or authorization. No overclaiming language found. This is the standard RQ-480/RQ-481 were held to, and the existing site already meets it consistently — worth confirming rather than assuming.
+
+### Finding 2 — real, live jurisdiction-citation error: construction-only OSHA standards cited without their scope, in courses about work that isn't construction
+
+This session's RQ-480 research (see above) established, double-sourced, that OSHA has no entertainment-specific standard and treats entertainment/live-event work as **general industry (29 CFR 1910)**, not construction (29 CFR 1926 — including Subpart CC, cranes/derricks/rigging/signals). Checking the rest of the site against that same finding turned up a real, repeated pattern: **several already-live course pages cite 1926 Subpart CC sections as apparent authority for entertainment rigging/hoisting/lift work, without the scope caveat needed to make that citation honest.**
+
+Traced to source: the underlying research bibliography (`visuals/stagehand-fundamentals/bibliography.html`, feeding Packages 07, 08, 09, 10, and 17) cites 11 distinct 1926 Subpart CC sections (1926.250, .405, .451, .453, .753, .1419, .1421, .1424, .1425, .1431, and 1926SubpartCCAppA) as general-industry-adjacent evidence. That sourcing decision then propagated into live course content:
+
+- `courses/module-4-venue-and-jobsite-awareness.html` — cites 1926.453 (Aerial Lifts) and 1926.753 (Hoisting and Rigging) with no scope note.
+- `courses/pathway-lighting-01-support.html` — cites 1926.1419 (Signals) and 1926.753 (Hoisting/Rigging) with no scope note.
+- `courses/pathway-audio-01-support.html` — cites 1926.1425 (titled "Rigging" in the course's own citation, though the actual section is "Keeping clear of the load") with no scope note.
+- `courses/pathway-staging-carpentry-01-support.html` — cites 1926.1431 (Hoisting personnel) and 1926.451 (General scaffold requirements) with no scope note.
+
+**One page already does this correctly and should be the model for the fix**: `courses/pathway-video-02-led-video-systems.html` cites 1926.404 but labels it explicitly — "Wiring design, grounding, overcurrent protection, generators, and GFCI in **covered construction settings**." That qualifier is exactly what the other four pages are missing.
+
+**Why this matters, concretely**: these pages all carry a real, general "verify current applicability before relying on any of these for an actual job" hedge, so this isn't an unqualified false claim — but a reader who takes the citation at face value (which a citation's whole purpose invites) would reasonably conclude these construction standards directly govern their entertainment-rigging work, which this session's own OSHA research shows isn't accurate. Recommended fix, for the next update: either (a) add the same "in covered construction settings" scope qualifier `pathway-video-02` already uses, wherever these sections are cited, or (b) where a real 1910 general-industry equivalent exists (1910.184 Slings, newly added to the matrix this session, is a strong candidate to replace or supplement the rigging/hoisting citations), swap to that instead. Not a one-line fix — touches 4 live course pages plus the shared bibliography feeding 5 research packages — hence flagged for a deliberate pass rather than patched inline here.
+
+### Finding 3 — real structural gap: the 8 courses without a `"boundary"` field (already found and fixed in the v2 concept) have the SAME gap on the live production site itself, with a sharper failure mode
+
+The v2-concept gap-coverage audit earlier this session found 8 courses missing a structured `boundary` field and fixed it *in the concept* with real text pulled from each course's own live page. Checking the **live site itself** (not the concept) confirms the same 8 pages (`pathway-audio-01/02`, `pathway-video-01/02` [+ its 8 sub-lesson pages], `pathway-staging-carpentry-01/02`, `pathway-backline-props-wardrobe-01/02`) have no structured boundary field there either — which is expected, since the concept ported this content as-is. But tracing the actual page logic for one of them (`pathway-audio-01-support.html`) surfaces a sharper, live-site-specific problem: the scope-boundary content ("What Stays Off-Limits Without Direction") only exists as prose inside lesson **1.2**, the course's router defaults to opening on lesson **1.1** (`Math.max(0, lessonIds.indexOf(requestedLesson))` returns index 0 with no query param), and the course's final "Sources" lesson is a plain link list with no repeated safety framing. A learner who opens the course, reads only the first lesson, and leaves has a real path through this course that never surfaces its safety boundary at all — unlike the 36+ courses with a structured `boundary` field, which show it in the hero before any lesson content, guaranteed on first load. Recommended fix, for the next update: either promote each of these 8 courses' existing off-limits prose into a hero-level boundary callout (matching the other 36 courses' pattern, reusing real text already written — no new content needed), or at minimum repeat it in the final "Sources" lesson so course completion doesn't happen without it being shown. Flagged, not fixed here, since it touches the same 8 already-live pages as Finding 2.
 
 ## Priority 2 — validation and handoff
 
