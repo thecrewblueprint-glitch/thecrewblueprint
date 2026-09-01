@@ -21,69 +21,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="css/theme.css" rel="stylesheet" />
 <style>
-  .cb-home-hero {
-    position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    aspect-ratio: 16 / 9;
-    min-height: 480px;
-    display: flex;
-    align-items: flex-end;
-    overflow: visible;
-    margin-bottom: clamp(48px, 6vw, 80px);
-  }
-
-  .cb-home-hero-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .cb-home-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(5, 6, 10, 0.8), rgba(5, 6, 10, 0.4) 40%, transparent);
-    z-index: 1;
-  }
-
-  .cb-home-hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 20px 48px;
-    width: min(1280px, 100%);
-  }
-
-  .cb-home-hero h1 {
-    margin: 0 0 16px;
-    max-width: 620px;
-    font-size: clamp(38px, 5vw, 64px);
-    line-height: 0.96;
-    letter-spacing: -0.03em;
-    color: var(--cb-text);
-  }
-
-  .cb-home-hero p {
-    max-width: 540px;
-    margin: 0 0 28px;
-    color: var(--cb-muted);
-    font-size: clamp(16px, 1.4vw, 18px);
-    line-height: 1.65;
-  }
-
-  .cb-home-hero .cb-actions { justify-content: flex-start; }
-
-  @media (max-width: 820px) {
-    .cb-home-hero { aspect-ratio: auto; min-height: 360px; }
-    .cb-home-hero-content { padding-bottom: 32px; }
-    .cb-home-hero h1 { max-width: 100%; }
-  }
-
   .cb-home-grid-path {
     display: flex;
     align-items: center;
@@ -219,10 +156,9 @@
 
 <main class="cb-page cb-home">
 
-  <section class="cb-home-hero">
-    <img src="images/site/img-01-home-hero.webp" alt="Live-event crew preparing truss, cable, and road cases during an arena load-in." class="cb-home-hero-image">
-    <div class="cb-home-hero-overlay"></div>
-    <div class="cb-home-hero-content">
+  <div class="cb-wrap">
+
+    <section class="cb-page-hero">
       <h1>Learn how to show up ready for real live event work.</h1>
       <p>
         The Crew Blueprint helps new and developing live event workers understand the pace, language, safety mindset, and crew expectations behind load-ins, show calls, and load-outs.
@@ -231,10 +167,10 @@
         <a class="cb-btn cb-btn-primary" href="courses/stagehand-fundamentals.html">Start Stagehand Fundamentals</a>
         <a class="cb-btn cb-btn-secondary" href="about.html">Learn About The Crew Blueprint</a>
       </div>
-    </div>
-  </section>
-
-  <div class="cb-wrap">
+      <figure class="cb-hero-image">
+        <img src="images/site/img-01-home-hero.webp" alt="Live-event crew preparing truss, cable, and road cases during an arena load-in.">
+      </figure>
+    </section>
 
     <section class="cb-section">
       <h2>How a production call actually works</h2>
