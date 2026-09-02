@@ -18,18 +18,14 @@ const expectedModules = new Map([
   [2, 'Safety Mindset Before Skillset'],
   [3, 'PPE, Clothing & Readiness'],
   [4, 'Venue & Jobsite Awareness'],
-  [5, 'Communication & Crew Etiquette'],
-  [6, 'Load-In Fundamentals'],
-  [7, 'Tools, Gear & Handling'],
-  [8, 'Load-Out Fundamentals'],
-  [9, 'Department Basics'],
+  [5, 'Load-In Fundamentals'],
+  [6, 'Communication & Crew Etiquette'],
+  [7, 'Department Basics'],
+  [8, 'Tools, Gear & Handling'],
+  [9, 'Load-Out Fundamentals'],
   [10, 'Getting Hired, Called Back & Growing']
 ]);
-const expectedParts = ['1,2,3', '4,5', '6,7,8', '9,10'];
-const expectedLegacyMap = new Map([
-  [1, 1], [2, 2], [3, 3], [4, 4], [5, 6],
-  [6, 5], [7, 9], [8, 7], [9, 8], [10, 10]
-]);
+const expectedParts = ['1,2,3', '4,6', '5,8,9', '7,10'];
 
 const course = await readFile(coursePath, 'utf8');
 const dashboard = await readFile(dashboardPath, 'utf8');
@@ -49,31 +45,24 @@ for (const match of moduleMatches) {
   lessonCount += lessonIds.length;
   check(lessonIds.length > 0, `Module ${moduleNumber} has no lessons`);
   for (const lessonId of lessonIds) {
-    check(lessonId.startsWith(`${moduleNumber}.`), `Module ${moduleNumber} contains noncanonical lesson ${lessonId}`);
+    check(lessonId.startsWith(`${moduleNumber}.`), `Module ${moduleNumber} contains a mismatched lesson id ${lessonId}`);
   }
 }
 check(lessonCount === 34, `expected 34 lessons, found ${lessonCount}`);
-check([...seenModuleNumbers].sort((a, b) => a - b).join(',') === '1,2,3,4,5,6,7,8,9,10', 'module numbers are not the complete canonical 1–10 sequence');
+check([...seenModuleNumbers].sort((a, b) => a - b).join(',') === '1,2,3,4,5,6,7,8,9,10', 'module numbers are not the complete 1–10 sequence');
 
 const partMatches = [...course.matchAll(/moduleNumbers:\s*\[([^\]]+)\]/g)]
   .map((match) => match[1].replaceAll(/\s/g, ''));
 check(JSON.stringify(partMatches) === JSON.stringify(expectedParts), `unexpected four-part grouping: ${partMatches.join(' | ')}`);
 
-const legacyMapBlock = course.match(/const legacyToCanonicalModule = new Map\(\[([\s\S]*?)\]\);/)?.[1] || '';
-for (const [legacy, canonical] of expectedLegacyMap) {
-  check(new RegExp(`\\[${legacy},\\s*${canonical}\\]`).test(legacyMapBlock), `legacy Module ${legacy} is not mapped to canonical Module ${canonical}`);
-}
-check(course.includes("url.searchParams.set('numbering','canonical')"), 'course URLs do not persist the canonical numbering marker');
-check(course.includes("courseUrlParams.get('numbering')==='canonical'"), 'course does not distinguish canonical links from legacy bookmarks');
-check(bibliography.includes('FUNDAMENTALS_NUMBERING:CANONICAL'), 'bibliography does not record its canonical module-number migration');
-check(bibliography.includes('Communication Phrases (Module 5)'), 'bibliography still labels communication with a noncanonical module number');
-check(bibliography.includes('Load-Out Risk (Module 8)'), 'bibliography still labels load-out with a noncanonical module number');
-check(bibliography.includes('Module 9 department-awareness support'), 'bibliography packet lineage still labels department awareness with a noncanonical module number');
+check(!course.includes('legacyToCanonicalModule'), 'course still carries the retired legacy/canonical module-number translation layer');
+check(bibliography.includes('Communication Phrases (Module 6)'), 'bibliography does not label communication with the real Module 6');
+check(bibliography.includes('Load-Out Risk (Module 9)'), 'bibliography does not label load-out with the real Module 9');
+check(bibliography.includes('Module 7 department-awareness support'), 'bibliography packet lineage does not label department awareness with the real Module 7');
 
 for (const [number, title] of expectedModules) {
-  check(dashboard.includes(`<li><span>${number}</span>${title.replaceAll('&', '&amp;')}</li>`) || dashboard.includes(`<li><span>${number}</span>${title}</li>`), `dashboard is missing canonical Module ${number}: ${title}`);
+  check(dashboard.includes(`<li><span>${number}</span>${title.replaceAll('&', '&amp;')}</li>`) || dashboard.includes(`<li><span>${number}</span>${title}</li>`), `dashboard is missing Module ${number}: ${title}`);
 }
-check((dashboard.match(/numbering=canonical/g) || []).length >= 5, 'dashboard entry links do not consistently mark canonical numbering');
 check(course.includes("../courses.html#field-skills"), 'Fundamentals completion does not continue to extra field-skills training');
 check(dashboard.includes('Continue into extra training.'), 'course map does not explain the post-Fundamentals next step');
 
@@ -90,8 +79,7 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log('Fundamentals sequence validation passed.');
-  console.log('- 10 canonical modules across Parts 1–4');
-  console.log('- 34 canonically numbered lessons');
-  console.log('- legacy bookmark translation retained');
+  console.log('- 10 modules across Parts 1–4, numbered consistently with the standalone module pages');
+  console.log('- 34 correctly numbered lessons');
   console.log('- extra-training handoff, road-case photo, logo, and QSC visual link present');
 }
