@@ -38,6 +38,13 @@ Do not silently overwrite another agent's unexplained work. When continuing an e
 
 ## 4. Course-content integrity
 
+**Standing cross-build rule:** curriculum/course content must remain identical across every current, v2, alternate, and future build/version. Only CSS, layout, and presentation may differ.
+
+- Never edit curriculum independently in one presentation build.
+- A content correction must be applied to every build that carries the affected content in the same accepted change or explicitly block release until parity is restored.
+- Presentation-only work must not change lesson text, assessments, answers, citations, safety boundaries, sequencing, or instructional meaning.
+- Validate parity at the source/data/rendered-content layers relevant to the affected builds; matching labels alone is not sufficient.
+
 Crew Blueprint content must preserve these boundaries:
 
 - educational content does not imply certification, licensing, employer authorization, union status, or practical qualification;
@@ -61,7 +68,7 @@ Validate the affected pages/content proportionately to the change. Do not restor
 
 Keep execution proportionate: prefer one inspection pass, one focused edit or shared implementation, one relevant validation batch, and one canonical checkpoint. Avoid repetitive per-file commands when a shared component or bounded batch can safely produce the same result.
 
-After an accepted Crew Blueprint change is merged and verified, synchronize durable ecosystem state into `50yearroadmap` only after the owner explicitly switches repository write authority. A merge here does not authorize writes there.
+After an accepted Crew Blueprint change is merged and verified, route closeout/current-state through the active three-plane contract: `50yearroadmap` is the canonical Git bridge, Supabase carries structured durable state/provenance/current frontier, and Roadmapdev consumes admitted state for intelligence. Normal automatic synchronization does not require a conversational repository-mode switch, but it also does not grant unrelated cross-repository mutation authority. A merge here never authorizes product/governance changes elsewhere.
 
 ## 7. Research workflow
 
