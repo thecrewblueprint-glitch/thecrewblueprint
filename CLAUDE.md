@@ -69,7 +69,9 @@ Every content or diagram change gets link-checked across **all HTML files** with
 
 For structural changes, complete the applicable PR-first validation before integration.
 
-After accepted Crew Blueprint changes are verified, synchronize relevant durable state into `50yearroadmap` according to the **current** `50yearroadmap/governance/WRITE_ACCESS_PROTOCOL.md`. Do not rely on older copied wording about roadmap write authority when the top-level protocol has changed. Narrow factual tracking/current-state synchronization and substantive roadmap/governance work remain distinct authority categories.
+After accepted Crew Blueprint changes are verified, route relevant durable state through the current three-plane contract: `50yearroadmap` is the canonical Git closeout/current-state bridge, Supabase stores structured admitted state and provenance, and Roadmapdev consumes that admitted state for intelligence. Automatic closeout/current-state synchronization is distinct from substantive product/governance mutation and cannot manufacture cross-repository write authority.
+
+All builds/versions must carry identical curriculum/course content. Only CSS, layout, and presentation may differ. Never make an independent content change in v1, v2, or another presentation build; validate that affected labels and rendered body content remain aligned across builds.
 
 ## Anti-Robot Course Writing Rule
 
