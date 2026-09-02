@@ -39,31 +39,31 @@ const modules = [
     {id:"4.2",name:"Read the Space",obj:"Navigate using venue vocabulary."},
     {id:"4.3",name:"Hazard Recognition",obj:"Spot multiple hazards in scenes."}
   ],rule:"ORIENT FIRST. KNOW WHERE YOU ARE, WHO IS LEADING YOU, WHAT IS MOVING, AND WHAT YOU MUST STAY OUT OF."},
-  {num:6,title:"Load-In Fundamentals",lessons:[
-    {id:"6.1",name:"The Sequence",obj:"Understand truck-to-room workflow."},
-    {id:"6.2",name:"Control & Visibility",obj:"Move with awareness and spotters."},
-    {id:"6.3",name:"Pinch Points & Coordination",obj:"Handle gear safely with a team."},
-    {id:"6.4",name:"Load-In Integration",obj:"Apply concepts through full sequence."}
+  {num:5,title:"Load-In Fundamentals",lessons:[
+    {id:"5.1",name:"The Sequence",obj:"Understand truck-to-room workflow."},
+    {id:"5.2",name:"Control & Visibility",obj:"Move with awareness and spotters."},
+    {id:"5.3",name:"Pinch Points & Coordination",obj:"Handle gear safely with a team."},
+    {id:"5.4",name:"Load-In Integration",obj:"Apply concepts through full sequence."}
   ],rule:"MOVE WHAT YOU ARE ASSIGNED, IN THE ORDER YOU ARE GIVEN, WITH A CLEAR PATH AND CONTROL OF THE LOAD."},
-  {num:5,title:"Communication & Crew Etiquette",lessons:[
-    {id:"5.1",name:"Clarity First",obj:"Communicate clearly and briefly."},
-    {id:"5.2",name:"Confirm & Report",obj:"Confirm what you heard and check in."},
-    {id:"5.3",name:"Professional Presence",obj:"Respond to correction and respect teams."}
+  {num:6,title:"Communication & Crew Etiquette",lessons:[
+    {id:"6.1",name:"Clarity First",obj:"Communicate clearly and briefly."},
+    {id:"6.2",name:"Confirm & Report",obj:"Confirm what you heard and check in."},
+    {id:"6.3",name:"Professional Presence",obj:"Respond to correction and respect teams."}
   ],rule:"BE CLEAR, BRIEF, AND HONEST: CONFIRM WHAT YOU HEARD, ASK WHEN YOU DO NOT UNDERSTAND, AND CHECK BACK IN WHEN THE TASK IS DONE."},
-  {num:9,title:"Department Basics",lessons:[
-    {id:"9.1",name:"Physical Support vs. Technical",obj:"Know the boundary you cannot cross."},
-    {id:"9.2",name:"Permission Levels",obj:"Classify objects by what you can do."},
-    {id:"9.3",name:"Classification Practice",obj:"Apply permission levels to new scenes."}
+  {num:7,title:"Department Basics",lessons:[
+    {id:"7.1",name:"Physical Support vs. Technical",obj:"Know the boundary you cannot cross."},
+    {id:"7.2",name:"Permission Levels",obj:"Classify objects by what you can do."},
+    {id:"7.3",name:"Classification Practice",obj:"Apply permission levels to new scenes."}
   ],rule:"SUPPORT THE PHYSICAL WORKFLOW. PRESERVE THE TECHNICAL OR SHOW-CRITICAL SETUP."},
-  {num:7,title:"Tools, Gear & Handling",lessons:[
-    {id:"7.1",name:"Recognize It",obj:"Distinguish recognition from authorization."},
-    {id:"7.2",name:"Check It",obj:"Inspect before using or moving."},
-    {id:"7.3",name:"Use It Safely",obj:"Coordinate team handling and methods."}
+  {num:8,title:"Tools, Gear & Handling",lessons:[
+    {id:"8.1",name:"Recognize It",obj:"Distinguish recognition from authorization."},
+    {id:"8.2",name:"Check It",obj:"Inspect before using or moving."},
+    {id:"8.3",name:"Use It Safely",obj:"Coordinate team handling and methods."}
   ],rule:"RECOGNIZE IT, CHECK IT, THEN USE OR MOVE IT ONLY THE WAY YOU WERE ASSIGNED."},
-  {num:8,title:"Load-Out Fundamentals",lessons:[
-    {id:"8.1",name:"Strike Discipline",obj:"Wait for clearance despite urgency."},
-    {id:"8.2",name:"Fatigue & Urgency",obj:"Maintain discipline under pressure."},
-    {id:"8.3",name:"Finish Strong",obj:"Complete the job with care."}
+  {num:9,title:"Load-Out Fundamentals",lessons:[
+    {id:"9.1",name:"Strike Discipline",obj:"Wait for clearance despite urgency."},
+    {id:"9.2",name:"Fatigue & Urgency",obj:"Maintain discipline under pressure."},
+    {id:"9.3",name:"Finish Strong",obj:"Complete the job with care."}
   ],rule:"FINISH WITH THE SAME DISCIPLINE YOU STARTED WITH: WAIT FOR CLEARANCE, CONTROL THE LOAD, COMMUNICATE, AND STAY USEFUL UNTIL RELEASED."},
   {num:10,title:"Getting Hired, Called Back & Growing",lessons:[
     {id:"10.1",name:"Getting Hired",obj:"Communicate honestly about skills."},
@@ -84,37 +84,25 @@ const courseParts = [
     num: 2,
     title: "Jobsite Awareness and Crew Conduct",
     description: "Read the room, communicate clearly, and stay useful inside the crew structure.",
-    moduleNumbers: [4, 5]
+    moduleNumbers: [4, 6]
   },
   {
     num: 3,
     title: "Load-In and Load-Out",
     description: "Move gear under direction, protect the path, handle equipment, and finish the call cleanly.",
-    moduleNumbers: [6, 7, 8]
+    moduleNumbers: [5, 8, 9]
   },
   {
     num: 4,
     title: "Departments and Career Direction",
     description: "Recognize department boundaries, build trust, and choose a responsible next step.",
-    moduleNumbers: [9, 10]
+    moduleNumbers: [7, 10]
   }
 ];
 
 const courseUrlParams = new URLSearchParams(window.location.search);
-const legacyToCanonicalModule = new Map([
-  [1, 1], [2, 2], [3, 3], [4, 4], [5, 6],
-  [6, 5], [7, 9], [8, 7], [9, 8], [10, 10]
-]);
 
-function canonicalizeLegacyLesson(lessonId){
-  if(!lessonId || courseUrlParams.get('numbering')==='canonical')return lessonId;
-  const match=lessonId.match(/^(\d+)\.(\d+)$/);
-  if(!match)return lessonId;
-  const canonicalModule=legacyToCanonicalModule.get(Number(match[1]));
-  return canonicalModule ? `${canonicalModule}.${match[2]}` : lessonId;
-}
-
-const requestedLesson = canonicalizeLegacyLesson(courseUrlParams.get('lesson'));
+const requestedLesson = courseUrlParams.get('lesson');
 const requestedLessonModule = modules.find(module => module.lessons.some(lesson => lesson.id === requestedLesson));
 const requestedLessonPartIndex = requestedLessonModule
   ? courseParts.findIndex(part => part.moduleNumbers.includes(requestedLessonModule.num))
@@ -155,7 +143,7 @@ function syncCourseUrl(){
   const url=new URL(window.location.href);
   url.searchParams.set('part',String(courseParts[activePartIndex].num));
   url.searchParams.set('lesson',lesson.id);
-  url.searchParams.set('numbering','canonical');
+  url.searchParams.delete('numbering');
   url.searchParams.delete('end');
   window.history.replaceState(null,'',`${url.pathname}${url.search}${url.hash}`);
 }
@@ -229,7 +217,7 @@ function goPart(partIndex,startAtEnd=false){
   const url = new URL(window.location.href);
   url.searchParams.set('part',String(partIndex+1));
   url.searchParams.delete('lesson');
-  url.searchParams.set('numbering','canonical');
+  url.searchParams.delete('numbering');
   if(startAtEnd) url.searchParams.set('end','1');
   else url.searchParams.delete('end');
   window.location.href = url.toString();
@@ -663,7 +651,7 @@ function renderM21(){
       <ul>
         <li><strong>Hazard:</strong> A wet floor, moving forklift, suspended load, cable across a travel path, sharp edge, or combustible material can cause harm.</li>
         <li><strong>Exposure and conditions:</strong> Traffic, duration, visibility, and the task change who or what may contact the hazard.</li>
-        <li><strong>Risk:</strong> Judge the potential severity, the likelihood of an incident or exposure, and how many people the hazard could reach. OSHA describes risk as the product of hazard and exposure. An empty hallway presents less risk than a busy case route, not zero risk.</li>
+        <li><strong>Risk:</strong> Judge the potential severity, the likelihood of an incident or exposure, and how many people the hazard could reach. Risk rises with both the hazard itself and how much exposure to it exists. An empty hallway presents less risk than a busy case route, not zero risk.</li>
         <li><strong>Behavior:</strong> Walking into the wet area raises exposure. Stopping and using the assigned dry route lowers exposure. Crew Blueprint uses “behavior” as teaching language, not as a formal OSHA category or the only cause of an incident.</li>
         <li><strong>Control or response:</strong> Drying the floor removes the hazard. Closing, marking, or rerouting the path reduces exposure. Use only controls within your training and assigned authority. Otherwise, keep clear, warn nearby crew, and tell your lead.</li>
       </ul>
