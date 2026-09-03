@@ -307,6 +307,20 @@
   .tier-collapse[open] > .tier-toggle .tier-toggle-arrow { transform: rotate(180deg); }
   .tier-toggle-count { color: var(--ink-faint); font-weight: 500; text-transform: none; letter-spacing: normal; }
   .tier-collapse-body { margin-top: 18px; }
+  .map-filter-controls { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin: 20px 0 24px; }
+  .map-filter-controls input, .map-filter-controls select { width: 100%; padding: 11px 14px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--ground-2); color: var(--ink); font-family: inherit; font-size: 14px; }
+  .map-count { color: var(--ink-faint); font-size: 13px; margin-bottom: 14px; font-family: "IBM Plex Mono"; }
+  .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .map-card { display: block; border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: var(--ground-2); text-decoration: none; color: var(--ink); cursor: pointer; }
+  .map-card:hover, .map-card:focus-visible { border-color: var(--amber); }
+  .map-card .map-card-meta { font-family: "IBM Plex Mono"; font-size: 10.5px; color: var(--amber-strong); text-transform: uppercase; letter-spacing: 0.05em; }
+  .map-card strong { display: block; font-size: 15px; margin: 6px 0 4px; line-height: 1.3; }
+  .map-badge { display: inline-block; margin-top: 8px; padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .map-badge-built { background: rgba(34,168,76,.15); color: #3fc971; }
+  .map-badge-depth { background: rgba(245,180,0,.15); color: var(--amber-strong); }
+  .map-badge-frontier { background: rgba(255,159,67,.15); color: #ff9f43; }
+  @media (max-width: 760px) { .map-filter-controls { grid-template-columns: 1fr; } }
+
 
   .track-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   @media (max-width: 900px) { .track-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -494,7 +508,191 @@
 .bib-page{--bib-bg:#0b0f14;--bib-panel:#151b22;--bib-card:#171d25;--bib-border:#2b3440;--bib-text:#f5f7fa;--bib-muted:#9ba6b3;--bib-gold:#f4b400;--bib-green:#22a84c;--bib-red:#da3633;margin:0;background:var(--bib-bg);color:var(--bib-text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}.bib-page *{box-sizing:border-box}.bib-page header{position:sticky;top:0;z-index:5;background:rgba(11,15,20,.96);border-bottom:1px solid var(--bib-border);padding:18px 20px}.bib-page h1{margin:0;color:var(--bib-gold);font-size:clamp(24px,4vw,38px)}.bib-page header p{margin:6px 0 0;color:var(--bib-muted)}.bib-page nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.bib-page nav a{color:var(--bib-gold);border:1px solid rgba(244,180,0,.35);padding:5px 9px;border-radius:999px;text-decoration:none;font-size:12px;transition:all 200ms}.bib-page nav a:hover{background:rgba(244,180,0,.15)}.bib-main{max-width:1200px;margin:auto;padding:24px}.bib-page [id]{scroll-margin-top:100px}.bib-.bib-back{color:var(--bib-muted);font-size:12px;margin-bottom:20px}.bib-section{margin-bottom:50px}.bib-section h2{color:var(--bib-gold);border-bottom:1px solid var(--bib-border);padding-bottom:8px;margin-top:0}.bib-section p{color:var(--bib-muted);margin:0 0 16px}.bib-status-badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;margin-right:8px}.bib-status-strong{background:rgba(34,168,76,.2);color:var(--bib-green)}.bib-status-qualified{background:rgba(244,180,0,.2);color:var(--bib-gold)}.bib-status-gap{background:rgba(218,54,51,.2);color:var(--bib-red)}.bib-table-container{overflow-x:auto}.bib-table-container table{width:100%;border-collapse:collapse;margin:16px 0}.bib-page table th{text-align:left;background:var(--bib-card);border:1px solid var(--bib-border);padding:10px;color:var(--bib-gold);font-size:13px;font-weight:700}.bib-page table td{border:1px solid var(--bib-border);padding:10px;font-size:13px}.bib-page table tr:nth-child(even){background:var(--bib-card)}.bib-page table a{color:var(--bib-gold);text-decoration:none;word-break:break-word}.bib-page table a:hover{text-decoration:underline}.bib-warning-box{background:var(--bib-card);border-left:3px solid var(--bib-gold);padding:14px;margin:16px 0;border-radius:4px}.bib-warning-box strong{color:var(--bib-gold)}.bib-success-box{background:var(--bib-card);border-left:3px solid var(--bib-green);padding:14px;margin:16px 0;border-radius:4px}.bib-success-box strong{color:var(--bib-green)}.bib-note{color:var(--bib-muted);font-size:12px;font-style:italic;margin-top:8px}.bib-foot{margin-top:50px;padding-top:20px;border-top:1px solid var(--bib-border);color:var(--bib-muted);font-size:11px;text-align:center}
 .bib-packet-group{margin-top:30px}.bib-packet-group>h3{margin:0 0 6px;color:var(--bib-text)}.bib-packet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.bib-packet-card{background:var(--bib-card);border:1px solid var(--bib-border);border-radius:8px;padding:14px;min-width:0}.bib-packet-card-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.bib-packet-id,.bib-source-packet{display:inline-block;border-radius:999px;padding:2px 7px;background:rgba(244,180,0,.16);color:var(--bib-gold);font-size:10px;font-weight:700}.bib-packet-status{color:var(--bib-muted);font-size:10px;text-transform:uppercase;letter-spacing:.04em}.bib-packet-card h4{margin:9px 0 6px;font-size:14px}.bib-packet-card h4 a,.bib-provenance-list a{color:var(--bib-gold);text-decoration:none}.bib-packet-card h4 a:hover,.bib-provenance-list a:hover{text-decoration:underline}.bib-packet-card p{margin:0 0 8px;font-size:12px}.bib-packet-card code{display:block;overflow-wrap:anywhere;color:var(--bib-muted);font-size:10px}.bib-provenance-list{padding-left:20px}.bib-provenance-list li{margin:8px 0;color:var(--bib-muted)}.bib-source-controls{display:grid;grid-template-columns:auto minmax(220px,1fr) auto;gap:10px;align-items:center;margin:16px 0}.bib-source-controls label{font-size:12px;font-weight:700;color:var(--bib-gold)}.bib-source-controls input{width:100%;border:1px solid var(--bib-border);border-radius:7px;background:var(--bib-card);color:var(--bib-text);padding:10px 12px}.bib-source-controls span{color:var(--bib-muted);font-size:11px}.bib-source-ledger-container{max-height:70vh;border:1px solid var(--bib-border);border-radius:8px}.bib-source-ledger-container table{margin:0}.bib-source-ledger-container thead{position:sticky;top:0;z-index:2}.bib-source-category th{background:#10151b;color:var(--bib-gold);text-transform:uppercase;letter-spacing:.05em}.bib-source-domain{display:block;margin-top:4px;color:var(--bib-muted);font-size:10px}.bib-source-row[hidden],.bib-source-category[hidden]{display:none}.bib-source-packet{margin:2px 2px 2px 0}.bib-source-row td:nth-child(2){min-width:180px}.bib-source-row td:nth-child(3){min-width:170px;color:var(--bib-muted)}
 @media(max-width:760px){.bib-packet-grid{grid-template-columns:1fr}.bib-source-controls{grid-template-columns:1fr}.bib-source-ledger-container{max-height:none}.bib-source-row td:nth-child(2),.bib-source-row td:nth-child(3){min-width:150px}}
-@media(max-width:600px){.bib-main{padding:14px}.bib-page table{font-size:11px}.bib-page table th,.bib-page table td{padding:6px}}</style>
+@media(max-width:600px){.bib-main{padding:14px}.bib-page table{font-size:11px}.bib-page table th,.bib-page table td{padding:6px}}.eco-page{--eco-bg:#07090d;--eco-panel:#0e1219;--eco-panel2:#121823;--eco-text:#f4f5f7;--eco-muted:#a8b0bd;--eco-gold:#f5b400;--eco-line:#293140;--eco-danger:#ffbf69;background:var(--eco-bg);color:var(--eco-text);font:16px/1.65 Inter,sans-serif}.eco-page *{box-sizing:border-box}.eco-page a{color:var(--eco-gold)}.eco-shell{max-width:1060px;margin:auto;padding:30px 20px 90px}.eco-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0 24px;border-bottom:1px solid var(--eco-line)}.eco-brand{font:700 20px Space Grotesk,sans-serif;color:var(--eco-text);text-decoration:none}.eco-brand span{color:var(--eco-gold)}.eco-top nav a{margin-left:16px;text-decoration:none}.eco-hero{padding:60px 0 30px}.eco-breadcrumb{color:var(--eco-muted);font-size:13px;margin-bottom:20px}.eco-kicker{display:block;color:var(--eco-gold);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.eco-hero h1{font:700 clamp(38px,7vw,72px)/.98 Space Grotesk,sans-serif;margin:12px 0 20px;max-width:900px}.eco-hero p{max-width:780px;color:var(--eco-muted);font-size:18px}.eco-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.eco-meta span{border:1px solid var(--eco-line);border-radius:999px;padding:6px 10px;font-size:12px}.eco-evidence,.eco-objectives,.eco-lesson,.eco-quiz,.eco-next,.eco-scenario,.eco-artifacts,.eco-maturity,.eco-claims,.eco-media-plan{margin:22px 0;padding:26px;border:1px solid var(--eco-line);border-radius:16px;background:var(--eco-panel)}.eco-evidence strong{display:block}.eco-evidence p,.eco-objectives p,.eco-lesson>p,.eco-next p,.eco-scenario p,.eco-artifacts p,.eco-maturity p,.eco-claims p,.eco-media-plan p{color:var(--eco-muted)}.eco-lesson h2,.eco-quiz h2,.eco-next h2,.eco-scenario h2,.eco-objectives h2,.eco-artifacts h2,.eco-claims h2,.eco-media-plan h2{font:700 30px/1.15 Space Grotesk,sans-serif;margin:6px 0 12px}.eco-step{font-size:12px;color:var(--eco-gold);font-weight:800;text-transform:uppercase}.eco-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.eco-grid article{padding:18px;border:1px solid var(--eco-line);border-radius:12px;background:var(--eco-panel2)}.eco-grid h3{font:700 17px Space Grotesk,sans-serif;margin:0 0 7px}.eco-grid p{margin:0;color:var(--eco-muted);font-size:14px}.eco-stop,.eco-boundary{margin-top:18px;padding:16px;border-left:4px solid var(--eco-danger);background:#17130d}.eco-boundary{border-color:var(--eco-gold);background:#16140b}.eco-stop p,.eco-boundary p{margin:5px 0 0}.eco-quiz fieldset{border:1px solid var(--eco-line);border-radius:12px;margin:14px 0;padding:18px}.eco-quiz legend{font-weight:700;padding:0 8px}.eco-quiz label{display:block;padding:7px 0;color:var(--eco-muted)}.eco-result{font-weight:700;color:var(--eco-gold);margin-top:8px}.eco-btn{display:inline-block;border:0;border-radius:9px;background:var(--eco-gold);color:#111;padding:11px 16px;font-weight:800;text-decoration:none;cursor:pointer}.eco-score{font-weight:700}.eco-next{text-align:center}.eco-objectives li,.eco-artifacts li,.eco-claims li,.eco-media-plan li{margin:.45rem 0}.eco-media-plan small{display:block;color:var(--eco-muted)}@media(max-width:700px){.eco-grid{grid-template-columns:1fr}.eco-top{align-items:flex-start}.eco-top nav{display:flex;flex-direction:column}.eco-top nav a{margin:0 0 4px}.eco-evidence,.eco-objectives,.eco-lesson,.eco-quiz,.eco-next,.eco-scenario,.eco-artifacts,.eco-maturity,.eco-claims,.eco-media-plan{padding:20px}}
+.cb-consent-open {
+  overflow: hidden !important;
+}
+
+.cb-consent-backdrop,
+.cb-consent-backdrop * {
+  box-sizing: border-box;
+}
+
+.cb-consent-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow-y: auto;
+  background: rgba(3, 6, 10, 0.88);
+  color: #f1f4f7;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.cb-consent-dialog {
+  width: min(720px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid #37424e;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #18212b 0%, #111820 100%);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+}
+
+.cb-consent-kicker,
+.cb-consent-version {
+  display: block;
+  color: #f5b400;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.cb-consent-dialog h1 {
+  margin: 8px 0 10px;
+  color: #fff;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.1;
+}
+
+.cb-consent-dialog > p {
+  color: #c6d0da;
+  line-height: 1.6;
+}
+
+.cb-consent-choice {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #3a4652;
+  border-radius: 12px;
+  background: #0d1319;
+}
+
+.cb-consent-choice input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: #f5b400;
+  cursor: pointer;
+}
+
+.cb-consent-choice label {
+  color: #edf1f5;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.cb-consent-choice a {
+  color: #ffd45a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cb-consent-storage {
+  margin: 16px 0 0;
+  color: #9eabb7 !important;
+  font-size: 0.78rem;
+}
+
+.cb-consent-action {
+  margin: 18px 0 0;
+  padding-left: 12px;
+  border-left: 3px solid #f5b400;
+  color: #dfe5eb !important;
+  font-size: 0.86rem;
+}
+
+.cb-consent-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.cb-consent-exit {
+  color: #c4ced7;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cb-consent-submit {
+  min-height: 46px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 9px;
+  background: #f5b400;
+  color: #090c10;
+  font: 800 0.9rem/1.2 Inter, system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.cb-consent-submit:disabled {
+  background: #66717c;
+  color: #d3d8dd;
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.cb-consent-backdrop a:focus-visible,
+.cb-consent-backdrop button:focus-visible,
+.cb-consent-backdrop input:focus-visible {
+  outline: 3px solid #73c9ff;
+  outline-offset: 3px;
+}
+
+.cb-consent-version {
+  margin-top: 18px;
+  color: #8e9aa6;
+  font-size: 0.62rem;
+}
+
+@media (max-width: 560px) {
+  .cb-consent-backdrop {
+    align-items: start;
+    padding: 10px;
+  }
+
+  .cb-consent-dialog {
+    max-height: calc(100vh - 20px);
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .cb-consent-choice {
+    padding: 14px 12px;
+  }
+
+  .cb-consent-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .cb-consent-exit,
+  .cb-consent-submit {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-consent-backdrop * {
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -632,6 +830,539 @@ const INFRASTRUCTURE_TIER = [
   { name: "Production Power Awareness", file: "production-infrastructure-power-awareness.html" },
   { name: "Production & Coordination", file: "production-coordination-career-branch.html" },
 ];
+(function(){'use strict';
+const P='research/';
+const E={SH:P+'MDQ-011-014_STAGEHAND_ADJACENT_OPERATIONS_EVIDENCE_2026-08-31.md',LT:P+'MDQ-021-028_LIGHTING_DETAILED_EVIDENCE_2026-08-31.md',AU:P+'MDQ-031-039_AUDIO_DETAILED_EVIDENCE_2026-08-31.md',VI:P+'MDQ-041-048_VIDEO_LED_BROADCAST_DETAILED_EVIDENCE_2026-08-31.md',ST:P+'MDQ-051-057_STAGING_SCENIC_DETAILED_EVIDENCE_2026-08-31.md',RI:P+'MDQ-061-066_RIGGING_BODY_OF_KNOWLEDGE_EVIDENCE_2026-08-31.md',EL:P+'MDQ-071-077_ELECTRICS_PRODUCTION_POWER_BODY_OF_KNOWLEDGE_2026-08-31.md',BP:P+'MDQ-080-083_BACKLINE_PROPS_WARDROBE_SPECIALTY_EVIDENCE_2026-08-31.md',PM:P+'MDQ-090-096_PRODUCTION_COORDINATION_OPERATIONS_EVIDENCE_2026-08-31.md',SC:P+'MDQ-100-104_SHOW_CONTROL_SPECIAL_SYSTEMS_EVIDENCE_2026-08-31.md',SE:P+'MDQ-110-116_SECTOR_TRANSFER_EVIDENCE_2026-08-31.md',CA:P+'MDQ-120-124_CAREER_EMPLOYMENT_QUALIFICATION_EVIDENCE_2026-08-31.md'};
+const G={A0:'Knowledge and systems literacy only. Course completion does not create task authorization.',A1:'Bounded assigned-support education. The responsible employer, lead, venue, department, or current system controls real work.',RIG:'Awareness only. No overhead rigging, climbing, hoist operation, connection method, calculation, inspection signoff, or qualification is granted.',ELC:'Conceptual electrical education only. No energized work, connection, testing, generator operation, fault work, or qualified-person authority is granted.',FX:'Awareness and coordination only. No operation, setup, alignment, firing, handling, bypass, reset, or specialist special-effects authority is taught or granted.',AUT:'Automation interface awareness only. Do not independently operate, reset, bypass, configure, service, or enter controlled machinery zones.',MGMT:'Role and decision-system education only. Completion does not appoint the learner to a lead, manager, stage manager, venue authority, or department-head role.'};
+const d={
+'D-SHP':'Shop & Rental Operations','D-LOG':'Logistics','D-COM':'Production Communications','D-OUT':'Outdoor & Public Operations','D-LTG':'Lighting','D-AUD':'Audio','D-VID':'Video / LED / Broadcast','D-STG':'Staging / Scenic','D-RIG':'Rigging','D-ELC':'Electrics / Production Power','D-BKL':'Backline','D-PRP':'Props','D-WRD':'Wardrobe','D-SMG':'Stage Management','D-PMG':'Production Management','D-VOP':'Venue / Event Operations','D-LEAD':'Crew Leadership','D-SHC':'Show Control','D-AUT':'Automation','D-FX':'Special Systems','D-CAR':'Career & Credentials'};
+function C(id,slug,title,domain,tier,mdq,evidence,authority,topics,gate,summary){return{id,slug,title,domain,domainName:d[domain]||domain,tier,mdq,evidence,authority,topics:topics.split('|'),gate:gate||G.A0,summary:summary||('Build a transferable mental model for '+title.toLowerCase()+' while keeping real jobsite authority with the responsible people and current system.')}}
+const x=[
+C('C-SHP-WAREHOUSE','warehouse-rental-shop-workflow','Warehouse & Rental-Shop Workflow','D-SHP','T3','MDQ-011',E.SH,'A1','receiving and check-in|equipment pulls and lists|prep and quality-control flow|labels and case packing|inventory and chain of custody|returns and damage triage|repair escalation|shop-to-show handoff',G.A1),
+C('C-LOG-PRODUCTION','production-logistics-interface','Production Logistics: Docks, Trucks & Case Flow','D-LOG','T3','MDQ-012',E.SH,'dock and freight access|case labels and manifests|truck and trailer handoff|lift-gate and ramp awareness|weather protection|loading-route ownership|driver and load-lead boundaries|closeout and unresolved freight',G.A1),
+C('C-COM-WORK','work-communication-systems','Work Communication Systems','D-COM','T3','MDQ-013',E.SH,'radio discipline|intercom awareness|confirmation and readback|cue and status vocabulary|hand signals where defined|hearing-protection interaction|emergency communication ownership|department vocabulary variation',G.A1),
+C('C-OUT-FIELD','outdoor-public-area-operations','Outdoor & Public-Area Field Operations','D-OUT','T3','MDQ-014',E.SH,'weather and changing site conditions|public and vehicle interfaces|egress and accessible routes|temporary surfaces and crossings|water mud heat and cold|wind and lightning ownership|work holds and evacuation direction|condition reporting',G.A1),
+C('C-LTG-LIFECYCLE','lighting-roles-shop-to-show','Lighting Roles & Shop-to-Show Lifecycle','D-LTG','T4','MDQ-020–021',E.LT,'A0','lighting role families|advance and design intent|rental pull and inventory|shop prep and QC|load-in and placement|checkout focus and programming|show notes and maintenance|strike return and damage reporting',G.A0),
+C('C-LTG-SCIENCE','lighting-science-fixtures','Lighting Science & Fixture Technology','D-LTG','T4','MDQ-022',E.LT,'A0','vision and perception|photometry concepts|color and spectrum|optics and beam behavior|fixture families|LED source behavior|automated-fixture architecture|camera and flicker interaction',G.A0),
+C('C-LTG-ELECTRICAL-LIT','lighting-electrical-connector-literacy','Lighting Electrical & Connector Literacy','D-LTG','T4','MDQ-023',E.LT,'A0','power versus data families|ratings and labels|ordinary branch-power context|entertainment connector families|distro and feeder awareness|grounding and protection concepts|qualified-person boundary|documentation and escalation',G.ELC),
+C('C-LTG-CONTROL','lighting-control-network-stack','Lighting Control & Network Stack','D-LTG','T4','MDQ-024',E.LT,'A0','fixture mode and address|DMX physical distribution|RDM device management|sACN and Art-Net concepts|Ethernet and IP fundamentals|switching multicast and VLAN awareness|fiber and wireless interfaces|documentation security and change control',G.A0),
+C('C-LTG-CONSOLE','lighting-console-show-files','Console Programming & Show-File Practice','D-LTG','T4','MDQ-025',E.LT,'A0','patch and fixture models|parameters groups and presets|programmer state|cues tracking and timing|effects and playback|busking and triggers|backup restore and versions|vendor terminology mapping',G.A0),
+C('C-LTG-DESIGN-DOC','lighting-design-previs-documentation','Lighting Design, Previs & Documentation','D-LTG','T4','MDQ-026',E.LT,'A0','plots and schedules|patch and cable records|one-line diagrams|GDTF and MVR concepts|CAD and paperwork interfaces|previsualization workflow|data quality and version control|commissioning and punch-list concepts',G.A0),
+C('C-LTG-SPECIAL','lighting-specialist-interfaces','Lighting Specialist Interfaces','D-LTG','T4','MDQ-027',E.LT,'A0','followspot and tracking roles|pixel and media interfaces|atmospheric-effects coordination|optical-hazard awareness|outdoor environmental limits|rigging and work-at-height interface|life-safety noninterference|specialist handoffs',G.FX),
+C('C-LTG-BUSINESS','lighting-leadership-business-workflow','Lighting Leadership & Business Workflow','D-LTG','T5','MDQ-028',E.LT,'A0','advancing|labor sequencing|vendor and rental workflow|substitutions and change control|QC and spares|show notes and reporting|budget schedule tradeoffs|reliability and sustainability',G.MGMT),
+C('C-AUD-SIGNAL','audio-signal-flow-systems','Audio Signal Flow & Systems Thinking','D-AUD','T4','MDQ-030–031',E.AU,'A0','audio role branches|source-to-destination signal flow|mic line and loudspeaker level|balanced and digital transport|gain and headroom concepts|buses matrices and outputs|monitor and recording branches|layered fault isolation',G.A0),
+C('C-AUD-SOURCES','audio-mics-sources-stage-patch','Microphones, Sources & Stage Patch','D-AUD','T4','MDQ-032',E.AU,'A0','microphone families|pickup-pattern concepts|DI and source interfaces|wired and wireless paths|stage patch and splits|stage plots and input lists|backline ownership boundary|documentation and handoff',G.A0),
+C('C-AUD-CONSOLE','audio-console-mixing-workflow','Audio Consoles & Mixing Workflow','D-AUD','T4','MDQ-033',E.AU,'A0','input and head-amp ownership|EQ dynamics and filters|sends groups DCAs and matrices|FOH versus monitors|scenes and snapshots|show-file discipline|shared control and scope|vendor ecosystem mapping',G.A0),
+C('C-AUD-PA','audio-pa-acoustics-measurement','PA, Acoustics & Measurement Concepts','D-AUD','T4','MDQ-034',E.AU,'A0','frequency and wavelength|level phase and polarity|reflection and reverberation|coverage and intelligibility|loudspeaker system families|processing and amplification|prediction and measurement concepts|system-tech authority boundary',G.A0),
+C('C-AUD-NET','audio-networking-clocking','Audio Networking & Clocking','D-AUD','T4','MDQ-035',E.AU,'A0','audio-over-IP endpoints|streams and flows|clock and synchronization domains|IP addressing and subnets|unicast and multicast|switch infrastructure|redundancy and recovery|documentation security and change control',G.A0),
+C('C-RF-AUDIO','rf-wireless-audio-awareness','RF & Wireless Audio Systems','D-AUD','T4','MDQ-036',E.AU,'A0','spectrum concepts|transmitter receiver architecture|wireless microphones and IEMs|antenna and distribution concepts|interference categories|inventory and documentation|regulatory awareness|RF specialist boundary',G.A0),
+C('C-COM-INTERCOM','intercom-comms-systems','Intercom & Production Comms Systems','D-COM','T4','MDQ-037',E.AU,'A0','partyline architecture|digital matrix systems|wireless intercom|panels stations and beltpacks|talk listen and key assignments|IFB and program feeds|IP and RF interfaces|ownership and troubleshooting boundaries',G.A0),
+C('C-AUD-SECTORS','audio-sector-workflows','Audio Sector Workflows','D-AUD','T4','MDQ-038',E.AU,'A0','touring and festivals|theatre audio|corporate and convention|worship systems|broadcast and streaming|rental-shop prep|role combinations|transfer limits',G.A0),
+C('C-AUD-LEAD-SYS','audio-system-leadership','Audio System Leadership','D-AUD','T5','MDQ-039',E.AU,'A0','advancing and documentation|labor sequencing|RF network and comms coordination|vendor and artist communication|QC and acceptance ownership|spares and redundancy|show reports|change and incident management',G.MGMT),
+C('C-VID-LED-HARDWARE','led-display-hardware-systems','LED Display Hardware & Build Systems','D-VID','T4','MDQ-041',E.VI,'A0','panel cabinet and module families|receiving electronics|processor and controller roles|power and data topology concepts|support and rigging interfaces|spares and service boundaries|mapping and calibration concepts|model and environment limits',G.A0),
+C('C-VID-SIGNAL','video-signal-standards-flow','Video Signal Standards & Flow','D-VID','T4','MDQ-042',E.VI,'A0','source and destination formats|resolution and frame rate|aspect and color concepts|SDI HDMI DisplayPort and fiber|conversion and scaling|routing and distribution|reference and synchronization|layered fault isolation',G.A0),
+C('C-VID-SWITCH','video-processing-switching','Processing, Switching & Screen Management','D-VID','T4','MDQ-043',E.VI,'A0','switcher and scaler roles|program preview and buses|layers keys and transitions|routers and multiviewers|screen canvases and mapping|confidence feeds|EDID and HDCP awareness|configuration and show files',G.A0),
+C('C-VID-PROJ','projection-systems','Projection Systems','D-VID','T4','MDQ-044',E.VI,'A0','projector lens and surface|throw relationship concepts|image size and placement|brightness contrast and environment|focus and geometry|blend and warp concepts|content and color matching|rigging power and service boundaries',G.A0),
+C('C-CAM-BCAST','camera-broadcast-interface','Cameras & Live/Broadcast Interface','D-VID','T4','MDQ-045',E.VI,'A0','camera role families|sensor and lens path|exposure and shutter concepts|white balance and color|focus and depth awareness|tally return and comms|signal transport and genlock|shading and EIC boundaries',G.A0),
+C('C-VID-MEDIA','media-server-playback-graphics','Media Servers, Playback & Graphics','D-VID','T4','MDQ-046',E.VI,'A0','media assets and versions|codecs containers and alpha|playlists cues and timelines|multi-output canvases|timecode and triggers|graphics interfaces|redundant playback concepts|platform-specific boundaries',G.A0),
+C('C-VID-AOIP','video-av-over-ip','AV-over-IP & Video Networking','D-VID','T4','MDQ-047',E.VI,'A0','professional media-over-IP families|independent media flows|common timing and PTP awareness|unicast and multicast|bandwidth and capacity|managed switching|redundancy security and change control|monitoring and documentation',G.A0),
+C('C-VID-COMMISSION','video-documentation-commissioning','Video Documentation, Commissioning & Leadership','D-VID','T5','MDQ-048',E.VI,'A0','signal-flow diagrams|screen maps and configurations|camera and content records|network diagrams|test and QC records|advance and change logs|spares and redundancy|handoff and leadership',G.MGMT),
+C('C-STG-SYSTEMS','staging-scenic-systems','Staging & Scenic Systems Literacy','D-STG','T4','MDQ-051',E.ST,'A0','portable platforms and risers|stairs rails ramps and accessories|flats wagons and scenery|soft goods|temporary versus permanent systems|automation interfaces|product and structural boundaries|documentation ownership',G.A0),
+C('C-STG-SHOP','scenic-materials-drawings-shop','Scenic Materials, Drawings & Shop Literacy','D-STG','T4','MDQ-052',E.ST,'A0','scenic terminology|drawings and blueprint literacy|measurement concepts|material families|hardware and fastener concepts|finish and surface protection|shop QC|powered-tool boundary',G.A0),
+C('C-STG-PLATFORM','platform-deck-riser-interfaces','Platform, Deck & Riser Interfaces','D-STG','T4','MDQ-053',E.ST,'A0','component families|system labels and manuals|compatibility awareness|stairs rails and ramp interfaces|visible damage reporting|egress and accessibility|manufacturer configuration control|structural acceptance boundary',G.A0),
+C('C-STG-MOVEMENT','scenic-movement-show-changes','Scenic Movement & Show Changes','D-STG','T4','MDQ-054',E.ST,'A1','scenery flat and wagon categories|release and destination|surface protection|pinch crush and clearance awareness|team communication|preset and changeover states|cue ownership|automation and fly boundaries',G.A1),
+C('C-STG-LIFECYCLE','scenic-shop-to-show','Scenic Shop-to-Show Lifecycle','D-STG','T4','MDQ-055',E.ST,'A0','design and advance|drafting and engineering interfaces|materials and fabrication|finish and QC|transport preparation|load-in and placement support|rehearsal maintenance and notes|strike return and disposition',G.A0),
+C('C-AUT-STAGE','stage-automation-interface','Stage Automation Interface Awareness','D-AUT','T4','MDQ-056 / MDQ-101',E.ST,'A0','automation role families|moving scenery zones|cue and control concepts|sensors interlocks and e-stops as safety systems|show-file awareness|operator ownership|abnormal state reporting|external specialist path',G.AUT),
+C('C-STG-SECTOR-LEAD','staging-sector-leadership','Staging / Scenic Sector & Leadership','D-STG','T5','MDQ-057',E.ST,'A0','theatre and performing arts|touring and festivals|corporate and convention|venue and house systems|rental and fabrication shops|drawing and revision control|vendor labor and QC|engineering rigging and power handoffs',G.MGMT),
+C('C-RIG-AWARE','rigging-ground-awareness','Rigging Ground-Support Awareness','D-RIG','T3','MDQ-061',E.RI,'A0','rigging zones and chain of command|truss and suspended-system recognition|hoist presence|rated hardware categories|points and layout activity|exclusion and drop zones|damage and identification concerns|assigned ground-support boundary',G.RIG),
+C('C-RIG-HARDWARE','rigging-hardware-systems-map','Rigging Hardware & Systems Map','D-RIG','T4','MDQ-062',E.RI,'A0','rated connectors|slings and lifting media|wire-rope assemblies|entertainment hoists|truss interfaces|support points|load monitoring|inspection and documentation concepts',G.RIG),
+C('C-RIG-LOAD','rigging-load-force-concepts','Rigging Load & Force Concepts','D-RIG','T4','MDQ-063',E.RI,'A0','load paths|static and changing effects|point and distributed loads|center of gravity|angle and vector effects|multi-point systems|capacity as engineered information|change-control implications',G.RIG),
+C('C-RIG-WORKFLOW','rigging-arena-theatre-touring','Arena, Theatre & Touring Rigging Workflow','D-RIG','T4','MDQ-064',E.RI,'A0','arena versus theatre specialization|advance and venue information|house tour responsibility split|point and layout planning concepts|equipment prep|controlled rigging phase|verification and acceptance roles|strike and closeout',G.RIG),
+C('C-RIG-HEIGHT','work-at-height-interface','Work-at-Height & Rescue Interface Awareness','D-RIG','T3','MDQ-065',E.RI,'A0','elevated-work authorization|falling-person hazards|falling-object hazards|controlled zones|communication and coordination|rescue planning ownership|weather effects|MEWP ladder and scaffold boundaries',G.RIG),
+C('C-RIG-LEAD-DOC','rigging-documentation-leadership','Rigging Documentation & Leadership Concepts','D-RIG','T5','MDQ-066',E.RI,'A0','rigging plots|point information|inspection and rejection records|hoist and support-point records|change notes|cross-department coordination|stop and escalation authority|closeout and incident reporting',G.RIG),
+C('C-ELC-FUND','electrical-fundamentals-authority','Electrical Fundamentals by Authority','D-ELC','T4','MDQ-071',E.EL,'A0','voltage current resistance and power concepts|AC and DC|single and three-phase awareness|grounding and bonding concepts|overcurrent protection|neutral and conductor concepts|ratings and listings|qualified-person boundary',G.ELC),
+C('C-ELC-DIST','temporary-power-architecture','Temporary Distribution Architecture','D-ELC','T4','MDQ-072',E.EL,'A0','source categories|main distribution|feeder and downstream distribution|branch loads|protection devices|grounding architecture|monitoring points|weather public and route interfaces',G.ELC),
+C('C-ELC-TEST','electrical-test-instrument-awareness','Electrical Test-Instrument Awareness','D-ELC','T4','MDQ-073',E.EL,'A0','measurement-tool categories|verification purpose|qualified-person workflow|controlled work areas|limitations of simple indicators|documentation|escalation|no circuit probing practical',G.ELC),
+C('C-ELC-GEN','generator-mobile-power-interface','Generator & Mobile-Power Interface','D-ELC','T4','MDQ-074',E.EL,'A0','source capacity concepts|utility versus generator source|grounding configuration ownership|environment and public separation|fuel exhaust heat awareness|weather|distribution integration|shutdown and emergency ownership',G.ELC),
+C('C-ELC-AHJ','electrical-codes-standards-ahj','Codes, Standards, Listings & AHJ','D-ELC','T4','MDQ-075',E.EL,'A0','OSHA workplace rules|locally adopted electrical code|electrical safety programs|state and local licensing|AHJ role|listing and labeling|ESTA standards|manufacturer venue and employer rules',G.ELC),
+C('C-ELC-QUALITY','power-quality-electronic-loads','Power Quality & Electronic Loads','D-ELC','T4','MDQ-076',E.EL,'A0','nonlinear-load concept|power factor|harmonic distortion|neutral-current concern|inrush|voltage sag|leakage and nuisance symptoms|qualified monitoring and escalation',G.ELC),
+C('C-ELC-LEAD-DOC','electrical-planning-leadership','Electrical Planning, Documentation & Leadership','D-ELC','T5','MDQ-077',E.EL,'A0','one-lines and load schedules|equipment and cable schedules|labels and inspection records|source and vendor documentation|change records|qualified-person assignment|cross-department load interfaces|signoff and closeout ownership',G.ELC),
+C('C-BKL-PATH','backline-support-career','Backline Support & Career Path','D-BKL','T4','MDQ-080',E.BP,'A1','instrument amplifier and case families|artist and tech ownership|stage plot interface|assigned movement and staging|preserving settings and accessories|festival changeover organization|rental-shop interface|instrument-tech specialization gate',G.A1),
+C('C-PRP-RUN','props-preset-tracking-run','Props Preset, Tracking & Run Workflow','D-PRP','T4','MDQ-081',E.BP,'A1','prop and set-dressing ownership|preset locations|performer handoff awareness|show tracking|continuity and repeatability|reset and storage|damage and repair reporting|special-prop boundary',G.A1),
+C('C-WRD-RUN','wardrobe-dresser-reset','Wardrobe, Dresser & Reset Workflow','D-WRD','T4','MDQ-082',E.BP,'A1','garment ownership and labels|preset and order|ready dirty and repair states|dresser workflow|show tracking|post-show reset|privacy and professional boundaries|maintenance and alteration specialist paths',G.A1),
+C('C-SMG-ROLE','stage-management','Stage Management','D-SMG','T5','MDQ-090',E.PM,'A0','show and rehearsal communication|cue ownership|stage-management paperwork|preset and checklist systems|notes and change tracking|performance reports|department and company coordination|venue and tour handoff',G.MGMT),
+C('C-PMG-ROLE','production-management','Production Management','D-PMG','T6','MDQ-091',E.PM,'A0','technical advance|production schedule|labor and vendors|venue and site coordination|budget and resource tracking|dependencies and critical path|change approval architecture|closeout and reporting',G.MGMT),
+C('C-VOP-ROLE','venue-event-operations','Venue & Event Operations','D-VOP','T6','MDQ-092',E.PM,'A0','event advance and client handoff|house systems|dock and facilities interfaces|security and guest services|fire life-safety and accessibility|event-day coordination|incident escalation|post-event turnover',G.MGMT),
+C('C-LEAD-LABOR','crew-labor-leadership','Crew & Labor Leadership','D-LEAD','T5','MDQ-093',E.PM,'A0','check-in and placement|assignment clarity|sequencing and report-back|reassignment and standby|break timekeeping rule ownership|performance correction|technical authority handoff|load-in and load-out closeout',G.MGMT),
+C('C-PMG-PAPER','production-paperwork-information-flow','Production Paperwork & Information Flow','D-PMG','T5','MDQ-094',E.PM,'A0','contact and call sheets|schedules and run of show|department plots and lists|network RF and power documents|dock and trucking plans|document owner and consumer|version and change path|archive and supersession',G.MGMT),
+C('C-PMG-COMMS','client-artist-vendor-communication','Client, Artist & Vendor Communication','D-PMG','T5','MDQ-095',E.PM,'A0','request and clarification|scope and acceptance criteria|owner and approver|dependencies and impacts|substitutions and change requests|professional escalation|service recovery|handoff and closeout',G.MGMT),
+C('C-PMG-LEARNING','incident-postshow-learning','Incident, Near-Miss & Post-Show Learning','D-PMG','T5','MDQ-096',E.PM,'A0','immediate site process|responsible notification|fact versus assumption|hazard and work impacts|post-event review|corrective actions and owners|documentation updates|verification and historical retention',G.MGMT),
+C('C-SHC-ARCH','cross-department-show-control','Cross-Department Show Control','D-SHC','T4','MDQ-100',E.SC,'A0','show intent and cue owner|trigger sources|timecode OSC MIDI and control interfaces|destination-system ownership|state and confirmation|dependencies and failure propagation|fallback concepts|versions and change control',G.A0),
+C('C-AUT-AWARE','automation-safety-interface','Automation Safety Interface','D-AUT','T4','MDQ-101',E.SC,'A0','machinery zones|operator technician and engineer roles|sensors interlocks and e-stops|cue and show-file concepts|state recognition|abnormal movement reporting|controlled-zone discipline|external specialist pathway',G.AUT),
+C('C-FX-ATM','atmospheric-effects-awareness','Atmospheric Effects & Life-Safety Coordination','D-FX','T3','MDQ-102',E.SC,'A0','effect-system recognition|product and fluid ownership|ventilation|detectors and alarms|visibility and surfaces|venue and fire-safety coordination|unexpected exposure reporting|no improvised operation',G.FX),
+C('C-FX-LASER','laser-optical-hazard-awareness','Laser & Optical-Hazard Awareness','D-FX','T3','MDQ-103',E.SC,'A0','optical-hazard recognition|specialist operator ownership|controlled areas|regulatory and venue interfaces|audience performer and crew exposure responsibility|stop and escalation|career pathway|no setup or operation',G.FX),
+C('C-FX-SPECIAL','special-effects-awareness','Pyro, Flame, Cryogenic & Special-Effects Awareness','D-FX','T3','MDQ-104',E.SC,'A0','regulated special-system recognition|effect operator ownership|permit and AHJ interface|exclusion-zone concepts|cue and hold communication|damage leak or displacement reporting|specialist pathway|no operational procedure',G.FX),
+C('C-SECT-TOUR','sector-touring-festival','Touring & Festival Production','D-CAR','T4','MDQ-110',E.SE,'A0','advance and traveling package|local and house labor|compressed call cycle|trucking dependence|tour house local handoffs|guest packages|changeovers|local-condition variation',G.A0),
+C('C-SECT-VENUE','sector-venue-house','Venue / House Production','D-VOP','T4','MDQ-111',E.SE,'A0','permanent systems|recurring event turnover|incoming tours and clients|house documentation|facilities and dock|maintenance state|house authority|tour venue responsibility matrix',G.A0),
+C('C-SECT-CORP','sector-corporate-convention','Corporate & Convention AV','D-CAR','T4','MDQ-112',E.SE,'A0','ballroom and convention infrastructure|general sessions and breakouts|client-facing work|branding and presentation|projection LED camera and streaming|room turns|content ownership|venue vendor responsibility split',G.A0),
+C('C-SECT-THEATRE','sector-theatre-performing-arts','Theatre & Performing-Arts Workflow','D-CAR','T4','MDQ-113',E.SE,'A0','rehearsal-to-performance cycle|cue-based operation|permanent house systems|scenic props and wardrobe separation|stage-management communication|repertory and maintenance|paperwork continuity|fly and automation boundaries',G.A0),
+C('C-SECT-WORSHIP','sector-worship-production','Worship Production Workflow','D-CAR','T4','MDQ-114',E.SE,'A0','permanent installed systems|frequent recurring services|volunteer and professional teams|audio lighting video broadcast integration|streaming and recording|internal onboarding|combined roles|local organizational authority',G.A0),
+C('C-SECT-BCAST','sector-film-tv-broadcast','Film / TV / Broadcast Transfer','D-CAR','T4','MDQ-115',E.SE,'A0','shared technical competencies|grip versus electric distinctions|camera and video-assist roles|production sound differences|take-based workflow|exposure color and flicker priorities|jurisdiction differences|transferability limits',G.A0),
+C('C-SECT-OUT','sector-outdoor-weather','Outdoor, Festival & Weather Operations','D-OUT','T4','MDQ-116',E.SE,'A0','wind and severe weather|heat cold rain and water|mud and uneven surfaces|public and vehicle routes|temporary structures|outdoor electrical interfaces|hold evacuation and stop-work ownership|condition reporting',G.A0),
+C('C-CAR-ENTRY','career-entry-hiring','Entry Routes & Hiring Ecosystem','D-CAR','T0','MDQ-120',E.CA,'A0','labor providers and production vendors|venues and house crews|union referral systems|rental shops|corporate AV and theatres|freelance and referral relationships|reliability and honest skill representation|experience evidence',G.A0),
+C('C-CAR-UNION','career-union-cba-awareness','Union & Collective-Bargaining Awareness','D-CAR','T0','MDQ-121',E.CA,'A0','IATSE international and locals|local jurisdiction variation|collective bargaining agreements|rates and working conditions|touring and local interaction|membership and referral differences|training programs|use the actual local agreement',G.A0),
+C('C-CAR-CRED','career-credentials-training','Credentials & Training Landscape','D-CAR','T0','MDQ-122',E.CA,'A0','course completion versus certification|OSHA Outreach card scope|ETCP specialist credentials|AVIXA certification families|manufacturer training|employer authorization|licenses and legal authority|credential verification semantics',G.A0),
+C('C-CAR-LADDERS','career-ladders-role-combination','Career Ladders & Role Combination','D-CAR','T0','MDQ-123',E.CA,'A0','technical depth|system specialization|operation and programming|design and engineering|leadership and management|shop versus field|sector transfers|lateral growth and combined roles',G.A0),
+C('C-CAR-PRO','professional-practice-sustainability','Professional Practice & Career Durability','D-CAR','T0','MDQ-124',E.CA,'A0','fatigue and schedule awareness|travel readiness|clean handoffs|documentation habits|continuing education|equipment care and damage reporting|reputation and references|sustainability without safety compromise',G.A0)
+];
+const existing=[
+['C-SHF-FUNDAMENTALS','Stagehand Fundamentals','D-SHF','T1','courses/stagehand-fundamentals.html'],
+['C-FLD-ROAD-CASE','Move a Road Case With a Partner','D-FLD','T2','courses/field-skill-move-road-case-with-partner.html'],['C-FLD-CABLE-COIL','Over-Under Cable Coiling','D-FLD','T2','courses/field-skill-over-under-cable-coiling.html'],['C-FLD-RATCHET','Ratchet Straps Under Direction','D-FLD','T2','courses/field-skill-ratchet-straps.html'],['C-FLD-FLATBED','Flatbed Cargo-Securement Support','D-FLD','T2','courses/field-skill-flatbed-cargo-securement-support.html'],['C-FLD-BARRICADE','Barricade Setup Under Direction','D-FLD','T2','courses/field-skill-barricade-setup.html'],['C-FLD-CABLE-PROTECT','Cable Ramps & Protectors','D-FLD','T2','courses/field-skill-cable-ramps-protectors.html'],
+['C-FLD-TEAM','Team Lift, Carry & Set Down','D-FLD','T2','courses/field-skill-team-lift-carry-set-down.html'],['C-FLD-CART','Cart, Dolly & Hand-Truck Movement','D-FLD','T2','courses/field-skill-cart-dolly-hand-truck-movement.html'],['C-FLD-CABLE-DEPLOY','Cable Deployment & Gathering','D-FLD','T2','courses/field-skill-cable-deployment-gathering.html'],['C-FLD-BONEYARD','Case & Boneyard Organization','D-FLD','T2','courses/field-skill-case-boneyard-organization.html'],['C-FLD-RESET','Work-Area Reset & Handoff','D-FLD','T2','courses/field-skill-work-area-reset-handoff.html'],['C-FLD-SOFT','Ground-Level Soft Goods','D-FLD','T2','courses/field-skill-ground-level-soft-goods.html'],['C-FLD-PD','Pipe-and-Drape Support','D-FLD','T2','courses/field-skill-pipe-and-drape-support.html'],['C-FLD-DECK','Riser & Deck Component Support','D-FLD','T2','courses/field-skill-riser-deck-component-support.html'],['C-FLD-TOOLS','Basic Tool Recognition & Handoff','D-FLD','T2','courses/field-skill-basic-stagehand-tool-handling.html'],['C-FLD-MARK','Jobsite Tape, Label & Marking','D-FLD','T2','courses/field-skill-jobsite-tape-label-marking.html'],['C-FLD-SCENERY','Scenery, Flat & Wagon Movement','D-FLD','T2','courses/field-skill-scenery-flat-wagon-movement.html'],['C-FLD-DOCK','Dock, Ramp & Trailer Handoff','D-FLD','T2','courses/field-skill-dock-ramp-trailer-handoff-awareness.html'],
+['C-LTG-SUPPORT','Supporting a Lighting Hang','D-LTG','T3','courses/pathway-lighting-01-support.html'],['C-LTG-PRODUCTION-FLOW','Lighting Production Flow','D-LTG','T4','courses/pathway-lighting-02-production-flow.html'],['C-LTG-SYSTEM-DESIGN','Lighting Control-System Design','D-LTG','T7','courses/pathway-lighting-03-system-design.html'],['C-AUD-SUPPORT','Supporting an Audio Load-In','D-AUD','T3','courses/pathway-audio-01-support.html'],['C-AUD-SYSTEMS','Live Sound Systems','D-AUD','T4','courses/pathway-audio-02-live-systems.html'],['C-AUD-SYSTEM-DESIGN','Audio System & Network Architecture','D-AUD','T7','courses/pathway-audio-03-system-design.html'],['C-VID-SUPPORT','Supporting an LED Video Wall Build','D-VID','T3','courses/pathway-video-01-support.html'],['C-VID-SYSTEMS','Large-Scale LED Video Systems','D-VID','T4','courses/pathway-video-02-led-video-systems.html'],['C-VID-SYSTEM-ARCH','Video Display-System Architecture','D-VID','T7','courses/pathway-video-03-system-architecture.html'],['C-STG-SUPPORT','Supporting Staging & Carpentry','D-STG','T3','courses/pathway-staging-carpentry-01-support.html'],['C-STG-DECK-SYSTEMS','Modular Deck Systems','D-STG','T4','courses/pathway-staging-carpentry-02-deck-systems.html'],['C-STG-DESIGN-COORD','Staging / Carpentry Design Coordination','D-STG','T7','courses/pathway-staging-carpentry-03-design-coordination.html'],['C-BPW-SUPPORT','Supporting Backline, Props & Wardrobe','D-BKL','T3','courses/pathway-backline-props-wardrobe-01-support.html'],['C-BPW-SYSTEMS','Backline, Props & Wardrobe Systems','D-BKL','T4','courses/pathway-backline-props-wardrobe-02-department-systems.html'],['C-LEAD-CREW-CHIEF','Lead / Crew Chief Foundations','D-LEAD','T5','courses/lead-crew-chief-foundations.html'],['C-LEAD-LTG','Lighting Lead','D-LTG','T5','courses/lead-lighting.html'],['C-LEAD-AUD','Audio Lead','D-AUD','T5','courses/lead-audio.html'],['C-LEAD-VID','Video Lead','D-VID','T5','courses/lead-video.html'],['C-LEAD-STG','Staging / Carpentry Lead','D-STG','T5','courses/lead-staging-carpentry.html'],['C-LEAD-RIG','Rigging Lead','D-RIG','T5','courses/lead-rigging.html'],['C-LEAD-ELC','Electrics Lead','D-ELC','T5','courses/lead-electrics.html'],['C-SUP-HAZARD','Predictive Hazard Recognition','D-LEAD','T6','courses/supervisor-predictive-hazard-recognition.html'],['C-SUP-EVENT-OPS','Event Operations & Production Coordination','D-VOP','T6','courses/supervisor-event-operations.html'],['C-ELC-POWER-AWARENESS','Production Power Awareness','D-ELC','T0','courses/production-infrastructure-power-awareness.html'],['C-PROD-CAREER-BRANCH','Production & Coordination Career Branch','D-PMG','T0','courses/production-coordination-career-branch.html']
+].map(a=>({id:a[0],title:a[1],domain:a[2],domainName:d[a[2]]||a[2],tier:a[3],route:a[4],existing:true}));
+window.CBPEcosystem={courses:x,existing,domains:d,evidence:E};
+})();
+(function(){'use strict';
+const D=window.CBPEcosystem;if(!D)return;
+D.domains['D-ACC']='Accessibility / Public Interface';
+const E={SHP:'research/FRONTIER_WAREHOUSE_WORKER_EVIDENCE_2026-08-31.md',CAR:'research/FRONTIER_WORKER_CLASSIFICATION_FREELANCE_RIGHTS_EVIDENCE_2026-08-31.md',PMG:'research/FRONTIER_PM_ARTIFACTS_CONTROL_EVIDENCE_2026-08-31.md',X:'research/FRONTIER_ACCESSIBILITY_CYBER_BATTERY_HEAT_EVIDENCE_2026-08-31.md'};
+const q=(question,options,answer,rationale)=>({question,options,answer,rationale});
+const S={A0:'Knowledge and decision literacy only. Exact legal, technical, employer, venue, manufacturer, or jurisdictional requirements remain external.',A1:'Bounded assigned-support education. The responsible employer, lead, department, venue, manufacturer, or current site plan controls actual work.',MGMT:'Management-system education only. Completion does not create appointment, signing authority, engineering authority, legal authority, or specialist authorization.'};
+const C=(o)=>({...o,domainName:D.domains[o.domain]||o.domain,maturity:'authored_frontier',reviewState:'source_reviewed_practitioner_and_learner_review_pending',sourceDataFile:'js/frontier-expansion.js'});
+const courses=[
+C({id:'C-SHP-RECEIVING',slug:'shop-receiving-returns-chain-custody',title:'Receiving, Returns & Chain of Custody',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-01',evidence:E.SHP,authority:'A1',gate:S.A1,summary:'Track what arrived, what returned, who owns it, what state it is in, and what remains unresolved before equipment disappears into the shop.',objectives:['Distinguish receiving, return, transfer, and unresolved states.','Use item/case identity and custody records without inventing missing information.','Route damage, mismatch, or unknown ownership to the responsible shop process.'],topics:['receiving state','return state','case and item identity','chain of custody','expected versus actual quantity','visible condition','unresolved discrepancy','handoff and closeout'],details:['Receiving begins with a known source, expected shipment or work order, and a place for exceptions; arrival alone does not mean accepted or ready.','Returns need a defined destination and state because returned equipment may be ready, incomplete, dirty, damaged, or still tied to another job.','Use the identifiers already controlled by the shop—asset tag, case label, barcode, serial/model record, work order, or other approved ID—rather than making a new identity.','Custody records answer who had the item, where it moved, when the state changed, and who owns the next decision.','A quantity mismatch is a discrepancy to document and route; it is not permission to substitute or close the order silently.','A general worker can notice obvious damage or changed condition and report it without diagnosing internal failure.','Unknown owner, missing tag, conflicting paperwork, or unexplained extra/missing gear stays open until the responsible person resolves it.','A good handoff names the item, current state, location, issue, and next owner so the discrepancy does not vanish between shifts.'],scenario:{title:'The extra case',setup:'A truck return includes one case that is not on the return sheet and has a different client label.',decision:'Do not relabel it to make the count match. Separate the discrepancy from normal closeout and identify the responsible return/shop owner.',response:'Record the identifiers and current location, report the mismatch, and keep the case in the employer-defined unresolved/hold process.'},quiz:[q('A returned case is not on the paperwork. What is the strongest first classification?',['An unresolved custody discrepancy','Automatically available inventory','A case to relabel for the next show'],0,'Unexpected identity or quantity stays unresolved until the responsible process reconciles it.'),q('What does a visible-condition check establish?',['A reportable observed condition, not an internal technical diagnosis','That the equipment is fully serviceable','Permission to open and repair it'],0,'General receiving/QC can record visible state without exceeding service authority.'),q('A clean handoff should include which combination?',['Identity, state, location, issue, and next owner','Only the case color','Only who touched it last'],0,'Custody is useful when the next person can reconstruct the current state.')] }),
+C({id:'C-SHP-INVENTORY',slug:'shop-inventory-pull-lists-case-id',title:'Inventory, Pull Lists & Case Identification',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-02',evidence:E.SHP,authority:'A1',gate:S.A1,summary:'Read a pull as a controlled request, match equipment to the approved identity system, and keep substitutions or shortages visible.',objectives:['Read pull-list fields as requirements rather than suggestions.','Separate identity verification from serviceability verification.','Keep shortages, substitutions, and missing accessories explicit.'],topics:['pull-list fields','asset identity','model versus individual item','quantity and unit','kit and accessory completeness','location and staging state','substitution ownership','shortage handoff'],details:['A pull list should tell the learner what is requested, how much, where it is going, and which revision/status controls the work.','Asset identity can operate at model, serialized item, kit, case, or shop-label level; use the employer system that actually controls the inventory.','Two units of the same model are not always interchangeable when service history, accessories, firmware, show files, or client ownership differ.','Count the unit the list actually uses—case, piece, pair, kit, cable length, package, or other defined unit—rather than assuming.','A kit is incomplete when required accessories are missing even if the headline device is present.','Picked, prepped, staged, loaded, returned, repair, and quarantine are different states; location does not prove state.','A worker can flag a possible substitute but the responsible department/shop/client process owns approval.','Shortages should retain item, quantity, impact, current search/status, and owner rather than disappearing into verbal memory.'],scenario:{title:'Same model, wrong state',setup:'The requested model is on the shelf, but its shop tag says it is waiting for repair.',decision:'Do not clear the shortage by moving the repair item into the pull.',response:'Keep the repair state intact and route the shortage/substitution decision to the responsible shop or department owner.'},quiz:[q('What does finding the correct model on a shelf prove?',['Identity family only; state and serviceability still require the controlled process','That the unit is ready for show use','That substitutions are automatically approved'],0,'Model match is not a complete readiness decision.'),q('A kit is missing a required accessory. How should it be treated?',['As an incomplete kit/discrepancy','As complete because the main device is present','As permission to borrow from another client package'],0,'Kit completeness is part of the requested state.'),q('Who owns a nontrivial substitution decision?',['The responsible shop/department/client process','Any worker who finds a similar item','The person who labels the shelf'],0,'Substitution can change compatibility, scope, cost, or show design.')] }),
+C({id:'C-SHP-PREP-QC',slug:'shop-equipment-prep-qc-handoff',title:'Equipment Prep, QC & Discrepancy Handoff',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-03',evidence:E.SHP,authority:'A1',gate:S.A1,summary:'Understand prep and QC as controlled states: confirm the assigned check, record what was observed, and hand off anything that needs technical judgment.',objectives:['Distinguish visual/general checks from qualified technical tests.','Preserve prep checklists and product-specific limits.','Create a reproducible discrepancy handoff.'],topics:['prep scope','visual condition','assigned functional check','accessory and consumable state','configuration ownership','test-result recording','repair escalation','ready-state handoff'],details:['Prep scope comes from the work order/checklist, responsible department, and product instructions—not from whatever tests a worker remembers.','General workers can identify obvious physical damage, contamination, missing parts, or labeling problems and report them.','Functional checks must stay within the worker’s assigned training and the employer/product procedure; electrical, structural, calibrated, or specialist tests stay external.','Consumables and accessories affect readiness, but exact quantities/types come from the controlled package or show requirement.','Firmware, calibration, addressing, show files, presets, and client settings require explicit configuration ownership.','A useful result records what check was performed, on what item/version, what happened, and whether it passed the defined criterion.','Repair-needed equipment should move into the shop’s controlled repair/quarantine process rather than being quietly worked around.','Ready means the responsible process has completed the required checks for the defined job; it does not mean universally safe for every use.'],scenario:{title:'Intermittent behavior',setup:'During an assigned basic check, a device behaves differently on the second cycle.',decision:'Do not keep cycling it until the symptom disappears and call it good.',response:'Record the condition and item identity, stop the assigned check at its boundary, and route it to the responsible technician/repair process.'},quiz:[q('What defines the prep/QC scope?',['The assigned checklist/process plus product and department authority','Every test the worker knows','Whatever makes the device appear normal'],0,'QC must be reproducible and bounded.'),q('What is the best response to an intermittent abnormal result?',['Record it and escalate rather than erase it through repeated attempts','Mark it ready if it later works once','Open the device and repair it'],0,'Intermittent conditions are information, not a nuisance to hide.'),q('What does ready state mean?',['Ready for the defined job under the responsible process','Guaranteed suitable for every production','No further owner or configuration checks can exist'],0,'Readiness is contextual and controlled.')] }),
+C({id:'C-SHP-TRAFFIC',slug:'warehouse-traffic-powered-equipment-awareness',title:'Warehouse Traffic & Powered-Equipment Awareness',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-04',evidence:E.SHP,authority:'A1',gate:'Pedestrian/interface awareness only. Powered industrial truck or access-equipment operation requires the employer’s applicable training, evaluation, authorization, and equipment/site rules.',summary:'Move through production warehouses without treating forklifts, powered pallet equipment, charging areas, docks, or blind intersections as ordinary foot traffic.',objectives:['Recognize pedestrian/powered-equipment conflict points.','Use employer-defined traffic lanes, crossings, and exclusion zones.','Keep operation of powered equipment outside the course authority.'],topics:['pedestrian routes','powered industrial truck zones','blind intersections','dock edges and trailers','staged loads and sightlines','charging and parking areas','spotter or traffic-control ownership','incident and near-miss reporting'],details:['Use designated pedestrian routes and site instructions where provided; a shortcut through a material lane can create a conflict operators do not expect.','Forklifts and other powered material equipment have different visibility, stopping, turning, and load-clearance constraints than pedestrians; operation is externally trained work.','At blind intersections, doors, racks, and case stacks, do not assume an operator can see you because you can see the machine.','Dock edges, trailer gaps, dock plates, lift gates, and moving trailers add fall/crush/vehicle interfaces that require site-specific control.','Tall cases and staged loads can block sightlines and emergency routes; report a changed route rather than improvising through it.','Charging/parking areas are controlled work zones; battery/equipment tasks belong to designated employer procedures.','A spotter or traffic controller only has authority when the site/employer has assigned that role and defined communication.','Near misses and damaged barriers/markings are useful hazard information and should enter the employer’s reporting process.'],scenario:{title:'Blocked pedestrian lane',setup:'Cases have been staged across the marked pedestrian route and a forklift is working in the adjacent aisle.',decision:'Do not squeeze between the cases and powered equipment.',response:'Use the employer-defined alternate route or stop and get the route restored/clarified by the responsible warehouse lead.'},quiz:[q('Does this course authorize forklift operation?',['No; operation remains employer-trained/evaluated work','Yes, if the learner understands blind spots','Yes, for moving empty forks only'],0,'Traffic awareness is not operator qualification.'),q('A marked pedestrian route is blocked. What should happen?',['Use/obtain an approved route or have the obstruction addressed','Walk through the powered-equipment lane quickly','Move any load blocking it without checking ownership'],0,'Changed routes need controlled resolution.'),q('Why can eye contact be an unreliable traffic rule?',['Visibility and operator/load geometry can change; use the site traffic system','It is always prohibited to look at operators','Powered equipment automatically stops for pedestrians'],0,'Warehouse movement should not depend on assumptions about visibility.')] }),
+C({id:'C-SHP-HAZCOM',slug:'shop-labels-sds-hazard-communication',title:'Labels, SDS & Hazard Communication Awareness',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-05',evidence:E.SHP,authority:'A0',gate:'Hazard-communication literacy only. Actual chemical use, PPE, ventilation, storage, spill response, waste handling, and emergency procedures come from the employer program, product information, and applicable authority.',summary:'Recognize the information chain used when production shops contain cleaners, adhesives, paints, fluids, batteries, or other chemical products.',objectives:['Recognize labels and SDSs as controlled hazard-information sources.','Know when an unknown/unlabeled/damaged container is a stop-and-report condition.','Separate awareness from product-specific handling authority.'],topics:['container identity','workplace labels','safety data sheets','hazard pictograms and statements','employer written program','PPE and control ownership','storage and incompatibility awareness','spill exposure and emergency handoff'],details:['Use the actual product/container identity; do not transfer a chemical into an unidentified container or guess contents from color/smell.','Labels communicate product and hazard information under the applicable workplace system; do not obscure controlled labels.','Safety Data Sheets organize hazard, handling, exposure, emergency, and other product information; the employer program tells workers how SDS access is managed.','Pictograms and hazard statements are recognition cues, not a substitute for the complete label/SDS/employer training.','The employer’s written Hazard Communication program defines workplace implementation and training where the standard applies.','PPE and engineering/administrative controls are selected by the responsible employer/process for the actual product and task.','Storage compatibility can be chemical-specific; the general learner reports unknowns rather than inventing a storage rule.','A spill, exposure, damaged container, unexpected odor, or unlabeled product should enter the site’s controlled response process rather than a DIY cleanup.'],scenario:{title:'Unlabeled spray bottle',setup:'A spray bottle with clear liquid is sitting on the prep bench and no one nearby knows what it contains.',decision:'Do not use it or identify it by smell.',response:'Hold the product from use and route it to the employer’s responsible HazCom/shop process for identification or disposition.'},quiz:[q('What is the best response to an unknown unlabeled chemical container?',['Do not use it; route it to the responsible employer process','Smell it to identify the product','Use a small amount to test it'],0,'Unknown identity blocks safe product-specific decisions.'),q('What does an SDS do?',['Provides structured product hazard/safety information within the workplace program','Automatically authorizes a worker to use the product','Replaces employer training'],0,'SDS literacy supports, but does not replace, workplace controls/training.'),q('Who selects exact PPE/control requirements for a real chemical task?',['The applicable employer/product/program/qualified process','Any learner who has seen the pictogram','The course’s generic topic card'],0,'Exact controls are product- and task-specific.')] }),
+C({id:'C-SHP-BATTERY',slug:'shop-battery-charging-awareness',title:'Battery & Charging Awareness',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-06',evidence:E.X,authority:'A0',gate:'Awareness only. Exact charging, storage, isolation, emergency response, shipping, disposal, repair, and reuse decisions remain with the employer, manufacturer, carrier, fire/life-safety process, or other responsible authority.',summary:'Recognize battery state and charging ownership in shops full of radios, cameras, tools, wireless gear, laptops, UPS devices, and rechargeable packs.',objectives:['Recognize changed battery/device conditions that require reporting.','Use designated charging/storage workflow rather than improvised charging.','Keep repair, emergency response, and disposition outside general-worker authority.'],topics:['battery and device identity','approved charger ownership','designated charging area','visible damage and swelling','unexpected heat odor or leakage','impact and unknown history','hold and report state','repair shipping disposal boundary'],details:['Know which battery/device/charger family you are handling; similar connectors do not prove charger compatibility.','Use manufacturer/employer-approved charging equipment and the workplace process rather than improvising adapters or substitutes.','Charging locations can be designated to manage fire, ventilation, traffic, and supervision concerns; follow the site rule.','Swelling, deformation, puncture, crushed housings, or other visible damage changes the state from ordinary use to report/hold.','Unexpected heat, odor, smoke, leakage, or other abnormal condition requires immediate employer-defined escalation; do not keep experimenting with the device.','A dropped/impacted pack or battery with unknown incident history may require the responsible process to decide reuse; appearance alone may not resolve it.','The learner’s useful action is to stop normal circulation of a suspect item and identify it/location/condition to the responsible person.','Opening packs, cell repair, improvised charging, hazardous shipment, disposal, or emergency response is outside this course.'],scenario:{title:'Warm swollen radio battery',setup:'A rechargeable radio battery is noticeably swollen and warmer than the other packs at the charging station.',decision:'Do not reconnect it, squeeze it flat, open it, or keep charging to see what happens.',response:'Stop ordinary handling and use the employer’s battery/emergency reporting process while keeping personal safety and site instructions primary.'},quiz:[q('A battery is visibly swollen. What is its strongest general-worker state?',['Suspect/hold-and-report under the employer process','Ready if it still powers the device','Safe after cooling briefly'],0,'Visible abnormal condition requires responsible review.'),q('Does a matching connector prove a charger is approved?',['No; use manufacturer/employer-approved compatibility information','Yes, connector fit is enough','Yes, if voltage seems close'],0,'Physical fit is not a complete charging compatibility decision.'),q('What should a general learner avoid?',['Opening, repairing, improvising charging, or deciding hazardous disposition','Recording the item identity and condition','Following the site reporting process'],0,'Internal service and hazardous disposition are specialist/employer-controlled.')] }),
+C({id:'C-SHP-TRUCK-STAGE',slug:'shop-truck-staging-dock-handoff',title:'Truck Staging, Dock Interface & Load-Lead Handoff',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-07',evidence:E.SHP,authority:'A1',gate:'Assigned staging and handoff only. Vehicle operation, powered loading equipment, load distribution, securement approval, weight compliance, dock equipment operation, and final truck-pack decisions remain external.',summary:'Prepare cases and information for the dock without confusing staging with authority to design or approve the load.',objectives:['Separate warehouse staging from final load/vehicle authority.','Keep destination, priority, and unresolved states visible.','Recognize dock/trailer interfaces that need site-specific control.'],topics:['dock schedule and owner','case destination and priority','staging lanes','manifest and count interface','trailer and vehicle status','dock plate lift-gate ramp awareness','load-lead and driver authority','unresolved freight closeout'],details:['Know who controls the dock window and current load plan before staging equipment into a movement lane.','Destination, show/department, unload priority, and special handling notes belong to the controlled work order/labels rather than memory.','Staging lanes should preserve pedestrian/vehicle routes, egress, and the site’s sequence; being near the dock does not mean ready to load.','Counts/manifests are reconciliation tools; report mismatch before it becomes a truck-level mystery.','A trailer can be arriving, parked, docked, released, or moving; workers follow the site’s vehicle-control communication.','Dock plates, lift gates, ramps, and similar interfaces have equipment/site limits and are not assumed safe or authorized from appearance.','The driver/load lead/other assigned authority owns final load sequence, distribution, securement, and vehicle decisions as applicable.','Anything missing, extra, damaged, mislabeled, or destination-unclear should stay visible at closeout with an owner.'],scenario:{title:'Rush the last cases',setup:'The crew is waiting and three cases are staged, but one destination label conflicts with the manifest.',decision:'Do not resolve the schedule pressure by guessing the destination.',response:'Flag the conflict to the load/shop owner and keep the affected case out of the finalized movement until resolved.'},quiz:[q('What does staging a case at the dock authorize?',['Only the assigned staging state—not final load placement/securement decisions','The worker to choose truck position','The worker to operate any available lift gate'],0,'Staging and load authority are different states.'),q('A label and manifest conflict. What should happen?',['Resolve the discrepancy with the responsible owner before finalizing it','Pick whichever destination seems closer','Remove the label and load it last'],0,'Conflicting controlled information must stay visible.'),q('Who controls final load/vehicle decisions?',['The assigned driver/load lead/other responsible process as applicable','Any available stagehand','Whoever staged the case'],0,'Final truck decisions can carry vehicle, weight, securement, and operational responsibility.')] }),
+C({id:'C-SHP-RETURN-CLOSE',slug:'shop-return-reconciliation-damage-closeout',title:'Return Reconciliation, Damage Quarantine & Closeout',domain:'D-SHP',tier:'T3',mdq:'FRONTIER-SHP-08',evidence:E.SHP,authority:'A1',gate:S.A1,summary:'Close the loop after a show: reconcile what came back, keep damage and missing items visible, and restore inventory only through the controlled shop process.',objectives:['Reconcile returned state against expected state.','Keep damaged/unknown equipment out of ordinary ready inventory.','Close unresolved items with an owner rather than silent assumptions.'],topics:['return work order','count and identity reconciliation','accessory reconciliation','visible damage state','quarantine or repair lane','cleaning and maintenance ownership','inventory-state restoration','missing and unresolved closeout'],details:['The return work order/manifest establishes the expected set and job context; do not use yesterday’s memory as the only record.','Match the actual identity/quantity and record exceptions rather than editing history to make totals agree.','Accessories, adapters, cables, hardware, and kit pieces can be operationally essential even when the main unit returned.','Document observable damage without overstating cause or internal diagnosis.','Use the shop’s quarantine/repair-needed state so suspect equipment does not drift back into ready stock.','Cleaning and maintenance can involve product-specific materials, chemicals, tools, and technical authority; follow the assigned process.','Ready inventory is restored only after the required return/prep/QC states are satisfied.','Missing/unresolved items need last-known state, search/action taken, responsible owner, and open/closed status.'],scenario:{title:'Returned but damaged',setup:'A case count matches, but one device has a cracked housing and no damage note from the show.',decision:'Count match does not equal ready return.',response:'Record the visible condition and route the device into the employer’s damage/repair process before inventory state is restored.'},quiz:[q('A return count matches but an item is visibly damaged. Is the return fully closed?',['No; condition state remains unresolved','Yes; count is the only closeout criterion','Yes, if the case closes'],0,'Quantity and condition are separate dimensions.'),q('What should happen to suspect damaged equipment?',['Use the shop’s hold/quarantine/repair-needed process','Return it to ready stock until someone complains','Hide the damage note to avoid blame'],0,'State separation prevents accidental recirculation.'),q('What makes a missing-item closeout useful?',['Last-known state, actions, owner, and open/closed status','Only the item name','A verbal promise to look later'],0,'Unresolved work needs reconstructable ownership.')] }),
+C({id:'C-CAR-CLASSIFY',slug:'employee-independent-contractor-literacy',title:'Employee vs Independent Contractor Literacy',domain:'D-CAR',tier:'T1',mdq:'FRONTIER-CAR-01',evidence:E.CAR,authority:'A0',gate:'Legal/tax awareness only. Worker status is determined by applicable law and actual facts; course completion cannot classify a person, waive employee rights, or replace agency/professional advice.',summary:'Understand why “I got a 1099” is not the same thing as a legal classification and why different laws can apply different tests.',objectives:['Separate payment paperwork/labels from legal worker status.','Recognize federal tax-control categories and changing wage-law standards.','Know when state/local or professional guidance is required.'],topics:['label versus actual relationship','behavioral control','financial control','type of relationship','economic dependence concepts','multiple legal tests','state and local variation','official determination and advice routes'],details:['A contract title, 1099, W-9, invoice, part-time schedule, or worker preference does not by itself decide status.','IRS common-law analysis considers evidence about the right to direct/control how work is performed, including instructions/training and the actual relationship.','Financial control includes facts such as business investment, unreimbursed expenses, market availability, payment method, and real opportunity for profit/loss.','Relationship facts include contracts, benefits, permanence, and whether the services are a key activity of the business; no single factor is magic.','Federal wage-law analysis uses economic-reality concepts and is an active rulemaking area in 2026; the controlling standard must be checked when needed.','Tax, wage/hour, labor, unemployment, workers’ compensation, and state/local laws can use different tests.','Some states use more restrictive tests; a federal result does not automatically decide every other law.','For a real disputed relationship, use current official agency resources or qualified legal/tax advice rather than a generic online checklist.'],scenario:{title:'“But I signed a contractor agreement”',setup:'A worker says the contract calls everyone an independent contractor, so classification is settled.',decision:'Treat the label as one fact, not the legal conclusion.',response:'Look at the real relationship and the specific law in question; use current official/professional guidance for an actual determination.'},quiz:[q('Does receiving a Form 1099-NEC by itself prove independent-contractor status?',['No','Yes, always','Only for part-time workers'],0,'Tax forms reflect treatment; they do not by themselves settle the legal classification.'),q('Which IRS category is part of federal employment-tax classification analysis?',['Behavioral control','Favorite job title','Whether the worker owns black work clothes'],0,'IRS groups evidence under behavioral control, financial control, and type of relationship.'),q('Can one federal classification test automatically decide every state/local law?',['No','Yes','Only if the contract says federal law controls'],0,'Different laws and jurisdictions can use different tests.')] }),
+C({id:'C-CAR-FREELANCE-BIZ',slug:'freelance-crew-business-basics',title:'Freelance Crew Business Basics',domain:'D-CAR',tier:'T1',mdq:'FRONTIER-CAR-02',evidence:E.CAR,authority:'A0',gate:'Business literacy only. This course does not establish contractor status or provide individualized tax, accounting, insurance, contract, or legal advice.',summary:'Build the paperwork habits of a small freelance production business without pretending those habits decide employment classification.',objectives:['Recognize core business records and their purposes.','Separate client/work records from tax/legal conclusions.','Create a repeatable quote-to-payment record trail.'],topics:['client identity and contact','scope and work order','W-9 awareness','invoice identity and dates','expense and reimbursement record','payment terms and receivable state','business record organization','professional advice boundary'],details:['Keep the legal/business name and reliable billing/contact path tied to the actual client or contracting entity.','Written scope should identify the service, dates/location or project, assumptions, and who can approve changes; it is not a substitute for legal review where needed.','A W-9 supplies taxpayer information to a requester; completing one does not prove the worker is legally an independent contractor.','Invoices should be uniquely identifiable and show the billed work, amount/basis, invoice date, payment instructions, and client reference needed for reconciliation.','Keep receipts and reimbursement approvals tied to the correct job and distinguish reimbursed client expenses from other business records.','Payment terms describe when payment is expected; track sent, received, due, disputed, partially paid, and paid states rather than relying on memory.','Use a stable record system for work orders, calendars, invoices, receipts, payments, and communications so a later reconciliation is possible.','Actual tax treatment, contract enforceability, insurance needs, and legal disputes belong to current official/professional guidance.'],scenario:{title:'Payment with no invoice reference',setup:'A deposit arrives for an amount that could cover several recent calls.',decision:'Do not guess which invoice is paid just to clear the books.',response:'Use amount/date/payer/reference and client remittance communication to reconcile the payment, leaving any unresolved allocation visible.'},quiz:[q('What does sending invoices prove about worker classification?',['Nothing by itself; it is a business record practice','That the worker is always an independent contractor','That overtime law can never apply'],0,'Classification follows applicable facts/law, not a paperwork ritual.'),q('Why use unique invoice identifiers?',['To reconcile requests, payments, corrections, and records','To make the invoice legally enforceable in every state','To avoid keeping any other work records'],0,'Stable identity improves traceability.'),q('A deposit cannot be confidently matched to an invoice. What is the best record state?',['Unresolved until reconciled','Paid—assign it to the oldest invoice without evidence','Delete the open invoice'],0,'Do not manufacture certainty in financial records.')] }),
+C({id:'C-CAR-PAYMENT',slug:'freelance-rates-scope-expenses-payment-terms',title:'Rates, Scope, Expenses & Payment Terms',domain:'D-CAR',tier:'T1',mdq:'FRONTIER-CAR-03',evidence:E.CAR,authority:'A0',gate:'General business education only. Local wage law, overtime, reimbursement rules, contracts, taxes, union/CBA terms, and client agreements can control actual payment rights and obligations.',summary:'Know what a rate does and does not include, make scope assumptions visible, and track payment terms without turning a day rate into a universal legal rule.',objectives:['Separate rate structure from legal wage classification.','Make scope, expenses, and approval assumptions explicit.','Track payment terms and changes as records.'],topics:['hourly day and project rate concepts','included time and scope assumptions','travel lodging meals and mileage','reimbursable versus included expense','cancellation and changed scope','approval owner','payment terms','dispute and collection escalation'],details:['Rate labels describe a pricing/pay structure, but the applicable law/contract/CBA controls whether that structure is lawful for the real relationship.','Clarify what work period/services the stated rate covers and what triggers a scope/time change instead of relying on industry shorthand.','Travel, lodging, meals, mileage, parking, baggage, per diem, and similar items may be paid, reimbursed, included, or not covered depending on the arrangement.','Keep expense approval and documentation with the job so reimbursement does not become an undocumented assumption.','Cancellation/shortened calls/added days/changed duties can affect payment differently under different agreements/laws; record the change and controlling term.','Know who has authority to approve a change or expense; coworker agreement may not bind the payer.','Net terms are billing expectations, not a guarantee of the exact payment date or a replacement for applicable wage-payment law.','When a payment is late/disputed, preserve scope, attendance/work, invoice, approval, and communication records and use the appropriate business/legal/employer/union channel.'],scenario:{title:'“Day rate means all day”',setup:'A client and worker use the phrase “day rate” but never define the included work period or overtime/extra-scope treatment.',decision:'Do not treat the phrase itself as a universal legal/payment rule.',response:'Clarify the written scope and applicable employer/contract/CBA/law before relying on the shorthand.'},quiz:[q('Does the phrase “day rate” decide whether overtime law applies?',['No','Yes, always','Only in live events'],0,'A rate label does not override applicable worker-status/wage law.'),q('What is the strongest expense practice?',['Make included/reimbursable status and approval/documentation clear','Assume every travel cost is reimbursed','Wait until months later to reconstruct receipts'],0,'Clear scope and contemporaneous records reduce disputes.'),q('Who can approve a paid scope change?',['The person/process with actual authority under the arrangement','Any coworker','Whoever notices the work'],0,'Approval authority is part of controlled business process.')] }),
+C({id:'C-CAR-RECORDS',slug:'work-records-timekeeping-payment-reconciliation',title:'Work Records, Timekeeping & Payment Reconciliation',domain:'D-CAR',tier:'T1',mdq:'FRONTIER-CAR-04',evidence:E.CAR,authority:'A0',gate:'Recordkeeping literacy only. Personal records do not replace an employer’s legal recordkeeping duties and do not determine compensable-time, wage, tax, or contract disputes.',summary:'Keep a reconstructable trail from call/work order through actual time/work, invoice or payroll record, payment, and unresolved difference.',objectives:['Record contemporaneous work facts without rewriting them later.','Reconcile schedules/work orders against actual work and payment.','Escalate mismatches with evidence rather than assumptions.'],topics:['call sheet and schedule','actual in out and breaks','task or job reference','rate or pay basis record','invoice or payroll reference','payment and remittance match','difference and dispute state','record retention and privacy'],details:['Keep the original call/schedule/work-order context because it explains what was expected, even when actual work later differs.','Record actual time/work contemporaneously when appropriate; do not change history merely to match a later schedule.','Tie notes to the job/client/event or employer reference so similar calls can be separated later.','Record the rate/pay basis that was communicated while keeping legal entitlement questions separate.','Use payroll statement, invoice, work order, or other controlled reference to connect work to the payment process.','Match payer, date, amount, reference, and covered period/invoice rather than treating any deposit as proof every open item was paid.','Keep discrepancies explicit: missing hours, partial payment, unknown allocation, rejected expense, disputed scope, or unresolved deduction.','Store only the personal/business information needed for the purpose and protect sensitive tax/identity records appropriately.'],scenario:{title:'Hours do not match',setup:'A pay record shows fewer hours than the worker’s contemporaneous call/time notes.',decision:'Do not alter the notes to match the pay record or immediately assume why the difference occurred.',response:'Compare the relevant records and use the employer/payroll/union/business channel to request clarification or correction as applicable.'},quiz:[q('Why keep scheduled and actual time separately?',['Because expected and actual states can differ and both matter for reconciliation','Because the schedule should always overwrite actual time','Because personal notes determine legal compensability'],0,'Good records preserve facts without pretending to resolve legal questions.'),q('What is a partial/unmatched payment?',['An explicit reconciliation state that remains open until supported','Proof all invoices are paid','A reason to delete old records'],0,'Financial records should preserve uncertainty.'),q('Do personal time notes replace employer FLSA records?',['No','Yes','Only if written on paper'],0,'Personal records can support reconciliation but do not replace employer legal duties.')] }),
+C({id:'C-CAR-WORKER-RIGHTS',slug:'worker-rights-reporting-retaliation-awareness',title:'Worker Rights, Reporting & Retaliation Awareness',domain:'D-CAR',tier:'T1',mdq:'FRONTIER-CAR-05',evidence:E.CAR,authority:'A0',gate:'Rights-navigation awareness only. Exact coverage, deadlines, remedies, protected activity, union/CBA processes, and legal strategy depend on the actual jurisdiction, worker status, employer, agreement, and facts.',summary:'Recognize when a workplace concern belongs in a safety, pay/time, discrimination/harassment, accommodation, union/CBA, or business-contract channel and preserve useful records.',objectives:['Classify a concern by issue type before choosing a channel.','Understand that anti-retaliation protections exist under multiple laws while coverage varies.','Preserve factual records and use appropriate employer/union/agency/professional resources.'],topics:['safety concern routing','pay and time concern routing','discrimination and harassment awareness','accommodation request awareness','retaliation awareness','union and CBA process awareness','fact and record preservation','agency and professional help boundary'],details:['Safety concerns should use the responsible employer/site safety and escalation process; emergency response follows the actual site/employer system.','Pay/time concerns may involve payroll, employer, union/CBA, wage-hour, contract, or other channels depending on status and law.','Federal EEO laws protect covered workers/applicants from specified discrimination/harassment; state/local protections can differ or add coverage.','Workers may have rights to request accommodations in covered circumstances; exact process and entitlement depend on the applicable law/facts.','EEOC-enforced laws prohibit covered retaliation for protected EEO activity; other worker-protection laws also contain anti-retaliation provisions.','A union/CBA can create grievance, dispatch, wage, jurisdiction, or reporting procedures that are separate from nonunion processes.','Keep factual dates, messages, schedules, pay records, witnesses, reports, and responses where lawful; avoid embellishment or destroying records.','Crew Blueprint cannot decide whether a specific act is illegal or which deadline/remedy applies; use current official agencies or qualified counsel/representatives.'],scenario:{title:'Afraid to report',setup:'A worker believes they were treated differently after raising a discrimination concern and is unsure what to do.',decision:'Do not promise that the facts establish an illegal retaliation claim.',response:'Preserve factual records, use appropriate employer/union/EEOC/state/local or qualified legal resources, and keep immediate safety needs separate from legal analysis.'},quiz:[q('What is the first useful step when a workplace issue arises?',['Identify the issue type and preserve factual records','Choose a legal conclusion immediately','Post accusations publicly before documenting facts'],0,'Issue classification helps route the concern to the correct process.'),q('Does this course determine whether a specific act is illegal retaliation?',['No','Yes','Only if it happened after a complaint'],0,'Coverage and legal elements depend on actual law/facts.'),q('Can union/CBA procedures matter to a worker concern?',['Yes, where applicable','No, never','Only for equipment certification'],0,'Collective bargaining agreements can govern important work and grievance processes.')] }),
+C({id:'C-PMG-ADVANCE-ARTIFACTS',slug:'production-advance-responsibility-matrix',title:'Production Advance Packet & Responsibility Matrix',domain:'D-PMG',tier:'T6',mdq:'FRONTIER-PMG-01',evidence:E.PMG,authority:'MGMT',gate:S.MGMT,summary:'Turn scattered advance information into a versioned operating picture with owners, dependencies, due points, and unresolved questions.',objectives:['Build a generic advance information structure.','Separate requirement, owner, status, and approval.','Keep unresolved dependencies visible through handoff.'],topics:['show and version identity','contact and decision owners','venue and site constraints','department requirements','labor and schedule dependencies','transport dock access and credentials','open questions and due points','responsibility matrix and handoff'],details:['Every advance packet needs clear show/event identity, date/location, revision/version, and source so old information is recognizable.','List operational contacts by role/decision ownership, not just a directory of names; the correct owner depends on production structure.','Capture venue/site constraints as authoritative inputs with source/owner rather than turning assumptions into requirements.','Department requirements should distinguish requested, confirmed, substituted, unresolved, and owner-approved states.','Labor timing depends on prerequisites and handoffs; schedule the dependency, not just a list of call times.','Transport, parking, dock, credentials, access windows, storage, and delivery paths can become critical dependencies long before show day.','An unanswered question needs an owner and due/checkpoint; hiding it in meeting notes is not control.','Responsibility matrices clarify who proposes, approves, executes, receives, or must be consulted; titles vary by production.'],scenario:{title:'The unanswered dock question',setup:'The equipment truck schedule is set, but no one has confirmed dock height/access window and the venue contact is copied on a long email thread.',decision:'The question is not resolved merely because someone was copied.',response:'Create an explicit open item with the responsible venue/production owner, required answer, due point, and downstream schedule impact.'},artifacts:[{label:'Production advance checklist',href:'../resources/templates/production-advance-checklist.html'},{label:'Responsibility matrix practice',href:'../resources/templates/production-advance-checklist.html#responsibility'}],quiz:[q('What turns an advance question into a controlled open item?',['Question, owner, due/checkpoint, status, and impact','Copying many people on an email','Assuming silence means approval'],0,'Control requires explicit ownership and state.'),q('Why version an advance packet?',['So current and superseded information can be distinguished','To make every production use identical paperwork','To avoid recording changes'],0,'Version identity protects against silent stale information.'),q('What does a responsibility matrix establish?',['Who owns/participates in defined decisions or work states','Legal authority beyond the actual organization','That job titles are universal'],0,'It clarifies operating ownership without creating authority.')] }),
+C({id:'C-PMG-LABOR-SCHEDULE',slug:'production-labor-calls-schedule-dependencies',title:'Labor Calls, Schedule Dependencies & Change Communication',domain:'D-PMG',tier:'T6',mdq:'FRONTIER-PMG-02',evidence:E.PMG,authority:'MGMT',gate:S.MGMT,summary:'Plan labor around prerequisites and handoffs, then communicate changes so departments are not operating from different schedules.',objectives:['Model schedule dependencies rather than isolated call times.','Separate staffing assumptions from worker authorization.','Use version/change acknowledgment for material schedule changes.'],topics:['milestones and phases','predecessor dependency','department handoff','labor quantity and role assumption','call time versus task duration','contingency and recovery','schedule change log','communication and acknowledgement'],details:['Model major phases—access, load-in, build, test, rehearsal/show, strike, load-out, closeout—at the granularity needed for the production.','A task cannot start merely because its clock time arrives if a required predecessor state is incomplete.','Department handoffs should define what state is being transferred and who accepts/owns the next decision.','Labor plans may specify quantity/role/skill assumptions; they do not themselves certify or authorize an individual.','Call time is an attendance/start requirement, not proof of task duration or compensable-time treatment under every law/arrangement.','Contingency protects critical dependencies; it should be explicit rather than pretending the plan can never change.','Material schedule changes need revision/time/owner/impact so old copies can be recognized.','Communicate a change to the people/processes affected and obtain whatever acknowledgement the organization requires.'],scenario:{title:'Rigging prerequisite slips',setup:'A prerequisite controlled task is incomplete when another department’s planned build time begins.',decision:'Do not recover schedule by silently removing the prerequisite.',response:'Escalate to the responsible managers/leads, update the dependency and affected labor/schedule, and communicate the controlled change.'},artifacts:[{label:'Labor call plan',href:'../resources/templates/labor-call-plan.html'}],quiz:[q('A scheduled start time arrives but a required predecessor is incomplete. What controls?',['The unresolved dependency must be addressed by the responsible plan/owners','The clock time automatically overrides the dependency','Any worker can waive the prerequisite'],0,'Schedules are dependency systems, not permission generators.'),q('Does a labor plan certify a named worker for specialist work?',['No','Yes','Only if the spreadsheet has their name'],0,'Staffing and authorization are separate states.'),q('What should accompany a material schedule change?',['Revision/owner/impact plus communication to affected parties','Only a new time with no history','Deletion of the old record'],0,'Change control keeps teams from using incompatible plans.')] }),
+C({id:'C-PMG-BUDGET-CHANGE',slug:'production-budget-quotes-change-control',title:'Budget Tracking, Quotes & Change Control',domain:'D-PMG',tier:'T6',mdq:'FRONTIER-PMG-03',evidence:E.PMG,authority:'MGMT',gate:S.MGMT,summary:'Keep estimate, approved scope, commitment, change, and actual cost distinct so production decisions remain traceable.',objectives:['Distinguish budget states and assumptions.','Tie changes to owner/approval and operational impact.','Avoid silent overwrites that destroy the audit trail.'],topics:['estimate versus approved budget','quote and scope basis','quantity rate and unit assumptions','commitment and purchase state','change request','approval owner','actual cost and variance','audit trail and unresolved financial item'],details:['An estimate forecasts; an approved budget authorizes within the organization’s process; do not treat them as the same state.','A quote is meaningful only with its scope, inclusions/exclusions, dates, quantity/unit assumptions, taxes/fees as applicable, and validity/revision context.','Rates and units must be explicit enough to understand the math—hour/day/each/lot/truck/night or other defined basis.','A planned cost is different from a committed order and from an invoiced/paid actual; track the state the organization needs.','Scope, schedule, labor, equipment, venue, or vendor changes can create cost changes and need visible change records.','Approval comes from the actual budget/contract authority; PM education does not create signing or purchasing authority.','Variance is the difference between controlled expectation and actual/forecast state; explain cause rather than hiding it by editing the baseline.','Keep unresolved credits, disputes, missing invoices, change approvals, and estimated final costs visible at closeout.'],scenario:{title:'Verbal equipment add',setup:'A department requests additional equipment onsite and a vendor can supply it, but budget approval is unclear.',decision:'Operational urgency does not create financial authority.',response:'Record the requested scope/cost/impact and route approval through the responsible production/client process before treating it as approved.'},artifacts:[{label:'Change log',href:'../resources/templates/change-log.html'}],quiz:[q('What is the key difference between an estimate and an approved budget?',['They are different decision states; approval comes from the organization’s process','Nothing; they are interchangeable','An estimate always creates purchase authority'],0,'Budget control depends on explicit state.'),q('What should a change record connect?',['Changed scope/assumption, impact, owner/approval, and current state','Only the new total','Only who requested it'],0,'A useful change record explains why the baseline moved.'),q('Does completing this course grant purchase/signing authority?',['No','Yes','Only under a certain dollar amount'],0,'Authority comes from the real organization, not course completion.')] }),
+C({id:'C-PMG-CLOSEOUT',slug:'production-issue-log-closeout-postmortem',title:'Show-Day Issue Log, Closeout & Postmortem',domain:'D-PMG',tier:'T6',mdq:'FRONTIER-PMG-04',evidence:E.PMG,authority:'MGMT',gate:S.MGMT,summary:'Capture changed conditions and decisions during the show, then separate operational closeout, unresolved items, financial reconciliation, and improvement work.',objectives:['Use an issue log as a current-state control, not a blame document.','Separate incident/safety processes from general operational notes.','Turn postmortem observations into owned corrective actions.'],topics:['timestamped issue record','affected area and impact','decision owner','current status and next checkpoint','safety incident process boundary','equipment vendor labor open items','financial and document closeout','postmortem and corrective action'],details:['Timestamp issues so the production can reconstruct what was known and when; avoid backfilling certainty that did not exist.','State what changed and what area/dependency is affected without speculative blame.','Record who owns the decision or next action; a log is not useful if responsibility is anonymous.','Use status and next checkpoint to distinguish monitoring from resolved and from blocked/unresolved.','Safety/medical/security incidents may require separate employer/venue/legal reporting; the general issue log should reference, not replace, those controlled processes.','Track unresolved equipment, vendor, labor, access, credential, transport, documentation, and follow-up items to an owner.','Close financial/document states separately from operational success; missing invoices or approvals can remain open after the truck leaves.','Postmortems should distinguish facts, contributing conditions, lessons, and assigned corrective actions rather than becoming a complaint list.'],scenario:{title:'Problem fixed, lesson lost',setup:'A recurring access conflict was solved informally during show day and everyone wants to move on.',decision:'Operational recovery does not mean the learning loop is closed.',response:'Record the issue, resolution, contributing planning gap, and an owned corrective action for the next advance/release.'},artifacts:[{label:'Show closeout & postmortem',href:'../resources/templates/show-closeout-postmortem.html'}],quiz:[q('What is the purpose of an issue log?',['Maintain reconstructable current state and ownership','Assign blame before facts are known','Replace every formal incident report'],0,'The log supports control and handoff.'),q('Should a PM issue log replace required safety/medical reporting?',['No','Yes','Only after show close'],0,'Controlled incident processes remain separate.'),q('What turns a postmortem observation into improvement work?',['A specific corrective action with an owner/checkpoint','A complaint with no owner','Deleting the old plan'],0,'Learning requires owned follow-through.')] }),
+C({id:'C-ACC-PUBLIC-ROUTES',slug:'accessible-routes-public-interface-awareness',title:'Accessible Routes & Public-Interface Awareness',domain:'D-ACC',tier:'T3',mdq:'FRONTIER-ACC-01',evidence:E.X,authority:'A1',gate:'Accessibility awareness only. Actual ADA/code applicability, route dimensions, approvals, accommodations, and event/venue compliance decisions remain with the responsible covered entity, venue, designer, AHJ, accessibility professional, or other authority.',summary:'Recognize how production equipment, cables, platforms, cases, and temporary changes can interfere with public/access routes and who owns correction.',objectives:['Recognize production-created barriers before they become public access problems.','Separate field observation from legal compliance approval.','Use venue/event accessibility ownership and change control.'],topics:['public versus work-only routes','accessible route awareness','doors aisles and egress interface','cable crossings and temporary surfaces','ramps platforms and level changes','cases barricades and queue changes','temporary closure and alternate route ownership','reporting and accessibility authority'],details:['Know whether a route is public/access-related, employee-only, equipment-only, or otherwise controlled; requirements differ by context.','Accessibility is an operating requirement, not merely a special request after setup; production changes can affect an otherwise planned route.','Do not block doors, aisles, exits, or access paths outside the approved plan; egress and accessibility can overlap but are not identical legal concepts.','Cable crossings and temporary surfaces can create mobility barriers; use the site/design-approved solution rather than declaring a product “ADA compliant” from appearance.','Temporary ramps/platforms and level changes can carry accessibility, structural, egress, and manufacturer requirements beyond general stagehand authority.','Cases, barricades, merch/queue layouts, camera positions, and cable paths can change usable width/turning/access even if technical equipment works perfectly.','If a route must change, the responsible venue/event/accessibility process decides the alternate route and communication—not an individual learner.','Report the exact location, obstruction/change, affected route, and current owner; avoid diagnosing legal compliance from a generic course.'],scenario:{title:'Cases in the planned route',setup:'Empty cases are parked in a corridor that appears to be part of the public accessible route before doors.',decision:'Do not assume “temporary” makes the obstruction acceptable.',response:'Move only if authorized and the destination is controlled; otherwise report it to the responsible venue/production owner and preserve the route.'},quiz:[q('Can a stagehand declare a temporary route ADA-compliant from product appearance?',['No','Yes, if a cable ramp is labeled accessible','Yes, if the route looks wide enough'],0,'Compliance depends on applicability and the complete site condition.'),q('Why are cases/barricades relevant to accessibility?',['They can change usable routes even when technical systems are correct','They are never part of public-interface planning','Only permanent walls matter'],0,'Temporary production layouts can create barriers.'),q('Who owns an alternate public/access route decision?',['The responsible venue/event/accessibility process','Any worker who finds a shortcut','The online course'],0,'Route changes can carry legal/site/emergency implications.')] }),
+C({id:'C-ACC-COMMUNICATION',slug:'communication-access-captioning-assistive-listening-awareness',title:'Captioning, Assistive Listening & Communication Access Awareness',domain:'D-ACC',tier:'T3',mdq:'FRONTIER-ACC-02',evidence:E.X,authority:'A0',gate:'Interface awareness only. Accommodation decisions, legal sufficiency, content accuracy, interpreter/captioning qualifications, assistive-listening deployment, and venue/system configuration remain with the responsible organization and specialists.',summary:'Know that access can depend on communication systems as well as physical routes, and recognize where production departments interface with captions, displays, listening systems, and requests.',objectives:['Recognize common communication-access interfaces.','Keep accessibility content/operation ownership explicit.','Report failures or changed conditions to the responsible organization.'],topics:['effective communication concept','captioning display interface','assistive-listening interface','interpreter and sightline interface','program audio and feed ownership','content accuracy and timing','request and accommodation routing','failure reporting and backup ownership'],details:['Access can require effective communication, and the responsible organization determines what auxiliary aids/services are appropriate in the actual context.','Captioning may interface with playback, graphics, projection, LED, broadcast, or dedicated displays; production support should know the owner and signal/content path.','Assistive-listening systems can intersect audio feeds, venue infrastructure, RF, receivers, and audience support; operation/configuration is not implied by general awareness.','Interpreter positions and sightlines can affect staging, lighting, camera, and audience layouts; changes should be coordinated rather than improvised.','Program audio or feeds used for access services need clear source/owner and should not be rerouted casually.','Caption/content accuracy, timing, speaker identification, and service-provider responsibilities require controlled workflow beyond generic technical support.','Requests should be routed through the organization’s accessibility/customer-service/production process rather than debated by a general worker.','If a communication-access service fails or changes, identify the affected service, symptom, time/location, and responsible owner/backup process.'],scenario:{title:'Caption display loses signal',setup:'A display used for event captions goes blank while the main presentation screens still work.',decision:'Do not assume the event is fine because the primary screens are operating.',response:'Treat the caption path as its own affected service and escalate through the responsible accessibility/video/content owner and backup plan.'},quiz:[q('Can the main presentation working prove captioning access is working?',['No','Yes','Only at corporate events'],0,'Access services can have independent paths and failure states.'),q('Who decides what accommodation/service is legally appropriate?',['The responsible organization/process under applicable law and facts','Any stagehand','The course quiz'],0,'General awareness does not create accommodation authority.'),q('Why should interpreter sightlines appear in production planning?',['Staging/lighting/camera/layout changes can affect usable communication access','They never interact with production','Only the interpreter decides all venue changes'],0,'Communication access crosses multiple departments.')] }),
+C({id:'C-SHC-CYBER',slug:'production-network-cyber-hygiene',title:'Production Network Cyber Hygiene',domain:'D-SHC',tier:'T4',mdq:'FRONTIER-SHC-01',evidence:E.X,authority:'A0',gate:'Defensive awareness only. No penetration testing, credential bypass, exploit use, unauthorized discovery, covert access, or unapproved configuration is taught or authorized.',summary:'Protect show files, accounts, production computers, and networked systems by reducing preventable changes and escalating suspicious activity to the responsible system/IT owner.',objectives:['Apply basic account and update hygiene to production contexts.','Recognize unauthorized/unexpected digital inputs and changes.','Preserve show continuity through approved backups and change ownership.'],topics:['account and credential ownership','MFA and password-manager awareness','phishing and suspicious messages','approved software and updates','removable media and downloaded assets','show-file backups and version integrity','unauthorized devices and network changes','incident reporting and recovery ownership'],details:['Use accounts assigned/approved for the role; shared credentials and undocumented access weaken accountability and recovery.','Where the organization/system supports it, MFA and password managers reduce reliance on weak/reused passwords; follow the approved platform policy.','Unexpected credential prompts, urgent login links, attachments, or requests for secrets should be verified through a trusted channel and reported as appropriate.','Software/firmware updates can fix security issues but can also change show behavior; use approved maintenance/change windows and responsible ownership.','Unknown USB media, downloaded assets, plugins, installers, or laptops can introduce risk; use approved media-ingest/scan/workflow rather than convenience.','Backups need known version/identity and a recovery owner; “we copied a file somewhere” is not a complete show-file recovery plan.','An unplanned device, switch change, wireless access point, remote-access tool, or routing/config change should not be normalized because the show still appears to work.','If suspicious activity occurs, preserve operational safety, limit unapproved changes, record what was observed, and route response to the system/IT/security owner.'],scenario:{title:'Urgent login message',setup:'A message claims to be from a vendor and says the show computer account will be disabled unless a technician signs in through a provided link.',decision:'Do not enter credentials from the message just because the request is urgent.',response:'Verify through the organization/vendor’s trusted channel and report the suspicious request to the responsible system/IT owner.'},quiz:[q('What is the safest response to an unexpected urgent credential link?',['Verify through a trusted channel instead of using the link','Enter credentials quickly before the show','Forward the password to the crew chat'],0,'Urgency is not identity proof.'),q('Should firmware/software always be updated immediately during a live show?',['No; use approved change/maintenance ownership and assess show impact','Yes, every update is automatically safe','Only if a pop-up appears twice'],0,'Security and operational change control must coexist.'),q('Does this course authorize network penetration testing?',['No','Yes','Only on show networks'],0,'The scope is defensive hygiene and escalation.')] }),
+C({id:'C-OUT-HEAT',slug:'heat-changing-conditions-awareness',title:'Heat & Changing-Conditions Awareness',domain:'D-OUT',tier:'T3',mdq:'FRONTIER-OUT-01',evidence:E.X,authority:'A1',gate:'Awareness only. Employer heat plans, work/rest controls, acclimatization programs, medical response, emergency procedures, and any applicable legal thresholds remain with the employer/site/qualified process.',summary:'Treat heat and changing outdoor/indoor conditions as production-state changes that can affect people, pace, routes, equipment, and work decisions.',objectives:['Recognize that heat risk changes with conditions and work.','Know the employer/site plan owns exact controls and emergency response.','Report symptoms or changed conditions early rather than normalizing them.'],topics:['heat and workload interaction','acclimatization awareness','water rest shade or cooling access','PPE and clothing interaction','indoor and outdoor heat sources','symptom and condition reporting','work modification or hold ownership','emergency and medical boundary'],details:['Heat stress depends on environment, workload, clothing/PPE, duration, individual factors, and controls; a single air-temperature number is not a universal safe/unsafe rule.','Workers new to heat or returning after time away may not be acclimatized; the employer’s program controls actual acclimatization practices.','Access to water, rest, shade/cooling, and other controls follows the employer/site heat plan and applicable requirements.','Required PPE/clothing can affect heat burden; do not remove required protection without the responsible safety/process decision.','Heat exposure can occur outdoors and indoors around roofs, enclosed spaces, warehouses, kitchens, machinery, or other heat sources.','Report concerning symptoms in yourself/coworkers and changed conditions according to the site plan; do not diagnose or minimize from a generic course.','Supervisors/employer processes own work modification, recovery, rotation, or hold decisions under the applicable plan; workers should raise the condition promptly.','Medical emergencies require the actual emergency response process; this course does not provide individualized medical treatment instructions.'],scenario:{title:'Conditions changed after lunch',setup:'The afternoon load-out is hotter than the morning load-in and several workers are returning after a long indoor break.',decision:'Do not assume the morning plan automatically remains sufficient.',response:'Recognize the changed condition and follow/report through the employer’s heat/work-rest/safety process before pushing pace as though nothing changed.'},quiz:[q('Is one temperature a universal safe/unsafe threshold for all production work?',['No','Yes','Only for outdoor shows'],0,'Heat risk depends on multiple conditions and applicable programs.'),q('Who controls exact work/rest and acclimatization procedures?',['The employer/site program under applicable requirements','The online course','Any worker who feels experienced'],0,'Exact controls are workplace-specific.'),q('What is the useful learner behavior when conditions or symptoms change?',['Report and use the employer/site heat and emergency process','Normalize it because production is behind','Diagnose the person from memory'],0,'Early reporting supports controlled decisions.')] }),
+C({id:'C-CAR-FIRST-FIVE',slug:'first-five-calls-path',title:'First Five Calls: A Beginner Work Path',domain:'D-CAR',tier:'T1',mdq:'FRONTIER-CAR-06',evidence:'research/PROJECT-E01_LEARNER_CUSTOMER_BUSINESS_REQUIREMENTS_BASELINE_2026-08-31.md',authority:'A1',gate:'Beginner orientation only. Every real call still follows the employer, venue, department lead, applicable training, equipment instructions, and site-specific authorization.',summary:'Reduce the 120-route curriculum to a practical first-call sequence: arrive ready, receive assignments, work within boundaries, report back, then choose a department path.',objectives:['Know what matters before the first call.','Use a repeatable receive-do-report-back loop.','Recognize when to ask rather than imitate unfamiliar work.','Choose the next curriculum branch after basic call rhythm becomes familiar.'],topics:['before call one','arrival and check-in','assignment confirmation','ordinary movement and work-area habits','department ownership','standby break reassignment and release','timekeeping and report-back','choose a department pathway'],details:['Before the first call, know the location/access instructions, call time, required clothing/PPE, contact/check-in method, and what you still need to ask.','Arrive through the designated check-in and identify your lead/department rather than joining whichever crew looks busy.','Repeat back destination/quantity/sequence or other important details when the assignment is unclear enough to cause a mistake.','Start with ordinary assigned work—cases, carts, released cable, staging/organization—within training and keep routes/work areas controlled.','Equipment can look movable while belonging to another department or performer; ownership and release matter before touch/move/change.','Standby, break, reassignment, and release are different states; do not leave or start unrelated work based on assumption.','Report completion/problems and follow the employer’s actual timekeeping/sign-out process; keep personal notes if useful for later reconciliation.','After several calls, choose a department based on observed work and interest, then use the curriculum map for support → systems → leadership rather than trying to learn everything at once.'],scenario:{title:'Two instructions at once',setup:'A worker is carrying out one lead’s assignment when another person tells them to stop and do a different task immediately.',decision:'Do not silently abandon the first assignment if ownership/priority is unclear.',response:'Identify the relevant leads/chain of command and confirm priority so both tasks have an owner and the first assignment is not lost.'},quiz:[q('You finish an assignment and do not see your lead. What is the best default?',['Report back through the established channel or remain in the defined standby process','Leave because the task is done','Start operating unfamiliar equipment to stay busy'],0,'Completion needs a handoff/reassignment/release state.'),q('Someone asks you to move unfamiliar department equipment. What is the strongest response?',['Confirm ownership, assignment, and any required training before acting','Imitate the last person who touched it','Move it quickly before asking'],0,'Unfamiliarity and ownership are reasons to clarify.'),q('What is the purpose of the First Five Calls path?',['Build basic call rhythm before branching into specialization','Qualify the learner for every department','Replace employer onboarding'],0,'The path is a beginner navigation layer, not universal authorization.')] })
+];
+courses.forEach(c=>D.courses.push(c));
+D.frontierCourses=courses;
+})();(function(){'use strict';const D=window.CBPEcosystem;if(!D)return;Object.assign(D.domains,{'D-SHF':'Stagehand Fundamentals','D-FLD':'Stagehand Field Skills'});const fixes={
+'C-LOG-PRODUCTION':['dock and freight access','case labels and manifests','truck and trailer handoff','lift-gate and ramp awareness','weather protection','loading-route ownership','driver and load-lead boundaries','closeout and unresolved freight'],
+'C-COM-WORK':['radio discipline','intercom awareness','confirmation and readback','cue and status vocabulary','hand signals where defined','hearing-protection interaction','emergency communication ownership','department vocabulary variation'],
+'C-OUT-FIELD':['weather and changing site conditions','public and vehicle interfaces','egress and accessible routes','temporary surfaces and crossings','water mud heat and cold','wind and lightning ownership','work holds and evacuation direction','condition reporting']};
+for(const c of D.courses){if(fixes[c.id]){c.authority='A1';c.topics=fixes[c.id];c.gate='Bounded assigned-support education. The responsible employer, lead, venue, department, or current site plan controls real work.';if(c.maturity==='authored_depth_v1'){c.details=c.topics.map((topic,i)=>`${topic} is an assigned-support checkpoint. Identify what state or record verifies it, the upstream/downstream dependency, and the responsible handoff. ${i%2===0?'Do not treat familiarity as proof of release or authority.':'If expected and observed state diverge, report the mismatch rather than silently normalizing it.'} The responsible employer, lead, venue, department, or current site plan controls real work.`);c.objectives=[`Explain how ${c.topics[0]} and ${c.topics[1]} fit inside the assigned-support workflow.`,`Trace the working relationship from ${c.topics[2]} through ${c.topics[4]} and identify the responsible handoff.`,`Recognize a mismatch involving ${c.topics[5]} and state what evidence or state should be preserved.`,`Distinguish course knowledge from real jobsite authorization: ${c.gate}`];c.scenario={title:'Changed-condition handoff',setup:`The expected state for ${c.topics[2]} no longer agrees with ${c.topics[5]}.`,decision:'Identify what is verified, what should hold, and who owns the unresolved decision.',response:`Preserve the last verified state and escalate through the assigned support chain. ${c.gate}`};}}if(c.authority==='MGMT')c.authority='A0';c.domainName=D.domains[c.domain]||c.domainName||c.domain;}for(const c of D.existing)c.domainName=D.domains[c.domain]||c.domainName||c.domain;})();
+(() => {
+  const eco = window.CBPEcosystem;
+  if (!eco || !Array.isArray(eco.courses)) return;
+
+  const VERSION = '2026-08-31.1';
+
+  const PLAYBOOKS = {
+    'D-SHF': {
+      name: 'stagehand field workflow',
+      purpose: 'turn an assignment into a safe, observable work cycle: confirm the task, identify the department owner, move through the assigned work, report exceptions, and hand the area or item back cleanly',
+      failure: 'an instruction, route, owner, condition, or release state becomes unclear',
+      handoff: 'pause the affected task, preserve the current state, and report what changed to the lead or department owner rather than improvising authority',
+      visual: ['annotated field-workflow map', 'assignment-to-report-back decision flow', 'jobsite handoff example']
+    },
+    'D-SHP': {
+      name: 'rental-shop and warehouse workflow',
+      purpose: 'keep equipment identity, condition, location, paperwork state, and responsibility synchronized from receiving through prep, staging, dispatch, return, and quarantine',
+      failure: 'the physical item no longer matches its label, paperwork, condition status, or assigned location',
+      handoff: 'stop the affected movement or prep step, segregate or mark the discrepancy under shop policy, and route it to the responsible shop lead; powered-equipment operation remains employer-trained and authorized work',
+      visual: ['shop lifecycle map', 'inventory/condition-state flow', 'staging and exception-handoff example']
+    },
+    'D-LTG': {
+      name: 'lighting system workflow',
+      purpose: 'connect fixture, power-boundary, data/control, documentation, show-file, and handoff concepts so a learner can reason about where information and responsibility move through a lighting system',
+      failure: 'fixture identity, addressing, control path, documentation, or authority state does not agree with the expected system map',
+      handoff: 'preserve the known-good state and escalate to the assigned lighting lead or qualified specialist; this course does not authorize energized electrical work, high access, rigging, laser operation, or live-network changes',
+      visual: ['lighting system one-line', 'control/data relationship diagram', 'show-file/document handoff example']
+    },
+    'D-AUD': {
+      name: 'audio system workflow',
+      purpose: 'follow a signal conceptually from source through patching, console processing/routing, distribution, loudspeaker or destination systems, networking, RF, and communications interfaces',
+      failure: 'the expected source, destination, clock/reference, routing, or ownership state cannot be confirmed',
+      handoff: 'hold the current state and report the symptom and last verified point to the assigned audio lead; system tuning, high-output deployment, RF coordination, live-network administration, rigging, and electrical work remain role-controlled',
+      visual: ['audio signal-flow map', 'console/routing relationship diagram', 'fault-isolation handoff example']
+    },
+    'D-VID': {
+      name: 'video, LED, projection, and broadcast workflow',
+      purpose: 'connect source, transport, processing, display, camera, playback, timing/reference, network, and documentation concepts without confusing systems literacy with specialist operation',
+      failure: 'format, timing, destination, processor state, content version, physical display state, or responsibility boundary is inconsistent',
+      handoff: 'preserve the current routing/content state and report the last verified stage to the assigned video lead; rigging, high access, temporary power, live switching, network administration, and model-specific service remain externally controlled',
+      visual: ['video signal-chain diagram', 'processor/display relationship map', 'content/routing handoff example']
+    },
+    'D-STG': {
+      name: 'staging and scenic workflow',
+      purpose: 'read component identity, drawings, labels, material state, deck/scenic interfaces, movement cues, and shop-to-show handoffs while separating support work from structural acceptance',
+      failure: 'a component, drawing revision, fit, movement path, finish, or acceptance state does not match the assigned plan',
+      handoff: 'stop the affected support task and escalate the discrepancy to the scenic/staging lead; structural engineering, powered machinery, rigging, powered-tool authorization, and final acceptance remain qualified-role work',
+      visual: ['scenic/staging component map', 'drawing-to-build workflow', 'movement/acceptance handoff example']
+    },
+    'D-RIG': {
+      name: 'rigging body-of-knowledge awareness',
+      purpose: 'recognize rigging roles, vocabulary, documentation, engineering interfaces, inspection/rescue responsibilities, and qualification boundaries without teaching physical rigging procedures',
+      failure: 'load information, documentation, inspection state, role qualification, or engineered instruction is missing, contradictory, or outside the learner’s assigned scope',
+      handoff: 'do not perform or direct the physical rigging task; route the issue to the qualified rigger, engineer, employer, venue, or other controlling authority',
+      visual: ['rigging role-and-document map', 'engineering/approval interface diagram', 'qualification/escalation decision flow']
+    },
+    'D-ELC': {
+      name: 'temporary production power body-of-knowledge awareness',
+      purpose: 'recognize electrical roles, conceptual distribution architecture, documentation, protective-system vocabulary, and acceptance boundaries without teaching energized work',
+      failure: 'system identity, documentation, protective state, qualification, or acceptance responsibility is unknown or contradictory',
+      handoff: 'do not energize, alter, test, repair, or accept the system; escalate to the qualified electrical authority designated by the employer, venue, or jurisdiction',
+      visual: ['conceptual power-system map', 'role/authority decision flow', 'documentation and acceptance interface']
+    },
+    'D-BKL': {
+      name: 'backline workflow',
+      purpose: 'coordinate instrument-system identity, stage placement, changeovers, labeling, artist-tech communication, and support handoffs without claiming instrument-tech authority',
+      failure: 'instrument identity, artist setting, connection ownership, changeover state, or requested adjustment is unclear',
+      handoff: 'preserve the artist/tech state and escalate to the assigned backline or artist technician; tuning, repair, internal service, and artist-specific configuration remain specialist work',
+      visual: ['backline stage-interface map', 'changeover state flow', 'artist-tech handoff example']
+    },
+    'D-PRP': {
+      name: 'props workflow',
+      purpose: 'track ordinary props through identification, preset, handoff, run position, return, reset, and storage while preserving special-prop boundaries',
+      failure: 'a prop is missing, damaged, misidentified, in the wrong preset state, or has a hazard/specialty characteristic outside ordinary run support',
+      handoff: 'stop the affected handoff and notify the props lead; hazardous, weapon-like, chemical, pyrotechnic, modified, or otherwise special props remain qualified/specialist-controlled',
+      visual: ['prop lifecycle map', 'preset/return tracking flow', 'exception-handoff example']
+    },
+    'D-WRD': {
+      name: 'wardrobe workflow',
+      purpose: 'track garments and accessories through identification, preset, change support, worn/dirty/repair states, return, and reset while protecting privacy and role boundaries',
+      failure: 'an item, change cue, condition state, fit concern, care instruction, or privacy boundary is uncertain',
+      handoff: 'preserve the item and performer’s privacy, then escalate to the wardrobe lead; alterations, chemical treatment, specialty cleaning, repair, and construction remain assigned wardrobe work',
+      visual: ['wardrobe lifecycle map', 'change/preset state flow', 'condition/privacy handoff example']
+    },
+    'D-CLD': {
+      name: 'crew leadership workflow',
+      purpose: 'translate production requirements into bounded assignments, communication loops, labor awareness, escalation paths, and closeout without confusing coordination with technical authorization',
+      failure: 'scope, staffing, priority, timing, authority, or a technical acceptance decision is unclear',
+      handoff: 'clarify ownership, document the issue, and escalate technical/legal/safety decisions to the proper authority instead of using supervisory position as substitute qualification',
+      visual: ['crew command map', 'assignment/escalation flow', 'labor handoff example']
+    },
+    'D-SMG': {
+      name: 'stage-management workflow',
+      purpose: 'coordinate show information, schedules, documentation, communication, cue context, changes, and performer/department interfaces through controlled information flow',
+      failure: 'a cue, schedule, version, contact path, readiness state, or authority boundary is ambiguous',
+      handoff: 'freeze the ambiguous information path, identify the controlling document/person, and resolve the discrepancy before representing the state as confirmed',
+      visual: ['stage-management information map', 'cue/change communication flow', 'show-document handoff example']
+    },
+    'D-PMG': {
+      name: 'production-management workflow',
+      purpose: 'coordinate advance information, responsibilities, labor, vendors, schedules, budgets, changes, venue interfaces, risk ownership, and closeout through documented management controls',
+      failure: 'scope, responsibility, cost, schedule, vendor commitment, approval, or technical acceptance state lacks a clear owner',
+      handoff: 'record the open issue, assign or identify the decision owner, and escalate legal, engineering, safety, financial-signing, or specialist technical decisions rather than assuming authority from the PM role',
+      visual: ['production responsibility map', 'advance/change-control flow', 'closeout decision example']
+    },
+    'D-VEN': {
+      name: 'venue operations workflow',
+      purpose: 'coordinate house rules, access, schedules, departments, public interfaces, emergency pathways, client needs, and visiting-production responsibilities',
+      failure: 'house policy, access, emergency responsibility, technical ownership, public-route condition, or visiting-production expectation conflicts or is unclear',
+      handoff: 'preserve venue/production boundaries and resolve the issue through the designated house and production contacts before proceeding',
+      visual: ['venue responsibility map', 'house/visitor interface flow', 'emergency/escalation contact example']
+    },
+    'D-SHC': {
+      name: 'show-control systems literacy',
+      purpose: 'understand how cues, triggers, time references, device states, show files, backups, change control, and operator responsibilities interact across integrated systems',
+      failure: 'trigger source, timing reference, destination state, show-file version, interlock, or change approval cannot be confirmed',
+      handoff: 'do not improvise live control or bypass safety logic; preserve the system state and escalate to the appointed show-control/system operator or engineer',
+      visual: ['show-control architecture map', 'trigger/timecode flow', 'change-control decision example']
+    },
+    'D-AUT': {
+      name: 'automation interface awareness',
+      purpose: 'recognize automation roles, show-file/programming context, machinery states, exclusion concepts, interlocks, communications, and change-control boundaries without teaching operation',
+      failure: 'machine state, programmed state, interlock, exclusion zone, cue ownership, or operator authority is uncertain',
+      handoff: 'do not operate, program, bypass, reset, or maintain machinery; maintain separation and notify the appointed automation operator/technician or controlling safety authority',
+      visual: ['automation role/state map', 'cue-to-machine conceptual flow', 'exclusion/interlock escalation example']
+    },
+    'D-CAM': {
+      name: 'camera and broadcast engineering workflow',
+      purpose: 'connect camera chain, image controls, tally/comms, reference/timing, transport, routing, monitoring, documentation, and engineering roles',
+      failure: 'camera identity, reference, return/tally, route, image-control ownership, or engineering state is unclear',
+      handoff: 'report the last verified signal/reference state to the appointed camera/broadcast engineer; live switching, shading, network administration, rigging, and specialist service remain role-controlled',
+      visual: ['camera-chain map', 'reference/tally/comms relationship', 'engineering handoff example']
+    },
+    'D-RF': {
+      name: 'RF coordination systems literacy',
+      purpose: 'recognize spectrum use, device classes, interference relationships, coordination workflow, documentation, monitoring, and regulatory/role boundaries',
+      failure: 'frequency assignment, device identity, coordination ownership, interference source, or regulatory applicability is uncertain',
+      handoff: 'do not claim coordinator or regulatory authority; preserve the observed data and escalate to the appointed RF coordinator or responsible licensee/authority',
+      visual: ['RF coordination workflow map', 'spectrum/device relationship diagram', 'interference escalation example']
+    },
+    'D-SFX': {
+      name: 'special systems interface awareness',
+      purpose: 'recognize when lasers, flame, pyrotechnics, cryogenic effects, atmospheric systems, performer-flying, or other specialty systems introduce distinct operators, controls, permits, exclusion zones, and authorities',
+      failure: 'a specialty-system state, operator, permit/approval, exclusion boundary, or interface responsibility is not explicit',
+      handoff: 'do not operate, modify, test, bypass, or direct the specialty system; clear the interface and notify the qualified operator or controlling authority',
+      visual: ['special-systems role map', 'permit/authority interface flow', 'exclusion/handoff example']
+    },
+    'D-CAR': {
+      name: 'career and employment workflow',
+      purpose: 'translate work history, skills, records, labor-market structures, hiring documents, union/credential pathways, and professional development into verifiable career decisions',
+      failure: 'a credential, worker-status claim, hiring requirement, compensation term, or experience record is assumed rather than verified',
+      handoff: 'verify the controlling employer, union, credential body, tax/legal authority, or written agreement before treating a career or classification assumption as fact',
+      visual: ['career-path map', 'credential/status distinction flow', 'records-to-opportunity example']
+    },
+    'D-SEC': {
+      name: 'sector-transfer overlay',
+      purpose: 'apply canonical production skills to a specific environment while identifying what changes in access, schedule, audience/public interface, venue rules, weather, scale, or technical workflow',
+      failure: 'a learner carries a habit from one sector into another without checking the local venue, employer, production, or jurisdictional rules',
+      handoff: 'identify the local controlling rule and responsible lead before transferring a procedure or assumption across sectors',
+      visual: ['sector-difference map', 'transfer-check decision flow', 'local-rule handoff example']
+    }
+  };
+
+  const TOPIC_RULES = [
+    [/chain of command|role|responsibil|authority/i, 'Map who owns the decision, who supplies information, who performs the work, and who accepts the result. Job title alone does not transfer technical, legal, or safety authority.'],
+    [/handoff|report|communication|readback|brief/i, 'Treat the handoff as a state transfer: identify the item/system, state what is complete, name any exception, and confirm who now owns the next decision.'],
+    [/inventory|label|asset|barcode|tracking|case/i, 'Identity control links the physical item to its record. A mismatch between label, contents, condition, or location is an exception to resolve rather than something to silently normalize.'],
+    [/receiv|return|dispatch|prep|pull|staging|warehouse|shop/i, 'Use a lifecycle view: incoming state, verification, preparation, staging, release, return, discrepancy handling, and final disposition each need a clear record and owner.'],
+    [/dock|truck|load|cargo|ramp/i, 'Separate pedestrian/support awareness from driver, powered-equipment, load-plan, and securement authority. Confirm the movement zone and assigned handoff before entering or changing the flow.'],
+    [/photometr|color|vision|source engine|fixture science|optical/i, 'Use the concept to explain what the fixture is intended to produce or communicate, while keeping measurement, calibration, internal service, and hazardous optical work inside the appropriate specialist role.'],
+    [/fixture|luminaire|lamp|led engine/i, 'Identify the fixture by function, major external interfaces, mode/context, and documentation—not by appearance alone. Model-specific internals and service procedures remain manufacturer/qualified-tech territory.'],
+    [/electrical|power|connector|voltage|current|ground|protect/i, 'Keep conceptual electrical literacy separate from energized work. The learner should recognize system purpose, labels, documentation, and stop/escalate conditions without making live connections or acceptance decisions.'],
+    [/dmx|rdm|sacn|art-net|rdmnet|node|universe|address/i, 'Think in layers: control data has a source, addressing/identity model, transport path, node/interface, and destination. A data-path problem should be described by the last verified layer before any live configuration change is attempted.'],
+    [/console|show file|cue|tracking|preset|group|playback|patch/i, 'Separate data structure from operator authority. Patch, groups/presets, cue relationships, tracking, playback, versions, and backups are conceptual objects whose live editing remains assigned to the show operator.'],
+    [/gdtf|mvr|plot|lightwright|previs|documentation|drawing|schedule|one-line/i, 'Documentation is a coordination interface, not decoration. Read title/revision/scope, identify what system state the document represents, and resolve conflicts before treating it as current.'],
+    [/signal flow|source|destination|patch/i, 'Trace identity and direction through defined stages. At each stage, distinguish the signal or item itself from the equipment, route, operator, and documentation that describe it.'],
+    [/microphone|mic|di|input|source/i, 'Classify the source and its intended destination before discussing handling or routing. Source identity, ownership, connector/interface, and level/context are separate questions.'],
+    [/bus|matrix|mix|console architecture|routing/i, 'Use buses, matrices, channels, outputs, and processing blocks as a logical routing model. Live changes belong to the appointed console/system operator.'],
+    [/acoustic|coverage|frequency|wavelength|phase|polarity|measurement|pa/i, 'Connect the physical concept to observed system behavior without turning the lesson into deployment or tuning instructions. Measurement and high-output system decisions remain qualified-role work.'],
+    [/clock|aes67|dante|network|multicast|qos|ptp|ip/i, 'Treat networked media as endpoints, flows, timing/reference, transport, and managed infrastructure. Describe the dependency and last known-good state; do not turn conceptual literacy into switch or live-network administration authority.'],
+    [/rf|spectrum|frequency|wireless|interference/i, 'Separate device operation from spectrum coordination. Record device identity, assigned information, observed interference, and responsible coordinator instead of inventing a frequency plan.'],
+    [/intercom|comms|partyline|matrix comm/i, 'Communication systems have stations/endpoints, channels or keys, routing, power/network dependencies, and user roles. Troubleshooting starts by stating which communication path is expected and what is actually observed.'],
+    [/led|panel|tile|cabinet|processor|receiver card/i, 'Separate physical display hardware from processing/configuration. Identify component role, orientation/identity, signal/power interfaces, and acceptance owner; rigging, power, and model-specific service remain external.'],
+    [/sdi|hdmi|format|resolution|frame|transport|reference|genlock/i, 'Describe the signal by source, format/timing, transport, processing stage, and destination. A compatible connector does not prove compatible signal state.'],
+    [/switch|scale|screen management|processor|routing/i, 'Processing changes the relationship between sources, canvases, outputs, and destinations. Preserve version/routing state and escalate live changes to the assigned operator.'],
+    [/projector|projection|throw|lens|screen|blend|geometry/i, 'Use projection concepts to reason about source, lens/throw relationship, surface, image geometry, environment, and processing. High access, rigging, power, laser-source service, and model-specific alignment remain controlled.'],
+    [/camera|tally|return|shader|ccu|broadcast/i, 'Map the camera chain from camera/head through control/reference, transport, routing, monitoring, and program interfaces. Operator, shading, switching, and engineering authority remain assigned roles.'],
+    [/media server|playback|codec|graphics|key.?fill|timeline|content/i, 'Treat media as versioned assets with timing, format, canvas/output, and destination requirements. Live cueing, show-control programming, and proprietary configuration remain operator-controlled.'],
+    [/av.?over.?ip|st 2110|network video/i, 'Model the system as senders/receivers or flows, timing, bandwidth, multicast/QoS concepts, redundancy, and managed infrastructure. Commissioning and live network changes remain specialist-controlled.'],
+    [/material|finish|fabricat|scenic/i, 'Relate material identity and finish state to the drawing/specification and assigned handling workflow. Fabrication, chemical use, powered tools, structural decisions, and repairs remain separately authorized.'],
+    [/platform|deck|riser|stage component/i, 'Recognize component identity, intended interface, documentation, visible condition, and acceptance owner. Support literacy does not grant structural assembly or acceptance authority.'],
+    [/movement|changeover|wagon|deck workflow/i, 'Plan conceptually around start state, path, destination, cue/permission, communication, and end-state confirmation. Powered movement and machinery require separate authorization.'],
+    [/automation|machinery|interlock|exclusion/i, 'Treat machine state, operator role, programmed state, safety controls, and exclusion areas as distinct. The learner does not operate, reset, bypass, program, or maintain machinery.'],
+    [/rigging|hoist|load|point|bridle|motor/i, 'Use vocabulary only to understand documents, roles, and questions. Do not convert terminology into physical rigging instruction, load calculation authority, or qualification.'],
+    [/engineering|calculation|structural|acceptance/i, 'Engineering/acceptance documents define decisions that belong to qualified authorities. The learner should know how to recognize the document and escalate conflicts, not reproduce the engineering judgment.'],
+    [/rescue|inspection/i, 'Recognize that inspection and rescue responsibilities require role-specific plans, competence, equipment, and employer/site controls. This lesson covers interfaces and escalation, not procedures.'],
+    [/instrument|backline|amp|keyboard|drum|guitar/i, 'Track instrument-system identity, stage location, artist/tech ownership, changeover state, and support interfaces. Settings, tuning, service, and repair remain with the appropriate artist/backline technician.'],
+    [/prop|preset|run table/i, 'Maintain identity and state from preset through use, return, reset, and storage. Special or hazardous characteristics change the authority path and require the responsible props/safety lead.'],
+    [/wardrobe|garment|costume|change|laundry/i, 'Track item identity, performer assignment, preset/change state, condition, privacy, and return state. Care labels and wardrobe authority control treatment or repair decisions.'],
+    [/labor|staff|crew call|headcount/i, 'Treat labor as a planned resource with role, call window, dependency, supervision, change, and actual-hours records. Staffing does not automatically grant technical qualification.'],
+    [/advance|vendor|budget|scope|schedule|milestone|closeout|change log/i, 'Use a management-control loop: establish the baseline, name the owner, record assumptions, capture changes, resolve approvals, and reconcile the final state.'],
+    [/cue|timecode|trigger|show control/i, 'Distinguish cue intent, trigger source, timing/reference, receiving device, operator state, and change approval. Integrated behavior is not safe to infer from one subsystem alone.'],
+    [/venue|house|client|public|guest/i, 'Identify which rule or responsibility belongs to the house, visiting production, client, contractor, or public-facing operation, then use the designated contact path when they conflict.'],
+    [/emergency|egress|accessib|route|ada/i, 'Preserve designated emergency and accessible pathways, report obstructions or conflicts, and defer compliance/acceptance decisions to the responsible venue/employer authority.'],
+    [/heat|weather|wind|lightning|outdoor/i, 'Treat changing conditions as a trigger to consult the employer/site plan and responsible authority. Do not invent universal thresholds or continue because a prior condition was acceptable.'],
+    [/credential|union|hiring|resume|career|record|1099|employee|contractor/i, 'Separate evidence of experience, employer classification, union status, credentials, licenses, and authorization. Each has a different issuer and legal or organizational meaning.'],
+    [/laser|pyro|flame|cryo|special effect|performer flying/i, 'Recognize the specialist system, operator, exclusion/permit interface, and stop/escalate boundary. No operation, testing, bypass, or setup procedure is taught here.']
+  ];
+
+  function playbook(course) {
+    return PLAYBOOKS[course.domain] || PLAYBOOKS['D-SHF'];
+  }
+
+  function topicGuidance(course, topic, index) {
+    const p = playbook(course);
+    const hit = TOPIC_RULES.find(([re]) => re.test(topic));
+    const core = hit ? hit[1] : `Place “${topic}” inside the ${p.name} system: identify what it represents, what information or physical state it depends on, and which role owns the next decision.`;
+    const relation = index % 3 === 0
+      ? `Connect it to the upstream input and downstream handoff instead of memorizing it as an isolated term.`
+      : index % 3 === 1
+        ? `Use documentation, labels, observed state, and the assigned chain of command to verify it before acting on an assumption.`
+        : `When the expected state and observed state diverge, describe the mismatch precisely and preserve the last known-good state.`;
+    return `${core} ${relation} Course boundary: ${p.handoff}`;
+  }
+
+  function objectives(course) {
+    const p = playbook(course);
+    const t = course.topics || [];
+    return [
+      `Explain how ${t[0] || 'the first course concept'} and ${t[1] || 'the next course concept'} fit inside the ${p.name} system.`,
+      `Trace a realistic workflow across ${t[2] || 'an upstream state'}, ${t[3] || 'a working state'}, and ${t[4] || 'a downstream handoff'} without skipping ownership or verification.`,
+      `Recognize a mismatch involving ${t[5] || 'system state'} and state what evidence should be preserved before escalation.`,
+      `Distinguish course knowledge from employer appointment, legal authority, technical qualification, certification, or final acceptance: ${course.boundary}`
+    ];
+  }
+
+  function scenario(course) {
+    const p = playbook(course);
+    const t = course.topics || [];
+    const a = t[Math.min(2, t.length - 1)] || 'the expected system state';
+    const b = t[Math.min(5, t.length - 1)] || 'the downstream handoff';
+    return `During a live production workflow, the expected state for ${a} does not agree with the information or condition you can verify at ${b}. ${p.failure}. Do not “fix” the ambiguity by assumption. Identify the last verified state, preserve the affected configuration/item/work area, and use the assigned handoff: ${p.handoff}`;
+  }
+
+  function claims(course) {
+    const p = playbook(course);
+    const t = course.topics || [];
+    return [
+      { id: 'system', classification: 'crew_blueprint_framework', text: `${course.title} is taught as a connected workflow rather than a vocabulary list: ${p.purpose}.` },
+      { id: 'verification', classification: 'crew_blueprint_framework', text: `For ${t[0] || 'the course system'}, the learner should distinguish documented/verified state from assumption and identify the role that owns the next decision.` },
+      { id: 'failure', classification: 'crew_blueprint_framework', text: `A mismatch involving ${t[3] || 'system state'} is a reason to preserve the last known-good state and escalate, not evidence that the learner should extend authority.` },
+      { id: 'boundary', classification: 'safety_boundary', text: course.boundary }
+    ];
+  }
+
+  function quiz(course) {
+    const p = playbook(course);
+    const t = course.topics || [];
+    const A = t[0] || 'the first system concept';
+    const B = t[2] || 'the workflow state';
+    const C = t[4] || 'the downstream interface';
+    const D = t[6] || 'the later workflow state';
+    return [
+      {
+        text: `When reasoning about ${A}, what is the strongest Crew Blueprint approach?`,
+        options: [
+          `Identify its role in the system, verify the relevant state/documentation, and name who owns the next decision.`,
+          `Treat the term as proof that you are authorized to perform every task associated with it.`,
+          `Ignore upstream and downstream dependencies if the equipment or paperwork looks familiar.`,
+          `Replace employer or venue procedure with the course description.`
+        ],
+        answer: 0,
+        rationale: `${A} is useful only when placed inside a verified workflow and authority model. ${p.handoff}`
+      },
+      {
+        text: `The expected state for ${B} conflicts with what you can verify. What should happen first?`,
+        options: [
+          `Preserve the last known-good state, describe the mismatch, and use the assigned escalation path.`,
+          `Change the system until the result looks plausible.`,
+          `Assume the newest-looking label, file, or setup is authoritative.`,
+          `Continue so the schedule is not delayed, then mention it afterward.`
+        ],
+        answer: 0,
+        rationale: `Mismatch handling is part of professional system literacy. The course teaches evidence, state preservation, and handoff—not improvisation.`
+      },
+      {
+        text: `Why does this course connect ${C} with ${D}?`,
+        options: [
+          `Because production systems are interdependent; a downstream state can depend on upstream identity, routing, documentation, timing, or acceptance.`,
+          `Because every worker has authority over both topics after reading the course.`,
+          `Because the two topics always use identical procedures across employers and products.`,
+          `Because documentation and role ownership are unnecessary once the relationship is understood.`
+        ],
+        answer: 0,
+        rationale: `The connection is a reasoning model. Exact procedures and authority still depend on the employer, venue, product, qualified role, or controlling rule.`
+      },
+      {
+        text: `Which statement best describes the authority boundary for ${course.title}?`,
+        options: [
+          course.boundary,
+          `Passing the quiz grants independent jobsite authority for the entire domain.`,
+          `Course completion replaces employer training, appointment, certification, licensure, or qualified-person requirements.`,
+          `A learner may bypass a responsible lead whenever they understand the underlying theory.`
+        ],
+        answer: 0,
+        rationale: `The stated boundary is part of the competency. Knowledge, observed practice, employer authorization, external certification, and legal authority are separate evidence states.`
+      },
+      {
+        text: `A lead asks for a status update involving ${A}. Which response demonstrates the intended professional standard?`,
+        options: [
+          `State what is verified, what remains uncertain, any exception you observed, and who currently owns the next action.`,
+          `Report the expected result as complete even if you did not verify it.`,
+          `Give a broad technical explanation instead of answering the actual state question.`,
+          `Take over the next specialist step so the handoff is unnecessary.`
+        ],
+        answer: 0,
+        rationale: `A useful handoff separates known state from assumption and preserves ownership. ${p.handoff}`
+      }
+    ];
+  }
+
+  function mediaPlan(course) {
+    const p = playbook(course);
+    const t = course.topics || [];
+    const slug = course.id.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+    return [
+      {
+        mediaId: `MP-${slug}-01`,
+        type: 'diagram',
+        title: `${course.title}: system map`,
+        purpose: `Show how ${t.slice(0, 4).join(', ')} relate without implying operational authority.`,
+        textFallback: `Text-only flow describing the relationship among ${t.slice(0, 4).join(', ')} and the responsible handoff points.`,
+        status: 'planned_owner_review',
+        safetyCritical: ['D-RIG','D-ELC','D-AUT','D-SFX'].includes(course.domain)
+      },
+      {
+        mediaId: `MP-${slug}-02`,
+        type: 'decision_flow',
+        title: `${course.title}: verify / stop / escalate`,
+        purpose: `Visualize the decision path when ${p.failure}.`,
+        textFallback: `Verify the expected state; if evidence agrees, continue only within assignment; if evidence conflicts or authority is unclear, preserve state and escalate through the assigned lead.`,
+        status: 'planned_owner_review',
+        safetyCritical: true
+      },
+      {
+        mediaId: `MP-${slug}-03`,
+        type: 'annotated_example',
+        title: `${course.title}: field or document interface`,
+        purpose: `Provide a rights-cleared example for ${t.slice(-3).join(', ')} with labels that distinguish observation from acceptance/authorization.`,
+        textFallback: `Annotated-example description identifying the observed elements, the information each carries, and which decisions remain with the responsible role.`,
+        status: 'planned_rights_and_practitioner_review',
+        safetyCritical: ['D-RIG','D-ELC','D-STG','D-AUT','D-SFX','D-SHP'].includes(course.domain)
+      }
+    ];
+  }
+
+  const enriched = [];
+  for (const course of eco.courses) {
+    if (course.maturity && course.maturity !== 'research_foundation') continue;
+    const details = (course.topics || []).map((topic, index) => topicGuidance(course, topic, index));
+    course.objectives = objectives(course);
+    course.details = details;
+    course.scenario = scenario(course);
+    course.quiz = quiz(course);
+    course.claims = claims(course);
+    course.mediaPlan = mediaPlan(course);
+    course.sourceData = 'ecosystem-depth-authoring.js';
+    course.maturity = 'authored_depth_v1';
+    course.authoringVersion = VERSION;
+    course.reviewState = 'research_backed_practitioner_and_learner_review_pending';
+    enriched.push(course.id);
+  }
+
+  window.CBPDepthAuthoring = Object.freeze({
+    version: VERSION,
+    enrichedCount: enriched.length,
+    enrichedCourseIds: Object.freeze(enriched.slice()),
+    plannedMediaBriefs: enriched.length * 3,
+    note: 'Depth-v1 authoring adds course-specific objectives, topic explanations, failure scenarios, assessments, claim checkpoints, and planned media briefs. It does not represent practitioner review, learner validation, employer authorization, certification, licensure, or completed rights-cleared media.'
+  });
+})();
+(function(){'use strict';
+const D=window.CBPEcosystem;if(!D)return;
+const extra={
+'D-LOG':{name:'production logistics',purpose:'connect dock access, freight identity, case flow, truck/trailer interfaces, route ownership, weather protection, and closeout without transferring driver, powered-equipment, load-plan, or securement authority',failure:'freight identity, route, destination, handling owner, vehicle interface, or load state is unclear',handoff:'hold the affected movement and report the exact item/location/state to the dock, logistics, load, or driver authority; powered equipment and vehicle/load acceptance remain separately authorized'},
+'D-COM':{name:'production communications',purpose:'connect message content, channel, confirmation/readback, cue/status vocabulary, hearing conditions, department language, and emergency ownership so information arrives accurately at the responsible person',failure:'a message, cue, status, recipient, channel, or acknowledgment is missing or ambiguous',handoff:'repeat or clarify the bounded message through the designated channel and escalate ownership rather than guessing intent or inventing a cue'},
+'D-OUT':{name:'outdoor and public-area operations',purpose:'connect changing weather/site conditions, public and vehicle interfaces, egress/access routes, temporary surfaces, exposure, work holds, evacuation direction, and condition reporting to the employer/site plan',failure:'weather, route, surface, public interface, or work-hold condition changes beyond what the current plan clearly addresses',handoff:'stop or hold the affected task as directed by the site/employer process and report the changed condition; the responsible site authority controls thresholds, evacuation, structural, electrical, and weather decisions'},
+'D-VOP':{name:'venue and event operations',purpose:'connect house responsibilities, visiting-production interfaces, public/client needs, access, local procedures, emergency pathways, and department handoffs',failure:'house rule, visiting-production responsibility, public route, emergency role, client request, or technical ownership conflicts or is unclear',handoff:'resolve the boundary through the designated venue and production contacts before representing the condition as approved or complete'},
+'D-LEAD':{name:'crew leadership',purpose:'connect assignment design, labor coordination, communication, verification, escalation, documentation, and closeout without confusing a lead title with specialist qualification or legal authority',failure:'scope, staffing, priority, technical ownership, acceptance, or escalation responsibility is ambiguous',handoff:'clarify the owner and document the issue; route technical, safety, legal, engineering, or specialist decisions to the qualified authority instead of extending supervisory scope'},
+'D-FX':{name:'special-systems interface awareness',purpose:'recognize specialty-system operators, permits/approvals, exclusion concepts, cue interfaces, communication, and authority boundaries for effects or other controlled systems',failure:'operator identity, permit/approval, exclusion boundary, system state, cue ownership, or interface responsibility is not explicit',handoff:'do not operate, test, handle, reset, bypass, align, fire, or modify the specialty system; clear the interface and notify the qualified operator or controlling authority'}
+};
+function questions(c){return(c.quiz||[]).map(q=>({question:q.question||q.text||'Course question',options:(q.options||[]).map(v=>String(v??'')),answer:Number.isInteger(q.answer)?q.answer:(Number.isInteger(q.answerIndex)?q.answerIndex:0),rationale:q.rationale||'Use the verified workflow and stated authority boundary.'}));}
+function scenario(c){if(c.scenario&&typeof c.scenario==='object')return c.scenario;const raw=String(c.scenario||'');return{title:'Changed-state handoff',setup:raw||`A real production condition involving ${c.topics?.[2]||'the system'} does not match the expected state.`,decision:'What can you verify, what remains uncertain, and who owns the next decision?',response:'Preserve the last known-good state, describe the mismatch precisely, and use the assigned escalation path without extending authority.'};}
+function addBoundaryQuestions(c){c.quiz=questions(c);const t=c.topics||[];const boundary=c.gate||c.boundary||'Knowledge does not create jobsite authorization.';const extras=[{question:`A real condition involving ${t[1]||'this course'} differs from the example. What controls the next step?`,options:['The current responsible employer/venue/department process and verified system state','The online lesson regardless of local conditions','Whichever procedure seems fastest'],answer:0,rationale:'The course supplies a transferable mental model; exact work remains controlled by the real system and responsible authority.'},{question:`What does completing ${c.title} establish?`,options:['Knowledge of the bounded material assessed here','Standing authorization for all related jobsite tasks','External certification, licensure, or specialist appointment'],answer:0,rationale:`Completion records learning only. ${boundary}`}];for(const q of extras)if(c.quiz.length<5)c.quiz.push(q);}
+function ensureClaimsMedia(c){const t=c.topics||[],boundary=c.gate||c.boundary||'Knowledge does not create jobsite authorization.',slug=c.id.toLowerCase().replace(/[^a-z0-9]+/g,'-');if(!Array.isArray(c.claims)||c.claims.length<4)c.claims=[{id:'system',classification:'crew_blueprint_framework',text:`${c.title} is taught as a connected production workflow, not an isolated vocabulary list.`},{id:'verification',classification:'crew_blueprint_framework',text:`The learner should separate verified state for ${t[0]||'the course system'} from assumption and identify who owns the next decision.`},{id:'failure',classification:'crew_blueprint_framework',text:`When ${t[3]||'a working state'} no longer matches the expected condition, preserve the last verified state and use the assigned escalation path rather than extending authority.`},{id:'boundary',classification:'safety_boundary',text:boundary}];if(!Array.isArray(c.mediaPlan)||c.mediaPlan.length<3)c.mediaPlan=[{mediaId:`MP-${slug}-01`,type:'diagram',title:`${c.title}: system map`,purpose:`Show the relationship among ${t.slice(0,4).join(', ')} without implying task authorization.`,textFallback:`Text-only relationship map for ${t.slice(0,4).join(', ')} with responsible handoff points.`,status:'planned_owner_review',safetyCritical:['D-RIG','D-ELC','D-AUT','D-FX'].includes(c.domain)},{mediaId:`MP-${slug}-02`,type:'decision_flow',title:`${c.title}: changed-state decision flow`,purpose:'Show verify / hold / escalate logic when expected and observed state diverge.',textFallback:'Verify the expected state. If evidence conflicts or authority is unclear, preserve state and escalate through the responsible role.',status:'planned_owner_review',safetyCritical:true},{mediaId:`MP-${slug}-03`,type:'annotated_example',title:`${c.title}: field or document interface`,purpose:`Provide a rights-cleared example involving ${t.slice(-3).join(', ')} with observation and authority labels.`,textFallback:'Annotated-example description identifying observable elements, the information each carries, and which decisions remain with the responsible role.',status:'planned_rights_and_practitioner_review',safetyCritical:['D-RIG','D-ELC','D-STG','D-AUT','D-FX','D-SHP','D-LOG'].includes(c.domain)}];}
+for(const c of D.courses){if(c.maturity==='authored_frontier'){addBoundaryQuestions(c);ensureClaimsMedia(c);c.authoringVersion=c.authoringVersion||'2026-08-31.frontier-matrix-v1';continue;}if(c.maturity!=='authored_depth_v1')continue;c.boundary=c.boundary||c.gate||'Knowledge does not create jobsite authorization.';c.quiz=questions(c);c.scenario=scenario(c);if(c.quiz[3]?.options?.length)c.quiz[3].options[0]=c.boundary;if(Array.isArray(c.claims)){const b=c.claims.find(x=>x.id==='boundary');if(b)b.text=c.boundary;}if(Array.isArray(c.objectives)&&c.objectives.length)c.objectives[c.objectives.length-1]=`State the course boundary and distinguish knowledge from appointment, qualification, certification, licensure, or employer authorization: ${c.boundary}`;const p=extra[c.domain];if(p){const t=c.topics||[];c.objectives=[`Explain how ${t[0]||'the first concept'} and ${t[1]||'the next concept'} fit inside ${p.name}.`,`Trace the working relationship from ${t[2]||'an upstream state'} through ${t[4]||'a downstream state'} and identify the responsible handoff.`,`Recognize when ${p.failure} and describe the evidence/state that should be preserved.`,`State the course boundary and distinguish knowledge from jobsite appointment or controlled-work authority: ${c.boundary}`];c.details=t.map((topic,i)=>`${topic} is a ${p.name} checkpoint. Identify its purpose, the state or record that verifies it, the upstream/downstream dependency, and the role that owns the next decision. ${i%2===0?'Do not treat familiarity as proof of release or authority.':'If expected and observed state diverge, report the mismatch rather than silently normalizing it.'} ${p.handoff}`);c.scenario={title:'Changed-condition decision',setup:`During ${p.name}, the expected state for ${t[2]||'the assigned workflow'} no longer agrees with ${t[5]||'the downstream handoff'}.`,decision:'Decide what can be verified, what must stop or hold, and who owns the unresolved decision.',response:`Identify the affected item/system/record and last verified state. ${p.handoff}`};if(Array.isArray(c.claims)&&c.claims.length)c.claims[0].text=`${c.title} is taught as a connected workflow: ${p.purpose}.`;}ensureClaimsMedia(c);}
+window.CBPDepthRuntimeNormalize={version:'2026-08-31.4',normalized:D.courses.filter(c=>c.maturity==='authored_depth_v1').length,frontierQuizExpanded:D.courses.filter(c=>c.maturity==='authored_frontier'&&c.quiz?.length>=5).length,authoredClaimsMedia:D.courses.filter(c=>['authored_frontier','authored_depth_v1'].includes(c.maturity)&&c.claims?.length>=4&&c.mediaPlan?.length>=3).length};
+})();
+
+const ECOSYSTEM_COURSES = window.CBPEcosystem.courses;
+const ECOSYSTEM_DOMAINS = window.CBPEcosystem.domains;
+
 
 const COURSE_INDEX = {};
 COURSE_INDEX["stagehand-fundamentals"] = { label: "Stagehand Fundamentals", group: "Foundation" };
@@ -652,6 +1383,28 @@ function curriculumMapView() {
       return `<a class="status-chip status-live" onclick="location.hash='#/course/${t.file.replace('.html','')}'">${t.stage}</a>`;
     }).join("");
     return `<div class="tier-block"><span class="tier-label">${d.name}</span><div class="track-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">${stages}</div></div>`;
+  }).join("");
+
+  const mapEntries = [];
+  mapEntries.push({ title: "Stagehand Fundamentals", domainName: "Foundation", tier: "Foundation", maturity: "built_live", href: "#/course/stagehand-fundamentals" });
+  FIELD_SKILLS.forEach(f => mapEntries.push({ title: f.name, domainName: "Field Skills", tier: "Field Skill", maturity: "built_live", href: "#/course/" + f.file.replace(".html", "") }));
+  Object.values(DEPARTMENTS).forEach(d => d.tracks.forEach(t => { if (t.status === "live") mapEntries.push({ title: d.name + " \u2014 " + t.title, domainName: d.name, tier: t.stage, maturity: "built_live", href: "#/course/" + t.file.replace(".html", "") }); }));
+  LEAD_TIER.forEach(f => mapEntries.push({ title: f.name, domainName: "Lead Tier", tier: "Lead", maturity: "built_live", href: "#/course/" + f.file.replace(".html", "") }));
+  SUPERVISOR_TIER.forEach(f => mapEntries.push({ title: f.name, domainName: "Supervisor Tier", tier: "Supervisor", maturity: "built_live", href: "#/course/" + f.file.replace(".html", "") }));
+  INFRASTRUCTURE_TIER.forEach(f => mapEntries.push({ title: f.name, domainName: "Infrastructure / Career Branch", tier: "Infrastructure", maturity: "built_live", href: "#/course/" + f.file.replace(".html", "") }));
+  ECOSYSTEM_COURSES.forEach(c => mapEntries.push({ title: c.title, domainName: c.domainName, tier: c.tier, maturity: c.maturity || "research_foundation", href: "#/ecosystem/" + c.slug }));
+
+  const mapMaturityLabel = { built_live: "Built &amp; live", authored_depth_v1: "Depth v1 &mdash; needs review", authored_frontier: "Frontier &mdash; needs review", research_foundation: "Research foundation &mdash; needs review" };
+  const mapMaturityClass = { built_live: "map-badge-built", authored_depth_v1: "map-badge-depth", authored_frontier: "map-badge-frontier", research_foundation: "map-badge-frontier" };
+
+  const mapDomainNames = [...new Set(mapEntries.map(e => e.domainName))].sort();
+  const mapDomainOptions = mapDomainNames.map(n => `<option value="${n.replace(/"/g, "&quot;")}">${n}</option>`).join("");
+
+  const mapCardsHtml = mapEntries.map(e => {
+    const badge = mapMaturityClass[e.maturity] || "map-badge-frontier";
+    const label = mapMaturityLabel[e.maturity] || "Needs review";
+    const searchText = (e.title + " " + e.domainName + " " + e.tier).toLowerCase().replace(/"/g, "&quot;");
+    return `<a class="map-card" onclick="location.hash='${e.href}'" data-domain="${e.domainName.replace(/"/g, "&quot;")}" data-maturity="${e.maturity}" data-search="${searchText}"><span class="map-card-meta">${e.tier} &middot; ${e.domainName}</span><strong>${e.title}</strong><span class="map-badge ${badge}">${label}</span></a>`;
   }).join("");
 
   return `
@@ -686,6 +1439,18 @@ function curriculumMapView() {
 
     <div class="section-head" style="margin-top:34px"><h2>Lead, Supervisor &amp; Infrastructure</h2></div>
     <p>${LEAD_TIER.length} lead-tier courses, ${SUPERVISOR_TIER.length} supervisor courses, and ${INFRASTRUCTURE_TIER.length} cross-department infrastructure and career-branch pages. Browse them all in the <a onclick="location.hash='#/courses'">full catalog</a>.</p>
+  </section>
+
+  <section class="wrap section" style="padding-top:0" id="every-mapped-course">
+    <div class="section-head"><h2>Every mapped course</h2><span class="tag">${mapEntries.length} routes</span></div>
+    <p>The 45 courses above are built and live. The rest of this list comes from a wider gap-mapping pass across the industry: real research, course-specific objectives, lessons, and assessments already written, but not yet checked by a working practitioner or a learner. That review status is labeled on every card below, never hidden.</p>
+    <div class="map-filter-controls">
+      <input id="mapSearch" type="search" placeholder="Search title, domain, or tier&hellip;">
+      <select id="mapDomain"><option value="">All domains</option>${mapDomainOptions}</select>
+      <select id="mapMaturity"><option value="">All review states</option><option value="built_live">Built &amp; live</option><option value="authored_depth_v1">Depth v1 &mdash; needs review</option><option value="authored_frontier">Frontier &mdash; needs review</option></select>
+    </div>
+    <p class="map-count" id="mapCount">Showing ${mapEntries.length} of ${mapEntries.length} routes</p>
+    <div class="map-grid" id="mapGrid">${mapCardsHtml}</div>
   </section>
 
   <section class="wrap section" style="padding-top:0">
@@ -2789,6 +3554,107 @@ function bibliographyView() {
 <!-- GENERATED:FUNDAMENTALS_PROVENANCE:END --><div class="bib-foot"><p>Crew Blueprint, 2026. This bibliography is part of the Stagehand Fundamentals course's commitment to authentic, sourced content. Always supplement this course with employer-provided training, union guidance, and site-specific instruction.</p></div></div></div>`;
 }
 
+function ecosystemEsc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+}
+
+function ecosystemCourseGateHtml() {
+  return `<div class="cb-consent-backdrop" id="ecoConsentBackdrop">
+    <section class="cb-consent-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-consent-title" aria-describedby="cb-consent-description cb-consent-action">
+      <span class="cb-consent-kicker">Required before course access</span>
+      <h1 id="cb-consent-title">Safety and terms acknowledgment</h1>
+      <p id="cb-consent-description">Course content is limited to adults and discusses work that can cause serious injury, death, or property damage. Review and affirm all three statements before entering the course.</p>
+      <div class="cb-consent-choice">
+        <input id="cb-consent-age" type="checkbox" />
+        <label for="cb-consent-age">I confirm that I am at least 18 years old and have reached the age of legal majority where I live.</label>
+      </div>
+      <div class="cb-consent-choice">
+        <input id="cb-consent-terms" type="checkbox" />
+        <label for="cb-consent-terms">I have read and agree to the <a onclick="location.hash='#/legal/terms-and-conditions'">Terms and Conditions</a> and <a onclick="location.hash='#/legal/limitation-of-liability'">Assumption of Risk, Release, and Limitation of Liability</a>.</label>
+      </div>
+      <div class="cb-consent-choice">
+        <input id="cb-consent-safety" type="checkbox" />
+        <label for="cb-consent-safety">I understand that this material is general education only. It does not qualify, certify, authorize, or supervise me to perform physical work. Before doing any task, I must obtain required hands-on training and authorization, follow employer and site rules, and work under qualified supervision.</label>
+      </div>
+      <p class="cb-consent-storage">This acceptance is stored only in this browser so the gate does not repeat on every course page. It is not an operator-held account, identity, IP-address, or server-side acceptance record.</p>
+      <p id="cb-consent-action" class="cb-consent-action">By selecting all three boxes and clicking <strong>Agree and enter course</strong>, you confirm your eligibility and affirmatively agree to the linked terms and acknowledgments.</p>
+      <div class="cb-consent-actions">
+        <a class="cb-consent-exit" onclick="location.hash='#/courses'">Leave course</a>
+        <button class="cb-consent-submit" type="button" id="ecoConsentSubmit" disabled>Agree and enter course</button>
+      </div>
+      <span class="cb-consent-version">Acknowledgment version 2026-08-30.3</span>
+    </section>
+  </div>`;
+}
+
+function ecosystemHasConsent() {
+  try {
+    const record = JSON.parse(window.localStorage.getItem("cbCourseConsent.v1"));
+    return Boolean(record && record.version === "2026-08-30.3" && record.ageMajorityConfirmed === true && record.termsAccepted === true && record.safetyLimitsAccepted === true);
+  } catch (error) {
+    return false;
+  }
+}
+
+function ecosystemSaveConsent() {
+  const record = { version: "2026-08-30.3", acceptedAt: new Date().toISOString(), ageMajorityConfirmed: true, termsAccepted: true, safetyLimitsAccepted: true, scope: "course-access", acceptedFrom: location.hash };
+  try { window.localStorage.setItem("cbCourseConsent.v1", JSON.stringify(record)); } catch (error) {}
+}
+
+function ecosystemCourseView(slug) {
+  const esc = ecosystemEsc;
+  const all = ECOSYSTEM_COURSES || [];
+  const c = all.find(x => x.slug === slug);
+  if (!c) {
+    return `<div class="eco-page"><div class="eco-shell"><section class="eco-hero"><span class="eco-kicker">Curriculum</span><h1>Course not found</h1><p>Choose a course from the full curriculum map.</p><a class="eco-btn" onclick="location.hash='#/curriculum-map'">Open Curriculum Map</a></section></div></div>`;
+  }
+
+  const maturity = c.maturity || "research_foundation";
+  const maturityLabel = maturity === "authored_frontier" ? "Authored frontier route · source-reviewed" : maturity === "authored_depth_v1" ? "Authored depth v1 · research-backed" : "Research foundation · detailed authoring/review continuing";
+  const lenses = {"D-SHP":"custody, state, route, condition, and responsible-owner checkpoint","D-LOG":"movement, destination, state, route, and handoff checkpoint","D-COM":"message, channel, confirmation, ownership, and changed-state checkpoint","D-OUT":"condition, exposure, public/site interface, and responsible-plan checkpoint","D-LTG":"lighting-system relationship, documentation, change, and responsible-authority checkpoint","D-AUD":"audio signal/system relationship, documentation, change, and responsible-authority checkpoint","D-VID":"video/media signal relationship, configuration state, change, and responsible-authority checkpoint","D-STG":"scenic/staging component, state, movement, structural boundary, and handoff checkpoint","D-RIG":"rigging body-of-knowledge concept with physical qualification kept external","D-ELC":"production-power concept with energized work and qualified-person authority kept external","D-BKL":"artist/backline custody, settings, changeover, and technician-ownership checkpoint","D-PRP":"props preset, custody, run-state, and specialist-boundary checkpoint","D-WRD":"wardrobe preset, performer/privacy, maintenance-state, and handoff checkpoint","D-SMG":"cue, communication, document, decision-owner, and show-state checkpoint","D-PMG":"management requirement, owner, dependency, version, change, and closeout checkpoint","D-VOP":"venue responsibility, public/house interface, local-rule, and handoff checkpoint","D-LEAD":"crew coordination, assignment, communication, verification, and escalation checkpoint","D-SHC":"show-control/system-change, version, access, continuity, and responsible-owner checkpoint","D-AUT":"automation interface concept with operation/programming/service authority kept external","D-FX":"special-system interface concept with operation/handling authority kept external","D-CAR":"career/business decision, record, evidence-state, and external-authority checkpoint","D-ACC":"public/access interface, changed condition, responsible organization, and escalation checkpoint"};
+  const lens = lenses[c.domain] || "system relationship, changed-state, ownership, and handoff checkpoint";
+  const topics = c.topics || [];
+  const details = Array.isArray(c.details) && c.details.length === topics.length ? c.details : topics.map(t => `${t} is treated here as a ${lens}. Connect it to the course purpose, current production context, decision owner, and condition that should trigger clarification rather than improvisation.`);
+  const indexes = [topics.slice(0,2).map((_,i)=>i), topics.slice(2,4).map((_,i)=>i+2), topics.slice(4,6).map((_,i)=>i+4), topics.slice(6).map((_,i)=>i+6)];
+  const lessonNames = c.lessonTitles || ["Mental Model & Vocabulary","Workflow, Records & Relationships","Failure Recognition & Handoffs","Authority Boundary & Transfer"];
+  const intros = [`Define the important ideas in ${c.title} and connect each term to the real work state it describes.`, `Trace how people, equipment, information, records, and ownership move through this area. Exact local procedure can vary; the goal is the transferable structure.`, `Look for mismatches between expected and actual state. Report changed conditions with enough identity, location, status, and ownership information for the responsible person to act.`, `Separate useful knowledge from appointment, qualification, licensure, employer authorization, certification, or specialist authority.`];
+  const objectives = Array.isArray(c.objectives) && c.objectives.length ? c.objectives : [`Explain the major concepts and vocabulary in ${c.title}.`, `Trace the normal workflow and identify who owns the next decision.`, `Recognize a changed or unclear condition and choose an appropriate stop/clarify/handoff response.`, `State what this course does not authorize.`];
+  const lessonHtml = indexes.map((arr,i) => `<section class="eco-lesson" id="lesson-${i+1}"><div class="eco-step">Lesson ${i+1} of 4</div><h2>${esc(lessonNames[i])}</h2><p>${esc(intros[i])}</p><div class="eco-grid">${arr.map(j => `<article><h3>${esc(topics[j])}</h3><p>${esc(details[j])}</p></article>`).join("")}</div>${i===2 ? '<div class="eco-stop"><strong>Decision rule</strong><p>Do not improvise through uncertainty. Identify the affected item/system/record, current state, responsible owner, applicable current information, and changed condition before the affected decision continues.</p></div>' : ""}${i===3 ? `<div class="eco-boundary"><strong>Authority ceiling · ${esc(c.authority)}</strong><p>${esc(c.gate||c.boundary)}</p></div>` : ""}</section>`).join("");
+
+  const foundationQuiz = () => [
+    {question:`Which item is explicitly part of ${c.title}?`, options:[topics[0]||"The named course scope","Automatic employer authorization","External licensure for every related task"], answer:0, rationale:`${topics[0]||"The named course scope"} is one of this route's explicit topic anchors; authority and external credentials are separate states.`},
+    {question:`If the real production condition around “${topics[2]||"this system"}” does not match the course example, what is the strongest default?`, options:["Use the current employer/venue/department/manufacturer plan and clarify ownership","Force the course example onto the real system","Assume similar-looking systems are equivalent"], answer:0, rationale:"The course teaches a transferable mental model; exact procedure remains controlled by the real system and responsible authority."},
+    {question:`What should a learner do when a changed state affects “${topics[4]||"the work"}”?`, options:["Identify the change and report/hold the affected decision through the responsible process","Hide the mismatch if production is behind","Treat course completion as permission to decide for the owner"], answer:0, rationale:"Changed conditions belong in a controlled handoff rather than silent improvisation."}
+  ];
+  const boundaryQ = [
+    {question:"What controls exact jobsite procedure when the course and the real system differ?", options:["The current employer/venue/department plan, applicable manufacturer information, law where relevant, and responsible authority","The online course regardless of context","Whichever worker has seen a similar show"], answer:0, rationale:"Jobsite authority and exact procedures remain contextual."},
+    {question:"What does completing this route prove?", options:["Knowledge of the bounded material assessed here","Standing employer authorization for every related task","External certification, licensure, or specialist appointment"], answer:0, rationale:"Crew Blueprint education and real-world authorization are deliberately separate states."}
+  ];
+  const qs = [...(Array.isArray(c.quiz) && c.quiz.length ? c.quiz : foundationQuiz()), ...boundaryQ].slice(0,5).map(q => ({
+    question: q.question || q.text || "Course question",
+    options: (q.options||[]).map(v => String(v==null?"":v)),
+    answer: Number.isInteger(q.answer) ? q.answer : (Number.isInteger(q.answerIndex) ? q.answerIndex : 0),
+    rationale: q.rationale || "Use the verified workflow and stated authority boundary."
+  }));
+
+  let scenarioHtml = "";
+  if (c.scenario) {
+    const s = typeof c.scenario === "object" ? c.scenario : {title:"Changed-state handoff", setup:String(c.scenario), decision:"What can you verify, what remains uncertain, and who owns the next decision?", response:"Preserve the last known-good state and use the assigned escalation path."};
+    scenarioHtml = `<section class="eco-scenario"><span class="eco-kicker">Scenario drill</span><h2>${esc(s.title)}</h2><p><strong>Situation:</strong> ${esc(s.setup)}</p><p><strong>Decision:</strong> ${esc(s.decision)}</p><p><strong>Strong response:</strong> ${esc(s.response)}</p></section>`;
+  }
+  const artifactsHtml = Array.isArray(c.artifacts) && c.artifacts.length ? `<section class="eco-artifacts"><span class="eco-kicker">Practice artifacts</span><h2>Work the system on paper</h2><ul>${c.artifacts.map(a => `<li><a href="${esc(a.href)}">${esc(a.label)}</a></li>`).join("")}</ul><p>Templates are learning tools. A real employer/client/venue document and approval process controls actual work.</p></section>` : "";
+  const claimsHtml = Array.isArray(c.claims) && c.claims.length ? `<section class="eco-claims"><span class="eco-kicker">Claim checkpoints</span><h2>What this course is asserting</h2><ul>${c.claims.map(x => `<li>${esc(x.text||x)}</li>`).join("")}</ul><p>These checkpoints are matrix targets. Technical external claims still require the normalized source/support model; framework statements do not substitute for standards, law, manufacturer information, or employer procedure.</p></section>` : "";
+  const mediaHtml = Array.isArray(c.mediaPlan) && c.mediaPlan.length ? `<section class="eco-media-plan"><span class="eco-kicker">Visual study plan</span><h2>Planned teaching media</h2><ul>${c.mediaPlan.map(m => `<li><strong>${esc(m.title)}</strong> — ${esc(m.purpose)}<small>Status: ${esc(m.status)} · Text fallback planned: ${esc(m.textFallback)}</small></li>`).join("")}</ul><p>These are production briefs, not completed or approved media assets. Rights, accessibility, owner review, and practitioner review remain separate release states.</p></section>` : "";
+  const maturityText = maturity === "authored_frontier" ? "This route has course-specific objectives, explanations, scenario questions, and source framing. Practitioner and learner validation are tracked separately from publication." : maturity === "authored_depth_v1" ? "This route has depth-v1 objectives, topic-specific explanatory content, a changed-state scenario, a course-specific assessment set, claim checkpoints, and visual-production briefs. Practitioner review, learner validation, and rights-cleared media production remain pending." : "This visible route maps a researched subject and authority ceiling, but detailed practitioner-reviewed lesson authoring is still in progress. Do not treat “live” as “fully validated.”";
+
+  const evidenceUrl = "https://github.com/thecrewblueprint-glitch/thecrewblueprint/blob/main/" + c.evidence;
+
+  const body = `<section class="eco-hero"><div class="eco-breadcrumb"><a onclick="location.hash='#/curriculum-map'">Full Curriculum</a> / ${esc(c.domainName)}</div><span class="eco-kicker">${esc(c.tier)} · ${esc(c.domainName)} · ${esc(c.mdq)}</span><h1>${esc(c.title)}</h1><p>${esc(c.summary)}</p><div class="eco-meta"><span>${esc(c.id)}</span><span>Authority ${esc(c.authority)}</span><span>${esc(maturityLabel)}</span></div></section><section class="eco-maturity"><strong>Course maturity</strong><p>${esc(maturityText)}</p></section><aside class="eco-evidence"><strong>Evidence packet</strong><a href="${evidenceUrl}" target="_blank" rel="noopener noreferrer">${esc(c.evidence.replace("research/",""))}</a><p>Exact external claims remain governed by the normalized research matrix and source ledger. Source support, course maturity, practitioner review, learner validation, and jobsite authorization are separate states.</p></aside><section class="eco-objectives"><span class="eco-kicker">Learning objectives</span><h2>What you should be able to explain or decide</h2><ul>${objectives.map(o => `<li>${esc(o)}</li>`).join("")}</ul></section>${lessonHtml}${scenarioHtml}${claimsHtml}${mediaHtml}${artifactsHtml}<section class="eco-quiz"><span class="eco-kicker">Knowledge Check</span><h2>Check the course mental model</h2>${qs.map((q,i) => `<fieldset data-q="${i}"><legend>${i+1}. ${esc(q.question)}</legend>${q.options.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div class="eco-result" aria-live="polite"></div></fieldset>`).join("")}<button class="eco-btn" id="ecoCheckQuiz">Check answers</button><p id="ecoScore" class="eco-score"></p></section><section class="eco-next"><h2>Keep moving</h2><p>Use the curriculum map to follow the next department, systems, leadership, sector, or career branch.</p><a class="eco-btn" onclick="location.hash='#/curriculum-map'">Back to Full Curriculum Map</a></section>`;
+
+  window.__ecoQuizState = qs;
+  return `<div class="eco-page"><div class="eco-shell">${body}</div></div>`;
+}
+
 function legalView(slug) {
   const doc = LEGAL_PAGES[slug];
   if (!doc) return `<div class="wrap section"><p>Unknown legal page.</p></div>`;
@@ -3277,6 +4143,14 @@ function render() {
     app.innerHTML = curriculumMapView();
   } else if (hash === "#/bibliography") {
     app.innerHTML = bibliographyView();
+  } else if (hash.startsWith("#/ecosystem/")) {
+    const ecoSlug = hash.replace("#/ecosystem/", "");
+    if (!ecosystemHasConsent()) {
+      window.__ecoPendingSlug = ecoSlug;
+      app.innerHTML = ecosystemCourseGateHtml();
+    } else {
+      app.innerHTML = ecosystemCourseView(ecoSlug);
+    }
   } else {
     app.innerHTML = homeView();
   }
@@ -3335,6 +4209,69 @@ document.getElementById("app").addEventListener("input", (event) => {
     categoryRow.hidden = !hasVisibleSource;
   }
   count.textContent = `Showing ${visible} of ${rows.length} sources`;
+});
+
+document.getElementById("app").addEventListener("change", (event) => {
+  const backdrop = document.getElementById("ecoConsentBackdrop");
+  if (!backdrop) return;
+  const t = event.target;
+  if (t.id !== "cb-consent-age" && t.id !== "cb-consent-terms" && t.id !== "cb-consent-safety") return;
+  const age = document.getElementById("cb-consent-age");
+  const terms = document.getElementById("cb-consent-terms");
+  const safety = document.getElementById("cb-consent-safety");
+  const submit = document.getElementById("ecoConsentSubmit");
+  submit.disabled = !(age.checked && terms.checked && safety.checked);
+});
+
+document.getElementById("app").addEventListener("click", (event) => {
+  const submit = event.target.closest("#ecoConsentSubmit");
+  if (submit && !submit.disabled) {
+    ecosystemSaveConsent();
+    render();
+    return;
+  }
+  const checkBtn = event.target.closest("#ecoCheckQuiz");
+  if (checkBtn) {
+    const qs = window.__ecoQuizState || [];
+    let n = 0;
+    document.querySelectorAll(".eco-quiz fieldset").forEach(fs => {
+      const i = Number(fs.dataset.q);
+      const q = qs[i];
+      const pick = fs.querySelector("input:checked");
+      const ok = pick && Number(pick.value) === q.answer;
+      fs.querySelector(".eco-result").textContent = pick ? ((ok ? "Correct. " : "Not yet. ") + q.rationale) : "Choose an answer.";
+      if (ok) n++;
+    });
+    const scoreEl = document.getElementById("ecoScore");
+    if (scoreEl) scoreEl.textContent = `${n}/${qs.length} correct. This knowledge check documents understanding only; it does not create physical-skill or jobsite authorization.`;
+  }
+});
+
+function updateMapFilter() {
+  const searchEl = document.getElementById("mapSearch");
+  const domainEl = document.getElementById("mapDomain");
+  const maturityEl = document.getElementById("mapMaturity");
+  const countEl = document.getElementById("mapCount");
+  const grid = document.getElementById("mapGrid");
+  if (!searchEl || !domainEl || !maturityEl || !countEl || !grid) return;
+  const q = searchEl.value.trim().toLowerCase();
+  const domain = domainEl.value;
+  const maturity = maturityEl.value;
+  const cards = [...grid.querySelectorAll(".map-card")];
+  let visible = 0;
+  for (const card of cards) {
+    const matches = (!q || card.dataset.search.includes(q)) && (!domain || card.dataset.domain === domain) && (!maturity || card.dataset.maturity === maturity);
+    card.style.display = matches ? "" : "none";
+    if (matches) visible++;
+  }
+  countEl.textContent = `Showing ${visible} of ${cards.length} routes`;
+}
+
+document.getElementById("app").addEventListener("input", (event) => {
+  if (event.target.id === "mapSearch") updateMapFilter();
+});
+document.getElementById("app").addEventListener("change", (event) => {
+  if (event.target.id === "mapDomain" || event.target.id === "mapMaturity") updateMapFilter();
 });
 
 render();
