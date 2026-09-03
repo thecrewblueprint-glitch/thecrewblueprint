@@ -229,6 +229,8 @@
   .status-live { background: rgba(245,180,0,0.16); color: var(--amber-strong); }
   .status-gap { background: rgba(168,70,42,0.16); color: #d97354; }
   .status-lead { background: rgba(91,102,112,0.22); color: var(--ink-dim); }
+  .status-depth { background: rgba(107,142,214,0.16); color: #7fa8e8; }
+  .status-frontier { background: rgba(255,159,67,0.16); color: #ff9f43; }
 
   .ladder-band { background: var(--ground-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .ladder { display: flex; flex-direction: column-reverse; gap: 10px; max-width: 640px; margin: 0 auto; }
@@ -310,15 +312,6 @@
   .map-filter-controls { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin: 20px 0 24px; }
   .map-filter-controls input, .map-filter-controls select { width: 100%; padding: 11px 14px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--ground-2); color: var(--ink); font-family: inherit; font-size: 14px; }
   .map-count { color: var(--ink-faint); font-size: 13px; margin-bottom: 14px; font-family: "IBM Plex Mono"; }
-  .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
-  .map-card { display: block; border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: var(--ground-2); text-decoration: none; color: var(--ink); cursor: pointer; }
-  .map-card:hover, .map-card:focus-visible { border-color: var(--amber); }
-  .map-card .map-card-meta { font-family: "IBM Plex Mono"; font-size: 10.5px; color: var(--amber-strong); text-transform: uppercase; letter-spacing: 0.05em; }
-  .map-card strong { display: block; font-size: 15px; margin: 6px 0 4px; line-height: 1.3; }
-  .map-badge { display: inline-block; margin-top: 8px; padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-  .map-badge-built { background: rgba(34,168,76,.15); color: #3fc971; }
-  .map-badge-depth { background: rgba(245,180,0,.15); color: var(--amber-strong); }
-  .map-badge-frontier { background: rgba(255,159,67,.15); color: #ff9f43; }
   @media (max-width: 760px) { .map-filter-controls { grid-template-columns: 1fr; } }
   .map-pagination { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 26px; }
   .map-page-btn { padding: 9px 16px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--ground-2); color: var(--ink); font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
@@ -1383,14 +1376,6 @@ const LEGAL_PAGES = {"privacy-policy":{"title":"Privacy Policy","updated":"Augus
 
 function curriculumMapView() {
   mapCurrentPage = 1;
-  const deptRows = Object.entries(DEPARTMENTS).map(([key, d]) => {
-    const stages = d.tracks.map(t => {
-      if (t.status === "gap") return `<span class="status-chip status-gap">${t.stage}</span>`;
-      return `<a class="status-chip status-live" onclick="location.hash='#/course/${t.file.replace('.html','')}'">${t.stage}</a>`;
-    }).join("");
-    return `<div class="tier-block"><span class="tier-label">${d.name}</span><div class="track-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">${stages}</div></div>`;
-  }).join("");
-
   const mapEntries = [];
   mapEntries.push({ title: "Stagehand Fundamentals", domainName: "Foundation", tier: "Foundation", maturity: "built_live", href: "#/course/stagehand-fundamentals" });
   FIELD_SKILLS.forEach(f => mapEntries.push({ title: f.name, domainName: "Field Skills", tier: "Field Skill", maturity: "built_live", href: "#/course/" + f.file.replace(".html", "") }));
@@ -1401,22 +1386,22 @@ function curriculumMapView() {
   ECOSYSTEM_COURSES.forEach(c => mapEntries.push({ title: c.title, domainName: c.domainName, tier: c.tier, maturity: c.maturity || "research_foundation", href: "#/ecosystem/" + c.slug }));
 
   const mapMaturityLabel = { built_live: "Built &amp; live", authored_depth_v1: "Depth v1 &mdash; needs review", authored_frontier: "Frontier &mdash; needs review", research_foundation: "Research foundation &mdash; needs review" };
-  const mapMaturityClass = { built_live: "map-badge-built", authored_depth_v1: "map-badge-depth", authored_frontier: "map-badge-frontier", research_foundation: "map-badge-frontier" };
+  const mapMaturityChip = { built_live: "status-live", authored_depth_v1: "status-depth", authored_frontier: "status-frontier", research_foundation: "status-frontier" };
 
   const mapDomainNames = [...new Set(mapEntries.map(e => e.domainName))].sort();
   const mapDomainOptions = mapDomainNames.map(n => `<option value="${n.replace(/"/g, "&quot;")}">${n}</option>`).join("");
 
   const mapCardsHtml = mapEntries.map(e => {
-    const badge = mapMaturityClass[e.maturity] || "map-badge-frontier";
+    const chip = mapMaturityChip[e.maturity] || "status-frontier";
     const label = mapMaturityLabel[e.maturity] || "Needs review";
     const searchText = (e.title + " " + e.domainName + " " + e.tier).toLowerCase().replace(/"/g, "&quot;");
-    return `<a class="map-card" onclick="location.hash='${e.href}'" data-domain="${e.domainName.replace(/"/g, "&quot;")}" data-maturity="${e.maturity}" data-search="${searchText}"><span class="map-card-meta">${e.tier} &middot; ${e.domainName}</span><strong>${e.title}</strong><span class="map-badge ${badge}">${label}</span></a>`;
+    return `<a class="track-card" onclick="location.hash='${e.href}'" data-domain="${e.domainName.replace(/"/g, "&quot;")}" data-maturity="${e.maturity}" data-search="${searchText}"><div><div class="name">${e.title}</div><div class="sub">${e.tier} &middot; ${e.domainName}</div></div><span class="status-chip ${chip}">${label}</span></a>`;
   }).join("");
 
   return `
   <section class="wrap legal-hero">
     <h1>How the curriculum fits together.</h1>
-    <p>Four tiers, in order: Foundation, Field Skills, Department Pathways, then Lead/Supervisor and the cross-department Infrastructure pages. Take them in that order if this is new to you — jump straight to a department if you already know where you're headed.</p>
+    <p>Foundation, Field Skills, Department Pathways, then Lead/Supervisor and the cross-department Infrastructure pages, in that order if this is new to you. Browse all of it, laid out the same way, in the <a onclick="location.hash='#/courses'">full catalog</a> &mdash; this page is the map, not a second copy of it.</p>
   </section>
 
   <section class="wrap section" style="padding-top:0">
@@ -1432,31 +1417,16 @@ function curriculumMapView() {
     <div class="legal-callout">Start with <a onclick="location.hash='#/course/stagehand-fundamentals'">Stagehand Fundamentals</a>, then branch into a department from the <a onclick="location.hash='#/courses'">full course catalog</a>.</div>
   </section>
 
-  <section class="wrap section" style="padding-top:0">
-    <div class="section-head"><h2>Foundation</h2></div>
-    <div class="tier-block"><span class="tier-label">Foundation</span><div class="track-grid"><a class="track-card" onclick="location.hash='#/course/stagehand-fundamentals'"><div><div class="name">Stagehand Fundamentals</div><div class="sub">4 parts &middot; 34 lessons</div></div><span class="status-chip status-live">Open</span></a><a class="track-card" onclick="location.hash='#/bibliography'"><div><div class="name">Sources &amp; Bibliography</div><div class="sub">Every citation behind the course, with links</div></div><span class="status-chip status-live">Open</span></a></div></div>
-
-    <div class="section-head" style="margin-top:34px"><h2>Field Skills</h2></div>
-    <p>${FIELD_SKILLS.length} short, single-task skills — cable coiling, cart handling, ratchet straps, barricade setup, and more. Each one names the lead or department that actually controls the task.</p>
-
-    <div class="section-head" style="margin-top:34px"><h2>Department Pathways</h2></div>
-    <p>Support &rarr; Systems &rarr; Advanced, one ladder per department. A gap means that step isn't built yet — the department still needs qualified people running it.</p>
-    ${deptRows}
-
-    <div class="section-head" style="margin-top:34px"><h2>Lead, Supervisor &amp; Infrastructure</h2></div>
-    <p>${LEAD_TIER.length} lead-tier courses, ${SUPERVISOR_TIER.length} supervisor courses, and ${INFRASTRUCTURE_TIER.length} cross-department infrastructure and career-branch pages. Browse them all in the <a onclick="location.hash='#/courses'">full catalog</a>.</p>
-  </section>
-
   <section class="wrap section" style="padding-top:0" id="every-mapped-course">
-    <div class="section-head"><h2>Every mapped course</h2><span class="tag">${mapEntries.length} routes</span></div>
-    <p>The 45 courses above are built and live. The rest of this list comes from a wider gap-mapping pass across the industry: real research, course-specific objectives, lessons, and assessments already written, but not yet checked by a working practitioner or a learner. That review status is labeled on every card below, never hidden.</p>
+    <div class="section-head"><h2>Everything mapped so far</h2><span class="tag">${mapEntries.length} routes</span></div>
+    <p>45 of these are built and live &mdash; browse those in the <a onclick="location.hash='#/courses'">full catalog</a>, organized by department. The rest is a wider gap-mapping pass across the industry: real research, course-specific objectives, lessons, and assessments already drafted, but not yet checked by a working practitioner or a learner. Review status is labeled on every card below, never hidden, and this list will keep growing as departments need more than a Support/Systems/Advanced ladder can hold.</p>
     <div class="map-filter-controls">
       <input id="mapSearch" type="search" placeholder="Search title, domain, or tier&hellip;">
       <select id="mapDomain"><option value="">All domains</option>${mapDomainOptions}</select>
       <select id="mapMaturity"><option value="">All review states</option><option value="built_live">Built &amp; live</option><option value="authored_depth_v1">Depth v1 &mdash; needs review</option><option value="authored_frontier">Frontier &mdash; needs review</option></select>
     </div>
     <p class="map-count" id="mapCount">Showing ${mapEntries.length} of ${mapEntries.length} routes</p>
-    <div class="map-grid" id="mapGrid">${mapCardsHtml}</div>
+    <div class="track-grid" id="mapGrid">${mapCardsHtml}</div>
     <div class="map-pagination" id="mapPagination"></div>
   </section>
 
@@ -3796,7 +3766,12 @@ function catalogView() {
       if (t.status === "gap") return `<div class="track-card disabled"><div><div class="name">${t.stage}</div><div class="sub">${t.title}</div></div><span class="status-chip status-gap">Gap</span></div>`;
       return `<a class="track-card" onclick="location.hash='#/course/${t.file.replace('.html','')}'"><div><div class="name">${t.stage} — ${t.title}</div><div class="sub">${d.name}</div></div><span class="status-chip status-live">Open</span></a>`;
     }).join("");
-    return `<div class="tier-block"><span class="tier-label">${d.name}</span><div class="track-grid">${cards}</div></div>`;
+    const builtCount = d.tracks.filter(t => t.status !== "gap").length;
+    const countLabel = builtCount === d.tracks.length ? `${builtCount} of ${d.tracks.length} built` : `${builtCount} of ${d.tracks.length} built &mdash; more coming`;
+    return `<details class="tier-collapse">
+      <summary class="tier-toggle">${d.name} <span class="tier-toggle-count">&mdash; ${countLabel}</span><svg class="tier-toggle-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="tier-collapse-body"><div class="tier-block"><div class="track-grid">${cards}</div></div></div>
+    </details>`;
   }).join("");
 
   const fsCards = FIELD_SKILLS.map(f => `<a class="track-card" onclick="location.hash='#/course/${f.file.replace('.html','')}'"><div><div class="name">${f.name}</div><div class="sub">Field Skill</div></div><span class="status-chip status-live">Open</span></a>`).join("");
@@ -3820,10 +3795,8 @@ function catalogView() {
       <summary class="tier-toggle">Show all ${FIELD_SKILLS.length} Field Skills <span class="tier-toggle-count">&mdash; single-task, lead-assigned work</span><svg class="tier-toggle-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
       <div class="tier-collapse-body"><div class="tier-block"><span class="tier-label">Field Skills</span><div class="track-grid">${fsCards}</div></div></div>
     </details>
-    <details class="tier-collapse">
-      <summary class="tier-toggle">Show all 7 departments <span class="tier-toggle-count">&mdash; Lighting, Audio, Video, Staging &amp; Carpentry, Backline/Props/Wardrobe, Rigging, Electrics</span><svg class="tier-toggle-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-      <div class="tier-collapse-body">${deptTracks}</div>
-    </details>
+    <div class="tier-label" style="margin-top:8px">Departments</div>
+    ${deptTracks}
     <div class="tier-block"><span class="tier-label">Lead Tier</span><div class="track-grid">${leadCards}</div></div>
     <div class="tier-block"><span class="tier-label">Supervisor Tier</span><div class="track-grid">${supCards}</div></div>
     <div class="tier-block"><span class="tier-label">Infrastructure &amp; Career Branch</span><div class="track-grid">${infraCards}</div></div>
@@ -4269,7 +4242,7 @@ function updateMapFilter() {
   const q = searchEl.value.trim().toLowerCase();
   const domain = domainEl.value;
   const maturity = maturityEl.value;
-  const allCards = [...grid.querySelectorAll(".map-card")];
+  const allCards = [...grid.querySelectorAll(".track-card")];
   const filtered = allCards.filter(card => (!q || card.dataset.search.includes(q)) && (!domain || card.dataset.domain === domain) && (!maturity || card.dataset.maturity === maturity));
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / MAP_PAGE_SIZE));
