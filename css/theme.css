@@ -950,6 +950,35 @@ img { max-width: 100%; display: block; }
   color: var(--cb-muted);
 }
 
+.cb-tier-collapse { margin-top: 0; }
+
+.cb-tier-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border: 1px solid var(--cb-gold-border);
+  border-radius: var(--cb-radius-md);
+  background: rgba(245,180,0,0.06);
+  color: var(--cb-gold-strong);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background var(--cb-transition), border-color var(--cb-transition);
+}
+.cb-tier-toggle::-webkit-details-marker { display: none; }
+.cb-tier-toggle::marker { content: ""; }
+.cb-tier-toggle:hover, .cb-tier-toggle:focus-visible { background: rgba(245,180,0,0.12); border-color: var(--cb-gold); }
+.cb-tier-toggle .cb-tier-toggle-arrow { flex-shrink: 0; transition: transform 200ms; color: var(--cb-gold); }
+.cb-tier-collapse[open] > .cb-tier-toggle .cb-tier-toggle-arrow { transform: rotate(180deg); }
+.cb-tier-toggle-count { color: var(--cb-muted); font-weight: 600; text-transform: none; letter-spacing: normal; }
+
+.cb-tier-collapse-body { margin-top: 18px; }
+
 .cb-field-skill-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
