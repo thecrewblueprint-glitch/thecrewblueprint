@@ -1,0 +1,64 @@
+name: Clean-Sheet Learning Lab Validation
+
+on:
+  pull_request:
+    paths:
+      - 'lab/clean-sheet-v1/**'
+      - 'research/analysis/clean-sheet-learning-product-**'
+      - '.github/workflows/clean-sheet-lab-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check lab/clean-sheet-v1/content.js
+          node --check lab/clean-sheet-v1/context-labs.js
+          node --check lab/clean-sheet-v1/app.js
+      - name: Curriculum integrity
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const vm = require('vm');
+          const sandbox = { window: {} };
+          vm.createContext(sandbox);
+          vm.runInContext(fs.readFileSync('lab/clean-sheet-v1/content.js','utf8'), sandbox);
+          vm.runInContext(fs.readFileSync('lab/clean-sheet-v1/context-labs.js','utf8'), sandbox);
+          const d = sandbox.window.CLEAN_SHEET;
+          if (!d || !d.programs || !Array.isArray(d.order)) throw new Error('CLEAN_SHEET data missing');
+          const expected = ['start','trusted','field','departments','contexts','work','grow'];
+          for (const id of expected) if (!d.programs[id]) throw new Error(`Missing program ${id}`);
+          if (!d.order.includes('contexts')) throw new Error('Context Labs not in program order');
+          let lessons = 0, quizzes = 0;
+          for (const id of expected) {
+            const p = d.programs[id];
+            if (!p.title || !p.description || !Array.isArray(p.modules) || !p.modules.length) throw new Error(`Invalid program ${id}`);
+            for (const m of p.modules) {
+              if (!m.name || !Array.isArray(m.lessons) || !m.lessons.length) throw new Error(`Invalid module in ${id}`);
+              for (const l of m.lessons) {
+                lessons++;
+                if (!l.title || !l.objective || !l.body) throw new Error(`Incomplete lesson in ${id}/${m.name}`);
+                if (l.quiz) {
+                  quizzes++;
+                  if (!Array.isArray(l.quiz.options) || l.quiz.options.length < 2) throw new Error(`Bad quiz in ${l.title}`);
+                  if (!Number.isInteger(l.quiz.answer) || l.quiz.answer < 0 || l.quiz.answer >= l.quiz.options.length) throw new Error(`Bad quiz answer in ${l.title}`);
+                }
+              }
+            }
+          }
+          if (lessons < 35) throw new Error(`Expected substantive lab; only ${lessons} lessons found`);
+          if (quizzes < 30) throw new Error(`Expected retrieval checks; only ${quizzes} quizzes found`);
+          const html = fs.readFileSync('lab/clean-sheet-v1/index.html','utf8');
+          for (const asset of ['content.js','context-labs.js','app.js','styles.css']) if (!html.includes(asset)) throw new Error(`Missing asset wiring: ${asset}`);
+          if (!html.includes('noindex,nofollow')) throw new Error('Lab must remain noindex/nofollow');
+          console.log(JSON.stringify({ programs: expected.length, lessons, quizzes }, null, 2));
+          NODE

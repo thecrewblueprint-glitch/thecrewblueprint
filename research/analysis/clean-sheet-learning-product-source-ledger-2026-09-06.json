@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-06",
+  "status": "experimental-owner-review",
+  "product": "lab/clean-sheet-v1",
+  "evidence_rule": "Source classes answer different questions. Regulatory/authoritative sources control safety and legal boundaries; hiring sources inform employability priorities; worker/community sources inform learner needs; Production Atlas informs ecosystem structure and current market routing; historical Crew Blueprint content is a knowledge reservoir but not the clean-sheet structure.",
+  "sources": [
+    {
+      "id": "OSHA-1910-22",
+      "class": "authoritative-regulatory",
+      "title": "29 CFR 1910.22 — General requirements, Walking-Working Surfaces",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.22",
+      "used_for": ["housekeeping", "route condition", "access/egress awareness", "qualified-person boundary for structural repair"]
+    },
+    {
+      "id": "OSHA-1910-132",
+      "class": "authoritative-regulatory",
+      "title": "29 CFR 1910.132 — General PPE requirements",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.132",
+      "used_for": ["employer hazard assessment", "PPE selection/training boundary", "avoid universal PPE shopping lists"]
+    },
+    {
+      "id": "OSHA-1910-147",
+      "class": "authoritative-regulatory",
+      "title": "29 CFR 1910.147 — Control of Hazardous Energy",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+      "used_for": ["hazardous-energy recognition", "no novice procedural LOTO instruction"]
+    },
+    {
+      "id": "OSHA-1910-176",
+      "class": "authoritative-regulatory",
+      "title": "29 CFR 1910.176 — Handling materials — general",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.176",
+      "used_for": ["materials handling", "aisles/routes", "storage/staging awareness"]
+    },
+    {
+      "id": "OSHA-1910-178",
+      "class": "authoritative-regulatory",
+      "title": "29 CFR 1910.178 — Powered Industrial Trucks",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.178",
+      "used_for": ["powered-equipment training/authorization boundary", "workplace-specific operating-condition awareness"]
+    },
+    {
+      "id": "OSHA-SUBPART-S",
+      "class": "authoritative-regulatory",
+      "title": "29 CFR 1910 Subpart S — Electrical",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910SubpartS",
+      "used_for": ["electrical qualification boundary", "no energized-work or tie-in instruction"]
+    },
+    {
+      "id": "PRG-CREW-PORTAL-2026",
+      "class": "current-hiring-industry",
+      "title": "PRG Crew Portal — event-role and experience requirements",
+      "url": "https://crew.prg.com/en/",
+      "accessed": "2026-09-06",
+      "used_for": ["stagehand versus technician role separation", "progressive experience", "distinct lighting/audio/video/rigging/electrical/production/backline/logistics role families"]
+    },
+    {
+      "id": "ENCORE-ENTRY-TECH-2026-08-10",
+      "class": "current-hiring-industry",
+      "title": "Encore Global — Seasonal Entry-Level Event Technician, posted 2026-08-10",
+      "url": "https://jobs.encoreglobal.com/en/job/miami/seasonal-entry-level-event-technician-audio-visual-full-time-sept-2026-may-2027-miami-dade-county/6228/99040596656",
+      "used_for": ["desire to learn", "technical aptitude", "responsiveness", "communication", "teamwork", "organization", "safety consciousness", "professionalism"]
+    },
+    {
+      "id": "RHINO-STAGING",
+      "class": "current-hiring-industry",
+      "title": "Rhino Staging",
+      "url": "https://www.rhinostaging.com/",
+      "used_for": ["labor-company entry route", "stagehand/rigging market context", "employer-specific training context"]
+    },
+    {
+      "id": "CREW-ONE-CAREERS",
+      "class": "current-hiring-industry",
+      "title": "Crew One — Join the Crew",
+      "url": "https://www.crew1.com/careers/join-the-crew",
+      "used_for": ["labor-company application route", "transportation/availability/certification context"]
+    },
+    {
+      "id": "CB-AUDIENCE-EMPLOYER-SYNTHESIS",
+      "class": "internal-synthesis",
+      "title": "Crew Blueprint Audience & Employer Discovery Synthesis",
+      "path": "research/analysis/audience-employer-discovery-synthesis-2026-09-06.md",
+      "used_for": ["clarification", "state preservation", "reliability", "document literacy", "equipment stewardship", "career navigation", "seasonality", "leadership-quality finding"]
+    },
+    {
+      "id": "ROADMAPDEV-COMMUNITY-DISCOVERY",
+      "class": "worker-community-synthesis",
+      "title": "Roadmapdev Crew Blueprint Community / Client Discovery",
+      "repo": "thecrewblueprint-glitch/Roadmapdev",
+      "path": "research/crew-blueprint-community-client-discovery-2026-09-05.md",
+      "used_for": ["first-call uncertainty", "reliability", "listening", "gear care", "situational awareness", "career-path uncertainty", "sustainability", "professional discretion"]
+    },
+    {
+      "id": "REDDIT-NEW-STAGEHAND-2026-08-04",
+      "class": "qualitative-worker-demand",
+      "title": "r/stagehands — New Stagehand Advice",
+      "url": "https://www.reddit.com/r/stagehands/comments/1vf4kz5/new_stagehand_advice/",
+      "used_for": ["new-worker demand for gear/PPE clarity", "career-growth questions", "learning-by-questioning signal"],
+      "authority_limit": "qualitative audience evidence only"
+    },
+    {
+      "id": "REDDIT-LEADING-STAGEHANDS-2025-08-05",
+      "class": "qualitative-worker-demand",
+      "title": "r/livesound — Leading Stagehands",
+      "url": "https://www.reddit.com/r/livesound/comments/1mijath/",
+      "used_for": ["crew-size/manageability discussion", "staying with assigned group", "simple instruction importance"],
+      "authority_limit": "qualitative practitioner evidence only"
+    },
+    {
+      "id": "REDDIT-TOURING-PATH-2026-06-12",
+      "class": "qualitative-worker-demand",
+      "title": "r/stagehands — Possibility of getting a touring job?",
+      "url": "https://www.reddit.com/r/stagehands/comments/1u4581w/possibility_of_getting_a_touring_job/",
+      "used_for": ["networking", "local-to-specialist progression", "experience-versus-credential questions"],
+      "authority_limit": "qualitative career evidence only"
+    },
+    {
+      "id": "PRODUCTION-ATLAS-BRANCHES",
+      "class": "internal-industry-intelligence",
+      "title": "Production Atlas — Production Branches",
+      "repo": "thecrewblueprint-glitch/festival-atlas",
+      "path": "data/packages/production-branches.js",
+      "used_for": ["staging", "rigging", "lighting", "audio", "video/LED", "power", "site operations", "logistics", "scenic", "backline", "stage management", "production office ecosystem map"]
+    },
+    {
+      "id": "PRODUCTION-ATLAS-LIVE",
+      "class": "current-market-intelligence",
+      "title": "Production Atlas",
+      "url": "https://atlas.thecrewblueprint.com/",
+      "used_for": ["changing employer lookup", "opportunity lookup", "IATSE/local directory", "market routing"]
+    },
+    {
+      "id": "CB-ROLE-FAMILY-MAP",
+      "class": "internal-analysis",
+      "title": "Live Production Role Family Map",
+      "path": "research/analysis/live-production-role-family-map-2026-09-06.json",
+      "used_for": ["career lattice", "role-family separation", "authority boundaries", "entry ecosystem"]
+    },
+    {
+      "id": "CB-HISTORICAL-CORPUS",
+      "class": "historical-knowledge-reservoir",
+      "title": "Permanent Crew Blueprint curriculum archive and 143-identity corpus",
+      "path": "content/archive/",
+      "used_for": ["source discovery", "fact checking", "gap comparison", "future pull-forward after owner review"],
+      "structural_authority": false
+    }
+  ]
+}
