@@ -26,7 +26,25 @@ jobs:
           echo "Remote branches available: $(git for-each-ref refs/remotes/origin --format='%(refname:short)' | grep -v '^origin/HEAD$' | wc -l)"
 
       - name: Materialize verbatim course/content versions
-        run: python3 scripts/materialize-course-content-snapshot.py
+        id: materialize
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 scripts/materialize-course-content-snapshot.py 2>&1 | tee snapshot-materialize.log
+
+      - name: Upload materialization diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-snapshot-diagnostics-${{ github.run_id }}
+          path: snapshot-materialize.log
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Stop on materialization failure
+        if: steps.materialize.outcome != 'success'
+        run: exit 1
 
       - name: Verify snapshot invariants
         run: |
