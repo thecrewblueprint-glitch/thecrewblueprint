@@ -38,6 +38,14 @@ if (navToggle && navLinks) {
   });
 }
 
+// Public footer order: brand/navigation first, safety disclaimer second.
+document.querySelectorAll('.footer-layout').forEach((layout) => {
+  const disclaimer = layout.querySelector('.footer-disclaimer');
+  const main = layout.querySelector('.footer-main');
+  if (main) main.style.order = '1';
+  if (disclaimer) disclaimer.style.order = '2';
+});
+
 // Cookie notice
 (function () {
   if (localStorage.getItem('cbCookieAck')) return;
