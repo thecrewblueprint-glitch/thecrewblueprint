@@ -1,12 +1,25 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "catalog_id": "all-branch-course-catalog-summary-2026-09-06",
   "generated_date": "2026-09-06",
-  "mode": "read_only_observation",
+  "mode": "read_only_observation_plus_live_ref_reconciliation",
   "purpose": "Durable repository summary of the all-branch course-catalog pass. The canonical logical course list remains research/matrix/course_inventory.jsonl; this file records branch scope, historical-content findings, and catalog method/provenance without duplicating the full inventory.",
-  "branch_count": 42,
-  "branches_observed": [
+  "original_branch_count": 42,
+  "current_branch_count_reconciled": 48,
+  "new_refs_after_original_scan": [
+    "archive/infrastructure-career-pre-owner-review-2026-09-06",
+    "archive/owner-review-course-content-2026-09-05",
+    "archive/pre-v2-restore-2026-09-06",
+    "archive/session-partial-ui-owner-review-2026-09-06",
+    "work/ecosystem-retrieval-graph-2026-09-06",
+    "work/v2-client-polish-2026-09-06"
+  ],
+  "branches_observed_or_reconciled": [
+    "archive/infrastructure-career-pre-owner-review-2026-09-06",
     "archive/lead-supervisor-electrics-rigging-2026-09-06",
+    "archive/owner-review-course-content-2026-09-05",
+    "archive/pre-v2-restore-2026-09-06",
+    "archive/session-partial-ui-owner-review-2026-09-06",
     "archive/v1-multipage-2026-09-03",
     "chatgpt/consolidated-research-queue",
     "chatgpt/cross-build-content-governance",
@@ -46,28 +59,23 @@
     "research/site-uiux-copy-freshness-2026-08-31",
     "research/stagehand-field-task-redesign-2026-08-30",
     "ui/unified-course-shell-road-case",
+    "work/ecosystem-retrieval-graph-2026-09-06",
     "work/full-capacity-matrix-reconciliation-2026-09-06",
+    "work/v2-client-polish-2026-09-06",
     "workspace/full-frontier-audit-2026-08-31"
   ],
   "registered_logical_course_identities": 143,
   "canonical_course_inventory": "research/matrix/course_inventory.jsonl",
   "important_findings": [
     {
-      "finding": "Fuller Lead, Supervisor, and advanced Electrics course bodies survive off main.",
-      "primary_branch": "archive/lead-supervisor-electrics-rigging-2026-09-06",
+      "finding": "Fuller Lead, Supervisor, advanced Electrics/Rigging, Infrastructure/Career and other course bodies survive off main.",
+      "primary_branches": [
+        "archive/lead-supervisor-electrics-rigging-2026-09-06",
+        "archive/infrastructure-career-pre-owner-review-2026-09-06",
+        "archive/session-partial-ui-owner-review-2026-09-06"
+      ],
       "also_seen_on": ["claude/production-courses-ui-ux-11l4vg"],
-      "full_build_examples": [
-        {"path":"courses/lead-audio.html","archived_size_bytes":17088},
-        {"path":"courses/lead-crew-chief-foundations.html","archived_size_bytes":16941},
-        {"path":"courses/lead-electrics.html","archived_size_bytes":17774},
-        {"path":"courses/lead-lighting.html","archived_size_bytes":17393},
-        {"path":"courses/lead-rigging.html","archived_size_bytes":17509},
-        {"path":"courses/lead-staging-carpentry.html","archived_size_bytes":17381},
-        {"path":"courses/lead-video.html","archived_size_bytes":17409},
-        {"path":"courses/supervisor-event-operations.html","archived_size_bytes":15050},
-        {"path":"courses/supervisor-predictive-hazard-recognition.html","archived_size_bytes":13938},
-        {"path":"courses/pathway-electrics-03-system-load-planning.html","archived_size_bytes":18346}
-      ]
+      "decision_rule": "Preserve and reconcile; historical completeness is not automatic current-publication authority."
     },
     {
       "finding": "Legacy/alternate presentations survive and must not be double-counted as separate logical courses.",
@@ -78,19 +86,25 @@
         "first-five-calls.html",
         "courses/pathway-video-02-led-video-systems-old-overview.html"
       ]
+    },
+    {
+      "finding": "work/v2-client-polish-2026-09-06 currently has zero unique commits/files relative to the accepted main lineage and is a future prune candidate, but no branch deletion is authorized by this record.",
+      "verification": "live compare against main on 2026-09-06"
     }
   ],
   "catalog_method": {
-    "branch_enumeration": "live GitHub branch listing",
+    "branch_enumeration": "live GitHub branch listing, two pages, reconciled to 48 refs",
     "logical_course_inventory": "complete canonical course_inventory.jsonl snapshot",
     "direct_tree_inspection": "key archive and production-course branches containing material course bodies",
     "local_clone_attempt": "failed because the execution container could not resolve github.com",
-    "caveat": "Do not describe this record as a byte-for-byte recursive traversal of every tree on all 42 branches. Branch enumeration and logical-course inventory were complete; key course-bearing historical branches were directly inspected."
+    "caveat": "Do not describe this record as a byte-for-byte recursive traversal of every tree on all 48 branches. Live ref enumeration and logical-course inventory are complete; key course-bearing historical branches were directly inspected and relevant newer refs were compared."
   },
   "interpretation_rules": [
     "registered identity is not the same as learner-facing route",
     "historical full body is not the same as accepted current course",
     "alternate presentation is not a distinct course unless registered separately",
-    "restoration requires current evidence, safety, architecture, and review reconciliation"
+    "restoration requires current evidence, safety, architecture, learner need and review reconciliation",
+    "branch recency does not create authority",
+    "unique historical content should be indexed/preserved before any future pruning"
   ]
 }
