@@ -8,11 +8,11 @@ provenance so versions can be compared without Git branch archaeology.
 from __future__ import annotations
 
 import json
-import os
 import shutil
 import subprocess
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import urlsplit
 
 REPO = Path(__file__).resolve().parents[1]
 SNAPSHOT_ID = "snapshot-2026-09-06-all-course-versions"
@@ -31,6 +31,19 @@ def git(*args: str, binary: bool = False) -> bytes | str:
         stderr=subprocess.PIPE,
     )
     return cp.stdout if binary else cp.stdout.decode("utf-8", errors="strict")
+
+
+def physical_path(route: str | None) -> str | None:
+    """Return the repository file behind a logical route.
+
+    Several inventory identities share one physical route and differ only by a
+    query parameter, e.g. courses/ecosystem-course.html?course=stage-management.
+    Preserve the logical route in lineage metadata, but snapshot/validate the
+    underlying repository file.
+    """
+    if not route:
+        return None
+    return urlsplit(route).path
 
 
 def commit_for(ref: str) -> str:
@@ -192,14 +205,14 @@ def main() -> None:
         canonical_routes_present = sum(
             1
             for row in inventory
-            if row.get("route_file") and row["route_file"] in route_set
+            if physical_path(row.get("route_file")) in route_set
         )
         branch_summary.append(
             {
                 "branch": branch_name,
                 "commit": commit_sha,
                 "snapshot_file_count": len(selected),
-                "canonical_143_route_files_present": canonical_routes_present,
+                "canonical_143_logical_routes_resolved": canonical_routes_present,
                 "courses_tree_sha": optional_tree_sha(ref, "courses"),
                 "scripts_tree_sha": optional_tree_sha(ref, "scripts"),
                 "visuals_tree_sha": optional_tree_sha(ref, "visuals"),
@@ -207,21 +220,23 @@ def main() -> None:
             }
         )
 
-    # Direct per-identity lineage: all branch versions found at each identity's
-    # registered route path. This preserves branch attribution even when blobs are identical.
+    # Direct per-identity lineage. Logical query-routed identities are preserved
+    # separately even when they share one physical HTML blob.
     identities: list[dict] = []
     missing_main_routes: list[str] = []
     for row in inventory:
         route = row.get("route_file")
-        versions = path_versions.get(route, []) if route else []
+        physical = physical_path(route)
+        versions = path_versions.get(physical, []) if physical else []
         main_versions = [v for v in versions if v["source_branch"] == "main"]
-        if route and not main_versions:
-            missing_main_routes.append(f"{row['course_id']}::{route}")
+        if physical and not main_versions:
+            missing_main_routes.append(f"{row['course_id']}::{route} -> {physical}")
         identities.append(
             {
                 "course_id": row["course_id"],
                 "title": row.get("title"),
-                "registered_route": route,
+                "registered_logical_route": route,
+                "physical_route_file": physical,
                 "source_data_file": row.get("source_data_file"),
                 "inventory_state_at_snapshot": row.get("inventory_state"),
                 "publication_state_at_snapshot": row.get("publication_state"),
@@ -239,14 +254,16 @@ def main() -> None:
         )
     if missing_main_routes:
         raise SystemExit(
-            "Refusing snapshot: canonical route files missing on main:\n" + "\n".join(missing_main_routes)
+            "Refusing snapshot: canonical physical route files missing on main:\n" + "\n".join(missing_main_routes)
         )
 
     # Alternate/unregistered course paths are intentionally retained too.
-    registered_routes = {row.get("route_file") for row in inventory if row.get("route_file")}
+    registered_physical_routes = {
+        physical_path(row.get("route_file")) for row in inventory if physical_path(row.get("route_file"))
+    }
     alternate_paths = []
     for path, versions in sorted(path_versions.items()):
-        if path.startswith("courses/") and path not in registered_routes:
+        if path.startswith("courses/") and path not in registered_physical_routes:
             alternate_paths.append(
                 {
                     "path": path,
@@ -265,7 +282,7 @@ def main() -> None:
             )
 
     manifest = {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "snapshot_id": SNAPSHOT_ID,
         "snapshot_date": "2026-09-06",
         "purpose": "Permanent verbatim working-tree archive for side-by-side curriculum comparison and future reuse.",
@@ -274,6 +291,7 @@ def main() -> None:
         "source_branch_count": len(branches),
         "snapshot_file_count": len(file_manifest),
         "unique_blob_count": len({r["blob_sha"] for r in file_manifest}),
+        "logical_route_note": "Query-routed identities retain their full logical route while lineage points to the underlying physical repository file.",
         "rules": [
             "Snapshot presence does not make historical content current or publishable.",
             "Do not delete, squash, overwrite, or prune source history based on this archive.",
@@ -290,7 +308,8 @@ def main() -> None:
         json.dumps(alternate_paths, indent=2) + "\n", encoding="utf-8"
     )
 
-    readme = f"""# Verbatim Course Content Snapshot — {SNAPSHOT_ID}\n\nThis directory is a **reference-only historical archive**. It preserves course/content bytes from every repository branch available at snapshot time so older versions can be compared directly without checking out historical refs.\n\n## Guarantees\n\n- Canonical logical identities asserted at snapshot time: **{EXPECTED_IDENTITIES}**.\n- Source branches captured: **{len(branches)}**.\n- Snapshot files materialized: **{len(file_manifest)}**.\n- Unique Git blob versions represented: **{len({r['blob_sha'] for r in file_manifest})}**.\n- Every registered main route is present in the identity-lineage file.\n- Unregistered/alternate files under `courses/` are separately indexed rather than discarded.\n- Original branch, commit SHA, original path, and blob SHA are recorded for every materialized file.\n\n## What is included\n\nFor every source branch, the snapshot captures the complete `courses/`, `scripts/`, `visuals/`, and `_includes/` file sets where present, the branch's course inventory when present, and relevant top-level learner/catalog presentation HTML. This intentionally preserves versions that were never assigned a separate logical course ID.\n\n## What this archive does **not** mean\n\nHistorical presence does not equal current authority, current safety sufficiency, learner readiness, or publication approval. Reuse still requires current evidence, safety/qualification review, structural reconciliation, and owner approval where required.\n\n## Indexes\n\n- `snapshot-manifest.json` — per-file source branch/commit/path/blob provenance.\n- `branch-summary.json` — branch-level counts and tree/blob fingerprints.\n- `identity-lineage-143.json` — each of the 143 registered identities mapped to every branch version found at its registered route.\n- `alternate-and-unregistered-course-versions.json` — historical course files not represented as separate canonical IDs.\n- `catalogs/course_inventory-main-143.jsonl` — exact canonical inventory used for the assertion.\n"""
+    unique_blobs = {r["blob_sha"] for r in file_manifest}
+    readme = f"""# Verbatim Course Content Snapshot — {SNAPSHOT_ID}\n\nThis directory is a **reference-only historical archive**. It preserves course/content bytes from every repository branch available at snapshot time so older versions can be compared directly without checking out historical refs.\n\n## Guarantees\n\n- Canonical logical identities asserted at snapshot time: **{EXPECTED_IDENTITIES}**.\n- Source branches captured: **{len(branches)}**.\n- Snapshot files materialized: **{len(file_manifest)}**.\n- Unique Git blob versions represented: **{len(unique_blobs)}**.\n- Every registered main identity resolves to a snapshotted physical route.\n- Query-routed identities preserve their exact logical route and map to the shared physical source file.\n- Unregistered/alternate files under `courses/` are separately indexed rather than discarded.\n- Original branch, commit SHA, original path, and blob SHA are recorded for every materialized file.\n\n## What is included\n\nFor every source branch, the snapshot captures the complete `courses/`, `scripts/`, `visuals/`, and `_includes/` file sets where present, the branch's course inventory when present, and relevant top-level learner/catalog presentation HTML. This intentionally preserves versions that were never assigned a separate logical course ID.\n\n## What this archive does **not** mean\n\nHistorical presence does not equal current authority, current safety sufficiency, learner readiness, or publication approval. Reuse still requires current evidence, safety/qualification review, structural reconciliation, and owner approval where required.\n\n## Indexes\n\n- `snapshot-manifest.json` — per-file source branch/commit/path/blob provenance.\n- `branch-summary.json` — branch-level counts and tree/blob fingerprints.\n- `identity-lineage-143.json` — each of the 143 registered identities mapped to every branch version found at its physical route.\n- `alternate-and-unregistered-course-versions.json` — historical course files not represented as separate canonical IDs.\n- `catalogs/course_inventory-main-143.jsonl` — exact canonical inventory used for the assertion.\n"""
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
 
     print(json.dumps({
@@ -298,7 +317,7 @@ def main() -> None:
         "branches": len(branches),
         "canonical_identities": len(inventory),
         "files": len(file_manifest),
-        "unique_blobs": len({r['blob_sha'] for r in file_manifest}),
+        "unique_blobs": len(unique_blobs),
         "alternate_course_paths": len(alternate_paths),
     }, indent=2))
 
