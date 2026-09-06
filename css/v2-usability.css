@@ -1,0 +1,41 @@
+/* V2 usability layer — no curriculum rewrite and no redesign. */
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #73c9ff!important;outline-offset:3px!important}
+.navtoggle,.client-btn,.btn,.public-course-card,.track-card,.course-side .les{min-height:44px}
+
+.progress-plate[aria-label]{flex-wrap:wrap}
+.v2-lesson-check{margin-left:auto;padding-left:8px;color:var(--green);font-weight:900}
+.course-side .les.v2-lesson-complete:not(.active){color:var(--ink);background:rgba(88,184,137,.07)}
+.v2-complete-btn{border-color:rgba(88,184,137,.7)!important;background:rgba(88,184,137,.12)!important;color:#8fd4ad!important}
+.v2-card-complete{border-color:rgba(88,184,137,.5)!important}
+.v2-card-complete .status,.v2-card-complete .status-chip{color:#8fd4ad!important}
+.v2-course-finished,.v2-course-completion{margin:30px 0 8px;padding:20px;border:1px solid rgba(88,184,137,.42);border-radius:10px;background:rgba(88,184,137,.055);max-width:74ch}
+.v2-course-finished strong{display:block;margin-bottom:5px;color:#8fd4ad}
+.v2-course-finished span{display:block;color:var(--ink-dim);font-size:13.5px;line-height:1.6}
+.v2-finish-actions,.v2-completion-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.v2-course-completion{display:flex;align-items:center;justify-content:space-between;gap:22px}
+.v2-course-completion h3{margin:4px 0 6px}
+.v2-course-completion p{margin:0;color:var(--ink-dim);font-size:13.5px}
+.v2-progress-kicker{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--green)}
+
+.quiz-block .opt.incorrect:not(:disabled){border-color:#b96a58;background:rgba(185,106,88,.08)}
+.quiz-block .opt:not(:disabled){cursor:pointer}
+
+@media(max-width:800px){
+  .sf-toggle-btn{position:sticky;top:8px;z-index:18;box-shadow:0 8px 24px rgba(0,0,0,.24)}
+  .course-side.sf-side.mobile-open{max-height:min(62vh,520px);overflow:auto;overscroll-behavior:contain}
+  .v2-course-completion{align-items:stretch;flex-direction:column}
+}
+
+@media(max-width:560px){
+  .home-hero{padding-top:38px!important;padding-bottom:24px!important}
+  .home-hero h1{font-size:clamp(2.05rem,10.5vw,3rem)!important;line-height:1.03!important}
+  .home-hero .lede{font-size:.98rem!important;line-height:1.65!important}
+  .home-now{padding-top:12px!important;padding-bottom:46px!important}
+  .home-progress{padding-top:14px!important;padding-bottom:52px!important}
+  .public-catalog{padding-bottom:52px!important}
+  .sf-pager{gap:9px!important}
+  .sf-pager .btn{width:100%;text-align:center;justify-content:center}
+  .v2-finish-actions,.v2-completion-actions{display:grid;grid-template-columns:1fr}
+  .v2-finish-actions .btn,.v2-completion-actions .btn{width:100%}
+}
