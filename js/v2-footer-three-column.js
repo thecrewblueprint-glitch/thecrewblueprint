@@ -2,8 +2,17 @@
 (function(){
   'use strict';
 
+  var mobileQuery = window.matchMedia('(max-width: 820px)');
+
   function textOf(el){
     return ((el && el.textContent) || '').replace(/\s+/g,' ').trim().toLowerCase();
+  }
+
+  function isRightGroup(el){
+    var text = textOf(el);
+    return text.indexOf('contact') !== -1 ||
+      text.indexOf('also visit') !== -1 ||
+      !!el.querySelector('a[href*="deadhanglaborllc"]');
   }
 
   function findFirstLegalLink(footer){
@@ -21,8 +30,24 @@
     }) || null;
   }
 
-  function legalBoundaryTarget(legalLink){
-    if(!legalLink) return null;
+  function placeDisclaimerForViewport(grid){
+    if(!grid) return;
+
+    var footer = grid.closest('footer.site') || grid.closest('footer');
+    var center = grid.querySelector('.footer-column-center');
+    var disclaimer = footer && footer.querySelector('.footer-disclaimer');
+    if(!footer || !center || !disclaimer) return;
+
+    if(!mobileQuery.matches){
+      disclaimer.classList.remove('footer-disclaimer-mobile-slot');
+      center.hidden = false;
+      if(disclaimer.parentElement !== center) center.appendChild(disclaimer);
+      return;
+    }
+
+    var legalLink = findFirstLegalLink(footer);
+    if(!legalLink) return;
+
     var target = legalLink;
     var parent = legalLink.parentElement;
 
@@ -33,31 +58,19 @@
       parent = target.parentElement;
     }
 
-    return parent ? { parent: parent, target: target } : null;
+    if(!parent) return;
+
+    disclaimer.classList.add('footer-disclaimer-mobile-slot');
+    parent.insertBefore(disclaimer, target);
+    center.hidden = true;
   }
 
-  function placeDisclaimer(grid){
-    if(!grid) return;
-
-    var footer = grid.closest('footer.site') || grid.closest('footer');
-    var holding = grid.querySelector('.footer-column-center');
-    var disclaimer = footer && footer.querySelector('.footer-disclaimer');
-    var legalLink = footer && findFirstLegalLink(footer);
-    var boundary = legalBoundaryTarget(legalLink);
-    if(!footer || !holding || !disclaimer || !boundary) return;
-
-    disclaimer.classList.remove('footer-disclaimer-mobile-slot');
-    disclaimer.classList.add('footer-disclaimer-stacked-slot');
-    boundary.parent.insertBefore(disclaimer, boundary.target);
-    holding.hidden = true;
-  }
-
-  function buildStackedFooter(){
+  function buildThreeColumnFooter(){
     var grid = document.querySelector('footer.site .footer-grid');
     if(!grid) return;
 
     if(grid.dataset.footerThreeColumns === '1'){
-      placeDisclaimer(grid);
+      placeDisclaimerForViewport(grid);
       return;
     }
 
@@ -68,23 +81,41 @@
       return el !== disclaimer && !el.classList.contains('footer-column');
     });
 
-    var primary = document.createElement('div');
-    var holding = document.createElement('div');
-    primary.className = 'footer-column footer-column-right';
-    holding.className = 'footer-column footer-column-center';
+    var leftItems = [];
+    var rightItems = [];
 
-    /* Preserve the baseline source order. The disclaimer is inserted again
-       immediately before the legal boundary, giving the footer three rows:
-       brand/navigation, disclaimer, legal/copyright. */
-    groups.forEach(function(el){ primary.appendChild(el); });
-    holding.appendChild(disclaimer);
+    groups.forEach(function(el){
+      (isRightGroup(el) ? rightItems : leftItems).push(el);
+    });
 
-    grid.replaceChildren(primary, holding);
+    /* Fail softly if the baseline groups are unlabeled: preserve source order
+       and move only the final group to the right column. */
+    if(!rightItems.length && leftItems.length > 1){
+      rightItems.unshift(leftItems.pop());
+    }
+
+    var left = document.createElement('div');
+    var center = document.createElement('div');
+    var right = document.createElement('div');
+    left.className = 'footer-column footer-column-left';
+    center.className = 'footer-column footer-column-center';
+    right.className = 'footer-column footer-column-right';
+
+    leftItems.forEach(function(el){ left.appendChild(el); });
+    center.appendChild(disclaimer);
+    rightItems.forEach(function(el){ right.appendChild(el); });
+
+    grid.replaceChildren(left, center, right);
     grid.classList.add('footer-grid-three');
     grid.dataset.footerThreeColumns = '1';
-    placeDisclaimer(grid);
+    placeDisclaimerForViewport(grid);
   }
 
-  buildStackedFooter();
-  window.addEventListener('hashchange', function(){ setTimeout(buildStackedFooter,0); });
+  buildThreeColumnFooter();
+  window.addEventListener('hashchange', function(){ setTimeout(buildThreeColumnFooter,0); });
+  if(typeof mobileQuery.addEventListener === 'function'){
+    mobileQuery.addEventListener('change', function(){
+      placeDisclaimerForViewport(document.querySelector('footer.site .footer-grid'));
+    });
+  }
 })();
