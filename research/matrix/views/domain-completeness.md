@@ -13,7 +13,7 @@ Owner-facing structural view distinguishing built routes, planned content, matri
 | D-CAR | 16 | 0 | 66 | 19 | 16 | 0 | 0 |
 | D-COM | 2 | 0 | 8 | 2 | 2 | 0 | 0 |
 | D-ELC | 10 | 0 | 36 | 13 | 12 | 0 | 0 |
-| D-FLD | 18 | 12 | 58 | 39 | 14 | 3 | 0 |
+| D-FLD | 18 | 0 | 58 | 39 | 14 | 3 | 0 |
 | D-FX | 3 | 0 | 12 | 3 | 3 | 0 | 0 |
 | D-LEAD | 3 | 0 | 5 | 5 | 3 | 0 | 0 |
 | D-LOG | 1 | 0 | 4 | 1 | 1 | 0 | 0 |
