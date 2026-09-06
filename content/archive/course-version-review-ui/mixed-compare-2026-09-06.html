@@ -1,1 +1,48 @@
-Superseded mixed comparison UI is preserved by its original Git blob in repository history. Active review now uses separated candidate spaces.
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Curriculum vNext — Course Comparison</title>
+<style>
+:root{--bg:#090c10;--panel:#111821;--panel2:#18212b;--line:#2b3641;--text:#f3f5f7;--muted:#aab5c0;--gold:#f5b400;--gold2:#ffd45a;--blue:#38a8e8}*{box-sizing:border-box}body{margin:0;background:#090c10;color:var(--text);font-family:Inter,system-ui,sans-serif}.top{position:sticky;top:0;z-index:20;background:#090c10f4;border-bottom:1px solid var(--line);padding:12px}.topin{max-width:1600px;margin:auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.brand{font-weight:950}.brand span{color:var(--gold)}select,.mode{background:#121820;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px 11px}.mode{cursor:pointer;font-weight:800}.mode.active{background:var(--gold);color:#111;border-color:var(--gold)}.note{max-width:1600px;margin:0 auto;padding:12px 14px;color:var(--muted);font-size:.86rem}.note strong{color:var(--gold2)}.compare{max-width:1600px;margin:auto;padding:0 12px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.pane{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}.panehead{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;background:#121820;border-bottom:1px solid var(--line)}.panehead b{font-size:.9rem}.panehead span{font-size:.72rem;color:var(--muted)}iframe{display:block;width:100%;height:calc(100vh - 165px);border:0;background:#090c10}.current-only .proposedPane{display:none}.current-only .compare,.proposed-only .compare{grid-template-columns:1fr}.proposed-only .currentPane{display:none}.links{margin-left:auto;display:flex;gap:10px}.links a{color:var(--gold2);text-decoration:none;font-weight:800;font-size:.8rem}@media(max-width:900px){.compare{grid-template-columns:1fr}.pane iframe{height:70vh}.links{width:100%;margin-left:0}.side-mode{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+<div class="brand">THE CREW <span>BLUEPRINT</span></div>
+<select id="course" aria-label="Choose course">
+<option value="fundamentals">Stagehand Fundamentals</option>
+<option value="lighting">Lighting Course 1</option>
+<option value="video">Video / LED Course 1</option>
+<option value="audio">Audio Course 1</option>
+<option value="staging">Staging & Carpentry Course 1</option>
+<option value="backline">Backline / Props / Wardrobe Course 1</option>
+</select>
+<button class="mode active" data-mode="both">Side-by-side</button>
+<button class="mode" data-mode="current">Current before vNext</button>
+<button class="mode" data-mode="proposed">Proposed vNext</button>
+<div class="links"><a href="./index.html">Full vNext review</a><a href="../../index.html#/owner-review-queue">Owner Review</a></div>
+</div></header>
+<div class="note"><strong>This is the actual comparison view.</strong> Left is a frozen, byte-for-byte copy of the course as it existed immediately before the vNext review build. Right is the proposed vNext course inside the owner-review interface. Neither replaces the current public course.</div>
+<div class="compare" id="compare">
+<section class="pane currentPane"><div class="panehead"><div><b>Current before vNext</b><br><span>Frozen baseline • source frontier d077efec…</span></div></div><iframe id="currentFrame" title="Current pre-vNext course"></iframe></section>
+<section class="pane proposedPane"><div class="panehead"><div><b>Proposed vNext</b><br><span>Demand + hiring + Roadmapdev + regulatory review version</span></div></div><iframe id="proposedFrame" title="Proposed vNext course"></iframe></section>
+</div>
+<script>
+const MAP={
+fundamentals:{current:'../../review-current-before-vnext/stagehand-fundamentals.html',proposed:'./index.html#fundamentals'},
+lighting:{current:'../../review-current-before-vnext/pathway-lighting-01-support.html',proposed:'./index.html#lighting'},
+video:{current:'../../review-current-before-vnext/pathway-video-01-support.html',proposed:'./index.html#video'},
+audio:{current:'../../review-current-before-vnext/pathway-audio-01-support.html',proposed:'./index.html#audio'},
+staging:{current:'../../review-current-before-vnext/pathway-staging-carpentry-01-support.html',proposed:'./index.html#staging'},
+backline:{current:'../../review-current-before-vnext/pathway-backline-props-wardrobe-01-support.html',proposed:'./index.html#backline'}
+};
+const course=document.getElementById('course'),cf=document.getElementById('currentFrame'),pf=document.getElementById('proposedFrame');
+function load(){const x=MAP[course.value];cf.src=x.current;pf.src=x.proposed;history.replaceState(null,'',`?course=${course.value}`)}
+course.onchange=load;
+const q=new URLSearchParams(location.search).get('course');if(q&&MAP[q])course.value=q;load();
+document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>{document.querySelectorAll('.mode').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.body.classList.remove('current-only','proposed-only');if(b.dataset.mode==='current')document.body.classList.add('current-only');if(b.dataset.mode==='proposed')document.body.classList.add('proposed-only')});
+</script>
+</body></html>
