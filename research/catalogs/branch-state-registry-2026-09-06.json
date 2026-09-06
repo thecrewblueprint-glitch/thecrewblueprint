@@ -1,7 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "registry_date": "2026-09-06",
   "repository": "thecrewblueprint-glitch/thecrewblueprint",
+  "live_branch_count_observed": 48,
   "purpose": "Prevent agents from treating every surviving branch as equally current while preserving historical course bodies, research, design experiments, and implementation evidence.",
   "default_agent_rule": "Start from main and research/agent-retrieval-manifest.json. Do not infer current truth from another branch solely because it is newer, fuller, or has a familiar filename. Read another branch only when this registry, the retrieval manifest, an accepted decision, or the owner's task points to it.",
   "authority_order": [
@@ -22,7 +23,7 @@
       "branch": "work/ecosystem-retrieval-graph-2026-09-06",
       "state": "active_structural_pr",
       "pr": 48,
-      "agent_use": "Current proposal for retrieval graph, cross-system context, course aliases, analysis snapshots, and data-navigation cleanup. Not canonical until accepted/merged."
+      "agent_use": "Current proposal for retrieval graph, cross-system context, course aliases, analysis snapshots, audience/employer discovery, reduced-catalog recommendation, and data-navigation cleanup. Not canonical until accepted/merged."
     },
     {
       "branch": "archive/lead-supervisor-electrics-rigging-2026-09-06",
@@ -45,6 +46,16 @@
       "agent_use": "Prior multipage product state. Useful for lineage and recovered assets/content only."
     },
     {
+      "branch": "archive/infrastructure-career-pre-owner-review-2026-09-06",
+      "state": "protected_content_archive",
+      "agent_use": "Preserves Infrastructure/Career pre-owner-review state and post-restore client-layer experiment. Relative to current main it contains unique css/client-polish.css and js/main.js work. Use only for recovery/salvage; do not restore the presentation wholesale."
+    },
+    {
+      "branch": "archive/session-partial-ui-owner-review-2026-09-06",
+      "state": "protected_session_recovery_archive",
+      "agent_use": "Preserves a partial session state containing client-polish work plus substantially reduced Production Coordination/Career and Infrastructure/Power pages. Use for provenance/recovery; shortened historical pages are not automatically preferred current content."
+    },
+    {
       "branch": "claude/production-courses-ui-ux-11l4vg",
       "state": "historical_full_course_and_ui_evidence",
       "agent_use": "Contains materially complete historical course bodies and production-course UI work. Compare against current evidence; do not treat as accepted current state."
@@ -63,9 +74,9 @@
     },
     {
       "branch": "research/site-uiux-copy-freshness-2026-08-31",
-      "state": "superseding_audit_candidate",
-      "pr": 43,
-      "agent_use": "Older UI/UX audit with useful findings but stale assumptions. Extract useful findings into current strategy; do not treat as current product specification."
+      "state": "closed_superseded_audit_branch",
+      "former_pr": 43,
+      "agent_use": "Older UI/UX audit with useful findings but stale assumptions. PR is closed. Extracted useful findings may inform current strategy; do not treat this branch as current product specification."
     }
   ],
   "other_branch_classification": [
@@ -205,7 +216,12 @@
     {
       "branch": "work/full-capacity-matrix-reconciliation-2026-09-06",
       "state": "superseded_structural_work",
-      "agent_use": "Do not resume by default; relevant ID-reconciliation work is being consolidated into PR 48."
+      "agent_use": "Do not resume by default; relevant ID-reconciliation work is consolidated into PR 48."
+    },
+    {
+      "branch": "work/v2-client-polish-2026-09-06",
+      "state": "redundant_work_ref_future_prune_candidate",
+      "agent_use": "Live comparison to main on 2026-09-06 showed zero unique commits and zero changed files; branch is one accepted commit behind main. Do not resume. Delete only after explicit owner approval."
     },
     {
       "branch": "workspace/full-frontier-audit-2026-08-31",
@@ -214,14 +230,15 @@
   ],
   "cleanup_policy": {
     "delete_branches_now": false,
-    "reason": "The owner explicitly values prior course versions, research, and design history for future content shaping and agent retrieval.",
+    "reason": "The owner explicitly values prior course versions, research, and design history for future content shaping and agent retrieval. Live audit identified one content-redundant branch, but deletion still requires owner approval.",
     "preferred_cleanup": [
       "close obsolete PRs without deleting their branches",
       "mark branch intent in this registry",
       "route agents through the retrieval manifest",
       "preserve full historical content only in clearly named archives",
       "do not use branch recency as authority",
-      "after the next stable release, optionally tag immutable milestones before pruning truly redundant work branches"
+      "after the next stable release, optionally tag immutable milestones before pruning truly redundant work branches",
+      "prove no unique research/course/media/governance evidence will be lost before deletion"
     ]
   }
 }
