@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0.0",
+  "registry_date": "2026-09-06",
+  "repository": "thecrewblueprint-glitch/thecrewblueprint",
+  "purpose": "Prevent agents from treating every surviving branch as equally current while preserving historical course bodies, research, design experiments, and implementation evidence.",
+  "default_agent_rule": "Start from main and research/agent-retrieval-manifest.json. Do not infer current truth from another branch solely because it is newer, fuller, or has a familiar filename. Read another branch only when this registry, the retrieval manifest, an accepted decision, or the owner's task points to it.",
+  "authority_order": [
+    "owner_latest_explicit_instruction",
+    "main",
+    "accepted_repository_governance_and_manifest",
+    "accepted_matrix_and_research_records",
+    "active_owner_authorized_work_pr",
+    "archives_and_historical_branches"
+  ],
+  "protected_key_branches": [
+    {
+      "branch": "main",
+      "state": "canonical_current",
+      "agent_use": "Current accepted Crew Blueprint source and public/staging product baseline. v2 presentation is owner-selected visual baseline."
+    },
+    {
+      "branch": "work/ecosystem-retrieval-graph-2026-09-06",
+      "state": "active_structural_pr",
+      "pr": 48,
+      "agent_use": "Current proposal for retrieval graph, cross-system context, course aliases, analysis snapshots, and data-navigation cleanup. Not canonical until accepted/merged."
+    },
+    {
+      "branch": "archive/lead-supervisor-electrics-rigging-2026-09-06",
+      "state": "protected_content_archive",
+      "agent_use": "Fuller historical Lead/Supervisor/Electrics/Rigging course bodies for comparison, salvage, porting to Owner Review, and lineage. Never automatic publication authority."
+    },
+    {
+      "branch": "archive/owner-review-course-content-2026-09-05",
+      "state": "protected_owner_review_archive",
+      "agent_use": "Historical owner-review course material. Consult when an owner-review port/reconciliation task specifically requires it."
+    },
+    {
+      "branch": "archive/pre-v2-restore-2026-09-06",
+      "state": "protected_safety_archive",
+      "agent_use": "Safety copy of the six-commit presentation/research state that was displaced when main was restored to the owner's v2 baseline. Preserve for recovery; do not use as current visual authority."
+    },
+    {
+      "branch": "archive/v1-multipage-2026-09-03",
+      "state": "historical_product_archive",
+      "agent_use": "Prior multipage product state. Useful for lineage and recovered assets/content only."
+    },
+    {
+      "branch": "claude/production-courses-ui-ux-11l4vg",
+      "state": "historical_full_course_and_ui_evidence",
+      "agent_use": "Contains materially complete historical course bodies and production-course UI work. Compare against current evidence; do not treat as accepted current state."
+    },
+    {
+      "branch": "claude/fresh-industrial-concept-11l4vg",
+      "state": "closed_design_exploration",
+      "former_pr": 38,
+      "agent_use": "Visual exploration only. PR closed; v2 is current visual baseline."
+    },
+    {
+      "branch": "claude/fresh-blueprint-concept-11l4vg",
+      "state": "closed_design_exploration",
+      "former_pr": 39,
+      "agent_use": "Visual exploration only. PR closed; v2 is current visual baseline."
+    },
+    {
+      "branch": "research/site-uiux-copy-freshness-2026-08-31",
+      "state": "superseding_audit_candidate",
+      "pr": 43,
+      "agent_use": "Older UI/UX audit with useful findings but stale assumptions. Extract useful findings into current strategy; do not treat as current product specification."
+    }
+  ],
+  "other_branch_classification": [
+    {
+      "branch": "chatgpt/consolidated-research-queue",
+      "state": "historical_work_branch"
+    },
+    {
+      "branch": "chatgpt/cross-build-content-governance",
+      "state": "historical_governance_work"
+    },
+    {
+      "branch": "chatgpt/pr-first-governance",
+      "state": "historical_governance_work"
+    },
+    {
+      "branch": "chatgpt/research-corpus-run-and-field-skills",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "claude/governance-build-phase-exception-11l4vg",
+      "state": "historical_governance_work"
+    },
+    {
+      "branch": "claude/repository-connections-h5mf2e",
+      "state": "historical_integration_work"
+    },
+    {
+      "branch": "claude/rq-400-role-coverage-map-11l4vg",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "claude/v2-redesign-concept-images",
+      "state": "historical_v2_design_evidence"
+    },
+    {
+      "branch": "cleanup/matrix-validator-hardening",
+      "state": "historical_structural_work"
+    },
+    {
+      "branch": "course/canonical-foundation-and-training-media-2026-08-30",
+      "state": "historical_course_work"
+    },
+    {
+      "branch": "curriculum/depth-authoring-2026-08-31",
+      "state": "historical_curriculum_work"
+    },
+    {
+      "branch": "curriculum/owner-audit-2026-08-30",
+      "state": "historical_owner_audit_work"
+    },
+    {
+      "branch": "curriculum/road-case-research-field-skills-message",
+      "state": "historical_research_work",
+      "agent_note": "Road Case owner-interview/rebuild remains a separately tracked unfinished task; do not infer completion from this branch."
+    },
+    {
+      "branch": "curriculum/tiered-course-build-2026-08-30",
+      "state": "historical_curriculum_work"
+    },
+    {
+      "branch": "docs/normalize-governance-wording",
+      "state": "historical_docs_work"
+    },
+    {
+      "branch": "fix/course3-catalog-dedup-2026-08-30",
+      "state": "historical_fix_branch"
+    },
+    {
+      "branch": "fix/fundamentals-bibliography-completeness-2026-08-30",
+      "state": "historical_fix_branch"
+    },
+    {
+      "branch": "fix/fundamentals-hazard-risk-visual-2026-08-30",
+      "state": "historical_fix_branch"
+    },
+    {
+      "branch": "fix/fundamentals-mobile-audit-2026-08-30",
+      "state": "historical_fix_branch"
+    },
+    {
+      "branch": "fix/stage-directions-diagram-2026-08-30",
+      "state": "historical_fix_branch"
+    },
+    {
+      "branch": "legal/bump-consent-version-2026-08-30",
+      "state": "historical_legal_work"
+    },
+    {
+      "branch": "legal/course-consent-gate-2026-08-30",
+      "state": "historical_legal_work"
+    },
+    {
+      "branch": "legal/legal-task-backlog-2026-08-30",
+      "state": "historical_legal_work"
+    },
+    {
+      "branch": "legal/rocket-lawyer-reconciliation-2026-08-30",
+      "state": "historical_legal_work"
+    },
+    {
+      "branch": "release/all-courses-live-2026-08-30",
+      "state": "historical_release_state"
+    },
+    {
+      "branch": "release/course-ecosystem-build-2026-08-31",
+      "state": "historical_release_state"
+    },
+    {
+      "branch": "remove-course-page-diagrams",
+      "state": "historical_ui_work"
+    },
+    {
+      "branch": "research/department-support-c1-matrix-completion",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "research/department-systems-c2-matrix-completion",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "research/master-domain-gap-queue-2026-08-31",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "research/mdq-010-stagehand-field-skills-universe",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "research/stagehand-field-task-redesign-2026-08-30",
+      "state": "historical_research_work"
+    },
+    {
+      "branch": "ui/unified-course-shell-road-case",
+      "state": "historical_ui_work"
+    },
+    {
+      "branch": "work/full-capacity-matrix-reconciliation-2026-09-06",
+      "state": "superseded_structural_work",
+      "agent_use": "Do not resume by default; relevant ID-reconciliation work is being consolidated into PR 48."
+    },
+    {
+      "branch": "workspace/full-frontier-audit-2026-08-31",
+      "state": "historical_audit_work"
+    }
+  ],
+  "cleanup_policy": {
+    "delete_branches_now": false,
+    "reason": "The owner explicitly values prior course versions, research, and design history for future content shaping and agent retrieval.",
+    "preferred_cleanup": [
+      "close obsolete PRs without deleting their branches",
+      "mark branch intent in this registry",
+      "route agents through the retrieval manifest",
+      "preserve full historical content only in clearly named archives",
+      "do not use branch recency as authority",
+      "after the next stable release, optionally tag immutable milestones before pruning truly redundant work branches"
+    ]
+  }
+}
