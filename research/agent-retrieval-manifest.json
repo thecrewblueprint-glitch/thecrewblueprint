@@ -1,12 +1,13 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "system": "thecrewblueprint",
   "canonical_repository": "thecrewblueprint-glitch/thecrewblueprint",
   "canonical_ref": "main",
-  "purpose": "Machine-readable entrypoint for agents retrieving Crew Blueprint curriculum, research, citation, evidence, review, lineage, historical-course state, decision context, and cross-system context.",
+  "purpose": "Machine-readable entrypoint for agents retrieving Crew Blueprint curriculum, research, citation, evidence, review, lineage, historical-course state, decision context, branch authority, and cross-system context.",
   "governance_entrypoints": [
     "AGENTS.md",
-    "CLAUDE.md"
+    "CLAUDE.md",
+    "research/catalogs/branch-state-registry-2026-09-06.json"
   ],
   "research_entrypoints": [
     {
@@ -28,6 +29,16 @@
       "id": "community-client-discovery-input",
       "path": "research/COMMUNITY_CLIENT_DISCOVERY_AND_ECOSYSTEM_INPUT_2026-09-06.md",
       "use": "audience-needs and cross-system audit input"
+    },
+    {
+      "id": "target-audience-content-strategy",
+      "path": "research/analysis/target-audience-content-strategy-and-course-catalog-2026-09-06.md",
+      "use": "current research-backed product/content architecture proposal: smaller public course catalog, Field Skills library, guides, advanced Owner Review, and 143-ID reclassification model"
+    },
+    {
+      "id": "branch-state-registry",
+      "path": "research/catalogs/branch-state-registry-2026-09-06.json",
+      "use": "machine-readable branch authority/state so historical, archive, exploratory, and active work branches are not mistaken for canonical current state"
     },
     {
       "id": "ecosystem-relationship-map",
@@ -81,13 +92,14 @@
     "visual_evidence": "research/matrix/views/visual-evidence.md"
   },
   "retrieval_order": [
-    "Read governance entrypoints before substantive work.",
-    "For broad architecture, backlog, restoration or prioritization questions, read course-system-situation-2026-09-06.json before reasoning from public pages or historical branches.",
+    "Read governance entrypoints and the branch-state registry before substantive work or before consulting non-main branches.",
+    "For broad architecture, backlog, restoration or prioritization questions, read course-system-situation-2026-09-06.json and target-audience-content-strategy-and-course-catalog-2026-09-06.md before reasoning from public pages or the 143-ID registry.",
+    "Do not interpret course_inventory.jsonl as a command to publish one standalone learner course per registered identity.",
     "Identify the current learner route or domain in course_inventory.jsonl and resolve legacy course IDs through course_id_aliases.jsonl before comparing planned versus built state.",
     "Resolve relevant CONTENT and COMPETENCY relationships through the matrix JSONL tables.",
     "Resolve claim support through SUPPORT_EDGE to SOURCE records; do not infer support from bibliography presence alone.",
     "Check REVIEW, MEDIA, lineage, qualification and supersession state before proposing publication changes.",
-    "Consult the all-branch catalog summary when investigating lost, replaced, archived or alternate course presentations; historical existence is evidence, not automatic restoration authority.",
+    "Consult the all-branch catalog summary and branch-state registry when investigating lost, replaced, archived or alternate course presentations; historical existence is evidence, not automatic restoration authority.",
     "Consult the current research radar for source-freshness and new research priorities; each radar entry is an input, not an accepted learner-facing claim.",
     "Represent cross-system inputs through the cross-system context contract when they need to participate in Crew Blueprint analysis; prefer pointers and provenance over copying volatile source payloads.",
     "Use the ecosystem relationship map only for context owned by another system; do not duplicate volatile external-system data into Crew Blueprint unless explicitly approved.",
@@ -96,7 +108,9 @@
   ],
   "agent_navigation": {
     "whole_course_system_view": [
+      "research/analysis/target-audience-content-strategy-and-course-catalog-2026-09-06.md",
       "research/analysis/course-system-situation-2026-09-06.json",
+      "research/catalogs/branch-state-registry-2026-09-06.json",
       "research/catalogs/all-branch-course-catalog-summary-2026-09-06.json",
       "research/matrix/course_inventory.jsonl",
       "research/matrix/views/domain-completeness.md",
@@ -104,11 +118,13 @@
     ],
     "current_research_and_freshness": [
       "research/analysis/research-priorities-2026-09-06.json",
+      "research/COMMUNITY_CLIENT_DISCOVERY_AND_ECOSYSTEM_INPUT_2026-09-06.md",
       "research/02-source-master-map.md",
       "research/matrix/sources*.jsonl",
       "research/matrix/views/source-impact.md"
     ],
     "historical_course_recovery": [
+      "research/catalogs/branch-state-registry-2026-09-06.json",
       "research/catalogs/all-branch-course-catalog-summary-2026-09-06.json",
       "research/analysis/course-system-situation-2026-09-06.json",
       "research/matrix/content_lineage_edges*.jsonl",
@@ -120,6 +136,7 @@
       "research/analysis/course-system-situation-2026-09-06.json"
     ],
     "what_should_we_build_or_fix_next": [
+      "research/analysis/target-audience-content-strategy-and-course-catalog-2026-09-06.md",
       "research/analysis/course-system-situation-2026-09-06.json",
       "research/analysis/research-priorities-2026-09-06.json",
       "research/matrix/views/domain-completeness.md",
@@ -143,6 +160,7 @@
     "volatile external-system data should be referenced rather than copied when possible",
     "course content and evidence lineage must remain distinguishable from analytical recommendations",
     "historical full builds must not be treated as automatically current",
-    "research-radar items must remain distinguishable from accepted curriculum claims"
+    "research-radar items must remain distinguishable from accepted curriculum claims",
+    "non-main branches must not become current truth without an explicit branch-state/owner/governance reason"
   ]
 }
