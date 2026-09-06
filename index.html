@@ -2,6 +2,6 @@
 layout: null
 ---
 {% capture v2_source %}{% include v2-baseline.html %}{% endcapture %}
-{% assign v2_source = v2_source | replace: '</head>', '<link rel="stylesheet" href="css/v2-client-layer.css?v=20260906"><link rel="stylesheet" href="css/vnext-owner-review.css?v=20260906-vnext1"><link rel="stylesheet" href="css/v2-footer-three-column.css?v=20260906-footer3"></head>' %}
-{% assign v2_source = v2_source | replace: '</body>', '<script src="js/v2-client-layer.js?v=20260906"></script><script src="js/vnext-owner-review.js?v=20260906-vnext1"></script><script src="js/v2-footer-three-column.js?v=20260906-footer3"></script></body>' %}
+{% assign v2_source = v2_source | replace: '</head>', '<link rel="stylesheet" href="css/v2-client-layer.css?v=20260906"><link rel="stylesheet" href="css/v2-footer-three-column.css?v=20260906-footer3"></head>' %}
+{% assign v2_source = v2_source | replace: '</body>', '<script src="js/v2-client-layer.js?v=20260906"></script><script src="js/v2-footer-three-column.js?v=20260906-footer3"></script></body>' %}
 {{ v2_source }}
