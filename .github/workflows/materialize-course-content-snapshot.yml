@@ -1,0 +1,63 @@
+name: Materialize Course Content Snapshot
+
+on:
+  push:
+    branches:
+      - archive/content-snapshot-all-versions-2026-09-06
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout snapshot branch with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: archive/content-snapshot-all-versions-2026-09-06
+
+      - name: Fetch every repository branch
+        run: |
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune --no-tags
+          echo "Remote branches available: $(git for-each-ref refs/remotes/origin --format='%(refname:short)' | grep -v '^origin/HEAD$' | wc -l)"
+
+      - name: Materialize verbatim course/content versions
+        run: python3 scripts/materialize-course-content-snapshot.py
+
+      - name: Verify snapshot invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('content/archive/verbatim/snapshot-2026-09-06-all-course-versions')
+          identity = json.loads((root/'identity-lineage-143.json').read_text())
+          manifest = json.loads((root/'snapshot-manifest.json').read_text())
+          assert len(identity) == 143, len(identity)
+          assert manifest['canonical_identity_count'] == 143
+          assert manifest['source_branch_count'] >= 48, manifest['source_branch_count']
+          assert manifest['snapshot_file_count'] > 143, manifest['snapshot_file_count']
+          missing = [r['course_id'] for r in identity if not any(v['source_branch'] == 'main' for v in r['versions'])]
+          assert not missing, f'Missing main route snapshots: {missing}'
+          print({
+              'identities': len(identity),
+              'source_branches': manifest['source_branch_count'],
+              'snapshot_files': manifest['snapshot_file_count'],
+              'unique_blobs': manifest['unique_blob_count'],
+          })
+          PY
+
+      - name: Commit generated archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/archive/verbatim/snapshot-2026-09-06-all-course-versions
+          if git diff --cached --quiet; then
+            echo 'Snapshot already current.'
+            exit 0
+          fi
+          git commit -m 'archive: materialize verbatim course versions from all branches'
+          git push origin HEAD:archive/content-snapshot-all-versions-2026-09-06
