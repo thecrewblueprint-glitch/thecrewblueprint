@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-06",
+  "status": "execution frontier after single-run handoff completion pass",
+  "latest_accepted_main": "94bb5cfe7dbc7eac3369a8d4f08234622a807f9c",
+  "structural_pr": 48,
+  "states": {
+    "DONE": [
+      "Verified live main and recovered/preserved the v2 visual baseline without redesigning it.",
+      "Implemented a v2-preserving public Courses catalog centered on Stagehand Fundamentals, Field Skills, and five real Course 1 department starters.",
+      "Removed Infrastructure/Career, Rigging, Electrics, Lead and Supervisor from normal public learner catalog choices.",
+      "Rewrote homepage progression so it no longer claims one universal industry promotion ladder.",
+      "Rewrote About copy to be founder-led, human, candid about project limits, and explicit about research/practitioner/owner review.",
+      "Flipped the shared v2 footer so brand/navigation is left and safety disclaimer is right; removed Curriculum Map from normal public footer.",
+      "Preserved Owner Review and historical/advanced content without casual public exposure or deletion.",
+      "Enumerated all open PRs; PR 48 is the only current open PR.",
+      "Audited PR 48 with live repository evidence and Roadmapdev methodology; kept it draft/unmerged pending owner decision.",
+      "Expanded worker/community and employer-needs discovery and kept it separate from technical/safety authority.",
+      "Reconciled audience/employer discovery with Production Atlas role/employer ecosystem context and Crew Blueprint research.",
+      "Produced the reduced final recommended public catalog with per-item audience, problem, rationale, learning outcome, format, reuse, gaps, readiness, owner-review requirement and safety/qualification boundary.",
+      "Assessed conversion difficulty and identified immediate reuse, restructuring, rewriting and archive-only areas.",
+      "Classified all 143 registered logical identities exactly once into product roles: 6 public courses, 18 Field Skills, 49 modules, 5 guides, 11 references, 21 specialist-awareness items, 32 advanced Owner Review items and 1 defer/remove premise.",
+      "Built a branching live-production role-family/responsibility map instead of a universal rank ladder.",
+      "Produced proposed Content Pipeline v2 with two-lens research, sufficiency, authority/safety, practitioner/owner, learner-usability and publication gates.",
+      "Produced proposed canonical ground/field-hand foundation architecture: Fundamentals + Field Skills library.",
+      "Produced proposed curriculum/repository container architecture with public/review/research layers and no-delete archive policy.",
+      "Implemented the Crew Blueprint knowledge locator/cross-data contract in PR 48: retrieval manifest, ecosystem relationship map, cross-system context schema and Field Skill ID aliases.",
+      "Verified that Roadmapdev main already implements and tests the required COMPLETE / NEEDS_EVIDENCE / BLOCKED orchestration wrapper; bound Crew Blueprint to it instead of duplicating code.",
+      "Reconciled live branch inventory from the earlier 42-ref observation to 48 current refs and classified the new archive/work refs.",
+      "Identified work/v2-client-polish-2026-09-06 as a zero-unique future prune candidate while preserving it pending owner approval.",
+      "Repaired the inherited course-consent validation defect on ten locked advanced/Owner Review routes without changing their course content or locked/noindex state.",
+      "Verified current main with a fully green Ecosystem Curriculum Validation run: matrix generation, matrix validation, curriculum validation, consent coverage, accessibility baseline and generated views all pass.",
+      "Reconciled PR 48 onto the current green main history with a non-force two-parent merge commit."
+    ],
+    "WAITING_OWNER_APPROVAL": [
+      {
+        "item": "Accept/merge PR 48 structural architecture",
+        "decision": "Approve the retrieval graph, reduced-catalog analysis, 143-ID classification, role map, Content Pipeline v2, container architecture and related structural records as accepted Crew Blueprint state.",
+        "note": "PR remains draft/unmerged by design."
+      },
+      {
+        "item": "Canonicalize proposed curriculum architecture",
+        "decision": "Approve the proposed 6-course + Field Skills + guides model and the classification/container model as controlling architecture rather than analytical proposal."
+      },
+      {
+        "item": "Physical repository restructuring/pruning",
+        "decision": "Approve any later file moves, consolidation, or deletion of truly redundant branches such as work/v2-client-polish-2026-09-06. Unique research and historical course bodies remain protected."
+      },
+      {
+        "item": "Role map / foundation / Content Pipeline v2",
+        "decision": "Approve these proposed structural contracts before agents treat them as canonical rather than PR-stage analysis."
+      }
+    ],
+    "WAITING_OWNER_INPUT": [
+      {
+        "item": "Road Case Field Skill owner review/rebuild",
+        "need": "Owner field-context observations/desired practical framing that the prior task specifically requested. Existing research cannot substitute for those owner observations and they will not be invented."
+      }
+    ],
+    "BLOCKED_BY_CURRENT_RUNTIME": [
+      {
+        "item": "True public-domain desktop/mobile pixel verification",
+        "reason": "Chromium/Playwright are available, but this execution container cannot resolve the GitHub Pages domain and the GitHub connector does not expose the required Pages artifact/deployment fetch path. Source/build/JS/CSS and CI validation are complete; pixel-level public URL verification is not honestly claimable in this runtime."
+      },
+      {
+        "item": "Generate and commit the new original About festival-stage image",
+        "reason": "Image generation is available as a conversation image tool, but its result is not exposed here as a repository file/byte path that can be committed through the connected GitHub text/file APIs. The current About copy/visual slot is ready for the requested original image; generation plus repository integration requires an image artifact handoff surface or a separate image-focused turn where the produced image can then be supplied back as a file."
+      }
+    ],
+    "FUTURE_VALIDATION_NOT_A_CURRENT_COMPLETION_CLAIM": [
+      "Direct learner usability testing of materially rewritten course containers.",
+      "Practitioner validation for specialist/appointed-responsibility content before advanced publication.",
+      "Periodic source-freshness checks for changing regulations, standards, credentials, employers and market data."
+    ]
+  },
+  "safety_boundary": "Rigging, energized electrical/temporary power, structural assembly, powered equipment, work at height, pyro, lasers and similar specialist/hazardous areas remain awareness/recognition/role-boundary/stop-escalate content for general learners. Online Crew Blueprint material does not create qualification, licensing, appointment or employer authorization."
+}
