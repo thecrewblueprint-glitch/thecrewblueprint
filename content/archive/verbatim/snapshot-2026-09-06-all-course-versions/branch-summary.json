@@ -1,0 +1,482 @@
+[
+  {
+    "branch": "archive/infrastructure-career-pre-owner-review-2026-09-06",
+    "commit": "d68309368d2775488418ca48e56f4bfdd3846e6f",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "096310c92b188a6bb2a41154c1dd1b7ab9d819e7",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "57460d5fd788fe5f4db9d744867445c1ae9b9967"
+  },
+  {
+    "branch": "archive/lead-supervisor-electrics-rigging-2026-09-06",
+    "commit": "224e9c73d772ff640b2da68bfd35a81e2fcfca38",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "889bcd9918c489be3f713dffee2ef999638f136e",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "73b6510330a5d61a7ed5cfd50fcaa4f46584c352"
+  },
+  {
+    "branch": "archive/owner-review-course-content-2026-09-05",
+    "commit": "55ca1ed79efab53ec40c11f86ed98aa15a11bf3a",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "096310c92b188a6bb2a41154c1dd1b7ab9d819e7",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "57460d5fd788fe5f4db9d744867445c1ae9b9967"
+  },
+  {
+    "branch": "archive/pre-v2-restore-2026-09-06",
+    "commit": "261950ecce2441ed39ee4d2786f4f228a4ce317d",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "096310c92b188a6bb2a41154c1dd1b7ab9d819e7",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "3f80aacab2abaa2a43c7828442fb617bd2623d78"
+  },
+  {
+    "branch": "archive/session-partial-ui-owner-review-2026-09-06",
+    "commit": "ea2ee7badb31ae13bdd5896c64c8185a09c94fe5",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "d0c1eed660dcec995871ce9e4ff655938da891c5",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "57460d5fd788fe5f4db9d744867445c1ae9b9967"
+  },
+  {
+    "branch": "archive/v1-multipage-2026-09-03",
+    "commit": "4c41305515022d9c9dbc1cda9fc9790fe0e63cd5",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "889bcd9918c489be3f713dffee2ef999638f136e",
+    "scripts_tree_sha": "5d8d5a19575e78da8cda78e921008732c963f9a0",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "06991c19d84eee73f2026d527991e4a8ffe2a03e"
+  },
+  {
+    "branch": "chatgpt/consolidated-research-queue",
+    "commit": "482cee9df6d0be043f09d6ee9cd78eb006bab128",
+    "snapshot_file_count": 52,
+    "canonical_143_logical_routes_resolved": 11,
+    "courses_tree_sha": "cad5e5a7ca8ff357c98dedb2141706a6540c777e",
+    "scripts_tree_sha": null,
+    "visuals_tree_sha": "731bb38d2bd75586692898e1445e6f915a874cd8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "chatgpt/cross-build-content-governance",
+    "commit": "27a1d238dbb1ea52c4383ed1ba609afb962d2ce6",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "889bcd9918c489be3f713dffee2ef999638f136e",
+    "scripts_tree_sha": "5d8d5a19575e78da8cda78e921008732c963f9a0",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "06991c19d84eee73f2026d527991e4a8ffe2a03e"
+  },
+  {
+    "branch": "chatgpt/pr-first-governance",
+    "commit": "2a35b4a2d5e581375ed8e2fa14fefd683cb63472",
+    "snapshot_file_count": 52,
+    "canonical_143_logical_routes_resolved": 11,
+    "courses_tree_sha": "9ff4b5257cfe64b69dddb534a0d360ed00377399",
+    "scripts_tree_sha": null,
+    "visuals_tree_sha": "731bb38d2bd75586692898e1445e6f915a874cd8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "chatgpt/research-corpus-run-and-field-skills",
+    "commit": "91d7fde7ef7b7b762dae73feb1e91151e4a04e6d",
+    "snapshot_file_count": 52,
+    "canonical_143_logical_routes_resolved": 11,
+    "courses_tree_sha": "cad5e5a7ca8ff357c98dedb2141706a6540c777e",
+    "scripts_tree_sha": null,
+    "visuals_tree_sha": "731bb38d2bd75586692898e1445e6f915a874cd8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "claude/fresh-blueprint-concept-11l4vg",
+    "commit": "c459e251fb4009102e8d6664cc1a6e52c9e96399",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "b55158b60ff59706ac40ef31631882ad7a6b5c1a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "claude/fresh-industrial-concept-11l4vg",
+    "commit": "30a0f624b1aa007e3ad73dab2af6e27fb99f75bc",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "b55158b60ff59706ac40ef31631882ad7a6b5c1a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "claude/governance-build-phase-exception-11l4vg",
+    "commit": "d1c890ee6a841afcfeee861eb99d7da39b3ab58c",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "d1fbb047e7082c2650b34a03afb950624345ec78",
+    "scripts_tree_sha": "44804dffa813bed5bd5097e1929b7200a743d357",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "claude/production-courses-ui-ux-11l4vg",
+    "commit": "a62dd734c7eec415bc094ba18ea91bec20526124",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "b55158b60ff59706ac40ef31631882ad7a6b5c1a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "claude/repository-connections-h5mf2e",
+    "commit": "1218f3fd581b0e75f83f02587df0ab01cb544c73",
+    "snapshot_file_count": 34,
+    "canonical_143_logical_routes_resolved": 8,
+    "courses_tree_sha": "c6413d856529872654eacbf631cec7a43917adb2",
+    "scripts_tree_sha": null,
+    "visuals_tree_sha": null,
+    "index_blob_sha": "afdfb8e0232edfbd1d62460e758d8394c355f214"
+  },
+  {
+    "branch": "claude/rq-400-role-coverage-map-11l4vg",
+    "commit": "add2fe282c9a2e858285e8edc2a0ace84279edfd",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "b55158b60ff59706ac40ef31631882ad7a6b5c1a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "claude/v2-redesign-concept-images",
+    "commit": "0c237f3e93f4d376677611e67556c6d8f9ac4997",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "7ebf1aedcc022ddddfceb6d20f3d6a2ebd313b95",
+    "scripts_tree_sha": "5037ef8fe0a66ae7e796069dc8e7200ede290b6a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "9f8301951725e937240e4eb61f7a09aebb07e700"
+  },
+  {
+    "branch": "cleanup/matrix-validator-hardening",
+    "commit": "010e374490c5c097e9a45c233d570b2311afb232",
+    "snapshot_file_count": 95,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "87168917b26875a9ed46f25fae53a65b1af9dc9e",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "course/canonical-foundation-and-training-media-2026-08-30",
+    "commit": "8ffa99c0f49aa18a339b84f37e2b54666ee15344",
+    "snapshot_file_count": 84,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "f46c96bab2f1823758d51d3ec6b6c32a5585a95a",
+    "scripts_tree_sha": "0174d6183ddb114ee033903c13bb31788a721fa2",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "curriculum/depth-authoring-2026-08-31",
+    "commit": "e152e64cf7b1967d40ff6069608d46a638536542",
+    "snapshot_file_count": 114,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "bf9cfeffa4d80cc67618a81315efb616d0518f5b",
+    "scripts_tree_sha": "5037ef8fe0a66ae7e796069dc8e7200ede290b6a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "4f61c7bc49a8e83d53590b31def5089781cd023e"
+  },
+  {
+    "branch": "curriculum/owner-audit-2026-08-30",
+    "commit": "691baf4808bfebda04b5cb9f4f82f4db6d5a1e7f",
+    "snapshot_file_count": 78,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "519611d37a0bc6c4cf179fb073e6794cc6400ac4",
+    "scripts_tree_sha": "c7a6f7c48ba763baf0caef356f427737b386a5b3",
+    "visuals_tree_sha": "176ac61167e80807bc8b7e9b2a09e3221be07c02",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "curriculum/road-case-research-field-skills-message",
+    "commit": "b64d7a0a07cc458360ce1535440296a7044b6b50",
+    "snapshot_file_count": 87,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "1719e4b2a0eb996230c1434b5c9f768d388d7312",
+    "scripts_tree_sha": "6d0eb7347b208241144501cda71bc0ad59263847",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "curriculum/tiered-course-build-2026-08-30",
+    "commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+    "snapshot_file_count": 80,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "b426bc8f951eb23c4cae91d629effcf1d47be19b",
+    "scripts_tree_sha": "f42668e35568b728060211505885c6eadc1b789d",
+    "visuals_tree_sha": "176ac61167e80807bc8b7e9b2a09e3221be07c02",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "docs/normalize-governance-wording",
+    "commit": "6e69a61925dbcc0d43857b011a785c146461ff54",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "b55158b60ff59706ac40ef31631882ad7a6b5c1a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "fix/course3-catalog-dedup-2026-08-30",
+    "commit": "7fa68dba7d49d6262b8a019dee05a8940121b147",
+    "snapshot_file_count": 82,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "f9cce401646c63bd841dc38319dd8abf928954ca",
+    "scripts_tree_sha": "0910843909d7817dacae24c77733e967f2e0ed00",
+    "visuals_tree_sha": "176ac61167e80807bc8b7e9b2a09e3221be07c02",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "fix/fundamentals-bibliography-completeness-2026-08-30",
+    "commit": "7629221e398d3032622388b091cc61141c22a96b",
+    "snapshot_file_count": 83,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "fc791264b86c9b74769427c4b476c81cfca20920",
+    "scripts_tree_sha": "c53d9d88f557fe775d39a3c29d69ffad16d3e640",
+    "visuals_tree_sha": "901d2bca0c86a91726598800bad24c65d17a4e87",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "fix/fundamentals-hazard-risk-visual-2026-08-30",
+    "commit": "08fc681e91944e4f2a237b6591c2d6c2486c7b7f",
+    "snapshot_file_count": 83,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "90574037f062bf98114f68b6db718a9f09b9cd5e",
+    "scripts_tree_sha": "c53d9d88f557fe775d39a3c29d69ffad16d3e640",
+    "visuals_tree_sha": "901d2bca0c86a91726598800bad24c65d17a4e87",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "fix/fundamentals-mobile-audit-2026-08-30",
+    "commit": "8ff85ab1f0c8042c937c377c16af7b353608ded9",
+    "snapshot_file_count": 82,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "f9cce401646c63bd841dc38319dd8abf928954ca",
+    "scripts_tree_sha": "0910843909d7817dacae24c77733e967f2e0ed00",
+    "visuals_tree_sha": "176ac61167e80807bc8b7e9b2a09e3221be07c02",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "fix/stage-directions-diagram-2026-08-30",
+    "commit": "9b1e49db3cdba003ac17972fdc0515e92a3281bb",
+    "snapshot_file_count": 83,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "5f212a340408c5838532a7969cb480736df41c87",
+    "scripts_tree_sha": "c53d9d88f557fe775d39a3c29d69ffad16d3e640",
+    "visuals_tree_sha": "901d2bca0c86a91726598800bad24c65d17a4e87",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "legal/bump-consent-version-2026-08-30",
+    "commit": "0a8b72d8f08e8995dd6f3edbb931774d35e958ac",
+    "snapshot_file_count": 87,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "1719e4b2a0eb996230c1434b5c9f768d388d7312",
+    "scripts_tree_sha": "1cd5a0dc98537c26fdae728505921b977897a9e1",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "legal/course-consent-gate-2026-08-30",
+    "commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+    "snapshot_file_count": 85,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "a6053fca451ba22173648764f1980fbd014a84f3",
+    "scripts_tree_sha": "44923b4a2cd7bb993c469df1e133ddec57667466",
+    "visuals_tree_sha": "901d2bca0c86a91726598800bad24c65d17a4e87",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "legal/legal-task-backlog-2026-08-30",
+    "commit": "e32e50a1de198ff4c8a1c7c3a28c0fada27673a6",
+    "snapshot_file_count": 87,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "1719e4b2a0eb996230c1434b5c9f768d388d7312",
+    "scripts_tree_sha": "6d0eb7347b208241144501cda71bc0ad59263847",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "legal/rocket-lawyer-reconciliation-2026-08-30",
+    "commit": "a77c6d5936a5af2deb562ea002d8212fcb77df97",
+    "snapshot_file_count": 87,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "1719e4b2a0eb996230c1434b5c9f768d388d7312",
+    "scripts_tree_sha": "2dcb0aa3a3be8cc58cbd463dba37e55ff5e3e5a5",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "main",
+    "commit": "d3fdbe12a2d822bf43ef2be31b7ba4f2d0cd7815",
+    "snapshot_file_count": 114,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "b834823798405966166c10374bccd2089d8caef5",
+    "scripts_tree_sha": "7121ebe003d978db48efcee1974064aa241ef21b",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "1c84e95f53f0b1bbb3e3dc09f220082f28d68e5f"
+  },
+  {
+    "branch": "release/all-courses-live-2026-08-30",
+    "commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+    "snapshot_file_count": 82,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "4e872dbe5ec5f475a7bc203cbcf8088b6ef9ef01",
+    "scripts_tree_sha": "0910843909d7817dacae24c77733e967f2e0ed00",
+    "visuals_tree_sha": "176ac61167e80807bc8b7e9b2a09e3221be07c02",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "release/course-ecosystem-build-2026-08-31",
+    "commit": "f7df16e990063e8f9a8e267a3be664c4051b97c3",
+    "snapshot_file_count": 108,
+    "canonical_143_logical_routes_resolved": 45,
+    "courses_tree_sha": "e0b48649ae45804fded64c7722cc4c283483f612",
+    "scripts_tree_sha": "87168917b26875a9ed46f25fae53a65b1af9dc9e",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "4f61c7bc49a8e83d53590b31def5089781cd023e"
+  },
+  {
+    "branch": "remove-course-page-diagrams",
+    "commit": "2f651e27e06796bf898fefc02c758743a747fcb4",
+    "snapshot_file_count": 52,
+    "canonical_143_logical_routes_resolved": 11,
+    "courses_tree_sha": "cad5e5a7ca8ff357c98dedb2141706a6540c777e",
+    "scripts_tree_sha": null,
+    "visuals_tree_sha": "731bb38d2bd75586692898e1445e6f915a874cd8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "research/department-support-c1-matrix-completion",
+    "commit": "80a08978efa2c56233c1badee55251caaa7db57a",
+    "snapshot_file_count": 95,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "87168917b26875a9ed46f25fae53a65b1af9dc9e",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "research/department-systems-c2-matrix-completion",
+    "commit": "0d5ea0ce4efe8a7574e295c57bf806494a5431fa",
+    "snapshot_file_count": 95,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "87168917b26875a9ed46f25fae53a65b1af9dc9e",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "research/master-domain-gap-queue-2026-08-31",
+    "commit": "0ee110383cdf182b1c2f5f459ed68cbc3527ddef",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "b55158b60ff59706ac40ef31631882ad7a6b5c1a",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "research/mdq-010-stagehand-field-skills-universe",
+    "commit": "ae70d9a652655282259406e6649592ba569948cf",
+    "snapshot_file_count": 95,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "c2e172f2b0ce6b78645f1fce55e9e0263139f4d6",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "research/site-uiux-copy-freshness-2026-08-31",
+    "commit": "d02d01205d31e3882af052e3688c7394732e0fc1",
+    "snapshot_file_count": 95,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "e517e90e171303c5bcd821e7e35aede5b4c935ec",
+    "scripts_tree_sha": "87168917b26875a9ed46f25fae53a65b1af9dc9e",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "4f61c7bc49a8e83d53590b31def5089781cd023e"
+  },
+  {
+    "branch": "research/stagehand-field-task-redesign-2026-08-30",
+    "commit": "a62e8bf1da53ff111863c84b043903d2ad13e335",
+    "snapshot_file_count": 87,
+    "canonical_143_logical_routes_resolved": 32,
+    "courses_tree_sha": "1719e4b2a0eb996230c1434b5c9f768d388d7312",
+    "scripts_tree_sha": "2dcb0aa3a3be8cc58cbd463dba37e55ff5e3e5a5",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "ui/unified-course-shell-road-case",
+    "commit": "13824cfdb40480ce159cdd87810fa0c07ddd1775",
+    "snapshot_file_count": 91,
+    "canonical_143_logical_routes_resolved": 33,
+    "courses_tree_sha": "5a520fe2e0d2ae0be0059cc68b692ba838af232f",
+    "scripts_tree_sha": "2d73e4ee23361e607997df4b1176383656f2cca4",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "73ae6a6609bcbbdea4934f88e0d3db1be08ea841"
+  },
+  {
+    "branch": "work/ecosystem-retrieval-graph-2026-09-06",
+    "commit": "d9958aa677834d10d6bd76b39810f1244c32a8fd",
+    "snapshot_file_count": 114,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "b834823798405966166c10374bccd2089d8caef5",
+    "scripts_tree_sha": "7121ebe003d978db48efcee1974064aa241ef21b",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "58f0a1e14a68ca06f264cdb096c03f9d6d806cf6"
+  },
+  {
+    "branch": "work/full-capacity-matrix-reconciliation-2026-09-06",
+    "commit": "56b9ab97576b5000addc66535e29437c415e7f13",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "096310c92b188a6bb2a41154c1dd1b7ab9d819e7",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "57460d5fd788fe5f4db9d744867445c1ae9b9967"
+  },
+  {
+    "branch": "work/v2-client-polish-2026-09-06",
+    "commit": "56b9ab97576b5000addc66535e29437c415e7f13",
+    "snapshot_file_count": 113,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "096310c92b188a6bb2a41154c1dd1b7ab9d819e7",
+    "scripts_tree_sha": "af83916491c43e461717792b542c48c37fee2585",
+    "visuals_tree_sha": "5597bcf617bfb77bc41bede01bf8f453e39266c8",
+    "index_blob_sha": "57460d5fd788fe5f4db9d744867445c1ae9b9967"
+  },
+  {
+    "branch": "workspace/full-frontier-audit-2026-08-31",
+    "commit": "96ba9ee12f1ff4e2f38c0c55352603412cc7ee4c",
+    "snapshot_file_count": 114,
+    "canonical_143_logical_routes_resolved": 143,
+    "courses_tree_sha": "0a64f743b48e4e1a9001d3da3583bc3562b731aa",
+    "scripts_tree_sha": "43abd5e7058ba9bd3f845d06eecac39b3c99cd0f",
+    "visuals_tree_sha": "31a1eaee27d853ead753eb3a41c2374cbb8e83e8",
+    "index_blob_sha": "4f61c7bc49a8e83d53590b31def5089781cd023e"
+  }
+]
