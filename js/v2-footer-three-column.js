@@ -2,6 +2,8 @@
 (function(){
   'use strict';
 
+  var mobileQuery = window.matchMedia('(max-width: 820px)');
+
   function textOf(el){
     return ((el && el.textContent) || '').replace(/\s+/g,' ').trim().toLowerCase();
   }
@@ -13,9 +15,64 @@
       !!el.querySelector('a[href*="deadhanglaborllc"]');
   }
 
+  function findFirstLegalLink(footer){
+    var legalLabels = [
+      'privacy policy',
+      'terms & conditions',
+      'cookies notice',
+      'accessibility',
+      'limitation of liability',
+      'affiliate disclosure'
+    ];
+
+    return Array.prototype.slice.call(footer.querySelectorAll('a')).find(function(link){
+      return legalLabels.indexOf(textOf(link)) !== -1;
+    }) || null;
+  }
+
+  function placeDisclaimerForViewport(grid){
+    if(!grid) return;
+
+    var footer = grid.closest('footer.site') || grid.closest('footer');
+    var center = grid.querySelector('.footer-column-center');
+    var disclaimer = footer && footer.querySelector('.footer-disclaimer');
+    if(!footer || !center || !disclaimer) return;
+
+    if(!mobileQuery.matches){
+      disclaimer.classList.remove('footer-disclaimer-mobile-slot');
+      center.hidden = false;
+      if(disclaimer.parentElement !== center) center.appendChild(disclaimer);
+      return;
+    }
+
+    var legalLink = findFirstLegalLink(footer);
+    if(!legalLink) return;
+
+    var target = legalLink;
+    var parent = legalLink.parentElement;
+
+    /* Keep list markup valid: place the disclaimer before the legal list,
+       not inside the first <li>. */
+    if(parent && parent.tagName === 'LI' && parent.parentElement){
+      target = parent.parentElement;
+      parent = target.parentElement;
+    }
+
+    if(!parent) return;
+
+    disclaimer.classList.add('footer-disclaimer-mobile-slot');
+    parent.insertBefore(disclaimer, target);
+    center.hidden = true;
+  }
+
   function buildThreeColumnFooter(){
     var grid = document.querySelector('footer.site .footer-grid');
-    if(!grid || grid.dataset.footerThreeColumns === '1') return;
+    if(!grid) return;
+
+    if(grid.dataset.footerThreeColumns === '1'){
+      placeDisclaimerForViewport(grid);
+      return;
+    }
 
     var disclaimer = grid.querySelector('.footer-disclaimer');
     if(!disclaimer) return;
@@ -51,8 +108,14 @@
     grid.replaceChildren(left, center, right);
     grid.classList.add('footer-grid-three');
     grid.dataset.footerThreeColumns = '1';
+    placeDisclaimerForViewport(grid);
   }
 
   buildThreeColumnFooter();
   window.addEventListener('hashchange', function(){ setTimeout(buildThreeColumnFooter,0); });
+  if(typeof mobileQuery.addEventListener === 'function'){
+    mobileQuery.addEventListener('change', function(){
+      placeDisclaimerForViewport(document.querySelector('footer.site .footer-grid'));
+    });
+  }
 })();
