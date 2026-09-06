@@ -106,6 +106,8 @@
       mark.setAttribute('aria-pressed', done ? 'true' : 'false');
     }
 
+    var existingFinished=document.querySelector('.v2-course-finished');
+    if(count !== total && existingFinished) existingFinished.remove();
     if (count === total && total > 0 && !document.querySelector('.v2-course-finished')) {
       var finished = document.createElement('div'); finished.className='v2-course-finished';
       finished.innerHTML='<strong>Stagehand Fundamentals complete.</strong><span>Your completion is saved in this browser. Continue into Field Skills or a department starter when you are ready.</span><div class="v2-finish-actions"><a class="btn btn-primary" href="#/field-skills">Open Field Skills</a><a class="btn btn-ghost" href="#/courses">Browse Course 1</a></div>';
