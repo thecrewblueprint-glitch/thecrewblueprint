@@ -46,7 +46,8 @@
     "reviews": "research/matrix/reviews*.jsonl",
     "media": "research/matrix/media*.jsonl",
     "route_compatibility": "research/matrix/route_compatibility_inventory.jsonl",
-    "competency_aliases": "research/matrix/competency_id_aliases.jsonl"
+    "competency_aliases": "research/matrix/competency_id_aliases.jsonl",
+    "course_aliases": "research/matrix/course_id_aliases.jsonl"
   },
   "generated_views": {
     "index": "research/matrix/views/README.md",
@@ -61,7 +62,7 @@
   },
   "retrieval_order": [
     "Read governance entrypoints before substantive work.",
-    "Identify the current learner route or domain in course_inventory.jsonl.",
+    "Identify the current learner route or domain in course_inventory.jsonl and resolve legacy course IDs through course_id_aliases.jsonl before comparing planned versus built state.",
     "Resolve relevant CONTENT and COMPETENCY relationships through the matrix JSONL tables.",
     "Resolve claim support through SUPPORT_EDGE to SOURCE records; do not infer support from bibliography presence alone.",
     "Check REVIEW, MEDIA, lineage, qualification and supersession state before proposing publication changes.",
