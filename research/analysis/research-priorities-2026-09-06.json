@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_id": "crew-blueprint-research-priorities-2026-09-06",
+  "snapshot_date": "2026-09-06",
+  "purpose": "Current-source research radar for topics likely to improve Crew Blueprint curriculum architecture, safety-awareness coverage, workforce-role mapping, and source freshness. These are research inputs, not learner authorization or automatic curriculum claims.",
+  "verified_current_inputs": [
+    {
+      "research_id": "CB-RADAR-2026-001",
+      "topic": "occupational_heat_current_enforcement_context",
+      "authority": "OSHA",
+      "current_fact": "OSHA issued updated National Emphasis Program CPL 03-00-024 for outdoor and indoor heat-related hazards, effective April 10, 2026.",
+      "why_it_matters": [
+        "outdoor and festival production",
+        "warehouse and indoor heat exposure",
+        "weather/changing-conditions awareness",
+        "source freshness for C-OUT-HEAT and related content"
+      ],
+      "recommended_use": "Refresh high-level hazard-recognition, employer-program, escalation, and source citations. Preserve state-plan and site-specific variation.",
+      "prohibited_use": "Do not convert the enforcement program into a universal stagehand procedure, medical protocol, or independent-work authorization.",
+      "sources": [
+        "https://www.osha.gov/enforcement/directives/cpl-03-00-024-0",
+        "https://www.osha.gov/heat-exposure"
+      ],
+      "freshness": "2026-04-10",
+      "status": "verified_research_input"
+    },
+    {
+      "research_id": "CB-RADAR-2026-002",
+      "topic": "warehouse_distribution_current_enforcement_context",
+      "authority": "OSHA",
+      "current_fact": "OSHA issued National Emphasis Program CPL-03-00-026 for Warehousing and Distribution Center Operations dated July 31, 2026.",
+      "why_it_matters": [
+        "warehouse and rental-shop curriculum",
+        "dock and material-flow awareness",
+        "career-lane transfer between shop and event work",
+        "source prioritization for C-SHP-* and C-LOG-PRODUCTION research"
+      ],
+      "recommended_use": "Use as a current enforcement-context source and as a trigger for targeted review of the warehouse/rental-shop evidence package against the hazards and work environments OSHA is emphasizing.",
+      "prohibited_use": "Do not infer that every entertainment warehouse is inspected under identical conditions or turn an enforcement emphasis program into equipment-operation instruction.",
+      "sources": [
+        "https://www.osha.gov/enforcement/directives/cpl-03-00-026-0",
+        "https://www.osha.gov/warehousing/standards-enforcement"
+      ],
+      "freshness": "2026-07-31",
+      "status": "verified_research_input"
+    },
+    {
+      "research_id": "CB-RADAR-2026-003",
+      "topic": "hazard_communication_2024_transition",
+      "authority": "OSHA",
+      "current_fact": "OSHA extended HCS 2024 compliance dates in January 2026 and issued current inspection procedures effective May 19, 2026. Employer update/training dates shown in 29 CFR 1910.1200 include November 20, 2026 for substances and May 19, 2028 for mixtures, as applicable.",
+      "why_it_matters": [
+        "warehouse/shop label and SDS awareness",
+        "hazard-communication source freshness",
+        "avoiding stale compliance dates in curriculum"
+      ],
+      "recommended_use": "Refresh source metadata and high-level label/SDS/employer-training awareness content where relevant; maintain the distinction between current legal requirements and Crew Blueprint explanatory framing.",
+      "prohibited_use": "Do not provide chemical-handling or hazardous-substance response procedures beyond general recognition, employer instruction, and escalation boundaries.",
+      "sources": [
+        "https://www.osha.gov/hazcom/rulemaking/extension",
+        "https://www.osha.gov/enforcement/directives/cpl-02-02-079-0",
+        "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1200"
+      ],
+      "freshness": "2026-05-19",
+      "status": "verified_research_input"
+    },
+    {
+      "research_id": "CB-RADAR-2026-004",
+      "topic": "entertainment_electrical_role_and_qualification_taxonomy",
+      "authority": "ETCP / ESTA",
+      "current_fact": "ETCP maintains distinct Entertainment Electrician and Portable Power Distribution Technician certifications. Its examination content is based on formal job analysis with subject-matter experts and broad practitioner input, and eligibility emphasizes work experience and other qualifying pathways.",
+      "why_it_matters": [
+        "separating Lighting from Electrics/portable power",
+        "designing a real career/role map instead of one invented ladder",
+        "defining external qualification gates",
+        "identifying knowledge domains without implying novice work authority"
+      ],
+      "recommended_use": "Use ETCP scope/job-analysis material as an external taxonomy and qualification-boundary input for the hierarchical role map and Electrics research architecture.",
+      "prohibited_use": "Do not copy certification exam content, teach hazardous electrical procedures to beginners, or imply Crew Blueprint completion confers ETCP eligibility or qualified-person status.",
+      "sources": [
+        "https://etcp.esta.org/certify/examination_electrical.html",
+        "https://etcp.esta.org/certify/examination_ppdt.html",
+        "https://etcp.esta.org/certify/certify_electrical.html",
+        "https://etcp.esta.org/certify/certify_ppdt.html"
+      ],
+      "status": "verified_research_input"
+    },
+    {
+      "research_id": "CB-RADAR-2026-005",
+      "topic": "entertainment_rigging_role_and_qualification_taxonomy",
+      "authority": "ETCP / ESTA",
+      "current_fact": "ETCP maintains Arena and Theatre rigging certifications with work-experience-centered eligibility and a job-analysis-based examination development process.",
+      "why_it_matters": [
+        "rigging role/career map",
+        "external qualification boundaries",
+        "distinguishing awareness/support curriculum from specialist practice",
+        "preventing an invented beginner-to-rigger ladder"
+      ],
+      "recommended_use": "Use only for role taxonomy, career-path context, competency-domain discovery, and explicit external qualification gates.",
+      "prohibited_use": "Do not use certification material to create novice rigging procedures, work-at-height instructions, or independent rigging authorization claims.",
+      "sources": [
+        "https://etcp.esta.org/certify/certify_rigger.html",
+        "https://etcp.esta.org/etcp/testdevelopers.html"
+      ],
+      "status": "verified_research_input"
+    },
+    {
+      "research_id": "CB-RADAR-2026-006",
+      "topic": "entertainment_technology_standards_watch",
+      "authority": "ESTA Technical Standards Program",
+      "current_fact": "ESTA's Technical Standards Program is ANSI-accredited and dedicated to entertainment technology, with standards work spanning industry safety and interoperability topics.",
+      "why_it_matters": [
+        "durable standards-source discovery",
+        "source-freshness monitoring",
+        "rigging/electrics/lighting/video/technical-domain research",
+        "avoiding generic web sources when a relevant entertainment standard exists"
+      ],
+      "recommended_use": "Add TSP as a standards-registry/watch source. Store standard identity, scope, revision/freshness, applicability, and citation metadata rather than copying standards wholesale into the repository.",
+      "prohibited_use": "Do not treat standards metadata as proof that a specific learner-facing claim is supported; claim-level review is still required.",
+      "sources": [
+        "https://tsp.esta.org/tsp/index.html"
+      ],
+      "status": "verified_research_input"
+    }
+  ],
+  "next_research_candidates": [
+    {
+      "research_id": "CB-NEXT-001",
+      "topic": "hierarchical_live_production_role_map",
+      "priority": "high",
+      "question": "What role families, branch points, common combinations, and external qualification gates actually appear across live music, festival, venue, touring, corporate AV, theatre, broadcast, warehouse/shop, production management, and labor-provider contexts?",
+      "preferred_sources": [
+        "Production Atlas current taxonomy/data",
+        "IATSE and local role/material where applicable",
+        "ETCP job-analysis/scope material",
+        "employer and venue job descriptions",
+        "formal training/apprenticeship descriptions",
+        "corroborated practitioner evidence"
+      ],
+      "deliverable": "branching role graph with context labels, not a universal rank ladder"
+    },
+    {
+      "research_id": "CB-NEXT-002",
+      "topic": "course_container_rationalization",
+      "priority": "high",
+      "question": "Which of the 143 registered course identities should remain standalone learner courses, which should become modules/lessons/reference maps, and which are research-only domains?",
+      "preferred_inputs": [
+        "course-system-situation snapshot",
+        "course_inventory",
+        "domain completeness view",
+        "claim/source coverage",
+        "client-discovery research",
+        "Roadmapdev decision analysis"
+      ],
+      "deliverable": "container recommendation with KEEP / MERGE / MODULE / REFERENCE / RESEARCH_ONLY / DEFER classifications"
+    },
+    {
+      "research_id": "CB-NEXT-003",
+      "topic": "archived_content_reconciliation",
+      "priority": "high",
+      "question": "Which material from fuller off-main Lead/Supervisor/advanced builds is still substantively useful and safe after comparison with current evidence and architecture?",
+      "deliverable": "claim-level salvage map; no automatic restoration"
+    },
+    {
+      "research_id": "CB-NEXT-004",
+      "topic": "learner_validation_and_transfer",
+      "priority": "medium_high",
+      "question": "Which course structures and assessments actually help new live-event workers retain role boundaries, recognize common work states, and transfer knowledge to supervised field practice?",
+      "preferred_sources": [
+        "adult/vocational learning research",
+        "scenario-based assessment research",
+        "accessibility/usability testing",
+        "real learner observation and feedback"
+      ],
+      "deliverable": "validation protocol separating knowledge checks, scenario judgment, observed practice, and job authorization"
+    },
+    {
+      "research_id": "CB-NEXT-005",
+      "topic": "source_freshness_registry",
+      "priority": "medium_high",
+      "question": "Which high-impact source families require periodic freshness checks because rules, standards, manufacturer documentation, directories, or enforcement guidance can change?",
+      "deliverable": "source watch list with authority, last-checked date, review cadence, affected content IDs, and stale-state behavior"
+    },
+    {
+      "research_id": "CB-NEXT-006",
+      "topic": "public_catalog_information_architecture",
+      "priority": "medium",
+      "question": "How should the public catalog reveal beginner entry points, optional field skills, departments, and later responsibility tracks without exposing the entire internal research architecture?",
+      "deliverable": "learner-facing IA recommendation backed by current route state and user testing"
+    }
+  ],
+  "governance": {
+    "research_input_is_not_acceptance": true,
+    "roadmapdev_output_is_advisory": true,
+    "source_repository_authority_must_be_preserved": true,
+    "dangerous_or_specialist_work_requires_external_authority_and_is_not_created_as_novice_procedure": true
+  }
+}
