@@ -58,6 +58,7 @@
   var restoredDirectFundamentals = false;
   function enhanceFundamentals(){
     if (courseSlug() !== 'stagehand-fundamentals' || typeof SF_FLAT === 'undefined' || typeof sfActiveIndex === 'undefined') return;
+    if (document.getElementById('ecoConsentBackdrop') || !document.querySelector('.course-main')) return;
     if (!restoredDirectFundamentals) {
       restoredDirectFundamentals = true;
       var remembered = Math.max(0, Math.min(Number(readState().fundamentals.lastLesson) || 0, SF_FLAT.length - 1));
@@ -191,6 +192,7 @@
   },true);
 
   app.addEventListener('click',function(event){
+    if(event.target.closest('#ecoConsentSubmit')) setTimeout(enhanceCurrentRoute,0);
     var sideButton=event.target.closest('#sfToggleBtn');
     if(sideButton){setTimeout(function(){var side=document.getElementById('sfSide');sideButton.setAttribute('aria-expanded',side&&side.classList.contains('mobile-open')?'true':'false');},0);}
     var lesson=event.target.closest('#v2MarkLessonComplete');
