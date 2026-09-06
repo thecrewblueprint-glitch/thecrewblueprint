@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-06",
+  "status": "proposed repository/content-container architecture for owner approval",
+  "goal": "Reduce agent confusion and learner-facing sprawl without deleting research, lineage, historical bodies, or specialist knowledge.",
+  "public_layer": [
+    {"container":"foundation","items":["C-SHF-FUNDAMENTALS"]},
+    {"container":"field-skills-library","items":"18 current C-FLD-* identities"},
+    {"container":"department-starters","items":["C-LTG-SUPPORT","C-AUD-SUPPORT","C-VID-SUPPORT","C-STG-SUPPORT","C-BPW-SUPPORT"]},
+    {"container":"guides","items":["GUIDE-LIVE-PRODUCTION-FITS-TOGETHER","GUIDE-FINDING-WORK-PRO-TRUST","GUIDE-TOURING-FESTIVAL-REALITY","GUIDE-WORKER-BUSINESS-ADMIN","GUIDE-TRAINING-CREDENTIALS-SPECIALIST-PATHS"]}
+  ],
+  "review_layer": [
+    {"container":"department-depth-pools","purpose":"Course-2/3 and domain-depth material classified as modules, references, or future advanced candidates; not normal beginner catalog."},
+    {"container":"lead-crew-chief","purpose":"Common leadership foundation plus department-specific review packs; no automatic appointment or craft authority."},
+    {"container":"production-coordination","purpose":"Stage management, production management, venue operations, paperwork, communication, scheduling, budget/change-control, and post-show learning material under owner/practitioner review."},
+    {"container":"specialist-awareness","purpose":"Rigging, production power/electrical, automation, effects, network/cyber, and other bounded specialist-awareness material."}
+  ],
+  "research_layer": [
+    {"container":"matrix","path":"research/matrix/","purpose":"canonical normalized claim/source/competency/review/lineage graph"},
+    {"container":"analysis","path":"research/analysis/","purpose":"decision substrates, catalogs, classifications, readiness and gap analysis"},
+    {"container":"ecosystem","path":"research/ecosystem/","purpose":"cross-system authority/provenance contracts and relationship maps"},
+    {"container":"catalogs","path":"research/catalogs/","purpose":"branch/course/history discovery without converting history into publication authority"},
+    {"container":"architecture","path":"research/architecture/","purpose":"proposed pipeline/container/orchestration contracts; PR-first until accepted"}
+  ],
+  "archive_policy": {
+    "keep_unique_historical_bodies": true,
+    "keep_unique_research": true,
+    "keep_lineage_ids": true,
+    "do_not_copy_volatile_external_data": true,
+    "do_not_delete_during_current_cleanup": true,
+    "preferred_cleanup":"index and classify first; optionally prune truly redundant refs only after an accepted stable release and explicit owner approval"
+  },
+  "naming_rules": [
+    "Use learner-facing names for public containers and internal state names only in research/review surfaces.",
+    "Do not encode Course 2/Course 3 as a required universal product ladder.",
+    "Keep historical IDs stable; aliases resolve lineage instead of destructive renames.",
+    "Generated files and canonical source data must be visibly distinguishable by path/manifest metadata.",
+    "Every off-main archive consulted by agents must have an explicit branch-state classification or retrieval reason."
+  ],
+  "execution_note": "This document intentionally does not move/delete files yet. Physical repository restructuring is a below-visible-surface change and should occur only after owner approval of the container model, with migration validation and lineage preservation."
+}

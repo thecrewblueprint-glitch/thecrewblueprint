@@ -56,6 +56,18 @@ Crew Blueprint content must preserve these boundaries:
 
 The research library's source hierarchy and interpretation rules remain authoritative for research-backed curriculum work.
 
+### 4.1 Permanent historical curriculum retention
+
+Historical curriculum is part of the repository evidence base and must remain directly retrievable for side-by-side comparison and future reuse.
+
+- Read `content/archive/README.md` and `content/archive/diff-manifest.json` before materially rewriting, collapsing, reclassifying, retiring, replacing, or pruning curriculum.
+- Do not delete, squash away, force-overwrite, or otherwise destroy archive branches, historical tags, legacy course trees, raw drafts, alternate course bodies, syllabus iterations, or materially distinct prior presentations that contain unique curriculum evidence.
+- Git history alone is not sufficient for important prior bodies. Before a materially different current body is replaced or retired, preserve the prior body verbatim in the working-tree archive and register its source ref/path/blob lineage in `content/archive/diff-manifest.json`.
+- A file labeled verbatim must not be silently normalized, corrected, rewritten, reformatted, or safety-edited. Changes belong in a newer version while the earlier text remains intact.
+- Even `DEFER_OR_REMOVE`, superseded, unpublished, owner-rejected, incomplete, or otherwise non-current material must remain preserved if it contains substantive unique content.
+- Preservation does not create publication authority. Old bodies remain evidence/reuse candidates and must still pass current evidence, safety, architecture, and owner-review gates before restoration.
+- No historical curriculum branch/tag/source may be pruned until every unique body on it has a registered working-tree mirror or explicit byte-identical duplicate record and the owner explicitly approves that specific prune.
+
 ## 5. Writing standard
 
 Follow the Anti-Robot Course Writing Rule in `CLAUDE.md`. Course writing should sound like direct practitioner instruction rather than generic corporate or AI prose.
@@ -73,6 +85,8 @@ After an accepted Crew Blueprint change is merged and verified, route closeout/c
 ## 7. Research workflow
 
 Use the current research workflow documented in `research/README.md` and current handoff notes. Preserve separate source packages and trace claims back to the strongest available evidence. Legacy workflow references do not override newer explicit workflow corrections.
+
+For any research, course-audit, citation-trace, gap-analysis, or cross-system context task, read `research/agent-retrieval-manifest.json` as the repository retrieval entrypoint. Follow `research/ecosystem/relationship-map.json` when using Roadmapdev or Production Atlas information so the source system, canonical ref, allowed use, and authority boundary remain explicit. The normalized JSONL evidence matrix remains the source of truth for Crew Blueprint claim/source/competency/review lineage; generated Markdown views are audit surfaces, not canonical graph state.
 
 ## 8. Owner authority
 

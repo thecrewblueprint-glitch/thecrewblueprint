@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "archive_id": "crew-blueprint-verbatim-curriculum-archive",
+  "status": "active_permanent_retention",
+  "purpose": "Index materially distinct historical curriculum bodies and preserve direct working-tree snapshots for side-by-side comparison and future reuse.",
+  "policy_path": "content/archive/README.md",
+  "canonical_rule": "Historical existence does not create publication authority, but historical curriculum must remain retrievable verbatim.",
+  "hard_gates": {
+    "before_material_rewrite": "Create or verify a verbatim working-tree snapshot of the prior body and register it here before replacing the current representation.",
+    "before_route_retirement": "Create or verify a verbatim working-tree snapshot of the route/body being retired and register it here.",
+    "before_classification_removal": "Preserve the exact source text even when the proposed classification is DEFER_OR_REMOVE.",
+    "before_branch_or_tag_prune": "Owner must explicitly approve the specific prune only after every unique curriculum body on that ref has a registered verbatim working-tree mirror.",
+    "archive_mutation": "Never silently edit an archived verbatim body. New corrections create a new version."
+  },
+  "protected_source_refs": [
+    {
+      "ref": "archive/v1-multipage-2026-09-03",
+      "classification": "historical_curriculum_archive",
+      "retention": "PERMANENT",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    },
+    {
+      "ref": "archive/owner-review-course-content-2026-09-05",
+      "classification": "historical_owner_review_archive",
+      "retention": "PERMANENT",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    },
+    {
+      "ref": "archive/lead-supervisor-electrics-rigging-2026-09-06",
+      "classification": "historical_advanced_course_archive",
+      "retention": "PERMANENT",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    },
+    {
+      "ref": "archive/infrastructure-career-pre-owner-review-2026-09-06",
+      "classification": "historical_infrastructure_career_archive",
+      "retention": "PERMANENT",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    },
+    {
+      "ref": "archive/pre-v2-restore-2026-09-06",
+      "classification": "historical_pre_restore_archive",
+      "retention": "PERMANENT",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    },
+    {
+      "ref": "archive/session-partial-ui-owner-review-2026-09-06",
+      "classification": "historical_partial_owner_review_archive",
+      "retention": "PERMANENT",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    },
+    {
+      "ref": "claude/production-courses-ui-ux-11l4vg",
+      "classification": "historical_course_presentation_and_body_source",
+      "retention": "PERMANENT_WHILE_UNIQUE_CONTENT_EXISTS",
+      "prune_allowed": false,
+      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+    }
+  ],
+  "snapshot_records": [],
+  "snapshot_record_schema": {
+    "required": [
+      "archive_path",
+      "source_ref",
+      "source_path",
+      "source_blob_sha",
+      "capture_date",
+      "verbatim",
+      "logical_identity",
+      "relationship"
+    ],
+    "relationship_examples": [
+      "predecessor",
+      "alternate_body",
+      "raw_draft",
+      "owner_review_copy",
+      "superseded_public_body",
+      "historical_variant"
+    ]
+  },
+  "mirror_completion_rule": "The archive is not considered complete for a curriculum identity until every known materially distinct prior body used in analysis has either a verbatim archive_path record or an explicit duplicate-of record pointing to an already preserved byte-identical snapshot.",
+  "current_merge_effect": "PR #48 may merge as planning/retrieval architecture because it does not itself retire current course bodies or authorize pruning. Future content implementation is blocked from destructive replacement until this manifest's preservation gate is satisfied for the affected identities."
+}

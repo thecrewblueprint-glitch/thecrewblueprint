@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0.0",
+  "map_id": "crew-blueprint-ecosystem-utilization-map",
+  "purpose": "Machine-readable relationship map describing how Crew Blueprint may retrieve and use Roadmapdev and Production Atlas information while preserving source authority and provenance.",
+  "systems": [
+    {
+      "id": "thecrewblueprint",
+      "repository": "thecrewblueprint-glitch/thecrewblueprint",
+      "canonical_ref": "main",
+      "authority": [
+        "curriculum",
+        "learner-facing content",
+        "site implementation",
+        "research matrix",
+        "course publication state"
+      ]
+    },
+    {
+      "id": "roadmapdev",
+      "repository": "thecrewblueprint-glitch/Roadmapdev",
+      "canonical_ref": "main",
+      "authority": [
+        "systems intelligence",
+        "evidence analysis",
+        "decision analysis",
+        "gap prioritization",
+        "cross-system source registry"
+      ]
+    },
+    {
+      "id": "production-atlas",
+      "repository": "thecrewblueprint-glitch/festival-atlas",
+      "canonical_ref": "research-version",
+      "authority": [
+        "current production-industry context",
+        "employer and vendor landscape",
+        "production branch taxonomy",
+        "IATSE organization and local directory data",
+        "festival and opportunity intelligence",
+        "market and work-cycle research"
+      ]
+    },
+    {
+      "id": "50yearroadmap",
+      "repository": "thecrewblueprint-glitch/50yearroadmap",
+      "canonical_ref": "main",
+      "authority": [
+        "ecosystem governance",
+        "repository relationships",
+        "accepted current-state continuity"
+      ]
+    },
+    {
+      "id": "supabase-roadmap",
+      "locator": "supabase:Roadmap:yfyrxuihvmmdkizyloyh",
+      "authority": [
+        "structured durable state",
+        "provenance",
+        "accepted synchronization frontier"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "cbp-evidence-matrix",
+      "system": "thecrewblueprint",
+      "locator": "research/matrix/README.md",
+      "kind": "evidence_graph_entrypoint",
+      "use": ["claim tracing", "citation tracing", "competency mapping", "review state", "assessment lineage"]
+    },
+    {
+      "id": "cbp-source-master-map",
+      "system": "thecrewblueprint",
+      "locator": "research/02-source-master-map.md",
+      "kind": "source_manifest",
+      "use": ["research source discovery", "citation discovery", "source-package navigation"]
+    },
+    {
+      "id": "rd-source-registry",
+      "system": "roadmapdev",
+      "locator": "data/source-registry.json",
+      "kind": "machine_readable_source_registry",
+      "use": ["repository discovery", "source-role discovery", "access-boundary discovery"]
+    },
+    {
+      "id": "rd-authority-map",
+      "system": "roadmapdev",
+      "locator": "data/authority-map.json",
+      "kind": "machine_readable_authority_map",
+      "use": ["canonical-ref discovery", "authority resolution", "conflict handling"]
+    },
+    {
+      "id": "rd-client-discovery",
+      "system": "roadmapdev",
+      "locator": "research/crew-blueprint-client-discovery-packet-2026-09-06.md",
+      "kind": "audience_needs_research",
+      "use": ["course audit", "product positioning", "course sequencing", "client discovery"]
+    },
+    {
+      "id": "rd-publication-analysis",
+      "system": "roadmapdev",
+      "locator": "decision/reports/crew-blueprint-publication-state-2026-09-05.json",
+      "kind": "decision_analysis",
+      "use": ["publication architecture", "review-state comparison"]
+    },
+    {
+      "id": "pa-production-branches",
+      "system": "production-atlas",
+      "locator": "data/packages/production-branches.js",
+      "kind": "industry_taxonomy",
+      "use": ["department taxonomy", "career-map context", "department-interface context"]
+    },
+    {
+      "id": "pa-us-employers",
+      "system": "production-atlas",
+      "locator": "data/packages/us-employers.js",
+      "kind": "current_industry_dataset",
+      "use": ["employer-family context", "career-route context"]
+    },
+    {
+      "id": "pa-iatse-organization",
+      "system": "production-atlas",
+      "locator": "data/iatse-organization-info.js",
+      "kind": "industry_organization_dataset",
+      "use": ["union-awareness context", "craft-family context"]
+    },
+    {
+      "id": "pa-iatse-local-directory",
+      "system": "production-atlas",
+      "locator": "data/iatse-us-local-directory.js",
+      "kind": "current_directory_dataset",
+      "use": ["current local/jurisdiction lookup", "career-route context"]
+    },
+    {
+      "id": "pa-branch-research-manifest",
+      "system": "production-atlas",
+      "locator": "data/packages/branch-research-manifest.js",
+      "kind": "research_manifest",
+      "use": ["department research discovery", "branch coverage discovery"]
+    },
+    {
+      "id": "pa-employer-landscape",
+      "system": "production-atlas",
+      "locator": "research/employer-landscape-market-analysis.md",
+      "kind": "market_research",
+      "use": ["career context", "employer-type context", "industry structure"]
+    },
+    {
+      "id": "pa-festival-employer-map",
+      "system": "production-atlas",
+      "locator": "research/festival-employer-landscape-map.md",
+      "kind": "relationship_research",
+      "use": ["producer/vendor/labor/venue distinction", "industry relationship literacy"]
+    },
+    {
+      "id": "pa-gig-scouting-model",
+      "system": "production-atlas",
+      "locator": "research/long-term-gig-scouting-model.md",
+      "kind": "career_market_research",
+      "use": ["seasonality context", "work-source diversity", "career durability"]
+    }
+  ],
+  "relations": [
+    {
+      "from": "rd-client-discovery",
+      "to": "cbp-evidence-matrix",
+      "relation": "audit_input_for",
+      "allowed_use": "audience-need overlay for owner-led course audit",
+      "prohibited_inference": "does not establish technical, legal, safety, or qualification authority"
+    },
+    {
+      "from": "rd-publication-analysis",
+      "to": "thecrewblueprint",
+      "relation": "advises",
+      "allowed_use": "compare publication/review architectures",
+      "prohibited_inference": "does not override owner-approved publication state"
+    },
+    {
+      "from": "pa-production-branches",
+      "to": "cbp-evidence-matrix",
+      "relation": "taxonomy_context_for",
+      "allowed_use": "department and career taxonomy crosswalk",
+      "prohibited_inference": "does not create learner authority or course completion"
+    },
+    {
+      "from": "pa-us-employers",
+      "to": "thecrewblueprint",
+      "relation": "career_context_for",
+      "allowed_use": "describe employer families and where skills may appear",
+      "prohibited_inference": "no employment guarantee, endorsement, referral, or static-copy freshness assumption"
+    },
+    {
+      "from": "pa-iatse-organization",
+      "to": "thecrewblueprint",
+      "relation": "career_context_for",
+      "allowed_use": "explain union/craft organization at a durable conceptual level",
+      "prohibited_inference": "do not universalize one local's rules or hiring process"
+    },
+    {
+      "from": "pa-iatse-local-directory",
+      "to": "thecrewblueprint",
+      "relation": "current_lookup_for",
+      "allowed_use": "route learners or agents to current local/jurisdiction research",
+      "prohibited_inference": "do not copy volatile directory state into static curriculum unless explicitly approved"
+    },
+    {
+      "from": "pa-branch-research-manifest",
+      "to": "cbp-evidence-matrix",
+      "relation": "gap_detection_input_for",
+      "allowed_use": "identify production branches, interfaces, terminology, and career-context gaps",
+      "prohibited_inference": "does not substitute for claim-level primary authority"
+    },
+    {
+      "from": "pa-employer-landscape",
+      "to": "thecrewblueprint",
+      "relation": "industry_structure_context_for",
+      "allowed_use": "explain labor-provider/vendor/producer/venue distinctions",
+      "prohibited_inference": "do not treat market research as certification, safety, or employment authority"
+    },
+    {
+      "from": "pa-festival-employer-map",
+      "to": "thecrewblueprint",
+      "relation": "relationship_context_for",
+      "allowed_use": "explain who may produce, hire, supply, manage, or host live-event work",
+      "prohibited_inference": "do not imply one universal contracting/hiring structure"
+    },
+    {
+      "from": "pa-gig-scouting-model",
+      "to": "thecrewblueprint",
+      "relation": "career_planning_context_for",
+      "allowed_use": "teach durable concepts around seasonality, multiple work sources and reputation",
+      "prohibited_inference": "do not promise income or availability"
+    },
+    {
+      "from": "thecrewblueprint",
+      "to": "50yearroadmap",
+      "relation": "reports_accepted_state_to",
+      "allowed_use": "ecosystem continuity after accepted and verified changes"
+    },
+    {
+      "from": "50yearroadmap",
+      "to": "supabase-roadmap",
+      "relation": "projects_structured_state_to",
+      "allowed_use": "durable structured state, provenance and frontier synchronization"
+    },
+    {
+      "from": "supabase-roadmap",
+      "to": "roadmapdev",
+      "relation": "supplies_admitted_state_to",
+      "allowed_use": "systems intelligence and evidence analysis"
+    }
+  ],
+  "agent_navigation": {
+    "course_claim_question": [
+      "thecrewblueprint:research/agent-retrieval-manifest.json",
+      "thecrewblueprint:research/matrix/course_inventory.jsonl",
+      "thecrewblueprint:research/matrix/content*.jsonl",
+      "thecrewblueprint:research/matrix/support_edges*.jsonl",
+      "thecrewblueprint:research/matrix/sources*.jsonl",
+      "thecrewblueprint:research/matrix/reviews*.jsonl"
+    ],
+    "career_or_industry_context_question": [
+      "thecrewblueprint:research/agent-retrieval-manifest.json",
+      "production-atlas:data/packages/production-branches.js",
+      "production-atlas:data/packages/us-employers.js",
+      "production-atlas:data/iatse-organization-info.js",
+      "production-atlas:data/iatse-us-local-directory.js",
+      "production-atlas:data/packages/branch-research-manifest.js"
+    ],
+    "what_should_we_build_or_fix_next": [
+      "thecrewblueprint:research/agent-retrieval-manifest.json",
+      "thecrewblueprint:research/matrix/views/domain-completeness.md",
+      "thecrewblueprint:research/matrix/views/unsupported.md",
+      "roadmapdev:research/crew-blueprint-client-discovery-packet-2026-09-06.md",
+      "roadmapdev:data/authority-map.json"
+    ],
+    "publication_or_review_state_question": [
+      "thecrewblueprint:research/matrix/reviews*.jsonl",
+      "thecrewblueprint:research/matrix/course_inventory.jsonl",
+      "roadmapdev:decision/reports/crew-blueprint-publication-state-2026-09-05.json"
+    ]
+  }
+}

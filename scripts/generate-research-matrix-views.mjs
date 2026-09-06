@@ -58,7 +58,14 @@ const lineageEdges = readTable('content_lineage_edges');
 const reviews = readTable('reviews');
 const media = readTable('media');
 const courseInventory = readJsonlFile(path.join(matrixDir, 'course_inventory.jsonl'));
+const courseIdAliases = readJsonlFile(path.join(matrixDir, 'course_id_aliases.jsonl'));
 const routeCompatibility = readJsonlFile(path.join(matrixDir, 'route_compatibility_inventory.jsonl'));
+
+const courseAliasToCanonical = new Map(courseIdAliases.map((row) => [row.alias_course_id, row.canonical_course_id]));
+function canonicalCourseId(courseId) {
+  return courseAliasToCanonical.get(courseId) || courseId;
+}
+const inventoryCourseIds = new Set(courseInventory.map((course) => canonicalCourseId(course.course_id)));
 
 const contentById = new Map(content.map((row) => [row.content_id, row]));
 const sourceById = new Map(sources.map((row) => [row.source_id, row]));
@@ -109,7 +116,7 @@ const domains=[...new Set(content.map((row)=>row.domain_id_primary).filter(Boole
 const domainRows=domains.map((domainId)=>{
   const domainContent=content.filter((row)=>row.domain_id_primary===domainId);
   const currentCourses=courseInventory.filter((course)=>course.domain_id_primary===domainId&&course.inventory_state==='canonical_current');
-  const plannedCourses=domainContent.filter((row)=>row.content_type==='course'&&!courseInventory.some((course)=>course.course_id===row.course_id));
+  const plannedCourses=domainContent.filter((row)=>row.content_type==='course'&&!inventoryCourseIds.has(canonicalCourseId(row.course_id)));
   const claims=domainContent.filter((row)=>['claim','boundary'].includes(row.content_type));
   const contentCompetencies=[...new Set(competencyEdges.filter((edge)=>domainContent.some((row)=>row.content_id===edge.content_id)).map((edge)=>edge.competency_id))];
   const researchCompetencies=[...new Set(researchEdges.filter((edge)=>edge.display_on_owner_map!==false&&domainForCompetency(edge.competency_id)===domainId).map((edge)=>edge.competency_id))];

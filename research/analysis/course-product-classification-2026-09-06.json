@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-06",
+  "status": "analytical proposal for owner review; not publication authority",
+  "source_inventory": "research/matrix/course_inventory.jsonl",
+  "inventory_count": 143,
+  "rule": "Every ID appears exactly once. Preserve IDs/lineage; classification changes product treatment only.",
+  "summary": {
+    "ADVANCED_OWNER_REVIEW": 32,
+    "PUBLIC_COURSE": 6,
+    "FIELD_SKILL": 18,
+    "MODULE": 49,
+    "SPECIALIST_AWARENESS": 21,
+    "GUIDE": 5,
+    "REFERENCE": 11,
+    "DEFER_OR_REMOVE": 1
+  },
+  "classifications": {
+    "ADVANCED_OWNER_REVIEW": [
+      {"target":"SPECIALIST-PRODUCTION-POWER-AWARENESS","course_ids":["C-ELC-LOAD-PLANNING","C-ELC-LEAD-DOC"]},
+      {"target":"POOL-LIGHTING","course_ids":["C-LTG-SYSTEM-DESIGN","C-LTG-BUSINESS"]},
+      {"target":"POOL-AUDIO","course_ids":["C-AUD-SYSTEM-DESIGN","C-AUD-LEAD-SYS"]},
+      {"target":"POOL-VIDEO","course_ids":["C-VID-SYSTEM-ARCH","C-VID-COMMISSION"]},
+      {"target":"POOL-STAGING-SCENIC","course_ids":["C-STG-DESIGN-COORD","C-STG-SECTOR-LEAD"]},
+      {"target":"ADVANCED-LEAD-CREW-CHIEF","course_ids":["C-LEAD-CREW-CHIEF","C-LEAD-LTG","C-LEAD-AUD","C-LEAD-VID","C-LEAD-STG","C-LEAD-RIG","C-LEAD-ELC","C-LEAD-LABOR"]},
+      {"target":"ADVANCED-PRODUCTION-COORDINATION","course_ids":["C-SUP-HAZARD","C-SUP-EVENT-OPS","C-SMG-ROLE","C-PMG-ROLE","C-VOP-ROLE","C-PMG-PAPER","C-PMG-COMMS","C-PMG-LEARNING","C-SHC-ARCH","C-PMG-ADVANCE-ARTIFACTS","C-PMG-LABOR-SCHEDULE","C-PMG-BUDGET-CHANGE","C-PMG-CLOSEOUT"]},
+      {"target":"SPECIALIST-RIGGING-AWARENESS","course_ids":["C-RIG-LEAD-DOC"]}
+    ],
+    "PUBLIC_COURSE": [
+      {"target":"C-SHF-FUNDAMENTALS","course_ids":["C-SHF-FUNDAMENTALS"]},
+      {"target":"C-LTG-SUPPORT","course_ids":["C-LTG-SUPPORT"]},
+      {"target":"C-AUD-SUPPORT","course_ids":["C-AUD-SUPPORT"]},
+      {"target":"C-VID-SUPPORT","course_ids":["C-VID-SUPPORT"]},
+      {"target":"C-STG-SUPPORT","course_ids":["C-STG-SUPPORT"]},
+      {"target":"C-BPW-SUPPORT","course_ids":["C-BPW-SUPPORT"]}
+    ],
+    "FIELD_SKILL": [
+      {"target":"FIELD-SKILLS-LIBRARY","course_ids":["C-FLD-ROAD-CASE","C-FLD-CABLE-COIL","C-FLD-RATCHET","C-FLD-FLATBED","C-FLD-BARRICADE","C-FLD-CABLE-PROTECT","C-FLD-TEAM","C-FLD-CART","C-FLD-CABLE-DEPLOY","C-FLD-BONEYARD","C-FLD-RESET","C-FLD-SOFT","C-FLD-PD","C-FLD-DECK","C-FLD-TOOLS","C-FLD-MARK","C-FLD-SCENERY","C-FLD-DOCK"]}
+    ],
+    "MODULE": [
+      {"target":"POOL-LIGHTING","course_ids":["C-LTG-PRODUCTION-FLOW","C-LTG-LIFECYCLE","C-LTG-SCIENCE","C-LTG-CONTROL","C-LTG-CONSOLE","C-LTG-DESIGN-DOC"]},
+      {"target":"POOL-AUDIO","course_ids":["C-AUD-SYSTEMS","C-AUD-SIGNAL","C-AUD-SOURCES","C-AUD-CONSOLE","C-AUD-PA","C-AUD-NET","C-COM-INTERCOM","C-AUD-SECTORS"]},
+      {"target":"POOL-VIDEO","course_ids":["C-VID-SYSTEMS","C-VID-LED-HARDWARE","C-VID-SIGNAL","C-VID-SWITCH","C-VID-PROJ","C-CAM-BCAST","C-VID-MEDIA","C-VID-AOIP"]},
+      {"target":"POOL-STAGING-SCENIC","course_ids":["C-STG-DECK-SYSTEMS","C-STG-SYSTEMS","C-STG-SHOP","C-STG-PLATFORM","C-STG-MOVEMENT","C-STG-LIFECYCLE"]},
+      {"target":"POOL-BACKLINE-PROPS-WARDROBE","course_ids":["C-BPW-SYSTEMS","C-BKL-PATH","C-PRP-RUN","C-WRD-RUN"]},
+      {"target":"REFERENCE-SHOP-WAREHOUSE","course_ids":["C-SHP-WAREHOUSE","C-SHP-RECEIVING","C-SHP-INVENTORY","C-SHP-PREP-QC","C-SHP-TRAFFIC","C-SHP-HAZCOM","C-SHP-BATTERY","C-SHP-TRUCK-STAGE","C-SHP-RETURN-CLOSE"]},
+      {"target":"FIELD-SKILLS-LIBRARY","course_ids":["C-LOG-PRODUCTION"]},
+      {"target":"C-SHF-FUNDAMENTALS","course_ids":["C-COM-WORK","C-OUT-FIELD","C-CAR-FIRST-FIVE"]},
+      {"target":"GUIDE-WORKER-BUSINESS-ADMIN","course_ids":["C-CAR-CLASSIFY","C-CAR-PAYMENT","C-CAR-RECORDS","C-CAR-WORKER-RIGHTS"]}
+    ],
+    "SPECIALIST_AWARENESS": [
+      {"target":"SPECIALIST-PRODUCTION-POWER-AWARENESS","course_ids":["C-ELC-POWER-AWARENESS","C-LTG-ELECTRICAL-LIT","C-ELC-FUND","C-ELC-DIST","C-ELC-TEST","C-ELC-GEN","C-ELC-AHJ","C-ELC-QUALITY"]},
+      {"target":"POOL-LIGHTING","course_ids":["C-LTG-SPECIAL"]},
+      {"target":"POOL-AUDIO","course_ids":["C-RF-AUDIO"]},
+      {"target":"SPECIALIST-AUTOMATION-AWARENESS","course_ids":["C-AUT-STAGE","C-AUT-AWARE"]},
+      {"target":"SPECIALIST-RIGGING-AWARENESS","course_ids":["C-RIG-AWARE","C-RIG-HARDWARE","C-RIG-LOAD","C-RIG-WORKFLOW","C-RIG-HEIGHT"]},
+      {"target":"SPECIALIST-EFFECTS-AWARENESS","course_ids":["C-FX-ATM","C-FX-LASER","C-FX-SPECIAL"]},
+      {"target":"REFERENCE-PRODUCTION-NETWORK-HYGIENE","course_ids":["C-SHC-CYBER"]}
+    ],
+    "GUIDE": [
+      {"target":"GUIDE-LIVE-PRODUCTION-FITS-TOGETHER","course_ids":["C-PROD-CAREER-BRANCH"]},
+      {"target":"GUIDE-TOURING-FESTIVAL-REALITY","course_ids":["C-SECT-TOUR"]},
+      {"target":"GUIDE-FINDING-WORK-PRO-TRUST","course_ids":["C-CAR-ENTRY"]},
+      {"target":"GUIDE-TRAINING-CREDENTIALS-SPECIALIST-PATHS","course_ids":["C-CAR-CRED"]},
+      {"target":"GUIDE-WORKER-BUSINESS-ADMIN","course_ids":["C-CAR-FREELANCE-BIZ"]}
+    ],
+    "REFERENCE": [
+      {"target":"GUIDE-LIVE-PRODUCTION-FITS-TOGETHER","course_ids":["C-SECT-VENUE","C-SECT-CORP","C-SECT-THEATRE","C-SECT-WORSHIP","C-SECT-BCAST"]},
+      {"target":"GUIDE-TOURING-FESTIVAL-REALITY","course_ids":["C-SECT-OUT","C-OUT-HEAT"]},
+      {"target":"GUIDE-TRAINING-CREDENTIALS-SPECIALIST-PATHS","course_ids":["C-CAR-UNION"]},
+      {"target":"GUIDE-FINDING-WORK-PRO-TRUST","course_ids":["C-CAR-PRO"]},
+      {"target":"REFERENCE-ACCESSIBILITY","course_ids":["C-ACC-PUBLIC-ROUTES","C-ACC-COMMUNICATION"]}
+    ],
+    "DEFER_OR_REMOVE": [
+      {"target":"GUIDE-LIVE-PRODUCTION-FITS-TOGETHER","course_ids":["C-CAR-LADDERS"]}
+    ]
+  },
+  "notes": {
+    "RESEARCH_DOMAIN": "zero identities assigned: current registered items contain enough learner/reference/owner-review value to retain in a product-facing or review-facing container rather than demote to research-only.",
+    "HISTORICAL_VARIANT": "zero identities assigned because the canonical 143-ID inventory registers logical identities, while historical alternate presentations are tracked separately in branch/lineage records.",
+    "DEFER_OR_REMOVE": "C-CAR-LADDERS is the sole current identity whose premise should be retired: salvage branching role-family content but remove universal-ladder framing."
+  }
+}

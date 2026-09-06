@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-06",
+  "status": "analytical role-family map for owner review; not a universal promotion ladder",
+  "principle": "Live production uses branching employer-, venue-, tour-, union-, and department-specific role structures. Layers below describe recurring responsibility patterns, not guaranteed promotions or authority.",
+  "common_layers": [
+    {"id":"L0","label":"General production support / new hand","meaning":"Works under assigned direction; learns call flow, communication, handling, organization, and stop/ask boundaries."},
+    {"id":"L1","label":"Department support","meaning":"Provides bounded support inside a department while preserving technician/system ownership."},
+    {"id":"L2","label":"Technician / craft worker","meaning":"Performs department-specific work within demonstrated competence, employer assignment, site rules, and any required qualification."},
+    {"id":"L3","label":"Senior / specialist technician","meaning":"Handles deeper systems, troubleshooting, prep, documentation, or specialist interfaces; title and authority vary widely."},
+    {"id":"L4","label":"Lead / head / crew chief","meaning":"Appointed responsibility for people, workflow, verification, communication, and handoffs; appointment does not create unrelated specialist authority."},
+    {"id":"L5","label":"Design / engineering / management / coordination","meaning":"Role-specific planning or system responsibility such as designer, engineer, production manager, stage manager, technical director, or operations manager."}
+  ],
+  "entry_ecosystem": [
+    "labor company / staffing provider",
+    "IATSE local or venue labor pool",
+    "venue / house production department",
+    "production vendor / rental shop",
+    "touring production/vendor network",
+    "festival/site-operations contractor",
+    "producer/promoter production office"
+  ],
+  "branches": [
+    {"id":"staging_structures","name":"Staging / Structures","entry_support":["material movement","component staging","assigned deck/riser support"],"technician_families":["stage technician","staging systems technician","structure crew"],"advanced_families":["staging lead/head","technical designer/coordinator","engineered/authorized structure roles"],"boundary":"Structural assembly acceptance, engineered decisions, powered equipment, rigging interfaces, and manufacturer-specific authority remain with trained/authorized personnel."},
+    {"id":"scenic_carpentry","name":"Scenic / Carpentry","entry_support":["scenery movement","material staging","shop/show handoff"],"technician_families":["carpenter","scenic technician","fabricator","installer"],"advanced_families":["lead carpenter","scenic supervisor","technical designer"],"boundary":"Structural, machinery, powered-tool, automation, and engineered decisions depend on role competence and authorization."},
+    {"id":"lighting","name":"Lighting","entry_support":["case/fixture handling","assigned cable/support tasks","state-preserving handoff"],"technician_families":["lighting technician","shop/prep technician","console/operator roles"],"advanced_families":["lighting lead/head","programmer","designer","systems/control specialist"],"boundary":"Electrical qualification, energized work, system design, focus/programming authority, and specialist commissioning are not implied by beginner support training."},
+    {"id":"audio","name":"Audio","entry_support":["case/stand/cable support","assigned staging","patch-state preservation"],"technician_families":["audio technician","A2/stage audio","monitor/FOH roles","shop/prep technician"],"advanced_families":["audio lead/head","system technician/engineer","RF/comms specialist","designer"],"boundary":"System tuning, electrical interfaces, RF coordination, network administration, console/system decisions, and specialist commissioning require role competence/authorization."},
+    {"id":"video_led","name":"Video / LED","entry_support":["panel/case movement","assigned build support","signal-state preservation"],"technician_families":["LED technician","projection technician","video technician","camera/playback support"],"advanced_families":["video lead/head","media-server/playback specialist","broadcast/camera specialist","systems engineer/designer"],"boundary":"Structural support, powered access, electrical work, processing/configuration, commissioning, and specialist network work remain bounded."},
+    {"id":"backline_props_wardrobe","name":"Backline / Props / Wardrobe","entry_support":["careful movement","preset/state preservation","chain-of-custody handoff"],"technician_families":["backline technician","props/run crew","dresser/wardrobe technician"],"advanced_families":["backline lead","props master/lead","wardrobe supervisor"],"boundary":"Artist/tour/department ownership controls adjustments, presets, repairs, substitutions, and acceptance."},
+    {"id":"rigging","name":"Rigging","entry_support":["ground-level recognition","exclusion-zone awareness","escalation"],"technician_families":["qualified/competent rigger roles as defined by employer/site/credential context"],"advanced_families":["head rigger","rigging supervisor","engineer/designer interfaces"],"boundary":"No novice procedural rigging, work-at-height, load calculation, point selection, rescue, or structural acceptance. External qualification and site authority control."},
+    {"id":"power_electrical","name":"Production Power / Electrical","entry_support":["system/zone recognition","cable-route awareness","stop/escalate behavior"],"technician_families":["entertainment electrician","temporary-power technician","generator/power specialist"],"advanced_families":["electrics head","power lead","qualified electrical/engineering roles"],"boundary":"No energized work, tie-in, testing, load-planning authority, or electrical qualification is created by Crew Blueprint."},
+    {"id":"site_operations","name":"Site Operations","entry_support":["site-map literacy","public-area awareness","radio/communication support"],"technician_families":["site operations coordinator","credentials/access","barricade/fencing/tent/ground-protection vendor roles"],"advanced_families":["site manager","operations manager","emergency/weather/accessibility coordination"],"boundary":"Emergency command, crowd engineering, structural acceptance, security/medical authority, and specialized equipment remain with responsible organizations."},
+    {"id":"logistics_shop","name":"Logistics / Warehouse / Equipment Movement","entry_support":["case flow","labels/inventory","dock and load-lead handoffs"],"technician_families":["warehouse technician","prep/QC technician","driver/logistics roles"],"advanced_families":["shop lead","warehouse manager","truck/load coordinator","logistics manager"],"boundary":"Powered industrial equipment, regulated cargo acceptance, driving, and load-plan authority require separate authorization/qualification."},
+    {"id":"stage_management","name":"Stage Management / Show Flow","entry_support":["paperwork awareness","cue/communication discipline","runner/PA support"],"technician_families":["production assistant","assistant stage manager","stage manager"],"advanced_families":["stage management lead","show caller","production/stage coordination"],"boundary":"Authority is appointment- and production-specific; online study does not appoint a learner to call or control a show."},
+    {"id":"production_management","name":"Production Management / Production Office","entry_support":["organization","runner work","credentials/receipts/document support","discretion"],"technician_families":["production coordinator","production office roles","vendor/labor coordination"],"advanced_families":["production manager","technical director","operations/venue management"],"boundary":"Budget, labor, contract, safety-program, engineering, and final operational authority depend on employer appointment and external professional responsibilities."}
+  ],
+  "career_rules": [
+    "Do not show L0-L5 as one mandatory ladder.",
+    "Workers may move laterally between branches, employers, markets, shops, venues, and tours.",
+    "A lead title is an appointment/responsibility relationship, not proof of specialist competence in another trade.",
+    "Rigging, electrical/power, structural, automation, powered-equipment, pyro, laser, and work-at-height responsibilities require their own qualification/authorization context.",
+    "Current employer, local, vendor, market, and opportunity information should be retrieved from Production Atlas rather than copied into static course claims."
+  ]
+}

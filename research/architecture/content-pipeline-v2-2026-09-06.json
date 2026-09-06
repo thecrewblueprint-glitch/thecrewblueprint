@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0.0",
+  "date": "2026-09-06",
+  "status": "proposed structural pipeline for owner approval",
+  "purpose": "Turn learner needs and authoritative evidence into bounded, reviewable Crew Blueprint content without allowing research synthesis, Roadmapdev, historical branches, or registry identities to silently become publication authority.",
+  "authority": {
+    "crew_blueprint": "owns curriculum and publication state",
+    "roadmapdev": "advisory analysis only",
+    "production_atlas": "owns current employer/vendor/market/union/opportunity context",
+    "owner": "final directional/publication authority where review is required",
+    "qualified_external_roles": "retain authority for specialist/hazardous work regardless of course completion"
+  },
+  "stages": [
+    {"id":"P0","name":"INTAKE","inputs":["owner request","learner/community need","employer/lead need","evidence gap","staleness signal","historical salvage candidate"],"output":"bounded content question + intended audience + proposed product container"},
+    {"id":"P1","name":"RETRIEVAL_AND_LINEAGE","requirements":["read agent retrieval manifest","resolve course/competency aliases","identify current route and historical bodies","identify existing evidence/reviews"],"output":"retrieval packet with provenance"},
+    {"id":"P2","name":"TWO_LENS_RESEARCH","requirements":["authority/correctness evidence appropriate to the claim","audience/employer discovery appropriate to the learner problem"],"rule":"community evidence identifies needs/friction but cannot establish technical or safety authority","output":"evidence packet + needs packet"},
+    {"id":"P3","name":"PRODUCT_CLASSIFICATION","allowed":["PUBLIC_COURSE","FIELD_SKILL","MODULE","GUIDE","REFERENCE","SPECIALIST_AWARENESS","ADVANCED_OWNER_REVIEW","RESEARCH_DOMAIN","HISTORICAL_VARIANT","DEFER_OR_REMOVE"],"output":"target container + reuse/salvage plan"},
+    {"id":"P4","name":"SUFFICIENCY_ANALYSIS","roadmapdev_response_contract":["COMPLETE","NEEDS_EVIDENCE","BLOCKED"],"rule":"Roadmapdev may identify gaps/conflicts/priorities but cannot approve publication","output":"advisory sufficiency result with cited evidence IDs and unresolved questions"},
+    {"id":"P5","name":"DRAFT_OR_RECONCILE","requirements":["write for the target audience","reuse supported content before creating duplicates","preserve historical lineage","apply Listen → Clarify → Report Back and Preserve → Verify → Report where relevant"],"output":"candidate content"},
+    {"id":"P6","name":"AUTHORITY_AND_SAFETY_GATE","checks":["claim/source support","qualified-person boundaries","manufacturer/site variation","no false certification/authorization implication","hazardous content remains awareness/recognition/stop-escalate unless a separately approved qualified-audience scope exists"],"failure_state":"BLOCKED"},
+    {"id":"P7","name":"PRACTITIONER_AND_OWNER_REVIEW","rule":"Require the level of practitioner/owner review appropriate to the claim, audience, and responsibility. Historical length or polish is never approval evidence.","output":"approved / revise / reject / defer"},
+    {"id":"P8","name":"LEARNER_USABILITY","checks":["plain practical language","sequence and cognitive load","does it solve the stated learner problem","does it avoid false confidence","assessment matches actual learner claim"],"output":"learner-ready candidate"},
+    {"id":"P9","name":"PUBLICATION","rule":"Visible site changes follow current build-phase visible-content rule; structural/data changes remain PR-first. Update review/noindex/disclaimer state accurately."},
+    {"id":"P10","name":"VALIDATION_AND_CLOSEOUT","checks":["route/link integrity","content parity where multiple presentations exist","matrix/alias integrity","rendered-site check appropriate to the change","record accepted state/provenance"],"output":"accepted current state or explicit unresolved blocker"}
+  ],
+  "decision_rules": [
+    "A registered identity is not automatically a course.",
+    "A bibliography entry is not automatically claim support.",
+    "A newer or fuller historical branch is not automatically better/current.",
+    "A community complaint is not a universal rule.",
+    "A Roadmapdev recommendation is not Crew Blueprint canonical truth.",
+    "A learner-facing specialist topic must preserve external qualification and assignment boundaries.",
+    "Volatile employer/opportunity data should remain in Production Atlas and be linked by provenance rather than copied into static curriculum."
+  ],
+  "minimum_record_fields": ["content_or_question_id","audience","problem_to_solve","target_container","source_authority","source_version_or_date","needs_evidence","technical_evidence","qualification_boundary","reuse_sources","missing_evidence","roadmapdev_state","practitioner_review_state","owner_review_state","learner_validation_state","publication_state","provenance"]
+}
