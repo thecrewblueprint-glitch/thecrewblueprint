@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "snapshot_id": "crew-blueprint-course-system-situation-2026-09-06",
   "snapshot_date": "2026-09-06",
   "system": "thecrewblueprint",
   "purpose": "Decision substrate for analyzing the whole Crew Blueprint course/research state without conflating registered identities, public routes, historical builds, evidence completeness, publication state, or external authority.",
   "canonical_repository": "thecrewblueprint-glitch/thecrewblueprint",
-  "latest_accepted_main_observed": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
-  "observation_mode": "live_state_reconciled_after_v2_public_pass_and_structural_analysis",
+  "latest_accepted_main_observed": "94bb5cfe7dbc7eac3369a8d4f08234622a807f9c",
+  "observation_mode": "live_state_reconciled_after_v2_public_pass_structural_analysis_and_consent_repair",
   "inventory_snapshot": {
     "registered_logical_course_identities": 143,
     "source": "research/matrix/course_inventory.jsonl",
@@ -17,15 +17,31 @@
   },
   "public_site_state": {
     "v2_visual_baseline_origin": "56b9ab97576b5000addc66535e29437c415e7f13",
-    "current_accepted_main": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
-    "implementation": "accepted v2 source preserved in _includes/v2-baseline.html with a small CSS/JS client layer injected by index.html",
+    "v2_public_refinement_commit": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
+    "latest_repository_main": "94bb5cfe7dbc7eac3369a8d4f08234622a807f9c",
+    "implementation": "accepted v2 source preserved in _includes/v2-baseline.html with a small CSS/JS client layer injected by index.html; later main commits only restored the existing consent gate to ten locked advanced review routes and did not redesign the public v2 presentation",
     "public_policy": "Stagehand Fundamentals + Field Skills + five real department Course 1 starters; no normal Rigging, Electrics, Lead, Supervisor, Infrastructure, or Career catalog choices",
-    "render_verification": "GitHub Pages build/source and deployed-content structure were verified; true public-domain pixel/screenshot verification remains blocked by DNS/connector limitations in the current runtime."
+    "render_verification": "GitHub Pages build/source and deployed-content structure were verified; true public-domain pixel/screenshot verification remains blocked by DNS/connector limitations in the current runtime.",
+    "validation": {
+      "main_workflow_run": 34018078070,
+      "head_sha": "94bb5cfe7dbc7eac3369a8d4f08234622a807f9c",
+      "result": "PASS",
+      "passed_checks": [
+        "ecosystem matrix generation",
+        "normalized research matrix",
+        "ecosystem curriculum",
+        "course consent coverage",
+        "accessibility structural baseline",
+        "matrix view generation",
+        "generated matrix state"
+      ]
+    }
   },
   "public_department_catalog": {
     "accepted_policy": "show_only_course_1_starters",
     "policy_origin_commit": "5a7923689d1e3a6802570aa8a561d6ec6bf11429",
-    "current_public_site_commit": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
+    "v2_public_site_refinement_commit": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
+    "latest_repository_main": "94bb5cfe7dbc7eac3369a8d4f08234622a807f9c",
     "current_course_1_entry_routes": [
       {"department":"lighting","course_id":"C-LTG-SUPPORT","route":"courses/pathway-lighting-01-support.html"},
       {"department":"video","course_id":"C-VID-SUPPORT","route":"courses/pathway-video-01-support.html"},
@@ -58,7 +74,7 @@
       "type":"catalog_architecture",
       "finding":"The former learner-facing department grid mixed Course 1, Course 2, Course 3, and a Course-3-only Electrics entry.",
       "accepted_resolution":"The current public v2 client layer exposes only Stagehand Fundamentals, Field Skills, and five real Course 1 department starters.",
-      "current_public_site_commit":"2e7cd5d491316f18d7f726b15333ac4ddd6b775d"
+      "v2_public_site_refinement_commit":"2e7cd5d491316f18d7f726b15333ac4ddd6b775d"
     },
     {
       "finding_id":"CB-SIT-004",
@@ -87,6 +103,14 @@
       "finding":"A branching live-production role-family map now replaces the universal-rank-ladder assumption.",
       "artifact":"research/analysis/live-production-role-family-map-2026-09-06.json",
       "decision_rule":"Role layers describe recurring responsibility patterns; employer/tour/venue/union appointment and specialist qualification still control actual authority."
+    },
+    {
+      "finding_id":"CB-SIT-008",
+      "type":"validation_repair",
+      "finding":"Ten locked advanced/owner-review top-level course routes lacked the repository's existing consent stylesheet/runtime, causing the inherited curriculum-validation failure.",
+      "accepted_resolution":"The existing consent gate was restored on all ten routes without expanding course content or changing their locked/noindex review state.",
+      "verified_main":"94bb5cfe7dbc7eac3369a8d4f08234622a807f9c",
+      "validation":"full Ecosystem Curriculum Validation workflow PASS"
     }
   ],
   "current_architecture_proposals": [
@@ -118,7 +142,7 @@
       "decision_id":"CB-DEC-004",
       "question":"Which research gaps materially block a release decision versus merely improve depth?",
       "status":"partially_resolved",
-      "remaining_blockers":["specialist/practitioner validation where responsibility depends on real appointment/qualification","Road Case owner field-context review","learner usability testing for major rewritten containers","About-page original image integration/pixel verification"]
+      "remaining_blockers":["specialist/practitioner validation where responsibility depends on real appointment/qualification","Road Case owner field-context review","learner usability testing for major rewritten containers","About-page original image integration","true public-domain pixel verification"]
     }
   ],
   "unfinished_owner_requested_work": [
