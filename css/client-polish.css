@@ -1,0 +1,153 @@
+/* The Crew Blueprint — v2 client-facing presentation layer
+   This file changes presentation only. The v2 HTML remains the baseline. */
+
+/* Footer: brand/navigation left, safety disclaimer right. */
+.site-footer .footer-main { order: 1; }
+.site-footer .footer-disclaimer { order: 2; }
+
+@media (min-width: 901px) {
+  .site-footer .footer-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+  }
+}
+
+/* Public course catalog: keep v2 visual language, make the available path obvious. */
+body.cb-client-courses #advanced-training,
+body.cb-client-courses .cb-owner-audit-notice,
+body.cb-client-courses [data-cb-public-hidden="true"] {
+  display: none !important;
+}
+
+body.cb-client-courses #learning-layers {
+  padding-top: clamp(34px, 6vw, 72px);
+}
+
+body.cb-client-courses #department-pathways {
+  overflow: hidden;
+}
+
+body.cb-client-courses #department-pathways .cb-tier-heading {
+  align-items: end;
+}
+
+body.cb-client-courses #department-pathways .cb-tier-collapse {
+  margin-top: 22px;
+}
+
+body.cb-client-courses #department-pathways .cb-tier-toggle {
+  border-radius: var(--cb-radius-md);
+  border: 1px solid var(--cb-border);
+  background: rgba(255,255,255,0.035);
+}
+
+body.cb-client-courses #department-pathways .cb-dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+body.cb-client-courses #department-pathways .cb-dept-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--cb-border);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)),
+    var(--cb-panel);
+}
+
+body.cb-client-courses #department-pathways .cb-dept-card h3 {
+  margin-bottom: 8px;
+}
+
+body.cb-client-courses #department-pathways .cb-dept-tagline {
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+body.cb-client-courses #department-pathways .cb-dept-course-list {
+  margin-top: auto;
+}
+
+body.cb-client-courses #department-pathways .cb-dept-course-list li {
+  margin: 0;
+}
+
+body.cb-client-courses #department-pathways .cb-dept-course-list a {
+  display: block;
+  padding: 14px 15px;
+  border-radius: var(--cb-radius-sm);
+  border: 1px solid rgba(245,180,0,0.28);
+  background: rgba(245,180,0,0.06);
+}
+
+body.cb-client-courses #department-pathways .cb-dept-course-level {
+  color: var(--cb-gold);
+}
+
+body.cb-client-courses #field-skills-courses .cb-tier-status {
+  background: rgba(255,255,255,0.055);
+  border-color: var(--cb-border);
+  color: var(--cb-muted-2);
+}
+
+body.cb-client-courses #field-skills-courses .cb-field-skill-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+body.cb-client-courses #field-skills-courses .cb-field-skill-card {
+  min-height: 88px;
+}
+
+/* Home: future/internal ladder rungs can be removed without rebuilding v2. */
+body.cb-client-home [data-cb-public-hidden="true"] {
+  display: none !important;
+}
+
+body.cb-client-home .cb-honest-ladder-copy {
+  max-width: 760px;
+}
+
+/* About: keep v2 cards but make the founder/limitations story easier to read. */
+body.cb-client-about .cb-about-principles-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+body.cb-client-about .cb-about-principles-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--cb-gold);
+  opacity: 0.75;
+}
+
+body.cb-client-about .cb-founder-note {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--cb-border);
+  border-radius: var(--cb-radius-md);
+  background: rgba(255,255,255,0.025);
+  color: var(--cb-muted);
+  line-height: 1.65;
+}
+
+body.cb-client-about .cb-founder-note strong {
+  color: var(--cb-text);
+}
+
+@media (max-width: 900px) {
+  .site-footer .footer-main,
+  .site-footer .footer-disclaimer { order: initial; }
+
+  body.cb-client-courses #department-pathways .cb-dept-grid,
+  body.cb-client-courses #field-skills-courses .cb-field-skill-grid {
+    grid-template-columns: 1fr;
+  }
+}
