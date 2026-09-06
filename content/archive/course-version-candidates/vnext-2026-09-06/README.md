@@ -1,0 +1,1 @@
+This directory is the verbatim archive location for the six-course vNext candidate set. The exact candidate review snapshot is identified by the Git blob SHA in `manifest.json`. This candidate is not selected as current unless the owner explicitly chooses it.
