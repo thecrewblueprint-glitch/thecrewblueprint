@@ -1,0 +1,33 @@
+/* vNext Owner Review additions. Uses the accepted v2 visual vocabulary; no baseline redesign. */
+.vnext-owner-hero{padding-bottom:28px}
+.vnext-owner-hero h1{max-width:900px}
+.vnext-review-principles{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.vnext-review-principles span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:11px;letter-spacing:.04em;color:var(--ink-dim);background:var(--ground-2)}
+.vnext-owner-catalog{padding-top:0}
+.vnext-review-card{min-height:230px}
+.vnext-legacy-link{margin:20px 0 0;padding:18px 0;border-top:1px solid var(--line);font-size:13px}
+.vnext-review-banner{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:0 0 18px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--ground-2);font-size:11px;color:var(--ink-dim)}
+.vnext-review-banner strong{color:var(--amber-strong);letter-spacing:.05em;text-transform:uppercase}
+.vnext-side-head{padding:14px 14px 12px;border-bottom:1px solid var(--line);display:grid;gap:7px}
+.vnext-side-head a{font-size:12px}
+.vnext-side-head span{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-dim)}
+.vnext-shell .sf-module-lessons{display:none}
+.vnext-shell .sf-module.open .sf-module-lessons{display:block}
+.vnext-shell .les{display:flex;gap:9px;align-items:flex-start}
+.vnext-lesson-num{min-width:22px;font-size:9px;letter-spacing:.05em;color:var(--ink-dim);padding-top:2px}
+.vnext-lesson-body>.card,.vnext-lesson-body>.rule-plate,.vnext-lesson-body>.course-training-visual,.vnext-lesson-body>.cb-section{margin-bottom:18px}
+.vnext-retrieval,.vnext-scenario,.vnext-awareness-boundary{margin:22px 0;padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--amber-strong);border-radius:8px;background:var(--ground-2)}
+.vnext-scenario{border-left-color:var(--rust)}
+.vnext-awareness-boundary{border-left-color:var(--rust)}
+.vnext-retrieval p,.vnext-scenario p,.vnext-awareness-boundary p{margin:8px 0 0;color:var(--ink-dim)}
+.vnext-retrieval-kicker{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--amber-strong);font-weight:700}
+.vnext-retrieval-note{font-size:11px!important}
+.vnext-scenario h3{margin:8px 0 0}
+.vnext-skill-label{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-strong);margin:0 0 12px}
+.vnext-quiz-stack{display:grid;gap:16px;margin:16px 0 22px}
+.vnext-course-boundary{margin:28px 0 6px;padding:13px 14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:12px;color:var(--ink-dim)}
+.vnext-course-boundary strong{color:var(--ink)}
+@media(max-width:800px){
+  .vnext-review-banner{align-items:flex-start;flex-direction:column;gap:4px}
+  .vnext-review-card{min-height:0}
+}
