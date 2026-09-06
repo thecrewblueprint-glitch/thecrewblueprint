@@ -20,10 +20,11 @@ jobs:
           fetch-depth: 0
           ref: archive/content-snapshot-all-versions-2026-09-06
 
-      - name: Fetch every repository branch
+      - name: Fetch every repository branch and tag
         run: |
-          git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune --no-tags
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*' '+refs/tags/*:refs/tags/*' --prune --force
           echo "Remote branches available: $(git for-each-ref refs/remotes/origin --format='%(refname:short)' | grep -v '^origin/HEAD$' | wc -l)"
+          echo "Tags available: $(git for-each-ref refs/tags --format='%(refname:short)' | wc -l)"
 
       - name: Materialize verbatim course/content versions
         id: materialize
@@ -54,17 +55,29 @@ jobs:
           root = Path('content/archive/verbatim/snapshot-2026-09-06-all-course-versions')
           identity = json.loads((root/'identity-lineage-143.json').read_text())
           manifest = json.loads((root/'snapshot-manifest.json').read_text())
+          history = json.loads((root/'history-version-manifest.json').read_text())
           assert len(identity) == 143, len(identity)
           assert manifest['canonical_identity_count'] == 143
           assert manifest['source_branch_count'] >= 48, manifest['source_branch_count']
-          assert manifest['snapshot_file_count'] > 143, manifest['snapshot_file_count']
-          missing = [r['course_id'] for r in identity if not any(v['source_branch'] == 'main' for v in r['versions'])]
+          assert manifest['branch_tip_snapshot_file_count'] > 143
+          assert manifest['reachable_history_commit_count'] > 0
+          assert manifest['reachable_history_unique_path_blob_version_count'] >= manifest['branch_tip_unique_blob_count']
+          assert history['reachable_commit_count'] == manifest['reachable_history_commit_count']
+          missing = [
+              r['course_id'] for r in identity
+              if not any(v['source_branch'] == 'main' for v in r['branch_tip_versions'])
+          ]
           assert not missing, f'Missing main route snapshots: {missing}'
+          missing_history = [r['course_id'] for r in identity if not r['reachable_history_route_versions']]
+          assert not missing_history, f'Missing route history: {missing_history}'
           print({
               'identities': len(identity),
               'source_branches': manifest['source_branch_count'],
-              'snapshot_files': manifest['snapshot_file_count'],
-              'unique_blobs': manifest['unique_blob_count'],
+              'tags': manifest['fetched_tag_count'],
+              'branch_tip_files': manifest['branch_tip_snapshot_file_count'],
+              'reachable_commits': manifest['reachable_history_commit_count'],
+              'historical_path_blob_versions': manifest['reachable_history_unique_path_blob_version_count'],
+              'historical_unique_blobs': manifest['reachable_history_unique_blob_count'],
           })
           PY
 
@@ -77,5 +90,5 @@ jobs:
             echo 'Snapshot already current.'
             exit 0
           fi
-          git commit -m 'archive: materialize verbatim course versions from all branches'
+          git commit -m 'archive: materialize all reachable historical course versions'
           git push origin HEAD:archive/content-snapshot-all-versions-2026-09-06
