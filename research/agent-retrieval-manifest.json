@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "system": "thecrewblueprint",
+  "canonical_repository": "thecrewblueprint-glitch/thecrewblueprint",
+  "canonical_ref": "main",
+  "purpose": "Machine-readable entrypoint for agents retrieving Crew Blueprint curriculum, research, citation, evidence, review, lineage, and cross-system context.",
+  "governance_entrypoints": [
+    "AGENTS.md",
+    "CLAUDE.md"
+  ],
+  "research_entrypoints": [
+    {
+      "id": "research-workflow",
+      "path": "research/README.md",
+      "use": "research workflow, source hierarchy, handoff rules"
+    },
+    {
+      "id": "source-master-map",
+      "path": "research/02-source-master-map.md",
+      "use": "human-readable source and citation master map"
+    },
+    {
+      "id": "evidence-matrix-guide",
+      "path": "research/matrix/README.md",
+      "use": "normalized evidence graph schema, record families, validator and generated audit views"
+    },
+    {
+      "id": "community-client-discovery-input",
+      "path": "research/COMMUNITY_CLIENT_DISCOVERY_AND_ECOSYSTEM_INPUT_2026-09-06.md",
+      "use": "audience-needs and cross-system audit input"
+    },
+    {
+      "id": "ecosystem-relationship-map",
+      "path": "research/ecosystem/relationship-map.json",
+      "use": "machine-readable Roadmapdev / Production Atlas / Crew Blueprint utilization graph"
+    }
+  ],
+  "canonical_matrix_tables": {
+    "course_inventory": "research/matrix/course_inventory.jsonl",
+    "content": "research/matrix/content*.jsonl",
+    "sources": "research/matrix/sources*.jsonl",
+    "support_edges": "research/matrix/support_edges*.jsonl",
+    "competency_content_edges": "research/matrix/competency_content_edges*.jsonl",
+    "research_competency_edges": "research/matrix/research_competency_edges*.jsonl",
+    "content_lineage_edges": "research/matrix/content_lineage_edges*.jsonl",
+    "reviews": "research/matrix/reviews*.jsonl",
+    "media": "research/matrix/media*.jsonl",
+    "route_compatibility": "research/matrix/route_compatibility_inventory.jsonl",
+    "competency_aliases": "research/matrix/competency_id_aliases.jsonl"
+  },
+  "generated_views": {
+    "index": "research/matrix/views/README.md",
+    "unsupported": "research/matrix/views/unsupported.md",
+    "qualification_sensitive": "research/matrix/views/qualification-sensitive.md",
+    "route_claim_source": "research/matrix/views/route-claim-source.md",
+    "source_impact": "research/matrix/views/source-impact.md",
+    "assessment_rationale": "research/matrix/views/assessment-rationale.md",
+    "supersession": "research/matrix/views/supersession.md",
+    "domain_completeness": "research/matrix/views/domain-completeness.md",
+    "visual_evidence": "research/matrix/views/visual-evidence.md"
+  },
+  "retrieval_order": [
+    "Read governance entrypoints before substantive work.",
+    "Identify the current learner route or domain in course_inventory.jsonl.",
+    "Resolve relevant CONTENT and COMPETENCY relationships through the matrix JSONL tables.",
+    "Resolve claim support through SUPPORT_EDGE to SOURCE records; do not infer support from bibliography presence alone.",
+    "Check REVIEW, MEDIA, lineage, qualification and supersession state before proposing publication changes.",
+    "Use the ecosystem relationship map only for context owned by another system; do not duplicate volatile external-system data into Crew Blueprint unless explicitly approved.",
+    "For analytical prioritization or conflict resolution, consult Roadmapdev; for current employer, vendor, market, union and opportunity context, consult Production Atlas.",
+    "Preserve source-system authority and provenance in any derived Crew Blueprint work."
+  ],
+  "authority_rules": {
+    "crew_blueprint": "canonical for Crew Blueprint curriculum, site state, research matrix and learner-facing publication state",
+    "roadmapdev": "analytical/intelligence source; recommendations do not become Crew Blueprint truth without accepted Crew Blueprint change",
+    "production_atlas": "canonical for its current industry, employer, vendor, union, market and opportunity intelligence on its accepted branch",
+    "50yearroadmap": "canonical for ecosystem governance, relationships and accepted current-state continuity",
+    "supabase_roadmap": "structured durable state/provenance/current frontier; not a replacement for source-repository canonicality"
+  },
+  "integrity_expectations": [
+    "all internal repository paths in this manifest must resolve",
+    "matrix references must pass repository validation",
+    "cross-system pointers must include repository and canonical ref",
+    "volatile external-system data should be referenced rather than copied when possible",
+    "course content and evidence lineage must remain distinguishable from analytical recommendations"
+  ]
+}
