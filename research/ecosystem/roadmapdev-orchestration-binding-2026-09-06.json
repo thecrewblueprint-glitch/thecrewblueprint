@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-06",
+  "status": "verified_existing_cross-system_contract",
+  "crew_blueprint_task": "Agent ↔ Roadmapdev orchestration with COMPLETE / NEEDS_EVIDENCE / BLOCKED",
+  "resolution": "reuse_existing_roadmapdev_wrapper",
+  "roadmapdev": {
+    "repository": "thecrewblueprint-glitch/Roadmapdev",
+    "canonical_ref": "main",
+    "contract": "docs/60-orchestrator-agent-wrapper.md",
+    "implementation": "scripts/orchestrator-agent.py",
+    "tests": "tests/test_orchestrator_agent_wrapper.py",
+    "statuses": ["COMPLETE","NEEDS_EVIDENCE","BLOCKED"],
+    "routing_modes": ["DORMANT","CONSULTATIVE","ANALYTICAL_LOOP"],
+    "work_types": ["GENERAL","AUDIT","ADVANCEMENT"],
+    "advisory_only": true
+  },
+  "verified_behaviors": [
+    "routine deterministic local work can remain DORMANT",
+    "consequential Crew Blueprint research-sufficiency questions enter the analytical path and request the research locator",
+    "explicit audits route as Roadmapdev audit work",
+    "cross-system consequential audits use the rich analytical profile",
+    "missing evidence returns bounded NEEDS_EVIDENCE requests",
+    "blocked authority returns BLOCKED and does not become action",
+    "unsupported capabilities fail closed",
+    "Roadmapdev never manufactures write authority over Crew Blueprint"
+  ],
+  "crew_blueprint_usage": {
+    "when_to_call":"Use for research sufficiency, curriculum prioritization, conflicting evidence, architecture/system-contract choices, historical reconciliation, major audits, or explicit owner requests to use Roadmapdev.",
+    "complete":"Roadmapdev has enough authorized evidence to provide the requested advisory analysis; the working Crew Blueprint agent still applies local governance and owner/publication gates.",
+    "needs_evidence":"Retrieve only the bounded missing evidence from the authoritative source if access is authorized, then rerun analysis. Do not fill gaps from model memory or historical branch recency.",
+    "blocked":"Stop the proposed analytical/action path and surface the authority, retrieval, unsupported-capability, or integrity blocker. Do not reinterpret BLOCKED as a recommendation to bypass the gate."
+  },
+  "decision":"Do not build a duplicate Crew Blueprint-specific orchestration engine. Bind Content Pipeline v2 to the existing Roadmapdev wrapper and preserve Roadmapdev as advisory."
+}
