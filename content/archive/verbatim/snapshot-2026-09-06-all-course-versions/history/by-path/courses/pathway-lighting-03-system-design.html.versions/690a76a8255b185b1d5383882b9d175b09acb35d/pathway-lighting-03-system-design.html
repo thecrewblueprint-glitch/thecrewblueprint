@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lighting Course 3: Control-System Design | The Crew Blueprint</title>
+<meta name="description" content="Translate show requirements into a documented lighting-control architecture, commission its data paths, isolate failure domains, and manage change without crossing electrical or rigging authority." />
+<meta name="robots" content="noindex,follow" />
+<link rel="icon" href="../images/logo.png" type="image/png" />
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-lighting-03-system-design/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Lighting Course 3: Control-System Design | The Crew Blueprint" />
+<meta property="og:description" content="Translate show requirements into a documented lighting-control architecture, commission its data paths, isolate failure domains, and manage change without crossing electrical or rigging authority." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/tiered-course.css" rel="stylesheet" />
+</head>
+<body class="course-tier course-tier-advanced">
+<header class="top">
+  <div><div class="brand">The Crew <span>Blueprint</span></div><div class="top-title" id="topTitle">Advanced Systems Tier · Course 3 · Lighting Course 3: Control-System Design</div></div>
+  <div class="progbox"><div class="progrow"><span id="progtext">Lesson 1</span><span id="pcttext">0%</span></div><div class="bar"><i id="progbar" style="width:0"></i></div></div>
+  <a href="../courses.html" class="exit-btn">← Exit Course</a>
+</header>
+<div class="shell">
+  <nav class="side" aria-label="Course lessons"><div id="sidebar"></div></nav>
+  <main class="content">
+    <select class="mobile-select" id="mobileSelect" aria-label="Choose lesson"></select>
+    <section class="course-hero" id="courseHero"></section>
+    <div class="card progress"><div class="rule" id="objective">Select a lesson to begin.</div></div>
+    <div id="lessonContent"></div>
+    <nav class="footer-nav" id="footerNav" aria-label="Lesson navigation"></nav>
+  </main>
+</div>
+<footer><p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p></footer>
+<script type="application/json" id="courseData">{
+  "slug": "pathway-lighting-03-system-design",
+  "title": "Lighting Course 3: Control-System Design",
+  "tier": "Advanced Systems Tier · Course 3",
+  "tierClass": "course-tier-advanced",
+  "status": "Review Build · Qualified Review Gate",
+  "packet": "Research Package 33 — Lighting Course 3: System Design & Optimization",
+  "description": "Translate show requirements into a documented lighting-control architecture, commission its data paths, isolate failure domains, and manage change without crossing electrical or rigging authority.",
+  "boundary": "This course does not qualify a learner for energized electrical work, venue-infrastructure changes, structural engineering, rigging, or employer appointment as a systems designer. Separate competence and authorization still control those decisions.",
+  "modules": [
+    {
+      "name": "Requirements & Boundaries",
+      "lessons": [
+        {
+          "name": "Design From Show Requirements",
+          "objective": "Define creative, operational, venue, device, control, data, resilience, interface, and handoff needs before selecting equipment.",
+          "blocks": [
+            {
+              "type": "callout",
+              "paragraphs": [
+                "\u003cstrong>The mastery shift is from operating or leading an existing rig to defining requirements, designing architecture, documenting interfaces, commissioning the deployed system, and diagnosing it at system scale.\u003c/strong>"
+              ]
+            },
+            {
+              "heading": "Define before selecting equipment",
+              "bullets": [
+                "Creative and cueing needs",
+                "Venue and touring constraints",
+                "Fixture, device, mode, and control needs",
+                "Universe, data, and network needs",
+                "Power and rigging interfaces requiring qualified coordination",
+                "Fallback and operational-continuity expectations",
+                "Documentation, backup, labeling, and handoff needs"
+              ]
+            },
+            {
+              "type": "authority",
+              "paragraphs": [
+                "Requirements belong to several authorities. Capture designer intent, production constraints, venue rules, rigging and power interfaces, operator needs, and employer standards without assuming the systems designer may approve them all."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Protocols & Networked Control",
+      "lessons": [
+        {
+          "name": "Build the Control Path in Layers",
+          "objective": "Map control from operator and show engine through network transport, gateways, device control, and fixture response.",
+          "blocks": [
+            {
+              "type": "sequence",
+              "items": [
+                "Operator or control surface",
+                "Show-control engine and authoritative file",
+                "Ethernet or data transport",
+                "Gateways, nodes, and protocol conversion",
+                "Device-level control, universe, address, and mode",
+                "Fixture or endpoint response"
+              ]
+            },
+            {
+              "heading": "Architecture questions",
+              "bullets": [
+                "How do physical and logical topologies differ?",
+                "Where do DMX, RDM, and sACN functions enter the path?",
+                "Which source owns control and priority?",
+                "How are universes, addresses, and device modes documented?",
+                "What is one local, segment, universe, network, or control-wide failure domain?",
+                "When does a dedicated network specialist own the answer?"
+              ]
+            },
+            {
+              "type": "stop",
+              "paragraphs": [
+                "Do not turn a transferable architecture into one console menu tour. Product steps, network configuration, and protocol behavior need current documentation and qualified ownership."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Data, Device & Department Interfaces",
+      "lessons": [
+        {
+          "name": "Control the Boundaries Between Systems",
+          "objective": "Identify lighting-data, device, power, rigging, production, and operator interfaces that can invalidate the design.",
+          "blocks": [
+            {
+              "type": "columns",
+              "columns": [
+                {
+                  "heading": "Inside control architecture",
+                  "bullets": [
+                    "Universe and address plan",
+                    "RDM discovery or management concepts",
+                    "sACN transport",
+                    "Gateway and node roles",
+                    "Show-file and configuration versions",
+                    "Network segmentation and control ownership"
+                  ]
+                },
+                {
+                  "heading": "External authority interfaces",
+                  "bullets": [
+                    "Approved power system",
+                    "Rigging and structural plan",
+                    "Creative and programming intent",
+                    "Venue network constraints",
+                    "Safety and access controls",
+                    "Production change approval"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "callout",
+              "paragraphs": [
+                "The system designer must show where lighting responsibility ends and another qualified authority begins. Unnamed interfaces become faults and arguments during commissioning."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Documentation & Change Control",
+      "lessons": [
+        {
+          "name": "Make the Deployed System Traceable",
+          "objective": "Create diagrams, schedules, labeling, patch, topology, version, commissioning, and fault records that another qualified technician can use.",
+          "blocks": [
+            {
+              "heading": "Required artifacts",
+              "bullets": [
+                "System block and control-flow diagram",
+                "Device and mode schedule",
+                "Universe and address schedule",
+                "Network and physical-topology diagram",
+                "Patch and labeling convention",
+                "Show-file, backup, and version record",
+                "Commissioning checklist and discrepancy log"
+              ]
+            },
+            {
+              "type": "evidence",
+              "paragraphs": [
+                "AVIXA’s documentation and performance-verification work supports a useful principle: define the required deliverables and checks, assign responsibility, record the deployed state, and report discrepancies. Apply that principle without treating an AVIXA document as the only rule for live entertainment."
+              ]
+            },
+            {
+              "type": "sequence",
+              "items": [
+                "Mark the controlling revision.",
+                "Record assumptions and owner decisions.",
+                "Update drawings, schedules, inventories, and configuration records together.",
+                "Back up recoverable system state where the system supports it.",
+                "Review every field change for downstream effects.",
+                "Issue a clear handoff record that another qualified person can follow."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Commissioning & Verification",
+      "lessons": [
+        {
+          "name": "Test the Design Against the Deployed Rig",
+          "objective": "Verify endpoints, patch, modes, transport, control, recovery assumptions, and records before handoff.",
+          "blocks": [
+            {
+              "type": "callout",
+              "paragraphs": [
+                "Equipment power or first output is not acceptance. Commissioning compares the deployed system with defined requirements, tests expected paths and failure behavior, records results, and closes discrepancies through the correct authority."
+              ]
+            },
+            {
+              "heading": "Verification domains",
+              "bullets": [
+                "Expected endpoints are present.",
+                "Address, mode, universe, and patch match records.",
+                "Control reaches the intended device from the intended source.",
+                "Network and gateway paths behave as designed.",
+                "Fallback or recovery assumptions receive a controlled test where appropriate.",
+                "The deployed show file and documentation match.",
+                "Discrepancies close or receive an owner and constraint status."
+              ]
+            },
+            {
+              "type": "authority",
+              "paragraphs": [
+                "Electrical, rigging, network, fixture-service, and venue checks require the people who actually hold those responsibilities. Commissioning coordinates their evidence; it does not absorb their authority."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Resilience & Integrated Scenario",
+      "lessons": [
+        {
+          "name": "Design for Predictable Failure and Recovery",
+          "objective": "Compare architectures by failure behavior, service access, diagnostic speed, documentation, operational simplicity, and change tolerance.",
+          "blocks": [
+            {
+              "heading": "Evaluate the whole system",
+              "bullets": [
+                "Reliability and predictable failure domains",
+                "Recoverable show and device configuration",
+                "Service access and labeling",
+                "Clear fault isolation",
+                "Appropriate redundancy",
+                "Compatibility and spare strategy",
+                "Operational simplicity",
+                "Clean touring, venue, and operator handoff"
+              ]
+            },
+            {
+              "heading": "Capstone change",
+              "paragraphs": [
+                "A late production change adds fixtures, changes one position, and requests a second control location. The current network and universe plan has limited headroom."
+              ],
+              "bullets": [
+                "State missing requirements.",
+                "Revise the architecture without hiding power or rigging effects.",
+                "Identify single points of failure.",
+                "Update patch, topology, device, and version records.",
+                "Define commissioning checks for the changed paths.",
+                "Route approvals to the correct authorities."
+              ]
+            },
+            {
+              "type": "stop",
+              "paragraphs": [
+                "A clever drawing is not complete when power, rigging, venue, network, operator, or design assumptions remain unapproved."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What should a mastery lighting design begin with?",
+      "options": [
+        "Favorite console and fixtures",
+        "Show requirements, constraints, interfaces, and acceptance needs",
+        "The number of spare universes"
+      ],
+      "answer": 1,
+      "coaching": "Equipment follows requirements; it does not define them."
+    },
+    {
+      "question": "A fixture has the right address but the wrong device mode. What does this show?",
+      "options": [
+        "The network is definitely down",
+        "Rigging must move the fixture",
+        "Address alone does not define the control model"
+      ],
+      "answer": 2,
+      "coaching": "Mode changes channel behavior and must agree with the patch and documentation."
+    },
+    {
+      "question": "Why document physical and logical topology separately?",
+      "options": [
+        "They can differ and fail in different ways",
+        "Only the physical drawing matters",
+        "To make the packet longer"
+      ],
+      "answer": 0,
+      "coaching": "A correct cable route does not prove the logical control path, and the reverse also holds."
+    },
+    {
+      "question": "When does the team complete commissioning?",
+      "options": [
+        "When fixtures first power on",
+        "When the team checks defined criteria, closes or controls discrepancies, and matches records to the deployed system",
+        "After a console backup"
+      ],
+      "answer": 1,
+      "coaching": "Power is only one state. Commissioning tests the required behavior and evidence."
+    },
+    {
+      "question": "What does this course grant regarding electrical work?",
+      "options": [
+        "Entertainment Electrician qualification",
+        "Permission to alter venue service",
+        "No electrical authority beyond the learner’s separate qualification"
+      ],
+      "answer": 2,
+      "coaching": "Lighting-system design and electrical authority remain separate."
+    }
+  ],
+  "practice": {
+    "heading": "Portfolio and qualified-review gate",
+    "paragraphs": [
+      "The capstone should produce a complete control package for a bounded show brief. Review needs an experienced lighting systems practitioner plus the responsible power, rigging, venue-network, operator, and design voices for their interfaces."
+    ],
+    "checklist": [
+      "Write assumptions and boundaries.",
+      "Produce the required system artifacts.",
+      "Identify external authorities and interfaces.",
+      "Define commissioning criteria before deployment.",
+      "Diagnose one fault from architecture evidence.",
+      "Respond to one late change with a traceable decision.",
+      "Receive review from a qualified practitioner for the actual discipline."
+    ]
+  },
+  "sources": [
+    {
+      "label": "ESTA — Published entertainment-control standards",
+      "url": "https://tsp.esta.org/tsp/documents/published_docs.php"
+    },
+    {
+      "label": "AVIXA — Documentation requirements for AV systems",
+      "url": "https://www.avixa.org/resources/standards/documentation-requirements-for-audiovisual-systems"
+    },
+    {
+      "label": "AVIXA — Systems performance verification",
+      "url": "https://www.avixa.org/resources/standards/av-systems-performance-verification"
+    },
+    {
+      "label": "ETCP — Entertainment Electrician certification boundary",
+      "url": "https://etcp.esta.org/certify/certify_electrical.html"
+    }
+  ]
+}</script>
+<script src="../js/tiered-course.js"></script>
+</body>
+</html>

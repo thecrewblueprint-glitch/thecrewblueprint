@@ -1,13 +1,17 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "2.0.0",
   "snapshot_id": "snapshot-2026-09-06-all-course-versions",
   "snapshot_date": "2026-09-06",
   "purpose": "Permanent verbatim working-tree archive for side-by-side curriculum comparison and future reuse.",
   "authority": "reference_only_historical_evidence",
   "canonical_identity_count": 143,
   "source_branch_count": 48,
-  "snapshot_file_count": 4396,
-  "unique_blob_count": 480,
+  "fetched_tag_count": 0,
+  "branch_tip_snapshot_file_count": 4396,
+  "branch_tip_unique_blob_count": 480,
+  "reachable_history_commit_count": 770,
+  "reachable_history_unique_path_blob_version_count": 772,
+  "reachable_history_unique_blob_count": 760,
   "logical_route_note": "Query-routed identities retain their full logical route while lineage points to the underlying physical repository file.",
   "rules": [
     "Snapshot presence does not make historical content current or publishable.",
@@ -15,7 +19,7 @@
     "Future curriculum rewrites must preserve the prior accepted/source version before replacement.",
     "Historical hazardous-work detail remains subject to current safety and qualification boundaries before reuse."
   ],
-  "files": [
+  "branch_tip_files": [
     {
       "source_branch": "archive/infrastructure-career-pre-owner-review-2026-09-06",
       "source_commit": "d68309368d2775488418ca48e56f4bfdd3846e6f",
