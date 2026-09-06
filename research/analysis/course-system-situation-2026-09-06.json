@@ -1,197 +1,176 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "snapshot_id": "crew-blueprint-course-system-situation-2026-09-06",
   "snapshot_date": "2026-09-06",
   "system": "thecrewblueprint",
   "purpose": "Decision substrate for analyzing the whole Crew Blueprint course/research state without conflating registered identities, public routes, historical builds, evidence completeness, publication state, or external authority.",
   "canonical_repository": "thecrewblueprint-glitch/thecrewblueprint",
-  "latest_accepted_main_observed": "5a7923689d1e3a6802570aa8a561d6ec6bf11429",
-  "observation_mode": "read_only_catalog_plus_accepted_visible_catalog_correction",
+  "latest_accepted_main_observed": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
+  "observation_mode": "live_state_reconciled_after_v2_public_pass_and_structural_analysis",
   "inventory_snapshot": {
     "registered_logical_course_identities": 143,
     "source": "research/matrix/course_inventory.jsonl",
     "interpretation": "Registered identity count only. It must not be interpreted as 143 publication-ready, practitioner-approved, or currently learner-facing courses.",
-    "branch_refs_observed": 42,
-    "branch_catalog_method": "Live GitHub branch enumeration plus direct recursive inspection of key course-bearing archive/production branches and the canonical course inventory.",
-    "method_limit": "Local git clone was unavailable because container DNS resolution failed, so this snapshot does not claim a mathematically exhaustive recursive tree traversal of every file on all 42 branches."
+    "branch_refs_observed": 48,
+    "branch_catalog_method": "Live GitHub branch enumeration plus direct inspection of key course-bearing archive/production branches, the canonical course inventory, and current structural PR state.",
+    "method_limit": "The live GitHub connector exposed all 48 current branch refs in two paginated reads. A local full clone was still unavailable because container DNS resolution failed, so branch-content uniqueness findings rely on connector comparison/tree evidence rather than a local exhaustive clone."
+  },
+  "public_site_state": {
+    "v2_visual_baseline_origin": "56b9ab97576b5000addc66535e29437c415e7f13",
+    "current_accepted_main": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
+    "implementation": "accepted v2 source preserved in _includes/v2-baseline.html with a small CSS/JS client layer injected by index.html",
+    "public_policy": "Stagehand Fundamentals + Field Skills + five real department Course 1 starters; no normal Rigging, Electrics, Lead, Supervisor, Infrastructure, or Career catalog choices",
+    "render_verification": "GitHub Pages build/source and deployed-content structure were verified; true public-domain pixel/screenshot verification remains blocked by DNS/connector limitations in the current runtime."
   },
   "public_department_catalog": {
     "accepted_policy": "show_only_course_1_starters",
-    "accepted_main_commit": "5a7923689d1e3a6802570aa8a561d6ec6bf11429",
+    "policy_origin_commit": "5a7923689d1e3a6802570aa8a561d6ec6bf11429",
+    "current_public_site_commit": "2e7cd5d491316f18d7f726b15333ac4ddd6b775d",
     "current_course_1_entry_routes": [
-      {
-        "department": "lighting",
-        "course_id": "C-LTG-SUPPORT",
-        "route": "courses/pathway-lighting-01-support.html"
-      },
-      {
-        "department": "video",
-        "course_id": "C-VID-SUPPORT",
-        "route": "courses/pathway-video-01-support.html"
-      },
-      {
-        "department": "audio",
-        "course_id": "C-AUD-SUPPORT",
-        "route": "courses/pathway-audio-01-support.html"
-      },
-      {
-        "department": "staging_carpentry",
-        "course_id": "C-STG-SUPPORT",
-        "route": "courses/pathway-staging-carpentry-01-support.html"
-      },
-      {
-        "department": "backline_props_wardrobe",
-        "course_id": "C-BPW-SUPPORT",
-        "route": "courses/pathway-backline-props-wardrobe-01-support.html"
-      }
+      {"department":"lighting","course_id":"C-LTG-SUPPORT","route":"courses/pathway-lighting-01-support.html"},
+      {"department":"video","course_id":"C-VID-SUPPORT","route":"courses/pathway-video-01-support.html"},
+      {"department":"audio","course_id":"C-AUD-SUPPORT","route":"courses/pathway-audio-01-support.html"},
+      {"department":"staging_carpentry","course_id":"C-STG-SUPPORT","route":"courses/pathway-staging-carpentry-01-support.html"},
+      {"department":"backline_props_wardrobe","course_id":"C-BPW-SUPPORT","route":"courses/pathway-backline-props-wardrobe-01-support.html"}
     ],
-    "known_missing_course_1_department_entrypoints": [
-      {
-        "department": "electrics",
-        "status": "missing_current_course_1_route",
-        "important_context": "A higher-level Electrics load-planning course exists, but it must not substitute for a Course 1 starter in the public department grid."
-      },
-      {
-        "department": "rigging",
-        "status": "missing_current_course_1_route",
-        "important_context": "Current research/lead material does not establish a general beginner rigging procedure course. Any future starter must remain awareness/support/authority bounded."
-      }
+    "intentionally_not_public_department_starters": [
+      {"department":"electrics","reason":"No current general Course 1 starter; advanced load-planning/electrical identities must not substitute for a novice entry course."},
+      {"department":"rigging","reason":"No current general beginner procedure course; retained material belongs to specialist awareness/qualification context and Owner Review."}
     ]
   },
   "material_findings": [
     {
-      "finding_id": "CB-SIT-001",
-      "type": "historical_content_recovery",
-      "finding": "Materially fuller Lead, Supervisor, and advanced Electrics HTML builds survive off main.",
-      "primary_branch": "archive/lead-supervisor-electrics-rigging-2026-09-06",
-      "also_observed_on": [
-        "claude/production-courses-ui-ux-11l4vg"
-      ],
-      "examples": [
-        {"path": "courses/lead-audio.html", "archived_size_bytes": 17088},
-        {"path": "courses/lead-crew-chief-foundations.html", "archived_size_bytes": 16941},
-        {"path": "courses/lead-electrics.html", "archived_size_bytes": 17774},
-        {"path": "courses/lead-lighting.html", "archived_size_bytes": 17393},
-        {"path": "courses/lead-rigging.html", "archived_size_bytes": 17509},
-        {"path": "courses/lead-staging-carpentry.html", "archived_size_bytes": 17381},
-        {"path": "courses/lead-video.html", "archived_size_bytes": 17409},
-        {"path": "courses/supervisor-event-operations.html", "archived_size_bytes": 15050},
-        {"path": "courses/supervisor-predictive-hazard-recognition.html", "archived_size_bytes": 13938},
-        {"path": "courses/pathway-electrics-03-system-load-planning.html", "archived_size_bytes": 18346}
-      ],
-      "decision_rule": "Treat these as recoverable historical content evidence, not automatic restoration candidates. Compare claim quality, safety boundaries, citations, current architecture, and learner need before any reintegration."
+      "finding_id":"CB-SIT-001",
+      "type":"historical_content_recovery",
+      "finding":"Materially fuller Lead, Supervisor, advanced Electrics, Rigging, Infrastructure, Career, and other course bodies survive off main.",
+      "primary_branches":["archive/lead-supervisor-electrics-rigging-2026-09-06","archive/infrastructure-career-pre-owner-review-2026-09-06","archive/session-partial-ui-owner-review-2026-09-06","claude/production-courses-ui-ux-11l4vg"],
+      "decision_rule":"Treat these as recoverable historical/content evidence, not automatic restoration candidates. Compare learner need, claim quality, safety boundaries, citations, review state, and current architecture before reuse."
     },
     {
-      "finding_id": "CB-SIT-002",
-      "type": "identity_reconciliation",
-      "finding": "Twelve current Field Skills use shorter canonical inventory IDs while older matrix content retains longer historical IDs.",
-      "resolution_candidate": "research/matrix/course_id_aliases.jsonl",
-      "structural_pr": 48,
-      "decision_rule": "Resolve through explicit alias lineage; do not destructively rename historical evidence."
+      "finding_id":"CB-SIT-002",
+      "type":"identity_reconciliation",
+      "finding":"Twelve current Field Skills use shorter canonical inventory IDs while older matrix content retains longer historical IDs.",
+      "resolution":"research/matrix/course_id_aliases.jsonl in PR 48",
+      "decision_rule":"Resolve through explicit alias lineage; do not destructively rename historical evidence."
     },
     {
-      "finding_id": "CB-SIT-003",
-      "type": "catalog_architecture",
-      "finding": "The learner-facing department grid had been mixing Course 1, Course 2, Course 3, and a Course-3-only Electrics entry.",
-      "accepted_resolution": "The public department starter grid now exposes only real Course 1 entry routes.",
-      "accepted_main_commit": "5a7923689d1e3a6802570aa8a561d6ec6bf11429"
+      "finding_id":"CB-SIT-003",
+      "type":"catalog_architecture",
+      "finding":"The former learner-facing department grid mixed Course 1, Course 2, Course 3, and a Course-3-only Electrics entry.",
+      "accepted_resolution":"The current public v2 client layer exposes only Stagehand Fundamentals, Field Skills, and five real Course 1 department starters.",
+      "current_public_site_commit":"2e7cd5d491316f18d7f726b15333ac4ddd6b775d"
     },
     {
-      "finding_id": "CB-SIT-004",
-      "type": "legacy_presentation",
-      "finding": "Multiple alternate or legacy presentations survive, including archived Fundamentals modules, an alternate Fundamentals visual presentation, a standalone First Five Calls route, and a legacy Video C2 overview.",
-      "decision_rule": "Do not count alternate presentations as additional logical courses unless course_inventory explicitly registers a distinct identity."
+      "finding_id":"CB-SIT-004",
+      "type":"legacy_presentation",
+      "finding":"Multiple alternate or legacy presentations survive, including archived Fundamentals modules, an alternate Fundamentals visual presentation, a standalone First Five Calls route, and legacy department/depth presentations.",
+      "decision_rule":"Do not count alternate presentations as additional logical courses unless course_inventory explicitly registers a distinct identity."
     },
     {
-      "finding_id": "CB-SIT-005",
-      "type": "state_model",
-      "finding": "The current project needs separate state dimensions for existence, route status, content depth, evidence support, review state, learner validation, publication state, and external authorization.",
-      "recommended_dimensions": [
-        "registered_identity",
-        "canonical_route",
-        "content_body_state",
-        "research_coverage",
-        "claim_source_support",
-        "assessment_lineage",
-        "media_review_state",
-        "practitioner_review_state",
-        "learner_validation_state",
-        "publication_state",
-        "external_authority_or_qualification_gate",
-        "source_freshness"
-      ]
+      "finding_id":"CB-SIT-005",
+      "type":"product_classification",
+      "finding":"All 143 registered identities now have one proposed primary product classification.",
+      "artifact":"research/analysis/course-product-classification-2026-09-06.json",
+      "summary":{"PUBLIC_COURSE":6,"FIELD_SKILL":18,"MODULE":49,"GUIDE":5,"REFERENCE":11,"SPECIALIST_AWARENESS":21,"ADVANCED_OWNER_REVIEW":32,"DEFER_OR_REMOVE":1},
+      "decision_rule":"Classification changes product treatment, not identity lineage or publication authority."
+    },
+    {
+      "finding_id":"CB-SIT-006",
+      "type":"recommended_catalog",
+      "finding":"The recommended learner product has six major courses, one Field Skills library containing 18 current skill routes, and five practical guides/resources instead of 143 public courses.",
+      "artifacts":["research/analysis/final-recommended-public-catalog-2026-09-06.json","research/analysis/final-recommended-public-catalog-2026-09-06.md"],
+      "status":"owner_review_required_before_structural_canonicalization"
+    },
+    {
+      "finding_id":"CB-SIT-007",
+      "type":"role_architecture",
+      "finding":"A branching live-production role-family map now replaces the universal-rank-ladder assumption.",
+      "artifact":"research/analysis/live-production-role-family-map-2026-09-06.json",
+      "decision_rule":"Role layers describe recurring responsibility patterns; employer/tour/venue/union appointment and specialist qualification still control actual authority."
     }
+  ],
+  "current_architecture_proposals": [
+    "research/analysis/ground-field-foundation-architecture-2026-09-06.md",
+    "research/architecture/content-pipeline-v2-2026-09-06.json",
+    "research/architecture/curriculum-container-architecture-2026-09-06.json",
+    "research/ecosystem/roadmapdev-orchestration-binding-2026-09-06.json"
   ],
   "decision_questions": [
     {
-      "decision_id": "CB-DEC-001",
-      "question": "Which off-main full course bodies contain valuable material that should be reconciled into current courses rather than discarded or blindly restored?",
-      "recommended_analysis": "claim-by-claim diff against current course body, source support, safety boundary, review state, and current learner architecture"
+      "decision_id":"CB-DEC-001",
+      "question":"Which off-main full course bodies contain valuable material that should be reconciled into current courses rather than discarded or blindly restored?",
+      "status":"ongoing_owner_review_salvage_work",
+      "recommended_analysis":"claim-by-claim diff against current course body, source support, safety boundary, review state, and current learner architecture"
     },
     {
-      "decision_id": "CB-DEC-002",
-      "question": "What should the true department-entry taxonomy be once the complete evidence matrix is considered?",
-      "recommended_analysis": "compare workforce role taxonomy, current C1 routes, missing Rigging/Electrics starters, Production Atlas industry taxonomy, and Roadmapdev decision analysis"
+      "decision_id":"CB-DEC-002",
+      "question":"What should the true department-entry taxonomy be?",
+      "status":"proposed_resolved_waiting_owner_approval",
+      "proposed_resolution":"Foundation + Field Skills + Lighting/Audio/Video/Staging-Scenic/Backline-Props-Wardrobe starters; Rigging and Production Power remain specialist-awareness/qualification paths rather than forced beginner department courses."
     },
     {
-      "decision_id": "CB-DEC-003",
-      "question": "Which of the 143 registered identities are actual learner course candidates versus research domains, specialist branches, role maps, or future containers?",
-      "recommended_analysis": "classify without assuming every registered identity must become a standalone course"
+      "decision_id":"CB-DEC-003",
+      "question":"Which of the 143 registered identities are actual learner course candidates versus modules, guides, references, specialist awareness, advanced review, or defer/remove?",
+      "status":"analysis_complete_waiting_owner_approval",
+      "resolution_artifact":"research/analysis/course-product-classification-2026-09-06.json"
     },
     {
-      "decision_id": "CB-DEC-004",
-      "question": "Which research gaps materially block a release decision versus merely improve depth?",
-      "recommended_analysis": "weight safety/authority, unsupported assessed claims, practitioner dependence, current-source freshness, learner need, and content redundancy"
+      "decision_id":"CB-DEC-004",
+      "question":"Which research gaps materially block a release decision versus merely improve depth?",
+      "status":"partially_resolved",
+      "remaining_blockers":["specialist/practitioner validation where responsibility depends on real appointment/qualification","Road Case owner field-context review","learner usability testing for major rewritten containers","About-page original image integration/pixel verification"]
     }
   ],
   "unfinished_owner_requested_work": [
     {
-      "task_id": "CB-BACKLOG-001",
-      "task": "Road Case Field Skill owner interview and bounded rebuild",
-      "status": "pending_owner_field_context_and_reconciliation",
-      "notes": "Package 52 already supplies source/claim research. Future work should reconcile owner field observations with authoritative limits and remain non-procedural for hazardous conditions."
+      "task_id":"CB-BACKLOG-001",
+      "task":"Road Case Field Skill owner interview and bounded rebuild",
+      "status":"WAITING_OWNER_INPUT",
+      "notes":"Existing route/research remain reusable, but the owner field-context observations requested for the rebuild have not been supplied/confirmed. Do not invent them."
     },
     {
-      "task_id": "CB-BACKLOG-002",
-      "task": "Hierarchical live-production job / role / rank map",
-      "status": "pending",
-      "notes": "Should model branching roles and context-specific titles rather than inventing one universal promotion ladder."
+      "task_id":"CB-BACKLOG-002",
+      "task":"Hierarchical live-production job / role / rank map",
+      "status":"PROPOSED_COMPLETE_WAITING_OWNER_APPROVAL",
+      "artifact":"research/analysis/live-production-role-family-map-2026-09-06.json"
     },
     {
-      "task_id": "CB-BACKLOG-003",
-      "task": "Content pipeline v2",
-      "status": "pending_structural_design",
-      "notes": "Should consume source/evidence state, preserve lineage, support review gates, and avoid treating synthesis as authority."
+      "task_id":"CB-BACKLOG-003",
+      "task":"Content pipeline v2",
+      "status":"PROPOSED_COMPLETE_WAITING_OWNER_APPROVAL",
+      "artifact":"research/architecture/content-pipeline-v2-2026-09-06.json"
     },
     {
-      "task_id": "CB-BACKLOG-004",
-      "task": "Canonical ground / field-hand foundational resources",
-      "status": "partially_covered_not_closed",
-      "notes": "The 18 Field Skills and current research provide substantial coverage, but the canonical foundational resource model and validation state still need consolidation."
+      "task_id":"CB-BACKLOG-004",
+      "task":"Canonical ground / field-hand foundational resources",
+      "status":"PROPOSED_COMPLETE_WAITING_OWNER_APPROVAL",
+      "artifact":"research/analysis/ground-field-foundation-architecture-2026-09-06.md"
     },
     {
-      "task_id": "CB-BACKLOG-005",
-      "task": "Discipline / pathway repository structure",
-      "status": "partially_addressed_by_retrieval_graph",
-      "notes": "Do not force final curriculum containers before matrix-driven architecture review."
+      "task_id":"CB-BACKLOG-005",
+      "task":"Discipline / pathway repository structure",
+      "status":"PROPOSED_COMPLETE_WAITING_OWNER_APPROVAL",
+      "artifact":"research/architecture/curriculum-container-architecture-2026-09-06.json",
+      "notes":"Physical file moves/deletions are intentionally not executed before approval."
     },
     {
-      "task_id": "CB-BACKLOG-006",
-      "task": "Minimal Crew Blueprint knowledge locator / cross-data contract",
-      "status": "active_in_pr_48",
-      "notes": "PR 48 adds the agent retrieval manifest, ecosystem relationship map, and course-ID alias layer."
+      "task_id":"CB-BACKLOG-006",
+      "task":"Minimal Crew Blueprint knowledge locator / cross-data contract",
+      "status":"IMPLEMENTED_IN_PR48_WAITING_OWNER_MERGE",
+      "artifacts":["research/agent-retrieval-manifest.json","research/ecosystem/relationship-map.json","research/ecosystem/cross-system-context-record.schema.json","research/matrix/course_id_aliases.jsonl"]
     },
     {
-      "task_id": "CB-BACKLOG-007",
-      "task": "Agent to Roadmapdev orchestration contract with COMPLETE / NEEDS_EVIDENCE / BLOCKED states",
-      "status": "pending_cross_repository_work",
-      "notes": "Keep Roadmapdev advisory. Retrieve evidence when needed, resubmit analysis, and preserve source-system authority. This task should be implemented in its proper ecosystem repository rather than smuggled into Crew Blueprint."
+      "task_id":"CB-BACKLOG-007",
+      "task":"Agent to Roadmapdev orchestration contract with COMPLETE / NEEDS_EVIDENCE / BLOCKED states",
+      "status":"COMPLETE_EXISTING_ROADMAPDEV_CONTRACT_VERIFIED",
+      "artifact":"research/ecosystem/roadmapdev-orchestration-binding-2026-09-06.json",
+      "notes":"Roadmapdev main already implements and tests the required wrapper. Crew Blueprint should bind to it instead of creating duplicate orchestration machinery."
     }
   ],
   "analysis_usage": {
-    "roadmapdev": "Use this snapshot with the canonical matrix and ecosystem relationship map for prioritization, conflict analysis, evidence sufficiency, and architecture decisions. Roadmapdev output remains advisory.",
-    "production_atlas": "Use for current industry taxonomy, employer/vendor/union/market context; do not copy volatile state into static curriculum by default.",
-    "supabase_roadmap": "Suitable for accepted structured state/provenance/frontier after governance acceptance; not source-repository replacement.",
-    "agents": "Start at research/agent-retrieval-manifest.json, then combine this situation snapshot with course_inventory and matrix tables rather than reasoning from the public Courses page alone."
+    "roadmapdev":"Use the existing Roadmapdev orchestrator plus this snapshot, the canonical matrix, classification, and ecosystem relationship map for prioritization, conflict analysis, evidence sufficiency, audits, and architecture decisions. Roadmapdev output remains advisory.",
+    "production_atlas":"Use for current industry taxonomy, employer/vendor/union/market context; do not copy volatile state into static curriculum by default.",
+    "supabase_roadmap":"Suitable for accepted structured state/provenance/frontier after governance acceptance; not source-repository replacement.",
+    "agents":"Start at research/agent-retrieval-manifest.json. Use the classification/catalog/architecture artifacts for product reasoning, then trace claims through the matrix instead of reasoning from public pages or branch recency alone."
   }
 }
