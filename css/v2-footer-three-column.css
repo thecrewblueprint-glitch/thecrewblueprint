@@ -1,57 +1,55 @@
-/* Footer refinement: one vertical information hierarchy on every viewport. */
+/* Footer-only refinement for the accepted v2 site. */
 footer.site .footer-grid.footer-grid-three{
-  display:block !important;
-  width:100%;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(280px,1.15fr) minmax(0,1fr) !important;
+  gap:clamp(24px,4vw,64px);
+  align-items:start;
 }
 footer.site .footer-grid.footer-grid-three>.footer-column{
-  width:100%;
   min-width:0;
+  order:initial !important;
 }
-footer.site .footer-column:empty,
-footer.site .footer-column[hidden]{
-  display:none !important;
-}
-footer.site .footer-column-right{
-  width:100%;
-  justify-self:stretch;
-  text-align:left;
-}
-footer.site .footer-column-right ul,
-footer.site .footer-column-right nav{
-  margin-left:0;
-}
-footer.site .footer-disclaimer.footer-disclaimer-stacked-slot{
-  display:block;
-  width:min(100%,58rem);
-  margin:32px auto;
+footer.site .footer-column-left{text-align:left}
+footer.site .footer-column-center{
+  display:flex;
+  justify-content:center;
   text-align:center;
 }
-footer.site .footer-disclaimer.footer-disclaimer-stacked-slot + ul,
-footer.site .footer-disclaimer.footer-disclaimer-stacked-slot + nav{
-  padding-top:24px;
-  border-top:1px solid rgba(255,255,255,.08);
+footer.site .footer-column-center .footer-disclaimer{
+  margin-inline:auto;
+  max-width:42rem;
 }
-
-/* Desktop: keep the same three-row hierarchy as mobile, but give it breathing room. */
-@media (min-width:821px){
-  footer.site .footer-column-right{
-    max-width:72rem;
-    margin-inline:auto;
-  }
-  footer.site .footer-column-right > *:first-child{
-    margin-top:0;
-  }
-  footer.site .footer-disclaimer.footer-disclaimer-stacked-slot{
-    margin-top:36px;
-    margin-bottom:36px;
-  }
+footer.site .footer-column-right{
+  justify-self:end;
+  text-align:right;
 }
+footer.site .footer-column-right ul,
+footer.site .footer-column-right nav{margin-left:auto}
 
-/* Mobile behavior remains the accepted stacked order. */
 @media (max-width:820px){
-  footer.site .footer-disclaimer.footer-disclaimer-stacked-slot{
-    width:100%;
-    margin:24px 0;
+  footer.site .footer-grid.footer-grid-three{
+    grid-template-columns:1fr !important;
+    gap:24px;
+  }
+  footer.site .footer-column-left,
+  footer.site .footer-column-center,
+  footer.site .footer-column-right{
+    justify-self:stretch;
     text-align:left;
   }
+  footer.site .footer-column-center{justify-content:flex-start}
+  footer.site .footer-column-center .footer-disclaimer,
+  footer.site .footer-disclaimer.footer-disclaimer-mobile-slot{
+    margin-inline:0;
+    max-width:none;
+  }
+  footer.site .footer-disclaimer.footer-disclaimer-mobile-slot{
+    display:block;
+    flex:0 0 100%;
+    width:100%;
+    margin-top:24px;
+    margin-bottom:24px;
+  }
+  footer.site .footer-column-right ul,
+  footer.site .footer-column-right nav{margin-left:0}
 }
