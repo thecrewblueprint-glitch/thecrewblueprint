@@ -1,0 +1,23 @@
+{
+  "candidate_id": "vnext-2026-09-06",
+  "status": "CANDIDATE_UNSELECTED",
+  "course_count": 6,
+  "review_snapshot_path": "review-vnext-course-set/index.html",
+  "review_snapshot_blob_sha": "49fc0c5ae526e3882aaba72dbb82c1d1d806f196",
+  "verbatim_candidate_snapshot": true,
+  "courses": [
+    "Stagehand Fundamentals",
+    "Lighting Course 1",
+    "Video / LED Course 1",
+    "Audio Course 1",
+    "Staging & Carpentry Course 1",
+    "Backline / Props / Wardrobe Course 1"
+  ],
+  "evidence_classes": [
+    "Roadmapdev analysis",
+    "Crew Blueprint research",
+    "public worker demand",
+    "current hiring evidence",
+    "regulatory and authoritative safety sources"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_id": "pre-vnext-2026-09-06",
+  "status": "CANDIDATE_UNSELECTED",
+  "course_count": 6,
+  "verbatim": true,
+  "courses": [
+    {"course":"Stagehand Fundamentals","path":"stagehand-fundamentals.html","blob_sha":"7f988e07f6238d761a9e9f0d68e929f56b379a11"},
+    {"course":"Lighting Course 1","path":"pathway-lighting-01-support.html","blob_sha":"49778e2c1178c2ea569cf5396f986c0318ca1c92"},
+    {"course":"Video / LED Course 1","path":"pathway-video-01-support.html","blob_sha":"d3212f75f05134420c054e0121d8d9e980aa3e02"},
+    {"course":"Audio Course 1","path":"pathway-audio-01-support.html","blob_sha":"ec5d24227f59f23e4dc25d57744ea7e476b0f4d3"},
+    {"course":"Staging & Carpentry Course 1","path":"pathway-staging-carpentry-01-support.html","blob_sha":"338dd6d6c6e9eb86d4b40dfdf0823991cfd56e89"},
+    {"course":"Backline / Props / Wardrobe Course 1","path":"pathway-backline-props-wardrobe-01-support.html","blob_sha":"ae340447a236ea11de7feae3e4542482dafd93b1"}
+  ]
+}

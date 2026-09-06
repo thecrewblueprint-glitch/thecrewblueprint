@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "selection_state": "UNDECIDED",
+  "decision_scope": "Choose between the six-course pre-vNext candidate set and the six-course vNext candidate set. This decision does not merge, overwrite, or delete the original 143-course Approved/Owner Review corpus.",
+  "datasets": {
+    "original_143_corpus": {
+      "status": "PRESERVED_SEPARATE_CORPUS",
+      "selection_eligible": false,
+      "canonical_inventory_count": 143,
+      "primary_paths": [
+        "courses/",
+        "research/matrix/course_inventory.jsonl",
+        "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/"
+      ],
+      "rule": "Retain existing Approved/Owner Review history and archival lineage. Never silently fold this dataset into a candidate set."
+    },
+    "pre_vnext_candidate": {
+      "status": "CANDIDATE_UNSELECTED",
+      "review_path": "review-current-before-vnext/",
+      "archive_path": "content/archive/course-version-candidates/pre-vnext-2026-09-06/",
+      "course_count": 6,
+      "source_frontier": "immediately before vNext candidate publication",
+      "verbatim_course_bodies": true
+    },
+    "vnext_candidate": {
+      "status": "CANDIDATE_UNSELECTED",
+      "review_path": "review-vnext-course-set/",
+      "archive_path": "content/archive/course-version-candidates/vnext-2026-09-06/",
+      "course_count": 6,
+      "inputs": [
+        "Roadmapdev curriculum analysis",
+        "Crew Blueprint preserved research",
+        "public worker-demand research",
+        "current industry hiring research",
+        "regulatory and authoritative safety boundaries"
+      ],
+      "verbatim_candidate_snapshot": true
+    }
+  },
+  "promotion_rule": {
+    "when_owner_selects_one_candidate": [
+      "Set selected candidate status to CURRENT_SELECTED.",
+      "Keep its exact selected version in archival storage and mark the archived record CURRENT_SELECTED_SNAPSHOT.",
+      "Promote only the selected candidate into the active learner-facing current-state course surface.",
+      "Set the non-selected candidate status to ARCHIVE_ONLY.",
+      "Do not delete either candidate.",
+      "Do not delete or overwrite the original 143-course corpus; it remains independently retrievable for lineage and pull-forward use."
+    ],
+    "before_future_rewrite": "Snapshot the then-current selected version verbatim before modifying it. New versions append; they do not overwrite archive history."
+  },
+  "mixed_review_ui": {
+    "status": "SUPERSEDED_DO_NOT_USE_FOR_CONTENT_COMPARISON",
+    "reason": "Owner requires complete dataset separation rather than old/new content rendered together."
+  }
+}
