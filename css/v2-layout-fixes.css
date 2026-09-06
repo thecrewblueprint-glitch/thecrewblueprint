@@ -1,0 +1,175 @@
+/* V2 responsive layout fixes — presentation/IA only. */
+
+/* Courses: tighter desktop pairing; remove the duplicated pre-card copy on mobile. */
+.catalog-public-hero{padding-bottom:12px!important}
+.public-catalog{padding-top:8px!important}
+.public-catalog-group{margin-bottom:32px}
+
+@media (min-width:821px){
+  .public-catalog-group.v2-catalog-single{
+    display:grid;
+    grid-template-columns:minmax(280px,.85fr) minmax(400px,1.15fr);
+    gap:clamp(28px,4vw,54px);
+    align-items:start;
+    margin-bottom:42px;
+  }
+  .public-catalog-group.v2-catalog-single .public-catalog-group-head{
+    display:block;
+    margin:0;
+    padding-top:4px;
+  }
+  .public-catalog-group.v2-catalog-single .public-catalog-group-head p{
+    margin-top:12px;
+    max-width:48ch;
+  }
+  .public-catalog-group.v2-catalog-single .public-course-grid{
+    grid-template-columns:1fr;
+    align-self:start;
+  }
+  .public-catalog-group:not(.v2-catalog-single) .public-catalog-group-head{
+    gap:clamp(24px,3vw,44px);
+  }
+}
+
+@media (max-width:820px){
+  .public-catalog-group.v2-catalog-single .public-catalog-group-head h2,
+  .public-catalog-group.v2-catalog-single .public-catalog-group-head>p{
+    display:none;
+  }
+  .public-catalog-group.v2-catalog-single .public-catalog-group-head{
+    margin-bottom:10px;
+  }
+}
+
+/* Field Skills: thematic groups rather than one long wall of cards. */
+.v2-field-skill-groups{
+  display:grid;
+  gap:16px;
+  margin-top:22px;
+}
+.v2-field-skill-group{
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,.018);
+  overflow:hidden;
+}
+.v2-field-skill-group>summary{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto auto;
+  gap:16px;
+  align-items:center;
+  min-height:72px;
+  padding:16px 18px;
+  cursor:pointer;
+  list-style:none;
+  border-bottom:1px solid transparent;
+}
+.v2-field-skill-group>summary::-webkit-details-marker{display:none}
+.v2-field-skill-group[open]>summary{
+  border-bottom-color:var(--border);
+  background:rgba(245,180,0,.035);
+}
+.v2-field-skill-heading{display:block;min-width:0}
+.v2-field-skill-heading strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--text);
+  font-size:1rem;
+}
+.v2-field-skill-heading span{
+  display:block;
+  max-width:68ch;
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.45;
+}
+.v2-field-skill-count{
+  white-space:nowrap;
+  color:var(--amber);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.v2-field-skill-chevron{
+  color:var(--amber);
+  font-size:1.25rem;
+  line-height:1;
+  transition:transform .16s ease;
+}
+.v2-field-skill-group[open] .v2-field-skill-chevron{transform:rotate(180deg)}
+.v2-field-skill-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding:16px;
+}
+.v2-field-skill-grid>.track-card{
+  width:100%;
+  height:100%;
+  margin:0!important;
+}
+
+@media (min-width:821px){
+  .v2-field-skill-groups{gap:20px}
+  .v2-field-skill-group>summary{padding:18px 20px}
+  .v2-field-skill-grid{padding:18px;gap:14px}
+}
+
+@media (max-width:820px){
+  .v2-field-skill-groups{gap:10px;margin-top:16px}
+  .v2-field-skill-group>summary{
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:10px 12px;
+    min-height:64px;
+    padding:14px 15px;
+  }
+  .v2-field-skill-heading span{font-size:.8rem}
+  .v2-field-skill-count{grid-column:1;font-size:.65rem}
+  .v2-field-skill-chevron{grid-column:2;grid-row:1 / span 2}
+  .v2-field-skill-grid{grid-template-columns:1fr;padding:12px;gap:10px}
+}
+
+/* Footer: the same three-row hierarchy on desktop and mobile. */
+footer.site .footer-grid.footer-grid-stacked{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:0!important;
+  align-items:start!important;
+}
+footer.site .footer-grid.footer-grid-stacked>*{
+  min-width:0;
+  width:100%;
+  max-width:none;
+  justify-self:stretch!important;
+  text-align:left;
+}
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  text-align:left!important;
+}
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host ul,
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host nav{
+  margin-left:0!important;
+}
+footer.site .footer-grid.footer-grid-stacked .footer-disclaimer.footer-disclaimer-mobile-slot{
+  display:block;
+  width:min(100%,60rem);
+  max-width:60rem!important;
+  margin:30px auto!important;
+  text-align:center;
+}
+footer.site .footer-grid.footer-grid-stacked .footer-stack-legal-boundary{
+  margin-top:0!important;
+}
+
+@media (max-width:820px){
+  footer.site .footer-grid.footer-grid-stacked .footer-disclaimer.footer-disclaimer-mobile-slot{
+    width:100%;
+    max-width:none!important;
+    margin:24px 0!important;
+    text-align:left;
+  }
+}
