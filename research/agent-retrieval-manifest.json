@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "system": "thecrewblueprint",
   "canonical_repository": "thecrewblueprint-glitch/thecrewblueprint",
   "canonical_ref": "main",
@@ -33,6 +33,11 @@
       "id": "ecosystem-relationship-map",
       "path": "research/ecosystem/relationship-map.json",
       "use": "machine-readable Roadmapdev / Production Atlas / Crew Blueprint utilization graph"
+    },
+    {
+      "id": "cross-system-context-contract",
+      "path": "research/ecosystem/cross-system-context-record.schema.json",
+      "use": "normalized reference-first envelope for joining external-system context to Crew Blueprint IDs with provenance, freshness, applicability, allowed use and prohibited inference"
     },
     {
       "id": "course-system-situation",
@@ -84,6 +89,7 @@
     "Check REVIEW, MEDIA, lineage, qualification and supersession state before proposing publication changes.",
     "Consult the all-branch catalog summary when investigating lost, replaced, archived or alternate course presentations; historical existence is evidence, not automatic restoration authority.",
     "Consult the current research radar for source-freshness and new research priorities; each radar entry is an input, not an accepted learner-facing claim.",
+    "Represent cross-system inputs through the cross-system context contract when they need to participate in Crew Blueprint analysis; prefer pointers and provenance over copying volatile source payloads.",
     "Use the ecosystem relationship map only for context owned by another system; do not duplicate volatile external-system data into Crew Blueprint unless explicitly approved.",
     "For analytical prioritization or conflict resolution, consult Roadmapdev; for current employer, vendor, market, union and opportunity context, consult Production Atlas.",
     "Preserve source-system authority and provenance in any derived Crew Blueprint work."
@@ -108,6 +114,11 @@
       "research/matrix/content_lineage_edges*.jsonl",
       "research/matrix/reviews*.jsonl"
     ],
+    "cross_system_context": [
+      "research/ecosystem/relationship-map.json",
+      "research/ecosystem/cross-system-context-record.schema.json",
+      "research/analysis/course-system-situation-2026-09-06.json"
+    ],
     "what_should_we_build_or_fix_next": [
       "research/analysis/course-system-situation-2026-09-06.json",
       "research/analysis/research-priorities-2026-09-06.json",
@@ -128,6 +139,7 @@
     "all internal repository paths in this manifest must resolve",
     "matrix references must pass repository validation",
     "cross-system pointers must include repository and canonical ref",
+    "cross-system analytical records must preserve source authority, freshness and prohibited inference",
     "volatile external-system data should be referenced rather than copied when possible",
     "course content and evidence lineage must remain distinguishable from analytical recommendations",
     "historical full builds must not be treated as automatically current",
