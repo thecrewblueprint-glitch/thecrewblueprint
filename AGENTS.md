@@ -74,6 +74,8 @@ After an accepted Crew Blueprint change is merged and verified, route closeout/c
 
 Use the current research workflow documented in `research/README.md` and current handoff notes. Preserve separate source packages and trace claims back to the strongest available evidence. Legacy workflow references do not override newer explicit workflow corrections.
 
+For any research, course-audit, citation-trace, gap-analysis, or cross-system context task, read `research/agent-retrieval-manifest.json` as the repository retrieval entrypoint. Follow `research/ecosystem/relationship-map.json` when using Roadmapdev or Production Atlas information so the source system, canonical ref, allowed use, and authority boundary remain explicit. The normalized JSONL evidence matrix remains the source of truth for Crew Blueprint claim/source/competency/review lineage; generated Markdown views are audit surfaces, not canonical graph state.
+
 ## 8. Owner authority
 
 The owner controls directional product decisions, scope changes, repository write-mode switches, exceptions to the normal change-control path, and canonical integration where approval is required.
