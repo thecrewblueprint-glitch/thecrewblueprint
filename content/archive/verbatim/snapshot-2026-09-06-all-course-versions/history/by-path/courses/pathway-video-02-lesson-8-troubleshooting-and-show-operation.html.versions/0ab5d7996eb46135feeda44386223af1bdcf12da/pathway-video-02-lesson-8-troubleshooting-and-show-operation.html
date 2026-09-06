@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 8: Troubleshooting and Show Operation Discipline | The Crew Blueprint</title>
+<meta name="description" content="How to classify an LED failure before replacing parts, and what show-call monitoring actually involves — the final lesson in the Video Pathway's Course 2." />
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Lesson 8: Troubleshooting and Show Operation Discipline | The Crew Blueprint" />
+<meta property="og:description" content="How to classify an LED failure before replacing parts, and what show-call monitoring involves." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="../css/theme.css" rel="stylesheet" />
+<style>
+  .cb-section-left { text-align: left; }
+  .cb-section-left h2 { text-align: left; margin: 0 0 6px; }
+  .cb-section-left p.cb-section-intro { text-align: left; margin: 0 0 20px; max-width: 880px; }
+
+  .cb-lesson-progress { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  .cb-lesson-progress-track { flex: 1; min-width: 160px; height: 6px; border-radius: var(--cb-radius-pill); background: rgba(255,255,255,0.08); overflow: hidden; }
+  .cb-lesson-progress-fill { width: 100%; height: 100%; background: var(--cb-gold); }
+  .cb-lesson-progress-label { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cb-muted-2); white-space: nowrap; }
+
+  .cb-guide-index { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+  .cb-guide-index a.cb-tag {
+    display: inline-flex; align-items: center; padding: 8px 14px;
+    color: var(--cb-gold); background: rgba(245,180,0,0.1);
+    border: 1px solid rgba(245,180,0,0.32); border-radius: var(--cb-radius-pill);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cb-guide-index a.cb-tag:hover { color: var(--cb-gold-strong); border-color: var(--cb-gold-strong); }
+
+  .cb-quiz-list { display: grid; gap: 10px; margin-top: 8px; }
+  .cb-quiz-item { padding: 16px 20px; }
+  .cb-quiz-item summary { cursor: pointer; font-weight: 700; color: var(--cb-text); }
+  .cb-quiz-item summary:hover { color: var(--cb-gold-strong); }
+  .cb-quiz-item[open] summary { color: var(--cb-gold-strong); margin-bottom: 8px; }
+  .cb-quiz-item p { margin: 0; color: var(--cb-muted); font-size: 14px; }
+
+  .cb-drill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  @media (max-width: 820px) { .cb-drill-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="../resources.html">Resources</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+  <div class="cb-wrap" style="max-width: 900px;">
+
+    <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+      <a href="../courses.html">Courses</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <a href="pathway-video-02-led-video-systems.html">Video Pathway &middot; Course 2</a>
+      <span class="cb-breadcrumb-sep">/</span>
+      <span class="cb-breadcrumb-current">Lesson 8</span>
+    </nav>
+
+    <section class="cb-hero" style="padding-top: 8px;">
+      <div class="cb-lesson-progress" style="max-width: 620px; margin: 0 auto 18px;">
+        <span class="cb-lesson-progress-label">Lesson 8 of 8</span>
+        <span class="cb-lesson-progress-track"><span class="cb-lesson-progress-fill"></span></span>
+      </div>
+      <span class="cb-label">Video Pathway &middot; Course 2</span>
+      <h1>Troubleshooting and Show Operation Discipline</h1>
+      <p>
+        Good troubleshooting starts by naming the failure category: total power failure, partial
+        power failure, total signal loss, partial signal loss, incorrect mapping, intermittent
+        fault, color or brightness issue, synchronization issue, or physical damage. From there,
+        move from system-wide causes toward local causes.
+      </p>
+      <div class="cb-guide-index">
+        <a class="cb-tag" href="#what-youll-learn">What You'll Learn</a>
+        <a class="cb-tag" href="#real-call">On a Real Call</a>
+        <a class="cb-tag" href="#mistakes">Beginner Mistakes</a>
+        <a class="cb-tag" href="#habit-safety">Habit &amp; Safety</a>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="what-youll-learn">
+      <h2>What You'll Learn</h2>
+      <ul class="cb-list">
+        <li>Classify LED failures before replacing parts.</li>
+        <li>Move from broad system boundaries toward local components.</li>
+        <li>Recognize common symptoms: dark wall, missing chain, bad cabinet, bad module, scrambled image, flicker, and intermittent failure.</li>
+        <li>Use known-good substitutions and test patterns carefully.</li>
+        <li>Understand show-call monitoring responsibilities.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section cb-section-left" id="real-call">
+      <h2>On a Real Call</h2>
+      <p class="cb-section-intro">
+        The boundary of the failure tells you where to look &mdash; not the first cabinet you happen to notice.
+      </p>
+      <p>
+        If the entire wall is dark during rehearsal, the team may check processor power, input
+        detection, output enable, panel power, breakers, disconnects, blackout settings, show file,
+        and expected outputs. If one data chain is missing, the likely boundary may be a processor
+        output, fiber, home run, first cabinet, pass-through, or redundancy mode. If one module is
+        wrong, the issue may be a module connection, failed module, hub output, pins, or calibration
+        mismatch.
+      </p>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">During show, monitoring is a job, not a spectator activity</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          Source presence, processor status, cabinet errors, temperature, fiber health, backup
+          readiness, power distribution, and environmental conditions all get watched according to
+          assigned role.
+        </p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left" id="mistakes">
+      <h2>Beginner Mistakes</h2>
+      <ul class="cb-list">
+        <li><strong>Replacing panels before checking source, processor output, power, and data boundaries.</strong> Jumping to hardware first often wastes time.</li>
+        <li><strong>Making several changes at once.</strong> This loses track of what fixed or worsened the problem.</li>
+        <li><strong>Ignoring intermittent symptoms.</strong> Heat, vibration, moisture, dirty fiber, or partially seated connectors can all cause faults that come and go.</li>
+        <li><strong>Trying to solve camera banding by random processor changes.</strong> Coordinate shutter, frame rate, sync, brightness, and driver behavior instead of guessing.</li>
+      </ul>
+    </section>
+
+    <section class="cb-section cb-section-left" id="habit-safety">
+      <h2>Professional Habit &amp; Safety Notes</h2>
+      <div class="cb-panel" style="padding: 20px 22px; margin-top: 8px;">
+        <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Report symptoms clearly, avoid speculative changes</strong>
+        <p style="margin: 0; color: var(--cb-muted);">
+          Preserve the tested configuration and avoid making changes based on a guess. During show,
+          monitor your assigned systems and report what you actually observe.
+        </p>
+      </div>
+      <p style="margin-top: 16px; color: var(--cb-muted); font-size: 14px;">
+        <strong style="color: var(--cb-text);">Safety notes:</strong> Only qualified personnel
+        should open equipment, measure power, modify electrical distribution, or make restricted
+        configuration changes. Do not defeat safety systems or protective devices to make an image
+        appear. If a fault is tied to heat, water, structure, power, or weather, escalate through
+        the chain of command rather than treating it as a simple image problem.
+      </p>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Quick Knowledge Check</h2>
+      <p class="cb-section-intro">Click a question to check your answer.</p>
+      <div class="cb-quiz-list">
+        <details class="cb-panel cb-quiz-item">
+          <summary>Four cabinets downstream from one cabinet go dark. Which category should be considered early?</summary>
+          <p>A possible data-chain interruption near the first affected cabinet &mdash; a failure near the start of a chain can affect everything downstream from it.</p>
+        </details>
+        <details class="cb-panel cb-quiz-item">
+          <summary>Which is a professional troubleshooting habit?</summary>
+          <p>Use known-good parts, test patterns, and one variable at a time when practical &mdash; disciplined isolation and documentation reduce risk and speed recovery.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Scenario Practice</h2>
+      <p class="cb-section-intro">Two real situations. Think through your response before reading the expected one.</p>
+      <div class="cb-drill-grid">
+        <div class="cb-panel" style="padding: 20px 22px;">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Stadium: Untested Backup Path</strong>
+          <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">
+            The backup signal path is connected but was never tested.
+          </p>
+          <p style="margin: 0; color: var(--cb-muted); font-size: 14px;">
+            <strong style="color: var(--cb-text);">Expected response:</strong> Connected backup
+            cabling does not prove redundancy. Ask the LED/video lead whether failover can be
+            tested before show under controlled conditions.
+          </p>
+        </div>
+        <div class="cb-panel" style="padding: 20px 22px;">
+          <strong style="color: var(--cb-gold-strong); display: block; margin-bottom: 8px;">Load-Out: Panel Working Again</strong>
+          <p style="margin: 0 0 10px; color: var(--cb-muted); font-size: 14px;">
+            A panel was intermittent during show and now appears to work.
+          </p>
+          <p style="margin: 0; color: var(--cb-muted); font-size: 14px;">
+            <strong style="color: var(--cb-text);">Expected response:</strong> Tag or document the
+            panel/jumper/location according to department practice rather than returning it
+            silently to inventory. Intermittent faults often return under heat, vibration, or
+            moisture.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Key Takeaway</h2>
+      <div class="cb-panel" style="padding: 20px 22px;">
+        <p style="margin: 0; color: var(--cb-muted);">Troubleshooting is faster and safer when you classify the failure, isolate the boundary, test deliberately, and escalate correctly.</p>
+      </div>
+    </section>
+
+    <section class="cb-section cb-section-left">
+      <h2>Think About It</h2>
+      <ul class="cb-list">
+        <li>What is the first step in disciplined troubleshooting?</li>
+        <li>Why should you change one variable at a time?</li>
+        <li>What can remove all downstream cabinets in a data chain?</li>
+        <li>When should a video symptom be escalated as a safety or weather concern?</li>
+      </ul>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>That's Video Pathway Course 2.</h2>
+          <p>Eight lessons down &mdash; from the wall as an integrated system through pixel pitch, signal flow, power and data, structure and rigging, outdoor weather, build and commissioning, and finally troubleshooting and show operation. This is awareness-level training; it doesn't authorize rigging, electrical, or restricted work. Follow your employer's, venue's, and site's actual training and direction.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="../resources.html">Explore the Resource Hub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <div class="cb-cta-split">
+        <div>
+          <h2>Back to the course overview.</h2>
+          <p>See all eight lessons in Video Pathway Course 2.</p>
+        </div>
+        <div class="cb-actions" style="flex-wrap: nowrap;">
+          <a class="cb-btn cb-btn-primary" href="pathway-video-02-led-video-systems.html">Course Overview</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../courses.html">Courses</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="../privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="../terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="../cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="../accessibility-statement.html">Accessibility</a> &middot;
+        <a href="../limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

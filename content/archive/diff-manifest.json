@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "archive_id": "crew-blueprint-verbatim-curriculum-archive",
   "status": "active_permanent_retention",
   "purpose": "Index materially distinct historical curriculum bodies and preserve direct working-tree snapshots for side-by-side comparison and future reuse.",
@@ -18,49 +18,88 @@
       "classification": "historical_curriculum_archive",
       "retention": "PERMANENT",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
     },
     {
       "ref": "archive/owner-review-course-content-2026-09-05",
       "classification": "historical_owner_review_archive",
       "retention": "PERMANENT",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
     },
     {
       "ref": "archive/lead-supervisor-electrics-rigging-2026-09-06",
       "classification": "historical_advanced_course_archive",
       "retention": "PERMANENT",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
     },
     {
       "ref": "archive/infrastructure-career-pre-owner-review-2026-09-06",
       "classification": "historical_infrastructure_career_archive",
       "retention": "PERMANENT",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
     },
     {
       "ref": "archive/pre-v2-restore-2026-09-06",
       "classification": "historical_pre_restore_archive",
       "retention": "PERMANENT",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
     },
     {
       "ref": "archive/session-partial-ui-owner-review-2026-09-06",
       "classification": "historical_partial_owner_review_archive",
       "retention": "PERMANENT",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
     },
     {
       "ref": "claude/production-courses-ui-ux-11l4vg",
       "classification": "historical_course_presentation_and_body_source",
       "retention": "PERMANENT_WHILE_UNIQUE_CONTENT_EXISTS",
       "prune_allowed": false,
-      "working_tree_mirror_state": "REQUIRED_BEFORE_ANY_PRUNE_OR_DEPENDENT_CONTENT_RETIREMENT"
+      "working_tree_mirror_state": "MIRRORED_IN_SNAPSHOT_2026-09-06_ALL_COURSE_VERSIONS"
+    }
+  ],
+  "materialized_snapshot_sets": [
+    {
+      "snapshot_id": "snapshot-2026-09-06-all-course-versions",
+      "archive_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions",
+      "capture_date": "2026-09-06",
+      "source_frontier_main_sha": "d3fdbe12a2d822bf43ef2be31b7ba4f2d0cd7815",
+      "verbatim": true,
+      "authority": "REFERENCE_ONLY_HISTORICAL_EVIDENCE",
+      "relationship": "exhaustive_reachable_history_snapshot",
+      "canonical_identity_count": 143,
+      "source_branch_count": 48,
+      "fetched_tag_count": 0,
+      "branch_tip_snapshot_file_count": 4396,
+      "branch_tip_unique_blob_count": 480,
+      "reachable_commit_count": 770,
+      "historical_path_blob_version_count": 772,
+      "historical_unique_blob_count": 760,
+      "scope": [
+        "complete courses/ trees at every live source branch tip",
+        "complete scripts/ trees at every live source branch tip",
+        "complete visuals/ trees at every live source branch tip",
+        "complete _includes/ trees where present",
+        "course inventory versions where present",
+        "relevant top-level learner/catalog HTML",
+        "every distinct selected path + blob version found across all commits reachable from the 48 source branches and fetched tags"
+      ],
+      "indexes": {
+        "overview": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/README.md",
+        "snapshot_manifest": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/snapshot-manifest.json",
+        "branch_summary": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/branch-summary.json",
+        "history_manifest": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history-version-manifest.json",
+        "identity_lineage": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/identity-lineage-143.json",
+        "branch_tip_alternates": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/alternate-and-unregistered-course-versions.json",
+        "historical_alternates": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/historical-alternate-and-unregistered-course-versions.json",
+        "canonical_inventory": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/catalogs/course_inventory-main-143.jsonl"
+      },
+      "completeness_boundary": "Complete for the selected course/content paths in Git objects reachable from the live branch and fetched-tag frontier at capture time. It does not claim preservation of unreachable/dangling Git objects that are no longer referenced by any fetched ref."
     }
   ],
   "snapshot_records": [],
@@ -82,8 +121,9 @@
       "owner_review_copy",
       "superseded_public_body",
       "historical_variant"
-    ]
+    ],
+    "note": "Use individual snapshot_records for future targeted captures. The 2026-09-06 exhaustive set uses its own per-file snapshot and history manifests rather than duplicating thousands of records here."
   },
-  "mirror_completion_rule": "The archive is not considered complete for a curriculum identity until every known materially distinct prior body used in analysis has either a verbatim archive_path record or an explicit duplicate-of record pointing to an already preserved byte-identical snapshot.",
-  "current_merge_effect": "PR #48 may merge as planning/retrieval architecture because it does not itself retire current course bodies or authorize pruning. Future content implementation is blocked from destructive replacement until this manifest's preservation gate is satisfied for the affected identities."
+  "mirror_completion_rule": "A curriculum identity is considered mirrored for the 2026-09-06 frontier when its registered route and source-data history are represented by the exhaustive snapshot set. Future materially distinct versions must be added as new snapshots before destructive replacement. Source refs remain protected even after mirroring unless the owner separately authorizes a specific prune.",
+  "current_state": "PR #48 has merged as planning/retrieval architecture. The 2026-09-06 exhaustive archive now supplies the required working-tree historical retrieval surface; it does not authorize curriculum deletion, branch pruning, or restoration of old material as current content."
 }

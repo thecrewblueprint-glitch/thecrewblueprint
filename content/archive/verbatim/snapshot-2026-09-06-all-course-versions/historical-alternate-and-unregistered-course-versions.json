@@ -1,0 +1,1830 @@
+[
+  {
+    "path": "courses/_archived/module-1-welcome-to-the-live-event-world.html",
+    "unique_blob_versions": [
+      "1efbaa0e735d4fe5dad92eea397c49ec80239076",
+      "f9f4660b74d8c6d06f90b0deab38158de75c178b"
+    ],
+    "versions": [
+      {
+        "blob_sha": "1efbaa0e735d4fe5dad92eea397c49ec80239076",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-1-welcome-to-the-live-event-world.html.versions/1efbaa0e735d4fe5dad92eea397c49ec80239076/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "f9f4660b74d8c6d06f90b0deab38158de75c178b",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-1-welcome-to-the-live-event-world.html.versions/f9f4660b74d8c6d06f90b0deab38158de75c178b/module-1-welcome-to-the-live-event-world.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-10-getting-hired-getting-called-back-and-growing.html",
+    "unique_blob_versions": [
+      "219de2d68bd5eef84b01da306e0ae91bc1c8f722",
+      "dae35ceb9fc9e0457a8b804b0755933192aa08d5"
+    ],
+    "versions": [
+      {
+        "blob_sha": "dae35ceb9fc9e0457a8b804b0755933192aa08d5",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-10-getting-hired-getting-called-back-and-growing.html.versions/dae35ceb9fc9e0457a8b804b0755933192aa08d5/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "219de2d68bd5eef84b01da306e0ae91bc1c8f722",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-10-getting-hired-getting-called-back-and-growing.html.versions/219de2d68bd5eef84b01da306e0ae91bc1c8f722/module-10-getting-hired-getting-called-back-and-growing.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-2-safety-mindset-before-skillset.html",
+    "unique_blob_versions": [
+      "632af20770612ddc39c396bdc1bf3d30b2a2c8b4",
+      "d0e3a5ef845f46d2a1001fedc53c2240050aa111"
+    ],
+    "versions": [
+      {
+        "blob_sha": "632af20770612ddc39c396bdc1bf3d30b2a2c8b4",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-2-safety-mindset-before-skillset.html.versions/632af20770612ddc39c396bdc1bf3d30b2a2c8b4/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "d0e3a5ef845f46d2a1001fedc53c2240050aa111",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-2-safety-mindset-before-skillset.html.versions/d0e3a5ef845f46d2a1001fedc53c2240050aa111/module-2-safety-mindset-before-skillset.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-3-ppe-clothing-and-what-to-bring.html",
+    "unique_blob_versions": [
+      "c6495fe42fc1f78160cf01c8c3291c6ddd8474cd",
+      "ef83d64210f958458492b68df009a60cc42f02a9"
+    ],
+    "versions": [
+      {
+        "blob_sha": "c6495fe42fc1f78160cf01c8c3291c6ddd8474cd",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-3-ppe-clothing-and-what-to-bring.html.versions/c6495fe42fc1f78160cf01c8c3291c6ddd8474cd/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "ef83d64210f958458492b68df009a60cc42f02a9",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-3-ppe-clothing-and-what-to-bring.html.versions/ef83d64210f958458492b68df009a60cc42f02a9/module-3-ppe-clothing-and-what-to-bring.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-4-venue-and-jobsite-awareness.html",
+    "unique_blob_versions": [
+      "3db7790b58bea89ffbd06b4811f323de39ae9069",
+      "70bde9bfe0370a507c3929f5f1d9bf21018a4889"
+    ],
+    "versions": [
+      {
+        "blob_sha": "3db7790b58bea89ffbd06b4811f323de39ae9069",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-4-venue-and-jobsite-awareness.html.versions/3db7790b58bea89ffbd06b4811f323de39ae9069/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "70bde9bfe0370a507c3929f5f1d9bf21018a4889",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-4-venue-and-jobsite-awareness.html.versions/70bde9bfe0370a507c3929f5f1d9bf21018a4889/module-4-venue-and-jobsite-awareness.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-5-load-in-fundamentals.html",
+    "unique_blob_versions": [
+      "42d5dd43da56f09376607f78f2289db725bd07e8",
+      "cc4f6f0ce5116da353c4bd4fc78d09638b0f6c70"
+    ],
+    "versions": [
+      {
+        "blob_sha": "cc4f6f0ce5116da353c4bd4fc78d09638b0f6c70",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-5-load-in-fundamentals.html.versions/cc4f6f0ce5116da353c4bd4fc78d09638b0f6c70/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "42d5dd43da56f09376607f78f2289db725bd07e8",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-5-load-in-fundamentals.html.versions/42d5dd43da56f09376607f78f2289db725bd07e8/module-5-load-in-fundamentals.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-6-stagehand-communication-and-crew-etiquette.html",
+    "unique_blob_versions": [
+      "86ebac7f9cb3a3a017c19678f4dca20adcb7df76",
+      "a8b8e871e11357b0b6230db9c544ff62b48c07e8"
+    ],
+    "versions": [
+      {
+        "blob_sha": "86ebac7f9cb3a3a017c19678f4dca20adcb7df76",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-6-stagehand-communication-and-crew-etiquette.html.versions/86ebac7f9cb3a3a017c19678f4dca20adcb7df76/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "a8b8e871e11357b0b6230db9c544ff62b48c07e8",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-6-stagehand-communication-and-crew-etiquette.html.versions/a8b8e871e11357b0b6230db9c544ff62b48c07e8/module-6-stagehand-communication-and-crew-etiquette.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-7-department-basics.html",
+    "unique_blob_versions": [
+      "08f22154a54ff3976a5e8bf5d984da8263da32fd",
+      "c8dfa0337be72c2a89cd4d5318ba8a992851e54d"
+    ],
+    "versions": [
+      {
+        "blob_sha": "08f22154a54ff3976a5e8bf5d984da8263da32fd",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-7-department-basics.html.versions/08f22154a54ff3976a5e8bf5d984da8263da32fd/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "c8dfa0337be72c2a89cd4d5318ba8a992851e54d",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-7-department-basics.html.versions/c8dfa0337be72c2a89cd4d5318ba8a992851e54d/module-7-department-basics.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-8-tools-gear-and-handling-basics.html",
+    "unique_blob_versions": [
+      "7ca1a57a0fbd2e84992eb0a6d3057a5a1bb732c7",
+      "cf290dc1988df472a5c6662fab26ad087dfe1871"
+    ],
+    "versions": [
+      {
+        "blob_sha": "cf290dc1988df472a5c6662fab26ad087dfe1871",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-8-tools-gear-and-handling-basics.html.versions/cf290dc1988df472a5c6662fab26ad087dfe1871/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "7ca1a57a0fbd2e84992eb0a6d3057a5a1bb732c7",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-8-tools-gear-and-handling-basics.html.versions/7ca1a57a0fbd2e84992eb0a6d3057a5a1bb732c7/module-8-tools-gear-and-handling-basics.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/module-9-load-out-fundamentals.html",
+    "unique_blob_versions": [
+      "98e9ab041995760c79c4633d0ff03e5390cf2b94",
+      "e2ad36538b7569d1248a652dfbb2addf02a7b6ff"
+    ],
+    "versions": [
+      {
+        "blob_sha": "98e9ab041995760c79c4633d0ff03e5390cf2b94",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-9-load-out-fundamentals.html.versions/98e9ab041995760c79c4633d0ff03e5390cf2b94/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "e2ad36538b7569d1248a652dfbb2addf02a7b6ff",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/module-9-load-out-fundamentals.html.versions/e2ad36538b7569d1248a652dfbb2addf02a7b6ff/module-9-load-out-fundamentals.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/_archived/stagehand-fundamentals-original.html",
+    "unique_blob_versions": [
+      "6e2b80f4f64237ffc826b35b7e8528e692f0b799",
+      "8bd230db48102579db36f5a04e2a152653bcbae2"
+    ],
+    "versions": [
+      {
+        "blob_sha": "6e2b80f4f64237ffc826b35b7e8528e692f0b799",
+        "earliest_observed_commit": "48089566e16d12496291ad436c93c097225b2b34",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/stagehand-fundamentals-original.html.versions/6e2b80f4f64237ffc826b35b7e8528e692f0b799/stagehand-fundamentals-original.html"
+      },
+      {
+        "blob_sha": "8bd230db48102579db36f5a04e2a152653bcbae2",
+        "earliest_observed_commit": "f0511a40fc43589148e8ae05423aa8f7f872da2d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/_archived/stagehand-fundamentals-original.html.versions/8bd230db48102579db36f5a04e2a152653bcbae2/stagehand-fundamentals-original.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/example-lesson-template.html",
+    "unique_blob_versions": [
+      "11da9b7957ca7f5fbe562304a31ad128a866897d",
+      "32467256ff3ef063a46505a99edc55e728ecd7b9",
+      "4fd2a13fda107ae56d5e87f32f28580dca7783b7",
+      "69201fb833b569845cd4f1d0c8cc635ff8d066aa",
+      "8a698058d0d87a374bb9e5d26c10173d1a171529",
+      "cc37f200331105a15399d7d8fbfea1da3cb3516f",
+      "cfb25bdde3d969be7e9797ef5fb234b1effd56f9"
+    ],
+    "versions": [
+      {
+        "blob_sha": "cfb25bdde3d969be7e9797ef5fb234b1effd56f9",
+        "earliest_observed_commit": "5f29a61e38954adb7ea616f515e9930c7f11f062",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/cfb25bdde3d969be7e9797ef5fb234b1effd56f9/example-lesson-template.html"
+      },
+      {
+        "blob_sha": "8a698058d0d87a374bb9e5d26c10173d1a171529",
+        "earliest_observed_commit": "1445b5d5a2ec78e23905b5a5671d90e356d08931",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/8a698058d0d87a374bb9e5d26c10173d1a171529/example-lesson-template.html"
+      },
+      {
+        "blob_sha": "32467256ff3ef063a46505a99edc55e728ecd7b9",
+        "earliest_observed_commit": "a383a0e5258f325dc3969dd595d5b7820e94c73a",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/32467256ff3ef063a46505a99edc55e728ecd7b9/example-lesson-template.html"
+      },
+      {
+        "blob_sha": "11da9b7957ca7f5fbe562304a31ad128a866897d",
+        "earliest_observed_commit": "f04e86b75aed534582f7a7fe7bbebb376ba30929",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/11da9b7957ca7f5fbe562304a31ad128a866897d/example-lesson-template.html"
+      },
+      {
+        "blob_sha": "4fd2a13fda107ae56d5e87f32f28580dca7783b7",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/4fd2a13fda107ae56d5e87f32f28580dca7783b7/example-lesson-template.html"
+      },
+      {
+        "blob_sha": "cc37f200331105a15399d7d8fbfea1da3cb3516f",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/cc37f200331105a15399d7d8fbfea1da3cb3516f/example-lesson-template.html"
+      },
+      {
+        "blob_sha": "69201fb833b569845cd4f1d0c8cc635ff8d066aa",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/example-lesson-template.html.versions/69201fb833b569845cd4f1d0c8cc635ff8d066aa/example-lesson-template.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-1-comparison.html",
+    "unique_blob_versions": [
+      "404295a6e2e6d050a6b8b6be8df46258137b2239"
+    ],
+    "versions": [
+      {
+        "blob_sha": "404295a6e2e6d050a6b8b6be8df46258137b2239",
+        "earliest_observed_commit": "24854feb22df22b4c5e8e0f4fdc5888bf9453278",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-comparison.html.versions/404295a6e2e6d050a6b8b6be8df46258137b2239/module-1-comparison.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-1-welcome-to-the-live-event-world-packet-version.html",
+    "unique_blob_versions": [
+      "8f60d05a90d0b5e4be4fa8aa2ddf4f582601cf94",
+      "b6cc1b7e9c5edcee3effb51eba88bed1b59a819f",
+      "ea4c55991d3a3c81cd1585b87986e4962185df5c"
+    ],
+    "versions": [
+      {
+        "blob_sha": "8f60d05a90d0b5e4be4fa8aa2ddf4f582601cf94",
+        "earliest_observed_commit": "24854feb22df22b4c5e8e0f4fdc5888bf9453278",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world-packet-version.html.versions/8f60d05a90d0b5e4be4fa8aa2ddf4f582601cf94/module-1-welcome-to-the-live-event-world-packet-version.html"
+      },
+      {
+        "blob_sha": "ea4c55991d3a3c81cd1585b87986e4962185df5c",
+        "earliest_observed_commit": "1c3740673d9c863c94c2e0587673e5b31d44a4a9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world-packet-version.html.versions/ea4c55991d3a3c81cd1585b87986e4962185df5c/module-1-welcome-to-the-live-event-world-packet-version.html"
+      },
+      {
+        "blob_sha": "b6cc1b7e9c5edcee3effb51eba88bed1b59a819f",
+        "earliest_observed_commit": "9ae21f72fe615525f2eb09052e7b19fe2fece6ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world-packet-version.html.versions/b6cc1b7e9c5edcee3effb51eba88bed1b59a819f/module-1-welcome-to-the-live-event-world-packet-version.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-1-welcome-to-the-live-event-world.html",
+    "unique_blob_versions": [
+      "01457ac92a75c646619e1424eeca263bb70a1615",
+      "1efbaa0e735d4fe5dad92eea397c49ec80239076",
+      "2dd806cf1f82fff16b582c4d2c6f942ced2832f6",
+      "3c8cc39d3a4c5d3477325be8b5d6543fc13303e1",
+      "55624f66df07c22292dfade0d4c01f286bdd5ece",
+      "6ed85b19201f6f15861235400e15937192459fbd",
+      "86e3d6a934b53f960af17ccb171aa57b2cd25779",
+      "b6b6633ec866ac24fbbef1f0ea17d43966cc3083",
+      "e57cf9b84e9cfdf2077a0e53538bf7823c481abc",
+      "e631b538702f1916e56ca1be66260a88a0b8a1c1",
+      "eaeea092de5f6c987247adf665d56bd08331ab0c",
+      "fa8eb9c62645419f64e0ae21ecc0e25b6e533c6c"
+    ],
+    "versions": [
+      {
+        "blob_sha": "01457ac92a75c646619e1424eeca263bb70a1615",
+        "earliest_observed_commit": "c71786c550e7d22c5e2b5af12300884d3ee81462",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/01457ac92a75c646619e1424eeca263bb70a1615/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "e57cf9b84e9cfdf2077a0e53538bf7823c481abc",
+        "earliest_observed_commit": "36d54cacd3475784f5fdcb4a4a51c31efca86af9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/e57cf9b84e9cfdf2077a0e53538bf7823c481abc/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "fa8eb9c62645419f64e0ae21ecc0e25b6e533c6c",
+        "earliest_observed_commit": "cc95f3e9018a0e9cce5eb7443ea21ecbac49211d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/fa8eb9c62645419f64e0ae21ecc0e25b6e533c6c/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "86e3d6a934b53f960af17ccb171aa57b2cd25779",
+        "earliest_observed_commit": "f0de39b810070f56aa186b59bd5918e4b5a70899",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/86e3d6a934b53f960af17ccb171aa57b2cd25779/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "55624f66df07c22292dfade0d4c01f286bdd5ece",
+        "earliest_observed_commit": "6bed5bd08a714a165e172f0400718764ddc1b6c6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/55624f66df07c22292dfade0d4c01f286bdd5ece/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "eaeea092de5f6c987247adf665d56bd08331ab0c",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/eaeea092de5f6c987247adf665d56bd08331ab0c/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "e631b538702f1916e56ca1be66260a88a0b8a1c1",
+        "earliest_observed_commit": "85c91a22391536809626e208ac737720fb6c1732",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/e631b538702f1916e56ca1be66260a88a0b8a1c1/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "3c8cc39d3a4c5d3477325be8b5d6543fc13303e1",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/3c8cc39d3a4c5d3477325be8b5d6543fc13303e1/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "1efbaa0e735d4fe5dad92eea397c49ec80239076",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/1efbaa0e735d4fe5dad92eea397c49ec80239076/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "6ed85b19201f6f15861235400e15937192459fbd",
+        "earliest_observed_commit": "9733272ca49c40e579f699bb9136af56a7920374",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/6ed85b19201f6f15861235400e15937192459fbd/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "2dd806cf1f82fff16b582c4d2c6f942ced2832f6",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/2dd806cf1f82fff16b582c4d2c6f942ced2832f6/module-1-welcome-to-the-live-event-world.html"
+      },
+      {
+        "blob_sha": "b6b6633ec866ac24fbbef1f0ea17d43966cc3083",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-welcome-to-the-live-event-world.html.versions/b6b6633ec866ac24fbbef1f0ea17d43966cc3083/module-1-welcome-to-the-live-event-world.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-1-work-week-draft.html",
+    "unique_blob_versions": [
+      "0d28e1a7de11d54d9ec77e44e392ef5be58aeca8",
+      "1fd8165a7806a0e26ccad2581d583289a6b360e5",
+      "262bee40d0ae3534b0225b13ba31cff070028f76",
+      "32daa886666ea534a3ec86a71c52db1e2dd96289",
+      "b4de8b370548efcb9b7d6cba2a6d280060f771c1",
+      "dee93f56c629aea98684f88949efb05185875809"
+    ],
+    "versions": [
+      {
+        "blob_sha": "32daa886666ea534a3ec86a71c52db1e2dd96289",
+        "earliest_observed_commit": "8b71aafeb28277da6138b49a3600330d468cf3d1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-work-week-draft.html.versions/32daa886666ea534a3ec86a71c52db1e2dd96289/module-1-work-week-draft.html"
+      },
+      {
+        "blob_sha": "1fd8165a7806a0e26ccad2581d583289a6b360e5",
+        "earliest_observed_commit": "c6c2643945efe68827b7c21e021001fb2eeca0ee",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-work-week-draft.html.versions/1fd8165a7806a0e26ccad2581d583289a6b360e5/module-1-work-week-draft.html"
+      },
+      {
+        "blob_sha": "262bee40d0ae3534b0225b13ba31cff070028f76",
+        "earliest_observed_commit": "243e330d63aab3054f038830b51e31a6b06a6e91",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-work-week-draft.html.versions/262bee40d0ae3534b0225b13ba31cff070028f76/module-1-work-week-draft.html"
+      },
+      {
+        "blob_sha": "b4de8b370548efcb9b7d6cba2a6d280060f771c1",
+        "earliest_observed_commit": "0cb66cd799003e910ca2a53bf331d256bccce18c",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-work-week-draft.html.versions/b4de8b370548efcb9b7d6cba2a6d280060f771c1/module-1-work-week-draft.html"
+      },
+      {
+        "blob_sha": "0d28e1a7de11d54d9ec77e44e392ef5be58aeca8",
+        "earliest_observed_commit": "19bb5524136ae1847cc9010ec1c579d592a5b653",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-work-week-draft.html.versions/0d28e1a7de11d54d9ec77e44e392ef5be58aeca8/module-1-work-week-draft.html"
+      },
+      {
+        "blob_sha": "dee93f56c629aea98684f88949efb05185875809",
+        "earliest_observed_commit": "711c3064e00808f3d76c65503d5bbec0f90a7a58",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-1-work-week-draft.html.versions/dee93f56c629aea98684f88949efb05185875809/module-1-work-week-draft.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-10-getting-hired-getting-called-back-and-growing.html",
+    "unique_blob_versions": [
+      "1eb66664e403cb95650da7df753fe1d7f2651c7d",
+      "588aed4e45086adf10400d4ffc22e9dee75eee39",
+      "58a5c08f4ea38e12558bd8031f8218a0d45b8abb",
+      "6e3be4909f6931ff74b996646fb13a3ae91ab372",
+      "7f338298327c9635811fd7903b0b721bc75aab3d",
+      "a026a549f0cf5d2bc84edf9885fd7a878e41bc80",
+      "a598f4dda6155f40bcc06d14f934c8aa3189eefe",
+      "dae35ceb9fc9e0457a8b804b0755933192aa08d5",
+      "ddd6d6da27f905701dd4476bc11075475a135835",
+      "e1a58e6249412f764561ba79c78dfe8a1c2c5970"
+    ],
+    "versions": [
+      {
+        "blob_sha": "7f338298327c9635811fd7903b0b721bc75aab3d",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/7f338298327c9635811fd7903b0b721bc75aab3d/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "588aed4e45086adf10400d4ffc22e9dee75eee39",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/588aed4e45086adf10400d4ffc22e9dee75eee39/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "ddd6d6da27f905701dd4476bc11075475a135835",
+        "earliest_observed_commit": "e203e66faf03bd6ca4cd9f44522c0a9c3fece991",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/ddd6d6da27f905701dd4476bc11075475a135835/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "1eb66664e403cb95650da7df753fe1d7f2651c7d",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/1eb66664e403cb95650da7df753fe1d7f2651c7d/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "e1a58e6249412f764561ba79c78dfe8a1c2c5970",
+        "earliest_observed_commit": "8c0eff18801a988a508c404969454574df584ecc",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/e1a58e6249412f764561ba79c78dfe8a1c2c5970/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "dae35ceb9fc9e0457a8b804b0755933192aa08d5",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/dae35ceb9fc9e0457a8b804b0755933192aa08d5/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "a026a549f0cf5d2bc84edf9885fd7a878e41bc80",
+        "earliest_observed_commit": "9733272ca49c40e579f699bb9136af56a7920374",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/a026a549f0cf5d2bc84edf9885fd7a878e41bc80/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "6e3be4909f6931ff74b996646fb13a3ae91ab372",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/6e3be4909f6931ff74b996646fb13a3ae91ab372/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "a598f4dda6155f40bcc06d14f934c8aa3189eefe",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/a598f4dda6155f40bcc06d14f934c8aa3189eefe/module-10-getting-hired-getting-called-back-and-growing.html"
+      },
+      {
+        "blob_sha": "58a5c08f4ea38e12558bd8031f8218a0d45b8abb",
+        "earliest_observed_commit": "d2addc8b021195726d4779768d8d0cd8ab8e89ab",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-10-getting-hired-getting-called-back-and-growing.html.versions/58a5c08f4ea38e12558bd8031f8218a0d45b8abb/module-10-getting-hired-getting-called-back-and-growing.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-2-safety-mindset-before-skillset.html",
+    "unique_blob_versions": [
+      "09becb4688e294e7ba8fc69277c125893b24fc94",
+      "262b136e0a9a1ddcbe44e540521de8d4695b1540",
+      "632af20770612ddc39c396bdc1bf3d30b2a2c8b4",
+      "78601bbba5a1052993197c0c4318f7fd231468b2",
+      "8d623f8561ac34d3a5908912c7488a2b3153f7ec",
+      "ba49c0c31302560e2e9bb94a7447f7de8c9f8900",
+      "bbe396c3285bfc8e818b392936f207fc7cd12f7e",
+      "d3d5d5c54d37c5bdfe2ca408e5540bad8335500e",
+      "e2ca0b0b7ecbac6025ffac8e9567c15b36f53246",
+      "f215382570a3cf01bc9a273fbf47eb39d3b84f36",
+      "fbb6b79939ec4a607909377a85dc8570ac23b8d6"
+    ],
+    "versions": [
+      {
+        "blob_sha": "e2ca0b0b7ecbac6025ffac8e9567c15b36f53246",
+        "earliest_observed_commit": "3e2d3cc8cb2e6d8692e1e66080ac53efad9d3da0",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/e2ca0b0b7ecbac6025ffac8e9567c15b36f53246/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "bbe396c3285bfc8e818b392936f207fc7cd12f7e",
+        "earliest_observed_commit": "6bed5bd08a714a165e172f0400718764ddc1b6c6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/bbe396c3285bfc8e818b392936f207fc7cd12f7e/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "f215382570a3cf01bc9a273fbf47eb39d3b84f36",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/f215382570a3cf01bc9a273fbf47eb39d3b84f36/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "09becb4688e294e7ba8fc69277c125893b24fc94",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/09becb4688e294e7ba8fc69277c125893b24fc94/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "fbb6b79939ec4a607909377a85dc8570ac23b8d6",
+        "earliest_observed_commit": "e203e66faf03bd6ca4cd9f44522c0a9c3fece991",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/fbb6b79939ec4a607909377a85dc8570ac23b8d6/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "ba49c0c31302560e2e9bb94a7447f7de8c9f8900",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/ba49c0c31302560e2e9bb94a7447f7de8c9f8900/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "d3d5d5c54d37c5bdfe2ca408e5540bad8335500e",
+        "earliest_observed_commit": "8c0eff18801a988a508c404969454574df584ecc",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/d3d5d5c54d37c5bdfe2ca408e5540bad8335500e/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "632af20770612ddc39c396bdc1bf3d30b2a2c8b4",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/632af20770612ddc39c396bdc1bf3d30b2a2c8b4/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "262b136e0a9a1ddcbe44e540521de8d4695b1540",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/262b136e0a9a1ddcbe44e540521de8d4695b1540/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "78601bbba5a1052993197c0c4318f7fd231468b2",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/78601bbba5a1052993197c0c4318f7fd231468b2/module-2-safety-mindset-before-skillset.html"
+      },
+      {
+        "blob_sha": "8d623f8561ac34d3a5908912c7488a2b3153f7ec",
+        "earliest_observed_commit": "9430bfdae8d4698dc695b0135017303a4dcb9c88",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-2-safety-mindset-before-skillset.html.versions/8d623f8561ac34d3a5908912c7488a2b3153f7ec/module-2-safety-mindset-before-skillset.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-3-ppe-clothing-and-what-to-bring.html",
+    "unique_blob_versions": [
+      "06470afed734b409946364537bceda6595b41857",
+      "193b46a937b57b2b0387b746351b86d34965ca7e",
+      "44b117b8057c5728a13a4bea21be7ba31f134408",
+      "56a179e9d6e4d242bcc9e073d9c2a3a9637de6e6",
+      "63c793f4b04b4e74db936c84563683785ca5b542",
+      "69f33b5bef2dfcc6cd4d2a947e20d7c5660cf456",
+      "7fc37bcfca17f4e38b5a2e6547b016c28157c126",
+      "8dd96bbd2cd4391cd69c1bcbe1ff5f5bad7fe10a",
+      "93a05ba7d446dcd4fce2d854b64c08a0cad1b86f",
+      "9b3c4f074546777dcdf1eddc4a00f006cbbdd655",
+      "a5168071ef6f1d9cf57c164e34973582be644044",
+      "a8e00ac0a075a9caa169129ac08e1641b2d209a8",
+      "b3d3a639a689f92bbb053f7f7943478c6e77dbe0",
+      "b3fc64dc390dcfefb715d33a0408d1b757def26f",
+      "c6495fe42fc1f78160cf01c8c3291c6ddd8474cd",
+      "d55cf6f1256eff38dfd56024469c2bec43bdd805",
+      "edee8245b4a29dc15d0711761ea736ea7c71e3a3",
+      "ee175d4588f4a6b9c2290bd28dd7e600695b5b2c"
+    ],
+    "versions": [
+      {
+        "blob_sha": "b3d3a639a689f92bbb053f7f7943478c6e77dbe0",
+        "earliest_observed_commit": "41ee6fd87a8f11eb4b23abb0bb956693f89182b6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/b3d3a639a689f92bbb053f7f7943478c6e77dbe0/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "8dd96bbd2cd4391cd69c1bcbe1ff5f5bad7fe10a",
+        "earliest_observed_commit": "6bed5bd08a714a165e172f0400718764ddc1b6c6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/8dd96bbd2cd4391cd69c1bcbe1ff5f5bad7fe10a/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "69f33b5bef2dfcc6cd4d2a947e20d7c5660cf456",
+        "earliest_observed_commit": "5670ece701770ad1c27b5e3f42bb5003a1fc2c2f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/69f33b5bef2dfcc6cd4d2a947e20d7c5660cf456/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "b3fc64dc390dcfefb715d33a0408d1b757def26f",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/b3fc64dc390dcfefb715d33a0408d1b757def26f/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "56a179e9d6e4d242bcc9e073d9c2a3a9637de6e6",
+        "earliest_observed_commit": "ef821f86003d45b19a79006a64c1de60cc9781d0",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/56a179e9d6e4d242bcc9e073d9c2a3a9637de6e6/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "93a05ba7d446dcd4fce2d854b64c08a0cad1b86f",
+        "earliest_observed_commit": "a2289d9093b3e69a7c568d4d675e953d4981b165",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/93a05ba7d446dcd4fce2d854b64c08a0cad1b86f/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "44b117b8057c5728a13a4bea21be7ba31f134408",
+        "earliest_observed_commit": "6f8fa34c174841244d29992ef2535787d3571e90",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/44b117b8057c5728a13a4bea21be7ba31f134408/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "193b46a937b57b2b0387b746351b86d34965ca7e",
+        "earliest_observed_commit": "e4b50c0a314386f410e64d4254768a4390c1120d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/193b46a937b57b2b0387b746351b86d34965ca7e/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "edee8245b4a29dc15d0711761ea736ea7c71e3a3",
+        "earliest_observed_commit": "2edd1fe748207e7015be503290c9f49f255bdd8c",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/edee8245b4a29dc15d0711761ea736ea7c71e3a3/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "9b3c4f074546777dcdf1eddc4a00f006cbbdd655",
+        "earliest_observed_commit": "1c80cd64cf9f4bd4b97a9ae845fc7affcf4fcf9f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/9b3c4f074546777dcdf1eddc4a00f006cbbdd655/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "7fc37bcfca17f4e38b5a2e6547b016c28157c126",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/7fc37bcfca17f4e38b5a2e6547b016c28157c126/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "a8e00ac0a075a9caa169129ac08e1641b2d209a8",
+        "earliest_observed_commit": "e203e66faf03bd6ca4cd9f44522c0a9c3fece991",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/a8e00ac0a075a9caa169129ac08e1641b2d209a8/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "a5168071ef6f1d9cf57c164e34973582be644044",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/a5168071ef6f1d9cf57c164e34973582be644044/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "c6495fe42fc1f78160cf01c8c3291c6ddd8474cd",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/c6495fe42fc1f78160cf01c8c3291c6ddd8474cd/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "ee175d4588f4a6b9c2290bd28dd7e600695b5b2c",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/ee175d4588f4a6b9c2290bd28dd7e600695b5b2c/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "63c793f4b04b4e74db936c84563683785ca5b542",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/63c793f4b04b4e74db936c84563683785ca5b542/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "d55cf6f1256eff38dfd56024469c2bec43bdd805",
+        "earliest_observed_commit": "9430bfdae8d4698dc695b0135017303a4dcb9c88",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/d55cf6f1256eff38dfd56024469c2bec43bdd805/module-3-ppe-clothing-and-what-to-bring.html"
+      },
+      {
+        "blob_sha": "06470afed734b409946364537bceda6595b41857",
+        "earliest_observed_commit": "346294d7e6395d69b01a8cc84c214658ddcc71b0",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-3-ppe-clothing-and-what-to-bring.html.versions/06470afed734b409946364537bceda6595b41857/module-3-ppe-clothing-and-what-to-bring.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-4-venue-and-jobsite-awareness.html",
+    "unique_blob_versions": [
+      "16ba552817500e6803b9e02368321abe7fe7eae4",
+      "1c75b18eaa175ae46e0f4f4e9eae01bcccb69a0a",
+      "3389811a4c71c4801b1113fbf38c7885c1923366",
+      "3db7790b58bea89ffbd06b4811f323de39ae9069",
+      "685e298889721c806ac18efcb1c95b33e1de0c3f",
+      "7b66ca8aa1ed927eaf0a93264f7067e8586efb28",
+      "8b96a7eaf0ca0eee7ef4e0e9eb0280a51d817e5c",
+      "94315d95f8b89147ce14a11fda0673d042aca7c5",
+      "956167f6d503d4396eb0223018a5aaa6c581f2ce",
+      "9c4c9e6627f83a976fd8038ab58d69dd292756fc",
+      "9d4af24b7bd24c912a9748d4246c0f8d5db2a253",
+      "af69de3a2d617b5aeb130ee23db1082d3e74ba0b",
+      "b12ce84504907f3b3d90946ec567606ca270cd0a",
+      "e1a2eda022fe8460ff9b5af40e75f29c55b843c7",
+      "e5cf7a038d1e6a4288ac0773d8b6feb012293d0b",
+      "eac3197137e109ab826a38e52cb3c544fdd9742f",
+      "eff7d077d02c7a14d1ef49fa560744ad33286f04",
+      "fea8ddabc229f8a36c1bc57993038bb4dd64f587"
+    ],
+    "versions": [
+      {
+        "blob_sha": "b12ce84504907f3b3d90946ec567606ca270cd0a",
+        "earliest_observed_commit": "64845e6811977052910deff0438e4476747dc860",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/b12ce84504907f3b3d90946ec567606ca270cd0a/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "8b96a7eaf0ca0eee7ef4e0e9eb0280a51d817e5c",
+        "earliest_observed_commit": "6bed5bd08a714a165e172f0400718764ddc1b6c6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/8b96a7eaf0ca0eee7ef4e0e9eb0280a51d817e5c/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "9c4c9e6627f83a976fd8038ab58d69dd292756fc",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/9c4c9e6627f83a976fd8038ab58d69dd292756fc/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "eff7d077d02c7a14d1ef49fa560744ad33286f04",
+        "earliest_observed_commit": "26b77b31bf5085605afe5c0e41f2eaa3f176e0ab",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/eff7d077d02c7a14d1ef49fa560744ad33286f04/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "9d4af24b7bd24c912a9748d4246c0f8d5db2a253",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/9d4af24b7bd24c912a9748d4246c0f8d5db2a253/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "e1a2eda022fe8460ff9b5af40e75f29c55b843c7",
+        "earliest_observed_commit": "e5f5f1a171254dbe56bf00c1064a6100ad637e33",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/e1a2eda022fe8460ff9b5af40e75f29c55b843c7/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "7b66ca8aa1ed927eaf0a93264f7067e8586efb28",
+        "earliest_observed_commit": "3b1a8a864873ff34e03fb68f7b7ab8d2b1dce47c",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/7b66ca8aa1ed927eaf0a93264f7067e8586efb28/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "fea8ddabc229f8a36c1bc57993038bb4dd64f587",
+        "earliest_observed_commit": "ddc0083a5d60bf1a55a504e47d5a7ace3fd9357e",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/fea8ddabc229f8a36c1bc57993038bb4dd64f587/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "1c75b18eaa175ae46e0f4f4e9eae01bcccb69a0a",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/1c75b18eaa175ae46e0f4f4e9eae01bcccb69a0a/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "eac3197137e109ab826a38e52cb3c544fdd9742f",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/eac3197137e109ab826a38e52cb3c544fdd9742f/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "685e298889721c806ac18efcb1c95b33e1de0c3f",
+        "earliest_observed_commit": "8c0eff18801a988a508c404969454574df584ecc",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/685e298889721c806ac18efcb1c95b33e1de0c3f/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "94315d95f8b89147ce14a11fda0673d042aca7c5",
+        "earliest_observed_commit": "886c30f0ba125739109059a823ea3ef7a8168cc1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/94315d95f8b89147ce14a11fda0673d042aca7c5/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "3389811a4c71c4801b1113fbf38c7885c1923366",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/3389811a4c71c4801b1113fbf38c7885c1923366/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "956167f6d503d4396eb0223018a5aaa6c581f2ce",
+        "earliest_observed_commit": "9733272ca49c40e579f699bb9136af56a7920374",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/956167f6d503d4396eb0223018a5aaa6c581f2ce/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "3db7790b58bea89ffbd06b4811f323de39ae9069",
+        "earliest_observed_commit": "b6d8029f8912e0077f5f16789dfba123a89bd1de",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/3db7790b58bea89ffbd06b4811f323de39ae9069/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "af69de3a2d617b5aeb130ee23db1082d3e74ba0b",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/af69de3a2d617b5aeb130ee23db1082d3e74ba0b/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "16ba552817500e6803b9e02368321abe7fe7eae4",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/16ba552817500e6803b9e02368321abe7fe7eae4/module-4-venue-and-jobsite-awareness.html"
+      },
+      {
+        "blob_sha": "e5cf7a038d1e6a4288ac0773d8b6feb012293d0b",
+        "earliest_observed_commit": "2d42c02789963fd8a0ed0617849362eb88417ad8",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-4-venue-and-jobsite-awareness.html.versions/e5cf7a038d1e6a4288ac0773d8b6feb012293d0b/module-4-venue-and-jobsite-awareness.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-5-load-in-fundamentals.html",
+    "unique_blob_versions": [
+      "0ee733c6fd9bf5c190acf2edcc78b5ca83960e54",
+      "199746ed1ac6fcb2b4ab9c9b5e397b81204013dd",
+      "1c19662850394d40c7873f47d8edcd4db7263973",
+      "20babbb658457d8c8d8c3e01e88e85785a76a9f8",
+      "20bde9c6bb428f5fdf72328bee40f65f8d2d320f",
+      "369d50de5a2450f4f1dbc672d1c7f3de46272326",
+      "3e14d9fb0b471a294ec047b9b04c88aa0137e3ec",
+      "5bc8b51f5141fdc507a11a60f7b7408dd6447730",
+      "87040b8c069a6521e35138e4c2cf13dc2750102b",
+      "c65621478e082c88c3e22790817c9d9ae36e1416",
+      "cc4f6f0ce5116da353c4bd4fc78d09638b0f6c70",
+      "d7305de095e306ba74b6a257afb7f6878b4db7b9",
+      "e627e1dfe1f1d1a641e347fd31c275e9432f14fd",
+      "ecb2dccbc1cddc530cda8664ac635c21d1f2158e"
+    ],
+    "versions": [
+      {
+        "blob_sha": "1c19662850394d40c7873f47d8edcd4db7263973",
+        "earliest_observed_commit": "50d7a4d36acb62bddcd0883a7b3df1ce159d1504",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/1c19662850394d40c7873f47d8edcd4db7263973/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "ecb2dccbc1cddc530cda8664ac635c21d1f2158e",
+        "earliest_observed_commit": "6bed5bd08a714a165e172f0400718764ddc1b6c6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/ecb2dccbc1cddc530cda8664ac635c21d1f2158e/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "e627e1dfe1f1d1a641e347fd31c275e9432f14fd",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/e627e1dfe1f1d1a641e347fd31c275e9432f14fd/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "3e14d9fb0b471a294ec047b9b04c88aa0137e3ec",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/3e14d9fb0b471a294ec047b9b04c88aa0137e3ec/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "369d50de5a2450f4f1dbc672d1c7f3de46272326",
+        "earliest_observed_commit": "e203e66faf03bd6ca4cd9f44522c0a9c3fece991",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/369d50de5a2450f4f1dbc672d1c7f3de46272326/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "c65621478e082c88c3e22790817c9d9ae36e1416",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/c65621478e082c88c3e22790817c9d9ae36e1416/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "d7305de095e306ba74b6a257afb7f6878b4db7b9",
+        "earliest_observed_commit": "886c30f0ba125739109059a823ea3ef7a8168cc1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/d7305de095e306ba74b6a257afb7f6878b4db7b9/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "199746ed1ac6fcb2b4ab9c9b5e397b81204013dd",
+        "earliest_observed_commit": "62d7c88919079e29fc5c750cfb897ffa01a5676f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/199746ed1ac6fcb2b4ab9c9b5e397b81204013dd/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "5bc8b51f5141fdc507a11a60f7b7408dd6447730",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/5bc8b51f5141fdc507a11a60f7b7408dd6447730/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "cc4f6f0ce5116da353c4bd4fc78d09638b0f6c70",
+        "earliest_observed_commit": "b6d8029f8912e0077f5f16789dfba123a89bd1de",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/cc4f6f0ce5116da353c4bd4fc78d09638b0f6c70/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "0ee733c6fd9bf5c190acf2edcc78b5ca83960e54",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/0ee733c6fd9bf5c190acf2edcc78b5ca83960e54/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "87040b8c069a6521e35138e4c2cf13dc2750102b",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/87040b8c069a6521e35138e4c2cf13dc2750102b/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "20bde9c6bb428f5fdf72328bee40f65f8d2d320f",
+        "earliest_observed_commit": "9430bfdae8d4698dc695b0135017303a4dcb9c88",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/20bde9c6bb428f5fdf72328bee40f65f8d2d320f/module-5-load-in-fundamentals.html"
+      },
+      {
+        "blob_sha": "20babbb658457d8c8d8c3e01e88e85785a76a9f8",
+        "earliest_observed_commit": "3a9526976eeca0563ae2fa340a9775323aebc1a8",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-5-load-in-fundamentals.html.versions/20babbb658457d8c8d8c3e01e88e85785a76a9f8/module-5-load-in-fundamentals.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-6-stagehand-communication-and-crew-etiquette.html",
+    "unique_blob_versions": [
+      "13c524608c02283c7685721a27b5298b74ddbf31",
+      "17747176cc12db591fcafaf283e4221bbcb1207c",
+      "3b4c3929c49994fdedfd9493691e0f4f3713537d",
+      "5d7622e2b18652e280c68d2b6584fa4ab9e8b113",
+      "801bfc0b6bf67f0e5f064716c777370b19889b76",
+      "86ebac7f9cb3a3a017c19678f4dca20adcb7df76",
+      "8770bed5eef799ffa154ceecdf9267a65bcc8d56",
+      "8fef9ea790b44fb85bd1b1dde9bb6dcaed1a106d",
+      "adf763838fa59ff3659ab530d53bf1d91e91b0c2",
+      "c631673d15836ba2796a8422b39ac842cea49831",
+      "d0e89a00674d05286ed73655ce3ab2c12cc02c41",
+      "d1653cba65321519c697bef13e93b6ad579341ee",
+      "d96a59607c69c00b63e5a918b3c21c64a3db492c"
+    ],
+    "versions": [
+      {
+        "blob_sha": "d1653cba65321519c697bef13e93b6ad579341ee",
+        "earliest_observed_commit": "3c5b4a78947f1230af24906a91d0f198258f5dbe",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/d1653cba65321519c697bef13e93b6ad579341ee/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "d96a59607c69c00b63e5a918b3c21c64a3db492c",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/d96a59607c69c00b63e5a918b3c21c64a3db492c/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "3b4c3929c49994fdedfd9493691e0f4f3713537d",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/3b4c3929c49994fdedfd9493691e0f4f3713537d/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "17747176cc12db591fcafaf283e4221bbcb1207c",
+        "earliest_observed_commit": "85c91a22391536809626e208ac737720fb6c1732",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/17747176cc12db591fcafaf283e4221bbcb1207c/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "13c524608c02283c7685721a27b5298b74ddbf31",
+        "earliest_observed_commit": "fe8322a241d9f5b564b69474b434ec2a32af13fa",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/13c524608c02283c7685721a27b5298b74ddbf31/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "c631673d15836ba2796a8422b39ac842cea49831",
+        "earliest_observed_commit": "d899300f61316747807cebedcd585df2fe22dce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/c631673d15836ba2796a8422b39ac842cea49831/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "8770bed5eef799ffa154ceecdf9267a65bcc8d56",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/8770bed5eef799ffa154ceecdf9267a65bcc8d56/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "d0e89a00674d05286ed73655ce3ab2c12cc02c41",
+        "earliest_observed_commit": "886c30f0ba125739109059a823ea3ef7a8168cc1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/d0e89a00674d05286ed73655ce3ab2c12cc02c41/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "86ebac7f9cb3a3a017c19678f4dca20adcb7df76",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/86ebac7f9cb3a3a017c19678f4dca20adcb7df76/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "adf763838fa59ff3659ab530d53bf1d91e91b0c2",
+        "earliest_observed_commit": "9733272ca49c40e579f699bb9136af56a7920374",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/adf763838fa59ff3659ab530d53bf1d91e91b0c2/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "5d7622e2b18652e280c68d2b6584fa4ab9e8b113",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/5d7622e2b18652e280c68d2b6584fa4ab9e8b113/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "8fef9ea790b44fb85bd1b1dde9bb6dcaed1a106d",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/8fef9ea790b44fb85bd1b1dde9bb6dcaed1a106d/module-6-stagehand-communication-and-crew-etiquette.html"
+      },
+      {
+        "blob_sha": "801bfc0b6bf67f0e5f064716c777370b19889b76",
+        "earliest_observed_commit": "9430bfdae8d4698dc695b0135017303a4dcb9c88",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-6-stagehand-communication-and-crew-etiquette.html.versions/801bfc0b6bf67f0e5f064716c777370b19889b76/module-6-stagehand-communication-and-crew-etiquette.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-7-department-basics.html",
+    "unique_blob_versions": [
+      "08f22154a54ff3976a5e8bf5d984da8263da32fd",
+      "1ab632b3a4c231ce20b3b5f46bb9a7b776a5a564",
+      "2c390302c87c0cd3d626451124426421e14b6e98",
+      "4305544a75c0e544c5ace4e40b6b5ab1140febae",
+      "4ec224ab99e4ce0285313da51e19b217f2871fe2",
+      "5e3f5438fa115e247552409c2aa693f757b586a0",
+      "724b29aa85db2daa95c222e92feb0beccb86183d",
+      "7fc16a4bc9db3314e2bec27ac4257459d4fb3ea3",
+      "ce21529cac3c5c4c5bc965dcd331cce2513c0161",
+      "e9d97d7157f7beccb16e21ea61539f826d6edbef",
+      "ef5e5972f47c34f53cbcc97db3f72035770e8848",
+      "f27f93d6b9bbefa466a6331a80b943830a646e21"
+    ],
+    "versions": [
+      {
+        "blob_sha": "5e3f5438fa115e247552409c2aa693f757b586a0",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/5e3f5438fa115e247552409c2aa693f757b586a0/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "ce21529cac3c5c4c5bc965dcd331cce2513c0161",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/ce21529cac3c5c4c5bc965dcd331cce2513c0161/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "4305544a75c0e544c5ace4e40b6b5ab1140febae",
+        "earliest_observed_commit": "b6c52a2f710e5c4c16a8b5952d5bb8405b7eea43",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/4305544a75c0e544c5ace4e40b6b5ab1140febae/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "f27f93d6b9bbefa466a6331a80b943830a646e21",
+        "earliest_observed_commit": "1d51f1cca80e363b978836be3d96093a0d53206a",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/f27f93d6b9bbefa466a6331a80b943830a646e21/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "1ab632b3a4c231ce20b3b5f46bb9a7b776a5a564",
+        "earliest_observed_commit": "1453f5156494d5ca21483a5ae95b70dfdcdfd698",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/1ab632b3a4c231ce20b3b5f46bb9a7b776a5a564/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "e9d97d7157f7beccb16e21ea61539f826d6edbef",
+        "earliest_observed_commit": "acfb7a9acb9c056f8c46c1b2198949177fa24a7d",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/e9d97d7157f7beccb16e21ea61539f826d6edbef/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "7fc16a4bc9db3314e2bec27ac4257459d4fb3ea3",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/7fc16a4bc9db3314e2bec27ac4257459d4fb3ea3/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "ef5e5972f47c34f53cbcc97db3f72035770e8848",
+        "earliest_observed_commit": "8c0eff18801a988a508c404969454574df584ecc",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/ef5e5972f47c34f53cbcc97db3f72035770e8848/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "2c390302c87c0cd3d626451124426421e14b6e98",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/2c390302c87c0cd3d626451124426421e14b6e98/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "08f22154a54ff3976a5e8bf5d984da8263da32fd",
+        "earliest_observed_commit": "cde7aefad27f9ccefaf04215faa2b8bda8683254",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/08f22154a54ff3976a5e8bf5d984da8263da32fd/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "4ec224ab99e4ce0285313da51e19b217f2871fe2",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/4ec224ab99e4ce0285313da51e19b217f2871fe2/module-7-department-basics.html"
+      },
+      {
+        "blob_sha": "724b29aa85db2daa95c222e92feb0beccb86183d",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-7-department-basics.html.versions/724b29aa85db2daa95c222e92feb0beccb86183d/module-7-department-basics.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-8-tools-gear-and-handling-basics.html",
+    "unique_blob_versions": [
+      "06ac3b336343dcd1722040741825cd43e194af2f",
+      "1a8a26e21dff1ed10d5f4876374795144c014313",
+      "4944237fcbe1454a9b0603e54c060372d627dc85",
+      "4f95629dff93f6ca70e42adb3a518601b9a66a61",
+      "53ec019203b43ccd20c1f49c86491fb3f2b21f3f",
+      "76efe2231a0806969dbb494fcd9f6b38cd2dd6db",
+      "9195f319b096d48cbb27f1dd4846e3da11c00f53",
+      "9208193cbb549724c7c5544765910dd13fdaed09",
+      "b30bced450df7b616e9a73cf0058b04fb36f48c4",
+      "b466fc96c9644378c1f74e7876de409ea6ef48c0",
+      "cf290dc1988df472a5c6662fab26ad087dfe1871",
+      "f8d390d9a0a1e0bec22eb66c8d611c33247d67c5"
+    ],
+    "versions": [
+      {
+        "blob_sha": "f8d390d9a0a1e0bec22eb66c8d611c33247d67c5",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/f8d390d9a0a1e0bec22eb66c8d611c33247d67c5/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "9208193cbb549724c7c5544765910dd13fdaed09",
+        "earliest_observed_commit": "58c9931a6fc1b08fc8a8ab1cc1adbbbb4d0491a1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/9208193cbb549724c7c5544765910dd13fdaed09/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "9195f319b096d48cbb27f1dd4846e3da11c00f53",
+        "earliest_observed_commit": "d899300f61316747807cebedcd585df2fe22dce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/9195f319b096d48cbb27f1dd4846e3da11c00f53/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "4f95629dff93f6ca70e42adb3a518601b9a66a61",
+        "earliest_observed_commit": "e203e66faf03bd6ca4cd9f44522c0a9c3fece991",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/4f95629dff93f6ca70e42adb3a518601b9a66a61/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "b30bced450df7b616e9a73cf0058b04fb36f48c4",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/b30bced450df7b616e9a73cf0058b04fb36f48c4/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "53ec019203b43ccd20c1f49c86491fb3f2b21f3f",
+        "earliest_observed_commit": "8c0eff18801a988a508c404969454574df584ecc",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/53ec019203b43ccd20c1f49c86491fb3f2b21f3f/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "06ac3b336343dcd1722040741825cd43e194af2f",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/06ac3b336343dcd1722040741825cd43e194af2f/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "1a8a26e21dff1ed10d5f4876374795144c014313",
+        "earliest_observed_commit": "a2bb9ff2a89d8bcfb415ef984b358a3e72eb4bd8",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/1a8a26e21dff1ed10d5f4876374795144c014313/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "cf290dc1988df472a5c6662fab26ad087dfe1871",
+        "earliest_observed_commit": "b6d8029f8912e0077f5f16789dfba123a89bd1de",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/cf290dc1988df472a5c6662fab26ad087dfe1871/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "76efe2231a0806969dbb494fcd9f6b38cd2dd6db",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/76efe2231a0806969dbb494fcd9f6b38cd2dd6db/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "4944237fcbe1454a9b0603e54c060372d627dc85",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/4944237fcbe1454a9b0603e54c060372d627dc85/module-8-tools-gear-and-handling-basics.html"
+      },
+      {
+        "blob_sha": "b466fc96c9644378c1f74e7876de409ea6ef48c0",
+        "earliest_observed_commit": "d3d63debbb093d995610f729ee8d3a733e36fcd2",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-8-tools-gear-and-handling-basics.html.versions/b466fc96c9644378c1f74e7876de409ea6ef48c0/module-8-tools-gear-and-handling-basics.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-9-load-out-fundamentals.html",
+    "unique_blob_versions": [
+      "1e553a37b96bf899e37276e241b2569390162197",
+      "6b98f907e259df09a3eb03bd70f17d0ba6d6dc93",
+      "7f588c84a3bfc4182e8232ba90f85af88746e6d7",
+      "82c56810d2b3daf9a81a11cac5264db3f73d45fe",
+      "98e9ab041995760c79c4633d0ff03e5390cf2b94",
+      "9bf3b1eb4613d0f4821add9e7f5942464cdc5da6",
+      "db601eb5927368cc217e967eb0610683131ff9d1"
+    ],
+    "versions": [
+      {
+        "blob_sha": "db601eb5927368cc217e967eb0610683131ff9d1",
+        "earliest_observed_commit": "14d63fb2321cfd04f62355bd74c057de393692ca",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/db601eb5927368cc217e967eb0610683131ff9d1/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "9bf3b1eb4613d0f4821add9e7f5942464cdc5da6",
+        "earliest_observed_commit": "e203e66faf03bd6ca4cd9f44522c0a9c3fece991",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/9bf3b1eb4613d0f4821add9e7f5942464cdc5da6/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "1e553a37b96bf899e37276e241b2569390162197",
+        "earliest_observed_commit": "3f35456077dcdd0d58f57d52b5c77991948768b9",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/1e553a37b96bf899e37276e241b2569390162197/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "98e9ab041995760c79c4633d0ff03e5390cf2b94",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/98e9ab041995760c79c4633d0ff03e5390cf2b94/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "6b98f907e259df09a3eb03bd70f17d0ba6d6dc93",
+        "earliest_observed_commit": "90b033527740b8f06098062d7a359890aafda5b7",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/6b98f907e259df09a3eb03bd70f17d0ba6d6dc93/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "7f588c84a3bfc4182e8232ba90f85af88746e6d7",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/7f588c84a3bfc4182e8232ba90f85af88746e6d7/module-9-load-out-fundamentals.html"
+      },
+      {
+        "blob_sha": "82c56810d2b3daf9a81a11cac5264db3f73d45fe",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-9-load-out-fundamentals.html.versions/82c56810d2b3daf9a81a11cac5264db3f73d45fe/module-9-load-out-fundamentals.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/module-comparison.html",
+    "unique_blob_versions": [
+      "12d6c4120ca8a31db080dfb536adfc763bdcfd88",
+      "287fe8d8995e5cfd94b3c7395f01bcf81490f31c",
+      "cb952f3493269d5e61e97855ef989967404eb69f"
+    ],
+    "versions": [
+      {
+        "blob_sha": "287fe8d8995e5cfd94b3c7395f01bcf81490f31c",
+        "earliest_observed_commit": "3e2d3cc8cb2e6d8692e1e66080ac53efad9d3da0",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-comparison.html.versions/287fe8d8995e5cfd94b3c7395f01bcf81490f31c/module-comparison.html"
+      },
+      {
+        "blob_sha": "cb952f3493269d5e61e97855ef989967404eb69f",
+        "earliest_observed_commit": "41ee6fd87a8f11eb4b23abb0bb956693f89182b6",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-comparison.html.versions/cb952f3493269d5e61e97855ef989967404eb69f/module-comparison.html"
+      },
+      {
+        "blob_sha": "12d6c4120ca8a31db080dfb536adfc763bdcfd88",
+        "earliest_observed_commit": "f1e78aa08e4da03eb062435ba63df11c79b51bd1",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/module-comparison.html.versions/12d6c4120ca8a31db080dfb536adfc763bdcfd88/module-comparison.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-lighting-02-lesson-1-production-lifecycle.html",
+    "unique_blob_versions": [
+      "096e4668d22cfcddbf3ef2aefaa91861b363a49d",
+      "16ce1f965ab04f7c374cdecde7df85eb2b504abb",
+      "3dce25228c6bef95c3e10260b48555defcb59aca",
+      "668aa660cedd17aa118e99dc4ed7a578215b04d2",
+      "ccad88a723f31fe3905b6f6cbbcb4593efbaa974",
+      "e6137e1878154bc6a8213322f1ff9c439a1c1c0c",
+      "e63a43e839e6c9c621f68e28fe86e753db6c5b4d"
+    ],
+    "versions": [
+      {
+        "blob_sha": "e6137e1878154bc6a8213322f1ff9c439a1c1c0c",
+        "earliest_observed_commit": "7bf64326d81f5304889874f895030bf1c1c04df7",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/e6137e1878154bc6a8213322f1ff9c439a1c1c0c/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      },
+      {
+        "blob_sha": "e63a43e839e6c9c621f68e28fe86e753db6c5b4d",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/e63a43e839e6c9c621f68e28fe86e753db6c5b4d/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      },
+      {
+        "blob_sha": "ccad88a723f31fe3905b6f6cbbcb4593efbaa974",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/ccad88a723f31fe3905b6f6cbbcb4593efbaa974/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      },
+      {
+        "blob_sha": "668aa660cedd17aa118e99dc4ed7a578215b04d2",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/668aa660cedd17aa118e99dc4ed7a578215b04d2/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      },
+      {
+        "blob_sha": "16ce1f965ab04f7c374cdecde7df85eb2b504abb",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/16ce1f965ab04f7c374cdecde7df85eb2b504abb/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      },
+      {
+        "blob_sha": "096e4668d22cfcddbf3ef2aefaa91861b363a49d",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/096e4668d22cfcddbf3ef2aefaa91861b363a49d/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      },
+      {
+        "blob_sha": "3dce25228c6bef95c3e10260b48555defcb59aca",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-1-production-lifecycle.html.versions/3dce25228c6bef95c3e10260b48555defcb59aca/pathway-lighting-02-lesson-1-production-lifecycle.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html",
+    "unique_blob_versions": [
+      "5715565cb0e7893f2a2854d64d664465320bd435",
+      "7025eba661488c9bc69a3657a9371c8600c714b5",
+      "951440ce3ea948ed6d9b41e21ae0b2807659d128",
+      "cc774090a6d97d946bce1df9ed650127fc759d70",
+      "d410d3ba2431812a5571a92920be182f327172da",
+      "e1fdac5ef94fc34579354f7825bbd3c33497027e"
+    ],
+    "versions": [
+      {
+        "blob_sha": "d410d3ba2431812a5571a92920be182f327172da",
+        "earliest_observed_commit": "7bf64326d81f5304889874f895030bf1c1c04df7",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html.versions/d410d3ba2431812a5571a92920be182f327172da/pathway-lighting-02-lesson-2-advancing-and-documentation.html"
+      },
+      {
+        "blob_sha": "cc774090a6d97d946bce1df9ed650127fc759d70",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html.versions/cc774090a6d97d946bce1df9ed650127fc759d70/pathway-lighting-02-lesson-2-advancing-and-documentation.html"
+      },
+      {
+        "blob_sha": "5715565cb0e7893f2a2854d64d664465320bd435",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html.versions/5715565cb0e7893f2a2854d64d664465320bd435/pathway-lighting-02-lesson-2-advancing-and-documentation.html"
+      },
+      {
+        "blob_sha": "e1fdac5ef94fc34579354f7825bbd3c33497027e",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html.versions/e1fdac5ef94fc34579354f7825bbd3c33497027e/pathway-lighting-02-lesson-2-advancing-and-documentation.html"
+      },
+      {
+        "blob_sha": "951440ce3ea948ed6d9b41e21ae0b2807659d128",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html.versions/951440ce3ea948ed6d9b41e21ae0b2807659d128/pathway-lighting-02-lesson-2-advancing-and-documentation.html"
+      },
+      {
+        "blob_sha": "7025eba661488c9bc69a3657a9371c8600c714b5",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-2-advancing-and-documentation.html.versions/7025eba661488c9bc69a3657a9371c8600c714b5/pathway-lighting-02-lesson-2-advancing-and-documentation.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html",
+    "unique_blob_versions": [
+      "095346ca1f9153d8fea943ea601b0113809d0908",
+      "3a922035b8d3320f9d023f85c0a080967e76f3d9",
+      "461814b370f864743a57478c96789b359211c5ae",
+      "56daf44ef6df7be8c4423628e982785410f4a14e",
+      "8d0578a77e7ff27e5be80b2e0f9a520e209fbcb5",
+      "c6ca1b5556214bdb0647ae7787c5153b46f9175a",
+      "de4b66fb50d0b444ef55b7cae2f9b8383dc3ddc2"
+    ],
+    "versions": [
+      {
+        "blob_sha": "c6ca1b5556214bdb0647ae7787c5153b46f9175a",
+        "earliest_observed_commit": "7bf64326d81f5304889874f895030bf1c1c04df7",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/c6ca1b5556214bdb0647ae7787c5153b46f9175a/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      },
+      {
+        "blob_sha": "56daf44ef6df7be8c4423628e982785410f4a14e",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/56daf44ef6df7be8c4423628e982785410f4a14e/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      },
+      {
+        "blob_sha": "8d0578a77e7ff27e5be80b2e0f9a520e209fbcb5",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/8d0578a77e7ff27e5be80b2e0f9a520e209fbcb5/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      },
+      {
+        "blob_sha": "461814b370f864743a57478c96789b359211c5ae",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/461814b370f864743a57478c96789b359211c5ae/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      },
+      {
+        "blob_sha": "095346ca1f9153d8fea943ea601b0113809d0908",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/095346ca1f9153d8fea943ea601b0113809d0908/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      },
+      {
+        "blob_sha": "de4b66fb50d0b444ef55b7cae2f9b8383dc3ddc2",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/de4b66fb50d0b444ef55b7cae2f9b8383dc3ddc2/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      },
+      {
+        "blob_sha": "3a922035b8d3320f9d023f85c0a080967e76f3d9",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html.versions/3a922035b8d3320f9d023f85c0a080967e76f3d9/pathway-lighting-02-lesson-3-load-in-and-rig-assembly.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html",
+    "unique_blob_versions": [
+      "0380a9573610602ef6a53fa8f5b2621c1c9fe5d3",
+      "505ec925e33b9892f329e8c070ce06d76039de59",
+      "56f0ba103a40da7e50477337c26f2f143fa04db0",
+      "ad9670ce9016033c81c5613cb4261de27a02e870",
+      "cff36b8f1a3ba9076568e3c4711b73419d7fb3c2",
+      "f130116a4d0028828672877ac771e68cac8a8e86",
+      "f540a6099bebaec6d845f30ef6c88bbcb3258888"
+    ],
+    "versions": [
+      {
+        "blob_sha": "cff36b8f1a3ba9076568e3c4711b73419d7fb3c2",
+        "earliest_observed_commit": "7bf64326d81f5304889874f895030bf1c1c04df7",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/cff36b8f1a3ba9076568e3c4711b73419d7fb3c2/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      },
+      {
+        "blob_sha": "f130116a4d0028828672877ac771e68cac8a8e86",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/f130116a4d0028828672877ac771e68cac8a8e86/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      },
+      {
+        "blob_sha": "f540a6099bebaec6d845f30ef6c88bbcb3258888",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/f540a6099bebaec6d845f30ef6c88bbcb3258888/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      },
+      {
+        "blob_sha": "56f0ba103a40da7e50477337c26f2f143fa04db0",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/56f0ba103a40da7e50477337c26f2f143fa04db0/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      },
+      {
+        "blob_sha": "0380a9573610602ef6a53fa8f5b2621c1c9fe5d3",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/0380a9573610602ef6a53fa8f5b2621c1c9fe5d3/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      },
+      {
+        "blob_sha": "ad9670ce9016033c81c5613cb4261de27a02e870",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/ad9670ce9016033c81c5613cb4261de27a02e870/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      },
+      {
+        "blob_sha": "505ec925e33b9892f329e8c070ce06d76039de59",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html.versions/505ec925e33b9892f329e8c070ce06d76039de59/pathway-lighting-02-lesson-4-power-data-and-troubleshooting.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html",
+    "unique_blob_versions": [
+      "04c792dc5dedbbc76e6fb287c3f848a440156dd3",
+      "6c97907a3cdf8d8807c54f55a331cc70bb62942c",
+      "90a2436616796cbe61057d465d5e0c887cc4194b",
+      "917a47139ae301a6ad71b6af372de4d9ee32af94",
+      "e09621634321f0a5243f832c260e80a6b8f14926",
+      "e6536687d6f9a7df0b48bb7ac7a2777686caabfc"
+    ],
+    "versions": [
+      {
+        "blob_sha": "90a2436616796cbe61057d465d5e0c887cc4194b",
+        "earliest_observed_commit": "7bf64326d81f5304889874f895030bf1c1c04df7",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html.versions/90a2436616796cbe61057d465d5e0c887cc4194b/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html"
+      },
+      {
+        "blob_sha": "e09621634321f0a5243f832c260e80a6b8f14926",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html.versions/e09621634321f0a5243f832c260e80a6b8f14926/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html"
+      },
+      {
+        "blob_sha": "04c792dc5dedbbc76e6fb287c3f848a440156dd3",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html.versions/04c792dc5dedbbc76e6fb287c3f848a440156dd3/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html"
+      },
+      {
+        "blob_sha": "917a47139ae301a6ad71b6af372de4d9ee32af94",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html.versions/917a47139ae301a6ad71b6af372de4d9ee32af94/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html"
+      },
+      {
+        "blob_sha": "6c97907a3cdf8d8807c54f55a331cc70bb62942c",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html.versions/6c97907a3cdf8d8807c54f55a331cc70bb62942c/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html"
+      },
+      {
+        "blob_sha": "e6536687d6f9a7df0b48bb7ac7a2777686caabfc",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html.versions/e6536687d6f9a7df0b48bb7ac7a2777686caabfc/pathway-lighting-02-lesson-5-focus-programming-and-load-out.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-led-video-systems-old-overview.html",
+    "unique_blob_versions": [
+      "42b8e513db7b4efff390988a847cf9b1b7692ee9",
+      "72fe4b71552083255de2506effe63d55c804b4a4",
+      "94a7b804dfcb1c986a7ca629cb424696af35b8cf",
+      "f85d64fb97934dbe04967bba47f24c5f0e3a3f84"
+    ],
+    "versions": [
+      {
+        "blob_sha": "94a7b804dfcb1c986a7ca629cb424696af35b8cf",
+        "earliest_observed_commit": "4bdac693ec2c42eb8b8a953e97dd00f720ef82ad",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-led-video-systems-old-overview.html.versions/94a7b804dfcb1c986a7ca629cb424696af35b8cf/pathway-video-02-led-video-systems-old-overview.html"
+      },
+      {
+        "blob_sha": "72fe4b71552083255de2506effe63d55c804b4a4",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-led-video-systems-old-overview.html.versions/72fe4b71552083255de2506effe63d55c804b4a4/pathway-video-02-led-video-systems-old-overview.html"
+      },
+      {
+        "blob_sha": "42b8e513db7b4efff390988a847cf9b1b7692ee9",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-led-video-systems-old-overview.html.versions/42b8e513db7b4efff390988a847cf9b1b7692ee9/pathway-video-02-led-video-systems-old-overview.html"
+      },
+      {
+        "blob_sha": "f85d64fb97934dbe04967bba47f24c5f0e3a3f84",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-led-video-systems-old-overview.html.versions/f85d64fb97934dbe04967bba47f24c5f0e3a3f84/pathway-video-02-led-video-systems-old-overview.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-1-integrated-systems.html",
+    "unique_blob_versions": [
+      "062529f7ead8992aa3e191a2aa9400383b0cd7d4",
+      "2ed7d32b5953b5e2f8a65c7514f7b12e35427d6d",
+      "3fc8c0c2b230025f5de3cb438d59b99170c63765",
+      "5f7b7828f4b28ea4edf5e4cf8049a8b255f45290",
+      "783747c55427ea968d17ba9db25876ab280aa3a0",
+      "9d42b2783ad7f08a079a578c44600887bb858f2c"
+    ],
+    "versions": [
+      {
+        "blob_sha": "9d42b2783ad7f08a079a578c44600887bb858f2c",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-1-integrated-systems.html.versions/9d42b2783ad7f08a079a578c44600887bb858f2c/pathway-video-02-lesson-1-integrated-systems.html"
+      },
+      {
+        "blob_sha": "5f7b7828f4b28ea4edf5e4cf8049a8b255f45290",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-1-integrated-systems.html.versions/5f7b7828f4b28ea4edf5e4cf8049a8b255f45290/pathway-video-02-lesson-1-integrated-systems.html"
+      },
+      {
+        "blob_sha": "062529f7ead8992aa3e191a2aa9400383b0cd7d4",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-1-integrated-systems.html.versions/062529f7ead8992aa3e191a2aa9400383b0cd7d4/pathway-video-02-lesson-1-integrated-systems.html"
+      },
+      {
+        "blob_sha": "2ed7d32b5953b5e2f8a65c7514f7b12e35427d6d",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-1-integrated-systems.html.versions/2ed7d32b5953b5e2f8a65c7514f7b12e35427d6d/pathway-video-02-lesson-1-integrated-systems.html"
+      },
+      {
+        "blob_sha": "3fc8c0c2b230025f5de3cb438d59b99170c63765",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-1-integrated-systems.html.versions/3fc8c0c2b230025f5de3cb438d59b99170c63765/pathway-video-02-lesson-1-integrated-systems.html"
+      },
+      {
+        "blob_sha": "783747c55427ea968d17ba9db25876ab280aa3a0",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-1-integrated-systems.html.versions/783747c55427ea968d17ba9db25876ab280aa3a0/pathway-video-02-lesson-1-integrated-systems.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html",
+    "unique_blob_versions": [
+      "1cefc508347f56d979faaf1d169035272259efe1",
+      "436a01568d94b87a30eed86bc9c9467b4eada306",
+      "5d51e4cc4d4ab2538f77773b17e81f3ce3db7076",
+      "8dd7ae00318b3e59cdb8d8cbb24bc88eaf383b6f",
+      "c50235320cc701d33491a8cb5db405a07e5fa0f9",
+      "fd18e7bdbd4e59774409d5ae63d0ae72f3b3dd02"
+    ],
+    "versions": [
+      {
+        "blob_sha": "8dd7ae00318b3e59cdb8d8cbb24bc88eaf383b6f",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html.versions/8dd7ae00318b3e59cdb8d8cbb24bc88eaf383b6f/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html"
+      },
+      {
+        "blob_sha": "436a01568d94b87a30eed86bc9c9467b4eada306",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html.versions/436a01568d94b87a30eed86bc9c9467b4eada306/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html"
+      },
+      {
+        "blob_sha": "1cefc508347f56d979faaf1d169035272259efe1",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html.versions/1cefc508347f56d979faaf1d169035272259efe1/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html"
+      },
+      {
+        "blob_sha": "5d51e4cc4d4ab2538f77773b17e81f3ce3db7076",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html.versions/5d51e4cc4d4ab2538f77773b17e81f3ce3db7076/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html"
+      },
+      {
+        "blob_sha": "fd18e7bdbd4e59774409d5ae63d0ae72f3b3dd02",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html.versions/fd18e7bdbd4e59774409d5ae63d0ae72f3b3dd02/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html"
+      },
+      {
+        "blob_sha": "c50235320cc701d33491a8cb5db405a07e5fa0f9",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html.versions/c50235320cc701d33491a8cb5db405a07e5fa0f9/pathway-video-02-lesson-2-pixel-pitch-and-equipment-choice.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html",
+    "unique_blob_versions": [
+      "08265bd6b347cde045da81b0edbc173a52726648",
+      "5fd16e2683acca462340c78a951171cad8e0ff50",
+      "700efa09e1230eab83d4b07966a1508913a061ba",
+      "80dd675791a8d17cb1896a1ce88eb58c32d2c1d1",
+      "8df1821ca118be30ee4f4421f819ae09475c7f92",
+      "9f49e9926d6fa033f841a4244f72126047d4e493",
+      "c745ed7563b33c30a0053c039fbf0fae8c22d056"
+    ],
+    "versions": [
+      {
+        "blob_sha": "5fd16e2683acca462340c78a951171cad8e0ff50",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/5fd16e2683acca462340c78a951171cad8e0ff50/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      },
+      {
+        "blob_sha": "c745ed7563b33c30a0053c039fbf0fae8c22d056",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/c745ed7563b33c30a0053c039fbf0fae8c22d056/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      },
+      {
+        "blob_sha": "8df1821ca118be30ee4f4421f819ae09475c7f92",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/8df1821ca118be30ee4f4421f819ae09475c7f92/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      },
+      {
+        "blob_sha": "08265bd6b347cde045da81b0edbc173a52726648",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/08265bd6b347cde045da81b0edbc173a52726648/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      },
+      {
+        "blob_sha": "700efa09e1230eab83d4b07966a1508913a061ba",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/700efa09e1230eab83d4b07966a1508913a061ba/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      },
+      {
+        "blob_sha": "9f49e9926d6fa033f841a4244f72126047d4e493",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/9f49e9926d6fa033f841a4244f72126047d4e493/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      },
+      {
+        "blob_sha": "80dd675791a8d17cb1896a1ce88eb58c32d2c1d1",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-3-signal-flow-and-redundancy.html.versions/80dd675791a8d17cb1896a1ce88eb58c32d2c1d1/pathway-video-02-lesson-3-signal-flow-and-redundancy.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-4-power-and-data-distribution.html",
+    "unique_blob_versions": [
+      "18ef0042e2f875b31cc96af87d8151c3ef73ba67",
+      "1a8dd7f9b50b1df22261addf6a5ae2a65845fd5d",
+      "86ffa056bfcb13559a36672a1772c4430e46d550",
+      "ba594a111209f1d954bd5130ed3d6657668f0758",
+      "bc49a16e998c33fd5046fc218ff3713475492684",
+      "cb430a5d1247ec6eaec08338687bd2baf4f8c748"
+    ],
+    "versions": [
+      {
+        "blob_sha": "1a8dd7f9b50b1df22261addf6a5ae2a65845fd5d",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-4-power-and-data-distribution.html.versions/1a8dd7f9b50b1df22261addf6a5ae2a65845fd5d/pathway-video-02-lesson-4-power-and-data-distribution.html"
+      },
+      {
+        "blob_sha": "18ef0042e2f875b31cc96af87d8151c3ef73ba67",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-4-power-and-data-distribution.html.versions/18ef0042e2f875b31cc96af87d8151c3ef73ba67/pathway-video-02-lesson-4-power-and-data-distribution.html"
+      },
+      {
+        "blob_sha": "cb430a5d1247ec6eaec08338687bd2baf4f8c748",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-4-power-and-data-distribution.html.versions/cb430a5d1247ec6eaec08338687bd2baf4f8c748/pathway-video-02-lesson-4-power-and-data-distribution.html"
+      },
+      {
+        "blob_sha": "86ffa056bfcb13559a36672a1772c4430e46d550",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-4-power-and-data-distribution.html.versions/86ffa056bfcb13559a36672a1772c4430e46d550/pathway-video-02-lesson-4-power-and-data-distribution.html"
+      },
+      {
+        "blob_sha": "bc49a16e998c33fd5046fc218ff3713475492684",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-4-power-and-data-distribution.html.versions/bc49a16e998c33fd5046fc218ff3713475492684/pathway-video-02-lesson-4-power-and-data-distribution.html"
+      },
+      {
+        "blob_sha": "ba594a111209f1d954bd5130ed3d6657668f0758",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-4-power-and-data-distribution.html.versions/ba594a111209f1d954bd5130ed3d6657668f0758/pathway-video-02-lesson-4-power-and-data-distribution.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-5-structural-support-and-rigging.html",
+    "unique_blob_versions": [
+      "14dc60fad2e3d7a407ab9ff769c7c6ded45e7ab2",
+      "301bea18e7668b7d0364cc10dfedbe4fe9481de8",
+      "670b97f76adf31eeb896f56b71ff598fd91880f9",
+      "bc312fa6e44c4e976f1b182901b3a8152bcda3eb",
+      "c91e8fe90d488fe80bf20bf79326e0a11390ee3d",
+      "d03d558ccb4bf6451573498955ff01b147a7637a",
+      "dd46c59d6b667a2ac982ce52f8b8c57143d5f723",
+      "f032c310fc816832e74a2bcff9ef71e921fb6795"
+    ],
+    "versions": [
+      {
+        "blob_sha": "301bea18e7668b7d0364cc10dfedbe4fe9481de8",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/301bea18e7668b7d0364cc10dfedbe4fe9481de8/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "dd46c59d6b667a2ac982ce52f8b8c57143d5f723",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/dd46c59d6b667a2ac982ce52f8b8c57143d5f723/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "bc312fa6e44c4e976f1b182901b3a8152bcda3eb",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/bc312fa6e44c4e976f1b182901b3a8152bcda3eb/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "d03d558ccb4bf6451573498955ff01b147a7637a",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/d03d558ccb4bf6451573498955ff01b147a7637a/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "f032c310fc816832e74a2bcff9ef71e921fb6795",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/f032c310fc816832e74a2bcff9ef71e921fb6795/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "c91e8fe90d488fe80bf20bf79326e0a11390ee3d",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/c91e8fe90d488fe80bf20bf79326e0a11390ee3d/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "670b97f76adf31eeb896f56b71ff598fd91880f9",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/670b97f76adf31eeb896f56b71ff598fd91880f9/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      },
+      {
+        "blob_sha": "14dc60fad2e3d7a407ab9ff769c7c6ded45e7ab2",
+        "earliest_observed_commit": "6712b101818fd0984cdb4d7c041b3169ada35503",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-5-structural-support-and-rigging.html.versions/14dc60fad2e3d7a407ab9ff769c7c6ded45e7ab2/pathway-video-02-lesson-5-structural-support-and-rigging.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html",
+    "unique_blob_versions": [
+      "53e2b45d7111cbd6e19802399692e2a7e00b366a",
+      "7066920813e4bfe316ea410485a0319a50c1df42",
+      "7a2b3924383f1d7730119a87b3f8e8fbbb9fb11f",
+      "8fe5f281220582167ca6bb77aea977f2ad2b0b5c",
+      "97ea34d88d45ca8748ed24c996aea846883bb2e7",
+      "c231773c8d47c2920d8aaa8eecb704dd85363742",
+      "ea7a01078f7656ea86a98ed723d888fe0cc76d58"
+    ],
+    "versions": [
+      {
+        "blob_sha": "97ea34d88d45ca8748ed24c996aea846883bb2e7",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/97ea34d88d45ca8748ed24c996aea846883bb2e7/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      },
+      {
+        "blob_sha": "c231773c8d47c2920d8aaa8eecb704dd85363742",
+        "earliest_observed_commit": "5762abe351ed5b6727fe3885894c0e8636648e1f",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/c231773c8d47c2920d8aaa8eecb704dd85363742/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      },
+      {
+        "blob_sha": "53e2b45d7111cbd6e19802399692e2a7e00b366a",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/53e2b45d7111cbd6e19802399692e2a7e00b366a/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      },
+      {
+        "blob_sha": "7066920813e4bfe316ea410485a0319a50c1df42",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/7066920813e4bfe316ea410485a0319a50c1df42/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      },
+      {
+        "blob_sha": "ea7a01078f7656ea86a98ed723d888fe0cc76d58",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/ea7a01078f7656ea86a98ed723d888fe0cc76d58/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      },
+      {
+        "blob_sha": "8fe5f281220582167ca6bb77aea977f2ad2b0b5c",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/8fe5f281220582167ca6bb77aea977f2ad2b0b5c/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      },
+      {
+        "blob_sha": "7a2b3924383f1d7730119a87b3f8e8fbbb9fb11f",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-6-outdoor-led-and-weather.html.versions/7a2b3924383f1d7730119a87b3f8e8fbbb9fb11f/pathway-video-02-lesson-6-outdoor-led-and-weather.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-7-build-and-commissioning.html",
+    "unique_blob_versions": [
+      "059249d1c8296c23e6698dab3e99067a69a28abb",
+      "8aaac3d6ebacfafc97fc67eef0b22a1eca5971f7",
+      "b4b25df521a79a8204841121a7e7625cb79783d5",
+      "b7fc208495f5f50b7ca4f78f462266f5c2d9d010",
+      "bb1ef7ff6b23f36124a46d49a16bb506d9dc5f93",
+      "bfe394123f0592e716a890ecb6fb213cd00b5fc4"
+    ],
+    "versions": [
+      {
+        "blob_sha": "8aaac3d6ebacfafc97fc67eef0b22a1eca5971f7",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-7-build-and-commissioning.html.versions/8aaac3d6ebacfafc97fc67eef0b22a1eca5971f7/pathway-video-02-lesson-7-build-and-commissioning.html"
+      },
+      {
+        "blob_sha": "b7fc208495f5f50b7ca4f78f462266f5c2d9d010",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-7-build-and-commissioning.html.versions/b7fc208495f5f50b7ca4f78f462266f5c2d9d010/pathway-video-02-lesson-7-build-and-commissioning.html"
+      },
+      {
+        "blob_sha": "059249d1c8296c23e6698dab3e99067a69a28abb",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-7-build-and-commissioning.html.versions/059249d1c8296c23e6698dab3e99067a69a28abb/pathway-video-02-lesson-7-build-and-commissioning.html"
+      },
+      {
+        "blob_sha": "bfe394123f0592e716a890ecb6fb213cd00b5fc4",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-7-build-and-commissioning.html.versions/bfe394123f0592e716a890ecb6fb213cd00b5fc4/pathway-video-02-lesson-7-build-and-commissioning.html"
+      },
+      {
+        "blob_sha": "bb1ef7ff6b23f36124a46d49a16bb506d9dc5f93",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-7-build-and-commissioning.html.versions/bb1ef7ff6b23f36124a46d49a16bb506d9dc5f93/pathway-video-02-lesson-7-build-and-commissioning.html"
+      },
+      {
+        "blob_sha": "b4b25df521a79a8204841121a7e7625cb79783d5",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-7-build-and-commissioning.html.versions/b4b25df521a79a8204841121a7e7625cb79783d5/pathway-video-02-lesson-7-build-and-commissioning.html"
+      }
+    ]
+  },
+  {
+    "path": "courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html",
+    "unique_blob_versions": [
+      "0ab5d7996eb46135feeda44386223af1bdcf12da",
+      "208556784f587e79c0658736026ee6a6a71d1061",
+      "659d0222b7c89d8f6271f7f6d9cd2a13ec38d981",
+      "858a8b32bce59d3064252526a2b034a227ebbb34",
+      "97975110737f853d1f3f0860df3184dd8e264453",
+      "e347ade823b5c58a6421b1268d19cf37f00d388b"
+    ],
+    "versions": [
+      {
+        "blob_sha": "0ab5d7996eb46135feeda44386223af1bdcf12da",
+        "earliest_observed_commit": "cdf12d09319b245cd9756e2b414e08624abba9e3",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html.versions/0ab5d7996eb46135feeda44386223af1bdcf12da/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html"
+      },
+      {
+        "blob_sha": "659d0222b7c89d8f6271f7f6d9cd2a13ec38d981",
+        "earliest_observed_commit": "d1184ec5ac166cc5720e21431f893addf2207086",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html.versions/659d0222b7c89d8f6271f7f6d9cd2a13ec38d981/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html"
+      },
+      {
+        "blob_sha": "208556784f587e79c0658736026ee6a6a71d1061",
+        "earliest_observed_commit": "785bd9c2ace41464eaf44e8fa40ba3332b4ab394",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html.versions/208556784f587e79c0658736026ee6a6a71d1061/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html"
+      },
+      {
+        "blob_sha": "e347ade823b5c58a6421b1268d19cf37f00d388b",
+        "earliest_observed_commit": "d0c2316ad040eda470e946f661232866032d9ce4",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html.versions/e347ade823b5c58a6421b1268d19cf37f00d388b/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html"
+      },
+      {
+        "blob_sha": "858a8b32bce59d3064252526a2b034a227ebbb34",
+        "earliest_observed_commit": "ffb1afb7c5bf52ff851c84f8548f635b8e403337",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html.versions/858a8b32bce59d3064252526a2b034a227ebbb34/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html"
+      },
+      {
+        "blob_sha": "97975110737f853d1f3f0860df3184dd8e264453",
+        "earliest_observed_commit": "86263730eb85dde5fc8fddfc9eb37cc5c0122d00",
+        "snapshot_path": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/history/by-path/courses/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html.versions/97975110737f853d1f3f0860df3184dd8e264453/pathway-video-02-lesson-8-troubleshooting-and-show-operation.html"
+      }
+    ]
+  }
+]

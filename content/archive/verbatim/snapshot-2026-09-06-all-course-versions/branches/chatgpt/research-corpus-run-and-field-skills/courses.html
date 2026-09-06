@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Courses | The Crew Blueprint</title>
+<meta name="description" content="Training for live event workers who want to show up prepared. Start with Stagehand Fundamentals, then build toward department awareness and career growth." />
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="canonical" href="https://thecrewblueprint.com/courses/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Crew Blueprint" />
+<meta property="og:title" content="Courses | The Crew Blueprint" />
+<meta property="og:description" content="Training for live event workers who want to show up prepared." />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="css/theme.css" rel="stylesheet" />
+<style>
+  .cb-courses-hero {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    aspect-ratio: 16 / 9;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: visible;
+    margin-bottom: clamp(48px, 6vw, 80px);
+  }
+
+  .cb-courses-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cb-courses-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(5, 6, 10, 0.8), rgba(5, 6, 10, 0.4) 40%, transparent);
+    z-index: 1;
+  }
+
+  .cb-courses-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px 48px;
+    width: min(1280px, 100%);
+  }
+
+  .cb-courses-hero h1 {
+    margin: 0 0 16px;
+    max-width: 620px;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    color: var(--cb-text);
+  }
+
+  .cb-courses-hero p {
+    max-width: 540px;
+    margin: 0 0 28px;
+    color: var(--cb-muted);
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 820px) {
+    .cb-courses-hero { aspect-ratio: auto; min-height: 360px; }
+    .cb-courses-hero-content { padding-bottom: 32px; }
+    .cb-courses-hero h1 { max-width: 100%; }
+  }
+
+  .cb-path-card { position: relative; }
+  .cb-path-pill {
+    display: inline-flex;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: var(--cb-radius-pill);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--cb-border);
+    color: var(--cb-muted-2);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cb-progression-intro {
+    max-width: 780px;
+    margin: 0 auto 32px;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.6;
+  }
+
+  .cb-progression-intro strong {
+    display: block;
+    margin-top: 12px;
+    color: var(--cb-text);
+    font-weight: 700;
+  }
+
+  .cb-progression-intro em {
+    display: block;
+    margin-top: 8px;
+    font-style: italic;
+    color: var(--cb-muted);
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+      <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="courses.html" class="active" aria-current="page">Courses</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="courses/stagehand-fundamentals.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="cb-page">
+
+  <section class="cb-courses-hero">
+    <img src="images/site/img-02-courses-context.webp" alt="Live-event crew working on a large-scale arena production setup." class="cb-courses-hero-image">
+    <div class="cb-courses-hero-overlay"></div>
+    <div class="cb-courses-hero-content">
+      <h1>Training for live event workers who want to show up prepared.</h1>
+      <p>
+        The Crew Blueprint is a practical training platform for new and developing live event workers. Start with Stagehand Fundamentals, then build toward stronger safety awareness, better crew habits, department awareness, and long-term career growth.
+      </p>
+      <div class="cb-actions">
+        <a class="cb-btn cb-btn-primary" href="courses/stagehand-fundamentals.html">Start Stagehand Fundamentals</a>
+        <a class="cb-btn cb-btn-secondary" href="resources.html">View Resources</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cb-wrap">
+
+    <section class="cb-section">
+      <article class="cb-panel cb-course-card">
+        <span class="cb-label">Available Now</span>
+        <h2>Stagehand Fundamentals</h2>
+        <p class="cb-section-intro">
+          A beginner-friendly course that prepares new stagehands to understand the jobsite, work safely, follow direction, recognize boundaries, and build the professional habits that get you called back. For people preparing to work load-ins, show calls, and load-outs in arenas, stadiums, festivals, convention centers, theaters, and corporate events.
+        </p>
+
+        <div class="cb-course-meta">
+          <span class="cb-pill">Entry Level</span>
+          <span class="cb-pill">Jobsite Readiness</span>
+          <span class="cb-pill">Safety Awareness</span>
+          <span class="cb-pill">Live Events</span>
+        </div>
+
+        <ul class="cb-list">
+          <li>Understand what stagehands actually do, and how load-in, show call, and load-out differ.</li>
+          <li>Build a safety mindset, know your PPE, and show up prepared with the right gear.</li>
+          <li>Move through a venue safely and recognize the basics of every department.</li>
+          <li>Communicate like a professional and build the habits that get you called back.</li>
+          <li>Know how to get hired, build a reputation, and grow beyond entry-level work.</li>
+        </ul>
+
+        <div class="cb-actions">
+          <a class="cb-btn cb-btn-primary" href="courses/stagehand-fundamentals.html">View Course</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="cb-section" id="department-pathways">
+      <h2>Learning Pathways</h2>
+      <p class="cb-section-intro">
+        After Stagehand Fundamentals, choose a department pathway to develop deeper knowledge and hands-on capability.
+      </p>
+
+      <div class="cb-dept-grid">
+        <article class="cb-panel cb-dept-card">
+          <h3>Lighting</h3>
+          <p class="cb-dept-tagline">Truss, cable, fixtures, and the exact line between helping and adjusting.</p>
+          <ul class="cb-dept-course-list">
+            <li>
+              <a href="courses/pathway-lighting-01-support.html">
+                <span class="cb-dept-course-level">Course 1</span>
+                <span class="cb-dept-course-title">Supporting a Lighting Hang</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses/pathway-lighting-02-production-flow.html">
+                <span class="cb-dept-course-level">Course 2</span>
+                <span class="cb-dept-course-title">Lighting Production Flow</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="cb-panel cb-dept-card">
+          <h3>Video</h3>
+          <p class="cb-dept-tagline">Handling, locking, and casing gear that's easy to damage and expensive to replace.</p>
+          <ul class="cb-dept-course-list">
+            <li>
+              <a href="courses/pathway-video-01-support.html">
+                <span class="cb-dept-course-level">Course 1</span>
+                <span class="cb-dept-course-title">Supporting an LED Video Wall Build</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses/pathway-video-02-led-video-systems.html">
+                <span class="cb-dept-course-level">Course 2</span>
+                <span class="cb-dept-course-title">Large-Scale LED Video Systems</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="cb-panel cb-dept-card">
+          <h3>Audio</h3>
+          <p class="cb-dept-tagline">Moving, staging, and cabling a PA system without touching what's already dialed in.</p>
+          <ul class="cb-dept-course-list">
+            <li>
+              <a href="courses/pathway-audio-01-support.html">
+                <span class="cb-dept-course-level">Course 1</span>
+                <span class="cb-dept-course-title">Supporting an Audio Load-In</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses/pathway-audio-02-live-systems.html">
+                <span class="cb-dept-course-level">Course 2</span>
+                <span class="cb-dept-course-title">Live Sound Systems</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="cb-panel cb-dept-card">
+          <h3>Staging &amp; Carpentry</h3>
+          <p class="cb-dept-tagline">Real build work under direction &mdash; and why an assembled deck isn't automatically a finished one.</p>
+          <ul class="cb-dept-course-list">
+            <li>
+              <a href="courses/pathway-staging-carpentry-01-support.html">
+                <span class="cb-dept-course-level">Course 1</span>
+                <span class="cb-dept-course-title">Supporting Staging &amp; Carpentry</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses/pathway-staging-carpentry-02-deck-systems.html">
+                <span class="cb-dept-course-level">Course 2</span>
+                <span class="cb-dept-course-title">Modular Deck Systems</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="cb-panel cb-dept-card">
+          <h3>Backline, Props &amp; Wardrobe</h3>
+          <p class="cb-dept-tagline">Ownership sensitivity: moving an item is labor, changing it is department work.</p>
+          <ul class="cb-dept-course-list">
+            <li>
+              <a href="courses/pathway-backline-props-wardrobe-01-support.html">
+                <span class="cb-dept-course-level">Course 1</span>
+                <span class="cb-dept-course-title">Supporting Backline, Props &amp; Wardrobe</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses/pathway-backline-props-wardrobe-02-department-systems.html">
+                <span class="cb-dept-course-level">Course 2</span>
+                <span class="cb-dept-course-title">Department Systems</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="cb-progression-intro">
+        <strong>Course 1: Learn to Perform Assigned Work</strong>
+        <em>"What am I being asked to do, and how do I do my part correctly?"</em>
+        <p>Department-specific task execution, equipment recognition, authorization boundaries. Course 1 teaches you to reliably execute assigned department work under direction.</p>
+      </div>
+
+      <div class="cb-progression-intro">
+        <strong>Course 2: Begin Understanding the System</strong>
+        <em>"What system am I working inside, and where does my work fit?"</em>
+        <p>How the department's systems work, why procedures matter, how your work fits into the larger production. Course 2 develops systems-level understanding of your department.</p>
+      </div>
+    </section>
+
+    <section class="cb-section">
+      <h2>Future training paths</h2>
+      <p class="cb-section-intro">
+        Beyond department pathways, future training can expand into specialized career development
+        and leadership preparation.
+      </p>
+
+      <div class="cb-grid-2">
+        <article class="cb-card">
+          <span class="cb-path-pill">Coming Soon</span>
+          <h3>Specialized Career Development</h3>
+          <p>Pathways beyond entry-level: growing from general labor into specialized production roles.</p>
+        </article>
+        <article class="cb-card">
+          <span class="cb-path-pill">Coming Soon</span>
+          <h3>Leadership Preparation</h3>
+          <p>What it takes to move from crew member to crew lead or department head.</p>
+        </article>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-layout">
+      <div class="footer-disclaimer">
+      <strong>Important Safety Disclaimer</strong>
+      <p>
+        The Crew Blueprint provides orientation, job-readiness, and safety-awareness training for live event
+        workers. This does not replace employer-provided safety training, site-specific instruction, union
+        training, equipment certification, OSHA 10/30 training, or hands-on authorization for specialized work.
+      </p>
+    </div>
+      <div class="footer-main">
+        <div class="footer-brand-center">
+        <span class="footer-mark">CB</span>
+        <span class="footer-wordmark">The Crew <span>Blueprint</span></span>
+        </div>
+        <p class="footer-tagline">Built for the people who build the show.</p>
+
+        <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:thecrewblueprint@gmail.com">thecrewblueprint@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also Visit</h4>
+        <ul>
+          <li><a href="https://deadhanglaborllc.com" target="_blank" rel="noopener noreferrer">Deadhang Labor LLC</a></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Crew Blueprint, a brand of Deadhang Labor LLC. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a> &middot;
+        <a href="cookies-notice.html">Cookies Notice</a> &middot;
+        <a href="accessibility-statement.html">Accessibility</a> &middot;
+        <a href="limitation-of-liability.html">Limitation of Liability</a> &middot;
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
