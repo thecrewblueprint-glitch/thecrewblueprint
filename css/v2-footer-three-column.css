@@ -38,9 +38,17 @@ footer.site .footer-column-right nav{margin-left:auto}
     text-align:left;
   }
   footer.site .footer-column-center{justify-content:flex-start}
-  footer.site .footer-column-center .footer-disclaimer{
+  footer.site .footer-column-center .footer-disclaimer,
+  footer.site .footer-disclaimer.footer-disclaimer-mobile-slot{
     margin-inline:0;
     max-width:none;
+  }
+  footer.site .footer-disclaimer.footer-disclaimer-mobile-slot{
+    display:block;
+    flex:0 0 100%;
+    width:100%;
+    margin-top:24px;
+    margin-bottom:24px;
   }
   footer.site .footer-column-right ul,
   footer.site .footer-column-right nav{margin-left:0}
