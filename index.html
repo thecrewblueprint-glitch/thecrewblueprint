@@ -1,7 +1,45 @@
----
-layout: null
----
-{% capture v2_source %}{% include v2-baseline.html %}{% endcapture %}
-{% assign v2_source = v2_source | replace: '</head>', '<link rel="stylesheet" href="css/v2-client-layer.css?v=20260906"><link rel="stylesheet" href="css/v2-usability.css?v=20260906-usability1"><link rel="stylesheet" href="css/v2-footer-three-column.css?v=20260906-footer4"><link rel="stylesheet" href="css/v2-layout-fixes.css?v=20260906-layout1"><link rel="stylesheet" href="css/current-centering.css?v=20260906-center2"></head>' %}
-{% assign v2_source = v2_source | replace: '</body>', '<script src="js/v2-client-layer.js?v=20260906"></script><script src="js/v2-usability.js?v=20260906-usability1"></script><script src="js/v2-footer-three-column.js?v=20260906-footer4"></script><script src="js/v2-layout-fixes.js?v=20260906-layout1"></script><script src="js/current-centering.js?v=20260906-center2"></script></body>' %}
-{{ v2_source }}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>The Crew Blueprint — Clean-Sheet Learning Lab</title>
+  <meta name="description" content="Owner-review clean-sheet training build for stagehands and live-event workers.">
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#/home" aria-label="The Crew Blueprint clean-sheet lab home">
+      <span class="brand-mark">CB</span>
+      <span><strong>THE CREW BLUEPRINT</strong><small>CLEAN-SHEET LAB · OWNER REVIEW</small></span>
+    </a>
+    <nav class="topnav" aria-label="Lab navigation">
+      <a href="#/home">Home</a>
+      <a href="#/learn">Learn</a>
+      <a href="#/program/contexts/0">Context Labs</a>
+      <a href="#/work">Find Work</a>
+      <a href="#/grow">Grow</a>
+      <a href="#/sources">Sources</a>
+    </nav>
+  </header>
+
+  <div class="lab-banner">
+    <strong>Independent candidate build.</strong>
+    <span>This does not replace, edit, or promote any current or archived Crew Blueprint course.</span>
+  </div>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer">
+    <div><strong>The Crew Blueprint</strong><br><span>Learn the work. Find the work. Become the hand people ask for again.</span></div>
+    <div class="footer-safety"><strong>Safety boundary</strong><br><span>Online learning supports awareness and judgment. Employer/site training, competent or qualified people, current manufacturer instructions, and applicable law control real work.</span></div>
+    <div><a href="#/sources">Evidence & sources</a><br><a href="../../index.html#/owner-review-queue">Return to current Owner Review</a></div>
+  </footer>
+
+  <script src="content.js?v=2"></script>
+  <script src="context-labs.js?v=2"></script>
+  <script src="app.js?v=2"></script>
+</body>
+</html>
