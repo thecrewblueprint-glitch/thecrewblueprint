@@ -11,7 +11,7 @@ header.site nav,
 .site-header nav,
 .site-nav .nav-inner {
   justify-content: center !important;
-  text-align: center;
+  text-align: center !important;
 }
 
 header.site .nav,
@@ -29,6 +29,7 @@ header.site .nav-links,
 
 /* Public page intros only. */
 .hero,
+.home-hero,
 .page-hero,
 .public-hero,
 .about-hero,
@@ -37,11 +38,13 @@ header.site .nav-links,
 .contact-hero,
 .legal-hero,
 .page-intro,
-.public-page-intro {
+.public-page-intro,
+.v2-route-intro-centered {
   text-align: center !important;
 }
 
 .hero > p,
+.home-hero > p,
 .page-hero > p,
 .public-hero > p,
 .about-hero > p,
@@ -50,54 +53,76 @@ header.site .nav-links,
 .contact-hero > p,
 .legal-hero > p,
 .page-intro > p,
-.public-page-intro > p {
+.public-page-intro > p,
+.v2-route-intro-centered > p {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
 .hero .actions,
 .hero .hero-actions,
+.home-hero .client-actions,
 .page-hero .actions,
 .public-hero .actions,
 .catalog-public-hero .actions,
 .page-intro .actions,
-.public-page-intro .actions {
+.public-page-intro .actions,
+.v2-route-intro-centered .actions,
+.v2-route-intro-centered .client-actions {
   justify-content: center !important;
 }
 
-/* Footer identity, links, and legal items. Keep the disclaimer centered between them. */
+/* Footer: center every visible identity/link/legal row, including mobile. */
+footer.site,
+footer.site .footer-grid,
+footer.site .footer-grid.footer-grid-stacked,
 footer.site .footer-grid.footer-grid-stacked > *,
 footer.site .footer-grid.footer-grid-stacked .footer-stack-host,
 footer.site .footer-grid.footer-grid-stacked .footer-stack-legal-boundary {
   text-align: center !important;
 }
 
-footer.site .footer-grid.footer-grid-stacked .footer-stack-host ul,
-footer.site .footer-grid.footer-grid-stacked .footer-stack-host nav,
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host,
+footer.site .footer-grid.footer-grid-stacked .footer-stack-legal-boundary,
+footer.site .footer-grid.footer-grid-stacked ul,
+footer.site .footer-grid.footer-grid-stacked nav,
 footer.site .footer-grid.footer-grid-stacked .footer-legal,
-footer.site .footer-grid.footer-grid-stacked .footer-links {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  justify-content: center !important;
-}
-
+footer.site .footer-grid.footer-grid-stacked .footer-links,
 footer.site .footer-grid.footer-grid-stacked .brand,
 footer.site .footer-grid.footer-grid-stacked .footer-brand,
 footer.site .footer-grid.footer-grid-stacked .footer-logo {
   margin-left: auto !important;
   margin-right: auto !important;
   justify-content: center !important;
+  align-items: center !important;
+}
+
+footer.site .footer-grid.footer-grid-stacked ul {
+  padding-left: 0 !important;
+}
+
+footer.site .footer-grid.footer-grid-stacked li {
+  text-align: center !important;
+}
+
+footer.site .footer-grid.footer-grid-stacked .footer-disclaimer.footer-disclaimer-mobile-slot {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 @media (max-width: 820px) {
-  /* Preserve the existing mobile menu mechanics while keeping the visible header centered. */
+  /* Preserve menu mechanics while keeping the visible header centered. */
   header.site .nav-links,
   .site-header .nav-links,
   .site-nav .nav-links {
-    text-align: center;
+    text-align: center !important;
   }
 
   footer.site .footer-grid.footer-grid-stacked .footer-disclaimer.footer-disclaimer-mobile-slot {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 24px auto !important;
     text-align: center !important;
   }
 }
