@@ -1,115 +1,75 @@
 # The Crew Blueprint
 
-Training and career-readiness content for people entering live event work —
-stagehands, ground hands, and department support crew.
+Training and career-readiness content for people entering live event work — stagehands, ground hands, and department support crew.
 
 ## Live Site
 
-View the live site here (GitHub Pages):
+The accepted public site is served from the repository's canonical `main` branch through the established GitHub Pages path:
 
 **https://thecrewblueprint-glitch.github.io/thecrewblueprint/**
 
+Vercel is not part of the Crew Blueprint deployment path. Vercel mutation authority is restricted to the separate Upnow ecosystem.
+
 ## Purpose
 
-The Crew Blueprint helps new and developing live event workers understand the
-pace, language, safety mindset, and crew expectations behind load-ins, show
-calls, and load-outs — the real-world basics nobody hands you before your
-first call.
+The Crew Blueprint helps new and developing live event workers understand the pace, language, safety mindset, work boundaries, and crew expectations behind load-ins, show calls, and load-outs.
 
-The flagship course, **Stagehand Fundamentals**, retains 10 modules and 34
-micro-lessons while presenting them through four focused parts. It covers what
-a stagehand actually does, safety mindset, PPE, venue and jobsite awareness,
-load-in/load-out fundamentals, crew communication, department basics,
-tools/gear handling, and getting hired and called back. Later curriculum spans
-Department Support, Department Systems, Stagehand Field Skills, Lead,
-Supervisor, Department Course 3 systems, Production Power Awareness, and a
-Production & Coordination career branch. Those later courses remain on the
-public site as clearly labeled, `noindex` owner-review copies while the owner
-audits them. Their presence does not mean practitioner approval, qualification,
-or final learner release.
+The curriculum includes Stagehand Fundamentals plus department, field-skill, leadership, systems, infrastructure, and production/coordination material. Public visibility, owner-review status, archival presence, or inclusion in a comparison build does **not** by itself establish practitioner approval, qualification, job authority, or final learner-release status.
 
-## Structure
+## Current repository architecture
 
-- **Root** (`index.html`, `about.html`, `courses.html`, `resources.html`,
-  `contact.html`, plus legal pages) — the public marketing site.
-- **`/courses`** — Stagehand Fundamentals (four parts, 10 modules, 34 lessons)
-  plus the complete Department, Field Skill, Lead, Supervisor, Advanced
-  Systems, Infrastructure, and Production/Coordination owner-review catalog.
-- **`/resources`** — the Resource Hub: fast-facts reference pages (gear and
-  tools, load-in/load-out quick reference, field hand-signal guide, pay and
-  call-sheet basics, and more).
-- **`/research`** — the source library backing the course content: real
-  research packets, curriculum drafts, and citation-validation packages
-  (OSHA regulations, ANSI/ISEA standards, IATSE local rules, industry and
-  manufacturer documentation) that every course's "Sources" section points
-  back to. See `research/README.md` for the full manifest and how the
-  packages relate to each other.
-- **`/design`** — design-system and content-graphics planning docs.
-- **`/css`** — the shared site stylesheet (`theme.css`) — dark/gold design
-  system, shared component classes (cards, panels, diagrams, icon rows).
-- **`/images`**, **`/js`** — site assets and the shared nav/interaction script.
-- **`/scripts`** — structured curriculum records plus the deterministic builder,
-  owner-review preparation, publication-boundary, and validation scripts.
-- **`lms-dashboard.html`** — the four-part Stagehand Fundamentals course map.
+The repository now carries both the accepted learner/site surface and a permanent version-retention/review system. Current major surfaces include:
 
-See `research/EXPANDED_CURRICULUM_BUILD_REGISTER_2026-08-30.md` for the full
-course-to-packet, tier, route, assessment, and release-gate map. Remaining
-evidence work is listed in
-`research/EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md`.
+- **Root public site** — accepted marketing, legal, navigation, and learner-facing entry pages.
+- **`/courses`** — current course routes and learner-facing curriculum surfaces.
+- **`/resources`** — Resource Hub and quick-reference material.
+- **`/research`** — evidence/source packages, research matrix material, curriculum research queues, citation validation, and supporting authority records.
+- **`/scripts`** — deterministic curriculum builders, validators, archive/version materialization logic, comparison preparation, and publication-boundary tooling.
+- **`/content/archive`** — permanent historical/version retention, including verbatim course-version captures, manifests, branch/version summaries, comparison metadata, and review-support datasets. Archive material preserves evidence; it does not automatically become the current learner version.
+- **`/lab/clean-sheet-v1`** — isolated clean-sheet learning-lab implementation used for controlled review/experimentation. Its presence does not make it the accepted live learner system.
+- **`.github/workflows/`** — validation and controlled export/materialization workflows, including clean-sheet validation and interactive/version snapshot support.
+- **`/design`, `/css`, `/images`, `/js`** — design system, presentation assets, and shared interaction/runtime support.
 
-## Owner-Review Publication State
+Read repository-local manifests and validation scripts for exact current inventory rather than relying on old hard-coded route/course counts in this README.
 
-All 57 top-level course routes are accessible from the public GitHub Pages
-site. Stagehand Fundamentals and its ten module routes retain their existing
-learner state. The 46 post-Fundamentals routes are public audit copies marked
-`Owner Review · Public Audit Copy` and carry `noindex,follow` metadata while
-the owner reviews them. Public visibility does not grant job authority,
-qualification, practitioner approval, or final learner-release status.
+## Version and preservation model
 
-The pre-publication review checkpoint remains preserved on
-`curriculum/owner-audit-2026-08-30`. To regenerate and prepare the tiered pages
-for the current public owner-review state, run:
+The repository follows a no-silent-loss preservation rule:
 
-```bash
-node scripts/build-tiered-courses.mjs --owner-review-live
-node scripts/apply-owner-review-live.mjs
-node scripts/validate-fundamentals-sequence.mjs
-node scripts/validate-tiered-courses.mjs
-node scripts/validate-owner-review-live.mjs
-node scripts/test-course-consent.mjs
-node scripts/validate-course-consent.mjs
-node scripts/validate-legal-reconciliation.mjs
-```
+1. accepted Git history remains durable evidence;
+2. superseded curriculum/version material is retained through the archive/version system where the current architecture requires explicit materialization;
+3. comparison, vNext, clean-sheet, or review copies remain distinguishable from accepted learner state;
+4. course content parity across presentation variants is governed separately from CSS/layout experimentation;
+5. deletion or slimming must not be inferred from a redesign or version transition.
 
-The previous content-free publication lock remains available as a reversible
-rollback:
+The version/archive system now includes a course-version registry, diff/review manifests, verbatim version captures, and isolated current-versus-proposed review surfaces. Use those records for version archaeology and comparison instead of treating the README as a version manifest.
 
-```bash
-node scripts/apply-publication-locks.mjs
-node scripts/validate-publication-locks.mjs
-```
+## Publication and owner-review boundary
 
-`_config.yml` keeps research, curriculum data modules, build scripts, and
-archived course snapshots out of the generated GitHub Pages site. The shared
-tiered-course CSS and JavaScript are published because the live review pages
-depend on them.
+Crew Blueprint is in an active build phase with a bounded owner live-review exception for directly visible site content. That exception does **not** extend to data/schema architecture, build/validation pipelines, admission/security/governance logic, or structural repository documentation that the owner cannot audit simply by viewing the rendered site.
 
-## Content Sourcing
+For learner/review pages, publication labels, `noindex` behavior where applicable, safety/qualification boundaries, legal statements, and repository-local validation requirements must remain accurate. Public visibility never grants occupational authorization or qualification.
 
-Stagehand Fundamentals and each live owner-review course map
-their instructional claims to real, checkable material — government
-regulations, standards bodies, union locals, and manufacturer documentation —
-rather than presenting Crew Blueprint's own framing as an industry standard.
-Where a claim is local, employer-specific, or a Crew Blueprint convention, the
-course says so directly. See `/research` for the evidence trail.
+## Content sourcing
+
+Instructional claims are mapped to checkable material such as government regulations, standards bodies, union/local rules where relevant, manufacturer documentation, and other scoped authorities. Crew Blueprint framing must not be presented as an external industry standard when it is a local convention, interpretation, or training choice.
+
+The `/research` area is the evidence trail. Exact source status, research queues, qualified-person boundaries, practitioner-review requirements, and release gates should be read from current research/matrix/build records rather than reconstructed from historical README prose.
+
+## Deterministic validation
+
+Before structural or generated curriculum changes are treated as complete, use the validators/build scripts applicable to the changed surface. The repository now contains multiple targeted validation paths for fundamentals, tiered curriculum, owner-review/publication state, legal reconciliation, consent/progress preservation, version/archive integrity, and clean-sheet/review artifacts.
+
+Do not assume an old command list in a README is exhaustive; inspect `scripts/`, repository instructions, and workflow definitions for the current validation contract.
+
+## Authority and change control
+
+Read `AGENTS.md` and repository-local instructions before making changes. Source repository evidence is authoritative for Crew Blueprint implementation/content state. Cross-system copies in Supabase, `50yearroadmap`, Roadmapdev, or archival systems do not transfer mutation authority away from this repository.
+
+Structural/documentation/governance changes use the repository's governed change path. The build-phase direct-to-accepted-branch exception is limited to its explicitly defined visible-content scope.
 
 ## Copyright & Use
 
 © 2026 Deadhang Labor LLC. All Rights Reserved.
 
-This repository contains proprietary intellectual property owned by
-Deadhang Labor LLC — website source code, design and layout, branding,
-documentation, and training/course content. No permission is granted to
-copy, reproduce, modify, distribute, or create derivative works from any
-portion of this repository without prior written authorization. See
-`NOTICE.md` and `LICENSE` for full terms.
+This repository contains proprietary intellectual property owned by Deadhang Labor LLC — website source code, design and layout, branding, documentation, and training/course content. No permission is granted to copy, reproduce, modify, distribute, or create derivative works from any portion of this repository without prior written authorization. See `NOTICE.md` and `LICENSE` for full terms.
