@@ -1,0 +1,103 @@
+/* Current public-site centering pass.
+   Scope is intentionally limited to the shared header, each page's intro/hero,
+   and the footer. Downstream page sections keep their existing layout. */
+
+/* Shared top header: center the brand/navigation group without changing controls. */
+header.site .container,
+header.site .nav,
+header.site nav,
+.site-header .container,
+.site-header .nav,
+.site-header nav,
+.site-nav .nav-inner {
+  justify-content: center !important;
+  text-align: center;
+}
+
+header.site .nav,
+.site-header .nav,
+.site-nav .nav-inner {
+  flex-wrap: wrap;
+}
+
+header.site .nav-links,
+.site-header .nav-links,
+.site-nav .nav-links {
+  margin-left: 0 !important;
+  justify-content: center !important;
+}
+
+/* Public page intros only. */
+.hero,
+.page-hero,
+.public-hero,
+.about-hero,
+.catalog-public-hero,
+.field-skills-hero,
+.contact-hero,
+.legal-hero,
+.page-intro,
+.public-page-intro {
+  text-align: center !important;
+}
+
+.hero > p,
+.page-hero > p,
+.public-hero > p,
+.about-hero > p,
+.catalog-public-hero > p,
+.field-skills-hero > p,
+.contact-hero > p,
+.legal-hero > p,
+.page-intro > p,
+.public-page-intro > p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero .actions,
+.hero .hero-actions,
+.page-hero .actions,
+.public-hero .actions,
+.catalog-public-hero .actions,
+.page-intro .actions,
+.public-page-intro .actions {
+  justify-content: center !important;
+}
+
+/* Footer identity, links, and legal items. Keep the disclaimer centered between them. */
+footer.site .footer-grid.footer-grid-stacked > *,
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host,
+footer.site .footer-grid.footer-grid-stacked .footer-stack-legal-boundary {
+  text-align: center !important;
+}
+
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host ul,
+footer.site .footer-grid.footer-grid-stacked .footer-stack-host nav,
+footer.site .footer-grid.footer-grid-stacked .footer-legal,
+footer.site .footer-grid.footer-grid-stacked .footer-links {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+}
+
+footer.site .footer-grid.footer-grid-stacked .brand,
+footer.site .footer-grid.footer-grid-stacked .footer-brand,
+footer.site .footer-grid.footer-grid-stacked .footer-logo {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 820px) {
+  /* Preserve the existing mobile menu mechanics while keeping the visible header centered. */
+  header.site .nav-links,
+  .site-header .nav-links,
+  .site-nav .nav-links {
+    text-align: center;
+  }
+
+  footer.site .footer-grid.footer-grid-stacked .footer-disclaimer.footer-disclaimer-mobile-slot {
+    text-align: center !important;
+  }
+}
