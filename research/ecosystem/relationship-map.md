@@ -2,36 +2,55 @@
 
 **Status:** canonical relationship documentation  
 **Root system:** The Crew Blueprint  
-**Purpose:** define which systems Crew Blueprint is allowed to relate to, what may cross each relationship, and what must remain separate.
+**Purpose:** define how Crew Blueprint, Production Atlas, Roadmapdev, 50yearroadmap and Deadhang relate without collapsing their data domains.
 
-## Direct relationship map
+## Direct map
 
 ```text
 Deadhang Labor LLC
   │
-  │ owns / directs product at owner-governance level
-  │ no commercial-data feed
+  │ owns / directs product
+  │ ownership metadata only — no commercial-data feed
+  ▼
+The Crew Blueprint ───── navigation ─────► Production Atlas
+  │                                         │
+  │ curriculum state                        │ public employment / market evidence
+  ▼                                         ▼
+Roadmapdev ◄────────────────────────────────┘
+  │
+  │ filtered return path:
+  │ educational evidence + normalized competency-demand signals only
   ▼
 The Crew Blueprint
-  ├── links outward to ──► Production Atlas
-  │                        (separate employer / hiring / market product)
-  │
-  ├── reports accepted state to / is governed by ──► 50yearroadmap
-  │
-  └── exchanges admitted learner-domain research/state with ──► Roadmapdev
 
-No direct Crew Blueprint relationship:
-  ✕ marketstrategy
-  ✕ Deadhang commercial operating data
-  ✕ Production Atlas datasets as curriculum evidence
-  ✕ Supabase as a content/source authority
+50yearroadmap ◄──── accepted-state / governance ────► The Crew Blueprint
 ```
 
-## System roles
+## The key bridge
 
-### Deadhang Labor LLC
+Crew Blueprint is allowed to be shaped by the real job market without becoming a copy of the job market.
 
-Deadhang Labor LLC is the owner/parent business of The Crew Blueprint.
+The controlling transformation is:
+
+```text
+public employment / industry evidence
+        ↓
+Roadmapdev normalizes recurring competency demand
+        ↓
+Crew Blueprint decides what deserves curriculum space
+        ↓
+appropriate instructional evidence supports the lesson
+        ↓
+learner-facing course
+```
+
+Examples of normalized competency-demand signals include communication, equipment stewardship, load-in/load-out logistics, department workflow, system reasoning, documentation, troubleshooting/escalation, shop/QC, leadership and safety/authorization boundaries.
+
+Those signals can answer **what is worth teaching**. They cannot by themselves answer **how a learner should perform a technical task**.
+
+## Deadhang Labor LLC → Crew Blueprint
+
+Deadhang Labor LLC is the owner/parent business.
 
 Allowed across this edge:
 
@@ -39,150 +58,96 @@ Allowed across this edge:
 - owner-authorized product direction;
 - minimal legal/governance metadata required to represent ownership.
 
-Not allowed into Crew Blueprint learner content or curriculum research:
+Not allowed into Crew Blueprint curriculum or learner content:
 
 - pricing or margins;
 - financial data;
 - procurement/vendor/client strategy;
 - insurance strategy;
-- market strategy;
-- sourcing methods;
-- operating intelligence;
-- private commercial conclusions.
-
-Ownership does **not** create a business-intelligence data feed.
-
-### The Crew Blueprint
-
-Owns:
-
-- learner-facing curriculum;
-- durable technical/safety education;
-- assessments and progress semantics;
-- technical evidence lineage;
-- learner pathways;
-- publication state.
-
-The active research-led curriculum may supersede earlier presentation/course architecture. Older course bodies remain preserved as historical/reference material rather than being forced to stay identical to the active successor curriculum.
-
-### Production Atlas
-
-Production Atlas is the separate public employer/hiring/market intelligence product.
-
-Crew Blueprint may link a learner to Atlas when they want current work or hiring information.
-
-That link does **not** authorize Crew Blueprint to import or teach from Atlas datasets.
-
-Atlas owns:
-
-- employer profiles;
-- official hiring/application/contact routes;
-- current events and public opportunity context;
-- labor organizations and public labor routes;
-- market geography;
-- event/employer/labor relationships where specifically verified;
-- source freshness and public evidence state.
-
-### Roadmapdev
-
-Roadmapdev is the private research/reconciliation/intelligence plane.
-
-It may compare the entire ecosystem internally, but Crew Blueprint may only admit Roadmapdev material that is explicitly learner-domain educational research and already satisfies Crew Blueprint's source-admission rules.
-
-Roadmapdev material about Deadhang business strategy, Production Atlas hiring/market intelligence, pricing, procurement, clients, vendors, insurance, margins, or competitive strategy does not enter curriculum.
-
-### 50yearroadmap
-
-50yearroadmap is the governance/control plane.
-
-It owns:
-
-- relationship rules;
-- change-control authority;
-- accepted-state continuity;
-- governance metadata and cross-repository boundaries.
-
-## Allowed data flow
-
-### Crew Blueprint → Production Atlas
-
-Navigation only:
-
-- stable URL;
-- stable public learning-path identifier when useful;
-- short public purpose label.
-
-Do not send learner progress, assessment state, personal records, or course bodies.
-
-### Production Atlas → Crew Blueprint
-
-Navigation only:
-
-- stable Atlas URL;
-- public route/role identifier when useful;
-- short navigation label.
-
-Do not import employer, vacancy, hiring, pay, market, labor-route, worker-review, or opportunity datasets into curriculum.
-
-### Crew Blueprint ↔ Roadmapdev
-
-Allowed:
-
-- curriculum-state analysis;
-- evidence-gap analysis;
-- course completeness analysis;
-- learner-domain technical/safety research grounded in admissible sources;
-- provenance and review-state analysis.
-
-Not allowed into Crew Blueprint:
-
-- Deadhang commercial intelligence;
 - marketstrategy research;
-- Production Atlas hiring/market payloads;
-- client/vendor/pricing/insurance/procurement strategy;
-- private competitive intelligence.
+- sourcing methods;
+- internal operating intelligence.
 
-### Crew Blueprint ↔ 50yearroadmap
+Ownership does not create a commercial-data feed.
 
-Allowed:
+## Crew Blueprint → Production Atlas
 
-- governance;
-- accepted-state reporting;
-- provenance;
-- source/authority relationship metadata;
-- closeout/current-state continuity.
+This direct public edge is **navigation**.
 
-## Curriculum source admission
+Crew Blueprint sends a learner to Production Atlas when the learner wants current employers, opportunities, markets, labor organizations, hiring routes or other current work intelligence.
 
-Admissible curriculum evidence includes:
+Do not send learner progress, assessment state, personal records or course bodies.
+
+## Production Atlas → Roadmapdev
+
+Roadmapdev may analyze public Atlas employment/market evidence and other public industry evidence to identify recurring role and competency signals.
+
+Raw Atlas payloads stay in the Atlas/Roadmapdev side of the system. They do not become lesson copy.
+
+Examples of data that must not be projected directly into Crew Blueprint lessons:
+
+- employer lists;
+- vacancies;
+- pay records;
+- market rankings;
+- current opportunity records;
+- labor-route records;
+- worker reviews;
+- personal data.
+
+## Roadmapdev → Crew Blueprint
+
+Allowed after filtering:
+
+- normalized, non-identifying competency-demand signals;
+- curriculum-gap analysis;
+- OSHA and regulatory research;
+- recognized consensus-standard research;
+- manufacturer and technical-documentation research;
+- credential-body and legitimate educational research;
+- learner-domain decision support and provenance.
+
+Not allowed:
+
+- raw Atlas employment payloads;
+- Deadhang business/financial intelligence;
+- marketstrategy procurement/access research;
+- client/vendor/pricing/insurance/competitive strategy.
+
+Mixed packages must be split before Crew Blueprint admission.
+
+## 50yearroadmap ↔ Crew Blueprint
+
+50yearroadmap governs ecosystem authority, repository relationships, change control and accepted-state continuity. Crew Blueprint reports accepted/verified state back for closeout and provenance.
+
+## Instructional evidence
+
+Once a competency is selected for teaching, course claims should use the appropriate authority for that claim, including as applicable:
 
 - OSHA and official regulatory material;
-- statutes, regulations, and official agency guidance;
-- applicable consensus standards, including relevant ANSI/ESTA material, without reproducing copyrighted standards beyond permitted limits;
+- statutes/regulations and official agency guidance;
+- applicable ANSI/ESTA and other recognized consensus standards within copyright limits;
 - manufacturer manuals and technical documentation;
 - credential-body guidance;
 - legitimate technical and educational references;
-- clearly labeled practitioner knowledge when appropriate.
+- clearly labeled practitioner knowledge where appropriate.
 
-Not admissible as curriculum evidence:
+Employer demand is never a substitute for technical or safety authority.
 
-- Production Atlas hiring/employer/pay/market/demand/labor-route/worker-review intelligence;
-- Deadhang private business intelligence;
-- marketstrategy research;
-- mixed research packages that have not been split before admission.
+## Successor curriculum
 
-## Product handoff
+The active Crew Blueprint may use a materially new curriculum architecture. Frozen V2, clean-sheet, historical and archived builds remain preserved as reference/evidence states. They do not have to be rewritten to match the successor curriculum.
 
-The intended public user journey is:
+## Public user journey
 
 ```text
 learn in Crew Blueprint
       ↓
-open Production Atlas for employer/hiring intelligence
+use Production Atlas to understand real work and hiring routes
       ↓
-identify a real employer or labor route
+identify the role or skill direction that matters
       ↓
-return to Crew Blueprint when a learning need is identified
+return to Crew Blueprint for the relevant learning path
 ```
 
-This is a navigation relationship, not a shared public dataset.
+The products work together through navigation and stable relationships, not by collapsing their canonical datasets.
