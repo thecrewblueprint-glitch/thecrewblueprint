@@ -65,15 +65,51 @@ Git identity for commits in this repository remains:
 
 ## Permanent source-domain firewall
 
-Crew Blueprint is for learners. Keep its curriculum and research source base separate from both Deadhang Labor LLC commercial intelligence and Production Atlas employment intelligence.
+Crew Blueprint is for learners. Its curriculum may be **prioritized by job-market demand** without importing the job-market dataset into lessons.
 
-Crew Blueprint may use OSHA and other official regulatory sources, applicable statutes and agency guidance, recognized consensus standards such as ANSI material, manufacturer documentation, legitimate technical references, credential-body guidance, educational sources, and clearly labeled practitioner knowledge when appropriate.
+The controlling transformation is:
 
-Do **not** use Production Atlas employer, vacancy, hiring, pay, market, demand, labor-route, worker-review, or related employment-intelligence data as Crew Blueprint curriculum evidence, learner-pathway logic, assessment evidence, or public course content. Crew Blueprint may link outward to Production Atlas as a separate job-search destination; a link is not data admission.
+`public employment/industry evidence → Roadmapdev normalized competency-demand signal → Crew Blueprint curriculum priority → independent instructional evidence → learner-facing course`
+
+### What employment intelligence may do
+
+Roadmapdev may analyze public Production Atlas and other public employment evidence and reduce it into non-identifying, non-commercial competency-demand signals such as communication, equipment handling, department workflow, documentation, troubleshooting, shop/logistics, leadership, and safety-boundary needs.
+
+Those normalized signals may influence:
+
+- which competencies belong in the curriculum;
+- which learning paths deserve more depth;
+- which advanced pathways should be developed;
+- sequencing and responsibility-depth decisions.
+
+They are **planning evidence**, not instructional authority.
+
+### What employment intelligence may not do
+
+Do not copy or expose Production Atlas employer lists, vacancies, pay, market rankings, labor routes, worker reviews, current opportunities, or other volatile employment records inside Crew Blueprint lesson bodies, assessments, examples, or learner profiles.
+
+Do not treat an employer posting or market trend as technical proof of how a task should be performed. Course claims and instruction must be supported by the appropriate source class: OSHA/official regulatory material, applicable law and agency guidance, recognized consensus standards such as ANSI/ESTA, manufacturer documentation, legitimate technical/educational references, credential-body guidance, or clearly labeled practitioner knowledge.
+
+Crew Blueprint may link outward to Production Atlas as the separate place for current work, employer, market, and labor-route information.
+
+### Deadhang commercial firewall
 
 Do **not** use Deadhang Labor LLC pricing, margins, financials, insurance strategy, vendor/procurement information, client information, business-development research, market strategy, sourcing methods, operating methods, or related commercial intelligence in Crew Blueprint research, examples, course content, assessments, or public copy.
 
-The boundary runs both directions. Crew Blueprint curriculum, standards research, and educational evidence must not be repurposed as an explanation of Deadhang's private business operations or procurement logic. If a Roadmapdev or other research package mixes these domains, split or reject it before use rather than filtering it only at render time.
+The boundary runs both directions. Crew Blueprint curriculum, standards research, and educational evidence must not be repurposed as an explanation of Deadhang's private business operations or procurement logic.
+
+If a Roadmapdev or other package mixes normalized competency demand, educational evidence, raw employment data, or commercial intelligence, split the package before Crew Blueprint admission. Preserve provenance privately; expose only the domain-appropriate material.
+
+## Successor curriculum rule
+
+Historical Crew Blueprint versions are evidence and references, not permanent content-parity targets.
+
+- The current accepted successor build may contain materially new curriculum when the owner authorizes a redesign.
+- Frozen V2, clean-sheet, archived, review, and historical builds remain immutable reference products unless the owner explicitly reopens them.
+- Do **not** rewrite frozen historical versions merely to make them match the current curriculum.
+- Content parity is required only across current surfaces that intentionally render the same canonical successor content.
+- Before materially replacing or retiring current content, preserve the prior body under the repository's historical-retention rules.
+- A new course must trace back to the applicable competency/research/evidence lineage even when its wording and packaging are completely new.
 
 ## Shipping and validation
 
@@ -83,16 +119,15 @@ For structural changes, complete the applicable PR-first validation before integ
 
 After accepted Crew Blueprint changes are verified, route relevant durable state through the current three-plane contract: `50yearroadmap` is the canonical Git closeout/current-state bridge, Supabase stores structured admitted state and provenance, and Roadmapdev consumes that admitted state for intelligence. Automatic closeout/current-state synchronization is distinct from substantive product/governance mutation and cannot manufacture cross-repository write authority.
 
-All builds/versions must carry identical curriculum/course content. Only CSS, layout, and presentation may differ. Never make an independent content change in v1, v2, or another presentation build; validate that affected labels and rendered body content remain aligned across builds.
-
 ## Anti-Robot Course Writing Rule
 
 All course content must be vetted against these constraints. These prevent generic AI-sounding text and preserve practitioner authenticity:
 
 - **Never use:** delve, leverage, robust, optimize, synergy, paradigm shift, circle back, deep dive, best practices, industry-leading, cutting-edge, seamless, empower, unlock, transform, disrupt, scalable, or corporate jargon of any kind.
-- **Zero passive voice:** Write "You coil the cable" not "The cable is coiled." Every sentence should show who does what.
-- **No hedging softeners:** Not "may help" or "could potentially" — either something works or it doesn't. State facts directly.
-- **Speak like a practitioner:** Use real crew language, field terminology, and direct instruction. If it sounds like a LinkedIn post, rewrite it.
+- Prefer active, direct sentences that make the actor and responsibility clear.
+- Avoid empty hedging. State the evidence, boundary, or uncertainty precisely.
+- Speak like a practitioner: use real crew language, field terminology, and direct instruction. If it sounds like a corporate post, rewrite it.
+- Explain both sides of practical readiness: **what makes the worker useful to the crew/employer** and **what keeps the worker inside safe, authorized boundaries**.
 
 ## Paired with 50yearroadmap
 
