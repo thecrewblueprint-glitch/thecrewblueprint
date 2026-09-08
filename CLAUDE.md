@@ -4,94 +4,62 @@ Read this before starting work. These are standing preferences from the owner, n
 
 ## Never use AskUserQuestion (or any multiple-choice/decision-card UI)
 
-Do not use the `AskUserQuestion` tool or structured multiple-choice prompt UI. Converse in plain text. If a decision requires the owner, ask directly in a normal chat message.
+Do not use the `AskUserQuestion` tool or structured multiple-choice prompt UI. Converse in plain text. If a decision genuinely requires the owner, ask directly in a normal chat message.
 
 ## Owner review happens in conversation
 
 The owner does not review pull requests in the GitHub interface and should not be sent PR links as an expected review action. Treat branches and PRs as internal technical audit/continuation containers.
 
-Agents must:
-
-- perform the technical diff, validation, and governance review themselves;
-- explain the material result, consequences, uncertainties, and real owner decisions in plain language in chat;
-- ask the owner for field judgment, direction, approval, or a vibe check only when it genuinely belongs to the owner;
-- never substitute “review this PR” for an understandable conversational handoff.
-
-Owner approval given in conversation may satisfy the owner-review step when the agent has already completed and truthfully reported the technical review. Merge authority remains separate unless the owner grants it or standing governance provides it.
+Agents must perform the technical diff, validation and governance review themselves; explain material results and uncertainties in chat; and never substitute “review this PR” for an understandable handoff.
 
 ## Repository operating model
 
-`AGENTS.md` is the local canonical operating rule for this repository. `main` is accepted state.
+`AGENTS.md` is the local canonical operating rule. `main` is accepted state.
 
-During the current Crew Blueprint build phase, use the same visible-content versus structural-work split recorded in `AGENTS.md` and `50yearroadmap/governance/CHANGE_CONTROL.md`.
+During the current Crew Blueprint build phase, visible directly rendered work may use the validated direct-to-`main` path when owner-directed. Below-the-surface structural work — schemas, pipelines, admission/security, governance and instruction-surface changes — remains PR-first.
 
-### Visible, directly rendered work
-
-Changes the owner can directly inspect on the published site go through the validated direct-to-`main` path. This includes:
-
-- course pages;
-- public copy;
-- front-end structure;
-- styling;
-- directly rendered diagrams and other visible page content.
-
-For direct owner-requested visible work, the request itself authorizes canonical integration unless the owner explicitly asks for a proposal, review-only result, or work-branch-only result. Finish means: make the focused change, run proportionate validation, update `main`, and verify the published GitHub Pages result.
-
-The owner's live review of the published site is the audit step for this category. Keep owner-review badges, `noindex`, disclaimer/boundary language, and other publication-state labels accurate whenever they apply.
-
-### Below-the-surface structural work
-
-Changes the owner cannot directly verify by looking at the rendered site remain PR-first. This includes:
-
-- data/schema architecture;
-- build or validation pipelines;
-- admission/security logic;
-- governance/instruction-surface changes;
-- other structural behavior below the visible site surface.
-
-Use:
-
-**current canonical `main` → dedicated work branch → coherent checkpoint commits → draft PR → technical audit/review → required owner approval → authorized merge → verification/record**
-
-A work branch or PR is proposed state. Opening or updating a PR does not by itself grant merge authority. Preserve meaningful work before an agent workspace can disappear, and never overwrite unexplained predecessor work.
-
-Trivial, emergency, runtime-generated-data, factual-currency, and explicit owner exceptions come from the current `50yearroadmap/governance/CHANGE_CONTROL.md` and repository-local rules.
-
-PR-first governance does not authorize paid CI, metered runners, external validation services, or other cost-incurring automation.
-
-Git identity for commits in this repository remains:
+Git identity for commits remains:
 
 `git -c user.name="Deadhang Labor LLC" -c user.email="thecrewblueprint@gmail.com" commit ...`
 
+## Curriculum generation rule
+
+Do **not** require V1, V2, archived, experimental and future curriculum generations to carry identical lesson bodies.
+
+The repository may have an owner-authorized successor curriculum. Historical curriculum stays preserved verbatim as evidence/reference material. Only presentation variants of the **same accepted curriculum generation** are required to keep content and instructional meaning aligned unless a versioned content change supersedes them.
+
+Never destroy unique older curriculum to simplify the current product. Use `content/archive/README.md` and the archive manifests before retiring or replacing materially distinct bodies.
+
+## Permanent source-domain firewall
+
+Crew Blueprint is for learners.
+
+Admissible curriculum evidence includes applicable OSHA/regulatory material, statutes and official agency guidance, recognized consensus standards such as applicable ANSI material within copyright limits, manufacturer documentation, legitimate technical references, credential-body guidance, educational sources and clearly labeled practitioner knowledge when appropriate.
+
+Do **not** use Production Atlas employer, vacancy, hiring, pay, market, demand, labor-route, worker-review or related employment-intelligence data as Crew Blueprint curriculum evidence or learner-facing course content. Atlas may influence private product-planning questions such as where a broad competency deserves more educational research, but the learner-facing claim must be supported independently by admissible education/technical/safety evidence. Crew Blueprint may link to Atlas as a separate work-search destination.
+
+Do **not** use Deadhang Labor LLC pricing, margins, financials, insurance strategy, vendor/procurement information, client information, business-development research, market strategy, sourcing methods, operating methods or related commercial intelligence in Crew Blueprint research, examples, assessments or public copy.
+
+The boundary runs both directions. Crew Blueprint educational evidence must not be repurposed to expose Deadhang private operations or procurement logic. If a Roadmapdev or other package mixes domains, split or reject it before use rather than filtering it only at render time.
+
 ## Shipping and validation
 
-Every content or diagram change gets link-checked across **all HTML files** with zero broken internal links before it is represented as shipped or ready to ship. Run the repository's other proportionate validators for the affected surface.
+Every content or diagram change gets link-checked across all HTML files with zero broken internal links before it is represented as shipped or ready to ship. Run proportionate validators for the affected surface.
 
-For structural changes, complete the applicable PR-first validation before integration.
-
-After accepted Crew Blueprint changes are verified, route relevant durable state through the current three-plane contract: `50yearroadmap` is the canonical Git closeout/current-state bridge, Supabase stores structured admitted state and provenance, and Roadmapdev consumes that admitted state for intelligence. Automatic closeout/current-state synchronization is distinct from substantive product/governance mutation and cannot manufacture cross-repository write authority.
-
-All builds/versions must carry identical curriculum/course content. Only CSS, layout, and presentation may differ. Never make an independent content change in v1, v2, or another presentation build; validate that affected labels and rendered body content remain aligned across builds.
+After accepted Crew Blueprint changes are verified, route relevant durable state through the current three-plane contract: `50yearroadmap` is the canonical Git closeout/current-state bridge, Supabase stores structured admitted state/provenance, and Roadmapdev consumes admitted state for intelligence. Automatic synchronization cannot manufacture cross-repository write authority.
 
 ## Anti-Robot Course Writing Rule
 
-All course content must be vetted against these constraints. These prevent generic AI-sounding text and preserve practitioner authenticity:
+Course writing should sound like direct practitioner instruction, not corporate copy.
 
-- **Never use:** delve, leverage, robust, optimize, synergy, paradigm shift, circle back, deep dive, best practices, industry-leading, cutting-edge, seamless, empower, unlock, transform, disrupt, scalable, or corporate jargon of any kind.
-- **Zero passive voice:** Write "You coil the cable" not "The cable is coiled." Every sentence should show who does what.
-- **No hedging softeners:** Not "may help" or "could potentially" — either something works or it doesn't. State facts directly.
-- **Speak like a practitioner:** Use real crew language, field terminology, and direct instruction. If it sounds like a LinkedIn post, rewrite it.
+- Avoid generic corporate/AI jargon.
+- Prefer direct active constructions and concrete subjects.
+- State safety and authority boundaries clearly.
+- Use field terminology where appropriate without pretending one employer/site convention is universal.
+- Do not turn awareness material into instructions for controlled or safety-critical work.
 
 ## Paired with 50yearroadmap
 
-This repo is governed by `50yearroadmap`'s `companies/crew-blueprint/` folder and the top-level system governance there.
+This repo is governed by `50yearroadmap`'s `companies/crew-blueprint/` folder and top-level system governance. At the start of substantive work, inspect current `main`, applicable governance and existing branches/PRs before creating duplicate work.
 
-At the start of a substantive session:
-
-1. read `50yearroadmap/AGENT_ORIENTATION.md`;
-2. read `50yearroadmap/governance/CHANGE_CONTROL.md` and `WRITE_ACCESS_PROTOCOL.md`;
-3. read this file and this repository's `AGENTS.md`;
-4. read `50yearroadmap/companies/crew-blueprint/13_sops.md` for Crew Blueprint shipping rules;
-5. inspect current `main` and any existing PR/branch for the task before creating duplicate work.
-
-When wording conflicts, preserve the accepted local Crew Blueprint visible/structural split from `AGENTS.md` and use the newest applicable top-level authority rule for cross-repository tracking. Repository evidence outranks stale copied instructions.
+When wording conflicts, use the newest applicable owner-approved governance and repository evidence rather than stale copied instructions.
