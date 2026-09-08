@@ -12,16 +12,16 @@
 <p>Finishing sign-in&hellip;</p>
 <script>
 window.addEventListener('load', async function () {
-  if (!window.Clerk) { window.location.href = '../index.html'; return; }
+  if (!window.Clerk) { window.location.href = '/'; return; }
   try {
     await window.Clerk.load({ ui: { ClerkUI: window.__internal_ClerkUICtor } });
     await window.Clerk.handleRedirectCallback({
-      signInFallbackRedirectUrl: '../index.html',
-      signUpFallbackRedirectUrl: '../index.html'
+      signInFallbackRedirectUrl: '/',
+      signUpFallbackRedirectUrl: '/'
     });
   } catch (e) {
     console.error('Clerk SSO callback failed', e);
-    window.location.href = '../index.html';
+    window.location.href = '/';
   }
 });
 </script>
