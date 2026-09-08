@@ -1,0 +1,219 @@
+{
+  "version": "testv3-2026-09-08",
+  "evidenceReview": "2026-09-07",
+  "status": "owner-review",
+  "purpose": "Public-safe projection of normalized Roadmapdev labor-market and Crew Blueprint demand-to-content traceability research. Current employer, market, opening, pay and labor-route intelligence remains canonical in Production Atlas.",
+  "metrics": {
+    "demandDomains": 21,
+    "courseUniverse": 143,
+    "hiringChannels": 10,
+    "topLevelOrphanDemandDomains": 0
+  },
+  "coreSignals": [
+    "Communication and cueing",
+    "Equipment identification and handling",
+    "Load-in / load-out logistics",
+    "Safety, stop-work and escalation boundaries",
+    "Troubleshooting and escalation",
+    "Documentation and advance work",
+    "System reasoning",
+    "Client and venue coordination",
+    "Crew coordination and leadership"
+  ],
+  "responsibilityBands": [
+    {"id":"R0","title":"Observer / Training","description":"Supervised learner, internship, work-study, paid training or formal entry route."},
+    {"id":"R1","title":"General Execution","description":"General stagehand, setup, load, strike and event-support execution under direction."},
+    {"id":"R2","title":"Department Execution","description":"Defined department work in audio, lighting, video, staging, wardrobe, backline or adjacent technical roles."},
+    {"id":"R3","title":"Specialist / Advanced Technician","description":"Deeper system knowledge, advanced operation, programming, QC, repair or specialist responsibility."},
+    {"id":"R4","title":"Lead / Supervisor","description":"Crew lead, department lead, lead technician or operations supervision."},
+    {"id":"R5","title":"Project / Production Management","description":"Cross-department planning, accountability, technical direction or project/production management."},
+    {"id":"R6","title":"Director / Multi-site Leadership","description":"Director-level event technology, production or multi-site operational leadership."}
+  ],
+  "channels": [
+    {"id":"stagehand-event-labor","title":"Stagehand & Event Labor Providers","description":"Labor companies, call-based providers and production labor employers supplying event crews."},
+    {"id":"production-avl-rental","title":"Independent Production / AVL / Rental","description":"Production companies and rental houses combining equipment, technical services, shop work and show-site labor."},
+    {"id":"venue-production","title":"Venue-employed Production","description":"Arenas, theaters, convention centers and venues employing or directly managing production personnel."},
+    {"id":"hospitality-convention-av","title":"Hospitality & Convention AV","description":"Hotel, conference and convention AV employers with technician-to-lead and operations pathways."},
+    {"id":"union-overhire","title":"Union / Hiring Hall / Overhire","description":"Local collective-labor, referral, overhire and call-list mechanisms. Rules vary by jurisdiction."},
+    {"id":"institutional-production","title":"Civic / University / Institutional","description":"Municipal, university and institutional event-production departments and supplemental labor systems."},
+    {"id":"broadcast-experiential","title":"Sports / Broadcast / Experiential","description":"Adjacent event-technology channels using camera, AV, installation, show-site and experiential production roles."},
+    {"id":"shop-logistics","title":"Shop / Warehouse / QC / Logistics","description":"Persistent employment in inventory, prep, QC, repair, shipping, receiving, fleet and dock operations."},
+    {"id":"specialist-management","title":"Specialist / Lead / Management","description":"Advanced technical, department leadership, production coordination and operational management roles."},
+    {"id":"paid-entry","title":"Paid Entry / Training / Call List","description":"Internships, apprenticeships, paid training, work-study, overhire and evergreen entry pools."}
+  ],
+  "contexts": [
+    "Touring / festival",
+    "Arena / stadium",
+    "Theatre / performing arts",
+    "Corporate / convention",
+    "Broadcast / sports",
+    "Venue / house",
+    "Rental shop / warehouse",
+    "Outdoor / public event",
+    "Institutional / university / civic"
+  ],
+  "pathways": [
+    {
+      "id": "general-production",
+      "title": "General Production",
+      "eyebrow": "Broadest entry lane",
+      "summary": "Build the shared habits employers repeatedly expect in stagehand, loader, setup/strike and general production-technician work.",
+      "roleFamilies": ["Stagehand", "Loader / event labor", "Setup & strike crew", "Production technician"],
+      "bands": ["R0", "R1", "R2"],
+      "signals": ["General stage workflow", "Communication and cueing", "Equipment handling", "Load-in / load-out logistics", "Safety and escalation boundaries"],
+      "coverage": "aligned",
+      "coverageLabel": "Demand → research → content aligned",
+      "courses": [
+        {"label":"Stagehand Fundamentals","href":"courses/stagehand-fundamentals.html"},
+        {"label":"Field Skills & full course map","href":"courses.html#field-skills"}
+      ],
+      "workNote": "Observed across labor providers, venues, unions/overhire, institutions, production companies and event-service employers."
+    },
+    {
+      "id": "lighting",
+      "title": "Lighting",
+      "eyebrow": "Department lane",
+      "summary": "Move from assigned lighting support toward system reasoning, control awareness, troubleshooting and leadership without confusing learning with authorization.",
+      "roleFamilies": ["Lighting technician", "Followspot operator", "Lighting programmer", "Lighting lead"],
+      "bands": ["R2", "R3", "R4"],
+      "signals": ["Lighting workflow", "Equipment handling", "Control/network awareness", "System reasoning", "Troubleshooting", "Power-boundary awareness"],
+      "coverage": "aligned",
+      "coverageLabel": "Deep multi-tier coverage",
+      "courses": [
+        {"label":"Supporting a Lighting Hang","href":"courses/pathway-lighting-01-support.html"},
+        {"label":"Lighting Production Flow","href":"courses/pathway-lighting-02-production-flow.html"},
+        {"label":"Lighting leadership","href":"courses/lead-lighting.html"}
+      ],
+      "workNote": "Recurring in production/rental, venue, hospitality AV, touring/festival, institutional and specialist employer channels."
+    },
+    {
+      "id": "audio",
+      "title": "Audio",
+      "eyebrow": "Department lane",
+      "summary": "Connect audio support work to signal-flow reasoning, communication, networking, troubleshooting and the deeper responsibility expected of advanced technicians and leads.",
+      "roleFamilies": ["Audio technician", "A2 / RF / comms support", "Audio engineer / mixer", "Audio lead"],
+      "bands": ["R2", "R3", "R4"],
+      "signals": ["Audio workflow", "Signal flow", "Communication", "Digital/network awareness", "Troubleshooting", "Documentation"],
+      "coverage": "partial",
+      "coverageLabel": "Strong coverage; depth still being reconciled",
+      "courses": [
+        {"label":"Audio Support","href":"courses/pathway-audio-01-support.html"},
+        {"label":"Live Audio Systems","href":"courses/pathway-audio-02-live-systems.html"},
+        {"label":"Audio leadership","href":"courses/lead-audio.html"}
+      ],
+      "workNote": "Recurring across AVL/rental, hospitality AV, venues, festivals, broadcast-adjacent and specialist technical employers."
+    },
+    {
+      "id": "video-led-av",
+      "title": "Video / LED / AV",
+      "eyebrow": "Department lane",
+      "summary": "Build from video/LED support into signal flow, network/control awareness, playback, troubleshooting and advanced system responsibility.",
+      "roleFamilies": ["Video technician", "LED wall technician", "Camera / broadcast technician", "Playback / media-server technician"],
+      "bands": ["R2", "R3", "R4"],
+      "signals": ["Video / LED / playback workflow", "Signal flow", "Network/control awareness", "Equipment handling", "Troubleshooting", "Playback workflow"],
+      "coverage": "partial",
+      "coverageLabel": "Broad coverage; advanced breadth still being reconciled",
+      "courses": [
+        {"label":"Video Support","href":"courses/pathway-video-01-support.html"},
+        {"label":"LED & Video Systems","href":"courses/pathway-video-02-led-video-systems.html"},
+        {"label":"Video leadership","href":"courses/lead-video.html"}
+      ],
+      "workNote": "Observed across production/rental, hospitality AV, broadcast/sports, venues, festivals and experiential-event employers."
+    },
+    {
+      "id": "staging-scenic",
+      "title": "Staging / Scenic",
+      "eyebrow": "Department lane",
+      "summary": "Connect assigned staging and scenic support to equipment handling, documentation, coordinated movement, troubleshooting and department leadership.",
+      "roleFamilies": ["Staging technician", "Scenic / carpentry support", "Drape / softgoods", "Staging lead"],
+      "bands": ["R2", "R3", "R4"],
+      "signals": ["Staging/scenic workflow", "Equipment handling", "Load logistics", "Communication", "Documentation", "Safety boundaries"],
+      "coverage": "aligned",
+      "coverageLabel": "Broad multi-tier coverage",
+      "courses": [
+        {"label":"Staging & Carpentry Support","href":"courses/pathway-staging-carpentry-01-support.html"},
+        {"label":"Deck Systems","href":"courses/pathway-staging-carpentry-02-deck-systems.html"},
+        {"label":"Staging leadership","href":"courses/lead-staging-carpentry.html"}
+      ],
+      "workNote": "Recurring across stage labor, production/rental, venue, theatrical, festival and experiential-build channels."
+    },
+    {
+      "id": "shop-logistics",
+      "title": "Shop / Warehouse / Logistics",
+      "eyebrow": "Parallel employment lane",
+      "summary": "Treat the rental shop, warehouse, prep/QC, receiving, truck-stage and logistics side of live production as a real career lane—not just backstage support.",
+      "roleFamilies": ["Warehouse / shop", "QC / prep / repair", "Shipping & receiving", "Fleet / logistics"],
+      "bands": ["R1", "R2", "R3", "R4"],
+      "signals": ["Inventory / QC / repair", "Equipment handling", "Load logistics", "Documentation", "Shipping / fleet workflow", "Safety boundaries"],
+      "coverage": "aligned",
+      "coverageLabel": "Explicit employment demand + substantial course family",
+      "courses": [
+        {"label":"Explore shop, logistics & field coverage","href":"courses.html#learning-layers"}
+      ],
+      "workNote": "National research found persistent demand in rental shops, warehouses, logistics/fleet operations and production-company prep environments."
+    },
+    {
+      "id": "backline-props-wardrobe",
+      "title": "Backline / Props / Wardrobe",
+      "eyebrow": "Specialty support lanes",
+      "summary": "Learn the department interfaces, handling, documentation and communication patterns behind three distinct specialty support areas.",
+      "roleFamilies": ["Backline support", "Props support", "Wardrobe / dresser support"],
+      "bands": ["R1", "R2", "R3"],
+      "signals": ["Department workflow", "Equipment/item handling", "Communication", "Documentation", "Inventory/status tracking", "Escalation boundaries"],
+      "coverage": "aligned",
+      "coverageLabel": "Role-specific coverage available",
+      "courses": [
+        {"label":"Backline / Props / Wardrobe Support","href":"courses/pathway-backline-props-wardrobe-01-support.html"},
+        {"label":"Department Systems","href":"courses/pathway-backline-props-wardrobe-02-department-systems.html"}
+      ],
+      "workNote": "Specialty demand varies more by production context than general stagehand work, so role and market evidence should be checked in Production Atlas."
+    },
+    {
+      "id": "leadership",
+      "title": "Crew Lead / Supervisor",
+      "eyebrow": "Responsibility transition",
+      "summary": "The research shows advancement is less about collecting equipment facts and more about owning communication, coordination, documentation, escalation and crew outcomes.",
+      "roleFamilies": ["Crew lead", "Department lead", "Labor lead", "Operations supervisor"],
+      "bands": ["R4", "R5"],
+      "signals": ["Crew coordination", "Communication", "Documentation", "Troubleshooting ownership", "Safety leadership", "Stakeholder coordination"],
+      "coverage": "aligned",
+      "coverageLabel": "Explicit multi-course leadership layer",
+      "courses": [
+        {"label":"Crew Chief Foundations","href":"courses/lead-crew-chief-foundations.html"},
+        {"label":"Event Operations Supervisor","href":"courses/supervisor-event-operations.html"}
+      ],
+      "workNote": "Lead/supervisor signals recur across departments and employer channels, but title wording varies widely."
+    },
+    {
+      "id": "production-management",
+      "title": "Production Coordination / Management",
+      "eyebrow": "Cross-department lane",
+      "summary": "Build the documentation, advance, labor-scheduling, stakeholder and project-accountability layer that appears repeatedly in production-manager and technical-direction roles.",
+      "roleFamilies": ["Production coordinator", "Production manager", "Project manager", "Technical director", "Event operations manager"],
+      "bands": ["R4", "R5", "R6"],
+      "signals": ["Production/project management", "Advance documentation", "Crew coordination", "Stakeholder coordination", "Logistics", "Troubleshooting ownership"],
+      "coverage": "aligned",
+      "coverageLabel": "Substantial management coverage",
+      "courses": [
+        {"label":"Production Coordination Career Branch","href":"courses/production-coordination-career-branch.html"},
+        {"label":"Full leadership and management map","href":"courses.html#learning-layers"}
+      ],
+      "workNote": "Observed in production companies, venues, hospitality AV, institutions and multi-site event-technology organizations."
+    },
+    {
+      "id": "controlled-specialties",
+      "title": "Rigging & Production Power Awareness",
+      "eyebrow": "Qualification boundary",
+      "summary": "Understand role interfaces, vocabulary, hazard boundaries, qualification gates and when work must stay with designated qualified personnel.",
+      "roleFamilies": ["Rigging support interface", "Qualified rigger", "Production-power support interface", "Qualified electrical specialist"],
+      "bands": ["R1", "R2", "R3", "R4"],
+      "signals": ["Boundary awareness", "Communication", "Documentation", "Escalation", "Safety / stop-work boundaries"],
+      "coverage": "boundary-only",
+      "coverageLabel": "Safety / qualification boundary only",
+      "courses": [
+        {"label":"View bounded infrastructure and specialty coverage","href":"courses.html#learning-layers"}
+      ],
+      "workNote": "Employer demand does not grant permission or qualification. Training, employer rules, venue rules, credentials and designated-person authority remain external."
+    }
+  ]
+}
