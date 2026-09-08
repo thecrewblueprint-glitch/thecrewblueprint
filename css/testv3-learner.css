@@ -1,0 +1,61 @@
+/* Test V3 learner-facing refinements. Keeps research/business data out of the public learning surface. */
+
+@media (min-width: 1021px) {
+  .v3-intent-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.v3-status[data-state="ready"] {
+  color: var(--v3-green);
+  border-color: rgba(116, 225, 154, .35);
+  background: rgba(116, 225, 154, .05);
+}
+
+.v3-status[data-state="review"] {
+  color: var(--cb-gold-strong);
+  border-color: var(--cb-gold-border);
+  background: rgba(245, 180, 0, .06);
+}
+
+.v3-status[data-state="boundary"] {
+  color: var(--v3-red);
+  border-color: rgba(255, 138, 116, .35);
+  background: rgba(255, 138, 116, .05);
+}
+
+.v3-learning-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--cb-muted);
+  font-size: .9rem;
+}
+
+.v3-learning-list li { margin: .42rem 0; }
+
+.v3-context-card {
+  min-height: 132px;
+  align-items: flex-start;
+  font-weight: 400;
+}
+
+.v3-context-card strong {
+  display: block;
+  color: var(--cb-text);
+  font-size: 1rem;
+}
+
+.v3-context-card p {
+  margin: 8px 0 0;
+  color: var(--cb-muted);
+  font-size: .87rem;
+  line-height: 1.55;
+}
+
+#learning-state .v3-ecosystem-card { min-height: 220px; }
+
+@media (max-width: 800px) {
+  .v3-intent-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .v3-intent-grid { grid-template-columns: 1fr; }
+}
