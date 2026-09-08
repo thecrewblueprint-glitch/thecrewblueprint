@@ -2,8 +2,6 @@
   'use strict';
 
   const DATA_URL = 'content/testv3-career-pathways.json';
-  const atlasUrl = 'https://atlas.thecrewblueprint.com/';
-
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
@@ -14,52 +12,22 @@
     return node;
   }
 
-  function renderMetrics(data) {
-    const map = [
-      ['demandDomains', 'Recurring employment-demand domains'],
-      ['courseUniverse', 'Mapped course/content universe'],
-      ['hiringChannels', 'Recurring hiring / employer channels'],
-      ['topLevelOrphanDemandDomains', 'Top-level orphan demand domains']
-    ];
-    const root = $('#v3Metrics');
+  function renderSkills(data) {
+    const root = $('#v3Skills');
     if (!root) return;
     root.replaceChildren();
-    map.forEach(([key, label]) => {
-      const item = el('div', 'v3-metric');
-      item.append(el('span', 'v3-metric-value', String(data.metrics[key])));
-      item.append(el('span', 'v3-metric-label', label));
-      root.append(item);
-    });
+    data.coreSkills.forEach(skill => root.append(el('div', 'v3-signal-card', skill)));
   }
 
-  function renderSignals(data) {
-    const root = $('#v3Signals');
+  function renderResponsibility(data) {
+    const root = $('#v3Responsibility');
     if (!root) return;
     root.replaceChildren();
-    data.coreSignals.forEach(signal => root.append(el('div', 'v3-signal-card', signal)));
-  }
-
-  function renderChannels(data) {
-    const root = $('#v3Channels');
-    if (!root) return;
-    root.replaceChildren();
-    data.channels.forEach(channel => {
-      const card = el('article', 'v3-channel-card');
-      card.append(el('h3', '', channel.title));
-      card.append(el('p', '', channel.description));
-      root.append(card);
-    });
-  }
-
-  function renderBands(data) {
-    const root = $('#v3Bands');
-    if (!root) return;
-    root.replaceChildren();
-    data.responsibilityBands.forEach(band => {
+    data.responsibilitySteps.forEach((step, index) => {
       const card = el('article', 'v3-band');
-      card.append(el('div', 'v3-band-id', band.id));
-      card.append(el('h3', '', band.title));
-      card.append(el('p', '', band.description));
+      card.append(el('div', 'v3-band-id', String(index + 1).padStart(2, '0')));
+      card.append(el('h3', '', step.title));
+      card.append(el('p', '', step.description));
       root.append(card);
     });
   }
@@ -68,13 +36,26 @@
     const root = $('#v3Contexts');
     if (!root) return;
     root.replaceChildren();
-    data.contexts.forEach(context => root.append(el('div', 'v3-context-card', context)));
+    data.contexts.forEach(context => {
+      const card = el('article', 'v3-context-card');
+      const copy = el('div');
+      copy.append(el('strong', '', context.title));
+      copy.append(el('p', '', context.description));
+      card.append(copy);
+      root.append(card);
+    });
   }
 
   function chips(items) {
     const row = el('div', 'v3-chip-row');
     items.forEach(item => row.append(el('span', 'v3-chip', item)));
     return row;
+  }
+
+  function list(items) {
+    const ul = el('ul', 'v3-learning-list');
+    items.forEach(item => ul.append(el('li', '', item)));
+    return ul;
   }
 
   function detailBlock(title, contentNode) {
@@ -98,9 +79,8 @@
     root.append(status);
 
     const grid = el('div', 'v3-detail-grid');
-    grid.append(detailBlock('Observed role families', chips(pathway.roleFamilies)));
-    grid.append(detailBlock('Observed responsibility bands', chips(pathway.bands)));
-    grid.append(detailBlock('Recurring employer signals', chips(pathway.signals)));
+    grid.append(detailBlock('What you will build', list(pathway.outcomes)));
+    grid.append(detailBlock('Where this learning can go next', chips(pathway.nextSteps)));
 
     const courseLinks = el('div', 'v3-course-links');
     pathway.courses.forEach(course => {
@@ -108,21 +88,19 @@
       link.href = course.href;
       courseLinks.append(link);
     });
-    grid.append(detailBlock('Mapped learning', courseLinks));
+    grid.append(detailBlock('Start learning', courseLinks));
     root.append(grid);
 
-    const workNote = el('div', 'v3-work-note');
-    workNote.append(document.createTextNode(pathway.workNote + ' '));
-    const atlas = el('a', '', 'Check current work intelligence in Production Atlas →');
-    atlas.href = atlasUrl;
-    workNote.append(atlas);
-    root.append(workNote);
+    const boundary = el('div', 'v3-work-note');
+    boundary.append(el('strong', '', 'Learning boundary: '));
+    boundary.append(document.createTextNode(pathway.boundaryNote));
+    root.append(boundary);
   }
 
   function renderPathways(data) {
-    const list = $('#v3PathList');
-    if (!list) return;
-    list.replaceChildren();
+    const listRoot = $('#v3PathList');
+    if (!listRoot) return;
+    listRoot.replaceChildren();
 
     data.pathways.forEach((pathway, index) => {
       const button = el('button', 'v3-path-button');
@@ -132,11 +110,11 @@
       button.append(el('span', '', pathway.eyebrow));
       button.append(el('strong', '', pathway.title));
       button.addEventListener('click', () => selectPathway(pathway.id, data));
-      list.append(button);
+      listRoot.append(button);
     });
 
     renderPathDetail(data.pathways[0]);
-    const first = $('.v3-path-button', list);
+    const first = $('.v3-path-button', listRoot);
     if (first) first.classList.add('is-active');
   }
 
@@ -160,15 +138,13 @@
       new: 'general-production',
       call: 'general-production',
       department: 'lighting',
-      grow: 'leadership'
+      specialize: 'audio',
+      grow: 'leadership',
+      manage: 'production-management'
     };
 
     $$('.v3-intent').forEach(button => {
       button.addEventListener('click', () => {
-        if (button.dataset.intent === 'work') {
-          window.location.href = atlasUrl;
-          return;
-        }
         const id = mapping[button.dataset.intent] || 'general-production';
         selectPathway(id, data);
         const paths = $('#pathways');
@@ -191,13 +167,9 @@
 
   function showLoadFailure() {
     const root = $('#v3PathList');
-    if (root) {
-      root.innerHTML = '<p class="v3-loading">The evidence layer did not load. Use the full course catalog while this Test V3 review surface is being checked.</p>';
-    }
+    if (root) root.innerHTML = '<p class="v3-loading">The pathway view did not load. Use the full course map instead.</p>';
     const detail = $('#v3PathDetail');
-    if (detail) {
-      detail.innerHTML = '<p class="v3-loading"><a href="courses.html">Open the full course catalog →</a></p>';
-    }
+    if (detail) detail.innerHTML = '<p class="v3-loading"><a href="courses.html">Open the full course map →</a></p>';
   }
 
   async function init() {
@@ -206,15 +178,13 @@
       const response = await fetch(DATA_URL, { cache: 'no-store' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
-      renderMetrics(data);
-      renderSignals(data);
-      renderChannels(data);
-      renderBands(data);
+      renderSkills(data);
+      renderResponsibility(data);
       renderContexts(data);
       renderPathways(data);
       wireIntentButtons(data);
     } catch (error) {
-      console.error('Test V3 data load failed:', error);
+      console.error('Test V3 pathway data load failed:', error);
       showLoadFailure();
     }
   }
