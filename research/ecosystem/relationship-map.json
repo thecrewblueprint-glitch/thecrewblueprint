@@ -1,283 +1,214 @@
 {
-  "schema_version": "1.0.0",
-  "map_id": "crew-blueprint-ecosystem-utilization-map",
-  "purpose": "Machine-readable relationship map describing how Crew Blueprint may retrieve and use Roadmapdev and Production Atlas information while preserving source authority and provenance.",
+  "schema_version": "2.0.0",
+  "map_id": "crew-blueprint-ecosystem-boundary-map",
+  "purpose": "Canonical direct-relationship map for The Crew Blueprint. Crew Blueprint has only three direct outward relationships: Production Atlas, 50yearroadmap, and Roadmapdev. No Deadhang Labor, marketstrategy, Supabase, or other repository/system is a direct Crew Blueprint dependency or learner-content source.",
+  "scope": {
+    "root_system": "thecrewblueprint",
+    "direct_outbound_targets": [
+      "production-atlas",
+      "50yearroadmap",
+      "roadmapdev"
+    ],
+    "prohibited_direct_targets": [
+      "deadhang-labor",
+      "marketstrategy",
+      "supabase-roadmap",
+      "other-business-or-market-intelligence-systems"
+    ]
+  },
   "systems": [
     {
       "id": "thecrewblueprint",
       "repository": "thecrewblueprint-glitch/thecrewblueprint",
       "canonical_ref": "main",
+      "role": "learner education and curriculum",
       "authority": [
         "curriculum",
         "learner-facing content",
         "site implementation",
-        "research matrix",
+        "course evidence lineage",
         "course publication state"
-      ]
-    },
-    {
-      "id": "roadmapdev",
-      "repository": "thecrewblueprint-glitch/Roadmapdev",
-      "canonical_ref": "main",
-      "authority": [
-        "systems intelligence",
-        "evidence analysis",
-        "decision analysis",
-        "gap prioritization",
-        "cross-system source registry"
       ]
     },
     {
       "id": "production-atlas",
       "repository": "thecrewblueprint-glitch/festival-atlas",
-      "canonical_ref": "research-version",
+      "role": "separate employment and hiring intelligence destination",
       "authority": [
-        "current production-industry context",
-        "employer and vendor landscape",
-        "production branch taxonomy",
-        "IATSE organization and local directory data",
-        "festival and opportunity intelligence",
-        "market and work-cycle research"
+        "employer intelligence",
+        "vacancy and hiring intelligence",
+        "market and labor-route intelligence",
+        "current industry opportunity intelligence"
       ]
     },
     {
       "id": "50yearroadmap",
       "repository": "thecrewblueprint-glitch/50yearroadmap",
       "canonical_ref": "main",
+      "role": "ecosystem governance and accepted-state continuity",
       "authority": [
         "ecosystem governance",
         "repository relationships",
+        "change-control authority",
         "accepted current-state continuity"
       ]
     },
     {
-      "id": "supabase-roadmap",
-      "locator": "supabase:Roadmap:yfyrxuihvmmdkizyloyh",
+      "id": "roadmapdev",
+      "repository": "thecrewblueprint-glitch/Roadmapdev",
+      "canonical_ref": "main",
+      "role": "intelligence and research engine",
       "authority": [
-        "structured durable state",
-        "provenance",
-        "accepted synchronization frontier"
+        "systems intelligence",
+        "learner-domain evidence analysis",
+        "gap analysis",
+        "decision analysis",
+        "cross-system provenance"
+      ],
+      "crew_blueprint_ingress_rule": "Only learner-domain research grounded in admissible educational sources may flow from Roadmapdev into Crew Blueprint. Hiring/market intelligence, Deadhang business intelligence, procurement research, pricing, financial, competitive, client, vendor, or operating-strategy research is prohibited from Crew Blueprint ingress."
+    }
+  ],
+  "direct_relations": [
+    {
+      "from": "thecrewblueprint",
+      "to": "production-atlas",
+      "relation": "links_to",
+      "direction": "outbound_only",
+      "channel": "human_navigation",
+      "allowed_use": [
+        "send a learner to a separate job-search or hiring-information destination"
+      ],
+      "data_flow_into_crew_blueprint": false,
+      "prohibited_use": [
+        "copy Atlas data into Crew Blueprint",
+        "use Atlas data as curriculum evidence",
+        "use Atlas hiring or market data to shape course claims or assessments",
+        "embed employer, pay, vacancy, market, labor-route, worker-review, or demand datasets in Crew Blueprint",
+        "treat Atlas as a Crew Blueprint research dependency"
       ]
-    }
-  ],
-  "resources": [
-    {
-      "id": "cbp-evidence-matrix",
-      "system": "thecrewblueprint",
-      "locator": "research/matrix/README.md",
-      "kind": "evidence_graph_entrypoint",
-      "use": ["claim tracing", "citation tracing", "competency mapping", "review state", "assessment lineage"]
     },
     {
-      "id": "cbp-source-master-map",
-      "system": "thecrewblueprint",
-      "locator": "research/02-source-master-map.md",
-      "kind": "source_manifest",
-      "use": ["research source discovery", "citation discovery", "source-package navigation"]
-    },
-    {
-      "id": "rd-source-registry",
-      "system": "roadmapdev",
-      "locator": "data/source-registry.json",
-      "kind": "machine_readable_source_registry",
-      "use": ["repository discovery", "source-role discovery", "access-boundary discovery"]
-    },
-    {
-      "id": "rd-authority-map",
-      "system": "roadmapdev",
-      "locator": "data/authority-map.json",
-      "kind": "machine_readable_authority_map",
-      "use": ["canonical-ref discovery", "authority resolution", "conflict handling"]
-    },
-    {
-      "id": "rd-client-discovery",
-      "system": "roadmapdev",
-      "locator": "research/crew-blueprint-client-discovery-packet-2026-09-06.md",
-      "kind": "audience_needs_research",
-      "use": ["course audit", "product positioning", "course sequencing", "client discovery"]
-    },
-    {
-      "id": "rd-publication-analysis",
-      "system": "roadmapdev",
-      "locator": "decision/reports/crew-blueprint-publication-state-2026-09-05.json",
-      "kind": "decision_analysis",
-      "use": ["publication architecture", "review-state comparison"]
-    },
-    {
-      "id": "pa-production-branches",
-      "system": "production-atlas",
-      "locator": "data/packages/production-branches.js",
-      "kind": "industry_taxonomy",
-      "use": ["department taxonomy", "career-map context", "department-interface context"]
-    },
-    {
-      "id": "pa-us-employers",
-      "system": "production-atlas",
-      "locator": "data/packages/us-employers.js",
-      "kind": "current_industry_dataset",
-      "use": ["employer-family context", "career-route context"]
-    },
-    {
-      "id": "pa-iatse-organization",
-      "system": "production-atlas",
-      "locator": "data/iatse-organization-info.js",
-      "kind": "industry_organization_dataset",
-      "use": ["union-awareness context", "craft-family context"]
-    },
-    {
-      "id": "pa-iatse-local-directory",
-      "system": "production-atlas",
-      "locator": "data/iatse-us-local-directory.js",
-      "kind": "current_directory_dataset",
-      "use": ["current local/jurisdiction lookup", "career-route context"]
-    },
-    {
-      "id": "pa-branch-research-manifest",
-      "system": "production-atlas",
-      "locator": "data/packages/branch-research-manifest.js",
-      "kind": "research_manifest",
-      "use": ["department research discovery", "branch coverage discovery"]
-    },
-    {
-      "id": "pa-employer-landscape",
-      "system": "production-atlas",
-      "locator": "research/employer-landscape-market-analysis.md",
-      "kind": "market_research",
-      "use": ["career context", "employer-type context", "industry structure"]
-    },
-    {
-      "id": "pa-festival-employer-map",
-      "system": "production-atlas",
-      "locator": "research/festival-employer-landscape-map.md",
-      "kind": "relationship_research",
-      "use": ["producer/vendor/labor/venue distinction", "industry relationship literacy"]
-    },
-    {
-      "id": "pa-gig-scouting-model",
-      "system": "production-atlas",
-      "locator": "research/long-term-gig-scouting-model.md",
-      "kind": "career_market_research",
-      "use": ["seasonality context", "work-source diversity", "career durability"]
-    }
-  ],
-  "relations": [
-    {
-      "from": "rd-client-discovery",
-      "to": "cbp-evidence-matrix",
-      "relation": "audit_input_for",
-      "allowed_use": "audience-need overlay for owner-led course audit",
-      "prohibited_inference": "does not establish technical, legal, safety, or qualification authority"
-    },
-    {
-      "from": "rd-publication-analysis",
+      "from": "50yearroadmap",
       "to": "thecrewblueprint",
-      "relation": "advises",
-      "allowed_use": "compare publication/review architectures",
-      "prohibited_inference": "does not override owner-approved publication state"
-    },
-    {
-      "from": "pa-production-branches",
-      "to": "cbp-evidence-matrix",
-      "relation": "taxonomy_context_for",
-      "allowed_use": "department and career taxonomy crosswalk",
-      "prohibited_inference": "does not create learner authority or course completion"
-    },
-    {
-      "from": "pa-us-employers",
-      "to": "thecrewblueprint",
-      "relation": "career_context_for",
-      "allowed_use": "describe employer families and where skills may appear",
-      "prohibited_inference": "no employment guarantee, endorsement, referral, or static-copy freshness assumption"
-    },
-    {
-      "from": "pa-iatse-organization",
-      "to": "thecrewblueprint",
-      "relation": "career_context_for",
-      "allowed_use": "explain union/craft organization at a durable conceptual level",
-      "prohibited_inference": "do not universalize one local's rules or hiring process"
-    },
-    {
-      "from": "pa-iatse-local-directory",
-      "to": "thecrewblueprint",
-      "relation": "current_lookup_for",
-      "allowed_use": "route learners or agents to current local/jurisdiction research",
-      "prohibited_inference": "do not copy volatile directory state into static curriculum unless explicitly approved"
-    },
-    {
-      "from": "pa-branch-research-manifest",
-      "to": "cbp-evidence-matrix",
-      "relation": "gap_detection_input_for",
-      "allowed_use": "identify production branches, interfaces, terminology, and career-context gaps",
-      "prohibited_inference": "does not substitute for claim-level primary authority"
-    },
-    {
-      "from": "pa-employer-landscape",
-      "to": "thecrewblueprint",
-      "relation": "industry_structure_context_for",
-      "allowed_use": "explain labor-provider/vendor/producer/venue distinctions",
-      "prohibited_inference": "do not treat market research as certification, safety, or employment authority"
-    },
-    {
-      "from": "pa-festival-employer-map",
-      "to": "thecrewblueprint",
-      "relation": "relationship_context_for",
-      "allowed_use": "explain who may produce, hire, supply, manage, or host live-event work",
-      "prohibited_inference": "do not imply one universal contracting/hiring structure"
-    },
-    {
-      "from": "pa-gig-scouting-model",
-      "to": "thecrewblueprint",
-      "relation": "career_planning_context_for",
-      "allowed_use": "teach durable concepts around seasonality, multiple work sources and reputation",
-      "prohibited_inference": "do not promise income or availability"
+      "relation": "governs",
+      "direction": "inbound_governance",
+      "channel": "governance",
+      "allowed_use": [
+        "change control",
+        "authority resolution",
+        "ecosystem boundary enforcement",
+        "accepted-state rules"
+      ]
     },
     {
       "from": "thecrewblueprint",
       "to": "50yearroadmap",
       "relation": "reports_accepted_state_to",
-      "allowed_use": "ecosystem continuity after accepted and verified changes"
+      "direction": "outbound_internal",
+      "channel": "governance_state",
+      "allowed_use": [
+        "accepted-state continuity",
+        "closeout metadata",
+        "provenance and repository relationship state"
+      ],
+      "prohibited_use": [
+        "export private learner data",
+        "collapse curriculum into business intelligence"
+      ]
     },
     {
-      "from": "50yearroadmap",
-      "to": "supabase-roadmap",
-      "relation": "projects_structured_state_to",
-      "allowed_use": "durable structured state, provenance and frontier synchronization"
-    },
-    {
-      "from": "supabase-roadmap",
+      "from": "thecrewblueprint",
       "to": "roadmapdev",
-      "relation": "supplies_admitted_state_to",
-      "allowed_use": "systems intelligence and evidence analysis"
+      "relation": "supplies_admitted_learner_state_to",
+      "direction": "outbound_internal",
+      "channel": "intelligence",
+      "allowed_use": [
+        "course-state analysis",
+        "evidence-gap analysis",
+        "curriculum completeness analysis",
+        "publication/review analysis",
+        "learner-domain systems intelligence"
+      ],
+      "prohibited_use": [
+        "turn Crew Blueprint into Deadhang business intelligence",
+        "merge learner data with private commercial strategy"
+      ]
+    },
+    {
+      "from": "roadmapdev",
+      "to": "thecrewblueprint",
+      "relation": "returns_admissible_learner_research_to",
+      "direction": "inbound_internal_filtered",
+      "channel": "research",
+      "allowed_use": [
+        "OSHA and regulatory research",
+        "recognized consensus-standard research",
+        "manufacturer and technical-documentation research",
+        "credential-body and legitimate educational research",
+        "learner-domain gap analysis based only on admissible educational evidence"
+      ],
+      "admission_gate": "Must satisfy AGENTS.md section 4.0 Permanent source-domain firewall before use.",
+      "prohibited_use": [
+        "Atlas hiring or market intelligence",
+        "Deadhang business or financial intelligence",
+        "marketstrategy procurement or access research",
+        "employer pay or vacancy intelligence",
+        "client/vendor/pricing/insurance/procurement/competitive strategy"
+      ]
     }
   ],
+  "non_relations": [
+    {
+      "system": "deadhang-labor",
+      "rule": "No direct Crew Blueprint relationship. Deadhang private/commercial information is outside the Crew Blueprint source graph."
+    },
+    {
+      "system": "marketstrategy",
+      "rule": "No direct Crew Blueprint relationship. Marketstrategy research cannot enter Crew Blueprint curriculum or learner-facing research."
+    },
+    {
+      "system": "supabase-roadmap",
+      "rule": "Not a direct Crew Blueprint edge. Any durable-state synchronization is infrastructure behind the governed 50yearroadmap/Roadmapdev contract and does not create a new content-source relationship."
+    }
+  ],
+  "source_admission": {
+    "allowed": [
+      "official OSHA and regulatory material",
+      "statutes, regulations, and official agency guidance",
+      "recognized consensus standards, including applicable ANSI material",
+      "manufacturer manuals, technical bulletins, and model-specific documentation",
+      "credential-body guidance",
+      "legitimate technical and educational references",
+      "clearly labeled practitioner knowledge when appropriate and when no stronger source exists"
+    ],
+    "prohibited": [
+      "Production Atlas hiring/employer/pay/market/demand/labor-route/worker-review intelligence",
+      "Deadhang Labor LLC business/financial/procurement/vendor/client/pricing/insurance/market-strategy/operating intelligence",
+      "marketstrategy repository research",
+      "mixed packages that have not been split before admission"
+    ]
+  },
   "agent_navigation": {
-    "course_claim_question": [
+    "course_claim_or_learning_question": [
       "thecrewblueprint:research/agent-retrieval-manifest.json",
       "thecrewblueprint:research/matrix/course_inventory.jsonl",
       "thecrewblueprint:research/matrix/content*.jsonl",
       "thecrewblueprint:research/matrix/support_edges*.jsonl",
       "thecrewblueprint:research/matrix/sources*.jsonl",
-      "thecrewblueprint:research/matrix/reviews*.jsonl"
+      "thecrewblueprint:research/matrix/reviews*.jsonl",
+      "roadmapdev:learner-domain research only after source-domain admission check"
     ],
-    "career_or_industry_context_question": [
-      "thecrewblueprint:research/agent-retrieval-manifest.json",
-      "production-atlas:data/packages/production-branches.js",
-      "production-atlas:data/packages/us-employers.js",
-      "production-atlas:data/iatse-organization-info.js",
-      "production-atlas:data/iatse-us-local-directory.js",
-      "production-atlas:data/packages/branch-research-manifest.js"
+    "job_hiring_or_market_question": [
+      "production-atlas:external destination only"
+    ],
+    "governance_or_authority_question": [
+      "50yearroadmap:governance and accepted-state authority"
     ],
     "what_should_we_build_or_fix_next": [
       "thecrewblueprint:research/agent-retrieval-manifest.json",
       "thecrewblueprint:research/matrix/views/domain-completeness.md",
       "thecrewblueprint:research/matrix/views/unsupported.md",
-      "roadmapdev:research/crew-blueprint-client-discovery-packet-2026-09-06.md",
-      "roadmapdev:data/authority-map.json"
-    ],
-    "publication_or_review_state_question": [
-      "thecrewblueprint:research/matrix/reviews*.jsonl",
-      "thecrewblueprint:research/matrix/course_inventory.jsonl",
-      "roadmapdev:decision/reports/crew-blueprint-publication-state-2026-09-05.json"
+      "roadmapdev:learner-domain analysis only"
     ]
   }
 }
