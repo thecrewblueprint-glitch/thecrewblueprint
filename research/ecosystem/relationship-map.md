@@ -6,24 +6,44 @@ This is the human-readable companion to `research/ecosystem/relationship-map.jso
 
 ```text
                          ┌──────────────────────┐
-                         │    50yearroadmap     │
+                         │ Deadhang Labor LLC   │
+                         │ owner / parent       │
+                         └──────────┬───────────┘
+                                    │ ownership only
+                                    │ minimal governance metadata
+                                    ▼
+                         ┌──────────────────────┐
+                         │  The Crew Blueprint  │
+                         │ learner education    │
+                         └──────┬──────┬────────┘
+                                │      │
+                  link only     │      │ learner-domain intelligence
+                  no data back  │      │
+                                ▼      ▼
+                    ┌────────────────┐   ┌──────────────────────┐
+                    │Production Atlas│   │      Roadmapdev      │
+                    │jobs / hiring   │   │ intelligence engine  │
+                    └────────────────┘   └──────────┬───────────┘
+                                                   │
+                                                   │ admissible learner
+                                                   │ research only
+                                                   └───────────────┐
+                                                                   ▼
+                         ┌──────────────────────┐   accepted state / governance
+                         │    50yearroadmap     │◄──────────────────────────────
                          │ governance / state   │
                          └──────────┬───────────┘
                                     │ governs
-                                    ▼
-┌──────────────────────┐   ┌──────────────────────┐   ┌──────────────────────┐
-│  Production Atlas    │◄──│  The Crew Blueprint  │──►│      Roadmapdev      │
-│ jobs / hiring only   │   │ learner education    │   │ intelligence engine  │
-└──────────────────────┘   └──────────────────────┘   └──────────────────────┘
-       link only                 │       ▲                       │
-       no data return            │       │                       │
-                                │       └─ admissible learner ──┘
-                                │          research only
-                                └── accepted state ─────────────►
-                                    50yearroadmap
+                                    └──────────────► The Crew Blueprint
 ```
 
 ## Meaning of each edge
+
+### Deadhang Labor LLC → Crew Blueprint
+
+**Ownership / parent relationship only.** Deadhang Labor LLC owns The Crew Blueprint and may provide owner-level product direction and the minimal legal/governance metadata needed to represent that ownership.
+
+That ownership edge does **not** create a data pipeline. Deadhang financials, pricing, margins, procurement, vendors, clients, insurance strategy, market strategy, sourcing methods, operating intelligence, or `marketstrategy` research do not flow into Crew Blueprint curriculum, research evidence, learner pathways, assessments, or public learner content.
 
 ### Crew Blueprint → Production Atlas
 
@@ -46,7 +66,6 @@ Roadmapdev may **not** return Production Atlas hiring/market intelligence, Deadh
 ## Explicit non-edges
 
 ```text
-Deadhang Labor LLC  -X->  The Crew Blueprint
 marketstrategy      -X->  The Crew Blueprint
 Supabase Roadmap    -X->  The Crew Blueprint   (no direct content/source edge)
 ```
