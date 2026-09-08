@@ -17,7 +17,7 @@
   window.addEventListener('load',async()=>{
     if(!window.Clerk)return;
     try{
-      await window.Clerk.load({ui:{ClerkUI:window.__internal_ClerkUICtor}});
+      await window.Clerk.load({ui:{ClerkUI:window.__internal_ClerkUICtor},signInUrl:'/',signUpUrl:'/',signInFallbackRedirectUrl:'/',signUpFallbackRedirectUrl:'/'});
       renderClerkAuth();
       window.Clerk.addListener(()=>renderClerkAuth());
     }catch(e){
