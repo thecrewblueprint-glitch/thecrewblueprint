@@ -63,6 +63,18 @@ Git identity for commits in this repository remains:
 
 `git -c user.name="Deadhang Labor LLC" -c user.email="thecrewblueprint@gmail.com" commit ...`
 
+## Permanent source-domain firewall
+
+Crew Blueprint is for learners. Keep its curriculum and research source base separate from both Deadhang Labor LLC commercial intelligence and Production Atlas employment intelligence.
+
+Crew Blueprint may use OSHA and other official regulatory sources, applicable statutes and agency guidance, recognized consensus standards such as ANSI material, manufacturer documentation, legitimate technical references, credential-body guidance, educational sources, and clearly labeled practitioner knowledge when appropriate.
+
+Do **not** use Production Atlas employer, vacancy, hiring, pay, market, demand, labor-route, worker-review, or related employment-intelligence data as Crew Blueprint curriculum evidence, learner-pathway logic, assessment evidence, or public course content. Crew Blueprint may link outward to Production Atlas as a separate job-search destination; a link is not data admission.
+
+Do **not** use Deadhang Labor LLC pricing, margins, financials, insurance strategy, vendor/procurement information, client information, business-development research, market strategy, sourcing methods, operating methods, or related commercial intelligence in Crew Blueprint research, examples, course content, assessments, or public copy.
+
+The boundary runs both directions. Crew Blueprint curriculum, standards research, and educational evidence must not be repurposed as an explanation of Deadhang's private business operations or procurement logic. If a Roadmapdev or other research package mixes these domains, split or reject it before use rather than filtering it only at render time.
+
 ## Shipping and validation
 
 Every content or diagram change gets link-checked across **all HTML files** with zero broken internal links before it is represented as shipped or ready to ship. Run the repository's other proportionate validators for the affected surface.
