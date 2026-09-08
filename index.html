@@ -4,23 +4,221 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>The Crew Blueprint — Rebuild in Progress</title>
-  <meta name="description" content="The Crew Blueprint is being rebuilt as the public training and career-readiness side of the Crew Blueprint / Production Atlas ecosystem.">
-  <style>
-    :root{color-scheme:dark;--bg:#080b10;--panel:#111722;--text:#eef2f6;--muted:#aeb8c7;--gold:#f5b400;--line:#2a3444}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:24px}
-    main{max-width:720px;width:100%;padding:36px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
-    .mark{font-weight:800;letter-spacing:.04em}.mark span{color:var(--gold)}h1{font-size:clamp(34px,7vw,64px);line-height:1;margin:24px 0 18px}p{color:var(--muted);font-size:18px;margin:0 0 16px}.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.links a{display:inline-block;padding:11px 15px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);font-weight:800;text-decoration:none}.links a:hover,.links a:focus-visible{background:var(--gold);color:var(--bg)}.rule{height:3px;width:72px;background:var(--gold);margin-top:28px}
-  </style>
+  <title>The Crew Blueprint — Test V3</title>
+  <meta name="description" content="Test V3 of The Crew Blueprint connects live-event training to recurring employer demand, responsibility depth, career lanes, and current work intelligence.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="canonical" href="https://thecrewblueprint.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Crew Blueprint">
+  <meta property="og:title" content="The Crew Blueprint — Test V3">
+  <meta property="og:description" content="Train for the work. Understand the system. Build toward the next level with employer-demand evidence behind the learning map.">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/testv3.css" rel="stylesheet">
 </head>
-<body>
+<body class="testv3">
+  <div class="v3-review-bar">Test V3 · Live owner review · Career-demand architecture under evaluation</div>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="The Crew Blueprint home">
+        <span class="nav-logo-text">The Crew <span>Blueprint</span></span>
+      </a>
+      <span class="v3-nav-note">Evidence-driven rebuild</span>
+      <button type="button" class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#pathways">Pathways</a></li>
+        <li><a href="#signals">Hiring Signals</a></li>
+        <li><a href="#responsibility">Role Depth</a></li>
+        <li><a href="#channels">How Work Is Hired</a></li>
+        <li><a href="courses.html">All Courses</a></li>
+        <li><a href="https://atlas.thecrewblueprint.com/" class="nav-cta">Find Work ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <main>
-    <div class="mark">THE CREW <span>BLUEPRINT</span></div>
-    <h1>Rebuild in progress.</h1>
-    <p>The prior site versions have been archived intact. The next release is being rebuilt from the complete course and research corpus as a focused learning, technical, safety, and career-readiness system.</p>
-    <p>Current festival, employer, market, and labor-organization intelligence lives separately in Production Atlas. The two public products form one linked ecosystem without sharing or duplicating each other’s datasets.</p>
-    <div class="links"><a href="https://atlas.thecrewblueprint.com/">Open Production Atlas →</a></div>
-    <div class="rule" aria-hidden="true"></div>
+    <section class="v3-hero">
+      <div class="v3-shell v3-hero-grid">
+        <div>
+          <span class="v3-eyebrow">The Crew Blueprint · Test V3</span>
+          <h1>Train for the work.<br><span>Understand the system.</span></h1>
+          <p class="v3-lead">Live-event training organized around what employers repeatedly ask workers to understand, how responsibility changes as careers advance, and which existing Crew Blueprint learning actually supports those demands.</p>
+          <div class="v3-actions">
+            <a class="v3-btn v3-btn-primary" href="#start">Find your learning path</a>
+            <a class="v3-btn" href="courses/stagehand-fundamentals.html">Start Stagehand Fundamentals</a>
+            <a class="v3-btn" href="https://atlas.thecrewblueprint.com/">Open Production Atlas ↗</a>
+          </div>
+        </div>
+        <aside class="v3-hero-side" aria-label="Test V3 evidence model">
+          <strong>Not another course catalog.</strong>
+          <p>V3 starts with recurring employment signals, maps them through research-backed competencies, then connects them to the learning already in Crew Blueprint.</p>
+          <p>Current employers, openings, markets, labor organizations, compensation examples and hiring routes remain in Production Atlas so training does not become a stale job board.</p>
+        </aside>
+      </div>
+      <div class="v3-shell">
+        <div class="v3-metrics" id="v3Metrics" aria-label="Research coverage metrics">
+          <div class="v3-metric"><span class="v3-metric-value">21</span><span class="v3-metric-label">Recurring employment-demand domains</span></div>
+          <div class="v3-metric"><span class="v3-metric-value">143</span><span class="v3-metric-label">Mapped course/content universe</span></div>
+          <div class="v3-metric"><span class="v3-metric-value">10</span><span class="v3-metric-label">Recurring hiring / employer channels</span></div>
+          <div class="v3-metric"><span class="v3-metric-value">0</span><span class="v3-metric-label">Top-level orphan demand domains</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="v3-section" id="start">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">Start with intent</span>
+            <h2>What are you trying to do?</h2>
+          </div>
+          <p class="v3-section-intro">The same 143-course knowledge base can support very different goals. V3 surfaces only the lane relevant to what you are trying to accomplish instead of making you decode the whole catalog first.</p>
+        </div>
+        <div class="v3-intent-grid">
+          <button class="v3-intent" type="button" data-intent="new"><span class="v3-intent-index">01</span><strong>I’m new to live production.</strong></button>
+          <button class="v3-intent" type="button" data-intent="call"><span class="v3-intent-index">02</span><strong>I have a call coming up.</strong></button>
+          <button class="v3-intent" type="button" data-intent="department"><span class="v3-intent-index">03</span><strong>I want to learn a department.</strong></button>
+          <button class="v3-intent" type="button" data-intent="grow"><span class="v3-intent-index">04</span><strong>I want to move beyond general labor.</strong></button>
+          <button class="v3-intent" type="button" data-intent="work"><span class="v3-intent-index">05</span><strong>I want to see where the work is.</strong></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="v3-section" id="pathways">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">Career-linked learning</span>
+            <h2>Choose the work lane, then learn what supports it.</h2>
+          </div>
+          <p class="v3-section-intro">Job titles change from company to company. V3 organizes around stable role families, recurring competency signals and observed responsibility depth instead.</p>
+        </div>
+        <div class="v3-path-layout">
+          <div class="v3-path-list" id="v3PathList">
+            <p class="v3-loading">Loading career pathways…</p>
+          </div>
+          <article class="v3-path-detail" id="v3PathDetail" aria-live="polite">
+            <p class="v3-loading">Loading demand-to-course mapping…</p>
+          </article>
+        </div>
+        <noscript>
+          <div class="v3-boundary" style="margin-top:20px"><strong>JavaScript is off.</strong> The full curriculum remains available from <a href="courses.html">All Courses</a>.</div>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="v3-section" id="signals">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">Across departments</span>
+            <h2>What employers keep asking for.</h2>
+          </div>
+          <p class="v3-section-intro">The strongest cross-role signals are not brand names or one-off pieces of gear. They are transferable habits and system competencies that recur across stage labor, departments, shops, venues and management.</p>
+        </div>
+        <div class="v3-signal-grid" id="v3Signals">
+          <div class="v3-signal-card">Communication and cueing</div>
+          <div class="v3-signal-card">Equipment identification and handling</div>
+          <div class="v3-signal-card">Troubleshooting and escalation</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="v3-section" id="responsibility">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">Responsibility map</span>
+            <h2>Careers deepen by responsibility, not just titles.</h2>
+          </div>
+          <p class="v3-section-intro">R0–R6 describes responsibility observed in the labor market. It is not a Crew Blueprint learner-level system and it does not grant permission to perform controlled work.</p>
+        </div>
+        <div class="v3-band-list" id="v3Bands" aria-label="Observed responsibility bands"></div>
+      </div>
+    </section>
+
+    <section class="v3-section" id="channels">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">Employment architecture</span>
+            <h2>There isn’t one way into live-event work.</h2>
+          </div>
+          <p class="v3-section-intro">National research repeatedly found ten employer and labor channels. Knowing the channel matters because the hiring process, role expectations, schedule, pay structure and advancement route can differ even when two jobs use similar titles.</p>
+        </div>
+        <div class="v3-channel-grid" id="v3Channels"></div>
+        <div class="v3-actions">
+          <a class="v3-btn v3-btn-primary" href="https://atlas.thecrewblueprint.com/">Explore current employers, markets & labor routes ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="v3-section" id="contexts">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">Context matters</span>
+            <h2>The skill can transfer. The workflow can change.</h2>
+          </div>
+          <p class="v3-section-intro">Festival, arena, theater, hotel/convention, broadcast, house, shop and institutional environments can use overlapping competencies while changing terminology, authority, documentation and who owns each decision.</p>
+        </div>
+        <div class="v3-context-grid" id="v3Contexts"></div>
+      </div>
+    </section>
+
+    <section class="v3-section" id="ecosystem">
+      <div class="v3-shell">
+        <div class="v3-section-head">
+          <div>
+            <span class="v3-section-kicker">One ecosystem, separate source truth</span>
+            <h2>Learn. Work. Grow.</h2>
+          </div>
+          <p class="v3-section-intro">Crew Blueprint owns durable learning. Production Atlas owns volatile work intelligence. The connection between them is the role and competency graph—not copied job listings.</p>
+        </div>
+        <div class="v3-ecosystem-grid">
+          <article class="v3-ecosystem-card is-highlight">
+            <span>Learn</span>
+            <h3>Crew Blueprint</h3>
+            <p>Foundations, field readiness, department systems, leadership, management, evidence and qualification boundaries.</p>
+            <a class="v3-btn" href="courses.html">Open the curriculum</a>
+          </article>
+          <article class="v3-ecosystem-card">
+            <span>Work</span>
+            <h3>Production Atlas</h3>
+            <p>Current employers, markets, hiring mechanisms, labor organizations, openings, compensation evidence and source freshness.</p>
+            <a class="v3-btn" href="https://atlas.thecrewblueprint.com/">Open Production Atlas ↗</a>
+          </article>
+          <article class="v3-ecosystem-card">
+            <span>Grow</span>
+            <h3>Responsibility pathways</h3>
+            <p>Use observed R0–R6 market responsibility to understand how execution can expand into specialist, lead, management and director-level work.</p>
+            <a class="v3-btn" href="#responsibility">See role depth</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="v3-section">
+      <div class="v3-shell">
+        <div class="v3-boundary">
+          <strong>Important boundary:</strong> course completion is evidence of learning, not employer authorization, a license, a certification, or proof of practical competence. Observed employment demand does not grant permission to perform controlled work. Rigging, production power, work at height and other qualified-person activities remain subject to employer, venue, jurisdiction, training and authorization requirements.
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="v3-footer">
+    <div class="v3-shell v3-footer-grid">
+      <div>© 2026 The Crew Blueprint · Test V3 owner-review build</div>
+      <div><a href="about.html">About</a> · <a href="resources.html">Resources</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+
+  <script src="js/testv3.js" defer></script>
 </body>
 </html>
