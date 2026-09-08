@@ -45,6 +45,31 @@ Do not silently overwrite another agent's unexplained work. When continuing an e
 - Presentation-only work must not change lesson text, assessments, answers, citations, safety boundaries, sequencing, or instructional meaning.
 - Validate parity at the source/data/rendered-content layers relevant to the affected builds; matching labels alone is not sufficient.
 
+### 4.0 Permanent source-domain firewall
+
+Crew Blueprint is a learner-content system. It must remain separate from Deadhang Labor LLC business intelligence and from Production Atlas hiring/market intelligence in both directions.
+
+**Admissible curriculum evidence includes:**
+
+- applicable OSHA requirements and official regulatory material;
+- statutes, regulations, and official agency guidance;
+- recognized consensus standards, including applicable ANSI material, with copyright and quotation limits respected;
+- manufacturer documentation, manuals, technical bulletins, and model-specific instructions;
+- legitimate technical references, educational material, credential-body guidance, and other sources whose purpose is to teach or define the work safely and accurately;
+- clearly labeled practitioner knowledge when no stronger source exists and the claim is appropriate for instructional use.
+
+**Not admissible as Crew Blueprint curriculum evidence or learner-facing content:**
+
+- Production Atlas employer, vacancy, hiring, pay, market, demand, labor-route, worker-review, competitive, or other employment-intelligence datasets;
+- Deadhang Labor LLC pricing, margins, financials, insurance strategy, vendor/procurement information, client information, business-development research, market strategy, sourcing methods, operating methods, or other private/commercial intelligence;
+- business-side Roadmapdev research whose purpose is Deadhang commercial strategy rather than learner education.
+
+Crew Blueprint may **link outward** to Production Atlas when a learner needs a separate place to explore jobs or hiring information. That link does not authorize copying, summarizing, ranking, importing, embedding, or using Atlas data to shape course claims, learner recommendations, course content, assessments, or instructional conclusions.
+
+The boundary also runs outward from Crew Blueprint: learner content, curriculum research, standards research, and educational evidence must not be repurposed as an explanation of Deadhang's private procurement logic, financial model, vendor strategy, client strategy, or internal operating methods. Cross-repository synchronization may carry provenance, state, and relationship metadata needed for governance, but it must not collapse these source domains.
+
+If a source package mixes admissible educational evidence with non-admissible Atlas or Deadhang business intelligence, split the package before use. Do not rely on agent judgment at rendering time to hide business material after ingestion.
+
 Crew Blueprint content must preserve these boundaries:
 
 - educational content does not imply certification, licensing, employer authorization, union status, or practical qualification;
@@ -54,7 +79,7 @@ Crew Blueprint content must preserve these boundaries:
 - do not teach specialized electrical, rigging, structural, operation, configuration, repair, or safety-critical tasks as ordinary beginner authority;
 - source externally verifiable claims where reasonably possible and label practitioner-derived guidance honestly.
 
-The research library's source hierarchy and interpretation rules remain authoritative for research-backed curriculum work.
+The research library's source hierarchy and interpretation rules remain authoritative for research-backed curriculum work, subject to the source-domain firewall above.
 
 ### 4.1 Permanent historical curriculum retention
 
@@ -86,7 +111,11 @@ After an accepted Crew Blueprint change is merged and verified, route closeout/c
 
 Use the current research workflow documented in `research/README.md` and current handoff notes. Preserve separate source packages and trace claims back to the strongest available evidence. Legacy workflow references do not override newer explicit workflow corrections.
 
-For any research, course-audit, citation-trace, gap-analysis, or cross-system context task, read `research/agent-retrieval-manifest.json` as the repository retrieval entrypoint. Follow `research/ecosystem/relationship-map.json` when using Roadmapdev or Production Atlas information so the source system, canonical ref, allowed use, and authority boundary remain explicit. The normalized JSONL evidence matrix remains the source of truth for Crew Blueprint claim/source/competency/review lineage; generated Markdown views are audit surfaces, not canonical graph state.
+For any research, course-audit, citation-trace, gap-analysis, or cross-system context task, read `research/agent-retrieval-manifest.json` as the repository retrieval entrypoint. The normalized JSONL evidence matrix remains the source of truth for Crew Blueprint claim/source/competency/review lineage; generated Markdown views are audit surfaces, not canonical graph state.
+
+Production Atlas is **not** a Crew Blueprint curriculum-evidence source. Do not import or use Atlas hiring, employer, vacancy, pay, market, demand, labor-route, worker-review, or related industry-intelligence data in course research, gap conclusions, learner pathways, assessments, or public learning content. `research/ecosystem/relationship-map.json` may describe that Atlas exists and may support a navigation link, but it does not grant content-admission authority.
+
+Roadmapdev may contain multiple research domains. Before using Roadmapdev material for Crew Blueprint, verify that the material is explicitly curriculum/education research and contains no Deadhang commercial intelligence or Atlas employment-intelligence payload. If the package is mixed, split or reject it before admission.
 
 ## 8. Owner authority
 
