@@ -1,7 +1,7 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "map_id": "crew-blueprint-ecosystem-boundary-map",
-  "purpose": "Canonical direct-relationship map for The Crew Blueprint. Crew Blueprint has only three direct outward relationships: Production Atlas, 50yearroadmap, and Roadmapdev. No Deadhang Labor, marketstrategy, Supabase, or other repository/system is a direct Crew Blueprint dependency or learner-content source.",
+  "purpose": "Canonical direct-relationship map for The Crew Blueprint. Crew Blueprint points outward only to Production Atlas, 50yearroadmap, and Roadmapdev. Deadhang Labor LLC is represented as the owner/parent relationship, but that ownership edge does not create a business-intelligence or operational-data feed into Crew Blueprint.",
   "scope": {
     "root_system": "thecrewblueprint",
     "direct_outbound_targets": [
@@ -9,14 +9,23 @@
       "50yearroadmap",
       "roadmapdev"
     ],
+    "ownership_parent": "deadhang-labor",
     "prohibited_direct_targets": [
-      "deadhang-labor",
       "marketstrategy",
       "supabase-roadmap",
       "other-business-or-market-intelligence-systems"
     ]
   },
   "systems": [
+    {
+      "id": "deadhang-labor",
+      "role": "owner / parent business",
+      "authority": [
+        "ownership",
+        "owner-level product direction"
+      ],
+      "crew_blueprint_data_rule": "Ownership metadata and owner-authorized governance direction may cross this edge when necessary. Deadhang financials, procurement, vendor/client data, pricing, insurance strategy, market strategy, sourcing methods, operating intelligence, and other private commercial data do not flow into Crew Blueprint curriculum or learner-facing systems."
+    },
     {
       "id": "thecrewblueprint",
       "repository": "thecrewblueprint-glitch/thecrewblueprint",
@@ -69,6 +78,29 @@
     }
   ],
   "direct_relations": [
+    {
+      "from": "deadhang-labor",
+      "to": "thecrewblueprint",
+      "relation": "owns",
+      "direction": "inbound_ownership",
+      "channel": "ownership_governance",
+      "allowed_use": [
+        "ownership identity",
+        "owner-authorized product direction",
+        "minimal legal or governance metadata required to represent ownership"
+      ],
+      "data_flow_into_crew_blueprint": "minimal_governance_metadata_only",
+      "prohibited_use": [
+        "Deadhang financial data",
+        "Deadhang procurement or vendor data",
+        "Deadhang client data",
+        "Deadhang pricing or margin data",
+        "Deadhang insurance strategy",
+        "Deadhang marketstrategy research",
+        "Deadhang sourcing methods or operating intelligence",
+        "using ownership as authority to import private commercial data into learner content"
+      ]
+    },
     {
       "from": "thecrewblueprint",
       "to": "production-atlas",
@@ -159,10 +191,6 @@
   ],
   "non_relations": [
     {
-      "system": "deadhang-labor",
-      "rule": "No direct Crew Blueprint relationship. Deadhang private/commercial information is outside the Crew Blueprint source graph."
-    },
-    {
       "system": "marketstrategy",
       "rule": "No direct Crew Blueprint relationship. Marketstrategy research cannot enter Crew Blueprint curriculum or learner-facing research."
     },
@@ -183,7 +211,7 @@
     ],
     "prohibited": [
       "Production Atlas hiring/employer/pay/market/demand/labor-route/worker-review intelligence",
-      "Deadhang Labor LLC business/financial/procurement/vendor/client/pricing/insurance/market-strategy/operating intelligence",
+      "Deadhang Labor LLC business/financial/procurement/vendor/client/pricing/insurance/market-strategy/operating intelligence beyond minimal ownership/governance metadata",
       "marketstrategy repository research",
       "mixed packages that have not been split before admission"
     ]
@@ -202,6 +230,7 @@
       "production-atlas:external destination only"
     ],
     "governance_or_authority_question": [
+      "deadhang-labor:ownership/product direction",
       "50yearroadmap:governance and accepted-state authority"
     ],
     "what_should_we_build_or_fix_next": [
