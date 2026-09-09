@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.0.1",
   "map_id": "crew-blueprint-version-crosswalk-v2-v4-clean-sheet-2026-09-09",
   "date": "2026-09-09",
   "status": "structural proposed state; no frozen reference mutation",
@@ -8,28 +8,19 @@
     "v2": {
       "ref": "archive/frozen-v2-exact-2026-09-07",
       "commit": "1b1ddb0649d5a66bfff91b74791b4f3ce4f4c256",
-      "role": [
-        "historical accepted implementation reference",
-        "deep course/evidence corpus reference"
-      ],
+      "role": ["historical accepted implementation reference", "deep course/evidence corpus reference"],
       "mutable": false
     },
     "clean_sheet": {
       "ref": "archive/frozen-vnext-clean-sheet-exact-2026-09-07",
       "commit": "4378c3954efd8e8fee7b98842493e932567341b7",
-      "role": [
-        "learner interaction/IA reference",
-        "situation-first navigation reference"
-      ],
+      "role": ["learner interaction/IA reference", "situation-first navigation reference"],
       "mutable": false
     },
     "v4_live": {
       "ref": "main",
       "commit": "7c76b7ce885f5ebe0c9d36e04314d448d80cce12",
-      "role": [
-        "current restored live presentation surface",
-        "current V4 client implementation frontier"
-      ],
+      "role": ["current restored live presentation surface", "current V4 client implementation frontier"],
       "mutable": "only through normal Crew Blueprint governance"
     }
   },
@@ -53,6 +44,7 @@
     "V2 course identities remain lineage keys even when their learner presentation is merged, hidden, or context-triggered.",
     "Stagehand/general production is a lane, not a universal prerequisite ontology.",
     "Rigging, production power, automation, special effects, work-at-height and similar controlled domains remain awareness/system-literacy unless external qualification/authorization applies.",
+    "Current V4 course surfaces do not silently redefine the proposed career-lane taxonomy.",
     "No frozen reference is rewritten by this crosswalk."
   ],
   "target_graph_flow": [
@@ -66,20 +58,24 @@
     "Grow/leadership resources",
     "sources/provenance"
   ],
-  "front_door_lanes": {
-    "initial": [
+  "front_door_resolution": {
+    "pr57_proposed_initial_career_entries": [
       "stagehand_generalist",
       "lighting",
       "audio",
       "video_led",
-      "staging_structures",
-      "shop_logistics"
+      "rigging_bounded_awareness",
+      "staging_structures"
     ],
-    "bounded_awareness_entry": [
-      "rigging",
-      "production_power_electrical"
+    "v4_current_foundation_surfaces": [
+      "crew_ready",
+      "systems_thinking",
+      "shop_logistics",
+      "department_explorer"
     ],
-    "later_or_contextual": [
+    "near_term_or_parallel_lane_candidates_already_supported_by_corpus": [
+      "shop_logistics",
+      "production_power_electrical_bounded_awareness",
       "backline_props_wardrobe",
       "stage_management",
       "production_management",
@@ -87,13 +83,15 @@
       "show_control_automation",
       "broadcast_camera_media",
       "crew_labor_leadership"
-    ]
+    ],
+    "rule": "V4's Shop / Logistics course is a current learner-facing foundation/parallel-production surface. That presentation does not, by itself, amend PR #57's proposed six initial career entries. Any later front-door lane expansion remains an explicit architecture decision after acceptance of the mapped graph."
   },
   "acceptance_checks": [
     "143 canonical IDs remain accounted for exactly once in the primary mapping.",
     "No historically unique body is deleted or silently overwritten.",
     "Every V4 learner-facing claim resolves to a canonical content/claim state or is explicitly labeled presentation framing.",
     "Version-specific routes are presentation/compatibility metadata, not new knowledge identities.",
-    "Production Atlas and Roadmapdev data remain domain-owned."
+    "Production Atlas and Roadmapdev data remain domain-owned.",
+    "Current V4 presentation surfaces do not silently alter the proposed career-lane taxonomy."
   ]
 }
