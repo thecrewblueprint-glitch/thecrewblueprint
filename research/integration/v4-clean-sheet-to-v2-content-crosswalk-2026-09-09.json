@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-09",
+  "status": "structural_proposed_state_pr57",
+  "purpose": "Explicitly map the current restored V4 and frozen clean-sheet learner surfaces back to the preserved V2 course/content identities so presentation work can reuse the deeper corpus without treating either UI as a new knowledge authority.",
+  "source_refs": {
+    "v2": {"ref": "archive/frozen-v2-exact-2026-09-07", "commit": "1b1ddb0649d5a66bfff91b74791b4f3ce4f4c256"},
+    "clean_sheet": {"ref": "archive/frozen-vnext-clean-sheet-exact-2026-09-07", "commit": "4378c3954efd8e8fee7b98842493e932567341b7"},
+    "v4_current": {"ref": "main", "commit_at_map_time": "7c76b7ce885f5ebe0c9d36e04314d448d80cce12"},
+    "primary_143_id_mapping": "research/analysis/vnext-career-guided-course-map-2026-09-07.json"
+  },
+  "rules": [
+    "Course IDs are lineage keys, not a requirement to expose one public card per ID.",
+    "A V4 or clean-sheet block may present several V2 identities as one learner-facing bundle.",
+    "A V2 identity may contribute to several learner surfaces without being duplicated or rewritten as separate source truth.",
+    "Where a current surface teaches a new presentation concept without one exact V2 course container, map it to reusable V2 content/competency families rather than inventing a fake one-to-one course identity.",
+    "Specialist/hazardous identities remain bounded by canonical authority and review state regardless of where they are linked."
+  ],
+  "v4": [
+    {
+      "surface_id": "v4-crew-ready",
+      "route": "courses-v4/crew-ready.html",
+      "presentation_role": "general foundation / first-call readiness",
+      "primary_v2_course_ids": ["C-SHF-FUNDAMENTALS", "C-CAR-FIRST-FIVE", "C-COM-WORK"],
+      "supporting_v2_course_ids": ["C-FLD-ROAD-CASE", "C-FLD-TEAM", "C-FLD-BONEYARD", "C-FLD-RESET", "C-FLD-MARK", "C-FLD-DOCK", "C-LOG-PRODUCTION"],
+      "competency_domains": ["general_stage_workflow", "communication_and_cueing", "equipment_identification_and_handling", "load_in_load_out_logistics", "safety_compliance_and_stop_work_boundaries"],
+      "crosswalk_rule": "Use Fundamentals and First Five Calls as the narrative spine; pull bounded Field Skill examples and logistics context as supporting modules without turning every field-skill ID into a required prerequisite."
+    },
+    {
+      "surface_id": "v4-systems-thinking",
+      "route": "courses-v4/systems-thinking.html",
+      "presentation_role": "cross-lane mental model / dependency and troubleshooting literacy",
+      "primary_v2_course_ids": ["C-COM-WORK"],
+      "supporting_v2_course_ids": ["C-LTG-PRODUCTION-FLOW", "C-LTG-CONTROL", "C-AUD-SIGNAL", "C-AUD-NET", "C-VID-SIGNAL", "C-VID-AOIP", "C-PMG-PAPER", "C-PMG-COMMS", "C-SHC-CYBER"],
+      "competency_domains": ["signal_flow_and_system_reasoning", "digital_network_and_control_awareness", "documentation_and_advance_work", "troubleshooting_and_escalation", "communication_and_cueing", "safety_compliance_and_stop_work_boundaries"],
+      "crosswalk_rule": "Systems Thinking is a reusable cross-lane presentation bundle, not a replacement for the deeper department-specific V2 sources. Generic mental models may be shared; platform-specific operation stays in the owning lane and authority context."
+    },
+    {
+      "surface_id": "v4-shop-logistics",
+      "route": "courses-v4/shop-logistics.html",
+      "presentation_role": "parallel production pathway / equipment lifecycle",
+      "primary_v2_course_ids": ["C-SHP-WAREHOUSE", "C-LOG-PRODUCTION"],
+      "supporting_v2_course_ids": ["C-SHP-RECEIVING", "C-SHP-INVENTORY", "C-SHP-PREP-QC", "C-SHP-TRAFFIC", "C-SHP-HAZCOM", "C-SHP-BATTERY", "C-SHP-TRUCK-STAGE", "C-SHP-RETURN-CLOSE", "C-FLD-BONEYARD", "C-FLD-RESET", "C-FLD-DOCK"],
+      "competency_domains": ["warehouse_inventory_qc_repair", "fleet_shipping_and_logistics", "load_in_load_out_logistics", "equipment_identification_and_handling", "documentation_and_advance_work", "safety_compliance_and_stop_work_boundaries"],
+      "crosswalk_rule": "V4 may present the warehouse/shop lifecycle as one coherent foundation course while retaining the V2 receiving/inventory/QC/traffic/battery/truck-stage/return identities as deeper graph nodes."
+    },
+    {
+      "surface_id": "v4-department-explorer",
+      "route": "courses-v4/department-explorer.html",
+      "presentation_role": "career-lane discovery and comparison",
+      "primary_v2_course_ids": ["C-LTG-SUPPORT", "C-AUD-SUPPORT", "C-VID-SUPPORT", "C-STG-SUPPORT", "C-BPW-SUPPORT", "C-RIG-AWARE", "C-ELC-POWER-AWARENESS", "C-SHP-WAREHOUSE", "C-PROD-CAREER-BRANCH"],
+      "supporting_v2_course_ids": ["C-SMG-ROLE", "C-PMG-ROLE", "C-VOP-ROLE", "C-CAR-ENTRY", "C-CAR-PRO"],
+      "competency_domains": ["department_workflow_audio", "department_workflow_lighting", "department_workflow_video_led_playback", "department_workflow_staging_scenic", "rigging_boundary_awareness", "production_power_boundary_awareness", "warehouse_inventory_qc_repair", "crew_coordination_and_leadership", "project_production_management"],
+      "crosswalk_rule": "Explorer compares lanes and responsibility patterns. It does not make controlled specialties equivalent to ordinary beginner task training and does not impose Stagehand Fundamentals as a universal prerequisite."
+    },
+    {
+      "surface_id": "v4-advanced",
+      "route": "advanced.html",
+      "presentation_role": "deep technical / lead / management discovery and gated future access",
+      "primary_v2_groups": ["lighting-advanced", "audio-advanced", "video-advanced", "staging-advanced", "power-advanced", "rigging-advanced", "production-management-core"],
+      "representative_v2_course_ids": ["C-LTG-SYSTEM-DESIGN", "C-LEAD-LTG", "C-AUD-SYSTEM-DESIGN", "C-LEAD-AUD", "C-VID-SYSTEM-ARCH", "C-LEAD-VID", "C-STG-DESIGN-COORD", "C-LEAD-STG", "C-ELC-LOAD-PLANNING", "C-LEAD-ELC", "C-LEAD-RIG", "C-PMG-ADVANCE-ARTIFACTS", "C-PMG-LABOR-SCHEDULE", "C-PMG-BUDGET-CHANGE", "C-PMG-CLOSEOUT"],
+      "crosswalk_rule": "Advanced is a presentation/gating surface over retained deep V2 nodes. It does not publish premium lesson bodies by merely listing the lane, and course depth does not create external qualification or appointment."
+    },
+    {
+      "surface_id": "v4-sources",
+      "route": "sources-v4.html",
+      "presentation_role": "evidence transparency",
+      "primary_v2_source_plane": ["research/matrix/content*.jsonl", "research/matrix/sources*.jsonl", "research/matrix/support_edges*.jsonl", "research/matrix/reviews*.jsonl", "research/matrix/media*.jsonl", "research/matrix/content_lineage_edges*.jsonl"],
+      "crosswalk_rule": "The Sources UI should project canonical claim/source/review/media/lineage state, not a manually curated bibliography disconnected from support edges."
+    }
+  ],
+  "clean_sheet": [
+    {
+      "program_id": "start",
+      "title": "Start Working",
+      "presentation_role": "first-call readiness",
+      "primary_v2_course_ids": ["C-SHF-FUNDAMENTALS", "C-CAR-FIRST-FIVE", "C-COM-WORK"],
+      "supporting_v2_course_ids": ["C-CAR-ENTRY", "C-LOG-PRODUCTION"],
+      "disposition": "retain interaction pattern; reconcile wording/evidence into V4/general-foundation successor"
+    },
+    {
+      "program_id": "trusted",
+      "title": "Become the Hand They Want Back",
+      "presentation_role": "professional trust / state preservation / crew conduct",
+      "primary_v2_course_ids": ["C-COM-WORK", "C-CAR-PRO"],
+      "supporting_v2_course_ids": ["C-SHF-FUNDAMENTALS", "C-FLD-RESET", "C-FLD-MARK", "C-FLD-BONEYARD"],
+      "disposition": "retain as reusable professional-behavior modules rather than a mandatory separate universal course"
+    },
+    {
+      "program_id": "field",
+      "title": "Field Skills Studio",
+      "presentation_role": "task-focused generalist practice",
+      "primary_v2_course_ids": ["C-FLD-ROAD-CASE", "C-FLD-CABLE-COIL", "C-FLD-RATCHET", "C-FLD-FLATBED", "C-FLD-BARRICADE", "C-FLD-CABLE-PROTECT", "C-FLD-TEAM", "C-FLD-CART", "C-FLD-CABLE-DEPLOY", "C-FLD-BONEYARD", "C-FLD-RESET", "C-FLD-SOFT", "C-FLD-PD", "C-FLD-DECK", "C-FLD-TOOLS", "C-FLD-MARK", "C-FLD-SCENERY", "C-FLD-DOCK"],
+      "disposition": "retain the 18 identities as one Field Skills library with per-skill evidence/authority/media gates"
+    },
+    {
+      "program_id": "departments",
+      "title": "Department Explorer",
+      "presentation_role": "department discovery and entry support",
+      "primary_v2_course_ids": ["C-LTG-SUPPORT", "C-AUD-SUPPORT", "C-VID-SUPPORT", "C-STG-SUPPORT", "C-BPW-SUPPORT", "C-RIG-AWARE", "C-ELC-POWER-AWARENESS"],
+      "supporting_v2_groups": ["lighting-core", "audio-core", "video-core", "staging-core", "bpw-discipline-modules", "rigging-systems-literacy", "power-core-literacy"],
+      "disposition": "retain the small-choice explorer pattern; reveal deeper V2 nodes progressively by lane and responsibility depth"
+    },
+    {
+      "program_id": "contexts",
+      "title": "Context Labs",
+      "presentation_role": "sector/environment transfer",
+      "primary_v2_course_ids": ["C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUTDOOR"],
+      "supporting_v2_course_ids": ["C-LOG-PRODUCTION", "C-SHP-WAREHOUSE"],
+      "disposition": "retain Context Lab pattern as overlays reusable across career lanes; do not turn each context into a prerequisite ladder"
+    },
+    {
+      "program_id": "work",
+      "title": "Find Work",
+      "presentation_role": "stable work/career literacy plus outbound market navigation",
+      "primary_v2_course_ids": ["C-CAR-ENTRY", "C-CAR-UNION", "C-CAR-CRED", "C-CAR-PRO"],
+      "supporting_v2_course_ids": ["C-CAR-CLASSIFY", "C-CAR-FREELANCE-BIZ", "C-CAR-PAYMENT", "C-CAR-RECORDS", "C-CAR-WORKER-RIGHTS", "C-PROD-CAREER-BRANCH"],
+      "external_owner": "Production Atlas owns current employers, openings, markets, labor routes, IATSE/local intake, and current opportunity freshness.",
+      "disposition": "retain durable literacy in Crew Blueprint; replace embedded volatile lists with stable Atlas links"
+    },
+    {
+      "program_id": "grow",
+      "title": "Grow",
+      "presentation_role": "branching responsibility and career development",
+      "primary_v2_course_ids": ["C-CAR-PRO", "C-PROD-CAREER-BRANCH", "C-SMG-ROLE", "C-PMG-ROLE", "C-VOP-ROLE"],
+      "supporting_v2_groups": ["lighting-advanced", "audio-advanced", "video-advanced", "staging-advanced", "rigging-advanced", "power-advanced", "production-management-core"],
+      "historical_salvage_only": ["C-CAR-LADDERS"],
+      "disposition": "retain branching/lateral progression model; salvage valid content from C-CAR-LADDERS but retire any universal-ladder premise"
+    }
+  ],
+  "shared_foundation_overlay": {
+    "course_id": "C-COM-WORK",
+    "role": "reusable communication / direction / clarification / report-back / handoff foundation",
+    "injection_rule": "May appear across Start, Crew Ready, Systems Thinking, departments, Field Skills, and leadership paths without becoming a universal prerequisite container."
+  },
+  "controlled_specialty_overlay": {
+    "course_ids": ["C-RIG-AWARE", "C-ELC-POWER-AWARENESS", "C-AUT-AWARE", "C-AUT-STAGE", "C-FX-ATM", "C-FX-LASER", "C-FX-SPECIAL"],
+    "rule": "Presentation surfaces may teach recognition, system literacy, interfaces, role boundaries, STOP/ASK/escalation, and qualification context. They must not infer operational authorization from learner progression."
+  },
+  "implementation_use": [
+    "When migrating V4 content, attach canonical course/content/competency IDs to each block.",
+    "When a V4 block is a synthesis of several V2 identities, preserve all contributing lineage references rather than inventing a new unsupported source claim.",
+    "When clean-sheet wording is reused, treat it as presentation prose that must resolve through current matrix claims/evidence before publication.",
+    "Use the crosswalk to generate learner-path edges after owner acceptance of PR #57.",
+    "Do not delete old V2 identities merely because multiple IDs render inside one successor bundle."
+  ]
+}
