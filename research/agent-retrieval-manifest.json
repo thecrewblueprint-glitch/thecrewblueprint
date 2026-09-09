@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "system": "thecrewblueprint",
   "canonical_repository": "thecrewblueprint-glitch/thecrewblueprint",
   "canonical_ref": "main",
-  "purpose": "Machine-readable entrypoint for agents retrieving Crew Blueprint curriculum, research, citation, evidence, review, lineage, historical-course state, decision context, branch authority, product classification, architecture proposals, and cross-system context.",
+  "purpose": "Machine-readable entrypoint for agents retrieving Crew Blueprint curriculum, research, citation, evidence, review, lineage, historical-course state, decision context, branch authority, product classification, successor integration maps, architecture proposals, and cross-system context.",
   "governance_entrypoints": [
     "AGENTS.md",
     "CLAUDE.md",
@@ -18,18 +18,27 @@
     {"id":"final-recommended-public-catalog","path":"research/analysis/final-recommended-public-catalog-2026-09-06.json","human_path":"research/analysis/final-recommended-public-catalog-2026-09-06.md","use":"full recommended learner-facing catalog and migration/readiness analysis"},
     {"id":"course-product-classification","path":"research/analysis/course-product-classification-2026-09-06.json","use":"one proposed primary product classification for every one of the 143 registered logical identities"},
     {"id":"target-audience-content-strategy","path":"research/analysis/target-audience-content-strategy-and-course-catalog-2026-09-06.md","use":"research-backed product/content strategy leading to the reduced catalog"},
-    {"id":"course-system-situation","path":"research/analysis/course-system-situation-2026-09-06.json","use":"current reconciled whole-system decision substrate: 143 identities, 48 branches, current public v2 state, backlog resolutions, evidence/review/publication separation"},
+    {"id":"course-system-situation","path":"research/analysis/course-system-situation-2026-09-06.json","use":"current reconciled whole-system decision substrate: 143 identities, historical/public state, backlog resolutions, evidence/review/publication separation"},
     {"id":"ground-field-foundation","path":"research/analysis/ground-field-foundation-architecture-2026-09-06.md","use":"proposed canonical Stagehand Fundamentals + Field Skills foundation architecture"},
     {"id":"live-production-role-map","path":"research/analysis/live-production-role-family-map-2026-09-06.json","use":"branching live-production role-family/responsibility map; explicitly not a universal promotion ladder"},
     {"id":"cleanup-audit","path":"research/analysis/open-pr-and-repository-cleanup-audit-2026-09-06.md","use":"live open-PR and branch retention/cleanup analysis"},
     {"id":"content-pipeline-v2","path":"research/architecture/content-pipeline-v2-2026-09-06.json","use":"proposed two-lens research, classification, evidence, review, publication and validation pipeline"},
     {"id":"curriculum-container-architecture","path":"research/architecture/curriculum-container-architecture-2026-09-06.json","use":"proposed public/review/research container model and no-delete archive policy"},
-    {"id":"branch-state-registry","path":"research/catalogs/branch-state-registry-2026-09-06.json","use":"machine-readable current 48-branch authority/state registry so historical, archive, exploratory, redundant, and active work refs are not mistaken for current truth"},
-    {"id":"all-branch-course-catalog-summary","path":"research/catalogs/all-branch-course-catalog-summary-2026-09-06.json","use":"earlier branch-catalog observation preserving historical full-build findings, alternate-presentation rules and method caveat; use branch-state registry for current live branch count"},
+    {"id":"branch-state-registry","path":"research/catalogs/branch-state-registry-2026-09-06.json","use":"machine-readable branch authority/state registry so historical, archive, exploratory, redundant, and active work refs are not mistaken for current truth"},
+    {"id":"all-branch-course-catalog-summary","path":"research/catalogs/all-branch-course-catalog-summary-2026-09-06.json","use":"historical branch-catalog observation preserving full-build findings, alternate-presentation rules and method caveat; use branch-state registry for current authority"},
     {"id":"ecosystem-relationship-map","path":"research/ecosystem/relationship-map.json","use":"machine-readable Roadmapdev / Production Atlas / Crew Blueprint / 50yearroadmap / Supabase relationship and authority graph"},
     {"id":"cross-system-context-contract","path":"research/ecosystem/cross-system-context-record.schema.json","use":"normalized reference-first contract for cross-system context with provenance, freshness, applicability, allowed use and prohibited inference"},
     {"id":"roadmapdev-orchestration-binding","path":"research/ecosystem/roadmapdev-orchestration-binding-2026-09-06.json","use":"verified binding to Roadmapdev main orchestrator returning COMPLETE / NEEDS_EVIDENCE / BLOCKED; do not create duplicate orchestration"},
-    {"id":"current-research-radar","path":"research/analysis/research-priorities-2026-09-06.json","use":"verified external-source updates and next-research candidates; research inputs, not accepted learner-facing claims"}
+    {"id":"current-research-radar","path":"research/analysis/research-priorities-2026-09-06.json","use":"verified external-source updates and next-research candidates; research inputs, not accepted learner-facing claims"},
+    {"id":"vnext-143-career-guided-map","path":"research/analysis/vnext-career-guided-course-map-2026-09-07.json","human_path":"research/analysis/vnext-career-guided-course-map-2026-09-07.md","use":"proposed primary placement of all 143 V2 identities into the career-guided successor graph; mapping is not deletion or publication authority"},
+    {"id":"successor-integration-index","path":"research/integration/README.md","use":"entrypoint for V2/V4/clean-sheet, demand-signal, provenance, media, web-client and system-map joins"},
+    {"id":"version-crosswalk-v2-v4-clean-sheet","path":"research/integration/version-crosswalk-v2-v4-clean-sheet-2026-09-09.json","use":"pins exact V2, frozen clean-sheet and restored V4 roles/refs and prevents UI versions from becoming competing knowledge authorities"},
+    {"id":"v4-clean-sheet-v2-content-crosswalk","path":"research/integration/v4-clean-sheet-to-v2-content-crosswalk-2026-09-09.json","use":"maps current V4 and frozen clean-sheet learner surfaces back to preserved V2 course/content identities and competency domains"},
+    {"id":"job-demand-curriculum-bridge","path":"research/integration/job-demand-curriculum-bridge-2026-09-09.json","use":"joins Roadmapdev normalized U.S.-48 demand domains to Crew Blueprint learning homes while preserving planning-evidence-only status"},
+    {"id":"source-citation-regulatory-provenance","path":"research/integration/source-citation-regulatory-provenance-2026-09-09.json","use":"source authority, support, jurisdiction, freshness, copyright and high-safety provenance contract for successor publication"},
+    {"id":"web-client-content-contract","path":"research/integration/web-client-content-contract-2026-09-09.json","use":"normalized learner-facing payload contract for evidence, authority, lineage, media, accessibility, Atlas links and publication state"},
+    {"id":"sitewide-instructional-media-map","path":"research/integration/sitewide-instructional-media-map-2026-09-09.json","use":"sitewide instructional-media selection and release map with controlled-specialty visual boundaries"},
+    {"id":"knowledge-base-system-map","path":"research/integration/knowledge-base-system-map-2026-09-09.json","use":"overall successor knowledge-base node/edge/authority/projection model, current debt and release invariants"}
   ],
   "canonical_matrix_tables": {
     "course_inventory":"research/matrix/course_inventory.jsonl",
@@ -58,13 +67,15 @@
   },
   "retrieval_order": [
     "Read governance entrypoints and the current branch-state registry before substantive work or before consulting non-main branches.",
-    "For current product architecture, read final-recommended-public-catalog, course-product-classification, course-system-situation and the live-production-role map before reasoning from the 143-ID registry or public pages.",
+    "For successor/V4 integration work, read successor-integration-index, knowledge-base-system-map, version-crosswalk-v2-v4-clean-sheet, v4-clean-sheet-v2-content-crosswalk and web-client-content-contract before treating current presentation code as source truth.",
+    "For current product architecture, read final-recommended-public-catalog, course-product-classification, course-system-situation, live-production-role-map and vnext-143-career-guided-map before reasoning from the 143-ID registry or public pages.",
     "Do not interpret course_inventory.jsonl as a command to publish one standalone learner course per registered identity.",
     "Resolve legacy course IDs through course_id_aliases.jsonl before comparing planned versus built state; preserve historical IDs for lineage.",
     "Identify the intended content container before drafting: public course, Field Skill, module, guide, reference, specialist awareness, advanced Owner Review, research domain, historical variant, or defer/remove.",
     "Resolve relevant CONTENT and COMPETENCY relationships through the matrix JSONL tables and claim support through SUPPORT_EDGE to SOURCE; bibliography presence alone is not support.",
     "Check REVIEW, MEDIA, lineage, qualification and supersession state before proposing publication changes.",
-    "Use audience/employer discovery to identify learner problems and friction, never as technical/safety authority.",
+    "Use source-citation-regulatory-provenance for authority/freshness/jurisdiction interpretation and sitewide-instructional-media-map for visual selection/release decisions.",
+    "Use audience/employer discovery and job-demand-curriculum-bridge to identify learner problems and competency demand; never treat employment evidence as technical/safety authority.",
     "Consult the all-branch catalog summary and current branch-state registry when investigating lost, replaced, archived or alternate course presentations; historical existence is evidence, not automatic restoration authority.",
     "Represent external-system inputs through the cross-system context contract and prefer pointers/provenance over copying volatile source payloads.",
     "Use the Roadmapdev orchestration binding for consequential research sufficiency, conflict, audit, prioritization or architecture questions; Roadmapdev remains advisory and cannot manufacture Crew Blueprint write/publication authority.",
@@ -74,6 +85,8 @@
   ],
   "agent_navigation": {
     "whole_course_system_view": [
+      "research/integration/knowledge-base-system-map-2026-09-09.json",
+      "research/analysis/vnext-career-guided-course-map-2026-09-07.json",
       "research/analysis/final-recommended-public-catalog-2026-09-06.md",
       "research/analysis/course-product-classification-2026-09-06.json",
       "research/analysis/course-system-situation-2026-09-06.json",
@@ -83,6 +96,17 @@
       "research/matrix/views/domain-completeness.md",
       "research/matrix/views/unsupported.md"
     ],
+    "successor_integration_and_v4": [
+      "research/integration/README.md",
+      "research/integration/knowledge-base-system-map-2026-09-09.json",
+      "research/integration/version-crosswalk-v2-v4-clean-sheet-2026-09-09.json",
+      "research/integration/v4-clean-sheet-to-v2-content-crosswalk-2026-09-09.json",
+      "research/integration/web-client-content-contract-2026-09-09.json",
+      "research/integration/source-citation-regulatory-provenance-2026-09-09.json",
+      "research/integration/sitewide-instructional-media-map-2026-09-09.json",
+      "research/integration/job-demand-curriculum-bridge-2026-09-09.json",
+      "research/analysis/vnext-career-guided-course-map-2026-09-07.json"
+    ],
     "public_product_and_foundation": [
       "research/analysis/final-recommended-public-catalog-2026-09-06.md",
       "research/analysis/ground-field-foundation-architecture-2026-09-06.md",
@@ -90,6 +114,7 @@
       "research/analysis/live-production-role-family-map-2026-09-06.json"
     ],
     "current_research_and_freshness": [
+      "research/integration/source-citation-regulatory-provenance-2026-09-09.json",
       "research/analysis/research-priorities-2026-09-06.json",
       "research/analysis/audience-employer-discovery-synthesis-2026-09-06.md",
       "research/COMMUNITY_CLIENT_DISCOVERY_AND_ECOSYSTEM_INPUT_2026-09-06.md",
@@ -98,6 +123,7 @@
       "research/matrix/views/source-impact.md"
     ],
     "historical_course_recovery": [
+      "research/integration/version-crosswalk-v2-v4-clean-sheet-2026-09-09.json",
       "research/catalogs/branch-state-registry-2026-09-06.json",
       "research/catalogs/all-branch-course-catalog-summary-2026-09-06.json",
       "research/analysis/course-system-situation-2026-09-06.json",
@@ -105,15 +131,25 @@
       "research/matrix/reviews*.jsonl"
     ],
     "architecture_and_pipeline": [
+      "research/integration/knowledge-base-system-map-2026-09-09.json",
+      "research/integration/web-client-content-contract-2026-09-09.json",
       "research/architecture/content-pipeline-v2-2026-09-06.json",
       "research/architecture/curriculum-container-architecture-2026-09-06.json",
       "research/ecosystem/roadmapdev-orchestration-binding-2026-09-06.json",
       "research/ecosystem/relationship-map.json",
       "research/ecosystem/cross-system-context-record.schema.json"
     ],
+    "media_and_visuals": [
+      "docs/INSTRUCTIONAL_MEDIA_FRAMEWORK_V4.md",
+      "research/integration/sitewide-instructional-media-map-2026-09-09.json",
+      "research/matrix/media*.jsonl",
+      "research/matrix/views/visual-evidence.md",
+      "research/matrix/views/qualification-sensitive.md"
+    ],
     "what_should_we_build_or_fix_next": [
+      "research/integration/knowledge-base-system-map-2026-09-09.json",
       "research/analysis/course-system-situation-2026-09-06.json",
-      "research/analysis/final-recommended-public-catalog-2026-09-06.md",
+      "research/analysis/final-recommended-public-catalog-2026-09-06.json",
       "research/analysis/course-product-classification-2026-09-06.json",
       "research/analysis/open-pr-and-repository-cleanup-audit-2026-09-06.md",
       "research/analysis/research-priorities-2026-09-06.json",
@@ -136,9 +172,12 @@
     "volatile external-system data should be referenced rather than copied when possible",
     "course content and evidence lineage must remain distinguishable from analytical recommendations",
     "historical full builds must not be treated as automatically current",
-    "research-radar and community-discovery items must remain distinguishable from accepted curriculum claims",
+    "research-radar, demand-signal and community-discovery items must remain distinguishable from accepted curriculum claims",
     "non-main branches must not become current truth without an explicit branch-state/owner/governance reason",
-    "product classification must not destructively rename or delete historical IDs",
-    "specialist/hazardous domains must retain external qualification/authorization boundaries"
+    "product classification and successor mapping must not destructively rename or delete historical IDs",
+    "specialist/hazardous domains must retain external qualification/authorization boundaries",
+    "current V4 and clean-sheet presentation objects must not be treated as final source/citation authority when the canonical graph provides stronger provenance",
+    "generated instructional media must preserve evidence, rights, accessibility, review and controlled-specialty boundaries",
+    "web-client projections must preserve canonical IDs, support state, authority state, freshness and lineage"
   ]
 }
