@@ -1,0 +1,55 @@
+/* The Crew Blueprint — V4 learner dashboard course shell */
+
+.course-dashboard-toolbar{display:grid;gap:14px;margin-bottom:16px;padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(18,25,33,.98),rgba(15,22,29,.98));box-shadow:var(--shadow-sm)}
+.course-dashboard-toolbar-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.course-dashboard-toolbar-title{display:grid;gap:2px}
+.course-dashboard-toolbar-title strong{font-size:.98rem;color:#f7f9fb}
+.course-dashboard-toolbar-title span{font-size:.76rem;color:var(--muted)}
+.lesson-jump{display:flex;align-items:center;gap:9px;color:#c6d1db;font-size:.78rem;font-weight:800}
+.lesson-jump select{min-height:40px;max-width:310px;border:1px solid var(--line-strong);border-radius:9px;padding:7px 34px 7px 10px;background:#0e151c;color:#f5f7fa;font:inherit;font-size:.82rem}
+.lesson-tabs{display:flex;gap:8px;overflow-x:auto;padding:1px 1px 6px;scrollbar-width:thin}
+.lesson-tab{flex:0 0 auto;min-height:42px;border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:#0f171f;color:#aebac5;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;transition:background .14s ease,border-color .14s ease,color .14s ease,transform .14s ease}
+.lesson-tab:hover,.lesson-tab:focus-visible{border-color:#536779;color:#fff;background:#18232d}
+.lesson-tab[aria-selected="true"]{border-color:rgba(229,173,47,.48);background:rgba(229,173,47,.11);color:#f4d681}
+.lesson-tab.is-complete::after{content:" ✓";color:var(--success);font-weight:900}
+.lesson-tab.is-assessment{border-style:dashed}
+.lesson-tab[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+.lesson-tab[aria-disabled="true"]:hover{transform:none;border-color:var(--line);background:#0f171f;color:#aebac5}
+.lesson-list.is-dashboard{display:block}
+.lesson-list.is-dashboard>.lesson{display:block}
+.lesson-list.is-dashboard>.lesson[hidden]{display:none!important}
+.lesson-list.is-dashboard>.lesson.is-active{animation:lesson-in .16s ease-out}
+@keyframes lesson-in{from{opacity:.55;transform:translateY(3px)}to{opacity:1;transform:none}}
+.lesson-actions{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.lesson-actions .btn{margin:0}
+.lesson-actions .lesson-prev{justify-self:start}
+.lesson-actions .lesson-complete{justify-self:center;min-width:170px}
+.lesson-actions .lesson-next{justify-self:end}
+.lesson-complete.is-complete{border-color:rgba(130,207,167,.48);background:rgba(130,207,167,.10);color:#b8e6cf}
+.lesson-complete.is-complete:hover{background:rgba(130,207,167,.13);border-color:rgba(130,207,167,.6)}
+.course-assessment{border-color:rgba(229,173,47,.30);background:linear-gradient(180deg,rgba(24,29,31,.98),rgba(18,25,33,.98))}
+.assessment-intro{margin-bottom:18px}
+.assessment-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.assessment-question{margin:0 0 14px;padding:17px;border:1px solid var(--line);border-radius:12px;background:#0e151c}
+.assessment-question legend{padding:0 5px;color:#f4f7fa;font-weight:800;line-height:1.45}
+.assessment-options{display:grid;gap:8px;margin-top:12px}
+.assessment-option{display:flex;gap:9px;align-items:flex-start;padding:10px;border:1px solid transparent;border-radius:8px;color:#c7d1db;cursor:pointer}
+.assessment-option:hover{border-color:#344452;background:#121c25;color:#fff}
+.assessment-option input{flex:0 0 auto;width:17px;height:17px;margin-top:3px;accent-color:var(--accent)}
+.assessment-result{display:none;margin:16px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:#0e151c;color:#c6d1db}
+.assessment-result.is-visible{display:block}
+.assessment-result.is-pass{border-color:rgba(130,207,167,.42);background:rgba(130,207,167,.07);color:#c7ead8}
+.assessment-result.is-retry{border-color:rgba(229,173,47,.35);background:rgba(229,173,47,.055);color:#e0d5b8}
+.assessment-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.assessment-actions .btn{margin:0}
+.assessment-status{margin-top:10px;color:var(--muted);font-size:.78rem}
+.course-progress-status{display:grid;gap:5px;margin:12px 0 4px}
+.course-progress-status span{font-size:.76rem;color:var(--muted)}
+.course-progress-status strong{font-size:.82rem;color:#d9e1e8}
+.course-progress-status strong.is-ready{color:#e7c970}
+.course-progress-status strong.is-passed{color:#9fd8bd}
+.course-sidebar a.is-disabled,.footer a.is-disabled{pointer-events:none;opacity:.5;text-decoration:none!important}
+.course-sidebar a.is-disabled::after{content:" · assessment required";font-size:.66rem;color:var(--muted)}
+.course-dashboard-noscript{margin-bottom:16px;padding:14px;border:1px solid rgba(229,173,47,.3);border-radius:10px;background:rgba(229,173,47,.06);color:#d8d1ba}
+@media(max-width:760px){.course-dashboard-toolbar{padding:13px}.lesson-jump{width:100%;display:grid;grid-template-columns:auto 1fr}.lesson-jump select{width:100%;max-width:none}.lesson-actions{grid-template-columns:1fr 1fr}.lesson-actions .lesson-complete{grid-column:1/-1;grid-row:1;justify-self:stretch}.lesson-actions .lesson-prev{grid-column:1;grid-row:2;justify-self:stretch}.lesson-actions .lesson-next{grid-column:2;grid-row:2;justify-self:stretch}.lesson-actions .btn{width:100%}.assessment-actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.lesson-list.is-dashboard>.lesson.is-active{animation:none}}
