@@ -49,6 +49,13 @@ The goal is **one evidence-backed knowledge graph with multiple learner-facing j
 6. `knowledge-base-system-map-2026-09-09.json`
    - records the overall node/edge model, repository authorities, strict semantic separations, release invariants, current debt, and next build outputs.
 
+7. `v4-clean-sheet-to-v2-content-crosswalk-2026-09-09.json`
+   - maps every major restored V4 learner surface and frozen clean-sheet program back to preserved V2 course/content identities;
+   - identifies cases where a successor surface is a many-to-many synthesis rather than a new canonical course;
+   - keeps shared foundations, Field Skills, contexts, work/career resources, advanced nodes, and controlled specialties inside their correct lineage/authority treatment.
+
+All seven integration artifacts are registered in `research/agent-retrieval-manifest.json` so future agents start from the same graph and do not reconstruct a competing model from UI files alone.
+
 ## Controlling evidence path
 
 ```text
