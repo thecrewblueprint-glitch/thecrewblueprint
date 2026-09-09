@@ -1,0 +1,82 @@
+name: Clerk role administration
+
+on:
+  workflow_dispatch:
+    inputs:
+      clerk_user_id:
+        description: "Clerk user ID (user_...)"
+        required: true
+        type: string
+      role:
+        description: "Application role to assign"
+        required: true
+        default: learner
+        type: choice
+        options:
+          - owner
+          - admin
+          - learner
+      confirm:
+        description: "Type APPLY_ROLE_CHANGE to confirm"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  update-role:
+    runs-on: ubuntu-latest
+    environment: clerk-role-admin
+    steps:
+      - name: Validate request
+        env:
+          CLERK_USER_ID: ${{ inputs.clerk_user_id }}
+          ROLE: ${{ inputs.role }}
+          CONFIRM: ${{ inputs.confirm }}
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$CONFIRM" != "APPLY_ROLE_CHANGE" ]]; then
+            echo "Confirmation text did not match. No role change performed."
+            exit 1
+          fi
+          if [[ ! "$CLERK_USER_ID" =~ ^user_[A-Za-z0-9]+$ ]]; then
+            echo "Invalid Clerk user ID format."
+            exit 1
+          fi
+          case "$ROLE" in
+            owner|admin|learner) ;;
+            *) echo "Invalid role."; exit 1 ;;
+          esac
+          if [[ -z "${CLERK_SECRET_KEY:-}" ]]; then
+            echo "CLERK_SECRET_KEY is not configured for this repository/environment."
+            exit 1
+          fi
+
+      - name: Update Clerk public metadata role
+        env:
+          CLERK_USER_ID: ${{ inputs.clerk_user_id }}
+          ROLE: ${{ inputs.role }}
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          payload=$(printf '{"public_metadata":{"role":"%s"}}' "$ROLE")
+          http_code=$(curl --silent --show-error \
+            --output /tmp/clerk-role-response.json \
+            --write-out '%{http_code}' \
+            --request PATCH \
+            --header "Authorization: Bearer $CLERK_SECRET_KEY" \
+            --header "Content-Type: application/json" \
+            --data "$payload" \
+            "https://api.clerk.com/v1/users/$CLERK_USER_ID/metadata")
+
+          if [[ "$http_code" -lt 200 || "$http_code" -ge 300 ]]; then
+            echo "Clerk role update failed with HTTP $http_code."
+            node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('/tmp/clerk-role-response.json','utf8'));console.error(d.errors?.map(e=>e.long_message||e.message).filter(Boolean).join('; ')||'Clerk returned an error.');"
+            exit 1
+          fi
+
+          node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('/tmp/clerk-role-response.json','utf8'));console.log('Updated Clerk user:', d.id);console.log('Application role:', d.public_metadata?.role || d.publicMetadata?.role || 'unknown');"
