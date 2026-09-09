@@ -105,7 +105,7 @@
       "program_id": "contexts",
       "title": "Context Labs",
       "presentation_role": "sector/environment transfer",
-      "primary_v2_course_ids": ["C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUTDOOR"],
+      "primary_v2_course_ids": ["C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUT"],
       "supporting_v2_course_ids": ["C-LOG-PRODUCTION", "C-SHP-WAREHOUSE"],
       "disposition": "retain Context Lab pattern as overlays reusable across career lanes; do not turn each context into a prerequisite ladder"
     },
