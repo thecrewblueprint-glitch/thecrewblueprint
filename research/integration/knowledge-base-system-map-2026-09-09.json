@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-09",
+  "status": "structural_proposed_state_pr57",
+  "purpose": "Define the complete Crew Blueprint knowledge-base model that joins historical curriculum, current evidence, learner journeys, labor-demand signals, authority boundaries, media, cross-product links, and web-client projections without collapsing source ownership.",
+  "product_statement": "Crew Blueprint is an evidence-backed learning graph rendered through small learner-facing journeys. It is not a flat 143-course catalog, not V4 source truth, not the clean-sheet prototype, and not a duplicate of Production Atlas.",
+  "authorities": [
+    {
+      "system": "thecrewblueprint",
+      "repository": "thecrewblueprint-glitch/thecrewblueprint",
+      "canonical_ref": "main",
+      "owns": ["curriculum", "instructional evidence", "course/content identity", "competency graph", "claim/source relationships", "review state", "MEDIA state", "learner-facing publication state", "historical curriculum archive"]
+    },
+    {
+      "system": "production_atlas",
+      "repository": "thecrewblueprint-glitch/festival-atlas",
+      "canonical_ref": "research-version",
+      "owns": ["public-safe employer intelligence", "current opportunities", "markets", "labor routes", "labor organizations", "public hiring routes", "volatile work-side freshness"]
+    },
+    {
+      "system": "roadmapdev",
+      "repository": "thecrewblueprint-glitch/Roadmapdev",
+      "canonical_ref": "main",
+      "owns": ["private cross-system analysis", "normalized labor-demand signals", "gap analysis", "decision support", "research reconciliation"],
+      "authority_limit": "advisory_only"
+    },
+    {
+      "system": "50yearroadmap",
+      "repository": "thecrewblueprint-glitch/50yearroadmap",
+      "canonical_ref": "main",
+      "owns": ["ecosystem governance", "change control", "repository relationships", "accepted-state continuity"]
+    },
+    {
+      "system": "supabase_roadmap",
+      "role": "durable structured state/provenance/runtime projection",
+      "authority_limit": "does_not_replace_source_repository_canonicality"
+    }
+  ],
+  "version_layer": {
+    "v2": {
+      "ref": "archive/frozen-v2-exact-2026-09-07",
+      "commit": "1b1ddb0649d5a66bfff91b74791b4f3ce4f4c256",
+      "role": "deep_historical_knowledge_and_course_reference"
+    },
+    "clean_sheet": {
+      "ref": "archive/frozen-vnext-clean-sheet-exact-2026-09-07",
+      "commit": "4378c3954efd8e8fee7b98842493e932567341b7",
+      "role": "learner_experience_and_information_architecture_reference"
+    },
+    "v4_live": {
+      "ref": "main",
+      "commit_at_map_time": "7c76b7ce885f5ebe0c9d36e04314d448d80cce12",
+      "role": "current_restored_presentation_frontier"
+    },
+    "rule": "Version presentation is lineage/context. Canonical claim/evidence state comes from the normalized Crew Blueprint graph, not from whichever UI version renders a concept."
+  },
+  "canonical_node_families": [
+    "course_identity",
+    "content_unit",
+    "claim",
+    "boundary",
+    "assessment_question",
+    "assessment_rationale",
+    "competency",
+    "research_package",
+    "source",
+    "support_edge",
+    "review",
+    "media",
+    "historical_version",
+    "role_family",
+    "responsibility_band",
+    "department_or_domain",
+    "context",
+    "career_lane",
+    "authority_class",
+    "external_qualification_or_credential",
+    "production_atlas_link",
+    "learner_state",
+    "web_projection"
+  ],
+  "canonical_edges": [
+    "course_contains_or_presents_content",
+    "content_teaches_competency",
+    "research_covers_competency",
+    "claim_supported_by_source",
+    "question_supported_by_rationale",
+    "rationale_traces_to_claim_or_boundary",
+    "content_lineage_supersedes_or_reuses_content",
+    "historical_version_represents_course_or_content",
+    "competency_supports_role_family",
+    "role_family_observed_at_responsibility_band",
+    "competency_applies_in_context",
+    "competency_or_content_requires_external_authority",
+    "media_illustrates_content",
+    "review_evaluates_content_or_media",
+    "course_or_content_links_to_atlas_route",
+    "web_projection_renders_graph_nodes",
+    "learner_state_records_interaction_with_content_without_granting_authority"
+  ],
+  "semantic_separations": [
+    "research coverage != learner-facing course coverage",
+    "bibliography presence != direct claim support",
+    "course identity != public catalog card",
+    "course completion != observed practical performance",
+    "observed practice != employer authorization",
+    "awareness/system literacy != qualification",
+    "labor-market demand != instructional authority",
+    "job title != stable competency definition",
+    "course tier != labor-market responsibility band",
+    "historical evidence != current publication state",
+    "current publication state != evidence completeness",
+    "safe/conservative wording != source completeness",
+    "employer != venue/worksite/client",
+    "operating brand != canonical employer identity",
+    "career possibility != guaranteed progression",
+    "current opening != evergreen hiring route",
+    "worker experience evidence != employer fact",
+    "learner navigation simplification != deletion of underlying knowledge",
+    "generated visual plausibility != technical authority",
+    "web presentation object != canonical provenance"
+  ],
+  "ingestion_and_projection_pipeline": [
+    "1. preserve source repository/ref/path/commit or external source provenance",
+    "2. normalize source/research/content/competency/review/media records",
+    "3. classify support strength, applicability, jurisdiction, authority, freshness, and publication state",
+    "4. join Roadmapdev demand signals only as curriculum-priority planning evidence",
+    "5. resolve course/content lineage and historical versions",
+    "6. map canonical content into career lanes, context overlays, Field Skills, career resources, and advanced nodes",
+    "7. attach stable Production Atlas links rather than volatile Atlas payload copies",
+    "8. apply safety/qualification/media/review gates",
+    "9. generate a normalized web-client projection",
+    "10. render Home/Start/Learn/Field/Departments/Contexts/Grow/Advanced/Sources/Find Work journeys",
+    "11. record learner interaction state separately from authority and qualification"
+  ],
+  "labor_demand_bridge": {
+    "source": "thecrewblueprint-glitch/Roadmapdev@main:research/crew-blueprint-us48-role-competency-signal-map-01-2026-09-07.json",
+    "domains": 21,
+    "use": ["prioritize competency coverage", "identify missing lane depth", "test whether curriculum reflects recurring job-side capability signals"],
+    "prohibited_use": ["technical procedure authority", "legal authority", "employer ranking", "automatic course publication", "automatic credential recommendation", "copying raw employer/pay/opening data into lessons"]
+  },
+  "presentation_architecture": {
+    "front_door": ["orientation", "situation-first start", "career-lane discovery", "continue progress"],
+    "learning": ["shared foundations", "lane entry", "lane core", "Field Skills", "context overlays", "deep/advanced nodes"],
+    "work_bridge": ["stable Production Atlas route", "purpose label", "compatibility/freshness check"],
+    "grow": ["lateral movement", "responsibility depth", "specialist branches", "leadership/management", "credentials/qualification context"],
+    "sources": ["claim provenance", "support strength", "authority class", "freshness", "review state", "historical lineage", "media provenance"],
+    "principle": "The learner sees a small decision surface while the full graph remains available underneath."
+  },
+  "current_v4_state_model": {
+    "observed_file": "js/blueprint-v4.js",
+    "states": ["active lesson", "completed lessons", "assessment attempts", "assessment best score", "assessment passed"],
+    "strength": "V4 separates lesson completion from last-viewed state and allows assessment retry.",
+    "remaining_requirement": "Future backend/runtime state must continue separating knowledge completion, assessment, observed practice, and external authorization."
+  },
+  "publication_gates": {
+    "all_content": ["identity/lineage resolved", "claim/evidence state known", "authority class known", "review/publication state known"],
+    "externally_grounded_claim": ["support edge exists", "source applicability is visible", "freshness/jurisdiction is appropriate"],
+    "high_safety_content": ["boundary wording retained", "unsupported external claims blocked or visibly qualified", "qualified/practitioner review when required"],
+    "media": ["rights/provenance", "learning objective", "alt/text equivalent", "safety/context scope", "review state"],
+    "cross_product_link": ["canonical Atlas owner/ref known", "stable route/identifier", "compatibility check", "no private/personal payload"],
+    "web_projection": ["canonical IDs retained", "no unsupported inference introduced by rendering", "source/authority state representable in client"]
+  },
+  "historical_retention": {
+    "policy": "content/archive/README.md",
+    "current_materialized_snapshot": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/",
+    "rule": "Presentation merge/split/hide decisions never delete historical identity or materially distinct archived bodies without explicit owner-authorized archive action."
+  },
+  "known_current_debt": [
+    {
+      "id": "KB-DEBT-001",
+      "area": "v4_provenance_projection",
+      "finding": "V4 content/source objects remain partly hand-maintained and should be generated from canonical graph state before they are treated as provenance truth."
+    },
+    {
+      "id": "KB-DEBT-002",
+      "area": "unsupported_high_safety_boundaries",
+      "finding": "The generated unsupported view contains many high-safety boundary records. Internal product-policy boundaries and external factual/legal claims need explicit support-state treatment rather than one undifferentiated unsupported bucket."
+    },
+    {
+      "id": "KB-DEBT-003",
+      "area": "atlas_links",
+      "finding": "Some presentation code embeds branch/path assumptions. Cross-product routing should use stable Atlas identifiers/URLs owned by Production Atlas rather than copied repository internals."
+    },
+    {
+      "id": "KB-DEBT-004",
+      "area": "course_mapping_acceptance",
+      "finding": "PR #57 maps all 143 identities but remains proposed until owner acceptance/merge."
+    },
+    {
+      "id": "KB-DEBT-005",
+      "area": "client_projection",
+      "finding": "The normalized web payload is specified but not yet generated by a build/runtime service."
+    },
+    {
+      "id": "KB-DEBT-006",
+      "area": "media_coverage",
+      "finding": "MEDIA schema exists and selected visuals are normalized, but sitewide media coverage remains incomplete and safety-critical visuals require review discipline."
+    }
+  ],
+  "next_build_outputs_after_acceptance": [
+    "generated canonical learner-path edge table",
+    "generated web-client content projection",
+    "stable Production Atlas cross-link registry",
+    "sitewide media backlog derived from the instructional-media map",
+    "unsupported/external-claim closure queue split from internal policy boundaries",
+    "lane/context/deep-node renderer consuming canonical IDs rather than hard-coded catalogs",
+    "source/freshness UI based on canonical provenance",
+    "learner-state model that preserves completion/assessment/practice/authorization separation"
+  ],
+  "release_invariants": [
+    "Frozen V2 and clean-sheet references remain immutable.",
+    "All 143 canonical identities remain accounted for through lineage even if not exposed as peer public courses.",
+    "No personal information enters public Crew Blueprint or Production Atlas repositories.",
+    "Production Atlas volatile data is linked, not duplicated into static curriculum by default.",
+    "Roadmapdev analysis remains advisory until accepted through Crew Blueprint governance.",
+    "No course or visual implies qualification merely because it appears later or deeper in a path.",
+    "No learner state is interpreted as employer/site authorization.",
+    "Every generated client surface can trace rendered content back to canonical IDs and evidence state."
+  ]
+}
