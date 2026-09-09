@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-09",
+  "status": "structural_proposed_state_pr57",
+  "purpose": "Apply the V4 instructional-media framework across the Crew Blueprint knowledge graph without turning visuals into independent technical authority or implying qualification.",
+  "authority": {
+    "instructional_media_framework": "docs/INSTRUCTIONAL_MEDIA_FRAMEWORK_V4.md",
+    "canonical_media_records": "research/matrix/media*.jsonl",
+    "canonical_claim_and_evidence_state": "research/matrix/content*.jsonl + support_edges*.jsonl + sources*.jsonl + reviews*.jsonl",
+    "rule": "A visual inherits the evidence, authority, applicability, review, and publication boundaries of the content it illustrates. A visual never upgrades a claim or grants task authority."
+  },
+  "selection_order": [
+    "Define the learner objective.",
+    "Use text alone when no spatial, physical, comparative, or motion variable materially improves understanding.",
+    "Use an authentic field photo for recognition of real equipment, work areas, labels, or environmental context.",
+    "Use an annotated visual for parts, zones, interfaces, and recognition features.",
+    "Use a flow/process diagram for relationships, custody, dependencies, signal/data/material paths, or production handoffs.",
+    "Use comparison views for roles, contexts, document types, system layers, or responsibility depth.",
+    "Use step sequences only when sequence itself is a learning objective and the task is appropriate for online instructional treatment.",
+    "Use video only when motion or changing state is the instructional variable.",
+    "Use scenario-choice or micro-practice for judgment/retrieval; these remain separate from scored course assessment.",
+    "For controlled/specialist work, prefer recognition, interface, boundary, role, and system-literacy visuals over procedural demonstration."
+  ],
+  "site_surfaces": [
+    {
+      "surface": "home_start_orientation",
+      "routes": ["index.html", "start.html"],
+      "objectives": ["orient the learner", "show the production ecosystem", "reduce first-contact cognitive load"],
+      "preferred_media": ["career-path graph", "production-day flow diagram", "representative environment photo"],
+      "avoid": ["dense technical schematics", "generic decorative stock imagery", "procedure sequences"]
+    },
+    {
+      "surface": "v4_crew_ready",
+      "routes": ["courses-v4/crew-ready.html"],
+      "objectives": ["call readiness", "assignment ownership", "communication", "handoff", "equipment stewardship", "scope boundaries"],
+      "preferred_media": ["show-flow diagram", "annotated call-information example", "organized staging-area photo", "handoff flow", "scenario-choice"],
+      "media_boundary": "Photos and diagrams illustrate recognition and workflow. They do not prescribe site-specific movement, PPE, electrical, rigging, powered-equipment, or structural procedures."
+    },
+    {
+      "surface": "v4_systems_thinking",
+      "routes": ["courses-v4/systems-thinking.html"],
+      "objectives": ["dependencies", "source/path/control/destination reasoning", "observation versus assumption", "troubleshooting escalation", "documentation state"],
+      "preferred_media": ["system topology", "dependency graph", "source-to-destination flow", "decision tree", "before/after state comparison", "scenario-choice"],
+      "media_boundary": "System diagrams remain conceptual unless product/version evidence and responsible review support a more specific representation."
+    },
+    {
+      "surface": "v4_shop_logistics",
+      "routes": ["courses-v4/shop-logistics.html"],
+      "objectives": ["custody", "receiving", "staging", "inventory identity", "prep/QC escalation", "truck-stage and return-state concepts"],
+      "preferred_media": ["warehouse-area photo", "annotated label/case photo", "custody-flow diagram", "receiving-to-return lifecycle", "ready-versus-discrepancy comparison"],
+      "media_boundary": "No powered-industrial-truck, machinery, hazardous-material, repair, battery-service, vehicle-operation, or cargo-plan procedure is taught through visuals."
+    },
+    {
+      "surface": "v4_department_explorer",
+      "routes": ["courses-v4/department-explorer.html", "learn.html"],
+      "objectives": ["recognize role families", "compare workflows", "choose a learning lane", "understand shared versus department-specific competencies"],
+      "preferred_media": ["department comparison matrix", "career-lane graph", "responsibility-depth graph", "representative department photos", "context overlay map"],
+      "avoid": ["one universal promotion ladder", "role imagery that implies credentials or authorization"]
+    },
+    {
+      "surface": "field_skills_library",
+      "course_ids": ["C-FLD-ROAD-CASE", "C-FLD-CABLE-COIL", "C-FLD-RATCHET", "C-FLD-FLATBED", "C-FLD-BARRICADE", "C-FLD-CABLE-PROTECT", "C-FLD-TEAM", "C-FLD-CART", "C-FLD-CABLE-DEPLOY", "C-FLD-BONEYARD", "C-FLD-RESET", "C-FLD-SOFT", "C-FLD-PD", "C-FLD-DECK", "C-FLD-TOOLS", "C-FLD-MARK", "C-FLD-SCENERY", "C-FLD-DOCK"],
+      "preferred_media": ["authentic recognition photo", "annotated photo", "bounded step sequence when appropriate", "handoff diagram", "condition comparison", "micro-practice"],
+      "release_rule": "Any physical-task visual whose correctness depends on exact equipment, product, site, qualified-person judgment, or safety-critical procedure remains owner/practitioner review until the applicable matrix MEDIA/review gates are satisfied."
+    },
+    {
+      "surface": "lighting_lane",
+      "course_ids": ["C-LTG-SUPPORT", "C-LTG-PRODUCTION-FLOW", "C-LTG-LIFECYCLE", "C-LTG-SCIENCE", "C-LTG-CONTROL", "C-LTG-CONSOLE", "C-LTG-DESIGN-DOC", "C-LTG-SYSTEM-DESIGN", "C-LEAD-LTG", "C-LTG-BUSINESS"],
+      "preferred_media": ["workflow map", "fixture/equipment recognition photo", "control/data conceptual flow", "document comparison", "role/responsibility diagram", "system topology"],
+      "controlled_interfaces": ["production power", "rigging", "work at height", "lift operation", "internal fixture service", "laser/special-effects interfaces"],
+      "controlled_media_rule": "Show interface, recognition, ownership, and escalation boundaries; do not use a course visual as an operational procedure for a controlled interface."
+    },
+    {
+      "surface": "audio_lane",
+      "course_ids": ["C-AUD-SUPPORT", "C-AUD-SYSTEMS", "C-AUD-SIGNAL", "C-AUD-SOURCES", "C-AUD-CONSOLE", "C-AUD-PA", "C-AUD-NET", "C-COM-INTERCOM", "C-AUD-SECTORS", "C-AUD-SYSTEM-DESIGN", "C-LEAD-AUD", "C-AUD-LEAD-SYS"],
+      "preferred_media": ["signal-flow concept diagram", "equipment recognition photo", "physical-versus-logical layer comparison", "role map", "troubleshooting escalation tree", "context comparison"],
+      "controlled_interfaces": ["rigging", "production power", "RF coordination", "network administration", "system commissioning"],
+      "controlled_media_rule": "Keep platform-specific configuration and controlled-system operation outside unrestricted generic instructional visuals unless exact evidence and review permit it."
+    },
+    {
+      "surface": "video_led_lane",
+      "course_ids": ["C-VID-SUPPORT", "C-VID-SYSTEMS", "C-VID-LED-HARDWARE", "C-VID-SIGNAL", "C-VID-SWITCH", "C-VID-PROJ", "C-CAM-BCAST", "C-VID-MEDIA", "C-VID-AOIP", "C-VID-SYSTEM-ARCH", "C-LEAD-VID", "C-VID-COMMISSION"],
+      "preferred_media": ["display-system layer diagram", "signal/data flow", "equipment recognition photo", "physical-versus-logical comparison", "camera/playback role map", "system topology"],
+      "controlled_interfaces": ["rigging", "structural support", "production power", "processor mapping/configuration", "network administration", "commissioning"],
+      "controlled_media_rule": "Generated or generic visuals must not be presented as manufacturer panel-lock, processing, mapping, calibration, or structural instructions."
+    },
+    {
+      "surface": "staging_scenic_lane",
+      "course_ids": ["C-STG-SUPPORT", "C-STG-DECK-SYSTEMS", "C-STG-SYSTEMS", "C-STG-SHOP", "C-STG-PLATFORM", "C-STG-MOVEMENT", "C-STG-LIFECYCLE", "C-STG-DESIGN-COORD", "C-LEAD-STG", "C-STG-SECTOR-LEAD"],
+      "preferred_media": ["component recognition photo", "physical-production lifecycle", "drawing/document comparison", "material-flow diagram", "department-interface map"],
+      "controlled_interfaces": ["structural configuration", "load capacity", "engineered changes", "automation", "powered equipment", "overhead work", "public-use acceptance"],
+      "controlled_media_rule": "Use diagrams to explain system relationships and decision ownership, not to provide structural acceptance or engineered assembly procedure."
+    },
+    {
+      "surface": "backline_props_wardrobe",
+      "course_ids": ["C-BPW-SUPPORT", "C-BPW-SYSTEMS", "C-BKL-PATH", "C-PRP-RUN", "C-WRD-RUN"],
+      "preferred_media": ["chain-of-custody diagram", "ownership/state comparison", "representative department photo", "handoff map", "preset/state scenario"],
+      "media_boundary": "Visuals emphasize item identity, state preservation, discretion, and handoff. They do not prescribe artist-specific setup, tuning, repair, alteration, or performance presets."
+    },
+    {
+      "surface": "context_labs",
+      "course_ids": ["C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUTDOOR"],
+      "preferred_media": ["contextual photo set", "what-stays/what-changes comparison", "site/role relationship map", "workflow overlay"],
+      "media_boundary": "Context imagery explains environmental differences; it does not substitute for venue/site rules or current operational instructions."
+    },
+    {
+      "surface": "career_work_grow",
+      "course_ids": ["C-CAR-ENTRY", "C-CAR-PRO", "C-CAR-UNION", "C-CAR-CRED", "C-CAR-CLASSIFY", "C-CAR-FREELANCE-BIZ", "C-CAR-PAYMENT", "C-CAR-RECORDS", "C-CAR-WORKER-RIGHTS", "C-PROD-CAREER-BRANCH"],
+      "preferred_media": ["career-lane graph", "employer-channel diagram", "document comparison", "decision-right map", "freshness/status indicators"],
+      "data_rule": "Volatile employers, openings, pay, market evidence, labor routes, and IATSE/local intake remain Production Atlas-owned. Crew Blueprint visuals may explain stable structures and link outward."
+    },
+    {
+      "surface": "leadership_management",
+      "preferred_media": ["responsibility matrix", "handoff/escalation flow", "information-flow diagram", "advance/change/closeout lifecycle", "stakeholder map"],
+      "media_boundary": "Management diagrams teach coordination systems; they do not create appointment, signing, engineering, legal, or specialist authority."
+    },
+    {
+      "surface": "controlled_specialty_awareness",
+      "course_ids": ["C-RIG-AWARE", "C-RIG-HARDWARE", "C-RIG-LOAD", "C-RIG-WORKFLOW", "C-RIG-HEIGHT", "C-ELC-POWER-AWARENESS", "C-ELC-FUND", "C-ELC-DIST", "C-ELC-AHJ", "C-ELC-QUALITY", "C-ELC-TEST", "C-ELC-GEN", "C-AUT-STAGE", "C-AUT-AWARE", "C-FX-ATM", "C-FX-LASER", "C-FX-SPECIAL"],
+      "preferred_media": ["role/interface diagram", "authority-boundary diagram", "system-layer overview", "qualification/credential map", "recognition-only photo where appropriate"],
+      "prohibited_default_media": ["generic operational procedure", "step-by-step controlled-work sequence", "load/calculation instruction", "energized-work procedure", "work-at-height procedure", "automation bypass/reset procedure", "special-effects operation procedure"],
+      "rule": "The default online media posture is awareness, system literacy, interface recognition, STOP/ASK/escalation, and external-qualification context."
+    },
+    {
+      "surface": "sources_and_evidence",
+      "routes": ["sources-v4.html"],
+      "preferred_media": ["claim-to-source graph", "freshness indicator", "authority-class legend", "version lineage graph", "review-state badge"],
+      "rule": "Source visualizations must preserve direct versus partial versus contextual support and must not imply that bibliography presence equals claim support."
+    }
+  ],
+  "media_record_minimum": [
+    "media_id",
+    "content_id_or_course_refs",
+    "learning_objective",
+    "media_type",
+    "source_or_generation_provenance",
+    "rights_or_license_state",
+    "equipment_or_context_scope",
+    "safety_criticality",
+    "review_state",
+    "reviewer_and_date_when_required",
+    "alt_text_or_text_equivalent",
+    "caption_learning_purpose",
+    "version_or_asset_hash",
+    "publication_state"
+  ],
+  "generation_policy": {
+    "authentic_photos": "Prefer authentic current-context photography where physical recognition is the objective and rights/provenance are clear.",
+    "generated_photorealistic": "May illustrate generic non-authoritative context. Must be labeled illustrative where factual ambiguity is possible and must not masquerade as a manufacturer image, site plan, inspection record, or documentary proof.",
+    "generated_diagrams": "Preferred for abstract relationships, flows, role maps, and conceptual system architecture when grounded to canonical content/evidence.",
+    "external_generation": "Any externally generated asset must enter through the same provenance, rights, safety, accessibility, and review gates as internally generated media."
+  },
+  "release_invariants": [
+    "No media asset can upgrade unsupported text into supported evidence.",
+    "No safety-critical visual is approved solely because it looks plausible.",
+    "No generated technical visual is represented as manufacturer documentation or engineering/site authority.",
+    "Every instructional visual has a text equivalent or surrounding explanation sufficient to preserve the learning objective.",
+    "Media optimization/CDN delivery is separate from canonical provenance metadata.",
+    "Learner clicks on media are not mastery evidence."
+  ]
+}
