@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "map_id": "crew-blueprint-job-demand-curriculum-bridge-2026-09-09",
+  "date": "2026-09-09",
+  "status": "non-decisional planning/evidence bridge",
+  "purpose": "Join normalized U.S.-48 role/competency demand signals to Crew Blueprint knowledge areas without turning employment evidence into instructional authority.",
+  "source": {
+    "roadmapdev_signal_map": "thecrewblueprint-glitch/Roadmapdev@main:research/crew-blueprint-us48-role-competency-signal-map-01-2026-09-07.json",
+    "roadmapdev_org_index": "thecrewblueprint-glitch/Roadmapdev@main:research/crew-blueprint-us48-research-organization-index-2026-09-07.md",
+    "crew_blueprint_143_map": "research/analysis/vnext-career-guided-course-map-2026-09-07.json",
+    "crew_blueprint_matrix": "research/matrix/"
+  },
+  "authority_rule": "Every demand signal below is planning evidence only. It can justify priority or discoverability; learner-facing technical/safety claims still require independent Crew Blueprint instructional evidence.",
+  "joins": [
+    {"demand_domain":"general_stage_workflow","primary_learning_homes":["C-SHF-FUNDAMENTALS","C-CAR-FIRST-FIVE"],"surface":["start","general-production"],"authority":"planning_evidence_only"},
+    {"demand_domain":"communication_and_cueing","primary_learning_homes":["C-COM-WORK","C-SHF-FUNDAMENTALS"],"surface":["shared-foundation","trusted"],"authority":"planning_evidence_only"},
+    {"demand_domain":"equipment_identification_and_handling","primary_learning_homes":["C-SHF-FUNDAMENTALS","C-FLD-TOOLS"],"surface":["shared-foundation","field"],"authority":"planning_evidence_only"},
+    {"demand_domain":"load_in_load_out_logistics","primary_learning_homes":["C-SHF-FUNDAMENTALS","C-LOG-PRODUCTION","C-SHP-TRUCK-STAGE"],"surface":["field","shop-logistics","contexts"],"authority":"planning_evidence_only"},
+    {"demand_domain":"department_workflow_audio","primary_learning_homes":["C-AUD-SUPPORT","C-AUD-SYSTEMS"],"surface":["audio-lane"],"authority":"planning_evidence_only"},
+    {"demand_domain":"department_workflow_lighting","primary_learning_homes":["C-LTG-SUPPORT","C-LTG-PRODUCTION-FLOW"],"surface":["lighting-lane"],"authority":"planning_evidence_only"},
+    {"demand_domain":"department_workflow_video_led_playback","primary_learning_homes":["C-VID-SUPPORT","C-VID-SYSTEMS","C-VID-MEDIA"],"surface":["video-led-lane"],"authority":"planning_evidence_only"},
+    {"demand_domain":"department_workflow_staging_scenic","primary_learning_homes":["C-STG-SUPPORT","C-STG-SYSTEMS"],"surface":["staging-structures-lane"],"authority":"planning_evidence_only"},
+    {"demand_domain":"rigging_boundary_awareness","primary_learning_homes":["C-RIG-AWARE"],"surface":["controlled-specialties"],"authority":"planning_evidence_only","gate":"awareness_only; external qualification/site authorization remain separate"},
+    {"demand_domain":"production_power_boundary_awareness","primary_learning_homes":["C-ELC-POWER-AWARENESS"],"surface":["controlled-specialties"],"authority":"planning_evidence_only","gate":"conceptual awareness only; qualified electrical work remains external"},
+    {"demand_domain":"signal_flow_and_system_reasoning","primary_learning_homes":["C-AUD-SIGNAL","C-VID-SIGNAL","C-LTG-CONTROL"],"surface":["systems-thinking","department-lanes"],"authority":"planning_evidence_only"},
+    {"demand_domain":"digital_network_and_control_awareness","primary_learning_homes":["C-AUD-NET","C-LTG-CONTROL","C-VID-AOIP"],"surface":["department-lanes","advanced"],"authority":"planning_evidence_only"},
+    {"demand_domain":"show_file_and_playback_workflow","primary_learning_homes":["C-LTG-CONSOLE","C-VID-MEDIA"],"surface":["department-lanes","advanced"],"authority":"planning_evidence_only"},
+    {"demand_domain":"warehouse_inventory_qc_repair","primary_learning_homes":["C-SHP-WAREHOUSE","C-SHP-INVENTORY","C-SHP-PREP-QC"],"surface":["shop-logistics"],"authority":"planning_evidence_only"},
+    {"demand_domain":"fleet_shipping_and_logistics","primary_learning_homes":["C-LOG-PRODUCTION","C-SHP-TRUCK-STAGE"],"surface":["shop-logistics","contexts"],"authority":"planning_evidence_only"},
+    {"demand_domain":"documentation_and_advance_work","primary_learning_homes":["C-PMG-PAPER","C-PMG-ADVANCE-ARTIFACTS","C-LTG-DESIGN-DOC"],"surface":["grow","production-management","department-advanced"],"authority":"planning_evidence_only"},
+    {"demand_domain":"troubleshooting_and_escalation","primary_learning_homes":["C-SHF-FUNDAMENTALS","C-AUD-SYSTEMS","C-LTG-PRODUCTION-FLOW","C-VID-SYSTEMS"],"surface":["systems-thinking","department-lanes"],"authority":"planning_evidence_only"},
+    {"demand_domain":"crew_coordination_and_leadership","primary_learning_homes":["C-LEAD-AUD","C-LEAD-LTG","C-LEAD-VID","C-LEAD-STG"],"surface":["grow","leadership"],"authority":"planning_evidence_only"},
+    {"demand_domain":"project_production_management","primary_learning_homes":["C-PMG-ROLE","C-PMG-ADVANCE-ARTIFACTS","C-PMG-LABOR-SCHEDULE","C-PMG-BUDGET-CHANGE","C-PMG-CLOSEOUT"],"surface":["grow","production-management"],"authority":"planning_evidence_only"},
+    {"demand_domain":"client_venue_stakeholder_coordination","primary_learning_homes":["C-PMG-COMMS","C-VOP-ROLE"],"surface":["grow","production-management","venue-operations"],"authority":"planning_evidence_only"},
+    {"demand_domain":"safety_compliance_and_stop_work_boundaries","primary_learning_homes":["C-SHF-FUNDAMENTALS","C-RIG-AWARE","C-ELC-POWER-AWARENESS"],"surface":["shared-foundation","boundary-callouts","controlled-specialties"],"authority":"planning_evidence_only"}
+  ],
+  "projection_rules": {
+    "allowed": ["priority signal","navigation relevance","coverage-gap detection","career-lane discoverability","Atlas bridge selection"],
+    "not_allowed": ["technical procedure","legal conclusion","qualification statement","credential requirement without official source","employer ranking","current vacancy claim","pay claim","worker-review generalization"]
+  },
+  "atlas_contract": {
+    "crew_blueprint_may_store": ["stable Atlas route ID","public URL","purpose label","compatibility check date"],
+    "atlas_retains": ["employer identity","current openings","markets","labor routes","local/IATSE routing","current experience requirements","volatile compensation/hiring information"],
+    "personal_data_allowed": false
+  }
+}
