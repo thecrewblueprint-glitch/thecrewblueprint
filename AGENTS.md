@@ -22,74 +22,153 @@ Substantive agent-authored work normally uses:
 
 `work branch → coherent commits → draft PR → audit/review → required approval → merge → verify`
 
-For direct owner-requested work inside The Crew Blueprint, the request itself authorizes canonical integration unless the owner explicitly asks for a proposal, review, or work-branch-only result. In that path, finish means: make the focused change, run proportionate validation, update `main`, and verify the GitHub Pages result. Do not leave completed owner-requested work only on a branch or send the owner a PR for review.
+For direct owner-requested work inside The Crew Blueprint, the request itself authorizes canonical integration unless the owner explicitly asks for a proposal, review, or work-branch-only result.
 
-More specifically, during the current build phase: changes to visible, physically-manifested site content — course pages, copy, front-end structure and styling, and other directly rendered pages — go straight to `main`. The owner's own live review of the published GitHub Pages site is the audit step for this category; a PR adds no protection the owner cannot already get by looking at the deployed page. Changes below the visible surface — data/schema architecture, build/validation pipelines, admission/security logic, and anything else the owner cannot directly observe by viewing the rendered site — remain PR-first regardless of how the request arrived. See `50yearroadmap/governance/CHANGE_CONTROL.md`'s `thecrewblueprint` build-phase visible-content exception and `companies/crew-blueprint/13_sops.md` (SOP-3) for the canonical statement of this split. Legal exposure from unaudited public content is managed through accurate in-page labeling (owner-review badges, `noindex`, boundary/disclaimer language distinguishing owner-audited from not-yet-audited material) rather than through the PR gate — keep that labeling current whenever content ships this way.
+During the current build phase, visible physically manifested site content — course pages, copy, front-end structure/styling and directly rendered pages — may go directly to `main` under the accepted build-phase visible-content exception. The owner's live review of the published site is the audit step for this category.
 
-A branch or PR is proposed/in-progress state. Opening a PR is not permission to merge. Repository write authority, PR authority, and merge authority remain separate.
+Changes below the visible surface — governance, schema/data architecture, access/security logic, validation/build pipelines and other structural behavior — remain PR-first.
 
-If a session may end before completion, preserve coherent work and update the PR with completed work, unfinished work, validation performed, known issues, and the exact continuation step. Leave interrupted work unmerged.
+A branch or PR is proposed state. Do not merge without the applicable authority. Preserve coherent work when interrupted and do not overwrite unexplained predecessor work.
 
 ## 3. Scope discipline
 
-Keep changes focused on the authorized Crew Blueprint task. Do not use a governance/content task as an excuse to redesign unrelated pages, rewrite unrelated course material, change architecture, or expand product scope.
+Keep changes focused on the authorized Crew Blueprint task. Do not use a content/governance task to silently change unrelated systems. Cross-repository read access does not grant write authority elsewhere.
 
-Do not silently overwrite another agent's unexplained work. When continuing an existing PR, inspect its commits/diff/history and preserve provenance.
+## 4. Curriculum integrity and successor architecture
 
-## 4. Course-content integrity
+Crew Blueprint may adopt a materially new **successor curriculum** when the owner explicitly authorizes a redesign.
 
-**Standing cross-build rule:** curriculum/course content must remain identical across every current, v2, alternate, and future build/version. Only CSS, layout, and presentation may differ.
+The old rule that every historical/current/alternate build must always carry identical curriculum is superseded by this successor model.
 
-- Never edit curriculum independently in one presentation build.
-- A content correction must be applied to every build that carries the affected content in the same accepted change or explicitly block release until parity is restored.
-- Presentation-only work must not change lesson text, assessments, answers, citations, safety boundaries, sequencing, or instructional meaning.
-- Validate parity at the source/data/rendered-content layers relevant to the affected builds; matching labels alone is not sufficient.
+- `main` may carry the current accepted successor curriculum.
+- Frozen V2, clean-sheet, historical, review and archived products remain preserved as reference/evidence states rather than being rewritten for parity.
+- Content parity is required only among current surfaces that intentionally render the same canonical successor content.
+- Before materially replacing or retiring current curriculum, preserve the prior body under the permanent historical-retention rules.
+- Historical preservation does not create publication authority.
+- New course packaging may be completely different from older courses, but it must retain traceable competency/research/evidence lineage.
 
-Crew Blueprint content must preserve these boundaries:
+### 4.0 Job-market-to-curriculum bridge
 
-- educational content does not imply certification, licensing, employer authorization, union status, or practical qualification;
-- distinguish OSHA/legal requirements, consensus standards, manufacturer instructions, employer/local practice, practitioner experience, and Crew Blueprint instructional framing;
-- preserve qualifications when terminology or practice varies by employer, venue, local, region, manufacturer, or production context;
-- do not turn model-specific handling guidance into universal industry rules;
-- do not teach specialized electrical, rigging, structural, operation, configuration, repair, or safety-critical tasks as ordinary beginner authority;
-- source externally verifiable claims where reasonably possible and label practitioner-derived guidance honestly.
+The job market may shape **what the curriculum teaches**. It may not become raw learner content.
 
-The research library's source hierarchy and interpretation rules remain authoritative for research-backed curriculum work.
+Controlling transformation:
 
-### 4.1 Permanent historical curriculum retention
+`public employment/industry evidence → Roadmapdev normalized competency-demand signal → Crew Blueprint curriculum priority → independent instructional evidence → learner-facing course`
 
-Historical curriculum is part of the repository evidence base and must remain directly retrievable for side-by-side comparison and future reuse.
+Roadmapdev may use public employment/market evidence to identify recurring non-identifying competency needs such as:
 
-- Read `content/archive/README.md` and `content/archive/diff-manifest.json` before materially rewriting, collapsing, reclassifying, retiring, replacing, or pruning curriculum.
-- Do not delete, squash away, force-overwrite, or otherwise destroy archive branches, historical tags, legacy course trees, raw drafts, alternate course bodies, syllabus iterations, or materially distinct prior presentations that contain unique curriculum evidence.
-- Git history alone is not sufficient for important prior bodies. Before a materially different current body is replaced or retired, preserve the prior body verbatim in the working-tree archive and register its source ref/path/blob lineage in `content/archive/diff-manifest.json`.
-- A file labeled verbatim must not be silently normalized, corrected, rewritten, reformatted, or safety-edited. Changes belong in a newer version while the earlier text remains intact.
-- Even `DEFER_OR_REMOVE`, superseded, unpublished, owner-rejected, incomplete, or otherwise non-current material must remain preserved if it contains substantive unique content.
-- Preservation does not create publication authority. Old bodies remain evidence/reuse candidates and must still pass current evidence, safety, architecture, and owner-review gates before restoration.
-- No historical curriculum branch/tag/source may be pruned until every unique body on it has a registered working-tree mirror or explicit byte-identical duplicate record and the owner explicitly approves that specific prune.
+- general stage workflow;
+- communication and cueing;
+- equipment identification and stewardship;
+- load-in/load-out and logistics;
+- department workflow;
+- signal/system reasoning;
+- documentation;
+- troubleshooting and escalation;
+- warehouse/shop/QC interfaces;
+- crew coordination and leadership;
+- safety, stop-work and authorization boundaries.
+
+Normalized demand signals may influence:
+
+- which competencies receive courses;
+- sequencing and learner-depth decisions;
+- which advanced pathways warrant development;
+- how much curriculum depth a recurring competency deserves.
+
+They are **planning evidence, not instructional authority**.
+
+Do not copy Production Atlas employer lists, vacancies, pay data, market rankings, current opportunities, worker reviews, labor-route records or similar volatile employment data into course bodies, assessments, learner examples or learner profiles.
+
+Technical and safety claims must be supported by the appropriate instructional source class, including as applicable:
+
+- OSHA and official regulatory material;
+- statutes/regulations and official agency guidance;
+- recognized consensus standards, including applicable ANSI/ESTA material, within copyright limits;
+- manufacturer manuals/documentation;
+- legitimate technical/educational references;
+- credential-body guidance;
+- clearly labeled practitioner knowledge where appropriate.
+
+### 4.1 Deadhang commercial firewall
+
+Deadhang Labor LLC is the owner/parent relationship. Ownership does not authorize commercial-data ingestion into Crew Blueprint.
+
+Do **not** use Deadhang pricing, margins, financials, insurance strategy, vendor/procurement information, client information, business-development research, market strategy, sourcing methods, operating methods or other private/commercial intelligence in Crew Blueprint research, examples, assessments or learner-facing content.
+
+The boundary runs outward too: Crew Blueprint learning material must not be repurposed to explain Deadhang's private procurement, finance, vendor/client or operating logic.
+
+### 4.2 Production Atlas boundary
+
+Production Atlas is the sibling work/hiring intelligence product.
+
+Crew Blueprint may link learners to Production Atlas for current work, employer, market, labor-organization and public route information. Production Atlas records remain owned by Atlas.
+
+Raw Atlas records are not Crew Blueprint lesson content. Roadmapdev may, however, transform public Atlas/employment evidence into normalized competency-demand signals as described in §4.0, provided the raw payload is not admitted into learner content.
+
+### 4.3 Roadmapdev use
+
+Roadmapdev contains multiple domains. Before using its material for Crew Blueprint:
+
+- separate educational evidence from raw employment intelligence and Deadhang commercial intelligence;
+- admit only domain-appropriate educational material and normalized competency-demand signals;
+- preserve provenance privately;
+- reject or split mixed packages before curriculum use.
+
+### 4.4 Safety/authority boundaries
+
+Crew Blueprint content must preserve these distinctions:
+
+- education ≠ certification, licensing, union status or employer authorization;
+- awareness/system literacy ≠ qualification;
+- employer demand ≠ permission to perform controlled work;
+- course completion ≠ observed practical competence;
+- observed practice ≠ employer/site authorization.
+
+Do not teach specialized electrical, rigging, structural, work-at-height, powered-equipment, automation, special-effects or other safety-critical operational procedures as ordinary beginner authority. Teach recognition, system context, communication, escalation and qualification boundaries where appropriate.
+
+Distinguish OSHA/legal requirements, consensus standards, manufacturer instructions, employer/local practice, practitioner experience and Crew Blueprint instructional framing.
+
+### 4.5 Permanent historical curriculum retention
+
+Historical curriculum is part of the repository evidence base and must remain directly retrievable.
+
+- Read `content/archive/README.md` and `content/archive/diff-manifest.json` before materially rewriting, collapsing, reclassifying, retiring, replacing or pruning curriculum.
+- Do not delete or force-overwrite archive branches, historical tags, legacy course trees, raw drafts or materially distinct prior presentations containing unique content.
+- Preserve exact prior text before replacement in the working-tree archive or another registered verbatim archive path.
+- Git history alone is not sufficient for important prior bodies.
+- Preserve even rejected, deferred, superseded or unpublished material when it contains substantive unique content.
+- No historical curriculum source may be pruned without explicit owner approval after its unique material is preserved and indexed.
 
 ## 5. Writing standard
 
-Follow the Anti-Robot Course Writing Rule in `CLAUDE.md`. Course writing should sound like direct practitioner instruction rather than generic corporate or AI prose.
+Follow the Anti-Robot Course Writing Rule in `CLAUDE.md`.
+
+Course writing should be direct practitioner instruction. Every learner-facing unit should make clear, where relevant:
+
+1. **what makes the worker useful to the crew/employer**, and
+2. **what keeps the worker safe and inside the correct authority boundary**.
+
+Do not narrate internal research mechanics to the learner unless the page itself is a source/methodology page.
 
 ## 6. Validation and publishing
 
-For content or diagram changes, link-check all HTML and resolve broken internal links before representing the PR as ready to ship.
+For content or diagram changes, link-check all HTML and resolve broken internal links before representing the build as ready to ship.
 
-Validate the affected pages/content proportionately to the change. Do not restore or enable paid CI, metered runners, external validation services, or other cost-incurring automation without explicit owner authorization.
+Run proportionate validation for the affected surface. Do not restore or enable paid CI, metered runners, external validation services or recurring cost-generating automation without explicit owner authorization.
 
-Keep execution proportionate: prefer one inspection pass, one focused edit or shared implementation, one relevant validation batch, and one canonical checkpoint. Avoid repetitive per-file commands when a shared component or bounded batch can safely produce the same result.
-
-After an accepted Crew Blueprint change is merged and verified, route closeout/current-state through the active three-plane contract: `50yearroadmap` is the canonical Git bridge, Supabase carries structured durable state/provenance/current frontier, and Roadmapdev consumes admitted state for intelligence. Normal automatic synchronization does not require a conversational repository-mode switch, but it also does not grant unrelated cross-repository mutation authority. A merge here never authorizes product/governance changes elsewhere.
+After accepted Crew Blueprint changes are verified, route relevant closeout/current-state through the active three-plane contract: `50yearroadmap` is the Git bridge/control plane, Supabase carries structured durable state/provenance, and Roadmapdev consumes admitted state for intelligence. This synchronization does not grant unrelated cross-repository write authority.
 
 ## 7. Research workflow
 
-Use the current research workflow documented in `research/README.md` and current handoff notes. Preserve separate source packages and trace claims back to the strongest available evidence. Legacy workflow references do not override newer explicit workflow corrections.
+Use the current research workflow documented in `research/README.md` and current handoffs. Preserve source packages and trace claims to the strongest available evidence.
 
-For any research, course-audit, citation-trace, gap-analysis, or cross-system context task, read `research/agent-retrieval-manifest.json` as the repository retrieval entrypoint. Follow `research/ecosystem/relationship-map.json` when using Roadmapdev or Production Atlas information so the source system, canonical ref, allowed use, and authority boundary remain explicit. The normalized JSONL evidence matrix remains the source of truth for Crew Blueprint claim/source/competency/review lineage; generated Markdown views are audit surfaces, not canonical graph state.
+For research, course audit, citation trace or gap analysis, use `research/agent-retrieval-manifest.json` as the repository retrieval entrypoint. The normalized JSONL evidence matrix remains the source of truth for Crew Blueprint claim/source/competency/review lineage; generated Markdown views are audit surfaces.
+
+Production Atlas is not a direct curriculum-content store. Use its public employment evidence only through the normalized demand-signal bridge described above.
 
 ## 8. Owner authority
 
-The owner controls directional product decisions, scope changes, repository write-mode switches, exceptions to the normal change-control path, and canonical integration where approval is required.
+The owner controls product direction, scope changes, repository write-mode exceptions and canonical integration where approval is required.
 
-Agents may investigate and prepare complete proposals within granted authority. Do not interpret the ability to prepare a PR as authority to merge it.
+Agents may investigate and prepare complete proposals within granted authority. Capability does not create permission.

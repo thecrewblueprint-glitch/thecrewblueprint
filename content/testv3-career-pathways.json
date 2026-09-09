@@ -1,0 +1,158 @@
+{
+  "version": "testv3-2026-09-08",
+  "status": "owner-review",
+  "purpose": "Learner-facing Test V3 pathway map for foundations, departments, responsibility growth, context, and learning boundaries.",
+  "coreSkills": [
+    "Communication, cueing, and clear handoffs",
+    "Equipment identification and careful handling",
+    "Load-in, load-out, and work-area organization",
+    "Safety awareness, stop-work judgment, and escalation",
+    "Troubleshooting without exceeding your authority",
+    "Documentation, labeling, and version awareness",
+    "System reasoning: understanding how your task connects to the whole",
+    "Team coordination and professional crew conduct",
+    "Job readiness: preparation, reliability, and learning on the call"
+  ],
+  "responsibilitySteps": [
+    {"title":"Foundation","description":"Learn the language, workflow, communication habits, safety boundaries, and basic equipment awareness shared across live-event work."},
+    {"title":"Assigned Work","description":"Complete defined tasks under direction, ask when uncertain, protect equipment and people, and hand work back cleanly."},
+    {"title":"Department Technician","description":"Understand a department's workflow well enough to perform bounded technical work and recognize when to escalate."},
+    {"title":"Specialist","description":"Build deeper system knowledge, troubleshooting judgment, documentation fluency, and advanced technical context."},
+    {"title":"Lead / Supervisor","description":"Coordinate people, priorities, communication, handoffs, and work quality while keeping authority boundaries clear."},
+    {"title":"Production Management","description":"Plan across departments using advances, schedules, labor coordination, documentation, budgets, change control, and closeout."},
+    {"title":"Operational Leadership","description":"Think beyond one department or event and manage broader systems, standards, teams, and organizational outcomes."}
+  ],
+  "contexts": [
+    {"title":"Touring / Festival","description":"Fast-moving outdoor and multi-stage environments where handoffs, weather awareness, logistics, and changing crews matter."},
+    {"title":"Arena / Stadium","description":"Large crews, long travel paths, strict timing, shared infrastructure, and many simultaneous departments."},
+    {"title":"Theatre / Performing Arts","description":"House systems, repertory workflow, cue discipline, scenic movement, and venue-specific practices."},
+    {"title":"Corporate / Convention","description":"Client-facing work, breakout rooms, presentation systems, repeatable room standards, and rapid changeovers."},
+    {"title":"Broadcast / Sports","description":"Camera, video, communications, timing, signal paths, and production roles that overlap with live-event systems."},
+    {"title":"Venue / House","description":"Local systems knowledge, maintenance, recurring event workflows, and coordination with visiting productions."},
+    {"title":"Rental Shop / Warehouse","description":"Prep, QC, inventory, receiving, repair escalation, labeling, packing, and truck-stage workflow."},
+    {"title":"Outdoor / Public Event","description":"Temporary infrastructure, weather exposure, public interfaces, access planning, and changing site conditions."},
+    {"title":"Institutional / University / Civic","description":"Production work inside organizations with their own procedures, staffing models, documentation, and approval chains."}
+  ],
+  "pathways": [
+    {
+      "id":"general-production",
+      "title":"General Production",
+      "eyebrow":"Start here if you are new",
+      "summary":"Build the shared habits that make every department easier to understand: crew workflow, communication, equipment handling, jobsite awareness, organization, and knowing when to ask.",
+      "outcomes":["Understand a typical event-day workflow","Communicate clearly with leads and crew","Recognize common equipment and departments","Work within assigned boundaries","Build reliable first-call habits"],
+      "nextSteps":["Department support","Field skills","Shop / warehouse","Specialty awareness"],
+      "coverage":"ready",
+      "coverageLabel":"Strong foundation coverage",
+      "courses":[{"label":"Stagehand Fundamentals","href":"courses/stagehand-fundamentals.html"},{"label":"Field Skills","href":"courses.html#field-skills"}],
+      "boundaryNote":"Online learning prepares you to understand the work. Employers and designated leads still control task assignment and authorization on the jobsite."
+    },
+    {
+      "id":"lighting",
+      "title":"Lighting",
+      "eyebrow":"Department pathway",
+      "summary":"Learn how a lighting department moves from preparation and load-in through system setup, control, show operation, troubleshooting, and load-out.",
+      "outcomes":["Recognize lighting-system components and workflow","Understand documentation and handoffs","Build control and signal-path awareness","Reason through problems before escalating","See how technician work grows into lead responsibility"],
+      "nextSteps":["Lighting support","Production flow","Control systems","Programming concepts","Lighting leadership"],
+      "coverage":"ready",
+      "coverageLabel":"Deep multi-level course coverage",
+      "courses":[{"label":"Supporting a Lighting Hang","href":"courses/pathway-lighting-01-support.html"},{"label":"Lighting Production Flow","href":"courses/pathway-lighting-02-production-flow.html"},{"label":"Lighting Leadership","href":"courses/lead-lighting.html"}],
+      "boundaryNote":"Electrical, rigging, work-at-height, and other controlled tasks remain subject to qualified-person and employer authorization requirements."
+    },
+    {
+      "id":"audio",
+      "title":"Audio",
+      "eyebrow":"Department pathway",
+      "summary":"Build from audio support into signal-flow reasoning, communications, system awareness, troubleshooting, networking concepts, and deeper technical responsibility.",
+      "outcomes":["Follow audio signal flow conceptually","Recognize common system roles and handoffs","Understand setup and support workflow","Use troubleshooting and escalation logic","Connect support work to advanced audio roles"],
+      "nextSteps":["Audio support","Live audio systems","Signal flow","Networking concepts","Audio leadership"],
+      "coverage":"review",
+      "coverageLabel":"Strong course set; depth under owner review",
+      "courses":[{"label":"Audio Support","href":"courses/pathway-audio-01-support.html"},{"label":"Live Audio Systems","href":"courses/pathway-audio-02-live-systems.html"},{"label":"Audio Leadership","href":"courses/lead-audio.html"}],
+      "boundaryNote":"Course understanding does not replace equipment-specific training, system commissioning authority, or employer approval."
+    },
+    {
+      "id":"video-led-av",
+      "title":"Video / LED / AV",
+      "eyebrow":"Department pathway",
+      "summary":"Learn how video, LED, playback, camera, data, and display systems connect, and how support work develops into deeper system responsibility.",
+      "outcomes":["Recognize major video and LED system components","Follow signal and data paths conceptually","Understand playback and display workflow","Use structured troubleshooting and escalation","Connect field support to advanced video roles"],
+      "nextSteps":["Video support","LED systems","Signal flow","Playback","Network concepts","Video leadership"],
+      "coverage":"review",
+      "coverageLabel":"Broad course set; advanced breadth under owner review",
+      "courses":[{"label":"Video Support","href":"courses/pathway-video-01-support.html"},{"label":"LED & Video Systems","href":"courses/pathway-video-02-led-video-systems.html"},{"label":"Video Leadership","href":"courses/lead-video.html"}],
+      "boundaryNote":"Structural support, rigging, production power, and other controlled work remain outside the authority granted by online course completion."
+    },
+    {
+      "id":"staging-scenic",
+      "title":"Staging / Scenic / Carpentry",
+      "eyebrow":"Department pathway",
+      "summary":"Learn staging and scenic workflow through component awareness, coordinated movement, documentation, handoffs, system context, and leadership responsibility.",
+      "outcomes":["Recognize common staging and scenic components","Understand build and strike workflow conceptually","Protect components during movement and staging","Read task boundaries and handoffs","See how support work develops into planning and lead roles"],
+      "nextSteps":["Staging support","Deck systems","Scenic workflow","Design coordination","Department leadership"],
+      "coverage":"ready",
+      "coverageLabel":"Broad multi-level course coverage",
+      "courses":[{"label":"Staging & Carpentry Support","href":"courses/pathway-staging-carpentry-01-support.html"},{"label":"Deck Systems","href":"courses/pathway-staging-carpentry-02-deck-systems.html"},{"label":"Staging Leadership","href":"courses/lead-staging-carpentry.html"}],
+      "boundaryNote":"Structural decisions, powered equipment, engineered systems, and other controlled tasks remain with appropriately designated personnel."
+    },
+    {
+      "id":"shop-logistics",
+      "title":"Shop / Warehouse / Logistics",
+      "eyebrow":"Parallel production pathway",
+      "summary":"Learn the prep, QC, inventory, receiving, labeling, packing, truck-stage, repair-escalation, and logistics work that keeps productions moving before and after show day.",
+      "outcomes":["Understand receiving and prep flow","Build inventory and labeling discipline","Recognize QC and repair-escalation boundaries","Understand packing and truck-stage workflow","Connect shop work to show-site readiness"],
+      "nextSteps":["Warehouse fundamentals","Receiving","Inventory","Prep / QC","Truck stage","Return / closeout"],
+      "coverage":"ready",
+      "coverageLabel":"Substantial dedicated course coverage",
+      "courses":[{"label":"Explore shop, logistics & field coverage","href":"courses.html#learning-layers"}],
+      "boundaryNote":"Powered equipment, driving, repair, charging, hazardous materials, and other controlled tasks require the training and authorization appropriate to that workplace."
+    },
+    {
+      "id":"backline-props-wardrobe",
+      "title":"Backline / Props / Wardrobe",
+      "eyebrow":"Specialty support pathways",
+      "summary":"Understand three distinct support areas through item handling, department workflow, communication, documentation, status tracking, and clean handoffs.",
+      "outcomes":["Distinguish the three department functions","Handle assigned items with care and traceability","Use clear handoff and status communication","Recognize department-specific boundaries","Understand how support roles deepen with experience"],
+      "nextSteps":["Backline support","Props support","Wardrobe support","Department systems"],
+      "coverage":"ready",
+      "coverageLabel":"Role-specific course coverage available",
+      "courses":[{"label":"Backline / Props / Wardrobe Support","href":"courses/pathway-backline-props-wardrobe-01-support.html"},{"label":"Department Systems","href":"courses/pathway-backline-props-wardrobe-02-department-systems.html"}],
+      "boundaryNote":"Artist, instrument, costume, property, and production-specific procedures remain subject to the responsible department's instructions."
+    },
+    {
+      "id":"leadership",
+      "title":"Crew Lead / Supervisor",
+      "eyebrow":"Responsibility pathway",
+      "summary":"Shift from completing your own tasks to coordinating people, priorities, communication, handoffs, quality, and escalation without exceeding your decision authority.",
+      "outcomes":["Give and receive clear work direction","Coordinate handoffs across crew members","Track progress and surface blockers","Model safe escalation and stop-work judgment","Separate leadership from unauthorized technical decisions"],
+      "nextSteps":["Crew chief","Department lead","Labor coordination","Event operations supervision"],
+      "coverage":"ready",
+      "coverageLabel":"Explicit leadership course layer",
+      "courses":[{"label":"Crew Chief Foundations","href":"courses/lead-crew-chief-foundations.html"},{"label":"Event Operations Supervisor","href":"courses/supervisor-event-operations.html"}],
+      "boundaryNote":"Leadership responsibility does not automatically create technical qualification. Leads still work within employer, venue, department, and legal authority boundaries."
+    },
+    {
+      "id":"production-management",
+      "title":"Production Coordination / Management",
+      "eyebrow":"Cross-department pathway",
+      "summary":"Learn how productions are advanced, documented, scheduled, coordinated, changed, tracked, and closed out across departments and stakeholders.",
+      "outcomes":["Understand advance and production-document flow","Coordinate schedules and dependencies","Track decisions, changes, and responsibilities","Connect technical departments without replacing their authority","Build cross-department planning judgment"],
+      "nextSteps":["Production coordination","Advance documentation","Labor scheduling concepts","Budget / change control","Closeout","Project / production management"],
+      "coverage":"ready",
+      "coverageLabel":"Substantial management course coverage",
+      "courses":[{"label":"Production Coordination Career Branch","href":"courses/production-coordination-career-branch.html"},{"label":"Full leadership and management map","href":"courses.html#learning-layers"}],
+      "boundaryNote":"Management learning explains coordination and decision systems; it does not make the learner the qualified authority for every technical department."
+    },
+    {
+      "id":"controlled-specialties",
+      "title":"Rigging & Production Power Awareness",
+      "eyebrow":"Awareness and boundaries",
+      "summary":"Learn enough to recognize the interfaces, vocabulary, hazards, stop conditions, handoff points, and qualification boundaries around controlled specialty work.",
+      "outcomes":["Recognize when a task enters a controlled specialty","Use correct escalation and handoff behavior","Understand that awareness is not qualification","Identify the designated authority before acting","Keep learning separate from authorization"],
+      "nextSteps":["Rigging awareness","Production-power awareness","External qualified training where required"],
+      "coverage":"boundary",
+      "coverageLabel":"Awareness only — not qualification training",
+      "courses":[{"label":"View bounded specialty-awareness coverage","href":"courses.html#learning-layers"}],
+      "boundaryNote":"Crew Blueprint does not authorize rigging, energized electrical work, generator operation, work at height, rescue, or other qualified-person activities."
+    }
+  ]
+}

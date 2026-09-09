@@ -1,13 +1,53 @@
 # The Crew Blueprint
 
-Training and career-readiness content for people entering live event work —
-stagehands, ground hands, and department support crew.
+Public training, technical, safety, and career-readiness content for live-event
+workers — stagehands, ground hands, department support crew, leads, and
+production coordinators.
 
 ## Live Site
 
 View the live site here (GitHub Pages):
 
 **https://thecrewblueprint-glitch.github.io/thecrewblueprint/**
+
+## Current Public State
+
+`main` currently serves a neutral rebuild-in-progress page. Neither the prior
+V2 product nor the clean-sheet prototype is the chosen architecture. Both are
+preserved as exact archival branches and are reference material only:
+
+- `archive/frozen-v2-exact-2026-09-07`
+- `archive/frozen-vnext-clean-sheet-exact-2026-09-07`
+
+The rebuild starts from the complete course histories, 143-course corpus,
+technical/academic evidence, and intended learner purpose. It does not merge
+or reorganize course content before the canonical corpus and knowledge graph
+are reconstructed and pass the owner architecture gate.
+
+## Ecosystem and Repository Boundary
+
+The Crew Blueprint and Production Atlas are sibling public products that link
+to each other while keeping separate canonical datasets:
+
+- **The Crew Blueprint** owns durable technical, safety, academic,
+  job-readiness, and curriculum evidence.
+- **Production Atlas** owns public-safe current festival, employer, market,
+  labor-route, and labor-organization intelligence:
+  **https://atlas.thecrewblueprint.com/**
+- **Roadmapdev** is the private intelligence and analysis plane. Private or
+  sensitive research is not projected into either public repository.
+- **50yearroadmap** governs the ecosystem relationship and repository
+  boundaries; it is not a duplicate content store.
+
+No personal information belongs in The Crew Blueprint or Production Atlas.
+Public packages may contain organization-level facts and official
+organization URLs, but not personal names or contacts, worker records,
+private referrals, member-only material, or private operational details.
+
+Current employment and labor-market requirements should link to Production
+Atlas instead of being copied into durable course text. Conversely, Production
+Atlas should link here for training without copying course content into its
+market datasets.
 
 ## Purpose
 
@@ -16,22 +56,22 @@ pace, language, safety mindset, and crew expectations behind load-ins, show
 calls, and load-outs — the real-world basics nobody hands you before your
 first call.
 
-The flagship course, **Stagehand Fundamentals**, retains 10 modules and 34
-micro-lessons while presenting them through four focused parts. It covers what
-a stagehand actually does, safety mindset, PPE, venue and jobsite awareness,
-load-in/load-out fundamentals, crew communication, department basics,
-tools/gear handling, and getting hired and called back. Later curriculum spans
-Department Support, Department Systems, Stagehand Field Skills, Lead,
-Supervisor, Department Course 3 systems, Production Power Awareness, and a
-Production & Coordination career branch. Those later courses remain on the
-public site as clearly labeled, `noindex` owner-review copies while the owner
-audits them. Their presence does not mean practitioner approval, qualification,
-or final learner release.
+The preserved corpus includes Stagehand Fundamentals, department support and
+systems, field skills, lead and supervisor development, advanced department
+systems, production power awareness, and production/coordination material.
+During the rebuild those histories are source material, not an assertion that
+every prior route is currently published, approved, or learner-ready.
 
-## Structure
+## Preserved Repository Structure
+
+The working tree still contains the prior implementation and source corpus so
+the rebuild can reconstruct it without data loss. Except for the neutral
+`index.html` holding page, these paths describe retained material and tooling;
+they do not select the next public architecture.
 
 - **Root** (`index.html`, `about.html`, `courses.html`, `resources.html`,
-  `contact.html`, plus legal pages) — the public marketing site.
+  `contact.html`, plus legal pages) — the holding page plus retained prior
+  marketing and reference routes.
 - **`/courses`** — Stagehand Fundamentals (four parts, 10 modules, 34 lessons)
   plus the complete Department, Field Skill, Lead, Supervisor, Advanced
   Systems, Infrastructure, and Production/Coordination owner-review catalog.
@@ -40,10 +80,11 @@ or final learner release.
   call-sheet basics, and more).
 - **`/research`** — the source library backing the course content: real
   research packets, curriculum drafts, and citation-validation packages
-  (OSHA regulations, ANSI/ISEA standards, IATSE local rules, industry and
-  manufacturer documentation) that every course's "Sources" section points
-  back to. See `research/README.md` for the full manifest and how the
-  packages relate to each other.
+  (OSHA regulations, ANSI/ISEA standards, technically relevant union and
+  training materials, industry sources, and manufacturer documentation).
+  Volatile local intake, referral, membership, employer, market, and festival
+  intelligence belongs in Production Atlas, not this library. See
+  `research/README.md` for the retained manifest.
 - **`/design`** — design-system and content-graphics planning docs.
 - **`/css`** — the shared site stylesheet (`theme.css`) — dark/gold design
   system, shared component classes (cards, panels, diagrams, icon rows).
@@ -57,18 +98,17 @@ course-to-packet, tier, route, assessment, and release-gate map. Remaining
 evidence work is listed in
 `research/EXPANDED_CURRICULUM_RESEARCH_QUEUE_2026-08-30.md`.
 
-## Owner-Review Publication State
+## Preserved Owner-Review Infrastructure
 
-All 57 top-level course routes are accessible from the public GitHub Pages
-site. Stagehand Fundamentals and its ten module routes retain their existing
-learner state. The 46 post-Fundamentals routes are public audit copies marked
-`Owner Review · Public Audit Copy` and carry `noindex,follow` metadata while
-the owner reviews them. Public visibility does not grant job authority,
-qualification, practitioner approval, or final learner-release status.
+The repository retains the prior 57-route owner-review implementation and its
+publication controls for reconstruction and comparison. Those files are not
+the selected rebuild architecture. Direct file availability must not be read
+as learner release, practitioner approval, qualification, job authority, or a
+decision to preserve the previous navigation.
 
 The pre-publication review checkpoint remains preserved on
-`curriculum/owner-audit-2026-08-30`. To regenerate and prepare the tiered pages
-for the current public owner-review state, run:
+`curriculum/owner-audit-2026-08-30`. If that historical state must be
+reproduced for comparison, its retained commands are:
 
 ```bash
 node scripts/build-tiered-courses.mjs --owner-review-live
@@ -89,19 +129,19 @@ node scripts/apply-publication-locks.mjs
 node scripts/validate-publication-locks.mjs
 ```
 
-`_config.yml` keeps research, curriculum data modules, build scripts, and
-archived course snapshots out of the generated GitHub Pages site. The shared
-tiered-course CSS and JavaScript are published because the live review pages
-depend on them.
+`_config.yml` retains the prior publication exclusions for research,
+curriculum data modules, build scripts, and archived snapshots. Rebuild work
+must re-evaluate those boundaries before a controlled release.
 
 ## Content Sourcing
 
-Stagehand Fundamentals and each live owner-review course map
-their instructional claims to real, checkable material — government
-regulations, standards bodies, union locals, and manufacturer documentation —
-rather than presenting Crew Blueprint's own framing as an industry standard.
-Where a claim is local, employer-specific, or a Crew Blueprint convention, the
-course says so directly. See `/research` for the evidence trail.
+The retained courses map instructional claims to checkable material—government
+regulations, standards bodies, technically relevant labor/training sources,
+and manufacturer documentation—rather than presenting Crew Blueprint's own
+framing as an industry standard. Any current local, employer, membership,
+referral, or labor-market fact should be maintained in Production Atlas and
+linked from the eventual learner experience instead of copied into course
+content. See `/research` for the retained curriculum evidence trail.
 
 ## Copyright & Use
 
