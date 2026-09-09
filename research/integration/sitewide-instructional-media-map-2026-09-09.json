@@ -99,7 +99,7 @@
     },
     {
       "surface": "context_labs",
-      "course_ids": ["C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUTDOOR"],
+      "course_ids": ["C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUT"],
       "preferred_media": ["contextual photo set", "what-stays/what-changes comparison", "site/role relationship map", "workflow overlay"],
       "media_boundary": "Context imagery explains environmental differences; it does not substitute for venue/site rules or current operational instructions."
     },
