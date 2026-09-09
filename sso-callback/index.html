@@ -12,16 +12,17 @@
 <p>Finishing sign-in&hellip;</p>
 <script>
 window.addEventListener('load', async function () {
-  if (!window.Clerk) { window.location.href = '/'; return; }
+  var base = window.location.pathname.startsWith('/thecrewblueprint/') ? '/thecrewblueprint/' : '/';
+  if (!window.Clerk) { window.location.href = base; return; }
   try {
     await window.Clerk.load({ ui: { ClerkUI: window.__internal_ClerkUICtor } });
     await window.Clerk.handleRedirectCallback({
-      signInFallbackRedirectUrl: '/',
-      signUpFallbackRedirectUrl: '/'
+      signInFallbackRedirectUrl: base,
+      signUpFallbackRedirectUrl: base
     });
   } catch (e) {
     console.error('Clerk SSO callback failed', e);
-    window.location.href = '/';
+    window.location.href = base;
   }
 });
 </script>
