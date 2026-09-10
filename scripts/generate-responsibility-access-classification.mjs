@@ -142,7 +142,7 @@ function classify(row) {
     confidence = 'high';
   } else if (managementReferenceIds.has(id)) {
     state = 'REFERENCE_CONTEXT'; access = 'context'; lane = 'management_reference';
-    safety = id === 'C-PMG-LEARNING' ? 'split_free_awareness_required' : 'standard';
+    safety = id === 'C-PMG-LEARNING' ? 'free_required' : 'standard';
     rationale = 'Administrative/management material is demoted from equal lane status; technical fragments may later be salvaged into department leadership/context nodes.';
     confidence = 'high';
     reviewStatus = 'scope_demotion_and_salvage_review_required';
