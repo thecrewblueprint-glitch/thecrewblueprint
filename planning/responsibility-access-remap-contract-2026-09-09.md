@@ -9,12 +9,66 @@
 
 Convert the existing V2/V4/clean-sheet curriculum architecture into a responsibility-based model that cleanly supports the intended business model:
 
-- **ORIENT — free**
-- **SUPPORT — free**
-- **OPERATE — paid**
-- **DEEPEN_LEAD — paid**
+- **ORIENT — free and build to completion**
+- **SUPPORT — free and build to completion**
+- **OPERATE — future-paid classification; locked / in development**
+- **DEEPEN_LEAD — future-paid classification; locked / in development**
 
-The free/paid boundary is not based on course count, generic difficulty, or job title. It is based on the level of technical responsibility the learning prepares the worker to carry.
+The responsibility boundary is not based on course count, generic difficulty, or job title. It is based on the level of technical responsibility the learning prepares the worker to carry.
+
+## Owner-selected delivery model — 2026-09-10
+
+This contract now has an explicit delivery target.
+
+### Free tier — build it out
+
+The current product should fully develop the approved **ORIENT + SUPPORT** learner experience rather than leaving the free side as a small teaser.
+
+The free product should include, as applicable after normal content/evidence/safety review:
+
+- the complete beginner foundation;
+- the 18 Field Skills library at appropriate SUPPORT scope;
+- department orientation and support-level learning for lighting, audio, video/LED/AV, staging/scenic, backline/props/wardrobe, shop/warehouse/logistics, and other supported lanes;
+- free hazard recognition, stop-work, escalation, and authorization-boundary material for controlled specialties;
+- Context Labs at ORIENT/SUPPORT depth;
+- public career/reference material that helps the learner understand next steps without implying qualification or employment outcomes;
+- free assessments/knowledge checks where approved;
+- clear progression into the future advanced boundary.
+
+Approved free learning should remain usable signed out. Creating a Clerk account is optional for access to free content but may add persistent progress, assessment history, saved pathways, and account state.
+
+### Future advanced tier — locked development state
+
+OPERATE and DEEPEN_LEAD remain useful curriculum classifications, but **they are not an active commercial product yet**.
+
+Current runtime/publication state:
+
+- public status: **COMING SOON / IN DEVELOPMENT**;
+- Clerk sign-up and sign-in: **allowed**;
+- authenticated advanced status shell: **allowed**;
+- pricing: **disabled / absent**;
+- checkout sessions: **disabled / absent**;
+- subscriptions/billing products: **disabled / absent**;
+- Stripe/payment-provider coupling: **not authorized**;
+- paid entitlement sales: **not active**;
+- protected advanced lesson delivery: **not active**.
+
+A signed-out visitor may see only a generic Advanced/Coming Soon entry point and sign-in/sign-up controls. A signed-in learner may enter the authenticated Advanced status area, but that area must remain a development/placeholder surface until a later owner decision activates commercial mechanics.
+
+### Protected advanced content rule
+
+Advanced content may be drafted ahead of commercialization **only if it can remain genuinely non-public**.
+
+Because the current Crew Blueprint repository and GitHub Pages output are public:
+
+- do **not** commit protected OPERATE/DEEPEN lesson bodies to the public repository merely because the UI hides them;
+- do **not** place protected bodies in JavaScript bundles, static JSON, HTML, source maps, generated pages, or other publicly retrievable assets;
+- the public repository may contain IDs, titles, pathway metadata, responsibility/access classifications, publication states, prerequisites, and generic Coming Soon descriptions;
+- substantive future-paid lesson bodies must remain in an internal/private source or secure backend until protected server-side delivery exists;
+- Clerk authentication alone is identity, not proof of a paid entitlement;
+- when commercialization is activated later, application-layer entitlement must be checked before protected bodies are delivered.
+
+This allows the curriculum to be authored and reviewed ahead of launch without pretending that a public static site can secure paid material.
 
 ## Governing learner progression
 
@@ -72,7 +126,7 @@ Support may include real physical work such as:
 
 The fact that a worker touches, connects, builds, or moves equipment does **not** by itself make the knowledge paid.
 
-### OPERATE — PAID
+### OPERATE — FUTURE PAID / LOCKED
 
 Begins when the learner is being prepared to carry department-specific technical responsibility beyond following an instructed plan.
 
@@ -88,7 +142,7 @@ Typical signals:
 - restoring/adapting a system within role boundaries;
 - owning a department-specific result.
 
-### DEEPEN_LEAD — PAID
+### DEEPEN_LEAD — FUTURE PAID / LOCKED
 
 Prepares the learner for:
 
@@ -109,7 +163,7 @@ Technical depth must not force a learner into management. Specialist depth and l
 2. **Education is not field qualification.** Course completion does not independently establish practical competency, field experience, certification/licensure, qualified-person status, employer authorization, or readiness to lead.
 3. **Job titles are destinations, not architecture.** A2, L2, V2, LED Tech, Staging Tech, etc. are learner-facing role targets. Competency/responsibility determines access classification.
 4. **SUPPORT can include equipment interaction.** Do not classify a task as OPERATE merely because the learner physically handles or connects equipment.
-5. **Paid begins at technical judgment/ownership.** The decisive question is whether the learner is following/supporting an instructed technical plan or being taught to understand, diagnose, verify, configure, or own the technical result.
+5. **The future-paid responsibility boundary begins at technical judgment/ownership.** The decisive question is whether the learner is following/supporting an instructed technical plan or being taught to understand, diagnose, verify, configure, or own the technical result. This classification does not activate pricing, checkout, billing, or protected delivery.
 6. **Controlled specialties need stronger gates.** Rigging, production power/electrical, lasers/effects, automation, and similar areas require explicit qualification/authority metadata. Paid access never means authorized practice.
 7. **Management is not a first-class curriculum destination unless tied directly to technical production work.** Preserve technical leadership, coordination, advancing, documentation, handoffs, work allocation, verification, and escalation. Demote office/business administration.
 
@@ -199,6 +253,8 @@ Allowed top-level values should include:
 ```text
 responsibility_state = ORIENT | SUPPORT | OPERATE | DEEPEN_LEAD
 access_class = FREE | PAID | SPECIALIST_REVIEW | REFERENCE
+
+Until commercial activation, `PAID` means **future-paid classification only**. It does not mean purchasable, published, entitled, or deliverable.
 ```
 
 A historical V2 identity may contribute to more than one learner-facing module if its content spans the free/paid boundary. Preserve the original identity as lineage; do not create duplicate source truth.
@@ -247,7 +303,7 @@ Department-specific signal/control/network depth remains in the owning lane and 
 Keep foundation lifecycle/workflow/safety content free. Split deeper QC/repair/diagnostic content into OPERATE where it teaches technical ownership.
 
 ### Department Explorer
-Treat as a transition and career-direction surface, not a pass/fail taxonomy course. It should expose what departments do, what hand-level support looks like, and where the technician paywall begins.
+Treat as a transition and career-direction surface, not a pass/fail taxonomy course. It should expose what departments do, what hand-level support looks like, and where the future advanced responsibility boundary begins.
 
 ## Required deliverables before learner-facing implementation
 
@@ -264,7 +320,7 @@ Treat as a transition and career-direction surface, not a pass/fail taxonomy cou
 
 ## Acceptance gate
 
-No paid UI, broad course rewrite, or Stripe entitlement coupling should be merged until:
+No pricing, checkout, billing-provider coupling, or protected advanced-content delivery should be merged until:
 
 - every canonical V2 identity is accounted for;
 - the free beginner path has no hidden paid dependency;
