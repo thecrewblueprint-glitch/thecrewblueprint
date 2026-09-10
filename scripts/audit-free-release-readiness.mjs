@@ -30,6 +30,16 @@ function maxSafety(rows){
   const rank={unknown:-1,none:0,low:1,moderate:2,high:3,critical:4};
   return rows.map(r=>r.safety_criticality).filter(Boolean).sort((a,b)=>(rank[b]??-1)-(rank[a]??-1))[0]||'unknown';
 }
+const externalEvidenceRequiredClassifications=new Set([
+  'cross_source_pattern',
+  'source_backed_instruction',
+  'manufacturer_or_model_procedure',
+  'external_fact'
+]);
+const internalBoundaryClassifications=new Set([
+  'crew_blueprint_framework',
+  'safety_boundary'
+]);
 
 const crosswalk=readJson(path.join(integrationDir,'responsibility-access-crosswalk-143-v0.1-2026-09-09.json'));
 const inventory=readJsonl(path.join(matrixDir,'course_inventory.jsonl'));
@@ -107,6 +117,14 @@ const rows=freeIds.map(courseId=>{
   });
   const qualificationRequired=edges.some(e=>e.qualification_required===true);
   const highSafety=maxSafety(courseContent)==='high'||maxSafety(courseContent)==='critical';
+  const evidenceRequiredRows=courseContent.filter(row=>externalEvidenceRequiredClassifications.has(row.content_classification));
+  const evidenceRequiredRowsMissingExternal=evidenceRequiredRows.filter(row=>{
+    const rowEdges=supportByContent.get(row.content_id)||[];
+    return !rowEdges.some(edge=>!isInternalSource(sourceById.get(edge.source_id)));
+  });
+  const highSafetyEvidenceRequiredRows=evidenceRequiredRows.filter(row=>['high','critical'].includes(row.safety_criticality));
+  const highSafetyEvidenceRequiredMissingExternal=evidenceRequiredRowsMissingExternal.filter(row=>['high','critical'].includes(row.safety_criticality));
+  const internalBoundaryRows=courseContent.filter(row=>internalBoundaryClassifications.has(row.content_classification)&&['high','critical'].includes(row.safety_criticality));
   const courseRow=courseContent.find(row=>row.content_type==='course');
   return {
     course_id:courseId,
@@ -130,12 +148,19 @@ const rows=freeIds.map(courseId=>{
     non_ai_review_count:nonAiReviews.length,
     review_states:reviewStates,
     direct_external_support_edge_count:directExternalEdges.length,
+    evidence_required_row_count:evidenceRequiredRows.length,
+    evidence_required_rows_without_external_support:evidenceRequiredRowsMissingExternal.map(row=>row.content_id),
+    high_safety_evidence_required_row_count:highSafetyEvidenceRequiredRows.length,
+    high_safety_evidence_required_rows_without_external_support:highSafetyEvidenceRequiredMissingExternal.map(row=>row.content_id),
+    high_safety_internal_boundary_row_count:internalBoundaryRows.length,
     safety_criticality:maxSafety(courseContent),
     qualification_required:qualificationRequired,
     high_safety_without_external_source:highSafety&&externalSources.length===0,
     high_safety_without_direct_external_support:highSafety&&directExternalEdges.length===0,
     high_safety_without_review:highSafety&&courseReviews.length===0,
     high_safety_without_non_ai_review:highSafety&&nonAiReviews.length===0,
+    high_safety_external_claim_without_support:highSafetyEvidenceRequiredMissingExternal.length>0,
+    high_safety_internal_boundary_without_review:internalBoundaryRows.length>0&&courseReviews.length===0,
   };
 });
 
@@ -163,6 +188,10 @@ const summary={
   high_safety_without_direct_external_support:count(r=>r.high_safety_without_direct_external_support),
   high_safety_without_review:count(r=>r.high_safety_without_review),
   high_safety_without_non_ai_review:count(r=>r.high_safety_without_non_ai_review),
+  courses_with_evidence_required_rows:count(r=>r.evidence_required_row_count>0),
+  courses_with_evidence_required_gaps:count(r=>r.evidence_required_rows_without_external_support.length>0),
+  courses_with_high_safety_evidence_required_gaps:count(r=>r.high_safety_external_claim_without_support),
+  courses_with_high_safety_internal_boundaries_without_review:count(r=>r.high_safety_internal_boundary_without_review),
   zero_structured_content:count(r=>r.content_rows===0),
   zero_questions:count(r=>r.question_count===0),
   zero_external_sources:count(r=>r.external_source_count===0),
@@ -181,6 +210,8 @@ const gaps={
   high_safety_without_direct_external_support:gapList(r=>r.high_safety_without_direct_external_support),
   high_safety_without_review:gapList(r=>r.high_safety_without_review),
   high_safety_without_non_ai_review:gapList(r=>r.high_safety_without_non_ai_review),
+  high_safety_external_claim_without_support:gapList(r=>r.high_safety_external_claim_without_support),
+  high_safety_internal_boundary_without_review:gapList(r=>r.high_safety_internal_boundary_without_review),
 };
 
 console.log('Free release readiness audit');
