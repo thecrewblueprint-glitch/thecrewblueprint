@@ -35,8 +35,20 @@ Tracks old routes and source/content lineage without counting legacy pages as se
 
 ## Content lineage / supersession
 
-No explicit CONTENT supersession relationships are currently represented.
-
+| Content ID | Supersedes | Superseded by |
+|---|---|---|
+| C-FLD-TEAM-LIFT | — | C-FLD-TEAM |
+| C-FLD-CART-DOLLY-MOVEMENT | — | C-FLD-CART |
+| C-FLD-CABLE-DEPLOY-GATHER | — | C-FLD-CABLE-DEPLOY |
+| C-FLD-CASE-BONEYARD-ORG | — | C-FLD-BONEYARD |
+| C-FLD-WORK-AREA-RESET | — | C-FLD-RESET |
+| C-FLD-SOFT-GOODS | — | C-FLD-SOFT |
+| C-FLD-PIPE-DRAPE | — | C-FLD-PD |
+| C-FLD-RISER-DECK-SUPPORT | — | C-FLD-DECK |
+| C-FLD-TOOLS-READINESS | — | C-FLD-TOOLS |
+| C-FLD-MARKING-LABELING | — | C-FLD-MARK |
+| C-FLD-SCENERY-MOVEMENT | — | C-FLD-SCENERY |
+| C-FLD-DOCK-HANDOFF | — | C-FLD-DOCK |
 
 ## Source lineage / status
 
