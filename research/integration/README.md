@@ -1,8 +1,33 @@
 # Crew Blueprint Integration Map
 
 **Date:** 2026-09-09  
-**Status:** PR #57 structural state accepted and merged; successor projection build phase active.  
+**Status:** PR #57 structural state accepted and merged; target-product doctrine migration now active under Issue #78.  
 **Authority:** These artifacts do not replace the canonical Crew Blueprint matrix, Production Atlas, Roadmapdev, or 50yearroadmap.
+
+## 2026-09-10 target-product doctrine migration
+
+Issue #78 is the owner-directed product architecture for the next Crew Blueprint state. Where the accepted PR #57 mapping, Issue #61, Issue #66, or generated successor assumptions conflict with Issue #78, preserve those older artifacts as lineage/history but do not treat the conflicting product rule as the target implementation.
+
+The first controlling migration contract is:
+
+- `responsibility-access-contract-2026-09-10.json`
+  - defines ORIENT / SUPPORT / OPERATE / DEEPEN_LEAD responsibility states;
+  - places the free/paid boundary at the transition from supervised support into technician-level technical responsibility;
+  - preserves safety awareness outside the paywall when needed for recognition, stop-work, boundaries, or escalation;
+  - makes job titles learner-facing destinations while normalized competencies remain the curriculum architecture;
+  - separates Clerk identity, application entitlements, future Stripe billing, employer recognition, recruiting, and the separate future Deadhang contractor network;
+  - records the exact starting `main` SHA for this migration: `84aa321019e5bead30c5b2476353e7578bef8717`.
+
+### Known migration debt
+
+The current accepted 143-ID map and successor generator still encode earlier assumptions, including six independent initial lanes and the invariant that Stagehand is not a universal prerequisite. Do **not** delete or rewrite those historical mappings in place. The next migration output must classify all 143 identities under the responsibility/access contract and then update generator/projection rules against that audited classification.
+
+Until that classification exists:
+
+- existing generated projections remain historical/current-state projections, not the final #78 learner journey;
+- do not weaken existing validation merely to force the new doctrine through;
+- do not implement paid lesson gates before content responsibility/access classification is explicit;
+- do not promote production-management/business-administration material as equal primary learner lanes unless it directly supports performing or technically leading show work.
 
 ## Purpose
 
@@ -59,7 +84,13 @@ The goal is **one evidence-backed knowledge graph with multiple learner-facing j
    - pins the compatibility check to the accepted `research-version` state used during generation;
    - carries only route/purpose metadata, never volatile employer/opening/pay/application data.
 
-The PR #57 integration artifacts remain registered in `research/agent-retrieval-manifest.json`. The successor generator consumes those accepted contracts directly; the Atlas registry is the new cross-product routing input for the build phase.
+9. `responsibility-access-contract-2026-09-10.json`
+   - records the target #78 learner/product doctrine without mutating historical maps;
+   - defines the canonical responsibility and access states used for the 143-ID remediation pass;
+   - establishes the technician-responsibility paywall and safety exception;
+   - establishes future identity, entitlement, credential, employer-recognition, recruiting, and Deadhang boundaries.
+
+The PR #57 integration artifacts remain registered in `research/agent-retrieval-manifest.json`. The successor generator consumes those accepted contracts directly; the Atlas registry is the new cross-product routing input for the build phase. During the #78 migration, agents must also retrieve `responsibility-access-contract-2026-09-10.json` before changing learner progression, access, lane hierarchy, or entitlement behavior.
 
 ## Generated successor projection
 
@@ -87,7 +118,7 @@ production-atlas-links.json
 
 The Pages workflow generates these files before packaging the static site. The public projection may contain canonical course/navigation identity, evidence summaries, public source metadata, qualification boundaries, media state, and stable Atlas routes. It must not contain private Roadmapdev records, personal information, or copied volatile Atlas work data.
 
-`scripts/validate-successor-projections.mjs` protects the accepted invariants, including:
+`scripts/validate-successor-projections.mjs` currently protects the accepted PR #57 invariants, including:
 
 - 143/143 canonical identities remain projected exactly once;
 - the six independent initial lanes remain intact;
@@ -98,6 +129,8 @@ The Pages workflow generates these files before packaging the static site. The p
 - public projection does not leak private Roadmapdev pointers or personal-data semantics;
 - internal-policy boundaries stay separate from external source gaps;
 - controlled-specialty media remains review-gated and non-procedural by default.
+
+The six-lane and Stagehand statements above are **current-state historical invariants pending #78 migration**, not final target-product rules. They must be replaced only after the 143-ID responsibility/access classification is audited.
 
 ## Controlling evidence path
 
@@ -123,6 +156,7 @@ V4 main       = current restored presentation frontier
 Matrix        = normalized evidence/control plane
 PR #57 map    = accepted 143-ID career-guided primary placement
 Projection    = generated, non-authoritative client/audit view
+#78 contract  = target responsibility/access/product doctrine for migration
 ```
 
 None of the three UI versions is the entire knowledge source, and generated projection files do not become canonical graph authority.
