@@ -48,19 +48,24 @@
   };
 
   const availabilityState=course=>{
+    const access=course.access||{};
     const placement=course.placement||{};
     const identity=course.identity||{};
-    if(placement.lane_status==='future'||placement.lane_status==='future_specialist'||String(placement.visibility||'').includes('hidden')){
-      return {label:'Mapped for future',kind:'is-future'};
+    const delivery=access.delivery_state||'unclassified_locked';
+    if(delivery==='future_paid_locked')return {label:'Advanced · in development',kind:'is-future'};
+    if(delivery==='specialist_review_locked')return {label:'Specialist review',kind:'is-review'};
+    if(delivery==='split_required_locked')return {label:'Being separated for release',kind:'is-review'};
+    if(delivery==='review_locked'||delivery==='unclassified_locked')return {label:'In review',kind:'is-review'};
+    if(['noindex_review','review','draft'].includes(identity.publication_state))return {label:'In review',kind:'is-review'};
+    if(delivery==='public_reference'){
+      if(placement.public_by_default&&identity.route_state==='materialized')return {label:'Reference · available',kind:'is-live'};
+      return {label:'Reference · mapped',kind:'is-mapped'};
     }
-    if(String(placement.visibility||'').includes('owner_review')||['noindex_review','review','draft'].includes(identity.publication_state)){
-      return {label:'In review',kind:'is-review'};
+    if(delivery==='free_public'){
+      if(placement.public_by_default&&identity.route_state==='materialized')return {label:'Free · available',kind:'is-live'};
+      return {label:'Free · mapped',kind:'is-mapped'};
     }
-    if(placement.public_by_default&&identity.route_state==='materialized'){
-      return {label:'Available now',kind:'is-live'};
-    }
-    if(identity.route_state==='materialized')return {label:'Mapped route',kind:'is-mapped'};
-    return {label:'Mapped',kind:'is-mapped'};
+    return {label:'Locked',kind:'is-review'};
   };
 
   const courseLink=course=>{
@@ -75,11 +80,16 @@
     }
     const span=document.createElement('span');
     span.className='graph-card-note';
-    span.textContent=state.label==='Mapped for future'
-      ? 'Preserved in the graph; not exposed as a current learner route.'
-      : state.label==='In review'
-        ? 'Mapped and retained, but not released as a current learner route.'
-        : 'Canonical identity retained; presentation route is not currently public.';
+    const delivery=course.access?.delivery_state;
+    span.textContent=delivery==='future_paid_locked'
+      ? 'Advanced learning is in development and is not delivered by this public route.'
+      : delivery==='specialist_review_locked'
+        ? 'Specialist material remains under review and is not released as ordinary learner content.'
+        : delivery==='split_required_locked'
+          ? 'This identity must be separated into free and advanced scope before learner delivery.'
+          : state.label==='In review'
+            ? 'Mapped and retained, but not released as a current learner route.'
+            : 'Canonical identity retained; presentation route is not currently available.';
     return span;
   };
 
@@ -109,6 +119,8 @@
 
     const meta=document.createElement('div');
     meta.className='graph-meta';
+    const responsibility=course.access?.responsibility_state;
+    if(responsibility)meta.appendChild(badge(escapeLabel(responsibility),'is-neutral'));
     const tier=course.placement?.presentation_tier;
     if(tier)meta.appendChild(badge(tier,'is-neutral'));
     const role=course.placement?.node_role;
@@ -126,8 +138,11 @@
     const lanes=unique(courses.flatMap(c=>c.placement?.career_lane_ids||[]).filter(id=>id&&id!=='context_labs'));
     const field=courses.filter(c=>c.placement?.learner_surface==='field');
     const contexts=courses.filter(c=>c.placement?.learner_surface==='contexts');
-    const live=courses.filter(c=>availabilityState(c).kind==='is-live');
-    const materialized=courses.filter(c=>c.identity?.route_state==='materialized');
+    const free=courses.filter(c=>c.access?.delivery_state==='free_public');
+    const references=courses.filter(c=>c.access?.delivery_state==='public_reference');
+    const available=courses.filter(c=>availabilityState(c).kind==='is-live');
+    const advanced=courses.filter(c=>c.access?.delivery_state==='future_paid_locked');
+    const review=courses.filter(c=>['specialist_review_locked','split_required_locked','review_locked','unclassified_locked'].includes(c.access?.delivery_state));
 
     node.replaceChildren();
     const grid=document.createElement('div');
@@ -137,8 +152,10 @@
       [lanes.length,'Mapped lanes','Initial, future, specialist, and career-oriented lane identities represented in the graph.'],
       [field.length,'Field Skills','First-class practical skill library, kept separate from the main course catalog.'],
       [contexts.length,'Context nodes','Situation/context learning that can overlay multiple department lanes.'],
-      [live.length,'Current public routes','Graph identities currently both public-by-default and backed by a materialized route.'],
-      [materialized.length,'Materialized routes','Existing presentation routes, including items still in review or gated.']
+      [available.length,'Available free/reference routes','Current learner routes allowed by the responsibility/access contract and backed by a materialized page.'],
+      [free.length,'Free learning identities','High-confidence ORIENT/SUPPORT identities classified for free delivery.'],
+      [advanced.length,'Advanced identities','OPERATE/DEEPEN identities retained as future Advanced scope, not public course delivery.'],
+      [review.length,'Split / specialist review','Identities that stay locked until their free and advanced boundaries are resolved.']
     ].forEach(([value,label,help])=>{
       const card=document.createElement('article');
       card.className='graph-stat';
@@ -169,12 +186,17 @@
 
     node.replaceChildren();
     const grid=document.createElement('div');grid.className='graph-lane-grid';
-    [...laneMap.entries()].sort((a,b)=>laneRank(a[0])-laneRank(b[0])||laneLabel(a[0]).localeCompare(laneLabel(b[0]))).forEach(([lane,items])=>{
+    [...laneMap.entries()]
+      .filter(([,items])=>items.some(c=>['free_public','public_reference'].includes(c.access?.delivery_state)))
+      .sort((a,b)=>laneRank(a[0])-laneRank(b[0])||laneLabel(a[0]).localeCompare(laneLabel(b[0])))
+      .forEach(([lane,items])=>{
       const card=document.createElement('article');card.className='graph-lane';
       const entries=items.filter(c=>String(c.placement?.node_role||'').includes('lane_entry'));
+      const learnerVisible=items.filter(c=>['free_public','public_reference'].includes(c.access?.delivery_state));
       const initial=items.some(c=>c.placement?.lane_status==='initial');
-      const future=items.every(c=>['future','future_specialist'].includes(c.placement?.lane_status)||String(c.placement?.visibility||'').includes('hidden'));
-      const liveCount=items.filter(c=>availabilityState(c).kind==='is-live').length;
+      const future=!initial&&learnerVisible.every(c=>availabilityState(c).kind!=='is-live');
+      const liveCount=learnerVisible.filter(c=>availabilityState(c).kind==='is-live').length;
+      const advancedCount=items.filter(c=>c.access?.delivery_state==='future_paid_locked').length;
 
       const top=document.createElement('div');top.className='graph-card-top';
       top.appendChild(badge(initial?'Initial lane':future?'Future lane':'Mapped lane',initial?'is-live':future?'is-future':'is-neutral'));
@@ -182,11 +204,13 @@
       card.appendChild(top);
       const h=document.createElement('h3');h.textContent=laneLabel(lane);card.appendChild(h);
       const p=document.createElement('p');
-      p.textContent=entries[0]?.learning?.objective||`${liveCount} current public route${liveCount===1?'':'s'}; deeper and historical identities remain visible through graph state rather than being flattened into one list.`;
+      const primaryVisible=entries.find(c=>['free_public','public_reference'].includes(c.access?.delivery_state))||learnerVisible[0];
+      p.textContent=primaryVisible?.learning?.objective||`${liveCount} free/reference route${liveCount===1?'':'s'} currently available in this lane.`;
+      if(advancedCount)p.textContent+=` ${advancedCount} Advanced item${advancedCount===1?' is':'s are'} retained in development.`;
       card.appendChild(p);
 
       const sample=document.createElement('div');sample.className='graph-lane-sample';
-      items.slice().sort((a,b)=>{
+      learnerVisible.slice().sort((a,b)=>{
         const ae=String(a.placement?.node_role||'').includes('lane_entry')?-1:0;
         const be=String(b.placement?.node_role||'').includes('lane_entry')?-1:0;
         return ae-be||byTitle(a,b);
@@ -198,7 +222,7 @@
       });
       card.appendChild(sample);
 
-      if(entries[0])card.appendChild(courseLink(entries[0]));
+      if(primaryVisible)card.appendChild(courseLink(primaryVisible));
       grid.appendChild(card);
     });
     node.appendChild(grid);
@@ -214,20 +238,19 @@
 
   const renderField=(node,data)=>renderCourseCollection(
     node,
-    (data.courses||[]).filter(c=>c.placement?.learner_surface==='field'),
+    (data.courses||[]).filter(c=>c.placement?.learner_surface==='field'&&['free_public','public_reference'].includes(c.access?.delivery_state)),
     'No Field Skills are present in the generated projection.'
   );
 
   const renderContexts=(node,data)=>renderCourseCollection(
     node,
-    (data.courses||[]).filter(c=>c.placement?.learner_surface==='contexts'),
+    (data.courses||[]).filter(c=>c.placement?.learner_surface==='contexts'&&['free_public','public_reference'].includes(c.access?.delivery_state)),
     'No Context Lab nodes are present in the generated projection.',
     {showLane:true}
   );
 
-  const renderAdvanced=(node,data)=>{
-    const courses=(data.courses||[]).filter(c=>c.placement?.learner_surface==='advanced'||String(c.placement?.visibility||'').includes('deep')||String(c.placement?.node_role||'').includes('advanced'));
-    renderCourseCollection(node,courses,'No advanced nodes are present in the generated projection.',{showLane:true});
+  const renderAdvanced=(node)=>{
+    setStatus(node,'Advanced training is in development. Protected Advanced lesson delivery is not active.');
   };
 
   const renderAtlas=(node)=>{

@@ -16,6 +16,7 @@ const PATHS = {
   mediaMap: path.join(integrationDir, 'sitewide-instructional-media-map-2026-09-09.json'),
   provenance: path.join(integrationDir, 'source-citation-regulatory-provenance-2026-09-09.json'),
   atlasRegistry: path.join(integrationDir, 'production-atlas-link-registry-2026-09-09.json'),
+  responsibilityAccess: path.join(integrationDir, 'responsibility-access-crosswalk-143-v0.1-2026-09-09.json'),
   currentInventory: path.join(matrixDir, 'course_inventory.jsonl'),
 };
 
@@ -122,6 +123,22 @@ function deriveAtlasRoutes(group) {
   return unique(routes);
 }
 
+function publicRouteExists(routeFile) {
+  if (!routeFile) return false;
+  const routePath = String(routeFile).split(/[?#]/, 1)[0];
+  return Boolean(routePath) && fs.existsSync(path.join(root, routePath));
+}
+
+function resolveDeliveryState(access) {
+  if (!access) return 'unclassified_locked';
+  if (access.access_class === 'FREE' && access.delivery_policy === 'free' && ['ORIENT', 'SUPPORT'].includes(access.responsibility_state)) return 'free_public';
+  if (access.access_class === 'REFERENCE' && access.delivery_policy === 'public_reference') return 'public_reference';
+  if (access.access_class === 'PAID') return 'future_paid_locked';
+  if (access.access_class === 'SPECIALIST_REVIEW') return 'specialist_review_locked';
+  if (String(access.delivery_policy || '').includes('split')) return 'split_required_locked';
+  return 'review_locked';
+}
+
 function isInternalSource(source) {
   if (!source) return false;
   const owner = String(source.source_owner || '').toLowerCase();
@@ -148,6 +165,7 @@ const webContract = readJson(PATHS.webContract);
 const mediaMap = readJson(PATHS.mediaMap);
 const provenance = readJson(PATHS.provenance);
 const atlasRegistry = readJson(PATHS.atlasRegistry);
+const responsibilityAccess = readJson(PATHS.responsibilityAccess);
 
 const mappingGroups = Array.isArray(mapping.mapping_groups) ? mapping.mapping_groups : [];
 const mappedCourseIds = mappingGroups.flatMap((group) => group.course_ids || []);
@@ -160,6 +178,33 @@ const groupByCourseId = new Map();
 for (const group of mappingGroups) {
   for (const courseId of group.course_ids || []) groupByCourseId.set(courseId, group);
 }
+
+const accessRows = (responsibilityAccess.groups || []).flatMap((group) =>
+  (group.canonical_ids || []).map((courseId) => ({
+    course_id: courseId,
+    responsibility_state: group.responsibility_state,
+    derived_presentation_states: group.derived_presentation_states || [],
+    access_class: group.access_class,
+    delivery_policy: group.delivery_policy,
+    boundary_action: group.boundary_action,
+    mapping_confidence: group.mapping_confidence,
+  }))
+);
+const accessIds = accessRows.map((row) => row.course_id);
+const duplicateAccessIds = accessIds.filter((id, index) => accessIds.indexOf(id) !== index);
+const missingAccessIds = mappedCourseIds.filter((id) => !accessIds.includes(id));
+const extraAccessIds = accessIds.filter((id) => !mappedCourseIds.includes(id));
+if (
+  accessRows.length !== mappedCourseIds.length ||
+  duplicateAccessIds.length ||
+  missingAccessIds.length ||
+  extraAccessIds.length
+) {
+  throw new Error(
+    `Responsibility/access invariant failed: mapped=${mappedCourseIds.length}, access=${accessRows.length}, duplicates=${unique(duplicateAccessIds).join(',') || 'none'}, missing=${missingAccessIds.join(',') || 'none'}, extra=${extraAccessIds.join(',') || 'none'}`
+  );
+}
+const accessByCourseId = new Map(accessRows.map((row) => [row.course_id, row]));
 
 const archivedInventoryPath = path.join(root, mapping.source_frontier?.canonical_inventory || '');
 const archivedInventory = readJsonl(requireFile(archivedInventoryPath));
@@ -331,6 +376,8 @@ const usedSourceIds = new Set();
 const courseProjection = mappedCourseIds.map((courseId) => {
   const inventory = inventoryById.get(courseId) || { course_id: courseId, title: courseId, publication_state: 'unknown' };
   const group = groupByCourseId.get(courseId);
+  const access = accessByCourseId.get(courseId);
+  const deliveryState = resolveDeliveryState(access);
   const courseContent = contentByCourse.get(courseId) || [];
   const courseContentIds = new Set(courseContent.map((row) => row.content_id));
   const courseSupport = supportEdges.filter((edge) => courseContentIds.has(edge.content_id));
@@ -343,19 +390,22 @@ const courseProjection = mappedCourseIds.map((courseId) => {
   const authorityOwners = unique(courseSupport.map((edge) => edge.authority_owner));
   const publicationState = inventory.publication_state || courseContent.find((row) => row.content_type === 'course')?.publication_state || 'unknown';
   const routeFile = inventory.route_file || courseContent.find((row) => row.route_file)?.route_file || null;
-  const routeExists = routeFile ? fs.existsSync(path.join(root, routeFile)) : false;
-  const publicByDefault = ['live', 'public', 'accepted'].includes(publicationState) && !String(group?.visibility || '').includes('hidden') && !String(group?.visibility || '').includes('owner_review');
+  const routeExists = publicRouteExists(routeFile);
+  const legacyPublicationEligible = ['live', 'public', 'accepted'].includes(publicationState);
+  const publicByDefault = legacyPublicationEligible && ['free_public', 'public_reference'].includes(deliveryState);
+  const publicRoute = publicByDefault ? routeFile : null;
+  const publicObjective = publicByDefault ? (courseContent.find((row) => row.content_type === 'course')?.learner_facing_text || null) : null;
 
   return {
     identity: {
       content_id: courseId,
       canonical_course_id: courseId,
-      route_id: routeFile,
+      route_id: publicRoute,
       title: inventory.title || courseId,
       content_type: 'course_identity',
-      version: 'successor-projection-1',
+      version: 'successor-projection-2-access',
       publication_state: publicationState,
-      route_state: routeFile ? (routeExists ? 'materialized' : 'unmaterialized') : 'no_route',
+      route_state: publicRoute ? (routeExists ? 'materialized' : 'unmaterialized') : (routeFile ? 'locked' : 'no_route'),
     },
     placement: {
       mapping_group_id: group?.id || null,
@@ -370,9 +420,19 @@ const courseProjection = mappedCourseIds.map((courseId) => {
       prerequisite_or_recommendation_edges: learnerEdges.filter((edge) => edge.from_id === courseId || edge.to_id === courseId).map((edge) => edge.edge_id),
       public_by_default: publicByDefault,
     },
+    access: {
+      responsibility_state: access?.responsibility_state || null,
+      derived_presentation_states: access?.derived_presentation_states || [],
+      access_class: access?.access_class || 'UNCLASSIFIED',
+      delivery_policy: access?.delivery_policy || 'locked',
+      delivery_state: deliveryState,
+      boundary_action: access?.boundary_action || null,
+      mapping_confidence: access?.mapping_confidence || null,
+      legacy_publication_state_is_not_access_authority: true,
+    },
     learning: {
       competency_ids: courseCompetencies,
-      objective: courseContent.find((row) => row.content_type === 'course')?.learner_facing_text || null,
+      objective: publicObjective,
       learner_depth: inventory.tier_learning || null,
       assessment_state: {
         scored_question_count: courseContent.filter((row) => row.content_type === 'question').length,
@@ -407,7 +467,9 @@ const courseProjection = mappedCourseIds.map((courseId) => {
       historical_version_refs: unique(lineageEdges.filter((edge) => courseContentIds.has(edge.from_content_id) || courseContentIds.has(edge.to_content_id)).map((edge) => edge.edge_id)),
       v2_ref: 'archive/frozen-v2-exact-2026-09-07',
       clean_sheet_ref: 'archive/frozen-vnext-clean-sheet-exact-2026-09-07',
-      v4_presentation_ref: routeFile,
+      v4_presentation_ref: publicByDefault ? routeFile : null,
+      historical_route_retained: Boolean(routeFile),
+      historical_route_is_not_entitlement_protection: !publicByDefault && Boolean(routeFile),
     },
     media: {
       media_ids: unique(courseMedia.map((row) => row.media_id)),
@@ -456,6 +518,8 @@ const publicProjection = {
   projection_id: 'crew-blueprint-successor-web-projection-1',
   generated_from: {
     accepted_mapping: path.relative(root, PATHS.mapping),
+    responsibility_access_crosswalk: path.relative(root, PATHS.responsibilityAccess),
+    responsibility_access_schema: responsibilityAccess.schema_version,
     web_contract_id: webContract.contract_id,
     atlas_registry_id: atlasRegistry.registry_id,
     canonical_course_count: mappedCourseIds.length,

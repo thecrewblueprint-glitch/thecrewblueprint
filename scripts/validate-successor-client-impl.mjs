@@ -59,11 +59,18 @@ const publicationEligible=(projection.courses||[]).filter(course=>course.placeme
 const clickableCourses=publicationEligible.filter(course=>course.identity?.route_state==='materialized'&&course.identity?.route_id);
 for(const course of clickableCourses){
   const route=course.identity.route_id;
+  const routePath=String(route).split(/[?#]/,1)[0];
   assert(!String(route).startsWith('research/')&&!String(route).startsWith('archive/'),`Public learner route points into non-client data: ${route}`);
-  assert(fs.existsSync(path.join(root,route)),`Materialized public learner route does not exist: ${route}`);
+  assert(fs.existsSync(path.join(root,routePath)),`Materialized public learner route does not exist: ${route}`);
+  assert(['free_public','public_reference'].includes(course.access?.delivery_state),`Clickable learner route is not free/reference: ${course.identity?.canonical_course_id}.`);
 }
 for(const course of publicationEligible.filter(course=>course.identity?.route_state!=='materialized')){
   assert(course.identity?.route_state==='unmaterialized'||course.identity?.route_state==='no_route',`Unexpected non-materialized publication state for ${course.identity?.canonical_course_id}: ${course.identity?.route_state}`);
+}
+for(const course of (projection.courses||[]).filter(course=>!['free_public','public_reference'].includes(course.access?.delivery_state))){
+  assert(course.placement?.public_by_default===false,`Locked identity became public-by-default: ${course.identity?.canonical_course_id}.`);
+  assert(course.identity?.route_id===null,`Locked identity exported a route to the client: ${course.identity?.canonical_course_id}.`);
+  assert(course.learning?.objective===null,`Locked identity exported learner objective text: ${course.identity?.canonical_course_id}.`);
 }
 
 const clientJs=text('js/successor-client.js');
@@ -71,6 +78,9 @@ assert(clientJs.includes('replaceChildren'),'Successor client should render gene
 assert(!clientJs.includes('innerHTML='),'Successor graph renderer must not inject generated projection content through innerHTML.');
 assert(clientJs.includes('fetch(projectionUrl'),'Successor client is not loading the generated projection.');
 assert(clientJs.includes("state.kind==='is-live'&&route"),'Successor client does not gate course links to released live routes.');
+assert(clientJs.includes("delivery==='future_paid_locked'"),'Successor client is not rendering future-paid identities as locked.');
+assert(clientJs.includes("delivery==='split_required_locked'"),'Successor client is not preserving split-required lock state.');
+assert(clientJs.includes("['free_public','public_reference'].includes"),'Successor client is not filtering learner collections by access state.');
 assert(!clientJs.includes('a.href=link.url'),'Successor client can still construct active Atlas links.');
 
 const atlasLockPages=['index.html','start.html','learn.html','departments.html','field.html','contexts.html','advanced.html','sources-v4.html','experienced.html','employers.html'];
@@ -84,5 +94,5 @@ assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTM
 
 console.log('Successor client validation passed.');
 console.log(`${Object.keys(requiredPages).length} successor learner surfaces validated.`);
-console.log(`${publicationEligible.length} publication-eligible graph identities tracked; ${clickableCourses.length} currently have materialized learner routes.`);
+console.log(`${publicationEligible.length} access-authorized public identities tracked; ${clickableCourses.length} currently have materialized learner routes.`);
 console.log('Existing four V4 foundation routes preserved; Advanced and Production Atlas remain locked as configured.');

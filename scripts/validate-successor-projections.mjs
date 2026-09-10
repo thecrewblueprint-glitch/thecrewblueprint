@@ -26,6 +26,7 @@ function unique(values) {
 }
 
 const mapping = readJson(path.join(researchDir, 'analysis', 'vnext-career-guided-course-map-2026-09-07.json'));
+const responsibilityAccess = readJson(path.join(researchDir, 'integration', 'responsibility-access-crosswalk-143-v0.1-2026-09-09.json'));
 const webProjection = readJson(path.join(generatedPublicDir, 'web-client-projection.json'));
 const publicEdges = readJson(path.join(generatedPublicDir, 'learner-path-edges.json'));
 const publicAtlas = readJson(path.join(generatedPublicDir, 'production-atlas-links.json'));
@@ -42,6 +43,41 @@ const projectedIds = webProjection.courses.map((course) => course.identity.canon
 assert(projectedIds.length === 143, `Expected 143 projected course identities; got ${projectedIds.length}`);
 assert(unique(projectedIds).length === 143, 'Web projection contains duplicate canonical course identities.');
 assert(mappedIds.every((id) => projectedIds.includes(id)), 'Web projection dropped one or more accepted mapping identities.');
+
+const crosswalkRows = (responsibilityAccess.groups || []).flatMap((group) =>
+  (group.canonical_ids || []).map((courseId) => ({
+    course_id: courseId,
+    responsibility_state: group.responsibility_state,
+    access_class: group.access_class,
+    delivery_policy: group.delivery_policy,
+  }))
+);
+const crosswalkIds = crosswalkRows.map((row) => row.course_id);
+assert(crosswalkRows.length === 143, `Expected 143 responsibility/access assignments; got ${crosswalkRows.length}.`);
+assert(unique(crosswalkIds).length === 143, 'Responsibility/access crosswalk contains duplicate canonical IDs.');
+assert(mappedIds.every((id) => crosswalkIds.includes(id)), 'Responsibility/access crosswalk is missing accepted canonical IDs.');
+assert(crosswalkIds.every((id) => mappedIds.includes(id)), 'Responsibility/access crosswalk contains IDs outside the accepted mapping.');
+
+const deliveryCounts = {};
+for (const course of webProjection.courses) {
+  const delivery = course.access?.delivery_state || 'missing';
+  deliveryCounts[delivery] = (deliveryCounts[delivery] || 0) + 1;
+  assert(course.access?.legacy_publication_state_is_not_access_authority === true, `Legacy publication/access firewall missing for ${course.identity.canonical_course_id}.`);
+  if (course.placement?.public_by_default === true) {
+    assert(['free_public','public_reference'].includes(delivery), `Locked identity became public-by-default: ${course.identity.canonical_course_id} (${delivery}).`);
+  }
+  if (!['free_public','public_reference'].includes(delivery)) {
+    assert(course.identity?.route_id === null, `Locked identity exported a learner route: ${course.identity.canonical_course_id} -> ${course.identity?.route_id}.`);
+    assert(course.learning?.objective === null, `Locked identity exported learner-facing objective text: ${course.identity.canonical_course_id}.`);
+    assert(course.identity?.route_state === 'locked' || course.identity?.route_state === 'no_route', `Locked identity has unexpected route state: ${course.identity.canonical_course_id} -> ${course.identity?.route_state}.`);
+  }
+}
+assert(deliveryCounts.free_public === 62, `Expected 62 high-confidence free identities; got ${deliveryCounts.free_public || 0}.`);
+assert(deliveryCounts.public_reference === 12, `Expected 12 public-reference identities; got ${deliveryCounts.public_reference || 0}.`);
+assert(deliveryCounts.future_paid_locked === 34, `Expected 34 future-paid locked identities; got ${deliveryCounts.future_paid_locked || 0}.`);
+assert(deliveryCounts.specialist_review_locked === 8, `Expected 8 specialist-review locked identities; got ${deliveryCounts.specialist_review_locked || 0}.`);
+assert(deliveryCounts.split_required_locked === 16, `Expected 16 split-required locked identities; got ${deliveryCounts.split_required_locked || 0}.`);
+assert(deliveryCounts.review_locked === 11, `Expected 11 review-locked identities; got ${deliveryCounts.review_locked || 0}.`);
 
 const initialEntryGroups = mapping.mapping_groups.filter((group) => group.lane_status === 'initial' && group.node_role?.includes('lane_entry'));
 const initialEntryIds = initialEntryGroups.map((group) => group.course_ids?.[0]).filter(Boolean).sort();
@@ -109,4 +145,5 @@ console.log('Successor projection validation passed.');
 console.log(`143/143 canonical identities projected; ${fieldGroup.course_ids.length} Field Skills preserved; ${initialEntryIds.length} initial lanes independent.`);
 console.log(`${researchEdges.length} learner-path edges validated with zero hard prerequisites.`);
 console.log('Production Atlas public access is locked with zero active learner routes.');
+console.log(`Access projection: ${deliveryCounts.free_public} free, ${deliveryCounts.public_reference} public reference, ${deliveryCounts.future_paid_locked} future-paid locked, ${deliveryCounts.specialist_review_locked} specialist review, ${deliveryCounts.split_required_locked} split required, ${deliveryCounts.review_locked} review locked.`);
 console.log(`${mediaQueue.length} media backlog items; ${sourceGapQueue.length} external source-gap items; ${internalPolicy.length} internal-policy boundaries separated.`);
