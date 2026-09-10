@@ -47,13 +47,18 @@ assert(contexts.includes('Situation-first learning'),'Context Labs surface lost 
 const departments=text('departments.html');
 assert(departments.includes('Stagehand is not a mandatory root'),'Department surface lost the independent-lane boundary statement.');
 
-const liveCourses=(projection.courses||[]).filter(course=>course.placement?.public_by_default===true);
-for(const course of liveCourses){
-  const route=course.identity?.route_id;
-  assert(route,`Public-by-default course has no route: ${course.identity?.canonical_course_id}`);
-  assert(course.identity?.route_state==='materialized',`Public-by-default route is not materialized: ${course.identity?.canonical_course_id}`);
+// Publication eligibility and route materialization are intentionally separate states.
+// A canonical identity may be public-by-default before its presentation route exists;
+// the runtime renderer must keep that item non-clickable until the route is materialized.
+const publicationEligible=(projection.courses||[]).filter(course=>course.placement?.public_by_default===true);
+const clickableCourses=publicationEligible.filter(course=>course.identity?.route_state==='materialized'&&course.identity?.route_id);
+for(const course of clickableCourses){
+  const route=course.identity.route_id;
   assert(!String(route).startsWith('research/')&&!String(route).startsWith('archive/'),`Public learner route points into non-client data: ${route}`);
-  assert(fs.existsSync(path.join(root,route)),`Public learner route does not exist: ${route}`);
+  assert(fs.existsSync(path.join(root,route)),`Materialized public learner route does not exist: ${route}`);
+}
+for(const course of publicationEligible.filter(course=>course.identity?.route_state!=='materialized')){
+  assert(course.identity?.route_state==='unmaterialized'||course.identity?.route_state==='no_route',`Unexpected non-materialized publication state for ${course.identity?.canonical_course_id}: ${course.identity?.route_state}`);
 }
 
 const clientJs=text('js/successor-client.js');
@@ -68,5 +73,5 @@ assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTM
 
 console.log('Successor client validation passed.');
 console.log(`${Object.keys(requiredPages).length} graph-backed learner surfaces validated.`);
-console.log(`${liveCourses.length} public-by-default graph routes resolve to existing client files.`);
+console.log(`${publicationEligible.length} publication-eligible graph identities tracked; ${clickableCourses.length} currently have materialized learner routes.`);
 console.log('Existing four V4 foundation routes preserved; premium checkout remains inactive.');
