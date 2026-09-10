@@ -4,6 +4,28 @@
 **Status:** PR #57 structural state accepted and merged; target-product doctrine migration now active under Issue #78.  
 **Authority:** These artifacts do not replace the canonical Crew Blueprint matrix, Production Atlas, Roadmapdev, or 50yearroadmap.
 
+## 2026-09-10 Issue #61 blind-build comparison packet
+
+Issue #61 now governs an independent candidate-build experiment under the later #78/#79 product doctrine. The prior `V4 shell + clean-sheet journey + V2 depth` synthesis is not a controlling answer for the experiment; V2, V4, and clean-sheet are reference products to be evaluated independently.
+
+The blind-build packet is:
+
+- `issue-61-blind-build-research-index-2026-09-10.md`
+  - defines the permitted evidence set, exact frozen references, fresh-research gaps, and sealed comparison material;
+- `issue-61-blind-build-source-map-2026-09-10.json`
+  - machine-readable authority/access map for the same evidence set;
+- `../../planning/issue-61-blind-build-protocol-2026-09-10.md`
+  - defines Claude Opus vs OpenAI isolation, equal-input rules, required outputs, candidate freeze, and contamination handling;
+- `../../planning/issue-61-candidate-evaluation-rubric-2026-09-10.md`
+  - precommits hard vetoes and the 100-point comparison rubric before either candidate is generated.
+
+Execution issues:
+
+- #90 — Claude Opus blind candidate;
+- #91 — OpenAI strict-blind candidate.
+
+Roadmapdev decision/recommendation material and the competing candidate remain sealed until both candidate outputs are frozen. A fresh OpenAI session is required for the strict-blind Candidate B because the long-running project conversation has previously encountered Roadmapdev-derived Crew Blueprint context.
+
 ## 2026-09-10 target-product doctrine migration
 
 Issue #78 is the owner-directed product architecture for the next Crew Blueprint state. Where the accepted PR #57 mapping, Issue #61, Issue #66, or generated successor assumptions conflict with Issue #78, preserve those older artifacts as lineage/history but do not treat the conflicting product rule as the target implementation.
