@@ -36,6 +36,12 @@ jobs:
       - name: Validate successor public projection
         run: node scripts/validate-successor-projections.mjs
 
+      - name: Check successor client syntax
+        run: node --check js/successor-client.js
+
+      - name: Validate successor client
+        run: node scripts/validate-successor-client.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

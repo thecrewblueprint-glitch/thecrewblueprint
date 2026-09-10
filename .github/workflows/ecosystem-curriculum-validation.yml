@@ -23,6 +23,10 @@ jobs:
         run: node scripts/generate-successor-projections.mjs
       - name: Validate successor projections
         run: node scripts/validate-successor-projections.mjs
+      - name: Check successor client syntax
+        run: node --check js/successor-client.js
+      - name: Validate successor client
+        run: node scripts/validate-successor-client.mjs
       - name: Validate normalized research matrix
         run: node scripts/validate-research-matrix.mjs
       - name: Validate ecosystem curriculum
