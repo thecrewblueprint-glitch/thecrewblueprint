@@ -8,6 +8,7 @@ on:
       - 'scripts/generate-research-matrix-views.mjs'
       - 'scripts/generate-owner-competency-state-view.mjs'
       - 'scripts/generate-responsibility-access-classification.mjs'
+      - 'scripts/apply-responsibility-access-reviewed-overrides.mjs'
       - 'scripts/validate-responsibility-access-classification.mjs'
       - '.github/workflows/research-matrix-validation.yml'
   push:
@@ -19,6 +20,7 @@ on:
       - 'scripts/generate-research-matrix-views.mjs'
       - 'scripts/generate-owner-competency-state-view.mjs'
       - 'scripts/generate-responsibility-access-classification.mjs'
+      - 'scripts/apply-responsibility-access-reviewed-overrides.mjs'
       - 'scripts/validate-responsibility-access-classification.mjs'
       - '.github/workflows/research-matrix-validation.yml'
 
@@ -50,6 +52,9 @@ jobs:
 
       - name: Generate responsibility/access classification
         run: node scripts/generate-responsibility-access-classification.mjs
+
+      - name: Apply reviewed responsibility/access adjudications
+        run: node scripts/apply-responsibility-access-reviewed-overrides.mjs
 
       - name: Validate responsibility/access classification
         run: node scripts/validate-responsibility-access-classification.mjs
