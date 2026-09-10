@@ -7,6 +7,8 @@ on:
       - 'scripts/validate-research-matrix.mjs'
       - 'scripts/generate-research-matrix-views.mjs'
       - 'scripts/generate-owner-competency-state-view.mjs'
+      - 'scripts/generate-responsibility-access-classification.mjs'
+      - 'scripts/validate-responsibility-access-classification.mjs'
       - '.github/workflows/research-matrix-validation.yml'
   push:
     branches:
@@ -16,6 +18,8 @@ on:
       - 'scripts/validate-research-matrix.mjs'
       - 'scripts/generate-research-matrix-views.mjs'
       - 'scripts/generate-owner-competency-state-view.mjs'
+      - 'scripts/generate-responsibility-access-classification.mjs'
+      - 'scripts/validate-responsibility-access-classification.mjs'
       - '.github/workflows/research-matrix-validation.yml'
 
 permissions:
@@ -43,3 +47,22 @@ jobs:
 
       - name: Verify generated owner view
         run: test -s research/matrix/views/owner-competency-state.md
+
+      - name: Generate responsibility/access classification
+        run: node scripts/generate-responsibility-access-classification.mjs
+
+      - name: Validate responsibility/access classification
+        run: node scripts/validate-responsibility-access-classification.mjs
+
+      - name: Upload responsibility/access diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsibility-access-diagnostics
+          path: |
+            research/generated/responsibility-access-classification-143.jsonl
+            research/generated/responsibility-access-ambiguities.jsonl
+            research/generated/responsibility-access-summary.json
+            research/generated/responsibility-access-validation-report.json
+          if-no-files-found: error
+          retention-days: 7
