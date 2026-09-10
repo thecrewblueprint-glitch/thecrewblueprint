@@ -5,6 +5,7 @@ const root = process.cwd();
 const generatedDir = path.join(root, 'research', 'generated');
 const classificationPath = path.join(generatedDir, 'responsibility-access-classification-143.jsonl');
 const summaryPath = path.join(generatedDir, 'responsibility-access-summary.json');
+const validationReportPath = path.join(generatedDir, 'responsibility-access-validation-report.json');
 const contractPath = path.join(root, 'research', 'integration', 'responsibility-access-contract-2026-09-10.json');
 const inventoryPath = path.join(root, 'research', 'matrix', 'course_inventory.jsonl');
 
@@ -20,8 +21,9 @@ function readJsonl(file) {
     .map(JSON.parse);
 }
 
+const validationErrors = [];
 function assert(condition, message) {
-  if (!condition) throw new Error(message);
+  if (!condition) validationErrors.push(message);
 }
 
 const contract = readJson(contractPath);
@@ -118,7 +120,28 @@ for (const id of managerIds) {
 assert(summary.actual_count === 143 && summary.unique_ids === 143, 'Classification summary does not report 143/143 unique coverage.');
 assert(summary.ambiguity_count > 0, 'First-pass classification unexpectedly reports zero ambiguities; boundary review is required by design.');
 
-console.log('Responsibility/access classification validation passed.');
-console.log(`143/143 canonical identities classified exactly once; 18/18 Field Skills remain free SUPPORT.`);
-console.log(`Ambiguities queued for review: ${summary.ambiguity_count}.`);
-console.log(`Safety-free: ${summary.safety_free_required_count}; paid-with-free-awareness-split: ${summary.safety_split_required_count}.`);
+const report = {
+  schema_version: '1.0.0',
+  date: '2026-09-10',
+  valid: validationErrors.length === 0,
+  error_count: validationErrors.length,
+  errors: validationErrors,
+  inventory_count: inventory.length,
+  classification_count: rows.length,
+  unique_classification_ids: uniqueRowIds.size,
+  field_skill_count: fieldSkills.length,
+  summary
+};
+fs.mkdirSync(generatedDir, { recursive: true });
+fs.writeFileSync(validationReportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+
+if (validationErrors.length) {
+  console.error(`Responsibility/access classification validation failed with ${validationErrors.length} error(s).`);
+  for (const error of validationErrors) console.error(`- ${error}`);
+  process.exitCode = 1;
+} else {
+  console.log('Responsibility/access classification validation passed.');
+  console.log(`143/143 canonical identities classified exactly once; 18/18 Field Skills remain free SUPPORT.`);
+  console.log(`Ambiguities queued for review: ${summary.ambiguity_count}.`);
+  console.log(`Safety-free: ${summary.safety_free_required_count}; paid-with-free-awareness-split: ${summary.safety_split_required_count}.`);
+}
