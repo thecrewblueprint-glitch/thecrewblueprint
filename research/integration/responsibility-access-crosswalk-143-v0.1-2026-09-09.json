@@ -1,0 +1,264 @@
+{
+  "schema_version": "0.1.0-grouped-first-pass",
+  "date": "2026-09-09",
+  "status": "provisional_successor_mapping_for_issue_79",
+  "authority": "planning/data classification only; does not change current publication or access",
+  "source_inventory": "content/archive/verbatim/snapshot-2026-09-06-all-course-versions/catalogs/course_inventory-main-143.jsonl",
+  "source_mapping": "research/analysis/vnext-career-guided-course-map-2026-09-07.json",
+  "parent_doctrine_issue": 78,
+  "implementation_issue": 79,
+  "expected_canonical_ids": 143,
+  "mapped_canonical_ids": 143,
+  "unique_canonical_ids": 143,
+  "validation": {
+    "missing_ids": 0,
+    "duplicate_ids": 0
+  },
+  "primary_state_counts": {
+    "DEEPEN_LEAD": 35,
+    "ORIENT": 40,
+    "SUPPORT": 52,
+    "OPERATE": 16
+  },
+  "access_class_counts": {
+    "PAID": 34,
+    "FREE": 62,
+    "REFERENCE": 39,
+    "SPECIALIST_REVIEW": 8
+  },
+  "count_note": "REFERENCE and SPECIALIST_REVIEW are source-identity classifications, not final learner pricing counts. Several identities must be split into free awareness/support and paid technician presentation nodes before access can be applied.",
+  "rules": {
+    "free_states": ["ORIENT", "SUPPORT"],
+    "paid_states": ["OPERATE", "DEEPEN_LEAD"],
+    "support_may_include_directed_physical_work": true,
+    "paid_boundary": "technical judgment, system-state interpretation, configuration, diagnosis, verification, or ownership of technical result",
+    "safety_awareness_never_paywalled": true,
+    "paid_does_not_mean_qualified_or_authorized": true,
+    "job_titles_are_navigation_targets_not_access_keys": true
+  },
+  "groups": [
+    {
+      "responsibility_state": "DEEPEN_LEAD",
+      "derived_presentation_states": ["DEEPEN_LEAD"],
+      "access_class": "PAID",
+      "boundary_action": "KEEP_PAID_DEEPEN_OR_LEAD",
+      "delivery_policy": "paid_entitlement",
+      "mapping_confidence": "high",
+      "canonical_ids": [
+        "C-ELC-LOAD-PLANNING", "C-LTG-SYSTEM-DESIGN", "C-AUD-SYSTEM-DESIGN", "C-VID-SYSTEM-ARCH", "C-STG-DESIGN-COORD", "C-LEAD-CREW-CHIEF", "C-LEAD-LTG", "C-LEAD-AUD", "C-LEAD-VID", "C-LEAD-STG", "C-LEAD-RIG", "C-LEAD-ELC", "C-LTG-DESIGN-DOC", "C-AUD-LEAD-SYS", "C-VID-COMMISSION", "C-STG-SECTOR-LEAD", "C-LEAD-LABOR", "C-SHC-ARCH"
+      ]
+    },
+    {
+      "responsibility_state": "DEEPEN_LEAD",
+      "derived_presentation_states": ["DEEPEN_LEAD"],
+      "access_class": "REFERENCE",
+      "boundary_action": "DEMOTE_REFERENCE_SALVAGE_TECHNICAL",
+      "delivery_policy": "reference_or_internal_until_salvaged",
+      "mapping_confidence": "provisional",
+      "canonical_ids": [
+        "C-SUP-EVENT-OPS", "C-SMG-ROLE", "C-PMG-ROLE", "C-VOP-ROLE", "C-PMG-PAPER", "C-PMG-COMMS", "C-PMG-LEARNING", "C-PMG-ADVANCE-ARTIFACTS", "C-PMG-LABOR-SCHEDULE", "C-PMG-BUDGET-CHANGE", "C-PMG-CLOSEOUT"
+      ]
+    },
+    {
+      "responsibility_state": "DEEPEN_LEAD",
+      "derived_presentation_states": ["ORIENT", "SUPPORT", "DEEPEN_LEAD"],
+      "access_class": "REFERENCE",
+      "boundary_action": "SPLIT_FREE_SAFETY_FROM_PAID_LEAD_REASONING",
+      "delivery_policy": "split_before_delivery",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-SUP-HAZARD"]
+    },
+    {
+      "responsibility_state": "DEEPEN_LEAD",
+      "derived_presentation_states": ["DEEPEN_LEAD"],
+      "access_class": "REFERENCE",
+      "boundary_action": "SPLIT_TECHNICAL_LEADERSHIP_FROM_BUSINESS_REFERENCE",
+      "delivery_policy": "split_technical_paid_from_business_reference",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-LTG-BUSINESS"]
+    },
+    {
+      "responsibility_state": "DEEPEN_LEAD",
+      "derived_presentation_states": ["DEEPEN_LEAD"],
+      "access_class": "SPECIALIST_REVIEW",
+      "boundary_action": "SPECIALIST_REVIEW_PAID",
+      "delivery_policy": "specialist_review_then_paid_if_approved",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-LTG-SPECIAL", "C-RIG-LOAD", "C-RIG-LEAD-DOC", "C-ELC-LEAD-DOC"]
+    },
+    {
+      "responsibility_state": "OPERATE",
+      "derived_presentation_states": ["ORIENT", "SUPPORT", "OPERATE"],
+      "access_class": "PAID",
+      "boundary_action": "EXTRACT_FREE_AWARENESS_KEEP_TECHNICIAN_DEPTH_PAID",
+      "delivery_policy": "free_awareness_plus_paid_technician_depth",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-LTG-SCIENCE", "C-AUD-SIGNAL"]
+    },
+    {
+      "responsibility_state": "OPERATE",
+      "derived_presentation_states": ["OPERATE"],
+      "access_class": "PAID",
+      "boundary_action": "KEEP_PAID_TECHNICIAN",
+      "delivery_policy": "paid_entitlement",
+      "mapping_confidence": "high",
+      "canonical_ids": [
+        "C-LTG-CONTROL", "C-LTG-CONSOLE", "C-AUD-CONSOLE", "C-AUD-PA", "C-AUD-NET", "C-RF-AUDIO", "C-VID-SIGNAL", "C-VID-SWITCH", "C-VID-PROJ", "C-CAM-BCAST", "C-VID-MEDIA", "C-VID-AOIP", "C-ELC-DIST", "C-ELC-QUALITY"
+      ]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_AWARENESS_SPECIALIST_BOUNDARY",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": [
+        "C-ELC-POWER-AWARENESS", "C-AUT-STAGE", "C-RIG-AWARE", "C-RIG-HEIGHT", "C-ELC-TEST", "C-AUT-AWARE", "C-FX-ATM", "C-FX-LASER", "C-FX-SPECIAL"
+      ]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_BEGINNER_PATH",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": ["C-CAR-FIRST-FIVE"]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_CONTEXT_OVERLAY",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": [
+        "C-OUT-FIELD", "C-SECT-TOUR", "C-SECT-VENUE", "C-SECT-CORP", "C-SECT-THEATRE", "C-SECT-WORSHIP", "C-SECT-BCAST", "C-SECT-OUT", "C-ACC-PUBLIC-ROUTES", "C-ACC-COMMUNICATION", "C-OUT-HEAT"
+      ]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_FOUNDATION",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": ["C-SHF-FUNDAMENTALS"]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_REWRITE_FLOOR_LEVEL_SYSTEM_AWARENESS",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": ["C-COM-WORK"]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_SAFETY_AWARENESS_SUPPORT",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": ["C-SHP-TRAFFIC", "C-SHP-HAZCOM", "C-SHP-BATTERY"]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT"],
+      "access_class": "REFERENCE",
+      "boundary_action": "KEEP_PUBLIC_CAREER_REFERENCE",
+      "delivery_policy": "public_reference",
+      "mapping_confidence": "provisional",
+      "canonical_ids": [
+        "C-PROD-CAREER-BRANCH", "C-CAR-ENTRY", "C-CAR-UNION", "C-CAR-CRED", "C-CAR-LADDERS", "C-CAR-PRO", "C-CAR-CLASSIFY", "C-CAR-FREELANCE-BIZ", "C-CAR-PAYMENT", "C-CAR-RECORDS", "C-CAR-WORKER-RIGHTS"
+      ]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT"],
+      "access_class": "REFERENCE",
+      "boundary_action": "KEEP_PUBLIC_REFERENCE",
+      "delivery_policy": "public_reference",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-ELC-AHJ"]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "OPERATE"],
+      "access_class": "SPECIALIST_REVIEW",
+      "boundary_action": "SPLIT_FREE_FUNDAMENTAL_AWARENESS_FROM_SPECIALIST_PAID",
+      "delivery_policy": "split_before_delivery",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-ELC-FUND"]
+    },
+    {
+      "responsibility_state": "ORIENT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT", "OPERATE"],
+      "access_class": "SPECIALIST_REVIEW",
+      "boundary_action": "SPLIT_FREE_INTERFACE_AWARENESS_FROM_SPECIALIST_PAID",
+      "delivery_policy": "split_before_delivery",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-ELC-GEN"]
+    },
+    {
+      "responsibility_state": "SUPPORT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_CONTEXT_SUPPORT",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": ["C-LTG-LIFECYCLE", "C-AUD-SECTORS", "C-STG-LIFECYCLE"]
+    },
+    {
+      "responsibility_state": "SUPPORT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_CROSS_LANE_HYGIENE",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": ["C-SHC-CYBER"]
+    },
+    {
+      "responsibility_state": "SUPPORT",
+      "derived_presentation_states": ["SUPPORT"],
+      "access_class": "FREE",
+      "boundary_action": "KEEP_FREE_SUPPORT",
+      "delivery_policy": "free",
+      "mapping_confidence": "high",
+      "canonical_ids": [
+        "C-FLD-ROAD-CASE", "C-FLD-CABLE-COIL", "C-FLD-RATCHET", "C-FLD-FLATBED", "C-FLD-BARRICADE", "C-FLD-CABLE-PROTECT", "C-FLD-TEAM", "C-FLD-CART", "C-FLD-CABLE-DEPLOY", "C-FLD-BONEYARD", "C-FLD-RESET", "C-FLD-SOFT", "C-FLD-PD", "C-FLD-DECK", "C-FLD-TOOLS", "C-FLD-MARK", "C-FLD-SCENERY", "C-FLD-DOCK", "C-LTG-SUPPORT", "C-AUD-SUPPORT", "C-VID-SUPPORT", "C-STG-SUPPORT", "C-BPW-SUPPORT", "C-SHP-WAREHOUSE", "C-LOG-PRODUCTION", "C-BKL-PATH", "C-PRP-RUN", "C-WRD-RUN", "C-SHP-RECEIVING", "C-SHP-INVENTORY", "C-SHP-TRUCK-STAGE", "C-SHP-RETURN-CLOSE"
+      ]
+    },
+    {
+      "responsibility_state": "SUPPORT",
+      "derived_presentation_states": ["SUPPORT", "OPERATE"],
+      "access_class": "REFERENCE",
+      "boundary_action": "SPLIT_FREE_SUPPORT_FROM_PAID_TECHNICIAN",
+      "delivery_policy": "split_before_delivery",
+      "mapping_confidence": "provisional",
+      "canonical_ids": [
+        "C-LTG-PRODUCTION-FLOW", "C-AUD-SYSTEMS", "C-VID-SYSTEMS", "C-STG-DECK-SYSTEMS", "C-BPW-SYSTEMS", "C-LTG-ELECTRICAL-LIT", "C-AUD-SOURCES", "C-COM-INTERCOM", "C-VID-LED-HARDWARE", "C-STG-SYSTEMS", "C-STG-SHOP", "C-STG-PLATFORM", "C-STG-MOVEMENT", "C-SHP-PREP-QC"
+      ]
+    },
+    {
+      "responsibility_state": "SUPPORT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT", "OPERATE"],
+      "access_class": "SPECIALIST_REVIEW",
+      "boundary_action": "SPECIALIST_REVIEW_PAID",
+      "delivery_policy": "specialist_review_then_paid_if_approved",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-RIG-HARDWARE"]
+    },
+    {
+      "responsibility_state": "SUPPORT",
+      "derived_presentation_states": ["ORIENT", "SUPPORT", "OPERATE"],
+      "access_class": "SPECIALIST_REVIEW",
+      "boundary_action": "SPLIT_FREE_AWARENESS_SUPPORT_FROM_SPECIALIST_PAID",
+      "delivery_policy": "split_before_delivery",
+      "mapping_confidence": "provisional",
+      "canonical_ids": ["C-RIG-WORKFLOW"]
+    }
+  ]
+}
