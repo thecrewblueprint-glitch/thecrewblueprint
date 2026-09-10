@@ -8,7 +8,7 @@ const requiredPages={
   'departments.html':['data-successor-overview','data-successor-lanes','data-successor-integrity'],
   'field.html':['data-successor-field-skills'],
   'contexts.html':['data-successor-contexts'],
-  'advanced.html':['data-successor-advanced'],
+  'advanced.html':['data-advanced-gate','data-advanced-signed-out','data-advanced-signed-in','data-advanced-unavailable'],
   'sources-v4.html':['data-successor-sources','data-successor-integrity']
 };
 const projectionPath=path.join(root,'data','generated','web-client-projection.json');
@@ -37,8 +37,13 @@ for(const route of ['departments.html','field.html','contexts.html','advanced.ht
 }
 
 const advanced=text('advanced.html');
-assert(advanced.includes('Checkout not connected'),'Advanced purchase gate must remain inactive until entitlement/payment design is accepted.');
-assert(advanced.includes('data-premium-lock'),'Advanced preview lost its premium-lock boundary.');
+assert(!advanced.includes('data-successor-advanced'),'Advanced must not expose the generated advanced projection while protected content/access architecture is incomplete.');
+assert(!advanced.includes('Checkout not connected'),'Retired Advanced checkout-preview copy reappeared.');
+assert(!advanced.includes('data-premium-lock'),'Retired client-side premium-lock preview reappeared.');
+assert(!advanced.includes('$—'),'Advanced must not expose a price placeholder before commercial design is accepted.');
+assert(!advanced.includes('atlas.thecrewblueprint.com'),'Advanced must not expose Production Atlas while Atlas access remains locked.');
+assert(advanced.includes('Create free account')&&advanced.includes('Sign in'),'Advanced signed-out shell must expose free account actions.');
+assert(advanced.includes('No purchase flow is active.'),'Advanced signed-in shell must state the current noncommercial boundary.');
 
 const field=text('field.html');
 assert(field.includes('first-class Field Skills library'),'Field Skills surface no longer states its first-class-library role.');
@@ -72,6 +77,6 @@ assert(!/archive\/frozen-|research-version/.test(publicHtml),'Learner-facing HTM
 assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTML contains private-data semantics.');
 
 console.log('Successor client validation passed.');
-console.log(`${Object.keys(requiredPages).length} graph-backed learner surfaces validated.`);
+console.log(`${Object.keys(requiredPages).length} successor learner surfaces validated.`);
 console.log(`${publicationEligible.length} publication-eligible graph identities tracked; ${clickableCourses.length} currently have materialized learner routes.`);
-console.log('Existing four V4 foundation routes preserved; premium checkout remains inactive.');
+console.log('Existing four V4 foundation routes preserved; Advanced remains noncommercial and projection-locked.');
