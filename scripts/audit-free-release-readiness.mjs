@@ -40,6 +40,12 @@ const sources=readPartitions(/^sources(?:_[^.]+)?\.jsonl$/);
 
 const inventoryById=new Map(inventory.map(row=>[row.course_id,row]));
 const sourceById=new Map(sources.map(row=>[row.source_id,row]));
+const coursesByDomain=new Map();
+for(const row of inventory){
+  if(!row.domain_id_primary)continue;
+  if(!coursesByDomain.has(row.domain_id_primary))coursesByDomain.set(row.domain_id_primary,[]);
+  coursesByDomain.get(row.domain_id_primary).push(row.course_id);
+}
 
 const freeIds=(crosswalk.groups||[])
   .filter(group=>group.access_class==='FREE'&&group.delivery_policy==='free')
@@ -62,13 +68,20 @@ for(const edge of supportEdges){
 }
 
 const reviewsByCourse=new Map();
+function addReview(courseId,review,scope){
+  if(!courseId)return;
+  if(!reviewsByCourse.has(courseId))reviewsByCourse.set(courseId,[]);
+  reviewsByCourse.get(courseId).push({...review,_audit_scope:scope});
+}
 for(const review of reviews){
   const direct=review.course_id||null;
-  const target=review.content_id?contentById.get(review.content_id):null;
-  const courseId=direct||target?.course_id||null;
-  if(!courseId)continue;
-  if(!reviewsByCourse.has(courseId))reviewsByCourse.set(courseId,[]);
-  reviewsByCourse.get(courseId).push(review);
+  if(direct){addReview(direct,review,'course');continue;}
+  const targetId=review.content_id_or_domain_id||review.content_id||null;
+  if(!targetId)continue;
+  if(inventoryById.has(targetId)){addReview(targetId,review,'course');continue;}
+  const contentTarget=contentById.get(targetId);
+  if(contentTarget?.course_id){addReview(contentTarget.course_id,review,'content');continue;}
+  for(const courseId of coursesByDomain.get(targetId)||[])addReview(courseId,review,'domain');
 }
 
 const rows=freeIds.map(courseId=>{
@@ -84,8 +97,14 @@ const rows=freeIds.map(courseId=>{
     acc[key]=(acc[key]||0)+1;
     return acc;
   },{});
-  const reviewStates=uniq(courseReviews.map(r=>r.review_status||r.review_state||r.status));
+  const reviewStates=uniq(courseReviews.map(r=>r.disposition||r.review_status||r.review_state||r.status));
+  const directOrContentReviews=courseReviews.filter(r=>r._audit_scope==='course'||r._audit_scope==='content');
+  const nonAiReviews=courseReviews.filter(r=>!String(r.reviewer_name_or_role||'').toLowerCase().includes('ai-assisted'));
   const sourceStrengths=uniq(edges.map(e=>e.support_strength));
+  const directExternalEdges=edges.filter(edge=>{
+    const source=sourceById.get(edge.source_id);
+    return !isInternalSource(source)&&['direct','strong','primary'].includes(String(edge.support_strength||'').toLowerCase());
+  });
   const qualificationRequired=edges.some(e=>e.qualification_required===true);
   const highSafety=maxSafety(courseContent)==='high'||maxSafety(courseContent)==='critical';
   const courseRow=courseContent.find(row=>row.content_type==='course');
@@ -107,11 +126,16 @@ const rows=freeIds.map(courseId=>{
     external_source_count:externalSources.length,
     support_strengths:sourceStrengths,
     review_count:courseReviews.length,
+    direct_or_content_review_count:directOrContentReviews.length,
+    non_ai_review_count:nonAiReviews.length,
     review_states:reviewStates,
+    direct_external_support_edge_count:directExternalEdges.length,
     safety_criticality:maxSafety(courseContent),
     qualification_required:qualificationRequired,
     high_safety_without_external_source:highSafety&&externalSources.length===0,
+    high_safety_without_direct_external_support:highSafety&&directExternalEdges.length===0,
     high_safety_without_review:highSafety&&courseReviews.length===0,
+    high_safety_without_non_ai_review:highSafety&&nonAiReviews.length===0,
   };
 });
 
@@ -130,14 +154,20 @@ const summary={
   with_boundaries:count(r=>r.boundary_count>0),
   with_any_source_support:count(r=>r.source_edge_count>0),
   with_external_source_support:count(r=>r.external_source_count>0),
-  with_review_record:count(r=>r.review_count>0),
+  with_direct_external_support:count(r=>r.direct_external_support_edge_count>0),
+  with_any_review_record:count(r=>r.review_count>0),
+  with_direct_or_content_review:count(r=>r.direct_or_content_review_count>0),
+  with_non_ai_review:count(r=>r.non_ai_review_count>0),
   high_or_critical_safety:count(r=>['high','critical'].includes(r.safety_criticality)),
   high_safety_without_external_source:count(r=>r.high_safety_without_external_source),
+  high_safety_without_direct_external_support:count(r=>r.high_safety_without_direct_external_support),
   high_safety_without_review:count(r=>r.high_safety_without_review),
+  high_safety_without_non_ai_review:count(r=>r.high_safety_without_non_ai_review),
   zero_structured_content:count(r=>r.content_rows===0),
   zero_questions:count(r=>r.question_count===0),
   zero_external_sources:count(r=>r.external_source_count===0),
   zero_reviews:count(r=>r.review_count===0),
+  zero_non_ai_reviews:count(r=>r.non_ai_review_count===0),
 };
 
 const gaps={
@@ -146,8 +176,11 @@ const gaps={
   zero_questions:gapList(r=>r.question_count===0),
   zero_external_sources:gapList(r=>r.external_source_count===0),
   zero_reviews:gapList(r=>r.review_count===0),
+  zero_non_ai_reviews:gapList(r=>r.non_ai_review_count===0),
   high_safety_without_external_source:gapList(r=>r.high_safety_without_external_source),
+  high_safety_without_direct_external_support:gapList(r=>r.high_safety_without_direct_external_support),
   high_safety_without_review:gapList(r=>r.high_safety_without_review),
+  high_safety_without_non_ai_review:gapList(r=>r.high_safety_without_non_ai_review),
 };
 
 console.log('Free release readiness audit');
