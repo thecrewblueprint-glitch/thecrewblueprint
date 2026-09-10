@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-10",
+  "status": "reviewed adjudication overrides; target-product migration only",
+  "authority_issue": 78,
+  "base_classifier": "scripts/generate-responsibility-access-classification.mjs",
+  "policy": "research/integration/responsibility-access-adjudication-policy-2026-09-10.md",
+  "rules": {
+    "override_only_when_base_rule_is_clearly_misaligned": true,
+    "unresolved_items_remain_in_ambiguity_queue": true,
+    "historical_lineage_is_not_rewritten": true
+  },
+  "overrides": [
+    {
+      "canonical_id": "C-LTG-LIFECYCLE",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "SUPPORT",
+        "access_class": "free",
+        "primary_lane": "lighting",
+        "safety_visibility": "standard",
+        "classification_confidence": "high",
+        "review_status": "reviewed_override",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "does_not_grant_independent_technical_ownership",
+        "credential_eligibility": "foundation_or_context_completion_not_technician_credential",
+        "classification_rationale": "Lighting roles and the shop-to-show lifecycle primarily help a developing hand understand department workflow, interfaces, and where assigned support fits. That is SUPPORT knowledge; independent console/control/system responsibility remains in later technician nodes."
+      },
+      "evidence_basis": [
+        "Issue #78 free tier includes major departments, responsibilities, support knowledge, and informed specialization.",
+        "Current title: Lighting Roles & Shop-to-Show Lifecycle.",
+        "PR #57 retained this identity inside the Lighting sequence but did not establish that historical T4 equals technician responsibility."
+      ]
+    },
+    {
+      "canonical_id": "C-LTG-ELECTRICAL-LIT",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "REFERENCE_CONTEXT",
+        "access_class": "context",
+        "primary_lane": "lighting__power_electrical_bridge",
+        "safety_visibility": "free_required",
+        "classification_confidence": "high",
+        "review_status": "reviewed_bridge_context",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "does_not_grant_independent_technical_ownership",
+        "credential_eligibility": "foundation_or_context_completion_not_technician_credential",
+        "classification_rationale": "Electrical and connector literacy at the Lighting/Power interface is a bridge for recognition, safe support, boundaries, and escalation. It should not be treated as proof of independent electrical operation; deeper production-power responsibility remains in bounded paid electrical nodes."
+      },
+      "evidence_basis": [
+        "Issue #78 requires hazard/boundary knowledge to remain available before the paywall.",
+        "PR #57 mapped C-LTG-ELECTRICAL-LIT as a Lighting-to-Power specialist bridge with context-triggered visibility.",
+        "The course title is literacy, not authorization or independent electrical operation."
+      ]
+    },
+    {
+      "canonical_id": "C-LTG-SPECIAL",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "REFERENCE_CONTEXT",
+        "access_class": "context",
+        "primary_lane": "lighting",
+        "safety_visibility": "standard",
+        "classification_confidence": "high",
+        "review_status": "reviewed_specialist_awareness_context",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "does_not_grant_independent_technical_ownership",
+        "credential_eligibility": "foundation_or_context_completion_not_technician_credential",
+        "classification_rationale": "Lighting specialist interfaces are best treated as context-triggered awareness about adjacent specialist systems. Awareness of an interface is not the same responsibility state as independently operating the specialist system."
+      },
+      "evidence_basis": [
+        "PR #57 explicitly mapped C-LTG-SPECIAL as specialist awareness with context-triggered visibility.",
+        "Issue #78 separates useful awareness/context from technician responsibility."
+      ]
+    },
+    {
+      "canonical_id": "C-BKL-PATH",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "SUPPORT",
+        "access_class": "free",
+        "primary_lane": "backline_props_wardrobe",
+        "safety_visibility": "standard",
+        "classification_confidence": "high",
+        "review_status": "reviewed_override",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "does_not_grant_independent_technical_ownership",
+        "credential_eligibility": "foundation_or_context_completion_not_technician_credential",
+        "classification_rationale": "Backline Support & Career Path is an entry/support and career-orientation object. The title does not describe independent system operation, diagnosis, or technical ownership, so it belongs in free SUPPORT rather than the paid technician threshold."
+      },
+      "evidence_basis": [
+        "Issue #78 defines SUPPORT as useful department assistance under direction and keeps career direction in the free learner journey.",
+        "Current title: Backline Support & Career Path."
+      ]
+    },
+    {
+      "canonical_id": "C-AUD-SECTORS",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "REFERENCE_CONTEXT",
+        "access_class": "context",
+        "primary_lane": "audio__context",
+        "safety_visibility": "standard",
+        "classification_confidence": "high",
+        "review_status": "reviewed_context",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "does_not_grant_independent_technical_ownership",
+        "credential_eligibility": "foundation_or_context_completion_not_technician_credential",
+        "classification_rationale": "Audio sector workflows explain how already-learned audio work changes across environments. Sector variation is context, not by itself a technician responsibility threshold; technical audio operation remains in the signal, source, console, PA, networking, and related system nodes."
+      },
+      "evidence_basis": [
+        "Issue #78 keeps responsibility/competency as the access boundary rather than abstract depth.",
+        "Current title: Audio Sector Workflows.",
+        "The integrated architecture already uses Context Labs for environment-specific variation."
+      ]
+    },
+    {
+      "canonical_id": "C-LTG-DESIGN-DOC",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "DEEPEN_LEAD",
+        "access_class": "paid",
+        "primary_lane": "lighting",
+        "safety_visibility": "standard",
+        "classification_confidence": "high",
+        "review_status": "reviewed_advanced_depth",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "beyond_following_supervised_instructions",
+        "credential_eligibility": "knowledge_record_candidate_practical_experience_separate",
+        "classification_rationale": "Lighting design, previs, and documentation prepare planning/integration responsibility beyond ordinary L2-style operation. The object remains paid, but its correct state is DEEPEN/LEAD rather than the generic OPERATE bucket."
+      },
+      "evidence_basis": [
+        "Issue #78 places deeper architecture, integration, planning, and technical leadership in DEEPEN/LEAD.",
+        "Current title: Lighting Design, Previs & Documentation."
+      ]
+    },
+    {
+      "canonical_id": "C-SHC-ARCH",
+      "expected_base": {"responsibility_state": "OPERATE", "access_class": "paid"},
+      "set": {
+        "responsibility_state": "DEEPEN_LEAD",
+        "access_class": "paid",
+        "primary_lane": "cross_department_systems",
+        "safety_visibility": "standard",
+        "classification_confidence": "high",
+        "review_status": "reviewed_advanced_depth",
+        "ambiguity_reasons": [],
+        "technical_responsibility_threshold": "beyond_following_supervised_instructions",
+        "credential_eligibility": "knowledge_record_candidate_practical_experience_separate",
+        "classification_rationale": "Cross-department show control is integration-level knowledge spanning multiple technical systems. It is deeper architecture/integration responsibility and fits DEEPEN/LEAD more accurately than a generic technician OPERATE state."
+      },
+      "evidence_basis": [
+        "Issue #78 defines cross-system architecture/integration and advanced technical planning as DEEPEN/LEAD.",
+        "Current title: Cross-Department Show Control."
+      ]
+    }
+  ]
+}
