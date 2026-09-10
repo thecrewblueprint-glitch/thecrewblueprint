@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "map_id": "crew-blueprint-source-citation-regulatory-provenance-2026-09-09",
+  "date": "2026-09-09",
+  "status": "publication-control proposal grounded in current matrix semantics",
+  "purpose": "Define which evidence classes may support which claim classes, how freshness and jurisdiction are rendered, and when web/client publication must block or warn.",
+  "canonical_inputs": [
+    "research/matrix/sources*.jsonl",
+    "research/matrix/support_edges*.jsonl",
+    "research/matrix/content*.jsonl",
+    "research/matrix/reviews*.jsonl",
+    "research/matrix/views/unsupported.md",
+    "research/matrix/views/qualification-sensitive.md"
+  ],
+  "source_classes": [
+    {"class":"law_regulation_primary","examples":["OSHA/eCFR","FCC rules/orders","DOJ ADA regulations/standards","other applicable federal/state/local primary law"],"may_support":["legal requirement","regulatory scope","employer duty","jurisdiction-specific boundary"],"cannot_alone_support":["manufacturer-specific procedure","universal industry convention outside scope"],"freshness":"verify current official text before publication and whenever rulemaking/edition changes"},
+    {"class":"official_agency_guidance","examples":["OSHA guidance","agency interpretations/resources"],"may_support":["agency interpretation","compliance context","hazard-awareness context"],"cannot_alone_support":["claim that guidance text is itself a regulation unless the source says so"],"freshness":"periodic official-page recheck"},
+    {"class":"consensus_standard","examples":["ANSI/ESTA and other recognized consensus standards"],"may_support":["industry consensus requirement/recommended practice within scope"],"cannot_alone_support":["statutory claim","employer/site authorization"],"freshness":"pin exact document number, edition/year, status, publisher; recheck official standards catalog","copyright_rule":"cite/summarize within license/copyright limits; do not copy protected standard text into public course bodies"},
+    {"class":"manufacturer_documentation","examples":["manuals","product data","technical bulletins"],"may_support":["product-specific identification","limits","manufacturer-defined procedure/context"],"cannot_alone_support":["universal rule across unrelated products"],"freshness":"pin manufacturer, product family/model, document revision/version"},
+    {"class":"credential_body","examples":["ETCP","recognized certification/training bodies"],"may_support":["credential scope","current credential categories","eligibility/renewal information"],"cannot_alone_support":["statutory licensure","employer appointment","site authorization"],"freshness":"recheck official program before learner-facing credential claims"},
+    {"class":"technical_educational_reference","examples":["legitimate technical publications","educational references"],"may_support":["concept model","technical explanation","terminology"],"cannot_alone_support":["site-specific authorization","law unless it cites primary law"],"freshness":"edition/version appropriate to claim"},
+    {"class":"employer_venue_local_practice","examples":["employer instructions","venue rules","CBA/local work rules"],"may_support":["local workflow","local assignment/authorization context"],"cannot_alone_support":["universal industry procedure"],"freshness":"volatile; owner is Production Atlas when used as public labor-market/work-route intelligence"},
+    {"class":"practitioner_field_pattern","examples":["triangulated practitioner evidence"],"may_support":["recurring convention","field-reality context","learner vocabulary/problem framing"],"cannot_alone_support":["legal requirement","manufacturer rule","qualified-person procedure"],"freshness":"retain sample/context/date and triangulation state"},
+    {"class":"community_worker_experience","examples":["forums","worker discussions"],"may_support":["question discovery","experience-pattern hypothesis"],"cannot_alone_support":["safety instruction","legal claim","employer fact","universal workflow"],"freshness":"date/sample controlled; private analysis where personal detail exists"},
+    {"class":"market_demand_signal","examples":["Roadmapdev normalized U.S.-48 role/competency signals"],"may_support":["curriculum priority","career-lane relevance","coverage-gap analysis"],"cannot_alone_support":["how-to instruction","safety requirement","qualification","legal claim"],"freshness":"recompute from current Production Atlas/industry evidence"},
+    {"class":"crew_blueprint_internal_policy","examples":["course does not grant authorization","knowledge completion is separate from practical/employer authorization","presentation/assessment semantics"],"may_support":["product behavior","self-imposed conservative boundary","learner-state definition"],"cannot_alone_support":["claim that external law imposes the same boundary"],"freshness":"versioned with accepted product policy"}
+  ],
+  "claim_publication_states": {
+    "source_complete": "required direct/partial/corroborating edges present; qualifiers and review state satisfied",
+    "partial": "some support exists but applicability, edition, review, or directness is incomplete",
+    "unsupported": "no adequate support edge for the external claim",
+    "internal_policy_only": "valid as Crew Blueprint product policy, but not presented as external law/industry fact",
+    "stale": "source may once have supported claim but freshness/edition check is due",
+    "contradicted_or_unresolved": "conflicting evidence exists; client must show unresolved state or withhold definitive wording"
+  },
+  "high_safety_gate": {
+    "rule": "High-safety content may render only as bounded awareness/internal non-authorization language unless the external claim has adequate primary/qualified evidence, required review, and applicability qualifiers.",
+    "unsupported_view_action": [
+      "Split internal product-policy boundaries from external factual/legal assertions.",
+      "Allow internally authoritative non-authorization wording only when labeled Crew Blueprint policy/boundary.",
+      "Keep external legal, technical, manufacturer, credential, jurisdictional or quantitative statements blocked/partial until supported."
+    ]
+  },
+  "regulatory_spot_checks_2026_09_09": [
+    {"topic":"OSHA electrical training","status":"official OSHA 29 CFR 1910.332 page confirmed current","render_rule":"scope/applicability qualifier required; Crew Blueprint completion must not be equated with workplace qualified-person status"},
+    {"topic":"OSHA electrical work practices","status":"official OSHA 29 CFR 1910.333 page confirmed current","render_rule":"use for awareness/authority framing only in beginner content; do not convert into operational work procedure"},
+    {"topic":"OSHA occupational noise","status":"official OSHA 29 CFR 1910.95 page confirmed current","render_rule":"do not label regulatory exposure values as universal personal safe/unsafe limits"},
+    {"topic":"federal heat rulemaking","status":"OSHA heat-specific standard remains proposed/rulemaking as of 2026-09-09","render_rule":"do not describe the proposed heat rule as a final federal standard; separate existing employer duties/guidance and any state/local rules"},
+    {"topic":"ADA design standards","status":"DOJ ADA.gov continues to publish the 2010 ADA Standards as enforceable design standards under applicable Title II/III contexts","render_rule":"do not infer complete event-route compliance from a product or isolated dimension; scoping and responsible-entity/site review still matter"},
+    {"topic":"ETCP credentials","status":"official ETCP site currently lists Rigger-Arena, Rigger-Theatre, Entertainment Electrician, and Portable Power Distribution Technician","render_rule":"credential is separate from statutory licensure, employer appointment, and site authorization"},
+    {"topic":"ESTA/ANSI entertainment standards","status":"ESTA TSP official catalog is active and versioned; new/revised standards continue to publish","render_rule":"pin exact document and edition/year in SOURCE; current-edition check required before edition-sensitive claims"}
+  ],
+  "client_render_requirements": [
+    "show source title/authority class for learner-visible source panels",
+    "show jurisdiction/applicability when a legal or regulatory source is not universal",
+    "show last evidence review/freshness state",
+    "preserve required qualifier from SUPPORT_EDGE",
+    "never collapse regulation, consensus standard, manufacturer instruction, local practice, practitioner convention and Crew Blueprint framing into one generic 'source' label",
+    "do not expose private Roadmapdev worker/personal records on public pages"
+  ],
+  "official_verification_urls": {
+    "osha_1910_332": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.332",
+    "osha_1910_333": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+    "osha_1910_95": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95",
+    "osha_heat_rulemaking": "https://www.osha.gov/heat-exposure/rulemaking/",
+    "ada_2010_standards": "https://www.ada.gov/law-and-regs/design-standards/2010-stds/",
+    "etcp": "https://etcp.esta.org/",
+    "esta_tsp_published": "https://tsp.esta.org/tsp/documents/published_docs.php"
+  }
+}

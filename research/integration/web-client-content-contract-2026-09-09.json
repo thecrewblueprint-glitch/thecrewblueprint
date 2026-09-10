@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "crew-blueprint-web-client-knowledge-contract-2026-09-09",
+  "date": "2026-09-09",
+  "status": "proposed structural client contract",
+  "purpose": "Give web pages one normalized projection shape so V4/next clients render the same authoritative knowledge, provenance, boundaries, media and cross-product links without embedding a second source of truth in page code.",
+  "canonical_backing": {
+    "course_identity": "research/matrix/course_inventory.jsonl plus aliases/route compatibility",
+    "content": "research/matrix/content*.jsonl",
+    "sources": "research/matrix/sources*.jsonl",
+    "support": "research/matrix/support_edges*.jsonl",
+    "competency_edges": "research/matrix/competency_content_edges*.jsonl",
+    "research_edges": "research/matrix/research_competency_edges*.jsonl",
+    "lineage": "research/matrix/content_lineage_edges*.jsonl",
+    "reviews": "research/matrix/reviews*.jsonl",
+    "media": "research/matrix/media*.jsonl",
+    "version_crosswalk": "research/integration/version-crosswalk-v2-v4-clean-sheet-2026-09-09.json",
+    "career_demand_bridge": "research/integration/job-demand-curriculum-bridge-2026-09-09.json"
+  },
+  "page_payload": {
+    "identity": ["content_id", "canonical_course_id", "route_id", "title", "content_type", "version", "publication_state"],
+    "placement": ["learner_surface", "career_lane_ids", "context_ids", "presentation_tier", "prerequisite_or_recommendation_edges"],
+    "learning": ["competency_ids", "objective", "learner_depth", "assessment_state", "practice_state"],
+    "evidence": ["claim_ids", "source_ids", "support_edge_ids", "evidence_state", "authority_class", "required_qualifiers", "last_evidence_review", "freshness_state"],
+    "boundary": ["safety_criticality", "qualification_boundary", "external_authority_owner", "stop_or_escalate_message"],
+    "lineage": ["supersedes", "superseded_by", "historical_version_refs", "v2_ref", "clean_sheet_ref", "v4_presentation_ref"],
+    "media": ["media_ids", "media_type", "learning_purpose", "rights_state", "alt_text", "text_fallback", "review_state", "safety_review_state"],
+    "work_bridge": ["atlas_route_id", "atlas_url", "purpose_label", "compatibility_checked_at", "volatile_data_owned_by_atlas"],
+    "client": ["navigation_parent", "return_route", "related_nodes", "source_panel_enabled", "progress_semantics"]
+  },
+  "render_gates": [
+    {"when": "evidence_state=unsupported AND claim is external factual/legal/technical", "action": "do not render as established fact; show review-needed state or use only independently valid internal policy wording"},
+    {"when": "freshness_state=stale", "action": "warn/withhold freshness-sensitive claim until source recheck"},
+    {"when": "safety_criticality=high", "action": "require boundary metadata and qualification-sensitive qualifiers; media must meet safety-review gate"},
+    {"when": "publication_state is not public/accepted", "action": "do not expose as ordinary public learner content"},
+    {"when": "work data requested", "action": "render outbound Production Atlas link/summary contract; do not copy current employer/opening/pay records into Crew Blueprint payload"},
+    {"when": "historical content is surfaced", "action": "label provenance/version and do not imply current publication status"}
+  ],
+  "surface_contracts": {
+    "home": {"intent": "small decision set; route learner by goal", "required": ["learner_surface", "career_lane_ids", "publication_state"], "forbidden": ["143-card catalog dump", "raw market records"]},
+    "start": {"intent": "beginner/general orientation and first-call literacy", "required": ["objectives", "boundaries", "source/evidence state"], "work_bridge": "optional contextual"},
+    "learn": {"intent": "career-guided graph navigation", "required": ["career_lane_ids", "presentation_tier", "competency_ids", "related_nodes"], "rule": "reveal depth progressively"},
+    "field": {"intent": "task-focused generalist practice", "required": ["competency_ids", "practice_state", "safety boundary", "media/provenance"], "rule": "online practice does not equal employer authorization"},
+    "departments": {"intent": "lane discovery and lane-core learning", "required": ["career_lane_ids", "lane-core nodes", "context overlays", "Atlas link"], "rule": "stagehand not universal prerequisite"},
+    "contexts": {"intent": "transfer durable principles between environments", "required": ["context_ids", "what_stays_same", "what_changes", "authority_changes"], "rule": "local methods are not universalized"},
+    "grow": {"intent": "responsibility progression/leadership", "required": ["role/responsibility mapping", "decision-right boundaries", "related learning"], "rule": "completion does not appoint learner to a role"},
+    "advanced": {"intent": "deep system/specialist learning", "required": ["qualification boundary", "review state", "evidence completeness"], "rule": "controlled specialties remain externally gated"},
+    "sources": {"intent": "transparent evidence/provenance", "required": ["source class", "authority", "claim linkage", "freshness", "applicability"], "rule": "matrix projection replaces hand-maintained source lists as final authority"},
+    "find_work": {"intent": "cross-product route to Production Atlas", "required": ["stable Atlas route/link", "purpose label", "compatibility state"], "rule": "Atlas owns volatile work data"}
+  },
+  "known_v4_projection_debt": [
+    "content.js contains hand-maintained sourceGroups separate from the normalized matrix; treat as presentation-era data, not canonical provenance.",
+    "The Production Atlas sourceGroups link points at a GitHub main-branch path while the ecosystem relationship map names research-version as Atlas canonical research branch; replace hard-coded branch assumptions with stable Atlas route IDs/URLs.",
+    "V4 programs are presentation bundles; they need canonical CONTENT/COMPETENCY joins before evidence-complete status can be inferred.",
+    "sources-v4.html must eventually render a generated/local projection of canonical source/claim state rather than rely on a static bibliography list."
+  ],
+  "client_invariants": [
+    "one canonical content identity may appear in multiple learner journeys without copy/paste divergence",
+    "source panel and course body must resolve the same claim IDs",
+    "progress/view state is separate from knowledge completion, assessment, observed practice and external authorization",
+    "public clients never receive private Roadmapdev personal/worker records",
+    "all cross-product links are compatibility checked and fail visibly if superseded"
+  ]
+}

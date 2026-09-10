@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.1",
+  "map_id": "crew-blueprint-version-crosswalk-v2-v4-clean-sheet-2026-09-09",
+  "date": "2026-09-09",
+  "status": "structural proposed state; no frozen reference mutation",
+  "purpose": "Pin V2, restored V4, and clean-sheet/V-next to explicit roles so learner-facing presentation can be rebuilt without losing the 143-course evidence corpus or confusing experiments with source truth.",
+  "authoritative_refs": {
+    "v2": {
+      "ref": "archive/frozen-v2-exact-2026-09-07",
+      "commit": "1b1ddb0649d5a66bfff91b74791b4f3ce4f4c256",
+      "role": ["historical accepted implementation reference", "deep course/evidence corpus reference"],
+      "mutable": false
+    },
+    "clean_sheet": {
+      "ref": "archive/frozen-vnext-clean-sheet-exact-2026-09-07",
+      "commit": "4378c3954efd8e8fee7b98842493e932567341b7",
+      "role": ["learner interaction/IA reference", "situation-first navigation reference"],
+      "mutable": false
+    },
+    "v4_live": {
+      "ref": "main",
+      "commit": "7c76b7ce885f5ebe0c9d36e04314d448d80cce12",
+      "role": ["current restored live presentation surface", "current V4 client implementation frontier"],
+      "mutable": "only through normal Crew Blueprint governance"
+    }
+  },
+  "historical_analysis": {
+    "roadmapdev_clean_sheet_vs_v2": "thecrewblueprint-glitch/Roadmapdev@main:research/crew-blueprint-clean-sheet-vs-v2-assessment-2026-09-07.md",
+    "roadmapdev_143_crosswalk": "thecrewblueprint-glitch/Roadmapdev@main:research/crew-blueprint-v2-143-course-career-crosswalk-2026-09-07.json",
+    "crew_blueprint_pr57_map": "research/analysis/vnext-career-guided-course-map-2026-09-07.json"
+  },
+  "version_role_resolution": {
+    "knowledge_truth": "research/matrix logical tables and canonical Crew Blueprint content/history, not any single UI version",
+    "course_identity": "canonical course IDs; historical route/body variants remain lineage/provenance",
+    "learner_shell": "V4/current implementation may adopt clean-sheet strengths without inheriting clean-sheet's stagehand-first ontology",
+    "historical_retention": "V2 and clean-sheet stay frozen; materially distinct course bodies stay in content/archive",
+    "current_market_truth": "Production Atlas owning branch/data; never V2/V4 prose snapshots",
+    "cross_system_analysis": "Roadmapdev advisory only"
+  },
+  "crosswalk_rules": [
+    "Do not select V2, V4, or clean-sheet wholesale as the knowledge source.",
+    "A V4 lesson must resolve to canonical CONTENT/COMPETENCY/SOURCE lineage before it is treated as evidence-backed.",
+    "Clean-sheet programs are presentation bundles and may map to many V2 course/content identities.",
+    "V2 course identities remain lineage keys even when their learner presentation is merged, hidden, or context-triggered.",
+    "Stagehand/general production is a lane, not a universal prerequisite ontology.",
+    "Rigging, production power, automation, special effects, work-at-height and similar controlled domains remain awareness/system-literacy unless external qualification/authorization applies.",
+    "Current V4 course surfaces do not silently redefine the proposed career-lane taxonomy.",
+    "No frozen reference is rewritten by this crosswalk."
+  ],
+  "target_graph_flow": [
+    "learner intent",
+    "career lane or immediate situation",
+    "shared competency nodes",
+    "lane-core competency/content nodes",
+    "context overlays",
+    "advanced or specialist-awareness nodes",
+    "Production Atlas work-intelligence bridge",
+    "Grow/leadership resources",
+    "sources/provenance"
+  ],
+  "front_door_resolution": {
+    "pr57_proposed_initial_career_entries": [
+      "stagehand_generalist",
+      "lighting",
+      "audio",
+      "video_led",
+      "rigging_bounded_awareness",
+      "staging_structures"
+    ],
+    "v4_current_foundation_surfaces": [
+      "crew_ready",
+      "systems_thinking",
+      "shop_logistics",
+      "department_explorer"
+    ],
+    "near_term_or_parallel_lane_candidates_already_supported_by_corpus": [
+      "shop_logistics",
+      "production_power_electrical_bounded_awareness",
+      "backline_props_wardrobe",
+      "stage_management",
+      "production_management",
+      "venue_site_operations",
+      "show_control_automation",
+      "broadcast_camera_media",
+      "crew_labor_leadership"
+    ],
+    "rule": "V4's Shop / Logistics course is a current learner-facing foundation/parallel-production surface. That presentation does not, by itself, amend PR #57's proposed six initial career entries. Any later front-door lane expansion remains an explicit architecture decision after acceptance of the mapped graph."
+  },
+  "acceptance_checks": [
+    "143 canonical IDs remain accounted for exactly once in the primary mapping.",
+    "No historically unique body is deleted or silently overwritten.",
+    "Every V4 learner-facing claim resolves to a canonical content/claim state or is explicitly labeled presentation framing.",
+    "Version-specific routes are presentation/compatibility metadata, not new knowledge identities.",
+    "Production Atlas and Roadmapdev data remain domain-owned.",
+    "Current V4 presentation surfaces do not silently alter the proposed career-lane taxonomy."
+  ]
+}
