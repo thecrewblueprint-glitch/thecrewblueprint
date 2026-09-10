@@ -72,15 +72,15 @@ for (const edge of researchEdges) {
   assert(mappedSet.has(edge.to_id) || virtualSet.has(edge.to_id) || atlasSet.has(edge.to_id), `Unknown learner-edge to_id: ${edge.to_id}`);
 }
 
-assert(publicAtlas.links.length >= 6, `Expected at least six stable Production Atlas routes; got ${publicAtlas.links.length}.`);
-for (const link of publicAtlas.links) {
-  const url = new URL(link.url);
-  assert(url.protocol === 'https:', `Atlas route must use HTTPS: ${link.url}`);
-  assert(url.hostname === 'atlas.thecrewblueprint.com', `Atlas route must use the stable custom domain, not a repository/branch URL: ${link.url}`);
-  assert(link.volatile_data_owned_by_atlas === true, `Atlas ownership flag missing on ${link.atlas_route_id}.`);
-}
+assert(publicAtlas.access_state === 'locked_unavailable', 'Public Atlas projection must remain locked.');
+assert(publicAtlas.learner_tool_available === false, 'Public Atlas learner tool must remain unavailable.');
+assert(publicAtlas.links.length === 0, `Public Atlas projection must expose zero active routes while locked; got ${publicAtlas.links.length}.`);
+assert(webProjection.atlas_access?.state === 'locked_unavailable', 'Web projection lost the Atlas locked state.');
+assert(webProjection.atlas_access?.learner_tool_available === false, 'Web projection must not expose Atlas as a learner tool.');
+assert((webProjection.atlas_links || []).length === 0, 'Web projection exposed active Atlas links while access is locked.');
 
 const publicText = JSON.stringify(webProjection);
+assert(!publicText.includes('atlas.thecrewblueprint.com'), 'Public web projection exposed an active Production Atlas URL while locked.');
 assert(!publicText.includes('thecrewblueprint-glitch/Roadmapdev'), 'Public projection leaked a private Roadmapdev repository pointer.');
 assert(!publicText.includes('worker_records'), 'Public projection leaked private worker-record semantics.');
 assert(!publicText.includes('personal_contacts'), 'Public projection leaked personal-contact semantics.');
@@ -101,10 +101,12 @@ assert(mediaQueue.every((row) => row.provenance_required === true && row.alt_or_
 for (const course of webProjection.courses) {
   assert(course.client?.progress_semantics?.includes('employer_or_site_authorization'), `Progress/authorization separation missing for ${course.identity.canonical_course_id}.`);
   assert(course.work_bridge?.volatile_data_owned_by_atlas === true, `Atlas volatile-data ownership missing for ${course.identity.canonical_course_id}.`);
+  assert(course.work_bridge?.atlas_access_state === 'locked_unavailable', `Atlas access state missing for ${course.identity.canonical_course_id}.`);
+  assert((course.work_bridge?.atlas_route_ids || []).length === 0, `Public course projection exposed Atlas route IDs for ${course.identity.canonical_course_id}.`);
 }
 
 console.log('Successor projection validation passed.');
 console.log(`143/143 canonical identities projected; ${fieldGroup.course_ids.length} Field Skills preserved; ${initialEntryIds.length} initial lanes independent.`);
 console.log(`${researchEdges.length} learner-path edges validated with zero hard prerequisites.`);
-console.log(`${publicAtlas.links.length} stable Production Atlas routes validated on atlas.thecrewblueprint.com.`);
+console.log('Production Atlas public access is locked with zero active learner routes.');
 console.log(`${mediaQueue.length} media backlog items; ${sourceGapQueue.length} external source-gap items; ${internalPolicy.length} internal-policy boundaries separated.`);

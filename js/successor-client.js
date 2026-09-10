@@ -230,17 +230,8 @@
     renderCourseCollection(node,courses,'No advanced nodes are present in the generated projection.',{showLane:true});
   };
 
-  const renderAtlas=(node,data)=>{
-    node.replaceChildren();
-    const grid=document.createElement('div');grid.className='graph-atlas-grid';
-    (data.atlas_links||[]).forEach(link=>{
-      const card=document.createElement('article');card.className='graph-card';
-      const h=document.createElement('h3');h.textContent=link.purpose_label||escapeLabel(link.atlas_route_id);card.appendChild(h);
-      const p=document.createElement('p');p.textContent='Current work intelligence stays in Production Atlas and is linked here without copying its volatile records into curriculum.';card.appendChild(p);
-      const a=document.createElement('a');a.className='btn';a.href=link.url;a.target='_blank';a.rel='noopener';a.textContent='Open Production Atlas ↗';card.appendChild(a);
-      grid.appendChild(card);
-    });
-    node.appendChild(grid);
+  const renderAtlas=(node)=>{
+    setStatus(node,'Production Atlas is not available as a learner tool in the current release.');
   };
 
   const renderSources=(node,data)=>{

@@ -8,6 +8,7 @@ const matrixDir = path.join(researchDir, 'matrix');
 const integrationDir = path.join(researchDir, 'integration');
 const generatedResearchDir = path.join(researchDir, 'generated');
 const generatedPublicDir = path.join(root, 'data', 'generated');
+const ATLAS_ACCESS_STATE = 'locked_unavailable';
 
 const PATHS = {
   mapping: path.join(researchDir, 'analysis', 'vnext-career-guided-course-map-2026-09-07.json'),
@@ -319,9 +320,6 @@ for (const group of careerGroups) {
     addEdge(surface, courseId, 'career_resource_member', { lane: group.lane, visibility: group.visibility });
   }
 }
-for (const atlasId of ['ATLAS-EMPLOYERS', 'ATLAS-OPPORTUNITIES', 'ATLAS-MARKET', 'ATLAS-IATSE', 'ATLAS-GUIDE']) {
-  addEdge('SURFACE-FIND-WORK', atlasId, 'external_product_bridge', { external_system: 'production_atlas', visibility: 'find_work_grow' });
-}
 
 const adjacency = new Map();
 for (const edge of learnerEdges) {
@@ -420,7 +418,8 @@ const courseProjection = mappedCourseIds.map((courseId) => {
       safety_review_state: unique(courseMedia.map((row) => row.safety_review_state)),
     },
     work_bridge: {
-      atlas_route_ids: deriveAtlasRoutes(group),
+      atlas_route_ids: [],
+      atlas_access_state: ATLAS_ACCESS_STATE,
       volatile_data_owned_by_atlas: true,
     },
     client: {
@@ -440,7 +439,7 @@ const publicSources = [...usedSourceIds]
     source_id: source.source_id,
     source_owner: source.source_owner || null,
     title: source.title || null,
-    url: source.url || null,
+    url: String(source.url || '').includes('atlas.thecrewblueprint.com') ? null : (source.url || null),
     evidence_type: source.evidence_type || null,
     authority_level: source.authority_level || null,
     jurisdiction_scope: source.jurisdiction_scope || null,
@@ -450,13 +449,7 @@ const publicSources = [...usedSourceIds]
   }))
   .sort((a, b) => a.source_id.localeCompare(b.source_id));
 
-const atlasLinksPublic = atlasRegistry.links.map((link) => ({
-  atlas_route_id: link.atlas_route_id,
-  url: link.url,
-  purpose_label: link.purpose_label,
-  use_for: link.use_for,
-  volatile_data_owned_by_atlas: true,
-}));
+const atlasLinksPublic = [];
 
 const publicProjection = {
   schema_version: '1.0.0',
@@ -472,6 +465,11 @@ const publicProjection = {
     course_completion_not_authorization: true,
     production_atlas_owns_volatile_work_data: true,
     canonical_ids_retained: true,
+  },
+  atlas_access: {
+    state: ATLAS_ACCESS_STATE,
+    learner_tool_available: false,
+    links_exposed: false,
   },
   virtual_nodes: VIRTUAL_NODES,
   learner_path_edges: learnerEdges,
@@ -575,7 +573,7 @@ writeJsonl(path.join(generatedResearchDir, 'source-gap-closure-queue.jsonl'), so
 writeJsonl(path.join(generatedResearchDir, 'internal-policy-boundaries.jsonl'), internalPolicyBoundaries);
 writeJson(path.join(generatedPublicDir, 'web-client-projection.json'), publicProjection);
 writeJson(path.join(generatedPublicDir, 'learner-path-edges.json'), { schema_version: '1.0.0', virtual_nodes: VIRTUAL_NODES, edges: learnerEdges });
-writeJson(path.join(generatedPublicDir, 'production-atlas-links.json'), { schema_version: '1.0.0', registry_id: atlasRegistry.registry_id, links: atlasLinksPublic });
+writeJson(path.join(generatedPublicDir, 'production-atlas-links.json'), { schema_version: '1.0.0', registry_id: atlasRegistry.registry_id, access_state: ATLAS_ACCESS_STATE, learner_tool_available: false, links: atlasLinksPublic });
 
 console.log(`Generated successor projection for ${courseProjection.length} canonical course identities.`);
 console.log(`Learner-path edges: ${learnerEdges.length}`);
