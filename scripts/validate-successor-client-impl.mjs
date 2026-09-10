@@ -71,7 +71,13 @@ assert(clientJs.includes('replaceChildren'),'Successor client should render gene
 assert(!clientJs.includes('innerHTML='),'Successor graph renderer must not inject generated projection content through innerHTML.');
 assert(clientJs.includes('fetch(projectionUrl'),'Successor client is not loading the generated projection.');
 assert(clientJs.includes("state.kind==='is-live'&&route"),'Successor client does not gate course links to released live routes.');
+assert(!clientJs.includes('a.href=link.url'),'Successor client can still construct active Atlas links.');
 
+const atlasLockPages=['index.html','start.html','learn.html','departments.html','field.html','contexts.html','advanced.html','sources-v4.html','experienced.html','employers.html'];
+for(const file of atlasLockPages){
+  const html=text(file);
+  assert(!html.includes('atlas.thecrewblueprint.com'), `${file} exposes Production Atlas while learner access is locked.`);
+}
 const publicHtml=Object.keys(requiredPages).map(text).join('\n');
 assert(!/archive\/frozen-|research-version/.test(publicHtml),'Learner-facing HTML embeds implementation/archive branch identities.');
 assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTML contains private-data semantics.');
@@ -79,4 +85,4 @@ assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTM
 console.log('Successor client validation passed.');
 console.log(`${Object.keys(requiredPages).length} successor learner surfaces validated.`);
 console.log(`${publicationEligible.length} publication-eligible graph identities tracked; ${clickableCourses.length} currently have materialized learner routes.`);
-console.log('Existing four V4 foundation routes preserved; Advanced remains noncommercial and projection-locked.');
+console.log('Existing four V4 foundation routes preserved; Advanced and Production Atlas remain locked as configured.');
