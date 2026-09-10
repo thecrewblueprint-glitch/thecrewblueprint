@@ -27,6 +27,8 @@ jobs:
         run: node --check js/successor-client.js
       - name: Validate successor client
         run: node scripts/validate-successor-client.mjs
+      - name: Audit free release readiness
+        run: node scripts/audit-free-release-readiness.mjs
       - name: Validate normalized research matrix
         run: node scripts/validate-research-matrix.mjs
       - name: Validate ecosystem curriculum
