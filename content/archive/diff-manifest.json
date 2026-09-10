@@ -102,7 +102,20 @@
       "completeness_boundary": "Complete for the selected course/content paths in Git objects reachable from the live branch and fetched-tag frontier at capture time. It does not claim preservation of unreachable/dangling Git objects that are no longer referenced by any fetched ref."
     }
   ],
-  "snapshot_records": [],
+  "snapshot_records": [
+    {
+      "archive_path": "content/archive/snapshots/pre-issue-94-advanced-access-shell-2026-09-10/advanced.html",
+      "source_ref": "main@1a3273d64e09ddfe1e5c76a1beb94b34496beb8f",
+      "source_path": "advanced.html",
+      "source_blob_sha": "0be5fe9fd010952bfe686afc4c47b9de304029b5",
+      "capture_date": "2026-09-10",
+      "verbatim": true,
+      "logical_identity": "advanced-pathways-public-presentation",
+      "relationship": "superseded_public_body",
+      "replaced_by": "PR #95 authenticated Advanced development-status shell",
+      "note": "Exact predecessor preserved before PR #95 replaces the public Advanced catalog/purchase-preview presentation."
+    }
+  ],
   "snapshot_record_schema": {
     "required": [
       "archive_path",
@@ -125,5 +138,5 @@
     "note": "Use individual snapshot_records for future targeted captures. The 2026-09-06 exhaustive set uses its own per-file snapshot and history manifests rather than duplicating thousands of records here."
   },
   "mirror_completion_rule": "A curriculum identity is considered mirrored for the 2026-09-06 frontier when its registered route and source-data history are represented by the exhaustive snapshot set. Future materially distinct versions must be added as new snapshots before destructive replacement. Source refs remain protected even after mirroring unless the owner separately authorizes a specific prune.",
-  "current_state": "PR #48 has merged as planning/retrieval architecture. The 2026-09-06 exhaustive archive now supplies the required working-tree historical retrieval surface; it does not authorize curriculum deletion, branch pruning, or restoration of old material as current content."
+  "current_state": "PR #48 planning/retrieval architecture remains accepted. The 2026-09-06 exhaustive archive supplies the initial historical retrieval surface; targeted post-frontier materially distinct bodies, including the pre-PR #95 Advanced presentation, are registered in snapshot_records before replacement. No archive entry authorizes curriculum deletion, branch pruning, or restoration as current content."
 }
