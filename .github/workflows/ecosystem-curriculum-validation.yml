@@ -19,6 +19,10 @@ jobs:
           node-version: '22'
       - name: Generate ecosystem matrix
         run: node scripts/generate-ecosystem-matrix.mjs
+      - name: Generate successor projections
+        run: node scripts/generate-successor-projections.mjs
+      - name: Validate successor projections
+        run: node scripts/validate-successor-projections.mjs
       - name: Validate normalized research matrix
         run: node scripts/validate-research-matrix.mjs
       - name: Validate ecosystem curriculum
