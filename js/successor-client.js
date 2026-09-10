@@ -21,6 +21,15 @@
     automation:'Automation',
     production_power:'Production Power / Electrical',
     special_effects:'Special Effects',
+    video_led:'Video / LED',
+    staging_structures:'Staging / Scenic',
+    logistics_shop:'Shop / Warehouse / Logistics',
+    backline_props_wardrobe:'Backline / Props / Wardrobe',
+    power_electrical:'Production Power / Electrical',
+    outdoor_site_context:'Outdoor / Site Context',
+    accessibility_public_interface:'Accessibility / Public Interface',
+    cross_lane_networked_systems:'Cross-Lane Networked Systems',
+    common_foundation:'Shared Foundation',
     context_labs:'Context Labs',
     career_business_rights:'Career / Business / Rights'
   };
@@ -236,6 +245,47 @@
     node.appendChild(grid);
   };
 
+  const renderGroupedLibrary=(node,courses,emptyMessage)=>{
+    node.replaceChildren();
+    if(!courses.length){setStatus(node,emptyMessage);return;}
+    const laneMap=new Map();
+    courses.forEach(course=>{
+      const lane=course.placement?.career_lane_ids?.[0]||'common_foundation';
+      if(!laneMap.has(lane))laneMap.set(lane,[]);
+      laneMap.get(lane).push(course);
+    });
+    const wrapper=document.createElement('div');
+    wrapper.className='stack';
+    [...laneMap.entries()]
+      .sort((a,b)=>laneRank(a[0])-laneRank(b[0])||laneLabel(a[0]).localeCompare(laneLabel(b[0])))
+      .forEach(([lane,items])=>{
+        const section=document.createElement('section');
+        section.className='graph-lane';
+        const top=document.createElement('div');top.className='graph-card-top';
+        top.appendChild(badge(laneLabel(lane),'is-neutral'));
+        top.appendChild(badge(`${items.length} item${items.length===1?'':'s'}`,'is-neutral'));
+        section.appendChild(top);
+        const h=document.createElement('h3');h.textContent=laneLabel(lane);section.appendChild(h);
+        const grid=document.createElement('div');grid.className='graph-course-grid';
+        items.slice().sort(byTitle).forEach(course=>grid.appendChild(courseCard(course,{showLane:false})));
+        section.appendChild(grid);
+        wrapper.appendChild(section);
+      });
+    node.appendChild(wrapper);
+  };
+
+  const renderFreeLibrary=(node,data)=>renderGroupedLibrary(
+    node,
+    (data.courses||[]).filter(c=>c.access?.delivery_state==='free_public'),
+    'No free learning identities are present in the generated projection.'
+  );
+
+  const renderReferenceLibrary=(node,data)=>renderGroupedLibrary(
+    node,
+    (data.courses||[]).filter(c=>c.access?.delivery_state==='public_reference'),
+    'No public reference identities are present in the generated projection.'
+  );
+
   const renderField=(node,data)=>renderCourseCollection(
     node,
     (data.courses||[]).filter(c=>c.placement?.learner_surface==='field'&&['free_public','public_reference'].includes(c.access?.delivery_state)),
@@ -313,6 +363,8 @@
   const renderers={
     'successor-overview':renderOverview,
     'successor-lanes':renderLanes,
+    'successor-free-library':renderFreeLibrary,
+    'successor-reference-library':renderReferenceLibrary,
     'successor-field-skills':renderField,
     'successor-contexts':renderContexts,
     'successor-advanced':renderAdvanced,
@@ -321,7 +373,7 @@
     'successor-integrity':renderIntegrity
   };
 
-  const targets=[...document.querySelectorAll('[data-successor-overview],[data-successor-lanes],[data-successor-field-skills],[data-successor-contexts],[data-successor-advanced],[data-successor-atlas-links],[data-successor-sources],[data-successor-integrity]')];
+  const targets=[...document.querySelectorAll('[data-successor-overview],[data-successor-lanes],[data-successor-free-library],[data-successor-reference-library],[data-successor-field-skills],[data-successor-contexts],[data-successor-advanced],[data-successor-atlas-links],[data-successor-sources],[data-successor-integrity]')];
   if(!targets.length)return;
   targets.forEach(node=>setStatus(node,'Loading canonical learning graph…'));
 
