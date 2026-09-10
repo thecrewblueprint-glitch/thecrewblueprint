@@ -33,9 +33,9 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-ETCP-PPDT-EXAM-CONTENT-CURRENT | Examination Content — Portable Power Distribution Technician | credential_job_analysis | periodic | active | NONE |
 | S-ETCP-RIGGER-ARENA-EXAM-CURRENT | Examination Content — Rigger Arena | credential_job_analysis | periodic | active | CL-LEAD-RIG-HR02-002 |
 | S-ETCP-RIGGER-THEATRE-EXAM-CURRENT | Examination Content — Rigger Theatre | credential_job_analysis | periodic | active | CL-LEAD-RIG-HR02-002 |
-| S-ETCP-RIGGER-CERTIFY-CURRENT | Get Certified — Rigger Arena / Theatre | association | periodic | active | CL-LTG-C1-002-TRUSS-TRIM, CL-AUD-C1-002-ARRAY, CL-LEAD-RIG-HR02-001, CL-LEAD-RIG-HR02-002, CL-LEAD-RIG-HR02-003, CL-VID-SYSTEMS-HR09-005, CL-VID-ARCH-HR09-007 |
+| S-ETCP-RIGGER-CERTIFY-CURRENT | Get Certified — Rigger Arena / Theatre | association | periodic | active | CL-ECO-037-01, CL-ECO-037-04, CL-ECO-041-04, CL-LTG-C1-002-TRUSS-TRIM, CL-AUD-C1-002-ARRAY, CL-LEAD-RIG-HR02-001, CL-LEAD-RIG-HR02-002, CL-LEAD-RIG-HR02-003, CL-VID-SYSTEMS-HR09-005, CL-VID-ARCH-HR09-007 |
 | S-ETCP-PPDT-CERTIFY-CURRENT | Portable Power Distribution Technician — Get Certified | association | periodic | active | CL-ELC-POWER-AWARENESS-HR01-002, CL-ELC-POWER-AWARENESS-HR01-003 |
-| S-ETCP-ELECTRICAL-SCOPE-CURRENT | Scope of Work for Entertainment Electrician and Portable Power Distribution Technician | association | periodic | active | CL-ELC-POWER-AWARENESS-HR01-002, CL-LEAD-ELC-HR01-001, CL-LEAD-ELC-HR01-002, CL-LTG-PRODUCTION-FLOW-0002, CL-VID-ARCH-HR09-007 |
+| S-ETCP-ELECTRICAL-SCOPE-CURRENT | Scope of Work for Entertainment Electrician and Portable Power Distribution Technician | association | periodic | active | CL-ECO-045-01, CL-ELC-POWER-AWARENESS-HR01-002, CL-LEAD-ELC-HR01-001, CL-LEAD-ELC-HR01-002, CL-LTG-PRODUCTION-FLOW-0002, CL-VID-ARCH-HR09-007 |
 | S-FCC-24-22-WIRELESS-MICS | FCC 24-22 — Amendment of Parts 15 and 74 of the Rules for Wireless Microphones | law_regulation | fast_changing | active | CL-AUD-HR08-RF-REG-001 |
 | S-FMCSA-CARGO-SECUREMENT-OVERVIEW-CURRENT | Cargo Securement Rules | government_guidance | periodic | active | CL-FLD-FLATBED-HR04-002 |
 | S-FMCSA-392-9-Q002-CURRENT | Regulatory Guidance — 49 CFR 392.9 Question 2 | government_guidance | periodic | active | CL-FLD-FLATBED-HR04-003 |
@@ -71,18 +71,18 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-OSHA-1910-176-CURRENT | 29 CFR 1910.176 — Handling materials — general | law_regulation | fast_changing | active | CL-SHF-FUND-M06-BASE, CL-FLD-CASE-ORG-HR06-001, CL-FLD-CASE-ORG-HR06-002, CL-FLD-DOCK-HR06C-001 |
 | S-OSHA-1910-178-PIT-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-SHF-FUND-M02-BASE, CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-PIT-PEDESTRIAN |
 | S-OSHA-1910-178-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-FLD-DOCK-HR06C-002 |
-| S-OSHA-1910-184-CURRENT | 29 CFR 1910.184 — Slings | law_regulation | fast_changing | active | NONE |
+| S-OSHA-1910-184-CURRENT | 29 CFR 1910.184 — Slings | law_regulation | fast_changing | active | CL-ECO-037-03 |
 | S-OSHA-1910-22-CURRENT | 29 CFR 1910.22 — General requirements for walking-working surfaces | law_regulation | fast_changing | active | CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-ROUTE-VERIFY, CL-STG-DECK-HR03-001, CL-FLD-CABLE-PROTECT-HR05-001, CL-FLD-RESET-HR06-001 |
 | S-OSHA-1910-242-CURRENT | 29 CFR 1910.242 — Hand and portable powered tools and equipment, general | law_regulation | fast_changing | active | CL-SHF-FUND-L72-TOOL-CONDITION, CL-SHF-FUND-M07-BASE |
-| S-OSHA-1910-28-CURRENT | 29 CFR 1910.28 — Duty to have fall protection and falling object protection | law_regulation | fast_changing | active | CL-LEAD-RIG-HR02-001, CL-LEAD-RIG-HR02-005 |
+| S-OSHA-1910-28-CURRENT | 29 CFR 1910.28 — Duty to have fall protection and falling object protection | law_regulation | fast_changing | active | CL-ECO-041-01, CL-LEAD-RIG-HR02-001, CL-LEAD-RIG-HR02-005 |
 | S-OSHA-1910-29-CURRENT | 29 CFR 1910.29 — Fall protection systems and falling object protection — criteria and practices | law_regulation | fast_changing | active | CL-LEAD-RIG-HR02-005 |
 | S-OSHA-1910-305-CURRENT | 29 CFR 1910.305 — Wiring methods, components, and equipment for general use | law_regulation | fast_changing | active | NONE |
 | S-OSHA-1910-306-CURRENT | 29 CFR 1910.306 — Specific purpose equipment and installations | law_regulation | fast_changing | active | NONE |
 | S-OSHA-1910-331-CURRENT | 29 CFR 1910.331 — Scope | law_regulation | fast_changing | active | NONE |
 | S-OSHA-1910-332-CURRENT | 29 CFR 1910.332 — Training | law_regulation | fast_changing | active | CL-ELC-POWER-AWARENESS-HR01-001, CL-ELC-POWER-AWARENESS-HR01-003, CL-LEAD-ELC-HR01-003, CL-VID-SYSTEMS-HR09-005 |
-| S-OSHA-1910-333-CURRENT | 29 CFR 1910.333 — Selection and use of work practices | law_regulation | fast_changing | active | CL-LTG-C1-003-POWER, CL-ELC-POWER-AWARENESS-HR01-001, CL-LEAD-ELC-HR01-003, CL-ELC-LOAD-PLANNING-HR01-001, CL-LTG-PRODUCTION-FLOW-0002, PL-FLD-CONNECTOR-GATE-001 |
+| S-OSHA-1910-333-CURRENT | 29 CFR 1910.333 — Selection and use of work practices | law_regulation | fast_changing | active | CL-ECO-045-04, CL-LTG-C1-003-POWER, CL-ELC-POWER-AWARENESS-HR01-001, CL-LEAD-ELC-HR01-003, CL-ELC-LOAD-PLANNING-HR01-001, CL-LTG-PRODUCTION-FLOW-0002, PL-FLD-CONNECTOR-GATE-001 |
 | S-OSHA-1910-334-CURRENT | 29 CFR 1910.334 — Use of equipment | law_regulation | fast_changing | active | CL-FLD-CABLE-DEPLOY-HR06-002 |
-| S-OSHA-1910-335-CURRENT | 29 CFR 1910.335 — Safeguards for personnel protection | law_regulation | fast_changing | active | NONE |
+| S-OSHA-1910-335-CURRENT | 29 CFR 1910.335 — Safeguards for personnel protection | law_regulation | fast_changing | active | CL-ECO-045-03 |
 | S-OSHA-1910-37-CURRENT | 29 CFR 1910.37 — Maintenance, safeguards, and operational features for exit routes | law_regulation | fast_changing | active | CL-SHF-FUND-L93-CALL-RELEASE, CL-SHF-FUND-Q-EGRESS-001, CL-FLD-CASE-ORG-HR06-001, CL-FLD-RESET-HR06-002, CL-FLD-PIPE-DRAPE-HR06B-002 |
 | S-OSHA-1910-399-CURRENT | 29 CFR 1910.399 — Definitions applicable to Subpart S | law_regulation | fast_changing | active | CL-ELC-POWER-AWARENESS-HR01-001, CL-ELC-POWER-AWARENESS-HR01-003, CL-LEAD-ELC-HR01-001 |
 | S-OSHA-1910-95-CURRENT | 29 CFR 1910.95 — Occupational noise exposure | law_regulation | fast_changing | active | CL-AUD-C1-005-NOISE, CL-SHF-FUND-Q-HEARING-001, CL-AUD-HR08-NOISE-001, CL-AUD-HR08-NOISE-002 |
