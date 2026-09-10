@@ -40,20 +40,20 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-FMCSA-CARGO-SECUREMENT-OVERVIEW-CURRENT | Cargo Securement Rules | government_guidance | periodic | active | CL-FLD-FLATBED-HR04-002 |
 | S-FMCSA-392-9-Q002-CURRENT | Regulatory Guidance — 49 CFR 392.9 Question 2 | government_guidance | periodic | active | CL-FLD-FLATBED-HR04-003 |
 | S-FMCSA-392-9-Q004-CURRENT | Regulatory Guidance — 49 CFR 392.9 Question 4 | government_guidance | periodic | active | CL-FLD-FLATBED-HR04-001, CL-FLD-FLATBED-HR04-003, PL-FLD-TRUCKPACK-GATE-001 |
-| S-GEORGIA-EXPO-PIPE-DRAPE-CURRENT | How to Setup Pipe and Drape | manufacturer | fast_changing | active | CL-FLD-PIPE-DRAPE-HR06B-001, CL-FLD-PIPE-DRAPE-HR06B-002 |
+| S-GEORGIA-EXPO-PIPE-DRAPE-CURRENT | How to Setup Pipe and Drape | manufacturer | fast_changing | active | CL-ISS104-FLD-PD-AUTHORITY, CL-ISS104-FLD-PD-BOUNDARY, CL-ISS104-FLD-PD-PRACTICE-GATE, CL-FLD-PIPE-DRAPE-HR06B-001, CL-FLD-PIPE-DRAPE-HR06B-002 |
 | S-IATSE-TOURING-INTRO-CURRENT | An Introduction to Pink Contract Touring | association | periodic | active | PL-SHF-O02-ASSIGNMENT, PL-SHF-O06-SHOW-RHYTHM |
 | S-IATSE101-WORK-RULES-CURRENT | Hiring Hall Referral & Work Rules | union_local | periodic | active | CL-SHF-FUND-M05-BASE, CL-SHF-FUND-L14-REPORTBACK, CL-SHF-FUND-L91-DEPT-RELEASE, CL-SHF-FUND-Q-COMMS-001, PL-SHF-O01-CHECKIN, PL-SHF-O02-ASSIGNMENT, PL-SHF-O03-HANDOFF, PL-SHF-O04-REASSIGNMENT, PL-SHF-O07-RELEASE |
 | S-IATSE118-STAGEHAND-TOOLS-CURRENT | Stagehand Tools | union_local | periodic | active | CL-FLD-TOOLS-HR06B-001 |
 | S-IATSE122-PRIMER20-CURRENT | Primer 20 — Stagehand Skills | union_local | periodic | active | CL-FLD-MARKING-HR06C-001 |
 | S-IATSE15-EQUIPMENT-CURRENT | Entry Test Study Guide — Equipment | union_local | periodic | active | CL-FLD-ROAD-CASE-0001 |
-| S-IATSE193-CARPENTRY-BASICS-CURRENT | Carpentry Basics | union_local | periodic | active | CL-FLD-MARKING-HR06C-001, CL-FLD-SCENERY-HR06C-001 |
+| S-IATSE193-CARPENTRY-BASICS-CURRENT | Carpentry Basics | union_local | periodic | active | CL-ISS104-FLD-MARK-AUTHORITY, CL-ISS104-FLD-MARK-BOUNDARY, CL-ISS104-FLD-MARK-PRACTICE-GATE, CL-ISS104-FLD-SCENERY-AUTHORITY, CL-ISS104-FLD-SCENERY-BOUNDARY, CL-ISS104-FLD-SCENERY-PRACTICE-GATE, CL-FLD-MARKING-HR06C-001, CL-FLD-SCENERY-HR06C-001 |
 | S-IATSE193-SOFT-GOODS-CURRENT | Soft Goods | union_local | periodic | active | NONE |
 | S-IATSE193-EXPECTATIONS-CURRENT | Stagehand Expectations | union_local | periodic | active | PL-SHF-O03-HANDOFF, PL-SHF-O04-REASSIGNMENT, PL-SHF-O06-SHOW-RHYTHM, PL-SHF-O07-RELEASE, PL-SHF-O08-TIMEKEEPING |
 | S-IATSE193-TRUCKS-PUSHERS-CURRENT | Trucks and Pushers | union_local | periodic | active | NONE |
 | S-IATSE25-NEW-HIRE-EXPECTATIONS-CURRENT | Stagehand Expectations for New Hires | union_local | periodic | active | CL-SHF-FUND-L14-CHECKIN, CL-SHF-FUND-L93-CALL-RELEASE, PL-SHF-O01-CHECKIN, PL-SHF-O07-RELEASE |
 | S-IATSE31-FIRST-DAY-CURRENT | What to Bring Your First Day | union_local | periodic | active | CL-FLD-TOOLS-HR06B-001 |
 | S-IATSE50-REQUIRED-TOOLS-CURRENT | Required Tools | union_local | periodic | active | CL-FLD-TOOLS-HR06B-001, CL-FLD-TOOLS-HR06B-002 |
-| S-IATSE98-JOB-BASICS-CURRENT | Job Basics | union_local | periodic | active | CL-FLD-TOOLS-HR06B-002, PL-SHF-O01-CHECKIN |
+| S-IATSE98-JOB-BASICS-CURRENT | Job Basics | union_local | periodic | active | CL-ISS104-FLD-TOOLS-AUTHORITY, CL-ISS104-FLD-TOOLS-BOUNDARY, CL-ISS104-FLD-TOOLS-PRACTICE-GATE, CL-FLD-TOOLS-HR06B-002, PL-SHF-O01-CHECKIN |
 | S-IEC-60529-ED2-2 | IEC 60529:1989+AMD1:1999+AMD2:2013 CSV — Degrees of protection provided by enclosures (IP Code) | consensus_standard | version_bound | active | CL-VID-SYSTEMS-HR09-003 |
 | S-HUNTINGTON-CONTROL-SYSTEMS-BOOK | Control Systems for Live Entertainment | trade_secondary | stable | active | CL-LTG-PRODUCTION-FLOW-0001 |
 | S-LACOUSTICS-KARAII-DOCS-2026 | KARA II Documentation Center / Owner and Product Documentation | manufacturer | fast_changing | active | CL-AUD-C1-002-ARRAY |
@@ -68,11 +68,11 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-OSHA-1910-133-CURRENT | 29 CFR 1910.133 — Eye and face protection | law_regulation | fast_changing | active | CL-SHF-FUND-Q-EYE-HAND-001 |
 | S-OSHA-1910-135-CURRENT | 29 CFR 1910.135 — Head protection | law_regulation | fast_changing | active | CL-SHF-FUND-Q-HEAD-001 |
 | S-OSHA-1910-138-CURRENT | 29 CFR 1910.138 — Hand protection | law_regulation | fast_changing | active | CL-SHF-FUND-Q-EYE-HAND-001 |
-| S-OSHA-1910-176-CURRENT | 29 CFR 1910.176 — Handling materials — general | law_regulation | fast_changing | active | CL-SHF-FUND-M06-BASE, CL-FLD-CASE-ORG-HR06-001, CL-FLD-CASE-ORG-HR06-002, CL-FLD-DOCK-HR06C-001 |
+| S-OSHA-1910-176-CURRENT | 29 CFR 1910.176 — Handling materials — general | law_regulation | fast_changing | active | CL-ISS104-FLD-BONEYARD-AUTHORITY, CL-ISS104-FLD-BONEYARD-BOUNDARY, CL-ISS104-FLD-BONEYARD-PRACTICE-GATE, CL-SHF-FUND-M06-BASE, CL-FLD-CASE-ORG-HR06-001, CL-FLD-CASE-ORG-HR06-002, CL-FLD-DOCK-HR06C-001 |
 | S-OSHA-1910-178-PIT-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-SHF-FUND-M02-BASE, CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-PIT-PEDESTRIAN |
-| S-OSHA-1910-178-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-FLD-DOCK-HR06C-002 |
+| S-OSHA-1910-178-CURRENT | 29 CFR 1910.178 — Powered industrial trucks | law_regulation | fast_changing | active | CL-ISS104-FLD-DOCK-AUTHORITY, CL-ISS104-FLD-DOCK-BOUNDARY, CL-ISS104-FLD-DOCK-PRACTICE-GATE, CL-FLD-DOCK-HR06C-002 |
 | S-OSHA-1910-184-CURRENT | 29 CFR 1910.184 — Slings | law_regulation | fast_changing | active | CL-ECO-037-03 |
-| S-OSHA-1910-22-CURRENT | 29 CFR 1910.22 — General requirements for walking-working surfaces | law_regulation | fast_changing | active | CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-ROUTE-VERIFY, CL-STG-DECK-HR03-001, CL-FLD-CABLE-PROTECT-HR05-001, CL-FLD-RESET-HR06-001 |
+| S-OSHA-1910-22-CURRENT | 29 CFR 1910.22 — General requirements for walking-working surfaces | law_regulation | fast_changing | active | CL-ISS104-FLD-RESET-AUTHORITY, CL-ISS104-FLD-RESET-BOUNDARY, CL-ISS104-FLD-RESET-PRACTICE-GATE, CL-SHF-FUND-M04-BASE, CL-SHF-FUND-L43-ROUTE-VERIFY, CL-STG-DECK-HR03-001, CL-FLD-CABLE-PROTECT-HR05-001, CL-FLD-RESET-HR06-001 |
 | S-OSHA-1910-242-CURRENT | 29 CFR 1910.242 — Hand and portable powered tools and equipment, general | law_regulation | fast_changing | active | CL-SHF-FUND-L72-TOOL-CONDITION, CL-SHF-FUND-M07-BASE |
 | S-OSHA-1910-28-CURRENT | 29 CFR 1910.28 — Duty to have fall protection and falling object protection | law_regulation | fast_changing | active | CL-ECO-041-01, CL-LEAD-RIG-HR02-001, CL-LEAD-RIG-HR02-005 |
 | S-OSHA-1910-29-CURRENT | 29 CFR 1910.29 — Fall protection systems and falling object protection — criteria and practices | law_regulation | fast_changing | active | CL-LEAD-RIG-HR02-005 |
@@ -81,7 +81,7 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-OSHA-1910-331-CURRENT | 29 CFR 1910.331 — Scope | law_regulation | fast_changing | active | NONE |
 | S-OSHA-1910-332-CURRENT | 29 CFR 1910.332 — Training | law_regulation | fast_changing | active | CL-ELC-POWER-AWARENESS-HR01-001, CL-ELC-POWER-AWARENESS-HR01-003, CL-LEAD-ELC-HR01-003, CL-VID-SYSTEMS-HR09-005 |
 | S-OSHA-1910-333-CURRENT | 29 CFR 1910.333 — Selection and use of work practices | law_regulation | fast_changing | active | CL-ECO-045-04, CL-LTG-C1-003-POWER, CL-ELC-POWER-AWARENESS-HR01-001, CL-LEAD-ELC-HR01-003, CL-ELC-LOAD-PLANNING-HR01-001, CL-LTG-PRODUCTION-FLOW-0002, PL-FLD-CONNECTOR-GATE-001 |
-| S-OSHA-1910-334-CURRENT | 29 CFR 1910.334 — Use of equipment | law_regulation | fast_changing | active | CL-FLD-CABLE-DEPLOY-HR06-002 |
+| S-OSHA-1910-334-CURRENT | 29 CFR 1910.334 — Use of equipment | law_regulation | fast_changing | active | CL-ISS104-FLD-CABLE-DEPLOY-AUTHORITY, CL-ISS104-FLD-CABLE-DEPLOY-BOUNDARY, CL-ISS104-FLD-CABLE-DEPLOY-PRACTICE-GATE, CL-FLD-CABLE-DEPLOY-HR06-002 |
 | S-OSHA-1910-335-CURRENT | 29 CFR 1910.335 — Safeguards for personnel protection | law_regulation | fast_changing | active | CL-ECO-045-03 |
 | S-OSHA-1910-37-CURRENT | 29 CFR 1910.37 — Maintenance, safeguards, and operational features for exit routes | law_regulation | fast_changing | active | CL-SHF-FUND-L93-CALL-RELEASE, CL-SHF-FUND-Q-EGRESS-001, CL-FLD-CASE-ORG-HR06-001, CL-FLD-RESET-HR06-002, CL-FLD-PIPE-DRAPE-HR06B-002 |
 | S-OSHA-1910-399-CURRENT | 29 CFR 1910.399 — Definitions applicable to Subpart S | law_regulation | fast_changing | active | CL-ELC-POWER-AWARENESS-HR01-001, CL-ELC-POWER-AWARENESS-HR01-003, CL-LEAD-ELC-HR01-001 |
@@ -89,12 +89,12 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-OSHA-1926-1419-CURRENT | 29 CFR 1926.1419 — Signals — general requirements | law_regulation | fast_changing | active | CL-LTG-C1-004-SIGNALS |
 | S-OSHA-1926-416-CURRENT | 29 CFR 1926.416 — General requirements | law_regulation | fast_changing | active | CL-FLD-CABLE-DEPLOY-HR06-002 |
 | S-OSHA-INTERP-1997-01-28-ENTERTAINMENT-FALL | Fall protection for the entertainment industry under the OSH Act of 1970 | government_guidance | stable | active | NONE |
-| S-OSHA-HEAVY-LIFTING-ETOOL-CURRENT | Materials Handling — Heavy Lifting | government_guidance | periodic | active | CL-FLD-TEAM-LIFT-HR06-001, CL-FLD-TEAM-LIFT-HR06-002 |
+| S-OSHA-HEAVY-LIFTING-ETOOL-CURRENT | Materials Handling — Heavy Lifting | government_guidance | periodic | active | CL-ISS104-FLD-TEAM-AUTHORITY, CL-ISS104-FLD-TEAM-BOUNDARY, CL-ISS104-FLD-TEAM-PRACTICE-GATE, CL-FLD-TEAM-LIFT-HR06-001, CL-FLD-TEAM-LIFT-HR06-002 |
 | S-OSHA-ROOT-CURRENT | Occupational Safety and Health Administration | government_guidance | fast_changing | active | CL-LTG-PRODUCTION-FLOW-0002 |
 | S-OSHA-OTM-ERGONOMICS-CURRENT | OSHA Technical Manual — Section VII, Chapter 1: Back Disorders and Injuries | government_guidance | periodic | active | CL-SHF-FUND-L23-PRESSURE, CL-SHF-FUND-Q-FATIGUE-001, CL-FLD-TEAM-LIFT-HR06-001 |
 | S-OSHA-LOADING-DOCKS-CURRENT | Powered Industrial Trucks eTool — Loading Docks | government_guidance | periodic | active | CL-FLD-DOCK-HR06C-001 |
 | S-OSHA-PIT-PEDESTRIAN-CURRENT | Powered Industrial Trucks eTool — Pedestrian Traffic | government_guidance | periodic | active | CL-FLD-DOCK-HR06C-001 |
-| S-OSHA-PUSHING-CURRENT | Pushing, Pulling and Carrying | government_guidance | periodic | active | CL-FLD-ROAD-CASE-0001, CL-FLD-CART-DOLLY-HR06-001, CL-FLD-CART-DOLLY-HR06-002 |
+| S-OSHA-PUSHING-CURRENT | Pushing, Pulling and Carrying | government_guidance | periodic | active | CL-FLD-ROAD-CASE-0001, CL-ISS104-FLD-CART-AUTHORITY, CL-ISS104-FLD-CART-BOUNDARY, CL-ISS104-FLD-CART-PRACTICE-GATE, CL-FLD-CART-DOLLY-HR06-001, CL-FLD-CART-DOLLY-HR06-002 |
 | S-PENNELCOM-CASTORS-CURRENT | Flight Case Castors & Wheels | manufacturer | fast_changing | active | NONE |
 | S-QSC-CABLE-ROLL-CURRENT | How to properly roll a cable | manufacturer | periodic | active | CL-FLD-CABLE-003-OVERUNDER |
 | S-REDDIT-LIVESOUND-CABLE-STORAGE-2026 | Give me your advice on cable storage | public_unverified | periodic | active | NONE |
@@ -135,13 +135,13 @@ Reverse index for freshness, supersession, broken-link, legal, standards, manufa
 | S-ROE-RUBY-C-CURRENT | Ruby-C LED Platform — Current Product Specifications | manufacturer | fast_changing | active | CL-VID-C1-002-PRODUCT-VARIATION, CL-VID-SYSTEMS-HR09-001, CL-VID-SUPPORT-HR09-004, CL-VID-SYSTEMS-HR09-005 |
 | S-ROSE-VELOUR-CARE-CURRENT | Care & Maintenance of Velour Draperies | manufacturer | version_bound | active | CL-FLD-SOFT-HR06B-001 |
 | S-ROSE-FIRE-RETARDANTS-CURRENT | Fire Retardants | manufacturer | jurisdiction_bound | active | CL-FLD-SOFT-HR06B-002 |
-| S-ROSE-STAGE-CURTAINS-CURRENT | Stage Curtains, Backdrops & Drapery | manufacturer | fast_changing | active | CL-FLD-SOFT-HR06B-002 |
+| S-ROSE-STAGE-CURTAINS-CURRENT | Stage Curtains, Backdrops & Drapery | manufacturer | fast_changing | active | CL-ISS104-FLD-SOFT-AUTHORITY, CL-ISS104-FLD-SOFT-BOUNDARY, CL-ISS104-FLD-SOFT-PRACTICE-GATE, CL-FLD-SOFT-HR06B-002 |
 | S-SHURE-WWB7-CURRENT | Wireless Workbench 7 — RF coordination and wireless system management | manufacturer | fast_changing | active | CL-AUD-HR08-WIRELESS-001, CL-AUD-HR08-RF-C3-001 |
 | S-SOUNDGIRLS-LETS-LOAD-IN | Let's Load In! | trade_secondary | periodic | active | PL-SHF-O06-SHOW-RHYTHM |
 | S-STAGERIGHT-ALL-PURPOSE-DECK-CURRENT | All-Purpose Stage Deck | manufacturer | fast_changing | active | CL-FLD-RISER-DECK-HR06B-001 |
 | S-STAGERIGHT-ALPHAROLL-CURRENT | AlphaRoll Stage Riser | manufacturer | fast_changing | active | CL-FLD-RISER-DECK-HR06B-001 |
 | S-STAGERIGHT-FOLD-ROLL-CURRENT | Fold & Roll Riser | manufacturer | fast_changing | active | NONE |
-| S-STAGERIGHT-Z800-CURRENT | Z-800 Stage Supports | manufacturer | fast_changing | active | CL-FLD-RISER-DECK-HR06B-001, CL-FLD-RISER-DECK-HR06B-002 |
+| S-STAGERIGHT-Z800-CURRENT | Z-800 Stage Supports | manufacturer | fast_changing | active | CL-ISS104-FLD-DECK-AUTHORITY, CL-ISS104-FLD-DECK-BOUNDARY, CL-ISS104-FLD-DECK-PRACTICE-GATE, CL-FLD-RISER-DECK-HR06B-001, CL-FLD-RISER-DECK-HR06B-002 |
 | S-CB-LTG-MDQ-DETAILED-2026 | MDQ-021–028 Lighting Detailed Evidence | internal_research | periodic | active | CL-LTG-C1-002-TRUSS-TRIM, CL-LTG-C1-001-SUPPORT, CL-LTG-C1-005-FOCUS, CL-LTG-C1-006-HANDLING, CL-LTG-C2-002-DOCUMENTATION, CL-LTG-C2-003-CHANGE-CONTROL, CL-LTG-C2-004-OVERHEAD-RETENTION, CL-LTG-C2-005-LAYERED-DIAGNOSIS, CL-LTG-C2-006-MODE-MAPPING, CL-LTG-C2-007-LOADOUT-RISK, CL-LTG-HR07-C3-BOUNDARY-001, CL-LTG-HR07-GDTF-MVR-STATE-001 |
 | S-CB-AUD-MDQ-DETAILED-2026 | MDQ-031–039 Audio Detailed Evidence | internal_research | periodic | active | CL-AUD-C1-001-SUPPORT, CL-AUD-C1-006-HANDLING, CL-AUD-C1-007-PLACED-GEAR, CL-AUD-C2-001-SIGNAL-PATH, CL-AUD-C2-002-GAIN-STAGE, CL-AUD-C2-003-PREPOST, CL-AUD-C2-004-PHYSICAL-LOGICAL, CL-AUD-C2-005-FEEDBACK, CL-AUD-HR08-WIRELESS-001, CL-AUD-HR08-DANTE-BOUNDARY-001, CL-AUD-HR08-RF-C3-001, CL-AUD-HR08-NET-C3-001, CL-AUD-HR08-AUTH-001 |
 | S-CB-VID-MDQ-DETAILED-2026 | MDQ-041–048 Video / LED / Broadcast Detailed Evidence | internal_research | periodic | active | CL-VID-C1-005-PACKING-PLAN, CL-VID-C1-001-SUPPORT, CL-VID-C1-003-PHYSICAL-PRACTICE, CL-VID-C1-004-TECHBOUNDARY, CL-VID-C2-001-SYSTEM-STACK, CL-VID-C2-003-PLAYBACK-PROCESSING, CL-VID-C2-004-POWER-PLANNING, CL-VID-C2-007-ADVANCE, CL-VID-C2-008-DATA-PATH |
