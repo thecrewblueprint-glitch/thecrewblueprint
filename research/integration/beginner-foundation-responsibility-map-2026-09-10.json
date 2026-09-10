@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-10",
+  "status": "target beginner-foundation mapping; learner-facing implementation follows separately",
+  "authority_issue": 78,
+  "purpose": "Map the current four-course V4 free foundation into the ORIENT/SUPPORT responsibility model and define the learner/assessment correction required for Systems Thinking without promoting deeper department source nodes into free technician instruction.",
+  "source_surfaces": {
+    "crew_ready": "courses-v4/crew-ready.html",
+    "systems_thinking": "courses-v4/systems-thinking.html",
+    "shop_logistics": "courses-v4/shop-logistics.html",
+    "department_explorer": "courses-v4/department-explorer.html",
+    "assessment_runtime": "js/blueprint-v4.js",
+    "v4_v2_crosswalk": "research/integration/v4-clean-sheet-to-v2-content-crosswalk-2026-09-09.json",
+    "responsibility_contract": "research/integration/responsibility-access-contract-2026-09-10.json"
+  },
+  "foundation_outcome": "A learner completing the free foundation should understand the live-production environment, know what is expected of an entry-level hand, recognize major department functions and common hazards/boundaries, support work under direction, protect other departments' work, communicate useful information, and make an informed decision about which technical direction to pursue next.",
+  "current_v4_surfaces": [
+    {
+      "surface_id": "v4-crew-ready",
+      "current_title": "Crew Ready",
+      "target_primary_state": "SUPPORT",
+      "access_class": "free",
+      "contains_secondary_state": "ORIENT",
+      "target_role": "first-call and general production-hand readiness",
+      "implementation_rule": "Keep the practical task/boundary/handoff emphasis. Orientation content may lead into support behavior, but the course must not claim field experience or independent technical authority.",
+      "assessment_type": "field-scenario judgment",
+      "assessment_status": "generally aligned; natural-language polish only"
+    },
+    {
+      "surface_id": "v4-systems-thinking",
+      "current_title": "Systems Thinking for Live Production",
+      "target_primary_state": "SUPPORT",
+      "access_class": "free",
+      "target_role": "cross-department dependency awareness for a useful hand",
+      "canonical_identity_rule": "This is a V4 presentation bundle, not a new one-to-one canonical V2 course identity.",
+      "primary_v2_course_ids": ["C-COM-WORK"],
+      "supporting_v2_course_ids": [
+        "C-LTG-PRODUCTION-FLOW",
+        "C-LTG-CONTROL",
+        "C-AUD-SIGNAL",
+        "C-AUD-NET",
+        "C-VID-SIGNAL",
+        "C-VID-AOIP",
+        "C-PMG-PAPER",
+        "C-PMG-COMMS",
+        "C-SHC-CYBER"
+      ],
+      "paid_source_boundary": "Supporting technician/deep V2 nodes remain in their own responsibility/access state. Course 02 may borrow only the recognition/context needed for free SUPPORT-level understanding; it must not flatten paid technician operation into the foundation bundle.",
+      "target_learning_outcome": "Before moving, disconnecting, relabeling, rerouting, changing, or reporting something, understand enough about what it affects to protect the show, preserve the current state, communicate clearly, and stop/escalate when the task crosses the learner's role.",
+      "presentation_correction": {
+        "problem": "The current course teaches from system architecture downward and then assesses the author's abstract vocabulary. A working hand may already use the correct judgment without naturally describing it as source/path/control/destination/verification or upstream/downstream dependencies.",
+        "required_direction": "Teach from recognizable floor situations upward. Plain worker-facing language is primary; formal systems vocabulary may appear secondarily as optional terminology after the practical idea is clear.",
+        "field_translation": "Before I move or change this: what is it, where is it going, who is using it, what might depend on it, and do I actually have authority to change it?"
+      },
+      "assessment_contract": {
+        "construct": "applied SUPPORT-level judgment",
+        "must_measure": [
+          "dependency awareness before moving/changing something",
+          "preserving labels, routing, documentation, and current state",
+          "handling a field-vs-document conflict by clarifying/escalating",
+          "describing symptoms and changes without pretending to know the cause",
+          "understanding that system literacy does not create technical authorization"
+        ],
+        "preferred_item_style": "short realistic floor scenarios with plausible distractors",
+        "avoid": [
+          "definition recall as the main evidence of mastery",
+          "testing exact Crew Blueprint phrasing",
+          "unnecessary systems-engineering vocabulary",
+          "obvious strawman distractors such as blame another department, hide damage, or make random repairs",
+          "questions that require technician-level configuration/diagnostic authority"
+        ],
+        "pass_rule": "Retain the current end-of-course five-question, 80-percent, retry-allowed mechanics unless a separate assessment-policy decision changes it."
+      }
+    },
+    {
+      "surface_id": "v4-shop-logistics",
+      "current_title": "Shop, Warehouse & Logistics",
+      "target_primary_state": "SUPPORT",
+      "access_class": "free",
+      "target_role": "entry shop/warehouse/equipment-lifecycle support",
+      "implementation_rule": "Keep receiving, identification, custody, prep/QC awareness, movement/flow, and discrepancy handoff at support level. Do not turn equipment repair, powered-equipment authorization, hazardous-material handling authority, or technical servicing into implied beginner permissions.",
+      "assessment_type": "operational support scenarios",
+      "assessment_status": "mostly aligned; reduce formal internal jargon where plain shop language is clearer"
+    },
+    {
+      "surface_id": "v4-department-explorer",
+      "current_title": "Department Explorer",
+      "target_primary_state": "ORIENT",
+      "access_class": "free",
+      "contains_secondary_state": "SUPPORT",
+      "target_role": "transition from general hand readiness into informed specialization",
+      "implementation_rule": "Teach what departments actually do, what support work looks like, what problems each department owns, and which deeper technician paths exist. Do not make the learner memorize Crew Blueprint taxonomy as if it were job competence.",
+      "assessment_type": "career-direction and situational understanding check",
+      "assessment_status": "needs construct review; current items partly test internal career taxonomy rather than useful work understanding"
+    }
+  ],
+  "recommended_zero_knowledge_flow": [
+    {
+      "step": 1,
+      "state": "ORIENT",
+      "learner_question": "What is this industry and what is happening around me?",
+      "surface_sources": ["Crew Ready orientation material", "Department Explorer introductory material"]
+    },
+    {
+      "step": 2,
+      "state": "SUPPORT",
+      "learner_question": "How do I become useful without getting ahead of my role?",
+      "surface_sources": ["Crew Ready", "Field Skills", "Shop / Logistics where relevant"]
+    },
+    {
+      "step": 3,
+      "state": "SUPPORT",
+      "learner_question": "How does my task affect other people and systems on the show?",
+      "surface_sources": ["refactored Systems Thinking presentation bundle"]
+    },
+    {
+      "step": 4,
+      "state": "ORIENT_TO_SUPPORT_TRANSITION",
+      "learner_question": "Which department or technical problem do I want to learn next?",
+      "surface_sources": ["Department Explorer"]
+    },
+    {
+      "step": 5,
+      "state": "OPERATE",
+      "access_class": "paid",
+      "learner_question": "What do I need to understand to take technician-level responsibility in that department?",
+      "surface_sources": ["department technician pathways after reviewed SUPPORT-to-OPERATE thresholds"]
+    }
+  ],
+  "foundation_invariants": [
+    "No free foundation assessment may imply that passing establishes field experience, job qualification, certification, employer authorization, or practical competency.",
+    "Safety awareness needed for recognition, stop-work, role boundaries, or escalation remains reachable before paid technician depth.",
+    "Department-specific source nodes may support a foundation presentation without changing their own canonical responsibility/access classification.",
+    "The learner-facing sequence may synthesize several V2 identities, but lineage remains explicit in the integration graph.",
+    "A zero-knowledge learner should not be forced to choose a department before receiving enough industry and hand-level context to make the choice meaningfully."
+  ],
+  "next_actions": [
+    "Rewrite the Systems Thinking learner-facing presentation from floor situations upward while preserving the same bounded competencies.",
+    "Replace the current Systems Thinking phrase-recall assessment bank with scenario-based SUPPORT-level items.",
+    "Audit Department Explorer assessment construct separately.",
+    "Create department SUPPORT-to-OPERATE threshold maps before paid entitlement implementation.",
+    "Do not activate paywall delivery until the learner graph consumes reviewed responsibility/access classifications."
+  ]
+}

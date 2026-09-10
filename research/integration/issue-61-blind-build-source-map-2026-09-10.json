@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-09-10",
+  "purpose": "Neutral source map for independently generated Crew Blueprint candidate builds before Roadmapdev comparison.",
+  "repository": "thecrewblueprint-glitch/thecrewblueprint",
+  "packet_start_main_sha": "cd3ef36077535b41c7a405065c186c4af199b5ea",
+  "comparison_design": {
+    "candidates": [
+      "claude_opus",
+      "openai"
+    ],
+    "rule": "Both candidates receive the same allowed source classes and may not inspect sealed comparison material before freezing their candidate output.",
+    "roadmapdev_open_after_candidate_freeze": true
+  },
+  "source_classes": {
+    "controlling_owner_doctrine": {
+      "access": "required",
+      "authority": "controlling",
+      "items": [
+        {
+          "type": "github_issue",
+          "id": 78,
+          "role": "target product architecture and superseding product doctrine"
+        },
+        {
+          "type": "github_issue",
+          "id": 79,
+          "role": "143-ID responsibility/access remap contract"
+        },
+        {
+          "type": "github_issue",
+          "id": 66,
+          "role": "Clerk/account architecture, subject to #78 supersession"
+        },
+        {
+          "type": "github_issue",
+          "id": 71,
+          "role": "V4 UI/UX defect and maintainability register"
+        },
+        {
+          "type": "github_issue",
+          "id": 73,
+          "role": "feedback/contact intake constraints"
+        },
+        {
+          "type": "github_issue",
+          "id": 74,
+          "role": "legal-review launch gate"
+        }
+      ]
+    },
+    "frozen_reference_versions": {
+      "access": "required",
+      "authority": "reference_evidence",
+      "items": [
+        {
+          "name": "V2",
+          "branch": "archive/frozen-v2-exact-2026-09-07",
+          "commit": "1b1ddb0649d5a66bfff91b74791b4f3ce4f4c256",
+          "use_for": [
+            "curriculum breadth",
+            "deeper course bodies",
+            "Field Skills",
+            "department content",
+            "historical learner/site patterns"
+          ]
+        },
+        {
+          "name": "clean-sheet",
+          "branch": "archive/frozen-vnext-clean-sheet-exact-2026-09-07",
+          "commit": "4378c3954efd8e8fee7b98842493e932567341b7",
+          "use_for": [
+            "work-centered journey design",
+            "Context Labs",
+            "department discovery",
+            "alternative information architecture"
+          ]
+        },
+        {
+          "name": "V4-pre-successor",
+          "commit": "e7abba17f9f81221ca41bd48b2f94bd32cdae4a4",
+          "use_for": [
+            "four-course foundation",
+            "learner shell",
+            "assessment cadence",
+            "visual/source/safety treatment"
+          ]
+        },
+        {
+          "name": "V4-restore-branch",
+          "branch": "rollback/restore-v4-live-2026-09-09",
+          "commit": "cfb21598fbf37d46ec031ec36d5195969bb9dfab",
+          "use_for": [
+            "restored V4 public-surface reference"
+          ]
+        }
+      ]
+    },
+    "canonical_repository_evidence": {
+      "access": "required_as_needed",
+      "authority": "source_evidence",
+      "paths": [
+        "research/matrix/",
+        "content/",
+        "content/archive/"
+      ]
+    },
+    "owner_reviewed_post_78_artifacts": {
+      "access": "required",
+      "authority": "accepted_implementation_boundary",
+      "items": [
+        "research/integration/responsibility-access-contract-2026-09-10.json",
+        "research/integration/responsibility-access-adjudication-policy-2026-09-10.md",
+        "research/integration/responsibility-access-reviewed-overrides-2026-09-10.json",
+        "research/integration/beginner-foundation-responsibility-map-2026-09-10.json",
+        "research/integration/target-product-migration-register-2026-09-10.md"
+      ],
+      "supporting_prs": [81, 82, 83, 84, 85, 86]
+    },
+    "permitted_neutral_research": {
+      "access": "permitted",
+      "authority": "advisory_or_source_oriented",
+      "items": [
+        "research/analysis/audience-employer-discovery-synthesis-2026-09-06.md",
+        "research/analysis/clean-sheet-learning-product-2026-09-06.md",
+        "research/analysis/clean-sheet-learning-product-source-ledger-2026-09-06.json",
+        "research/analysis/clean-sheet-v1-ui-ux-usability-audit-2026-09-06.md",
+        "research/analysis/course-product-classification-2026-09-06.json",
+        "research/analysis/course-system-situation-2026-09-06.json",
+        "research/analysis/ground-field-foundation-architecture-2026-09-06.md",
+        "research/analysis/live-production-role-family-map-2026-09-06.json",
+        "research/analysis/research-priorities-2026-09-06.json",
+        "research/analysis/target-audience-content-strategy-and-course-catalog-2026-09-06.md",
+        "docs/INSTRUCTIONAL_MEDIA_FRAMEWORK_V4.md",
+        "research/integration/sitewide-instructional-media-map-2026-09-09.json",
+        "research/integration/source-citation-regulatory-provenance-2026-09-09.json"
+      ]
+    },
+    "sealed_comparison_material": {
+      "access": "forbidden_until_candidate_freeze",
+      "authority": "comparison_only",
+      "items": [
+        "PR #57 recommendation narrative",
+        "research/analysis/vnext-career-guided-course-map-2026-09-07.md",
+        "research/analysis/vnext-career-guided-course-map-2026-09-07.json",
+        "PR #72 Roadmapdev-informed successor product",
+        "PR #76 successor generated-projection architecture",
+        "PR #77 successor client projection",
+        "research/integration/job-demand-curriculum-bridge-2026-09-09.json when used as a Roadmapdev-derived recommendation signal",
+        "research/integration/knowledge-base-system-map-2026-09-09.json if used as a prior synthesis decision",
+        "Roadmapdev Crew Blueprint decision/recommendation/analysis artifacts"
+      ]
+    }
+  },
+  "fresh_research_rules": {
+    "allowed_when": "A material decision cannot be resolved from repository authoritative evidence.",
+    "must_log": [
+      "query_or_question",
+      "source_url_or_path",
+      "source_class",
+      "date_accessed",
+      "fact_or_constraint_extracted",
+      "decision_influenced",
+      "unresolved_conflict"
+    ],
+    "priority_gaps": [
+      "role and competency normalization",
+      "assessment validity and credential-claim boundaries",
+      "controlled-specialty publication authority",
+      "protected paid-content delivery architecture",
+      "accessibility and mobile interaction",
+      "portable competency record interoperability"
+    ]
+  },
+  "candidate_freeze_requirements": {
+    "required_outputs": [
+      "architecture decision",
+      "information architecture",
+      "curriculum mapping strategy",
+      "beginner path",
+      "experienced-worker path",
+      "free-paid boundary implementation",
+      "course/lesson/assessment shell",
+      "data model",
+      "security and entitlement plan",
+      "Production Atlas integration boundary",
+      "credential/employer-recognition direction",
+      "visual system",
+      "research log",
+      "deviation register",
+      "risks and unresolved questions",
+      "working implementation or implementation-ready artifact set as assigned"
+    ],
+    "freeze_evidence": [
+      "branch name",
+      "commit SHA",
+      "timestamp",
+      "candidate model",
+      "source-map version",
+      "Roadmapdev-not-opened attestation"
+    ]
+  }
+}

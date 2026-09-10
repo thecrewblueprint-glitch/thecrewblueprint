@@ -33,11 +33,11 @@
     'systems-thinking':{
       title:'Systems Thinking assessment',
       questions:[
-        {prompt:'Which mental model best represents a production system?',choices:['Object → worker → truck','Source → path → control → destination → verification','Cable → case → stage → strike','Input → guess → repair'],answer:1},
-        {prompt:'Why should a worker ask “What depends on this?” before changing or moving something?',choices:['To determine whether the item is expensive','To identify upstream and downstream dependencies','To avoid reading documentation','To decide whether another department can be blamed'],answer:1},
-        {prompt:'Field reality conflicts with the current document. What is the best foundation-level response?',choices:['Silently follow the document even when impossible','Rewrite the document yourself','Flag the conflict to the responsible person rather than inventing a private version of the system','Ignore both and continue from memory'],answer:2},
-        {prompt:'Which troubleshooting report is strongest?',choices:['It is broken','I know the cause, even though I have not checked','This is the symptom, this is where it appears, this is what changed, and I stopped before altering the system','I tried several things and now more of it is offline'],answer:2},
-        {prompt:'What does systems literacy NOT provide by itself?',choices:['Better context for following instructions','Awareness of dependencies','Permission or qualification to perform controlled technical work','A clearer way to describe problems'],answer:2}
+        {prompt:'You are clearing a work area and a labeled cable trunk is in the way. You do not know whether another department is still using it. What is the best next move?',choices:['Shift it just far enough to make room, but leave the label visible','Identify what it belongs to and confirm it can be moved before changing its position','Move it with the rest of the nearby cable because keeping the area clear is your assignment','Leave it exactly where it is and keep working around it without telling anyone'],answer:1},
+        {prompt:'A case label says stage left, but a nearby worker says it should go stage right. You do not know whether the destination changed. What should you do?',choices:['Follow the nearby worker because they may have newer information','Pause the move, keep the label intact, and confirm the destination with the responsible person','Take it to a neutral staging area and let the next crew decide','Change the label to stage right so the case matches the new direction'],answer:1},
+        {prompt:'The plan shows one route, but the installed cable or path in front of you is different. You are not assigned to reroute it. What is the strongest response?',choices:['Follow the plan and move the cable into the shown route','Assume the field condition is newer and ignore the plan','Describe the mismatch and get clarification before making a change that could affect the system','Ask a nearby worker which one looks right and use that answer'],answer:2},
+        {prompt:'Something stops working after nearby work, but you do not know the cause. Which report gives the responsible technician the most useful information?',choices:['The line stopped after we moved things over here, so it is probably a bad cable','Something is wrong on this side; can someone check it?','This stopped working after that nearby change; this is what I can still see working, and I have not changed anything else','I reseated what I could reach and it still is not back'],answer:2},
+        {prompt:'You understand what a system is doing and can see where a problem may be. What does that understanding allow you to do?',choices:['Make the change yourself if it looks low-risk','Take over troubleshooting until the assigned technician returns','Follow your assigned role more intelligently, protect the work, and escalate without assuming authority you were not given','Tell the lead the likely cause so the change can be approved without checking'],answer:2}
       ]
     },
     'shop-logistics':{
@@ -53,11 +53,11 @@
     'department-explorer':{
       title:'Department Explorer assessment',
       questions:[
-        {prompt:'What transfers most reliably across production departments?',choices:['Every technical procedure','Communication, equipment stewardship, documentation, troubleshooting habits, logistics awareness, and safety boundaries','Authorization to operate unfamiliar systems','Department-specific programming knowledge'],answer:1},
-        {prompt:'Which description best captures lighting as a career lane?',choices:['Fixture movement only','A lane combining equipment, control/data concepts, documentation, troubleshooting, show-file workflows, and interfaces with power','Only console programming','Only electrical work'],answer:1},
-        {prompt:'What is a common core theme in audio work?',choices:['Signal flow and problem isolation','Scenic fabrication','Truck loading only','Structural engineering'],answer:0},
-        {prompt:'Why is shop/logistics a persistent career lane rather than merely “before-show work”?',choices:['It owns receiving, inventory, QC, truck flow, custody, and equipment lifecycle','It replaces every technical department','It exists only when there is no venue','It requires no documentation'],answer:0},
-        {prompt:'What is the best way to choose a deeper production lane?',choices:['Pick whichever title sounds highest','Choose the lane whose problems and responsibilities you want to understand more deeply','Assume management is the required endpoint','Treat every department as interchangeable'],answer:1}
+        {prompt:'You are new to live production and do not yet know which department fits you. What is the best way to use Department Explorer?',choices:['Choose whichever job title sounds most advanced','Compare the work, problems, and responsibilities in each area, then choose what you want to learn and support next','Treat the departments as interchangeable because the same crew habits apply everywhere','Skip support-level learning and start with whichever advanced system seems most interesting'],answer:1},
+        {prompt:'Which kind of work most directly points toward the lighting department?',choices:['Microphones, consoles, loudspeakers, and listening','Fixtures, positions, lighting data/control, and the look of the show','LED processing, switching, cameras, and playback','Decks, platforms, scenery, and physical build systems'],answer:1},
+        {prompt:'A learner is most interested in microphones, signal paths, consoles, PA systems, and isolating why something cannot be heard. Which department is the closest match?',choices:['Audio','Staging / scenic','Video / LED','Shop / logistics'],answer:0},
+        {prompt:'A learner wants to understand LED panels, processors, video signal paths, switching, playback, and cameras. Which department is the closest match?',choices:['Video / LED / AV','Lighting','Staging / scenic','Shop / logistics'],answer:0},
+        {prompt:'What does passing Department Explorer establish?',choices:['That you are ready to lead the department you selected','That you are authorized to work in any technical department','That you understand the basic differences well enough to choose what to learn next; field experience, practical competence, and authorization remain separate','That the foundation is equivalent to technician-level department training'],answer:2}
       ]
     }
   };
@@ -364,28 +364,71 @@
 
 (()=>{
   const clerkSiteBase=window.location.pathname.startsWith('/thecrewblueprint/')?'/thecrewblueprint/':'/';
+
+  function bindClerkAction(id,action){
+    const node=document.getElementById(id);
+    if(!node||node.dataset.clerkBound==='true')return;
+    node.dataset.clerkBound='true';
+    node.addEventListener('click',e=>{
+      e.preventDefault();
+      if(window.Clerk&&typeof window.Clerk[action]==='function')window.Clerk[action]();
+    });
+  }
+
+  function renderAdvancedGate(state){
+    const root=document.querySelector('[data-advanced-gate]');
+    if(!root)return;
+
+    const checking=root.querySelector('[data-advanced-checking]');
+    const signedOut=root.querySelector('[data-advanced-signed-out]');
+    const signedIn=root.querySelector('[data-advanced-signed-in]');
+    const unavailable=root.querySelector('[data-advanced-unavailable]');
+
+    [checking,signedOut,signedIn,unavailable].forEach(node=>{if(node)node.hidden=true;});
+
+    if(state==='unavailable'||!window.Clerk){
+      if(unavailable)unavailable.hidden=false;
+      return;
+    }
+
+    if(window.Clerk.isSignedIn){
+      if(signedIn)signedIn.hidden=false;
+    }else{
+      if(signedOut)signedOut.hidden=false;
+      bindClerkAction('advanced-sign-in','openSignIn');
+      bindClerkAction('advanced-sign-up','openSignUp');
+    }
+  }
+
   function renderClerkAuth(){
     const slot=document.getElementById('clerk-auth-slot');
-    if(!slot||!window.Clerk)return;
+    if(!slot||!window.Clerk){
+      renderAdvancedGate('unavailable');
+      return;
+    }
     if(window.Clerk.isSignedIn){
       slot.innerHTML='<div id="clerk-user-button"></div>';
       window.Clerk.mountUserButton(document.getElementById('clerk-user-button'));
     }else{
       slot.innerHTML='<a href="#" id="clerk-sign-in">Sign In</a><a href="#" id="clerk-sign-up" class="work">Create Account</a>';
-      const signIn=document.getElementById('clerk-sign-in');
-      const signUp=document.getElementById('clerk-sign-up');
-      if(signIn)signIn.addEventListener('click',e=>{e.preventDefault();window.Clerk.openSignIn();});
-      if(signUp)signUp.addEventListener('click',e=>{e.preventDefault();window.Clerk.openSignUp();});
+      bindClerkAction('clerk-sign-in','openSignIn');
+      bindClerkAction('clerk-sign-up','openSignUp');
     }
+    renderAdvancedGate('ready');
   }
+
   window.addEventListener('load',async()=>{
-    if(!window.Clerk)return;
+    if(!window.Clerk){
+      renderAdvancedGate('unavailable');
+      return;
+    }
     try{
       await window.Clerk.load({ui:{ClerkUI:window.__internal_ClerkUICtor},signInUrl:clerkSiteBase,signUpUrl:clerkSiteBase,signInFallbackRedirectUrl:clerkSiteBase,signUpFallbackRedirectUrl:clerkSiteBase,afterSignOutUrl:clerkSiteBase});
       renderClerkAuth();
       window.Clerk.addListener(()=>renderClerkAuth());
     }catch(e){
       console.error('Clerk failed to load',e);
+      renderAdvancedGate('unavailable');
     }
   });
 })();
