@@ -118,10 +118,14 @@ const rows=freeIds.map(courseId=>{
   const qualificationRequired=edges.some(e=>e.qualification_required===true);
   const highSafety=maxSafety(courseContent)==='high'||maxSafety(courseContent)==='critical';
   const evidenceRequiredRows=courseContent.filter(row=>externalEvidenceRequiredClassifications.has(row.content_classification));
-  const evidenceRequiredRowsMissingExternal=evidenceRequiredRows.filter(row=>{
+  const externalSupportForRow=row=>{
     const rowEdges=supportByContent.get(row.content_id)||[];
-    return !rowEdges.some(edge=>!isInternalSource(sourceById.get(edge.source_id)));
-  });
+    if(rowEdges.some(edge=>!isInternalSource(sourceById.get(edge.source_id))))return true;
+    if(row.content_type!=='answer_rationale')return false;
+    const parentIds=uniq(String(row.notes||'').match(/\b(?:CL|Q|QR)-[A-Z0-9-]+\b/g)||[]);
+    return parentIds.some(parentId=>(supportByContent.get(parentId)||[]).some(edge=>!isInternalSource(sourceById.get(edge.source_id))));
+  };
+  const evidenceRequiredRowsMissingExternal=evidenceRequiredRows.filter(row=>!externalSupportForRow(row));
   const highSafetyEvidenceRequiredRows=evidenceRequiredRows.filter(row=>['high','critical'].includes(row.safety_criticality));
   const highSafetyEvidenceRequiredMissingExternal=evidenceRequiredRowsMissingExternal.filter(row=>['high','critical'].includes(row.safety_criticality));
   const internalBoundaryRows=courseContent.filter(row=>internalBoundaryClassifications.has(row.content_classification)&&['high','critical'].includes(row.safety_criticality));
