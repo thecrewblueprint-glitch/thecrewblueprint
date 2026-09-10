@@ -364,28 +364,71 @@
 
 (()=>{
   const clerkSiteBase=window.location.pathname.startsWith('/thecrewblueprint/')?'/thecrewblueprint/':'/';
+
+  function bindClerkAction(id,action){
+    const node=document.getElementById(id);
+    if(!node||node.dataset.clerkBound==='true')return;
+    node.dataset.clerkBound='true';
+    node.addEventListener('click',e=>{
+      e.preventDefault();
+      if(window.Clerk&&typeof window.Clerk[action]==='function')window.Clerk[action]();
+    });
+  }
+
+  function renderAdvancedGate(state){
+    const root=document.querySelector('[data-advanced-gate]');
+    if(!root)return;
+
+    const checking=root.querySelector('[data-advanced-checking]');
+    const signedOut=root.querySelector('[data-advanced-signed-out]');
+    const signedIn=root.querySelector('[data-advanced-signed-in]');
+    const unavailable=root.querySelector('[data-advanced-unavailable]');
+
+    [checking,signedOut,signedIn,unavailable].forEach(node=>{if(node)node.hidden=true;});
+
+    if(state==='unavailable'||!window.Clerk){
+      if(unavailable)unavailable.hidden=false;
+      return;
+    }
+
+    if(window.Clerk.isSignedIn){
+      if(signedIn)signedIn.hidden=false;
+    }else{
+      if(signedOut)signedOut.hidden=false;
+      bindClerkAction('advanced-sign-in','openSignIn');
+      bindClerkAction('advanced-sign-up','openSignUp');
+    }
+  }
+
   function renderClerkAuth(){
     const slot=document.getElementById('clerk-auth-slot');
-    if(!slot||!window.Clerk)return;
+    if(!slot||!window.Clerk){
+      renderAdvancedGate('unavailable');
+      return;
+    }
     if(window.Clerk.isSignedIn){
       slot.innerHTML='<div id="clerk-user-button"></div>';
       window.Clerk.mountUserButton(document.getElementById('clerk-user-button'));
     }else{
       slot.innerHTML='<a href="#" id="clerk-sign-in">Sign In</a><a href="#" id="clerk-sign-up" class="work">Create Account</a>';
-      const signIn=document.getElementById('clerk-sign-in');
-      const signUp=document.getElementById('clerk-sign-up');
-      if(signIn)signIn.addEventListener('click',e=>{e.preventDefault();window.Clerk.openSignIn();});
-      if(signUp)signUp.addEventListener('click',e=>{e.preventDefault();window.Clerk.openSignUp();});
+      bindClerkAction('clerk-sign-in','openSignIn');
+      bindClerkAction('clerk-sign-up','openSignUp');
     }
+    renderAdvancedGate('ready');
   }
+
   window.addEventListener('load',async()=>{
-    if(!window.Clerk)return;
+    if(!window.Clerk){
+      renderAdvancedGate('unavailable');
+      return;
+    }
     try{
       await window.Clerk.load({ui:{ClerkUI:window.__internal_ClerkUICtor},signInUrl:clerkSiteBase,signUpUrl:clerkSiteBase,signInFallbackRedirectUrl:clerkSiteBase,signUpFallbackRedirectUrl:clerkSiteBase,afterSignOutUrl:clerkSiteBase});
       renderClerkAuth();
       window.Clerk.addListener(()=>renderClerkAuth());
     }catch(e){
       console.error('Clerk failed to load',e);
+      renderAdvancedGate('unavailable');
     }
   });
 })();
