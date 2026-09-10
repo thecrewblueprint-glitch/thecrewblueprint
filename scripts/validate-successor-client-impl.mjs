@@ -4,7 +4,7 @@ import process from 'node:process';
 
 const root=process.cwd();
 const requiredPages={
-  'learn.html':['data-successor-overview'],
+  'learn.html':['data-successor-overview','data-successor-free-library','data-successor-reference-library'],
   'departments.html':['data-successor-overview','data-successor-lanes','data-successor-integrity'],
   'field.html':['data-successor-field-skills'],
   'contexts.html':['data-successor-contexts'],
@@ -56,6 +56,12 @@ assert(departments.includes('Stagehand is not a mandatory root'),'Department sur
 // A canonical identity may be public-by-default before its presentation route exists;
 // the runtime renderer must keep that item non-clickable until the route is materialized.
 const publicationEligible=(projection.courses||[]).filter(course=>course.placement?.public_by_default===true);
+const freeCourses=(projection.courses||[]).filter(course=>course.access?.delivery_state==='free_public');
+const referenceCourses=(projection.courses||[]).filter(course=>course.access?.delivery_state==='public_reference');
+assert(freeCourses.length===62,'Complete free library must expose 62 authorized identities; got '+freeCourses.length+'.');
+assert(referenceCourses.length===12,'Public reference library must expose 12 identities; got '+referenceCourses.length+'.');
+assert(freeCourses.every(course=>course.placement?.public_by_default===true&&course.identity?.route_state==='materialized'&&course.identity?.route_id),'Every free identity must have an authorized materialized learner route.');
+assert(referenceCourses.every(course=>course.placement?.public_by_default===true&&course.identity?.route_state==='materialized'&&course.identity?.route_id),'Every public reference identity must have an authorized materialized learner route.');
 const clickableCourses=publicationEligible.filter(course=>course.identity?.route_state==='materialized'&&course.identity?.route_id);
 for(const course of clickableCourses){
   const route=course.identity.route_id;
@@ -81,6 +87,10 @@ assert(clientJs.includes("state.kind==='is-live'&&route"),'Successor client does
 assert(clientJs.includes("delivery==='future_paid_locked'"),'Successor client is not rendering future-paid identities as locked.');
 assert(clientJs.includes("delivery==='split_required_locked'"),'Successor client is not preserving split-required lock state.');
 assert(clientJs.includes("['free_public','public_reference'].includes"),'Successor client is not filtering learner collections by access state.');
+assert(clientJs.includes("renderFreeLibrary"),'Successor client is missing the complete free-library renderer.');
+assert(clientJs.includes("renderReferenceLibrary"),'Successor client is missing the public-reference renderer.');
+assert(clientJs.includes("c.access?.delivery_state==='free_public'"),'Free-library renderer is not access-authority driven.');
+assert(clientJs.includes("c.access?.delivery_state==='public_reference'"),'Reference-library renderer is not access-authority driven.');
 assert(!clientJs.includes('a.href=link.url'),'Successor client can still construct active Atlas links.');
 
 const atlasLockPages=['index.html','start.html','learn.html','departments.html','field.html','contexts.html','advanced.html','sources-v4.html','experienced.html','employers.html'];
@@ -94,5 +104,5 @@ assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTM
 
 console.log('Successor client validation passed.');
 console.log(`${Object.keys(requiredPages).length} successor learner surfaces validated.`);
-console.log(`${publicationEligible.length} access-authorized public identities tracked; ${clickableCourses.length} currently have materialized learner routes.`);
+console.log(`${publicationEligible.length} access-authorized public identities tracked; ${freeCourses.length} free + ${referenceCourses.length} reference identities are fully materialized.`);
 console.log('Existing four V4 foundation routes preserved; Advanced and Production Atlas remain locked as configured.');
