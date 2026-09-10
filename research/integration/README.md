@@ -1,7 +1,7 @@
 # Crew Blueprint Integration Map
 
 **Date:** 2026-09-09  
-**Status:** Structural proposed state carried in PR #57.  
+**Status:** PR #57 structural state accepted and merged; successor projection build phase active.  
 **Authority:** These artifacts do not replace the canonical Crew Blueprint matrix, Production Atlas, Roadmapdev, or 50yearroadmap.
 
 ## Purpose
@@ -54,7 +54,50 @@ The goal is **one evidence-backed knowledge graph with multiple learner-facing j
    - identifies cases where a successor surface is a many-to-many synthesis rather than a new canonical course;
    - keeps shared foundations, Field Skills, contexts, work/career resources, advanced nodes, and controlled specialties inside their correct lineage/authority treatment.
 
-All seven integration artifacts are registered in `research/agent-retrieval-manifest.json` so future agents start from the same graph and do not reconstruct a competing model from UI files alone.
+8. `production-atlas-link-registry-2026-09-09.json`
+   - replaces hard-coded repository/branch routing with stable Production Atlas route IDs and custom-domain URLs;
+   - pins the compatibility check to the accepted `research-version` state used during generation;
+   - carries only route/purpose metadata, never volatile employer/opening/pay/application data.
+
+The PR #57 integration artifacts remain registered in `research/agent-retrieval-manifest.json`. The successor generator consumes those accepted contracts directly; the Atlas registry is the new cross-product routing input for the build phase.
+
+## Generated successor projection
+
+`scripts/generate-successor-projections.mjs` deterministically derives build/runtime views from accepted graph state. It does not create a second source of truth.
+
+Internal/audit outputs are written under `research/generated/`:
+
+```text
+learner-path-edges.jsonl
+production-atlas-link-registry.json
+instructional-media-backlog.jsonl
+source-gap-closure-queue.jsonl
+internal-policy-boundaries.jsonl
+```
+
+These files remain outside the public Pages artifact.
+
+Sanitized client outputs are written under `data/generated/`:
+
+```text
+web-client-projection.json
+learner-path-edges.json
+production-atlas-links.json
+```
+
+The Pages workflow generates these files before packaging the static site. The public projection may contain canonical course/navigation identity, evidence summaries, public source metadata, qualification boundaries, media state, and stable Atlas routes. It must not contain private Roadmapdev records, personal information, or copied volatile Atlas work data.
+
+`scripts/validate-successor-projections.mjs` protects the accepted invariants, including:
+
+- 143/143 canonical identities remain projected exactly once;
+- the six independent initial lanes remain intact;
+- Stagehand is not made a universal prerequisite;
+- all 18 Field Skills remain a first-class library;
+- generated learner relationships remain recommendations/branches rather than invented hard prerequisites;
+- Atlas links use the stable custom domain;
+- public projection does not leak private Roadmapdev pointers or personal-data semantics;
+- internal-policy boundaries stay separate from external source gaps;
+- controlled-specialty media remains review-gated and non-procedural by default.
 
 ## Controlling evidence path
 
@@ -65,7 +108,8 @@ industry/work evidence
   -> independent instructional evidence
   -> canonical claim/content/competency graph
   -> evidence + authority + freshness + MEDIA gates
-  -> learner-facing web projection
+  -> generated learner-path/web projection
+  -> learner-facing client
 ```
 
 Production Atlas remains a separate public product. Crew Blueprint links to stable Atlas routes; it does not absorb Atlas's volatile data.
@@ -77,10 +121,11 @@ V2            = deep historical knowledge/evidence corpus reference
 Clean-sheet   = learner interaction / IA reference
 V4 main       = current restored presentation frontier
 Matrix        = normalized evidence/control plane
-PR #57 map    = proposed 143-ID career-guided primary placement
+PR #57 map    = accepted 143-ID career-guided primary placement
+Projection    = generated, non-authoritative client/audit view
 ```
 
-None of the three UI versions is the entire knowledge source.
+None of the three UI versions is the entire knowledge source, and generated projection files do not become canonical graph authority.
 
 ## Safety and authority rule
 
@@ -88,7 +133,7 @@ A learner-facing page must never infer authority from course depth or completion
 
 ## Publication rule for unsupported content
 
-The generated matrix `unsupported` view currently includes many high-safety boundaries. They require a split:
+The generated source-gap process explicitly separates two states:
 
 - **Crew Blueprint internal policy boundary:** may be authoritative as product policy, such as “this course does not grant authorization,” but must not be presented as an external legal requirement.
 - **External factual/legal/technical claim:** remains partial/blocked until the required primary or qualified evidence edge exists.
@@ -97,7 +142,7 @@ Conservative wording is not the same thing as source completeness.
 
 ## Client rule
 
-The final web client should consume a **generated projection** of the canonical graph. Hand-maintained V4 objects such as `content.js` `sourceGroups` may remain temporary presentation data, but they are not final provenance authority.
+The final web client should consume the **generated projection** of the canonical graph. Hand-maintained V4 objects such as `content.js` `sourceGroups` may remain temporary presentation data, but they are not final provenance authority.
 
 ## Historical retention
 

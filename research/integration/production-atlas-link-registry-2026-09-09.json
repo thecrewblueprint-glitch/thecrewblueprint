@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "crew-blueprint-production-atlas-links-2026-09-09",
+  "date": "2026-09-09",
+  "status": "accepted_cross_product_link_contract",
+  "purpose": "Provide stable, purpose-labeled Production Atlas destinations for Crew Blueprint without copying volatile employer, opportunity, market, vacancy, pay, labor-route, or personal application data into curriculum.",
+  "owner": {
+    "system": "production_atlas",
+    "repository": "thecrewblueprint-glitch/festival-atlas",
+    "canonical_ref": "research-version",
+    "compatibility_checked_commit": "89d4d64a5d82a5e48b045c432c45d4e76158e8ee",
+    "compatibility_checked_at": "2026-09-09",
+    "custom_domain": "https://atlas.thecrewblueprint.com/"
+  },
+  "rules": [
+    "Crew Blueprint stores stable route identifiers and URLs only; Production Atlas owns volatile work intelligence.",
+    "A department-path experience classification is not a vacancy-level qualification claim.",
+    "Current vacancy requirements must be verified in Production Atlas against the current public posting or authoritative source.",
+    "No private application state, personal contacts, worker records, pay intelligence, or Roadmapdev private evidence may be copied through this registry.",
+    "If a Production Atlas route changes, update this registry and compatibility check rather than embedding repository branch paths in learner pages."
+  ],
+  "links": [
+    {
+      "atlas_route_id": "ATLAS-HOME",
+      "url": "https://atlas.thecrewblueprint.com/",
+      "purpose_label": "Explore current live-event work intelligence",
+      "use_for": ["general work bridge", "ecosystem handoff"],
+      "volatile_data_owned_by_atlas": true
+    },
+    {
+      "atlas_route_id": "ATLAS-EMPLOYERS",
+      "url": "https://atlas.thecrewblueprint.com/employers.html",
+      "purpose_label": "Find employers by department, experience path, geography, and employer type",
+      "use_for": ["department lane", "find work", "career planning"],
+      "volatile_data_owned_by_atlas": true
+    },
+    {
+      "atlas_route_id": "ATLAS-OPPORTUNITIES",
+      "url": "https://atlas.thecrewblueprint.com/opportunities.html",
+      "purpose_label": "Explore current and upcoming event opportunities",
+      "use_for": ["find work", "travel planning", "market timing"],
+      "volatile_data_owned_by_atlas": true
+    },
+    {
+      "atlas_route_id": "ATLAS-MARKET",
+      "url": "https://atlas.thecrewblueprint.com/market.html",
+      "purpose_label": "Explore employer and market structure by department and geography",
+      "use_for": ["career lane discovery", "market structure", "growth planning"],
+      "volatile_data_owned_by_atlas": true
+    },
+    {
+      "atlas_route_id": "ATLAS-IATSE",
+      "url": "https://atlas.thecrewblueprint.com/iatse.html",
+      "purpose_label": "Understand IATSE and local-union worker routes",
+      "use_for": ["union awareness", "labor-route research", "find work"],
+      "volatile_data_owned_by_atlas": true
+    },
+    {
+      "atlas_route_id": "ATLAS-GUIDE",
+      "url": "https://atlas.thecrewblueprint.com/guide.html",
+      "purpose_label": "Learn how to use Production Atlas and interpret its work intelligence",
+      "use_for": ["handoff guidance", "source interpretation"],
+      "volatile_data_owned_by_atlas": true
+    }
+  ],
+  "source_verification": {
+    "production_atlas_readme": "thecrewblueprint-glitch/festival-atlas@research-version:README.md",
+    "observed_public_navigation": ["Home", "Opportunities", "Calendar", "Map", "Employers", "IATSE", "Contribute"],
+    "verified_primary_workflow_pages": ["index.html", "guide.html", "employers.html", "market.html", "opportunities.html", "iatse.html"]
+  }
+}
