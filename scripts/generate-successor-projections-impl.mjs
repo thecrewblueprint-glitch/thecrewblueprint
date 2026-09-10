@@ -439,7 +439,7 @@ const publicSources = [...usedSourceIds]
     source_id: source.source_id,
     source_owner: source.source_owner || null,
     title: source.title || null,
-    url: source.url || null,
+    url: String(source.url || '').includes('atlas.thecrewblueprint.com') ? null : (source.url || null),
     evidence_type: source.evidence_type || null,
     authority_level: source.authority_level || null,
     jurisdiction_scope: source.jurisdiction_scope || null,
