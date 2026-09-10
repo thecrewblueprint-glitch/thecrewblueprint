@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-10",
+  "status": "owner-directed target product contract; implementation pending",
+  "authority": {
+    "issue": 78,
+    "starting_main_sha": "84aa321019e5bead30c5b2476353e7578bef8717",
+    "supersedes_conflicting_product_assumptions_in": [61, 66],
+    "does_not_rewrite_historical_mapping": true
+  },
+  "product_scope": {
+    "primary_audience": "labor and technical workers who physically build, operate, support, troubleshoot, and technically lead live productions",
+    "core_lanes": [
+      "general_stagehand_production_labor",
+      "shop_warehouse_prep",
+      "lighting",
+      "audio",
+      "video_led_av",
+      "staging_structures",
+      "scenic_carpentry",
+      "rigging_bounded",
+      "production_power_electrical_bounded",
+      "backline_props_wardrobe",
+      "other_hands_on_specialties_when_evidence_supports_them"
+    ],
+    "demoted_from_primary_lane_status": [
+      "production_business_administration",
+      "budgeting_settlements_accounting",
+      "promoter_economics",
+      "client_contracting",
+      "administrative_purchasing",
+      "management_content_not_directly_required_to_perform_or_technically_lead_show_work"
+    ],
+    "technical_leadership_rule": "Leadership remains in scope when it directly concerns technical work, crew coordination, department planning, handoffs, verification, advancing technical requirements, escalation, or system responsibility."
+  },
+  "learner_entry_model": {
+    "zero_knowledge_default_flow": [
+      "industry_orientation",
+      "entry_level_production_stagehand_readiness",
+      "department_awareness",
+      "department_support",
+      "technician_pathway",
+      "deep_technical_specialist",
+      "technical_leadership_when_relevant"
+    ],
+    "equivalent_prior_knowledge_exception": "Learners with demonstrable prior education, mentorship, or experience may bypass or validate foundation material; this does not make department entry the default model for a zero-knowledge learner.",
+    "experience_rule": "Education increases knowledge and capability but does not independently establish field experience, job qualification, certification, employer authorization, practical competency, or readiness to lead."
+  },
+  "responsibility_states": {
+    "ORIENT": {
+      "access": "free",
+      "definition": "Understand the production environment, workflow, departments, terminology, hazards, role boundaries, and what is happening around the learner.",
+      "technical_responsibility": "none_beyond_awareness"
+    },
+    "SUPPORT": {
+      "access": "free",
+      "definition": "Work usefully under direction; recognize equipment and functions; assist departments; preserve other workers' systems and work; communicate; perform appropriate hand-level tasks; know when to stop and escalate.",
+      "technical_responsibility": "supervised_support"
+    },
+    "OPERATE": {
+      "access": "paid",
+      "definition": "Develop department-specific technical knowledge sufficient to understand system state, make role-appropriate technical decisions, configure or operate or diagnose equipment/systems, and take responsibility beyond merely following supervised instructions.",
+      "technical_responsibility": "technician"
+    },
+    "DEEPEN_LEAD": {
+      "access": "paid",
+      "definition": "Develop deeper system architecture, integration, advanced troubleshooting, specialist knowledge, technical planning, or technical leadership knowledge.",
+      "technical_responsibility": "advanced_or_technical_leadership"
+    },
+    "REFERENCE_CONTEXT": {
+      "access": "contextual",
+      "definition": "Useful supporting information that does not warrant a primary learner lane or course progression state.",
+      "technical_responsibility": "none_by_itself"
+    },
+    "HISTORICAL_SUPERSEDED": {
+      "access": "not_learner_route",
+      "definition": "Retained for provenance and lineage but not represented as current instruction.",
+      "technical_responsibility": "none"
+    }
+  },
+  "canonical_paywall_rule": "Free content teaches learners how to enter, understand, support, and work safely around live-production systems. Paid content begins where learning prepares the learner to independently understand system state, make department-specific technical decisions, configure/operate/diagnose systems, or assume technical responsibility beyond following supervised instructions.",
+  "physical_task_boundary_rule": "A learner physically performing a task does not by itself make the content paid. The boundary is crossed when the curriculum prepares the learner to determine, configure, verify, diagnose, or own technical correctness rather than follow supervised direction.",
+  "safety_exception": {
+    "rule": "Knowledge reasonably required to recognize a hazard, avoid worsening it, understand role or authorization boundaries, stop work, or escalate appropriately must be available before the learner may encounter that hazard, regardless of paid depth.",
+    "paid_depth_allowed": "Deeper system theory and technician responsibilities may be paid when awareness and protective boundary knowledge remain available at the appropriate free level."
+  },
+  "role_model": {
+    "rule": "Job titles are learner-facing destinations; normalized competencies and responsibility states are the curriculum architecture.",
+    "examples": ["A2", "L2", "V2", "LED technician", "staging technician"],
+    "reason": "Employer titles vary while underlying task and knowledge requirements overlap."
+  },
+  "content_classification_required_fields": [
+    "canonical_id",
+    "title",
+    "primary_lane",
+    "responsibility_state",
+    "access_class",
+    "learner_role_targets",
+    "prerequisite_or_prior_knowledge",
+    "safety_visibility",
+    "technical_responsibility_threshold",
+    "employer_requirement_evidence_status",
+    "credential_eligibility",
+    "source_lineage",
+    "review_status",
+    "classification_rationale"
+  ],
+  "classification_decision_test": [
+    "Who is this learning object for?",
+    "What responsibility is it preparing the learner to carry?",
+    "What must the learner already know?",
+    "What may the learner reasonably understand or do afterward?",
+    "What still requires field experience, practical evaluation, credentialing, qualification, or employer/site authorization?",
+    "Does the object primarily ORIENT, SUPPORT, prepare to OPERATE, DEEPEN/LEAD, provide REFERENCE/CONTEXT, or remain HISTORICAL/SUPERSEDED?",
+    "Does any hazard-recognition or stop/escalate information need to remain free even if deeper content is paid?"
+  ],
+  "identity_auth_billing": {
+    "clerk": "identity and authentication, including future optional LinkedIn connection",
+    "application_data": "progress, assessed competencies, pathways, credential state, privacy preferences, and access entitlements",
+    "stripe_future": "commercial transaction processing only",
+    "protected_content_rule": "Paid instructional bodies must be authorized against authenticated entitlement before delivery; client-side hiding alone is insufficient."
+  },
+  "employer_competency_bridge": {
+    "rule": "Employer demand may inform role normalization, curriculum priority, and coverage-gap analysis but does not become technical or safety instructional authority.",
+    "maturity_path": [
+      "requirements_researched",
+      "competency_map_reviewed",
+      "alignment_acknowledged",
+      "training_recognized_as_positive_applicant_signal",
+      "interview_consideration_when_appropriate",
+      "formal_training_or_recruiting_relationship"
+    ],
+    "claim_rule": "Never represent an employer as recognizing, endorsing, preferring, or hiring based on Crew Blueprint without explicit evidence and permission."
+  },
+  "recruiting_and_deadhang_boundaries": {
+    "successful_hire_fee": "A future employer-paid recruiting/referral fee may exist under explicit agreement; learner training purchase does not buy placement preference.",
+    "deadhang_contractor_network": "Separate future system limited to contractors personally known/vetted by the owner or brought in by trusted partners. Crew Blueprint completion alone never grants Deadhang contractor eligibility."
+  },
+  "migration_constraints": {
+    "preserve_143_identity_lineage": true,
+    "do_not_mutate_frozen_archives": true,
+    "do_not_change_generator_invariants_until_new_classification_exists": true,
+    "next_required_outputs": [
+      "143_identity_responsibility_classification",
+      "ambiguous_boundary_register",
+      "new_beginner_foundation_map",
+      "department_technician_threshold_maps",
+      "management_reference_demotion_map",
+      "successor_generator_contract_update"
+    ]
+  }
+}
