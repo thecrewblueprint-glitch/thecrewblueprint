@@ -19,6 +19,11 @@ check(contract.audience_rule?.authoritative_adult_eligibility==='server_side','A
 
 const publicRoutes=contract.public_routes||[];
 const bySlug=new Map(publicRoutes.map(route=>[route.slug,route]));
+const canonicalCheckedSources=new Set([
+  'index.html','about.html','contact.html',
+  'privacy-policy.html','terms-and-conditions.html','cookies-notice.html',
+  'accessibility-statement.html','limitation-of-liability.html','affiliate-disclosure.html'
+]);
 for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-labs/','/about/','/contact/','/privacy-policy/','/terms-and-conditions/']){
   check(bySlug.has(slug),`Missing required public route: ${slug}`);
 }
@@ -26,6 +31,13 @@ for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-lab
   check(bySlug.get(slug)?.index==='index,follow',`${slug} must be indexable as a public sample/shell route.`);
 }
 check(bySlug.get('/create-account/')?.index==='noindex,nofollow','Create Account must remain noindex/nofollow.');
+
+for(const route of publicRoutes.filter(item=>canonicalCheckedSources.has(item.source))){
+  const html=await readFile(path.join(root,item.source),'utf8');
+  const canonical=html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1]||null;
+  const expected='https://'+contract.production_host+route.slug;
+  check(canonical===expected,`${item.source}: canonical mismatch; expected ${expected}, found ${canonical||'none'}.`);
+}
 
 const learner=contract.learner_route_policy||{};
 check(learner.direct_static_full_body_files_in_public_webroot===false,'Full learner bodies must not exist as directly retrievable static files in the public webroot.');
