@@ -65,6 +65,15 @@ jobs:
 
       - name: Validate release network surface
         run: node scripts/validate-release-network-surface.mjs
+
+      - name: Build WordPress production package
+        run: node scripts/build-wordpress-production-package.mjs
+
+      - name: Check WordPress plugin PHP syntax
+        run: php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+
+      - name: Validate WordPress production package
+        run: node scripts/validate-wordpress-production-package.mjs
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
       - name: Generate matrix views
