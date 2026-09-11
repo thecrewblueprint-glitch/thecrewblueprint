@@ -20,8 +20,10 @@ const terms = await readFile(path.join(rootDir, 'terms-and-conditions.html'), 'u
 const limitation = await readFile(path.join(rootDir, 'limitation-of-liability.html'), 'utf8');
 
 const version = consentRuntime.match(/CONSENT_VERSION = '([^']+)'/)?.[1];
-check(version === '2026-08-30.3', `unexpected consent version: ${version || 'missing'}`);
+check(version === '2026-09-10.1', `unexpected consent version: ${version || 'missing'}`);
 check(consentRuntime.includes('cbCourseConsent.v1'), 'runtime is missing its versioned local-storage key');
+check(consentRuntime.includes("AGE_GATE_VERSION = '2026-09-10.1'"), 'runtime is missing the current 18+ birthday-gate version');
+check(consentRuntime.includes('birthDate'), 'runtime is missing birthday account metadata handling');
 check(consentRuntime.includes('type="checkbox"'), 'runtime is missing affirmative checkboxes');
 check(!consentRuntime.includes('type="checkbox" checked'), 'consent checkboxes must not be preselected');
 check(consentRuntime.includes('Agree and enter course'), 'runtime is missing explicit assent button text');
@@ -49,13 +51,13 @@ for (const filename of courseFiles) {
 }
 
 for (const [name, html] of [['Privacy Policy', privacy], ['Cookies Notice', cookies]]) {
-  check(html.includes('Last updated: August 30, 2026'), `${name}: update date is stale`);
-  check(html.includes('course acknowledgment'), `${name}: course-acknowledgment disclosure is missing`);
-  check(html.includes('server-side acceptance'), `${name}: local-only record limitation is missing`);
+  check(html.includes('Last updated: September 10, 2026'), `${name}: production legal update date is stale`);
+  check(html.includes('date of birth') || html.includes('Date of birth'), `${name}: date-of-birth disclosure is missing`);
+  check(html.includes('Clerk'), `${name}: Clerk authentication disclosure is missing`);
 }
 
-check(terms.includes('Last updated: August 30, 2026'), 'Terms version does not match the consent gate');
-check(limitation.includes('Last updated: August 30, 2026'), 'Limitation version does not match the consent gate');
+check(terms.includes('Last updated: September 10, 2026'), 'Terms version does not match the consent gate');
+check(limitation.includes('Last updated: September 10, 2026'), 'Limitation version does not match the consent gate');
 check(terms.includes('at least 18 years old'), 'Terms are missing the adult course-access restriction');
 check(limitation.includes('<h1>Assumption of Risk, Release, and Limitation of Liability</h1>'), 'release page title is stale');
 
@@ -69,5 +71,5 @@ if (errors.length) {
   console.log(`- ${courseFiles.length} discovered top-level course routes gated`);
   console.log('- route count is discovered dynamically; no stale hard-coded inventory count');
   console.log('- adult eligibility, unchecked legal acknowledgments, and explicit assent verified');
-  console.log('- local-storage disclosures and version alignment verified');
+  console.log('- account-linked age eligibility, legal acknowledgment, and version alignment verified');
 }
