@@ -117,7 +117,7 @@ for(const route of contract.public_routes||[]){
   if(route.source!=='sign-up.html')publicSourceToPath.set(route.source,route.slug);
 }
 
-const freeCourses=(projection.courses||[]).filter(c=>['free_public','public_reference'].includes(c?.access?.delivery_state)&&c?.identity?.route_state==='materialized'&&c?.identity?.route_id);
+const freeCourses=(projection.courses||[]).filter(c=>c?.access?.delivery_state==='free_public'&&c?.identity?.route_state==='materialized'&&c?.identity?.route_id);
 const protectedRoutes=[];
 const protectedBySource=new Map();
 
@@ -333,6 +333,7 @@ const packageManifest={
   contract_version:contract.version,
   public_route_count:publicManifest.length,
   protected_route_count:protectedRoutes.length,
+  public_reference_delivery:'metadata_only_via_sources_page',
   raw_dob_retained:false,
   paid_content_included:false,
   production_atlas_included:false,
