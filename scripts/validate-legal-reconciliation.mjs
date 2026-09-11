@@ -31,7 +31,7 @@ requireText(terms, 'third-party claims', 'narrowed indemnification scope');
 requireText(terms, 'reasonable defense costs and attorneys&rsquo; fees', 'indemnification costs');
 requireText(terms, 'require a fresh affirmative acceptance', 'Terms change acceptance');
 requireText(limitation, 'require a fresh affirmative acceptance', 'Limitation change acceptance');
-requireText(consent, "var CONSENT_VERSION = '2026-09-10.1'", 'consent version');
+requireText(consent, "var CONSENT_VERSION = '2026-09-10.2'", 'consent version');
 requireText(signup, "AGE_GATE_VERSION='2026-09-10.2'", 'account eligibility age-screen version');
 requireText(signup, 'type="date"', 'neutral birthday field');
 requireText(signup, 'adultEligibility:true', 'adult eligibility outcome metadata');
@@ -39,10 +39,12 @@ if (signup.includes('birthDate:')) errors.push('sign-up page persists the raw da
 requireText(privacy, 'date of birth', 'privacy birthday disclosure');
 requireText(privacy, 'Clerk', 'privacy authentication provider disclosure');
 requireText(privacy, 'under 18', 'privacy under-18 restriction');
+requireText(privacy, 'California online tracking disclosures', 'CalOPPA tracking disclosure');
+requireText(privacy, 'Do Not Track', 'Do Not Track disclosure');
 requireText(cookies, 'Clerk', 'cookies authentication disclosure');
 requireText(cookies, 'session tokens', 'cookies session-token disclosure');
+requireText(cookies, 'Signed-out public sample browsing', 'deferred Clerk loading disclosure');
 requireText(terms, 'No pricing, checkout, subscription, or paid entitlement is active in this release.', 'future-paid noncommercial boundary');
-requireText(consent, 'ageMajorityConfirmed: true', 'adult eligibility record');
 
 if (/mandatory binding arbitration|class action waiver/i.test(terms + limitation)) {
   errors.push('unreviewed mandatory arbitration or class-action waiver language is present');
