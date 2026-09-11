@@ -539,7 +539,7 @@
 
     // Signed-out public browsing does not initialize Clerk. Restore Clerk only
     // for an existing session or when the visitor explicitly starts auth.
-    if(!hasSessionCookie())return;
+    if(!runtimeConfig.serverAuthenticated&&!hasSessionCookie())return;
 
     if(!await ensureClerk()){
       renderSignedOutAuth();
