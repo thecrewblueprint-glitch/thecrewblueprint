@@ -61,7 +61,7 @@ check(!/<script[^>]+src=["'][^"']*clerk\.accounts\.dev/i.test(signup), 'Clerk is
 
 check(blueprint.includes('transferable:false'), 'Existing-account sign-in can still transfer opaquely into sign-up.');
 check(blueprint.includes('hasSessionCookie()'), 'Public shell lacks the existing-session-only Clerk restore gate.');
-check(blueprint.includes('if(!hasSessionCookie())return;'), 'Signed-out browsing may initialize Clerk without an existing session.');
+check(blueprint.includes('if(!runtimeConfig.serverAuthenticated&&!hasSessionCookie())return;'), 'Signed-out browsing may initialize Clerk without an existing session or server-authenticated state.');
 check(blueprint.includes('openExistingAccountSignIn'), 'Header sign-in is not routed through the dedicated existing-account flow.');
 check(blueprint.includes('goToAccountCreation'), 'Create Account is not routed through the dedicated age-screened sign-up page.');
 
