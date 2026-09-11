@@ -3,8 +3,8 @@
 
   const script=document.currentScript;
   const projectionUrl=script&&script.src
-    ? new URL('../data/generated/web-client-projection.json',script.src).href
-    : 'data/generated/web-client-projection.json';
+    ? new URL('../data/generated/free-web-client-projection.json',script.src).href
+    : 'data/generated/free-web-client-projection.json';
 
   const laneLabels={
     stagehand_generalist:'Stagehand / Generalist',
