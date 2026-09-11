@@ -153,6 +153,8 @@
   }
 
   var CLERK_PUBLISHABLE_KEY = 'pk_test_cGxlYXNlZC1jYW1lbC0zNDMyLmNsZXJrLmFjY291bnRzLmRldiQ';
+  var AGE_GATE_VERSION = '2026-09-10.1';
+  var AGE_GATE_PENDING_KEY = 'crewBlueprint.pendingBirthDate';
   var CLERK_UI_URL = 'https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js';
   var CLERK_JS_URL = 'https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js';
   var memberBackdrop = null;
@@ -209,6 +211,83 @@
     });
   }
 
+  function parseBirthday(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ''))) return null;
+    var date = new Date(value + 'T00:00:00');
+    return Number.isNaN(date.getTime()) ? null : date;
+  }
+
+  function isAdultBirthday(value) {
+    var dob = parseBirthday(value);
+    if (!dob) return false;
+    var today = new Date();
+    var cutoff = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+    return dob <= cutoff;
+  }
+
+  function pendingBirthday() {
+    try { return window.sessionStorage.getItem(AGE_GATE_PENDING_KEY) || ''; } catch (error) { return ''; }
+  }
+
+  function savePendingBirthday(value) {
+    try { window.sessionStorage.setItem(AGE_GATE_PENDING_KEY, value); } catch (error) {}
+  }
+
+  function clearPendingBirthday() {
+    try { window.sessionStorage.removeItem(AGE_GATE_PENDING_KEY); } catch (error) {}
+  }
+
+  function storedBirthday() {
+    return String(window.Clerk && window.Clerk.user && window.Clerk.user.unsafeMetadata && window.Clerk.user.unsafeMetadata.birthDate || '');
+  }
+
+  async function persistBirthdayIfNeeded(value) {
+    if (!window.Clerk || !window.Clerk.user || !value || storedBirthday()) return;
+    try {
+      await window.Clerk.user.updateMetadata({
+        unsafeMetadata: {
+          birthDate: value,
+          ageGateVersion: AGE_GATE_VERSION,
+          ageGateConfirmedAt: new Date().toISOString()
+        }
+      });
+    } catch (error) {
+      console.error('Could not persist course birthday metadata', error);
+    }
+  }
+
+  function birthdayFieldMarkup() {
+    return '<div class="cb-consent-choice" style="display:block">' +
+      '<label for="cb-member-birthday"><strong>Date of birth</strong><br><span style="color:#b9c4ce">Required. Accounts and full course access are limited to people age 18 or older.</span></label>' +
+      '<input id="cb-member-birthday" type="date" autocomplete="bday" style="width:100%;min-height:44px;margin-top:10px;padding:8px 10px;border:1px solid #3a4652;border-radius:9px;background:#080d12;color:#f1f4f7;font:inherit" />' +
+      '<p data-cb-age-error role="alert" style="display:none;margin:10px 0 0;color:#ffd0d0"></p>' +
+    '</div>';
+  }
+
+  function validateBirthdayInput(backdrop) {
+    var input = backdrop.querySelector('#cb-member-birthday');
+    var error = backdrop.querySelector('[data-cb-age-error]');
+    var value = input ? input.value : '';
+    var dob = parseBirthday(value);
+    if (!dob) {
+      if (error) { error.textContent = 'Enter a valid date of birth.'; error.style.display = 'block'; }
+      return '';
+    }
+    if (dob > new Date()) {
+      if (error) { error.textContent = 'Date of birth cannot be in the future.'; error.style.display = 'block'; }
+      return '';
+    }
+    if (!isAdultBirthday(value)) {
+      if (error) { error.textContent = 'Accounts and full course access are limited to people age 18 or older.'; error.style.display = 'block'; }
+      if (input) input.setAttribute('aria-invalid', 'true');
+      return '';
+    }
+    if (error) error.style.display = 'none';
+    if (input) input.removeAttribute('aria-invalid');
+    savePendingBirthday(value);
+    return value;
+  }
+
   function showMemberGate(clerkReady) {
     if (memberBackdrop) return;
     var pageChildren = Array.prototype.slice.call(document.body.children);
@@ -223,7 +302,7 @@
         '<h1 id="cb-member-title">Sign in to open the full learning item</h1>' +
         '<p id="cb-member-description">The course overview is part of the public preview. Full free lessons, Field Skills, Context Labs, and department basics are available after sign-in.</p>' +
         (clerkReady
-          ? '<div class="cb-consent-actions"><a class="cb-consent-exit" href="' + coursesUrl + '">Back to course preview</a><button class="cb-consent-submit" type="button" data-cb-member-sign-in>Sign in</button><button class="cb-consent-submit" type="button" data-cb-member-sign-up>Create free account</button></div>'
+          ? birthdayFieldMarkup() + '<div class="cb-consent-actions"><a class="cb-consent-exit" href="' + coursesUrl + '">Back to course preview</a><button class="cb-consent-submit" type="button" data-cb-member-sign-in>Sign in</button><button class="cb-consent-submit" type="button" data-cb-member-sign-up>Create free account</button></div>'
           : '<p class="cb-consent-action">The account service is unavailable right now. Full course content remains locked.</p><div class="cb-consent-actions"><a class="cb-consent-exit" href="' + coursesUrl + '">Back to course preview</a></div>') +
       '</section>';
     backdrop._cbPriorStates = priorStates;
@@ -237,8 +316,20 @@
 
     var signIn = backdrop.querySelector('[data-cb-member-sign-in]');
     var signUp = backdrop.querySelector('[data-cb-member-sign-up]');
-    if (signIn) signIn.addEventListener('click', function () { window.Clerk.openSignIn(); });
-    if (signUp) signUp.addEventListener('click', function () { window.Clerk.openSignUp(); });
+    if (signIn) signIn.addEventListener('click', function () {
+      var birthDate = validateBirthdayInput(backdrop);
+      if (!birthDate) return;
+      window.Clerk.openSignIn();
+    });
+    if (signUp) signUp.addEventListener('click', function () {
+      var birthDate = validateBirthdayInput(backdrop);
+      if (!birthDate) return;
+      window.Clerk.openSignUp({ unsafeMetadata: {
+        birthDate: birthDate,
+        ageGateVersion: AGE_GATE_VERSION,
+        ageGateConfirmedAt: new Date().toISOString()
+      }});
+    });
   }
 
   function currentCanonicalRoute() {
@@ -295,6 +386,57 @@
     memberBackdrop = backdrop;
   }
 
+  function showBirthdayCompletionGate() {
+    if (memberBackdrop) closeMemberGate();
+    var pageChildren = Array.prototype.slice.call(document.body.children);
+    var priorStates = pageChildren.map(function (element) {
+      return { element: element, inert: element.inert, ariaHidden: element.getAttribute('aria-hidden') };
+    });
+    var backdrop = document.createElement('div');
+    backdrop.className = 'cb-consent-backdrop';
+    backdrop.innerHTML =
+      '<section class="cb-consent-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-birthday-title">' +
+        '<span class="cb-consent-kicker">18+ account verification</span>' +
+        '<h1 id="cb-birthday-title">Complete your account eligibility</h1>' +
+        '<p>A date of birth is required before full course access.</p>' +
+        birthdayFieldMarkup() +
+        '<div class="cb-consent-actions"><a class="cb-consent-exit" href="' + coursesUrl + '">Back to preview</a><button class="cb-consent-submit" type="button" data-cb-save-birthday>Continue</button></div>' +
+      '</section>';
+    backdrop._cbPriorStates = priorStates;
+    document.body.classList.add('cb-consent-open');
+    priorStates.forEach(function (state) {
+      state.element.inert = true;
+      state.element.setAttribute('aria-hidden', 'true');
+    });
+    document.body.appendChild(backdrop);
+    memberBackdrop = backdrop;
+    backdrop.querySelector('[data-cb-save-birthday]').addEventListener('click', async function () {
+      var value = validateBirthdayInput(backdrop);
+      if (!value) return;
+      await persistBirthdayIfNeeded(value);
+      clearPendingBirthday();
+      closeMemberGate();
+      startCourseAfterAuth();
+    });
+  }
+
+  async function ensureSignedInAdult() {
+    var birthday = storedBirthday() || pendingBirthday();
+    if (!birthday) {
+      showBirthdayCompletionGate();
+      return false;
+    }
+    if (!isAdultBirthday(birthday)) {
+      clearPendingBirthday();
+      try { await window.Clerk.signOut(); } catch (error) {}
+      showMemberGate(true);
+      return false;
+    }
+    await persistBirthdayIfNeeded(birthday);
+    clearPendingBirthday();
+    return true;
+  }
+
   function startCourseAfterAuth() {
     if (courseStarted) return;
     courseStarted = true;
@@ -315,12 +457,12 @@
       return;
     }
     if (window.Clerk.isSignedIn) {
-      startCourseAfterAuth();
+      if (await ensureSignedInAdult()) startCourseAfterAuth();
       return;
     }
     showMemberGate(true);
-    window.Clerk.addListener(function () {
-      if (window.Clerk.isSignedIn) startCourseAfterAuth();
+    window.Clerk.addListener(async function () {
+      if (window.Clerk.isSignedIn && await ensureSignedInAdult()) startCourseAfterAuth();
     });
   }
 
