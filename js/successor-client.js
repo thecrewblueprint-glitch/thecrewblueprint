@@ -294,8 +294,8 @@
 
   const renderContexts=(node,data)=>renderCourseCollection(
     node,
-    (data.courses||[]).filter(c=>c.placement?.learner_surface==='contexts'&&['free_public','public_reference'].includes(c.access?.delivery_state)),
-    'No Context Lab nodes are present in the generated projection.',
+    (data.courses||[]).filter(c=>c.placement?.learner_surface==='contexts'&&c.access?.delivery_state==='free_public'),
+    'No free Context Lab nodes are present in the generated projection.',
     {showLane:true}
   );
 
