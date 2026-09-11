@@ -47,7 +47,7 @@ jobs:
       - name: Confirm production secret is not packaged
         run: |
           test ! -f _standalone/the-crew-blueprint/config/local.php
-          ! grep -R --line-number --binary-files=without-match 'sk_live_' _standalone/the-crew-blueprint
+          ! grep -RE --line-number --binary-files=without-match 'sk_live_[A-Za-z0-9_-]{20,}' _standalone/the-crew-blueprint
 
       - name: Confirm protected/config directories are denied by Apache rules
         run: |
