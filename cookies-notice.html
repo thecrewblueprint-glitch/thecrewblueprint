@@ -21,7 +21,7 @@
 <h2>Strictly necessary authentication technology</h2>
 <p>When you create an account or sign in, Clerk provides authentication. Clerk may set or read strictly necessary cookies and session tokens so the site can determine whether you are signed in, maintain the authenticated session, and protect account access. These technologies are required for the account experience to work.</p>
 <h2>Age-eligibility information</h2>
-<p>A date of birth is required before account access. It is used to determine whether the user meets the 18+ rule. Temporary browser state may be used during the sign-in/sign-up flow so the age check can continue across an OAuth redirect. Production account records may retain the date of birth or an age-verification record as described in the Privacy Policy.</p>
+<p>A date of birth is requested when a person attempts to create a new account. It is used to determine account eligibility; public browsing and ordinary sign-in to an existing account do not require re-entering a birthday. The production design is intended to retain an adult-eligibility result rather than the full submitted birth date after the eligibility check. If an entered birthday is ineligible, a short-lived first-party session marker may be set so the same browser session cannot immediately retry the age screen; that marker does not contain the submitted birth date.</p>
 <h2>Browser storage used by the learning experience</h2>
 <p>The site may use local or session storage for items such as course acknowledgment versions, interface preferences, temporary age-gate state, and browser-based progress. When account-persisted progress is implemented, the privacy policy will describe the account-linked record separately.</p>
 <h2>Social sign-in</h2>
