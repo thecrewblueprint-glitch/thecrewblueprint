@@ -94,7 +94,7 @@
     toolbar.className='course-dashboard-toolbar';
     toolbar.setAttribute('aria-label','Course navigation');
     toolbar.innerHTML='<div class="course-dashboard-toolbar-top"><div class="course-dashboard-toolbar-title"><strong>Course lessons</strong><span>Move between lessons, then complete the course assessment after the lesson set.</span></div><label class="lesson-jump"><span>Jump to</span><select aria-label="Jump to lesson"></select></label></div><div class="lesson-tabs" role="tablist" aria-label="Lessons"></div>';
-    lessonList.parentNode.insertBefore(toolbar,lessonList);
+    lessonList.insertBefore(toolbar,lessonList.firstChild);
     const tabList=toolbar.querySelector('.lesson-tabs');
     const select=toolbar.querySelector('select');
 
