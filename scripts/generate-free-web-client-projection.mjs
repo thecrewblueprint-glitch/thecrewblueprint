@@ -10,29 +10,68 @@ const targetPath=path.join(root,'data','generated','free-web-client-projection.j
 const source=JSON.parse(await readFile(sourcePath,'utf8'));
 const allowedDelivery=new Set(['free_public','public_reference']);
 
-const courses=(source.courses||[]).filter(course=>allowedDelivery.has(course?.access?.delivery_state));
-const ids=new Set(courses.map(course=>course?.identity?.canonical_course_id).filter(Boolean));
+const rawCourses=(source.courses||[]).filter(course=>allowedDelivery.has(course?.access?.delivery_state));
+const allowedSourceIds=new Set(rawCourses.flatMap(course=>course?.evidence?.source_ids||[]));
 
-const edges=(source.edges||[]).filter(edge=>{
-  const from=edge?.from||edge?.source||edge?.from_id||edge?.source_id;
-  const to=edge?.to||edge?.target||edge?.to_id||edge?.target_id;
-  const fromOk=!from||ids.has(from);
-  const toOk=!to||ids.has(to);
-  return fromOk&&toOk;
-});
+const courses=rawCourses.map(course=>({
+  identity:{
+    canonical_course_id:course?.identity?.canonical_course_id||null,
+    route_id:course?.identity?.route_id||null,
+    title:course?.identity?.title||null,
+    publication_state:course?.identity?.publication_state||null,
+    route_state:course?.identity?.route_state||null
+  },
+  placement:{
+    learner_surface:course?.placement?.learner_surface||'learn',
+    career_lane_ids:course?.placement?.career_lane_ids||[],
+    presentation_tier:course?.placement?.presentation_tier||null,
+    node_role:course?.placement?.node_role||null,
+    public_by_default:course?.placement?.public_by_default===true
+  },
+  access:{
+    responsibility_state:course?.access?.responsibility_state||null,
+    access_class:course?.access?.access_class||null,
+    delivery_state:course?.access?.delivery_state||null
+  },
+  learning:{
+    objective:course?.learning?.objective||null
+  },
+  boundary:{
+    safety_criticality:course?.boundary?.safety_criticality||'unknown',
+    qualification_boundary:course?.boundary?.qualification_boundary===true,
+    stop_or_escalate_message:course?.boundary?.stop_or_escalate_message||null
+  }
+}));
+
+const sources=(source.sources||[]).filter(item=>allowedSourceIds.has(item?.source_id)).map(item=>({
+  source_id:item.source_id,
+  source_owner:item.source_owner||null,
+  title:item.title||null,
+  url:item.url||null,
+  evidence_type:item.evidence_type||null,
+  authority_level:item.authority_level||null,
+  jurisdiction_scope:item.jurisdiction_scope||null,
+  access_date:item.access_date||null,
+  freshness_class:item.freshness_class||null,
+  source_status:item.source_status||null
+}));
 
 const output={
-  ...source,
-  courses,
-  edges,
+  schema_version:'1.0.0',
+  projection_id:'crew-blueprint-free-web-client-projection-1',
   release_scope:'free_tier_public_client',
-  generated_from:'web-client-projection.json',
-  excluded_nonfree_count:(source.courses||[]).length-courses.length
+  invariants:{
+    course_completion_not_authorization:true,
+    production_atlas_owns_volatile_work_data:true
+  },
+  atlas_access:{
+    state:'locked_unavailable',
+    learner_tool_available:false,
+    links_exposed:false
+  },
+  sources,
+  courses
 };
 
-if(output.summary&&typeof output.summary==='object'){
-  output.summary={...output.summary,course_count:courses.length,release_scope:'free_tier_public_client'};
-}
-
 await writeFile(targetPath,JSON.stringify(output,null,2)+'\n','utf8');
-console.log(`Generated free client projection with ${courses.length} courses; excluded ${output.excluded_nonfree_count} non-free identities.`);
+console.log(`Generated minimal free client projection with ${courses.length} free/reference identities and ${sources.length} relevant public source records.`);
