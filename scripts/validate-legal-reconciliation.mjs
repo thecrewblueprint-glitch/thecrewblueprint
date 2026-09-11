@@ -9,6 +9,7 @@ const limitation = await readFile(path.join(rootDir, 'limitation-of-liability.ht
 const consent = await readFile(path.join(rootDir, 'js', 'course-consent.js'), 'utf8');
 const privacy = await readFile(path.join(rootDir, 'privacy-policy.html'), 'utf8');
 const cookies = await readFile(path.join(rootDir, 'cookies-notice.html'), 'utf8');
+const signup = await readFile(path.join(rootDir, 'sign-up.html'), 'utf8');
 const errors = [];
 
 function requireText(haystack, needle, label) {
@@ -31,8 +32,10 @@ requireText(terms, 'reasonable defense costs and attorneys&rsquo; fees', 'indemn
 requireText(terms, 'require a fresh affirmative acceptance', 'Terms change acceptance');
 requireText(limitation, 'require a fresh affirmative acceptance', 'Limitation change acceptance');
 requireText(consent, "var CONSENT_VERSION = '2026-09-10.1'", 'consent version');
-requireText(consent, "AGE_GATE_VERSION = '2026-09-10.1'", 'birthday age-gate version');
-requireText(consent, 'birthDate', 'birthday account metadata handling');
+requireText(signup, "AGE_GATE_VERSION='2026-09-10.2'", 'account eligibility age-screen version');
+requireText(signup, 'type="date"', 'neutral birthday field');
+requireText(signup, 'adultEligibility:true', 'adult eligibility outcome metadata');
+if (signup.includes('birthDate:')) errors.push('sign-up page persists the raw date of birth to account metadata');
 requireText(privacy, 'date of birth', 'privacy birthday disclosure');
 requireText(privacy, 'Clerk', 'privacy authentication provider disclosure');
 requireText(privacy, 'under 18', 'privacy under-18 restriction');
@@ -56,6 +59,6 @@ if (errors.length) {
   console.log('- non-waivable-liability carve-outs preserved');
   console.log('- indemnification narrowed to specified third-party claims');
   console.log('- material revisions require renewed course acknowledgment');
-  console.log('- 18+ birthday-gated account model is reconciled across Terms, Privacy, Cookies and consent runtime');
+  console.log('- 18+ sign-up-only age screen is reconciled across Terms, Privacy, Cookies and account creation');
   console.log('- mandatory arbitration and class waiver remain deferred for counsel');
 }
