@@ -3,23 +3,25 @@
 
   var CONSENT_VERSION = '2026-09-10.2';
   var STORAGE_KEY = 'cbCourseConsent.v1';
+  var runtimeConfig = window.CBP_CONFIG || {};
   var scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
-  var siteRoot = new URL('../', scriptUrl);
-  var termsUrl = new URL('terms-and-conditions.html', siteRoot).href;
-  var limitationUrl = new URL('limitation-of-liability.html', siteRoot).href;
-  var coursesUrl = new URL('learn.html', siteRoot).href;
+  var siteRoot = runtimeConfig.siteBase ? new URL(runtimeConfig.siteBase, window.location.origin) : new URL('../', scriptUrl);
+  var assetRoot = runtimeConfig.assetBase ? new URL(runtimeConfig.assetBase, window.location.origin) : siteRoot;
+  var termsUrl = runtimeConfig.termsUrl || new URL('terms-and-conditions.html', siteRoot).href;
+  var limitationUrl = runtimeConfig.limitationUrl || new URL('limitation-of-liability.html', siteRoot).href;
+  var coursesUrl = runtimeConfig.coursesUrl || new URL('learn.html', siteRoot).href;
 
   function installCourseShell() {
     if (!document.querySelector('link[data-cb-course-shell]')) {
       var stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
-      stylesheet.href = new URL('css/course-shell.css', siteRoot).href;
+      stylesheet.href = new URL('css/course-shell.css', assetRoot).href;
       stylesheet.dataset.cbCourseShell = 'true';
       document.head.appendChild(stylesheet);
     }
     if (!document.querySelector('script[data-cb-course-shell]')) {
       var shell = document.createElement('script');
-      shell.src = new URL('js/course-shell.js', siteRoot).href;
+      shell.src = new URL('js/course-shell.js', assetRoot).href;
       shell.dataset.cbCourseShell = 'true';
       document.head.appendChild(shell);
     }
