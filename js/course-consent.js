@@ -237,22 +237,22 @@
     try { window.sessionStorage.removeItem(AGE_GATE_PENDING_KEY); } catch (error) {}
   }
 
-  function storedBirthday() {
-    return String(window.Clerk && window.Clerk.user && window.Clerk.user.unsafeMetadata && window.Clerk.user.unsafeMetadata.birthDate || '');
+  function storedAdultEligibility() {
+    return Boolean(window.Clerk && window.Clerk.user && window.Clerk.user.unsafeMetadata && window.Clerk.user.unsafeMetadata.adultEligibility === true);
   }
 
-  async function persistBirthdayIfNeeded(value) {
-    if (!window.Clerk || !window.Clerk.user || !value || storedBirthday()) return;
+  async function persistAdultEligibilityIfNeeded() {
+    if (!window.Clerk || !window.Clerk.user || storedAdultEligibility()) return;
     try {
       await window.Clerk.user.updateMetadata({
         unsafeMetadata: {
-          birthDate: value,
+          adultEligibility: true,
           ageGateVersion: AGE_GATE_VERSION,
           ageGateConfirmedAt: new Date().toISOString()
         }
       });
     } catch (error) {
-      console.error('Could not persist course birthday metadata', error);
+      console.error('Could not persist adult-eligibility staging metadata', error);
     }
   }
 
@@ -325,7 +325,7 @@
       var birthDate = validateBirthdayInput(backdrop);
       if (!birthDate) return;
       window.Clerk.openSignUp({ unsafeMetadata: {
-        birthDate: birthDate,
+        adultEligibility: true,
         ageGateVersion: AGE_GATE_VERSION,
         ageGateConfirmedAt: new Date().toISOString()
       }});
@@ -413,7 +413,7 @@
     backdrop.querySelector('[data-cb-save-birthday]').addEventListener('click', async function () {
       var value = validateBirthdayInput(backdrop);
       if (!value) return;
-      await persistBirthdayIfNeeded(value);
+      await persistAdultEligibilityIfNeeded();
       clearPendingBirthday();
       closeMemberGate();
       startCourseAfterAuth();
@@ -421,7 +421,11 @@
   }
 
   async function ensureSignedInAdult() {
-    var birthday = storedBirthday() || pendingBirthday();
+    if (storedAdultEligibility()) {
+      clearPendingBirthday();
+      return true;
+    }
+    var birthday = pendingBirthday();
     if (!birthday) {
       showBirthdayCompletionGate();
       return false;
@@ -432,7 +436,7 @@
       showMemberGate(true);
       return false;
     }
-    await persistBirthdayIfNeeded(birthday);
+    await persistAdultEligibilityIfNeeded();
     clearPendingBirthday();
     return true;
   }
