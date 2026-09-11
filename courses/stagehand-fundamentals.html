@@ -9,7 +9,7 @@
 .part-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}.part-tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:12px;padding:12px;text-align:left;cursor:pointer;font:inherit;transition:all 180ms}.part-tab:hover{border-color:var(--gold);color:var(--text)}.part-tab:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}.part-tab.active{background:#211d0e;border-color:#65551f;color:var(--text)}.part-tab b{display:block;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.part-tab span{display:block;font-size:13px;line-height:1.35;margin-top:3px}.part-summary{padding:8px 8px 14px;border-bottom:1px solid var(--line);margin-bottom:8px}.part-summary strong{display:block;color:var(--gold2)}.part-summary a,.course-boundary a{color:var(--gold2)}.course-boundary{border-left:4px solid var(--gold);font-size:13px}.course-boundary p{margin:0 0 8px}.course-boundary p:last-child{margin-bottom:0}@media(max-width:760px){.topin{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding:8px 12px}.topin>div:first-child{min-width:0}.brand{width:150px;height:44px;background-size:150px auto;background-position:center -105px}.topin>a{grid-column:2;grid-row:1}.progbox{grid-column:1/-1;grid-row:2;width:100%}.part-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.part-tab{min-width:0;padding:10px}.part-tab span{font-size:12px}}
 .brand span{color:transparent!important}
 </style></head><body class="course-tier course-tier-foundation">
-<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small" id="courseContext">Part 1 of 4 — First Call Readiness</div></div><div class="progbox"><div class="progrow"><span id="progtext">Lesson 1 of 11</span><span id="pct">9%</span></div><div class="bar"><i id="bar" style="width:9%"></i></div></div><a href="../courses.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Course Map</a></div></header>
+<header class="top"><div class="topin"><div><div class="brand">The Crew <span>Blueprint</span></div><div class="small" id="courseContext">Part 1 of 4 — First Call Readiness</div></div><div class="progbox"><div class="progrow"><span id="progtext">Lesson 1 of 11</span><span id="pct">9%</span></div><div class="bar"><i id="bar" style="width:9%"></i></div></div><a href="../learn.html" style="padding:8px 14px;background:rgba(0,0,0,0.4);border:1px solid #2b3641;border-radius:8px;color:#f1f4f7;font-size:12px;font-weight:800;text-decoration:none;transition:all 200ms;white-space:nowrap;">← Course Map</a></div></header>
 <div class="shell"><nav class="part-tabs" id="partTabs" aria-label="Stagehand Fundamentals parts"></nav><div class="mobile"><select id="mobile" aria-label="Choose a lesson" style="width:100%;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;"></select></div><div class="layout">
 <aside class="side" id="sidebar"></aside>
 <main id="main"></main>
@@ -150,7 +150,7 @@ function syncCourseUrl(){
 
 function bibliographyHref(){
   const returnPath = `${window.location.pathname}${window.location.search}`;
-  return `../visuals/stagehand-fundamentals/bibliography.html?return=${encodeURIComponent(returnPath)}`;
+  return `../sources-v4.html?return=${encodeURIComponent(returnPath)}`;
 }
 
 function buildPartTabs(){
@@ -161,7 +161,7 @@ function buildPartTabs(){
 function buildSidebar(){
   const s = document.getElementById('sidebar');
   const part = courseParts[activePartIndex];
-  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../visuals/stagehand-fundamentals/bibliography.html" onclick="this.href=bibliographyHref()">Sources &amp; course boundaries</a></div>`;
+  let h=`<div class="part-summary"><span class="small">Foundation Tier · Part ${part.num} of ${courseParts.length}</span><strong>${part.title}</strong><span class="small">${part.description}</span><a class="small" href="../sources-v4.html" onclick="this.href=bibliographyHref()">Sources &amp; course boundaries</a></div>`;
   activeModules.forEach((m,mi)=>{
     const isActive = current>=activeModules.slice(0,mi).reduce((s,x)=>s+x.lessons.length,0) && current<activeModules.slice(0,mi+1).reduce((s,x)=>s+x.lessons.length,0);
     h+=`<div class="mod ${isActive?'active':''}" onclick="goModule(${mi})"><span class="num">${m.num}</span><div><b>${m.title}</b><div class="small">${m.lessons.length} lessons</div></div></div>`;
@@ -463,7 +463,7 @@ function render(){
   </section>`;
 
   if(current===0){
-    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../visuals/stagehand-fundamentals/bibliography.html" onclick="this.href=bibliographyHref()">Review the course sources and qualifications.</a></p></div>`;
+    html+=`<div class="card course-boundary"><p><strong>${part.title}</strong> is one focused part of Stagehand Fundamentals. The lesson counter shows your position, not a certification or field-authorization claim.</p><p>Employer rules, venue procedures, union practices, equipment instructions, and the responsible lead control the actual call. <a href="../sources-v4.html" onclick="this.href=bibliographyHref()">Review the course sources and qualifications.</a></p></div>`;
   }
 
   const lessonRenderers={
@@ -489,7 +489,7 @@ function render(){
     ? `<button class="btn primary" onclick="goLesson(${current+1})">Next →</button>`
     : activePartIndex<courseParts.length-1
       ? `<button class="btn primary" onclick="goPart(${activePartIndex+1})">Continue to Part ${activePartIndex+2} →</button>`
-      : `<button class="btn primary" onclick="window.location.href='../courses.html#field-skills'">Continue to Extra Training →</button>`;
+      : `<button class="btn primary" onclick="window.location.href='../learn.html#field-skills'">Continue to Extra Training →</button>`;
 
   html+=`<div class="actions">${previousButton}${nextButton}</div>`;
 

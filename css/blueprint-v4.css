@@ -29,7 +29,7 @@ body{margin:0;min-height:100vh;background:linear-gradient(180deg,#0a0f15 0,#0d14
 a{color:inherit}.shell{width:min(var(--content),calc(100% - 40px));margin-inline:auto}
 .reviewbar{padding:7px 18px;text-align:center;background:#211c10;border-bottom:1px solid rgba(229,173,47,.18);color:#d8c78f;font-size:.73rem;font-weight:750;letter-spacing:.075em;text-transform:uppercase}
 .topbar{position:sticky;top:0;z-index:40;background:rgba(10,15,21,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 8px 30px rgba(0,0,0,.14)}
-.topbar-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{text-decoration:none;font-weight:850;letter-spacing:-.025em;font-size:1.06rem;color:#f7f9fb}.brand span{color:var(--accent-strong)}
+.topbar-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;letter-spacing:-.025em;font-size:1.06rem;color:#f7f9fb}.brand-logo{width:30px;height:36px;object-fit:contain;flex:0 0 auto}.brand-label{display:inline-flex;gap:.28em;align-items:baseline;color:#f7f9fb}.brand-label strong{color:var(--accent-strong);font:inherit}.footer-brand .brand-logo{width:34px;height:40px}
 .nav{display:flex;align-items:center;gap:4px}.nav a{min-height:40px;display:inline-flex;align-items:center;padding:8px 11px;border:1px solid transparent;border-radius:9px;text-decoration:none;color:#c7d1db;font-weight:700;font-size:.87rem;transition:background .16s ease,border-color .16s ease,color .16s ease}.nav a:hover{background:#151e27;color:#fff}.nav a.active{background:#18222d;border-color:#30404f;color:#fff}.nav .work{margin-left:5px;border-color:rgba(229,173,47,.32);background:rgba(229,173,47,.07);color:#f1cc73}.nav .work:hover{border-color:rgba(229,173,47,.55);background:rgba(229,173,47,.13);color:#ffe29c}.clerk-auth-slot{display:flex;align-items:center;gap:4px;margin-left:5px}.nav-toggle{display:none;min-height:42px;border:1px solid var(--line);background:#121923;color:#fff;border-radius:10px;padding:8px 11px;font:inherit;font-weight:750}
 .hero{padding:68px 0 54px;border-bottom:1px solid rgba(255,255,255,.055);background:radial-gradient(circle at 80% 0,rgba(229,173,47,.08),transparent 31%)}.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);gap:48px;align-items:center}.eyebrow,.kicker{display:inline-block;color:#eac86f;font-size:.72rem;font-weight:850;letter-spacing:.135em;text-transform:uppercase}.hero h1{margin:12px 0 18px;font-size:clamp(2.65rem,5.8vw,5.15rem);line-height:.98;letter-spacing:-.052em;max-width:860px}.hero h1 span{color:#f0c45b}.lead{max-width:760px;margin:0;color:#c2ced9;font-size:clamp(1rem,1.5vw,1.17rem);line-height:1.72}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border:1px solid var(--line-strong);border-radius:10px;background:#151e27;color:#f5f7fa;text-decoration:none;font:inherit;font-weight:800;font-size:.91rem;line-height:1.2;cursor:pointer;transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease}.btn:hover{transform:translateY(-1px);border-color:#536779;background:#1b2732;box-shadow:var(--shadow-sm)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#17130b}.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}.btn.locked{background:#141b22;color:#bdc7d0}
@@ -74,3 +74,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   .nav{top:72px}
   .footer .brand{width:170px;height:91px}
 }
+
+/* 18+ account eligibility gate. Production enforcement moves server-side in WordPress. */
+body.age-gate-open{overflow:hidden}
+.age-gate-backdrop{position:fixed;inset:0;z-index:10020;display:grid;place-items:center;padding:18px;background:rgba(2,5,8,.88)}
+.age-gate-dialog{width:min(560px,100%);max-height:calc(100vh - 36px);overflow:auto;padding:28px;border:1px solid var(--line-strong);border-radius:18px;background:linear-gradient(180deg,#18212b,#10171f);box-shadow:var(--shadow);color:var(--ink)}
+.age-gate-dialog h2{margin:10px 0 10px;font-size:clamp(1.55rem,4vw,2.1rem)}
+.age-gate-dialog p{color:var(--muted);line-height:1.6}
+.age-gate-label{display:block;margin:20px 0 7px;color:#e7edf2;font-weight:800}
+.age-gate-input{width:100%;min-height:48px;padding:10px 12px;border:1px solid var(--line-strong);border-radius:10px;background:#0b1117;color:#f5f7f9;font:inherit}
+.age-gate-input:focus{outline:3px solid rgba(115,201,255,.45);outline-offset:2px}
+.age-gate-error{margin:10px 0 0!important;padding:10px 12px;border:1px solid rgba(255,127,127,.35);border-radius:10px;background:rgba(255,92,92,.08);color:#ffd0d0!important;font-weight:700}
+.age-gate-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.age-gate-note{margin:16px 0 0!important;font-size:.78rem}
+.auth-status{color:var(--muted);font-size:.8rem;font-weight:700}
+@media(max-width:620px){.age-gate-backdrop{align-items:start;padding:10px}.age-gate-dialog{padding:21px 16px}.age-gate-actions{flex-direction:column}.age-gate-actions .btn{width:100%}}

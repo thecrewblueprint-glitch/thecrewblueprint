@@ -1,0 +1,179 @@
+{
+  "version": "2026-09-10.1",
+  "status": "prelive_contract",
+  "production_host": "thecrewblueprint.com",
+  "production_runtime": "wordpress",
+  "identity_provider": "clerk",
+  "audience_rule": {
+    "public_browsing_requires_account": false,
+    "account_creation_minimum_age": 18,
+    "birthday_required_only_for_new_account_creation": true,
+    "existing_account_signin_requires_birthday": false,
+    "retain_raw_date_of_birth": false,
+    "authoritative_adult_eligibility": "server_side"
+  },
+  "public_routes": [
+    {
+      "slug": "/",
+      "source": "index.html",
+      "index": "index,follow",
+      "anonymous_view": "public_home"
+    },
+    {
+      "slug": "/start-here/",
+      "source": "start.html",
+      "index": "index,follow",
+      "anonymous_view": "orientation_sample",
+      "member_view": "full_orientation"
+    },
+    {
+      "slug": "/courses/",
+      "source": "learn.html",
+      "index": "index,follow",
+      "anonymous_view": "course_library_sample",
+      "member_view": "full_free_library"
+    },
+    {
+      "slug": "/department-basics/",
+      "source": "departments.html",
+      "index": "index,follow",
+      "anonymous_view": "department_basics_sample",
+      "member_view": "full_department_basics"
+    },
+    {
+      "slug": "/field-skills/",
+      "source": "field.html",
+      "index": "index,follow",
+      "anonymous_view": "field_skill_sample",
+      "member_view": "all_free_field_skills"
+    },
+    {
+      "slug": "/context-labs/",
+      "source": "contexts.html",
+      "index": "index,follow",
+      "anonymous_view": "context_lab_sample",
+      "member_view": "all_free_context_labs"
+    },
+    {
+      "slug": "/about/",
+      "source": "about.html",
+      "index": "index,follow",
+      "anonymous_view": "public"
+    },
+    {
+      "slug": "/contact/",
+      "source": "contact.html",
+      "index": "index,follow",
+      "anonymous_view": "public"
+    },
+    {
+      "slug": "/future-paid-learning/",
+      "source": "advanced.html",
+      "index": "index,follow",
+      "anonymous_view": "future_paid_explainer_only"
+    },
+    {
+      "slug": "/sources/",
+      "source": "sources-v4.html",
+      "index": "index,follow",
+      "anonymous_view": "public_reference"
+    },
+    {
+      "slug": "/privacy-policy/",
+      "source": "privacy-policy.html",
+      "index": "index,follow",
+      "anonymous_view": "public_legal"
+    },
+    {
+      "slug": "/terms-and-conditions/",
+      "source": "terms-and-conditions.html",
+      "index": "index,follow",
+      "anonymous_view": "public_legal"
+    },
+    {
+      "slug": "/cookies-notice/",
+      "source": "cookies-notice.html",
+      "index": "index,follow",
+      "anonymous_view": "public_legal"
+    },
+    {
+      "slug": "/accessibility-statement/",
+      "source": "accessibility-statement.html",
+      "index": "index,follow",
+      "anonymous_view": "public_legal"
+    },
+    {
+      "slug": "/limitation-of-liability/",
+      "source": "limitation-of-liability.html",
+      "index": "index,follow",
+      "anonymous_view": "public_legal"
+    },
+    {
+      "slug": "/affiliate-disclosure/",
+      "source": "affiliate-disclosure.html",
+      "index": "index,follow",
+      "anonymous_view": "public_legal"
+    },
+    {
+      "slug": "/create-account/",
+      "source": "sign-up.html",
+      "index": "noindex,nofollow",
+      "anonymous_view": "age_eligibility_then_clerk_signup"
+    }
+  ],
+  "learner_route_policy": {
+    "permalink_pattern": "/learn/{slug}/",
+    "anonymous_response": "sample_or_signin_gate",
+    "eligible_member_response": "full_free_body",
+    "ineligible_or_unauthenticated_full_body_delivery": false,
+    "direct_static_full_body_files_in_public_webroot": false,
+    "authenticated_response_cache_control": "private, no-store",
+    "authenticated_response_indexing": "noindex,nofollow",
+    "sitemap_include_full_learner_routes": false
+  },
+  "clerk_policy": {
+    "production_keys_required": true,
+    "server_verify_session": true,
+    "sign_in_transfer_to_sign_up": false,
+    "sign_up_must_pass_age_screen": true,
+    "eligibility_storage": "protected server record or Clerk private metadata",
+    "unsafe_metadata_authoritative": false
+  },
+  "wordpress_policy": {
+    "native_public_registration": false,
+    "comments": false,
+    "wordpress_is_canonical_router": true,
+    "wordpress_generates_public_sitemap": true,
+    "strip_staging_noindex_from_indexable_public_routes": true,
+    "preserve_noindex_on_account_and_authenticated_responses": true,
+    "canonical_urls_use_wordpress_permalinks": true
+  },
+  "paid_release_policy": {
+    "pricing": false,
+    "checkout": false,
+    "subscription": false,
+    "paid_entitlement": false,
+    "production_atlas_access": false,
+    "advanced_lesson_bodies": false,
+    "allowed_public_paid_content": "future paid learning explainer only"
+  },
+  "forbidden_public_artifact": [
+    "research/",
+    "archive/",
+    "content/archive/",
+    "docs/",
+    "planning/",
+    "legal-tasks/",
+    "ai-communication/",
+    "handoffs/",
+    "data/generated/web-client-projection.json",
+    "js/ecosystem-courses.js",
+    "js/frontier-expansion.js",
+    "js/ecosystem-depth-authoring.js",
+    "js/ecosystem-depth-runtime-normalize.js",
+    "curriculum-map.html",
+    "courses.html",
+    "sitemap.xml",
+    "robots.txt"
+  ]
+}

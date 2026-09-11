@@ -3,8 +3,8 @@
 
   const script=document.currentScript;
   const projectionUrl=script&&script.src
-    ? new URL('../data/generated/web-client-projection.json',script.src).href
-    : 'data/generated/web-client-projection.json';
+    ? new URL('../data/generated/free-web-client-projection.json',script.src).href
+    : 'data/generated/free-web-client-projection.json';
 
   const laneLabels={
     stagehand_generalist:'Stagehand / Generalist',
@@ -294,9 +294,15 @@
 
   const renderContexts=(node,data)=>renderCourseCollection(
     node,
-    (data.courses||[]).filter(c=>c.placement?.learner_surface==='contexts'&&['free_public','public_reference'].includes(c.access?.delivery_state)),
-    'No Context Lab nodes are present in the generated projection.',
+    (data.courses||[]).filter(c=>c.placement?.learner_surface==='contexts'&&c.access?.delivery_state==='free_public'),
+    'No free Context Lab nodes are present in the generated projection.',
     {showLane:true}
+  );
+
+  const renderDepartments=(node,data)=>renderGroupedLibrary(
+    node,
+    (data.courses||[]).filter(c=>c.placement?.learner_surface==='departments'&&c.access?.delivery_state==='free_public'),
+    'No free department basics are present in the generated projection.'
   );
 
   const renderAdvanced=(node)=>{
@@ -367,13 +373,14 @@
     'successor-reference-library':renderReferenceLibrary,
     'successor-field-skills':renderField,
     'successor-contexts':renderContexts,
+    'successor-departments':renderDepartments,
     'successor-advanced':renderAdvanced,
     'successor-atlas-links':renderAtlas,
     'successor-sources':renderSources,
     'successor-integrity':renderIntegrity
   };
 
-  const targets=[...document.querySelectorAll('[data-successor-overview],[data-successor-lanes],[data-successor-free-library],[data-successor-reference-library],[data-successor-field-skills],[data-successor-contexts],[data-successor-advanced],[data-successor-atlas-links],[data-successor-sources],[data-successor-integrity]')];
+  const targets=[...document.querySelectorAll('[data-successor-overview],[data-successor-lanes],[data-successor-free-library],[data-successor-reference-library],[data-successor-field-skills],[data-successor-contexts],[data-successor-departments],[data-successor-advanced],[data-successor-atlas-links],[data-successor-sources],[data-successor-integrity]')];
   if(!targets.length)return;
   targets.forEach(node=>setStatus(node,'Loading canonical learning graph…'));
 

@@ -35,32 +35,67 @@ jobs:
 
       - name: Validate successor public projection
         run: node scripts/validate-successor-projections.mjs
+      - name: Generate free public client projection
+        run: node scripts/generate-free-web-client-projection.mjs
+
+      - name: Validate free public client projection
+        run: node scripts/validate-free-web-client-projection.mjs
+
+      - name: Validate free learner scope
+        run: node scripts/validate-free-learner-scope.mjs
+      - name: Generate free course runtime
+        run: node scripts/generate-free-course-runtime.mjs
+
+      - name: Validate free course runtime
+        run: node scripts/validate-free-course-runtime.mjs
 
       - name: Check successor client syntax
         run: node --check js/successor-client.js
 
+      - name: Check shared learner client syntax
+        run: node --check js/blueprint-v4.js
+
       - name: Validate successor client
         run: node scripts/validate-successor-client.mjs
+
+      - name: Audit free release readiness
+        run: node scripts/audit-free-release-readiness.mjs
+
+      - name: Validate free assessment policy
+        run: node scripts/validate-free-assessment-policy.mjs
+
+      - name: Validate course consent coverage
+        run: node scripts/validate-course-consent.mjs
+
+      - name: Validate legal reconciliation
+        run: node scripts/validate-legal-reconciliation.mjs
+
+      - name: Validate public legal and behavior
+        run: node scripts/validate-public-legal-behavior.mjs
+
+      - name: Validate WordPress production contract
+        run: node scripts/validate-wordpress-production-contract.mjs
+
+      - name: Validate accessibility structural baseline
+        run: node scripts/validate-accessibility-baseline.mjs
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build public artifact
-        run: |
-          rm -rf _site
-          mkdir -p _site
-          rsync -a \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.claude' \
-            --exclude='research' \
-            --exclude='content/archive' \
-            --exclude='ai-communication' \
-            --exclude='handoffs' \
-            --exclude='docs' \
-            --exclude='archive' \
-            --exclude='*.md' \
-            ./ _site/
+      - name: Build free-tier release artifact
+        run: node scripts/build-free-release-artifact.mjs
+
+      - name: Validate release network surface
+        run: node scripts/validate-release-network-surface.mjs
+
+      - name: Build WordPress production package
+        run: node scripts/build-wordpress-production-package.mjs
+
+      - name: Check WordPress plugin PHP syntax
+        run: php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+
+      - name: Validate WordPress production package
+        run: node scripts/validate-wordpress-production-package.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

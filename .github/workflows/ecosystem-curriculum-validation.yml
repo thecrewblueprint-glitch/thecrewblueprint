@@ -23,8 +23,24 @@ jobs:
         run: node scripts/generate-successor-projections.mjs
       - name: Validate successor projections
         run: node scripts/validate-successor-projections.mjs
+      - name: Generate free public client projection
+        run: node scripts/generate-free-web-client-projection.mjs
+
+      - name: Validate free public client projection
+        run: node scripts/validate-free-web-client-projection.mjs
+
+      - name: Validate free learner scope
+        run: node scripts/validate-free-learner-scope.mjs
+      - name: Generate free course runtime
+        run: node scripts/generate-free-course-runtime.mjs
+
+      - name: Validate free course runtime
+        run: node scripts/validate-free-course-runtime.mjs
       - name: Check successor client syntax
         run: node --check js/successor-client.js
+
+      - name: Check shared learner client syntax
+        run: node --check js/blueprint-v4.js
       - name: Validate successor client
         run: node scripts/validate-successor-client.mjs
       - name: Audit free release readiness
@@ -37,6 +53,37 @@ jobs:
         run: node scripts/validate-ecosystem-curriculum.mjs
       - name: Validate course consent coverage
         run: node scripts/validate-course-consent.mjs
+      - name: Validate legal reconciliation
+        run: node scripts/validate-legal-reconciliation.mjs
+      - name: Validate public legal and behavior
+        run: node scripts/validate-public-legal-behavior.mjs
+
+      - name: Validate WordPress production contract
+        run: node scripts/validate-wordpress-production-contract.mjs
+      - name: Build free-tier release artifact
+        run: node scripts/build-free-release-artifact.mjs
+
+      - name: Validate release network surface
+        run: node scripts/validate-release-network-surface.mjs
+
+      - name: Build WordPress production package
+        run: node scripts/build-wordpress-production-package.mjs
+
+      - name: Check WordPress plugin PHP syntax
+        run: php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+
+      - name: Validate WordPress production package
+        run: node scripts/validate-wordpress-production-package.mjs
+
+      - name: Upload WordPress production ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: crew-blueprint-wordpress-production
+          path: |
+            _wordpress/the-crew-blueprint-production.zip
+            _wordpress/the-crew-blueprint-production.manifest.json
+          if-no-files-found: error
+          retention-days: 7
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
       - name: Generate matrix views
