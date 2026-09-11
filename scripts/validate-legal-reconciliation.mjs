@@ -7,6 +7,8 @@ const rootDir = path.resolve(scriptDir, '..');
 const terms = await readFile(path.join(rootDir, 'terms-and-conditions.html'), 'utf8');
 const limitation = await readFile(path.join(rootDir, 'limitation-of-liability.html'), 'utf8');
 const consent = await readFile(path.join(rootDir, 'js', 'course-consent.js'), 'utf8');
+const privacy = await readFile(path.join(rootDir, 'privacy-policy.html'), 'utf8');
+const cookies = await readFile(path.join(rootDir, 'cookies-notice.html'), 'utf8');
 const errors = [];
 
 function requireText(haystack, needle, label) {
@@ -28,7 +30,15 @@ requireText(terms, 'third-party claims', 'narrowed indemnification scope');
 requireText(terms, 'reasonable defense costs and attorneys&rsquo; fees', 'indemnification costs');
 requireText(terms, 'require a fresh affirmative acceptance', 'Terms change acceptance');
 requireText(limitation, 'require a fresh affirmative acceptance', 'Limitation change acceptance');
-requireText(consent, "var CONSENT_VERSION = '2026-08-30.3'", 'consent version');
+requireText(consent, "var CONSENT_VERSION = '2026-09-10.1'", 'consent version');
+requireText(consent, "AGE_GATE_VERSION = '2026-09-10.1'", 'birthday age-gate version');
+requireText(consent, 'birthDate', 'birthday account metadata handling');
+requireText(privacy, 'date of birth', 'privacy birthday disclosure');
+requireText(privacy, 'Clerk', 'privacy authentication provider disclosure');
+requireText(privacy, 'under 18', 'privacy under-18 restriction');
+requireText(cookies, 'Clerk', 'cookies authentication disclosure');
+requireText(cookies, 'session tokens', 'cookies session-token disclosure');
+requireText(terms, 'No pricing, checkout, subscription, or paid entitlement is active in this release.', 'future-paid noncommercial boundary');
 requireText(consent, 'ageMajorityConfirmed: true', 'adult eligibility record');
 
 if (/mandatory binding arbitration|class action waiver/i.test(terms + limitation)) {
@@ -46,5 +56,6 @@ if (errors.length) {
   console.log('- non-waivable-liability carve-outs preserved');
   console.log('- indemnification narrowed to specified third-party claims');
   console.log('- material revisions require renewed course acknowledgment');
+  console.log('- 18+ birthday-gated account model is reconciled across Terms, Privacy, Cookies and consent runtime');
   console.log('- mandatory arbitration and class waiver remain deferred for counsel');
 }
