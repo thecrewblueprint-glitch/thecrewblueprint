@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var CONSENT_VERSION = '2026-08-30.3';
+  var CONSENT_VERSION = '2026-09-10.1';
   var STORAGE_KEY = 'cbCourseConsent.v1';
   var scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
   var siteRoot = new URL('../', scriptUrl);
@@ -89,7 +89,7 @@
           '<input id="cb-consent-safety" type="checkbox" />' +
           '<label for="cb-consent-safety">I understand that this material is general education only. It does not qualify, certify, authorize, or supervise me to perform physical work. Before doing any task, I must obtain required hands-on training and authorization, follow employer and site rules, and work under qualified supervision.</label>' +
         '</div>' +
-        '<p class="cb-consent-storage">This acceptance is stored only in this browser so the gate does not repeat on every course page. It is not an operator-held account, identity, IP-address, or server-side acceptance record.</p>' +
+        '<p class="cb-consent-storage">The current acknowledgment version and acceptance time are recorded for course-access purposes. Browser storage may be used on this build, and the production account system may retain account-linked acceptance records as described in the Privacy Policy.</p>' +
         '<p id="cb-consent-action" class="cb-consent-action">By selecting all three boxes and clicking <strong>Agree and enter course</strong>, you confirm your eligibility and affirmatively agree to the linked terms and acknowledgments.</p>' +
         '<div class="cb-consent-actions">' +
           '<a class="cb-consent-exit" href="' + coursesUrl + '">Leave course</a>' +
