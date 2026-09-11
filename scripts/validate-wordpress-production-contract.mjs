@@ -33,10 +33,10 @@ for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-lab
 check(bySlug.get('/create-account/')?.index==='noindex,nofollow','Create Account must remain noindex/nofollow.');
 
 for(const route of publicRoutes.filter(item=>canonicalCheckedSources.has(item.source))){
-  const html=await readFile(path.join(root,item.source),'utf8');
+  const html=await readFile(path.join(root,route.source),'utf8');
   const canonical=html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1]||null;
   const expected='https://'+contract.production_host+route.slug;
-  check(canonical===expected,`${item.source}: canonical mismatch; expected ${expected}, found ${canonical||'none'}.`);
+  check(canonical===expected,`${route.source}: canonical mismatch; expected ${expected}, found ${canonical||'none'}.`);
 }
 
 const learner=contract.learner_route_policy||{};
