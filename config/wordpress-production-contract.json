@@ -72,31 +72,31 @@
       "anonymous_view": "public_reference"
     },
     {
-      "slug": "/privacy/",
+      "slug": "/privacy-policy/",
       "source": "privacy-policy.html",
       "index": "index,follow",
       "anonymous_view": "public_legal"
     },
     {
-      "slug": "/terms/",
+      "slug": "/terms-and-conditions/",
       "source": "terms-and-conditions.html",
       "index": "index,follow",
       "anonymous_view": "public_legal"
     },
     {
-      "slug": "/cookies/",
+      "slug": "/cookies-notice/",
       "source": "cookies-notice.html",
       "index": "index,follow",
       "anonymous_view": "public_legal"
     },
     {
-      "slug": "/accessibility/",
+      "slug": "/accessibility-statement/",
       "source": "accessibility-statement.html",
       "index": "index,follow",
       "anonymous_view": "public_legal"
     },
     {
-      "slug": "/liability/",
+      "slug": "/limitation-of-liability/",
       "source": "limitation-of-liability.html",
       "index": "index,follow",
       "anonymous_view": "public_legal"
