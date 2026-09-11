@@ -101,6 +101,17 @@ async function exists(rel){
   try{return (await stat(path.join(root,rel))).isFile();}catch{return false;}
 }
 
+async function stripExternalFontLoads(){
+  for(const rel of [...copied].filter(file=>file.endsWith('.html'))){
+    const target=path.join(outDir,rel);
+    let html=await readFile(target,'utf8');
+    const before=html;
+    html=html.replace(/\s*<link\b[^>]*href=["']https:\/\/fonts\.googleapis\.com[^"']*["'][^>]*>/gi,'');
+    html=html.replace(/\s*<link\b[^>]*href=["']https:\/\/fonts\.gstatic\.com[^"']*["'][^>]*>/gi,'');
+    if(html!==before)await writeFile(target,html,'utf8');
+  }
+}
+
 async function copy(rel){
   if(copied.has(rel))return;
   if(prohibited(rel)){errors.push('Prohibited release path requested: '+rel);return;}
@@ -167,6 +178,8 @@ for(const forbidden of prohibitedExact){
   if(copied.has(forbidden))errors.push('Forbidden file exists in release artifact: '+forbidden);
 }
 
+await stripExternalFontLoads();
+
 const manifest={
   release_scope:'free_tier_only',
   public_pages:publicPages,
@@ -191,4 +204,5 @@ if(errors.length){
   console.log(`- ${manifest.learner_route_count} allowed learner routes`);
   console.log(`- ${manifest.copied_files.length} total files copied`);
   console.log('- paid/advanced course bodies and mixed runtime catalogs excluded');
+  console.log('- external Google Fonts/preconnect tags stripped from the release artifact; system font fallbacks remain');
 }
