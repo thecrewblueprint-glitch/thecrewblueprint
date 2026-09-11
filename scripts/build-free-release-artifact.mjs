@@ -10,6 +10,13 @@ const manifestPath=path.join(generatedDir,'free-release-artifact-manifest.json')
 
 const projection=JSON.parse(await readFile(path.join(generatedDir,'free-web-client-projection.json'),'utf8'));
 
+const foundationPages=[
+  'courses-v4/crew-ready.html',
+  'courses-v4/systems-thinking.html',
+  'courses-v4/shop-logistics.html',
+  'courses-v4/department-explorer.html'
+];
+
 const publicPages=[
   'index.html',
   'start.html',
@@ -37,7 +44,7 @@ const learnerRoutes=(projection.courses||[])
   .filter(Boolean);
 
 const routeFiles=learnerRoutes.map(route=>route.split(/[?#]/)[0]).filter(Boolean);
-const htmlAllowlist=new Set([...publicPages,...routeFiles]);
+const htmlAllowlist=new Set([...publicPages,...foundationPages,...routeFiles]);
 
 const explicitDynamicAssets=[
   'css/blueprint-v4.css',
@@ -161,6 +168,7 @@ for(const forbidden of prohibitedExact){
 const manifest={
   release_scope:'free_tier_only',
   public_pages:publicPages,
+  foundation_pages:foundationPages,
   learner_route_count:learnerRoutes.length,
   learner_route_files:[...new Set(routeFiles)].sort(),
   copied_files:[...copied].sort(),
@@ -177,6 +185,7 @@ if(errors.length){
 }else{
   console.log('Free release artifact built from explicit allowlists.');
   console.log(`- ${manifest.public_pages.length} public shell/legal pages`);
+  console.log(`- ${manifest.foundation_pages.length} authenticated foundation course pages`);
   console.log(`- ${manifest.learner_route_count} allowed learner routes`);
   console.log(`- ${manifest.copied_files.length} total files copied`);
   console.log('- paid/advanced course bodies and mixed runtime catalogs excluded');
