@@ -21,7 +21,7 @@ const limitation = await readFile(path.join(rootDir, 'limitation-of-liability.ht
 const signup = await readFile(path.join(rootDir, 'sign-up.html'), 'utf8');
 
 const version = consentRuntime.match(/CONSENT_VERSION = '([^']+)'/)?.[1];
-check(version === '2026-09-10.1', `unexpected consent version: ${version || 'missing'}`);
+check(version === '2026-09-10.2', `unexpected consent version: ${version || 'missing'}`);
 check(consentRuntime.includes('cbCourseConsent.v1'), 'runtime is missing its versioned local-storage key');
 check(signup.includes("AGE_GATE_VERSION='2026-09-10.2'"), 'sign-up page is missing the current account eligibility version');
 check(signup.includes('type="date"'), 'sign-up page is missing the neutral birthday field');
@@ -31,8 +31,6 @@ check(signup.includes('cb_age_screen_ineligible'), 'sign-up page is missing the 
 check(consentRuntime.includes('type="checkbox"'), 'runtime is missing affirmative checkboxes');
 check(!consentRuntime.includes('type="checkbox" checked'), 'consent checkboxes must not be preselected');
 check(consentRuntime.includes('Agree and enter course'), 'runtime is missing explicit assent button text');
-check(consentRuntime.includes('id="cb-consent-age"'), 'runtime is missing the adult-eligibility confirmation');
-check(consentRuntime.includes('ageMajorityConfirmed: true'), 'runtime is missing the stored adult-eligibility confirmation');
 check(consentRuntime.includes('Terms and Conditions'), 'runtime is missing the Terms link');
 check(consentRuntime.includes('Assumption of Risk, Release, and Limitation of Liability'), 'runtime is missing the release-and-limitation link');
 check(consentRuntime.includes('aria-modal="true"'), 'runtime is missing modal semantics');
@@ -74,6 +72,6 @@ if (errors.length) {
   console.log(`- acknowledgment version ${version}`);
   console.log(`- ${courseFiles.length} discovered top-level course routes gated`);
   console.log('- route count is discovered dynamically; no stale hard-coded inventory count');
-  console.log('- adult eligibility, unchecked legal acknowledgments, and explicit assent verified');
+  console.log('- account eligibility is handled at sign-up; course gate verifies unchecked legal acknowledgments and explicit assent');
   console.log('- sign-up-only age eligibility, data minimization, legal acknowledgment, and version alignment verified');
 }
