@@ -375,6 +375,35 @@
     });
   }
 
+  function bindMemberActions(){
+    document.querySelectorAll('[data-member-sign-in]').forEach(node=>{
+      if(node.dataset.memberBound==='true')return;
+      node.dataset.memberBound='true';
+      node.addEventListener('click',e=>{
+        e.preventDefault();
+        if(window.Clerk&&typeof window.Clerk.openSignIn==='function')window.Clerk.openSignIn();
+      });
+    });
+    document.querySelectorAll('[data-member-sign-up]').forEach(node=>{
+      if(node.dataset.memberBound==='true')return;
+      node.dataset.memberBound='true';
+      node.addEventListener('click',e=>{
+        e.preventDefault();
+        if(window.Clerk&&typeof window.Clerk.openSignUp==='function')window.Clerk.openSignUp();
+      });
+    });
+  }
+
+  function renderMemberAccess(state){
+    const signedIn=state==='ready'&&window.Clerk&&window.Clerk.isSignedIn;
+    document.querySelectorAll('[data-member-full]').forEach(node=>{node.hidden=!signedIn;});
+    document.querySelectorAll('[data-member-sample]').forEach(node=>{node.hidden=!!signedIn;});
+    document.querySelectorAll('[data-member-state]').forEach(node=>{
+      node.textContent=signedIn?'Signed in · full free library':'Preview · sign in for the full free library';
+    });
+    if(!signedIn)bindMemberActions();
+  }
+
   function renderAdvancedGate(state){
     const root=document.querySelector('[data-advanced-gate]');
     if(!root)return;
@@ -415,11 +444,13 @@
       bindClerkAction('clerk-sign-up','openSignUp');
     }
     renderAdvancedGate('ready');
+    renderMemberAccess('ready');
   }
 
   window.addEventListener('load',async()=>{
     if(!window.Clerk){
       renderAdvancedGate('unavailable');
+      renderMemberAccess('unavailable');
       return;
     }
     try{
@@ -429,6 +460,7 @@
     }catch(e){
       console.error('Clerk failed to load',e);
       renderAdvancedGate('unavailable');
+      renderMemberAccess('unavailable');
     }
   });
 })();
