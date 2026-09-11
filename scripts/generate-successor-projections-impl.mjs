@@ -104,7 +104,7 @@ function writeJsonl(filePath, rows) {
 function deriveSurface(group) {
   if (!group) return 'learn';
   if (group.node_role === 'field_skill_library') return 'field';
-  if (group.lane === 'context_labs' || group.node_role === 'context_reference') return 'contexts';
+  if (group.lane === 'context_labs' || group.node_role === 'context_reference' || group.visibility === 'context_labs') return 'contexts';
   if (group.primary_bucket === 'CAREER_BUSINESS_RIGHTS') {
     return group.node_role === 'business_rights_modules' ? 'grow' : 'find_work';
   }
@@ -280,7 +280,7 @@ const initialEntryGroups = mappingGroups.filter((group) => group.lane_status ===
 const futureEntryGroups = mappingGroups.filter((group) => group.lane_status === 'future' && group.node_role?.includes('lane_entry'));
 const commonGroup = mappingGroups.find((group) => group.primary_bucket === 'COMMON_FOUNDATION');
 const fieldGroup = mappingGroups.find((group) => group.node_role === 'field_skill_library');
-const contextGroups = mappingGroups.filter((group) => group.lane === 'context_labs' || group.node_role === 'context_reference' || group.primary_bucket === 'CROSS_LANE_CONTEXT');
+const contextGroups = mappingGroups.filter((group) => deriveSurface(group) === 'contexts');
 const careerGroups = mappingGroups.filter((group) => group.primary_bucket === 'CAREER_BUSINESS_RIGHTS');
 const commonId = commonGroup?.course_ids?.[0] || null;
 
