@@ -397,8 +397,8 @@
     try{window.sessionStorage.removeItem(AGE_GATE_PENDING_KEY);}catch(e){}
   }
 
-  function storedBirthDate(){
-    return String(window.Clerk?.user?.unsafeMetadata?.birthDate||'');
+  function storedAdultEligibility(){
+    return window.Clerk?.user?.unsafeMetadata?.adultEligibility===true;
   }
 
   function openAgeGate(intent){
@@ -455,23 +455,27 @@
     });
   }
 
-  async function persistBirthDateIfNeeded(value){
+  async function persistAdultEligibilityIfNeeded(){
     const user=window.Clerk?.user;
-    if(!user||!value||storedBirthDate())return;
+    if(!user||storedAdultEligibility())return;
     try{
       await user.updateMetadata({unsafeMetadata:{
-        birthDate:value,
+        adultEligibility:true,
         ageGateVersion:AGE_GATE_VERSION,
         ageGateConfirmedAt:new Date().toISOString()
       }});
     }catch(e){
-      console.error('Could not persist birthday to Clerk staging metadata',e);
+      console.error('Could not persist adult-eligibility staging metadata',e);
     }
   }
 
   async function ensureSignedInAgeEligibility(){
     if(!window.Clerk?.isSignedIn||!window.Clerk?.user)return false;
-    let dob=storedBirthDate()||pendingBirthDate();
+    if(storedAdultEligibility()){
+      clearPendingBirthDate();
+      return true;
+    }
+    let dob=pendingBirthDate();
     if(!dob){
       dob=await openAgeGate('profile');
       if(!dob)return false;
@@ -481,7 +485,7 @@
       try{await window.Clerk.signOut();}catch(e){}
       return false;
     }
-    await persistBirthDateIfNeeded(dob);
+    await persistAdultEligibilityIfNeeded();
     clearPendingBirthDate();
     return true;
   }
@@ -491,7 +495,7 @@
     if(!dob||!window.Clerk)return;
     if(action==='openSignUp'&&typeof window.Clerk.openSignUp==='function'){
       window.Clerk.openSignUp({unsafeMetadata:{
-        birthDate:dob,
+        adultEligibility:true,
         ageGateVersion:AGE_GATE_VERSION,
         ageGateConfirmedAt:new Date().toISOString()
       }});
