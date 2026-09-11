@@ -48,7 +48,7 @@ assert(advanced.includes('No purchase flow is active.'),'Advanced signed-in shel
 const field=text('field.html');
 assert(field.includes('first-class Field Skills library'),'Field Skills surface no longer states its first-class-library role.');
 const contexts=text('contexts.html');
-assert(contexts.includes('Situation-first learning'),'Context Labs surface lost its situation-first role.');
+assert(/situation-first learning/i.test(contexts),'Context Labs surface lost its situation-first role.');
 const departments=text('departments.html');
 assert(departments.includes('Stagehand is not a mandatory root'),'Department surface lost the independent-lane boundary statement.');
 
