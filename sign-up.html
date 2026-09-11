@@ -70,7 +70,7 @@
     return document.cookie.split(';').some(part=>part.trim().startsWith(INELIGIBLE_COOKIE+'='));
   }
   function markIneligibleSession(){
-    document.cookie=INELIGIBLE_COOKIE+'=1; Path=/; SameSite=Lax; Secure';
+    document.cookie=INELIGIBLE_COOKIE+'=1; Path=/; Max-Age=1800; SameSite=Lax; Secure';
   }
 
   function parseDob(value){
@@ -107,8 +107,9 @@
     const date=parseDob(dob.value);
     if(!date){showError('Enter a valid date of birth.');return;}
     if(date>new Date()){showError('Enter a valid date of birth.');return;}
-    if(!eligible(dob.value)){markIneligibleSession();showError('This account is not eligible for registration.');button.disabled=true;dob.disabled=true;legal.disabled=true;return;}
+    if(!eligible(dob.value)){markIneligibleSession();dob.value='';showError('This account is not eligible for registration.');button.disabled=true;dob.disabled=true;legal.disabled=true;return;}
     if(!legal.checked){showError('Accept the Terms and acknowledge the Privacy Policy to continue.');return;}
+    dob.value='';
     try{
       if(!await ensureClerkLoaded()){showError('Account creation is temporarily unavailable.');return;}
       await window.Clerk.load({
