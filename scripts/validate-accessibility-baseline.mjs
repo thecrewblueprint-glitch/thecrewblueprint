@@ -13,6 +13,7 @@ const critical = [
   'sources-v4.html',
   'about.html',
   'contact.html',
+  'sign-up.html',
   'privacy-policy.html',
   'terms-and-conditions.html',
   'cookies-notice.html',
