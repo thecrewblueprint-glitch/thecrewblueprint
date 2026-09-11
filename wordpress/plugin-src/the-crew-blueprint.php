@@ -65,7 +65,7 @@ function cbp_asset_url(string $rel = ''): string {
     return CBP_PLUGIN_URL . 'assets/' . ltrim($rel, '/');
 }
 
-function cbp_runtime_config_script(): string {
+function cbp_runtime_config_script(bool $serverAuthenticated = false): string {
     $frontend = defined('CBP_CLERK_FRONTEND_API') ? rtrim((string)CBP_CLERK_FRONTEND_API, '/') : '';
     $publishable = defined('CBP_CLERK_PUBLISHABLE_KEY') ? (string)CBP_CLERK_PUBLISHABLE_KEY : '';
     $config = [
@@ -81,6 +81,7 @@ function cbp_runtime_config_script(): string {
         'clerkUiUrl' => $frontend ? $frontend . '/npm/@clerk/ui@1/dist/ui.browser.js' : '',
         'clerkJsUrl' => $frontend ? $frontend . '/npm/@clerk/clerk-js@6/dist/clerk.browser.js' : '',
         'production' => true,
+        'serverAuthenticated' => $serverAuthenticated,
     ];
     return '<script>window.CBP_CONFIG=' . wp_json_encode($config, JSON_UNESCAPED_SLASHES) . ';</script>';
 }
@@ -92,7 +93,7 @@ function cbp_load_document(string $file): ?string {
     return is_string($value) ? $value : null;
 }
 
-function cbp_render_document(string $file, bool $private = false): never {
+function cbp_render_document(string $file, bool $private = false, bool $serverAuthenticated = false): never {
     $html = cbp_load_document($file);
     if ($html === null) {
         status_header(404);
@@ -102,7 +103,7 @@ function cbp_render_document(string $file, bool $private = false): never {
     }
 
     $html = str_replace('__CB_ASSET_BASE__', esc_url(cbp_asset_url()), $html);
-    $runtime = cbp_runtime_config_script();
+    $runtime = cbp_runtime_config_script($serverAuthenticated);
     if ($private) $runtime .= '<script>window.CBP_SERVER_AUTHORIZED=true;</script>';
     $html = str_replace('__CB_RUNTIME_CONFIG__', $runtime, $html);
 
@@ -452,7 +453,7 @@ add_action('template_redirect', function (): void {
             wp_safe_redirect(add_query_arg(['signin' => '1', 'return_url' => rawurlencode($return)], home_url('/courses/')));
             exit;
         }
-        cbp_render_document('protected/' . $route['file'], true);
+        cbp_render_document('protected/' . $route['file'], true, true);
     }
 
     $route = cbp_public_route_for_path($path);
@@ -460,7 +461,7 @@ add_action('template_redirect', function (): void {
 
     $memberFile = $route['member_file'] ?? null;
     if ($memberFile && cbp_authenticated_adult(false)) {
-        cbp_render_document('public/' . $memberFile, false);
+        cbp_render_document('public/' . $memberFile, false, true);
     }
     cbp_render_document('public/' . $route['file'], false);
 }, 0);
