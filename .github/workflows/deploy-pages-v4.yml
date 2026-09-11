@@ -52,6 +52,9 @@ jobs:
       - name: Check successor client syntax
         run: node --check js/successor-client.js
 
+      - name: Check shared learner client syntax
+        run: node --check js/blueprint-v4.js
+
       - name: Validate successor client
         run: node scripts/validate-successor-client.mjs
 
