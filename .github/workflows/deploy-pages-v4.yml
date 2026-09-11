@@ -40,6 +40,9 @@ jobs:
 
       - name: Validate free public client projection
         run: node scripts/validate-free-web-client-projection.mjs
+
+      - name: Validate free learner scope
+        run: node scripts/validate-free-learner-scope.mjs
       - name: Generate free course runtime
         run: node scripts/generate-free-course-runtime.mjs
 
