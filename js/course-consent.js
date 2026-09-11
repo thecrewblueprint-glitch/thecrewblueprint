@@ -241,6 +241,60 @@
     if (signUp) signUp.addEventListener('click', function () { window.Clerk.openSignUp(); });
   }
 
+  function currentCanonicalRoute() {
+    var path = window.location.pathname;
+    var basePath = siteRoot.pathname;
+    if (path.indexOf(basePath) === 0) path = path.slice(basePath.length);
+    else path = path.replace(/^\/+/, '');
+    return path + window.location.search;
+  }
+
+  async function currentRouteIsFree() {
+    try {
+      var projectionUrl = new URL('data/generated/web-client-projection.json', siteRoot).href;
+      var response = await fetch(projectionUrl, { cache: 'no-store' });
+      if (!response.ok) return false;
+      var data = await response.json();
+      var route = currentCanonicalRoute();
+      return (data.courses || []).some(function (course) {
+        return course
+          && course.identity
+          && course.identity.route_id === route
+          && course.access
+          && course.access.delivery_state === 'free_public'
+          && course.identity.route_state === 'materialized';
+      });
+    } catch (error) {
+      console.error('Crew Blueprint access projection check failed', error);
+      return false;
+    }
+  }
+
+  function showUnavailableCourseGate() {
+    if (memberBackdrop) return;
+    var pageChildren = Array.prototype.slice.call(document.body.children);
+    var priorStates = pageChildren.map(function (element) {
+      return { element: element, inert: element.inert, ariaHidden: element.getAttribute('aria-hidden') };
+    });
+    var backdrop = document.createElement('div');
+    backdrop.className = 'cb-consent-backdrop';
+    backdrop.innerHTML =
+      '<section class="cb-consent-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-unavailable-title">' +
+        '<span class="cb-consent-kicker">Not in the current free release</span>' +
+        '<h1 id="cb-unavailable-title">This learning item is not available.</h1>' +
+        '<p>Advanced, technician-depth, specialist-review, and unreleased material remains locked. Sign-in does not unlock it.</p>' +
+        '<div class="cb-consent-actions"><a class="cb-consent-exit" href="' + coursesUrl + '">Back to free courses</a></div>' +
+      '</section>';
+    backdrop._cbPriorStates = priorStates;
+    document.body.classList.add('cb-consent-open');
+    priorStates.forEach(function (state) {
+      state.element.inert = true;
+      state.element.setAttribute('aria-hidden', 'true');
+    });
+    document.body.appendChild(backdrop);
+    memberBackdrop = backdrop;
+  }
+
   function startCourseAfterAuth() {
     if (courseStarted) return;
     courseStarted = true;
@@ -250,6 +304,11 @@
 
   async function startMemberProtectedCourse() {
     installCourseShell();
+    var freeRoute = await currentRouteIsFree();
+    if (!freeRoute) {
+      showUnavailableCourseGate();
+      return;
+    }
     var clerkReady = await ensureClerk();
     if (!clerkReady) {
       showMemberGate(false);
