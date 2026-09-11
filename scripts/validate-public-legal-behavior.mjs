@@ -72,6 +72,13 @@ check(!terms.includes('nonpayment when paid services eventually exist'), 'Terms 
 check(terms.includes('No pricing, checkout, subscription, or paid entitlement is active in this release.'), 'Terms are missing the future-paid noncommercial boundary.');
 check(liability.includes('No waiver or liability cap is guaranteed to be enforceable'), 'Liability page overstates enforceability or lacks the enforceability notice.');
 
+const reviewOnlyPatterns=[
+  /owner review/i,
+  /research rebuild/i,
+  /public audit copy/i,
+  /rebuild in progress/i
+];
+
 const prohibitedNetworkPatterns = [
   /googletagmanager\.com/i,
   /google-analytics\.com/i,
@@ -85,6 +92,10 @@ const prohibitedNetworkPatterns = [
 
 for (const rel of publicPages) {
   const html = await text(rel);
+  check(!html.includes('atlas.thecrewblueprint.com'), `${rel}: Production Atlas link leaked into the current learner release.`);
+  for(const pattern of reviewOnlyPatterns){
+    check(!pattern.test(html), `${rel}: review/staging-only copy leaked into production surface: ${pattern}`);
+  }
   check(!/<script[^>]+src=["'][^"']*clerk\.accounts\.dev/i.test(html), `${rel}: Clerk is preloaded on public browsing.`);
   for (const pattern of prohibitedNetworkPatterns) {
     check(!pattern.test(html), `${rel}: unapproved analytics/advertising/commerce network found: ${pattern}`);
@@ -103,5 +114,6 @@ if (errors.length) {
   console.log('- course consent contains Terms/risk assent without duplicate age affirmation');
   console.log('- Privacy/Cookies match browser-only progress and current no-tracking behavior');
   console.log('- no unapproved analytics, advertising, or checkout networks found on release-candidate public pages');
+  console.log('- no Production Atlas links or owner-review/rebuild labels found on public release pages');
   console.log('- liability language states its enforceability ceiling');
 }
