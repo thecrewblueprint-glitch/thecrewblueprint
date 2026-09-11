@@ -51,6 +51,8 @@ jobs:
         run: node scripts/validate-legal-reconciliation.mjs
       - name: Validate public legal and behavior
         run: node scripts/validate-public-legal-behavior.mjs
+      - name: Build free-tier release artifact
+        run: node scripts/build-free-release-artifact.mjs
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
       - name: Generate matrix views
