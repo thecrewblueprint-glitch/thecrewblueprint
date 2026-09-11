@@ -54,6 +54,9 @@ jobs:
       - name: Validate legal reconciliation
         run: node scripts/validate-legal-reconciliation.mjs
 
+      - name: Validate public legal and behavior
+        run: node scripts/validate-public-legal-behavior.mjs
+
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
 
