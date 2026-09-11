@@ -74,6 +74,16 @@ jobs:
 
       - name: Validate WordPress production package
         run: node scripts/validate-wordpress-production-package.mjs
+
+      - name: Upload WordPress production ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: crew-blueprint-wordpress-production
+          path: |
+            _wordpress/the-crew-blueprint-production.zip
+            _wordpress/the-crew-blueprint-production.manifest.json
+          if-no-files-found: error
+          retention-days: 7
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
       - name: Generate matrix views
