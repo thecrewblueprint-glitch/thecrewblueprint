@@ -34,6 +34,13 @@
       "member_view": "full_free_library"
     },
     {
+      "slug": "/department-basics/",
+      "source": "departments.html",
+      "index": "index,follow",
+      "anonymous_view": "department_basics_sample",
+      "member_view": "full_department_basics"
+    },
+    {
       "slug": "/field-skills/",
       "source": "field.html",
       "index": "index,follow",
