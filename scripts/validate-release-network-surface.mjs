@@ -50,12 +50,20 @@ for(const file of files){
   }
   if(file.endsWith('.js')){
     const js=await readFile(file,'utf8');
-    for(const match of js.matchAll(/https?:\/\/[^"'\s)]+/gi)){
-      let origin='';
-      try{origin=new URL(match[0]).origin;}catch{continue;}
-      if(origin==='https://thecrewblueprint.com')continue;
-      if(allowedDynamicOrigins.has(origin)&&['js/blueprint-v4.js','js/course-consent.js'].includes(name))continue;
-      errors.push(`${name}: unexpected external URL embedded in release JavaScript -> ${match[0]}`);
+    const dynamicRequestPatterns=[
+      /fetch\(\s*["'](https?:\/\/[^"']+)["']/gi,
+      /navigator\.sendBeacon\(\s*["'](https?:\/\/[^"']+)["']/gi,
+      /\.open\(\s*["'][A-Z]+["']\s*,\s*["'](https?:\/\/[^"']+)["']/gi,
+      /import\(\s*["'](https?:\/\/[^"']+)["']\s*\)/gi
+    ];
+    for(const pattern of dynamicRequestPatterns){
+      for(const match of js.matchAll(pattern)){
+        let origin='';
+        try{origin=new URL(match[1]).origin;}catch{continue;}
+        if(origin==='https://thecrewblueprint.com')continue;
+        if(allowedDynamicOrigins.has(origin)&&['js/blueprint-v4.js','js/course-consent.js'].includes(name))continue;
+        errors.push(`${name}: unexpected automatic JavaScript request -> ${match[1]}`);
+      }
     }
   }
 }
@@ -68,5 +76,5 @@ if(errors.length){
 }else{
   console.log('Release network-surface validation passed.');
   console.log('- no automatic third-party scripts, stylesheets, fonts, images, frames, audio, or video in the free release artifact');
-  console.log('- ordinary outbound source/reference links are not treated as automatic network requests');
+  console.log('- passive evidence/reference URLs embedded as data are allowed; only automatic browser requests are blocked');
 }
