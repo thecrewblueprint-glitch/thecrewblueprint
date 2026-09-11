@@ -56,6 +56,9 @@ jobs:
         run: node scripts/validate-wordpress-production-contract.mjs
       - name: Build free-tier release artifact
         run: node scripts/build-free-release-artifact.mjs
+
+      - name: Validate release network surface
+        run: node scripts/validate-release-network-surface.mjs
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
       - name: Generate matrix views
