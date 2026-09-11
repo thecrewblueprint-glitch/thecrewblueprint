@@ -262,7 +262,7 @@
 
   async function currentRouteIsFree() {
     try {
-      var projectionUrl = new URL('data/generated/web-client-projection.json', siteRoot).href;
+      var projectionUrl = new URL('data/generated/free-web-client-projection.json', siteRoot).href;
       var response = await fetch(projectionUrl, { cache: 'no-store' });
       if (!response.ok) return false;
       var data = await response.json();
