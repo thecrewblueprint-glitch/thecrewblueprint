@@ -22,6 +22,9 @@ const publicPages = [
   'contexts.html',
   'departments.html',
   'advanced.html',
+  'about.html',
+  'contact.html',
+  'sources-v4.html',
   'privacy-policy.html',
   'cookies-notice.html',
   'terms-and-conditions.html',
@@ -76,7 +79,13 @@ const reviewOnlyPatterns=[
   /owner review/i,
   /research rebuild/i,
   /public audit copy/i,
-  /rebuild in progress/i
+  /rebuild in progress/i,
+  /successor client/i,
+  /canonical graph/i,
+  /canonical identities/i,
+  /responsibility\/access crosswalk/i,
+  /\bV4\b/,
+  /Roadmapdev/i
 ];
 
 const prohibitedNetworkPatterns = [
@@ -114,6 +123,6 @@ if (errors.length) {
   console.log('- course consent contains Terms/risk assent without duplicate age affirmation');
   console.log('- Privacy/Cookies match browser-only progress and current no-tracking behavior');
   console.log('- no unapproved analytics, advertising, or checkout networks found on release-candidate public pages');
-  console.log('- no Production Atlas links or owner-review/rebuild labels found on public release pages');
+  console.log('- no Production Atlas links, private-system names, or review/internal graph labels found on public release pages');
   console.log('- liability language states its enforceability ceiling');
 }
