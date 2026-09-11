@@ -18,12 +18,16 @@ const privacy = await readFile(path.join(rootDir, 'privacy-policy.html'), 'utf8'
 const cookies = await readFile(path.join(rootDir, 'cookies-notice.html'), 'utf8');
 const terms = await readFile(path.join(rootDir, 'terms-and-conditions.html'), 'utf8');
 const limitation = await readFile(path.join(rootDir, 'limitation-of-liability.html'), 'utf8');
+const signup = await readFile(path.join(rootDir, 'sign-up.html'), 'utf8');
 
 const version = consentRuntime.match(/CONSENT_VERSION = '([^']+)'/)?.[1];
 check(version === '2026-09-10.1', `unexpected consent version: ${version || 'missing'}`);
 check(consentRuntime.includes('cbCourseConsent.v1'), 'runtime is missing its versioned local-storage key');
-check(consentRuntime.includes("AGE_GATE_VERSION = '2026-09-10.1'"), 'runtime is missing the current 18+ birthday-gate version');
-check(consentRuntime.includes('birthDate'), 'runtime is missing birthday account metadata handling');
+check(signup.includes("AGE_GATE_VERSION='2026-09-10.2'"), 'sign-up page is missing the current account eligibility version');
+check(signup.includes('type="date"'), 'sign-up page is missing the neutral birthday field');
+check(signup.includes("adultEligibility:true"), 'sign-up page is missing adult-eligibility metadata');
+check(!signup.includes('birthDate:'), 'sign-up page must not persist the raw date of birth to account metadata');
+check(signup.includes('cb_age_screen_ineligible'), 'sign-up page is missing the same-session ineligible retry marker');
 check(consentRuntime.includes('type="checkbox"'), 'runtime is missing affirmative checkboxes');
 check(!consentRuntime.includes('type="checkbox" checked'), 'consent checkboxes must not be preselected');
 check(consentRuntime.includes('Agree and enter course'), 'runtime is missing explicit assent button text');
@@ -71,5 +75,5 @@ if (errors.length) {
   console.log(`- ${courseFiles.length} discovered top-level course routes gated`);
   console.log('- route count is discovered dynamically; no stale hard-coded inventory count');
   console.log('- adult eligibility, unchecked legal acknowledgments, and explicit assent verified');
-  console.log('- account-linked age eligibility, legal acknowledgment, and version alignment verified');
+  console.log('- sign-up-only age eligibility, data minimization, legal acknowledgment, and version alignment verified');
 }
