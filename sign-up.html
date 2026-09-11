@@ -70,7 +70,7 @@
     return document.cookie.split(';').some(part=>part.trim().startsWith(INELIGIBLE_COOKIE+'='));
   }
   function markIneligibleSession(){
-    document.cookie=INELIGIBLE_COOKIE+'=1; Path=/; Max-Age=1800; SameSite=Lax; Secure';
+    document.cookie=INELIGIBLE_COOKIE+'=1; Path=/; SameSite=Lax; Secure';
   }
 
   function parseDob(value){
