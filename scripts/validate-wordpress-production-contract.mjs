@@ -19,7 +19,7 @@ check(contract.audience_rule?.authoritative_adult_eligibility==='server_side','A
 
 const publicRoutes=contract.public_routes||[];
 const bySlug=new Map(publicRoutes.map(route=>[route.slug,route]));
-for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-labs/','/about/','/contact/','/privacy/','/terms/']){
+for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-labs/','/about/','/contact/','/privacy-policy/','/terms-and-conditions/']){
   check(bySlug.has(slug),`Missing required public route: ${slug}`);
 }
 for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-labs/','/about/','/contact/']){
