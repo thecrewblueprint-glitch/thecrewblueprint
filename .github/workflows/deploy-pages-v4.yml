@@ -73,22 +73,8 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build public artifact
-        run: |
-          rm -rf _site
-          mkdir -p _site
-          rsync -a \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.claude' \
-            --exclude='research' \
-            --exclude='content/archive' \
-            --exclude='ai-communication' \
-            --exclude='handoffs' \
-            --exclude='docs' \
-            --exclude='archive' \
-            --exclude='*.md' \
-            ./ _site/
+      - name: Build free-tier release artifact
+        run: node scripts/build-free-release-artifact.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
