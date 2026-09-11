@@ -67,6 +67,9 @@ jobs:
       - name: Validate public legal and behavior
         run: node scripts/validate-public-legal-behavior.mjs
 
+      - name: Validate WordPress production contract
+        run: node scripts/validate-wordpress-production-contract.mjs
+
       - name: Validate accessibility structural baseline
         run: node scripts/validate-accessibility-baseline.mjs
 
