@@ -92,6 +92,39 @@ for (const courseId of fieldGroup.course_ids || []) {
   assert(projected?.placement?.learner_surface === 'field', `Field Skill ${courseId} was not projected to the field surface.`);
 }
 
+const expectedContextLabIds = [
+  'C-SECT-TOUR',
+  'C-SECT-VENUE',
+  'C-SECT-CORP',
+  'C-SECT-THEATRE',
+  'C-SECT-WORSHIP',
+  'C-SECT-BCAST',
+  'C-SECT-OUT',
+  'C-ACC-PUBLIC-ROUTES',
+  'C-ACC-COMMUNICATION',
+  'C-OUT-HEAT',
+  'C-OUT-FIELD',
+].sort();
+const projectedContextLabs = webProjection.courses
+  .filter((course) => course.placement?.learner_surface === 'contexts')
+  .sort((a, b) => a.identity.canonical_course_id.localeCompare(b.identity.canonical_course_id));
+const projectedContextLabIds = projectedContextLabs.map((course) => course.identity.canonical_course_id);
+assert(
+  JSON.stringify(projectedContextLabIds) === JSON.stringify(expectedContextLabIds),
+  `Context Labs drifted: expected ${expectedContextLabIds.join(', ')}, got ${projectedContextLabIds.join(', ')}`
+);
+for (const course of projectedContextLabs) {
+  assert(course.access?.delivery_state === 'free_public', `Context Lab must remain free: ${course.identity.canonical_course_id} -> ${course.access?.delivery_state}`);
+  assert(course.placement?.public_by_default === true, `Context Lab must be public-by-default: ${course.identity.canonical_course_id}`);
+  assert(course.identity?.route_state === 'materialized', `Context Lab route is not materialized: ${course.identity.canonical_course_id} -> ${course.identity?.route_state}`);
+  assert(Boolean(course.identity?.route_id), `Context Lab route is missing: ${course.identity.canonical_course_id}`);
+}
+const advancedContextExclusions = ['C-LEAD-CREW-CHIEF', 'C-LEAD-LABOR', 'C-SHC-ARCH', 'C-SUP-HAZARD'];
+for (const courseId of advancedContextExclusions) {
+  const projected = webProjection.courses.find((course) => course.identity.canonical_course_id === courseId);
+  assert(projected?.placement?.learner_surface !== 'contexts', `Advanced/split identity leaked into Context Labs: ${courseId}`);
+}
+
 assert(webProjection.invariants?.stagehand_not_universal_prerequisite === true, 'Stagehand universal-prerequisite protection is missing.');
 assert(researchEdges.every((edge) => edge.hard_prerequisite === false), 'Generated learner graph introduced a hard prerequisite.');
 assert(publicEdges.edges.length === researchEdges.length, 'Public/internal learner-edge projections disagree on edge count.');
