@@ -365,13 +365,150 @@
 (()=>{
   const clerkSiteBase=window.location.pathname.startsWith('/thecrewblueprint/')?'/thecrewblueprint/':'/';
 
+  const AGE_GATE_VERSION='2026-09-10.1';
+  const AGE_GATE_PENDING_KEY='crewBlueprint.pendingBirthDate';
+
+  function ageCutoffDate(){
+    const today=new Date();
+    return new Date(today.getFullYear()-18,today.getMonth(),today.getDate());
+  }
+
+  function parseBirthDate(value){
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(String(value||'')))return null;
+    const date=new Date(value+'T00:00:00');
+    return Number.isNaN(date.getTime())?null:date;
+  }
+
+  function isAdultBirthDate(value){
+    const dob=parseBirthDate(value);
+    if(!dob)return false;
+    return dob<=ageCutoffDate();
+  }
+
+  function pendingBirthDate(){
+    try{return window.sessionStorage.getItem(AGE_GATE_PENDING_KEY)||'';}catch(e){return '';}
+  }
+
+  function savePendingBirthDate(value){
+    try{window.sessionStorage.setItem(AGE_GATE_PENDING_KEY,value);}catch(e){}
+  }
+
+  function clearPendingBirthDate(){
+    try{window.sessionStorage.removeItem(AGE_GATE_PENDING_KEY);}catch(e){}
+  }
+
+  function storedBirthDate(){
+    return String(window.Clerk?.user?.unsafeMetadata?.birthDate||'');
+  }
+
+  function openAgeGate(intent){
+    return new Promise(resolve=>{
+      const existing=document.querySelector('.age-gate-backdrop');
+      if(existing)existing.remove();
+
+      const backdrop=document.createElement('div');
+      backdrop.className='age-gate-backdrop';
+      backdrop.innerHTML='<section class="age-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">'
+        +'<span class="tag">18+ account access</span>'
+        +'<h2 id="age-gate-title">Enter your date of birth</h2>'
+        +'<p>Accounts and full course access are limited to people age 18 or older. Your date of birth is required for account eligibility.</p>'
+        +'<label class="age-gate-label" for="age-gate-dob">Date of birth</label>'
+        +'<input id="age-gate-dob" class="age-gate-input" type="date" autocomplete="bday" required>'
+        +'<p class="age-gate-error" role="alert" hidden></p>'
+        +'<div class="age-gate-actions"><button type="button" class="btn" data-age-cancel>Cancel</button><button type="button" class="btn primary" data-age-continue>Continue</button></div>'
+        +'<p class="age-gate-note">If the date entered shows you are under 18, account creation and full course access will remain locked.</p>'
+        +'</section>';
+      document.body.appendChild(backdrop);
+      document.body.classList.add('age-gate-open');
+
+      const input=backdrop.querySelector('#age-gate-dob');
+      const error=backdrop.querySelector('.age-gate-error');
+      const close=result=>{
+        backdrop.remove();
+        document.body.classList.remove('age-gate-open');
+        resolve(result);
+      };
+      backdrop.querySelector('[data-age-cancel]').addEventListener('click',()=>close(null));
+      backdrop.querySelector('[data-age-continue]').addEventListener('click',()=>{
+        const value=input.value;
+        const dob=parseBirthDate(value);
+        if(!dob){
+          error.textContent='Enter a valid date of birth.';
+          error.hidden=false;
+          return;
+        }
+        if(dob>new Date()){
+          error.textContent='Date of birth cannot be in the future.';
+          error.hidden=false;
+          return;
+        }
+        if(!isAdultBirthDate(value)){
+          error.textContent='Accounts and full course access are limited to people age 18 or older.';
+          error.hidden=false;
+          input.setAttribute('aria-invalid','true');
+          return;
+        }
+        savePendingBirthDate(value);
+        close(value);
+      });
+      input.focus();
+    });
+  }
+
+  async function persistBirthDateIfNeeded(value){
+    const user=window.Clerk?.user;
+    if(!user||!value||storedBirthDate())return;
+    try{
+      await user.updateMetadata({unsafeMetadata:{
+        birthDate:value,
+        ageGateVersion:AGE_GATE_VERSION,
+        ageGateConfirmedAt:new Date().toISOString()
+      }});
+    }catch(e){
+      console.error('Could not persist birthday to Clerk staging metadata',e);
+    }
+  }
+
+  async function ensureSignedInAgeEligibility(){
+    if(!window.Clerk?.isSignedIn||!window.Clerk?.user)return false;
+    let dob=storedBirthDate()||pendingBirthDate();
+    if(!dob){
+      dob=await openAgeGate('profile');
+      if(!dob)return false;
+    }
+    if(!isAdultBirthDate(dob)){
+      clearPendingBirthDate();
+      try{await window.Clerk.signOut();}catch(e){}
+      return false;
+    }
+    await persistBirthDateIfNeeded(dob);
+    clearPendingBirthDate();
+    return true;
+  }
+
+  async function openClerkAfterAgeGate(action){
+    const dob=await openAgeGate(action);
+    if(!dob||!window.Clerk)return;
+    if(action==='openSignUp'&&typeof window.Clerk.openSignUp==='function'){
+      window.Clerk.openSignUp({unsafeMetadata:{
+        birthDate:dob,
+        ageGateVersion:AGE_GATE_VERSION,
+        ageGateConfirmedAt:new Date().toISOString()
+      }});
+      return;
+    }
+    if(action==='openSignIn'&&typeof window.Clerk.openSignIn==='function'){
+      window.Clerk.openSignIn();
+    }
+  }
+
   function bindClerkAction(id,action){
     const node=document.getElementById(id);
     if(!node||node.dataset.clerkBound==='true')return;
     node.dataset.clerkBound='true';
     node.addEventListener('click',e=>{
       e.preventDefault();
-      if(window.Clerk&&typeof window.Clerk[action]==='function')window.Clerk[action]();
+      openClerkAfterAgeGate(action);
     });
   }
 
@@ -381,7 +518,7 @@
       node.dataset.memberBound='true';
       node.addEventListener('click',e=>{
         e.preventDefault();
-        if(window.Clerk&&typeof window.Clerk.openSignIn==='function')window.Clerk.openSignIn();
+        openClerkAfterAgeGate('openSignIn');
       });
     });
     document.querySelectorAll('[data-member-sign-up]').forEach(node=>{
@@ -389,7 +526,7 @@
       node.dataset.memberBound='true';
       node.addEventListener('click',e=>{
         e.preventDefault();
-        if(window.Clerk&&typeof window.Clerk.openSignUp==='function')window.Clerk.openSignUp();
+        openClerkAfterAgeGate('openSignUp');
       });
     });
   }
@@ -429,13 +566,21 @@
     }
   }
 
-  function renderClerkAuth(){
+  async function renderClerkAuth(){
     const slot=document.getElementById('clerk-auth-slot');
     if(!slot||!window.Clerk){
       renderAdvancedGate('unavailable');
+      renderMemberAccess('unavailable');
       return;
     }
     if(window.Clerk.isSignedIn){
+      const eligible=await ensureSignedInAgeEligibility();
+      if(!eligible){
+        slot.innerHTML='<span class="auth-status">18+ account verification required</span>';
+        renderAdvancedGate('unavailable');
+        renderMemberAccess('unavailable');
+        return;
+      }
       slot.innerHTML='<div id="clerk-user-button"></div>';
       window.Clerk.mountUserButton(document.getElementById('clerk-user-button'));
     }else{
@@ -455,8 +600,8 @@
     }
     try{
       await window.Clerk.load({ui:{ClerkUI:window.__internal_ClerkUICtor},signInUrl:clerkSiteBase,signUpUrl:clerkSiteBase,signInFallbackRedirectUrl:clerkSiteBase,signUpFallbackRedirectUrl:clerkSiteBase,afterSignOutUrl:clerkSiteBase});
-      renderClerkAuth();
-      window.Clerk.addListener(()=>renderClerkAuth());
+      await renderClerkAuth();
+      window.Clerk.addListener(()=>{renderClerkAuth();});
     }catch(e){
       console.error('Clerk failed to load',e);
       renderAdvancedGate('unavailable');
