@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var CONSENT_VERSION = '2026-09-10.1';
+  var CONSENT_VERSION = '2026-09-10.2';
   var STORAGE_KEY = 'cbCourseConsent.v1';
   var scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
   var siteRoot = new URL('../', scriptUrl);
@@ -31,7 +31,6 @@
       return Boolean(
         record
         && record.version === CONSENT_VERSION
-        && record.ageMajorityConfirmed === true
         && record.termsAccepted === true
         && record.safetyLimitsAccepted === true
       );
@@ -44,7 +43,6 @@
     var record = {
       version: CONSENT_VERSION,
       acceptedAt: new Date().toISOString(),
-      ageMajorityConfirmed: true,
       termsAccepted: true,
       safetyLimitsAccepted: true,
       scope: 'course-access',
@@ -76,11 +74,7 @@
       '<section class="cb-consent-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-consent-title" aria-describedby="cb-consent-description cb-consent-action">' +
         '<span class="cb-consent-kicker">Required before course access</span>' +
         '<h1 id="cb-consent-title">Safety and terms acknowledgment</h1>' +
-        '<p id="cb-consent-description">Course content is limited to adults and discusses work that can cause serious injury, death, or property damage. Review and affirm all three statements before entering the course.</p>' +
-        '<div class="cb-consent-choice">' +
-          '<input id="cb-consent-age" type="checkbox" />' +
-          '<label for="cb-consent-age">I confirm that I am at least 18 years old and have reached the age of legal majority where I live.</label>' +
-        '</div>' +
+        '<p id="cb-consent-description">Full course access is available only through an eligible adult account. This material discusses work that can cause serious injury, death, or property damage. Review and affirm both statements before entering the course.</p>' +
         '<div class="cb-consent-choice">' +
           '<input id="cb-consent-terms" type="checkbox" />' +
           '<label for="cb-consent-terms">I have read and agree to the <a href="' + termsUrl + '" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and <a href="' + limitationUrl + '" target="_blank" rel="noopener noreferrer">Assumption of Risk, Release, and Limitation of Liability</a>.</label>' +
@@ -90,7 +84,7 @@
           '<label for="cb-consent-safety">I understand that this material is general education only. It does not qualify, certify, authorize, or supervise me to perform physical work. Before doing any task, I must obtain required hands-on training and authorization, follow employer and site rules, and work under qualified supervision.</label>' +
         '</div>' +
         '<p class="cb-consent-storage">The current acknowledgment version and acceptance time are recorded for course-access purposes. Browser storage may be used on this build, and the production account system may retain account-linked acceptance records as described in the Privacy Policy.</p>' +
-        '<p id="cb-consent-action" class="cb-consent-action">By selecting all three boxes and clicking <strong>Agree and enter course</strong>, you confirm your eligibility and affirmatively agree to the linked terms and acknowledgments.</p>' +
+        '<p id="cb-consent-action" class="cb-consent-action">By selecting both boxes and clicking <strong>Agree and enter course</strong>, you affirmatively agree to the linked terms and acknowledgments.</p>' +
         '<div class="cb-consent-actions">' +
           '<a class="cb-consent-exit" href="' + coursesUrl + '">Leave course</a>' +
           '<button class="cb-consent-submit" type="button" disabled>Agree and enter course</button>' +
@@ -105,14 +99,13 @@
     });
     document.body.appendChild(backdrop);
 
-    var ageCheckbox = backdrop.querySelector('#cb-consent-age');
     var termsCheckbox = backdrop.querySelector('#cb-consent-terms');
     var safetyCheckbox = backdrop.querySelector('#cb-consent-safety');
     var submitButton = backdrop.querySelector('.cb-consent-submit');
     var focusableSelector = 'a[href], button:not([disabled]), input:not([disabled])';
 
     function updateSubmitState() {
-      submitButton.disabled = !(ageCheckbox.checked && termsCheckbox.checked && safetyCheckbox.checked);
+      submitButton.disabled = !(termsCheckbox.checked && safetyCheckbox.checked);
     }
 
     function closeGate() {
@@ -130,7 +123,6 @@
       }));
     }
 
-    ageCheckbox.addEventListener('change', updateSubmitState);
     termsCheckbox.addEventListener('change', updateSubmitState);
     safetyCheckbox.addEventListener('change', updateSubmitState);
     submitButton.addEventListener('click', closeGate);
@@ -149,7 +141,7 @@
       }
     });
 
-    ageCheckbox.focus();
+    termsCheckbox.focus();
   }
 
   var CLERK_PUBLISHABLE_KEY = 'pk_test_cGxlYXNlZC1jYW1lbC0zNDMyLmNsZXJrLmFjY291bnRzLmRldiQ';
