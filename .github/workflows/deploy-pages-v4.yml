@@ -79,6 +79,9 @@ jobs:
       - name: Build free-tier release artifact
         run: node scripts/build-free-release-artifact.mjs
 
+      - name: Validate release network surface
+        run: node scripts/validate-release-network-surface.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
