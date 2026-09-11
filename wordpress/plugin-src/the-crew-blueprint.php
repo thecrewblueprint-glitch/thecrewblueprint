@@ -430,7 +430,36 @@ add_action('init', function (): void {
     add_rewrite_tag('%cbp_finalize%', '([01])');
 });
 
+function cbp_sync_public_pages(): void {
+    foreach (cbp_manifest()['public'] ?? [] as $route) {
+        $path = cbp_normalize_path((string)($route['path'] ?? ''));
+        if ($path === '/' || ($route['index'] ?? '') === 'noindex,nofollow') continue;
+
+        $slug = trim($path, '/');
+        if ($slug === '' || str_contains($slug, '/')) continue;
+
+        $existing = get_page_by_path($slug, OBJECT, 'page');
+        if ($existing instanceof WP_Post) {
+            update_post_meta($existing->ID, '_cbp_managed_route', '1');
+            continue;
+        }
+
+        $postId = wp_insert_post([
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'post_title' => (string)($route['title'] ?? ucwords(str_replace('-', ' ', $slug))),
+            'post_name' => $slug,
+            'post_content' => '',
+            'comment_status' => 'closed',
+            'ping_status' => 'closed',
+        ], true);
+
+        if (!is_wp_error($postId)) update_post_meta((int)$postId, '_cbp_managed_route', '1');
+    }
+}
+
 register_activation_hook(__FILE__, function (): void {
+    cbp_sync_public_pages();
     flush_rewrite_rules();
 });
 register_deactivation_hook(__FILE__, function (): void {
