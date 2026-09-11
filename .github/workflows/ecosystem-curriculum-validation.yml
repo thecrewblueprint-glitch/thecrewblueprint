@@ -23,6 +23,11 @@ jobs:
         run: node scripts/generate-successor-projections.mjs
       - name: Validate successor projections
         run: node scripts/validate-successor-projections.mjs
+      - name: Generate free public client projection
+        run: node scripts/generate-free-web-client-projection.mjs
+
+      - name: Validate free public client projection
+        run: node scripts/validate-free-web-client-projection.mjs
       - name: Generate free course runtime
         run: node scripts/generate-free-course-runtime.mjs
 
