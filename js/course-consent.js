@@ -7,7 +7,7 @@
   var siteRoot = new URL('../', scriptUrl);
   var termsUrl = new URL('terms-and-conditions.html', siteRoot).href;
   var limitationUrl = new URL('limitation-of-liability.html', siteRoot).href;
-  var coursesUrl = new URL('courses.html', siteRoot).href;
+  var coursesUrl = new URL('learn.html', siteRoot).href;
 
   function installCourseShell() {
     if (!document.querySelector('link[data-cb-course-shell]')) {
