@@ -24,6 +24,12 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Generate successor projections
+        run: node scripts/generate-successor-projections.mjs
+
+      - name: Validate successor projections
+        run: node scripts/validate-successor-projections.mjs
+
       - name: Generate free public client projection
         run: node scripts/generate-free-web-client-projection.mjs
 
