@@ -73,6 +73,10 @@ function cbp_runtime_config_script(): string {
         'signInUrl' => home_url('/'),
         'signUpUrl' => home_url('/create-account/'),
         'afterSignOutUrl' => home_url('/'),
+        'assetBase' => cbp_asset_url(),
+        'termsUrl' => home_url('/terms-and-conditions/'),
+        'limitationUrl' => home_url('/limitation-of-liability/'),
+        'coursesUrl' => home_url('/courses/'),
         'clerkPublishableKey' => $publishable,
         'clerkUiUrl' => $frontend ? $frontend . '/npm/@clerk/ui@1/dist/ui.browser.js' : '',
         'clerkJsUrl' => $frontend ? $frontend . '/npm/@clerk/clerk-js@6/dist/clerk.browser.js' : '',
@@ -98,7 +102,9 @@ function cbp_render_document(string $file, bool $private = false): never {
     }
 
     $html = str_replace('__CB_ASSET_BASE__', esc_url(cbp_asset_url()), $html);
-    $html = str_replace('__CB_RUNTIME_CONFIG__', cbp_runtime_config_script(), $html);
+    $runtime = cbp_runtime_config_script();
+    if ($private) $runtime .= '<script>window.CBP_SERVER_AUTHORIZED=true;</script>';
+    $html = str_replace('__CB_RUNTIME_CONFIG__', $runtime, $html);
 
     if ($private) {
         header('Cache-Control: private, no-store, max-age=0');
