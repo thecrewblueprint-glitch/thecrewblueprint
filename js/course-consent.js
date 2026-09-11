@@ -315,6 +315,15 @@
 
   async function startMemberProtectedCourse() {
     installCourseShell();
+
+    // WordPress production verifies Clerk and adult eligibility before it sends
+    // the protected course body. In that environment, keep the legal/course
+    // acknowledgment gate but do not repeat the client-side member gate.
+    if (window.CBP_SERVER_AUTHORIZED === true) {
+      startCourseAfterAuth();
+      return;
+    }
+
     var freeRoute = await currentRouteIsFree();
     if (!freeRoute) {
       showUnavailableCourseGate();
