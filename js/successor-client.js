@@ -299,6 +299,12 @@
     {showLane:true}
   );
 
+  const renderDepartments=(node,data)=>renderGroupedLibrary(
+    node,
+    (data.courses||[]).filter(c=>c.placement?.learner_surface==='departments'&&c.access?.delivery_state==='free_public'),
+    'No free department basics are present in the generated projection.'
+  );
+
   const renderAdvanced=(node)=>{
     setStatus(node,'Advanced training is in development. Protected Advanced lesson delivery is not active.');
   };
@@ -367,13 +373,14 @@
     'successor-reference-library':renderReferenceLibrary,
     'successor-field-skills':renderField,
     'successor-contexts':renderContexts,
+    'successor-departments':renderDepartments,
     'successor-advanced':renderAdvanced,
     'successor-atlas-links':renderAtlas,
     'successor-sources':renderSources,
     'successor-integrity':renderIntegrity
   };
 
-  const targets=[...document.querySelectorAll('[data-successor-overview],[data-successor-lanes],[data-successor-free-library],[data-successor-reference-library],[data-successor-field-skills],[data-successor-contexts],[data-successor-advanced],[data-successor-atlas-links],[data-successor-sources],[data-successor-integrity]')];
+  const targets=[...document.querySelectorAll('[data-successor-overview],[data-successor-lanes],[data-successor-free-library],[data-successor-reference-library],[data-successor-field-skills],[data-successor-contexts],[data-successor-departments],[data-successor-advanced],[data-successor-atlas-links],[data-successor-sources],[data-successor-integrity]')];
   if(!targets.length)return;
   targets.forEach(node=>setStatus(node,'Loading canonical learning graph…'));
 
