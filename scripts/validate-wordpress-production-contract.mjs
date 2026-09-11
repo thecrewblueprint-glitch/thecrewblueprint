@@ -24,10 +24,10 @@ const canonicalCheckedSources=new Set([
   'privacy-policy.html','terms-and-conditions.html','cookies-notice.html',
   'accessibility-statement.html','limitation-of-liability.html','affiliate-disclosure.html'
 ]);
-for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-labs/','/about/','/contact/','/privacy-policy/','/terms-and-conditions/']){
+for(const slug of ['/','/start-here/','/courses/','/department-basics/','/field-skills/','/context-labs/','/about/','/contact/','/privacy-policy/','/terms-and-conditions/']){
   check(bySlug.has(slug),`Missing required public route: ${slug}`);
 }
-for(const slug of ['/','/start-here/','/courses/','/field-skills/','/context-labs/','/about/','/contact/']){
+for(const slug of ['/','/start-here/','/courses/','/department-basics/','/field-skills/','/context-labs/','/about/','/contact/']){
   check(bySlug.get(slug)?.index==='index,follow',`${slug} must be indexable as a public sample/shell route.`);
 }
 check(bySlug.get('/create-account/')?.index==='noindex,nofollow','Create Account must remain noindex/nofollow.');
