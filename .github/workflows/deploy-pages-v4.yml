@@ -42,6 +42,21 @@ jobs:
       - name: Validate successor client
         run: node scripts/validate-successor-client.mjs
 
+      - name: Audit free release readiness
+        run: node scripts/audit-free-release-readiness.mjs
+
+      - name: Validate free assessment policy
+        run: node scripts/validate-free-assessment-policy.mjs
+
+      - name: Validate course consent coverage
+        run: node scripts/validate-course-consent.mjs
+
+      - name: Validate legal reconciliation
+        run: node scripts/validate-legal-reconciliation.mjs
+
+      - name: Validate accessibility structural baseline
+        run: node scripts/validate-accessibility-baseline.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
