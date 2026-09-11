@@ -304,6 +304,18 @@ for(const file of await walk(siteDir)){
   await copyFile(file,target);
 }
 
+// Production assets must not retain development Clerk credentials or domains.
+for(const rel of ['js/blueprint-v4.js','js/course-consent.js']){
+  const target=path.join(assetsDir,rel);
+  if(!await fileExists(target))continue;
+  let js=await readFile(target,'utf8');
+  js=js
+    .replace(/pk_test_[A-Za-z0-9_$-]+/g,'')
+    .replace(/https:\/\/pleased-camel-3432\.clerk\.accounts\.dev\/npm\/@clerk\/ui@1\/dist\/ui\.browser\.js/g,'')
+    .replace(/https:\/\/pleased-camel-3432\.clerk\.accounts\.dev\/npm\/@clerk\/clerk-js@6\/dist\/clerk\.browser\.js/g,'');
+  await writeFile(target,js,'utf8');
+}
+
 await copyFile(path.join(root,'wordpress','plugin-src','the-crew-blueprint.php'),path.join(pluginDir,'the-crew-blueprint.php'));
 await copyFile(path.join(root,'wordpress','plugin-src','README-FIRST.md'),path.join(pluginDir,'README-FIRST.md'));
 
