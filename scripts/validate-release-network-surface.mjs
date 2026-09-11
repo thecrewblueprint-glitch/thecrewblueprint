@@ -25,12 +25,19 @@ for(const file of files){
     const html=await readFile(file,'utf8');
     const checks=[
       {label:'script',re:/<script\b[^>]*\bsrc=["'](https?:\/\/[^"']+)["'][^>]*>/gi},
-      {label:'stylesheet/preload',re:/<link\b[^>]*\bhref=["'](https?:\/\/[^"']+)["'][^>]*>/gi},
       {label:'embedded media',re:/<(?:img|iframe|audio|video|source)\b[^>]*\bsrc=["'](https?:\/\/[^"']+)["'][^>]*>/gi}
     ];
     for(const {label,re} of checks){
       for(const match of html.matchAll(re)){
         errors.push(`${name}: automatic external ${label} request -> ${match[1]}`);
+      }
+    }
+    for(const match of html.matchAll(/<link\b[^>]*>/gi)){
+      const tag=match[0];
+      const href=tag.match(/\bhref=["'](https?:\/\/[^"']+)["']/i)?.[1];
+      const rel=tag.match(/\brel=["']([^"']+)["']/i)?.[1]?.toLowerCase()||'';
+      if(href&&/(?:^|\s)(?:stylesheet|preload|modulepreload|preconnect|dns-prefetch)(?:\s|$)/.test(rel)){
+        errors.push(`${name}: automatic external link resource (${rel||'unknown rel'}) -> ${href}`);
       }
     }
   }
