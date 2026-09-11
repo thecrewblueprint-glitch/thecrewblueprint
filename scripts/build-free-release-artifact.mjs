@@ -73,7 +73,9 @@ const prohibitedExact=new Set([
   'js/ecosystem-depth-runtime-normalize.js',
   'data/generated/web-client-projection.json',
   'curriculum-map.html',
-  'courses.html'
+  'courses.html',
+  'sitemap.xml',
+  'robots.txt'
 ]);
 
 const errors=[];
