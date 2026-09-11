@@ -364,11 +364,69 @@
 
 (()=>{
   const clerkSiteBase=window.location.pathname.startsWith('/thecrewblueprint/')?'/thecrewblueprint/':'/';
-
   const clerkSignUpUrl=clerkSiteBase+'sign-up.html';
+  const CLERK_PUBLISHABLE_KEY='pk_test_cGxlYXNlZC1jYW1lbC0zNDMyLmNsZXJrLmFjY291bnRzLmRldiQ';
+  const CLERK_UI_URL='https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js';
+  const CLERK_JS_URL='https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js';
+  let clerkLoadPromise=null;
 
-  function openExistingAccountSignIn(){
-    if(!window.Clerk||typeof window.Clerk.openSignIn!=='function')return;
+  function hasSessionCookie(){
+    return document.cookie.split(';').some(part=>part.trim().startsWith('__session='));
+  }
+
+  function loadClerkScript(src,marker,publishableKey){
+    return new Promise((resolve,reject)=>{
+      const existing=document.querySelector('script['+marker+']');
+      if(existing){
+        if((marker==='data-cb-clerk-ui'&&window.__internal_ClerkUICtor)||(marker==='data-cb-clerk-js'&&window.Clerk)){
+          resolve();
+          return;
+        }
+        existing.addEventListener('load',resolve,{once:true});
+        existing.addEventListener('error',reject,{once:true});
+        return;
+      }
+      const script=document.createElement('script');
+      script.src=src;
+      script.defer=true;
+      script.crossOrigin='anonymous';
+      script.setAttribute(marker,'true');
+      if(publishableKey)script.setAttribute('data-clerk-publishable-key',publishableKey);
+      script.onload=resolve;
+      script.onerror=reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  async function ensureClerk(){
+    if(window.Clerk&&window.Clerk.loaded)return true;
+    if(clerkLoadPromise)return clerkLoadPromise;
+    clerkLoadPromise=(async()=>{
+      try{
+        if(!window.__internal_ClerkUICtor)await loadClerkScript(CLERK_UI_URL,'data-cb-clerk-ui');
+        if(!window.Clerk)await loadClerkScript(CLERK_JS_URL,'data-cb-clerk-js',CLERK_PUBLISHABLE_KEY);
+        if(!window.Clerk)return false;
+        await window.Clerk.load({
+          ui:{ClerkUI:window.__internal_ClerkUICtor},
+          signInUrl:clerkSiteBase,
+          signUpUrl:clerkSignUpUrl,
+          signInFallbackRedirectUrl:clerkSiteBase,
+          signUpFallbackRedirectUrl:clerkSiteBase,
+          afterSignOutUrl:clerkSiteBase
+        });
+        return true;
+      }catch(e){
+        console.error('Clerk failed to initialize',e);
+        clerkLoadPromise=null;
+        return false;
+      }
+    })();
+    return clerkLoadPromise;
+  }
+
+  async function openExistingAccountSignIn(){
+    if(!await ensureClerk())return;
+    if(typeof window.Clerk.openSignIn!=='function')return;
     window.Clerk.openSignIn({
       withSignUp:false,
       transferable:false,
@@ -447,39 +505,38 @@
     }
   }
 
-  function renderClerkAuth(){
+  function renderSignedOutAuth(){
     const slot=document.getElementById('clerk-auth-slot');
-    if(!slot||!window.Clerk){
-      renderAdvancedGate('unavailable');
-      renderMemberAccess('unavailable');
-      return;
-    }
-    if(window.Clerk.isSignedIn){
-      slot.innerHTML='<div id="clerk-user-button"></div>';
-      window.Clerk.mountUserButton(document.getElementById('clerk-user-button'));
-    }else{
+    if(slot){
       slot.innerHTML='<a href="#" id="clerk-sign-in">Sign In</a><a href="'+clerkSignUpUrl+'" id="clerk-sign-up" class="work">Create Account</a>';
       bindClerkAction('clerk-sign-in','openSignIn');
       bindClerkAction('clerk-sign-up','openSignUp');
     }
     renderAdvancedGate('ready');
-    renderMemberAccess('ready');
+    renderMemberAccess('signed-out');
   }
 
-  window.addEventListener('load',async()=>{
-    if(!window.Clerk){
-      renderAdvancedGate('unavailable');
-      renderMemberAccess('unavailable');
+  function renderClerkAuth(){
+    const slot=document.getElementById('clerk-auth-slot');
+    if(!slot||!window.Clerk){
+      renderSignedOutAuth();
       return;
     }
-    try{
-      await window.Clerk.load({ui:{ClerkUI:window.__internal_ClerkUICtor},signInUrl:clerkSiteBase,signUpUrl:clerkSiteBase,signInFallbackRedirectUrl:clerkSiteBase,signUpFallbackRedirectUrl:clerkSiteBase,afterSignOutUrl:clerkSiteBase});
-      renderClerkAuth();
-      window.Clerk.addListener(()=>{renderClerkAuth();});
-    }catch(e){
-      console.error('Clerk failed to load',e);
-      renderAdvancedGate('unavailable');
-      renderMemberAccess('unavailable');
+    if(window.Clerk.isSignedIn){
+      slot.innerHTML='<div id="clerk-user-button"></div>';
+      window.Clerk.mountUserButton  window.addEventListener('load',async()=>{
+    renderSignedOutAuth();
+
+    // Signed-out public browsing does not initialize Clerk. If a Clerk session
+    // cookie is already present, initialize Clerk so authenticated learner
+    // state and the account button can be restored.
+    if(!hasSessionCookie())return;
+
+    if(!await ensureClerk()){
+      renderSignedOutAuth();
+      return;
     }
+    renderClerkAuth();
+    window.Clerk.addListener(()=>{renderClerkAuth();});
   });
 })();
