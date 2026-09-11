@@ -51,6 +51,9 @@ jobs:
         run: node scripts/validate-legal-reconciliation.mjs
       - name: Validate public legal and behavior
         run: node scripts/validate-public-legal-behavior.mjs
+
+      - name: Validate WordPress production contract
+        run: node scripts/validate-wordpress-production-contract.mjs
       - name: Build free-tier release artifact
         run: node scripts/build-free-release-artifact.mjs
       - name: Validate accessibility structural baseline
