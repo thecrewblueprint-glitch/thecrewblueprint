@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const scriptDir=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(scriptDir,'..','_site');
 const errors=[];
+const allowedDynamicOrigins=new Set(['https://pleased-camel-3432.clerk.accounts.dev']);
 
 async function walk(dir){
   const out=[];
@@ -45,6 +46,16 @@ for(const file of files){
     const css=await readFile(file,'utf8');
     for(const match of css.matchAll(/(?:@import\s+(?:url\()?["']?|url\(\s*["']?)(https?:\/\/[^"')\s;]+)/gi)){
       errors.push(`${name}: automatic external CSS request -> ${match[1]}`);
+    }
+  }
+  if(file.endsWith('.js')){
+    const js=await readFile(file,'utf8');
+    for(const match of js.matchAll(/https?:\/\/[^"'\s)]+/gi)){
+      let origin='';
+      try{origin=new URL(match[0]).origin;}catch{continue;}
+      if(origin==='https://thecrewblueprint.com')continue;
+      if(allowedDynamicOrigins.has(origin)&&['js/blueprint-v4.js','js/course-consent.js'].includes(name))continue;
+      errors.push(`${name}: unexpected external URL embedded in release JavaScript -> ${match[0]}`);
     }
   }
 }
