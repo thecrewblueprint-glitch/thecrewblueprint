@@ -35,6 +35,11 @@ jobs:
 
       - name: Validate successor public projection
         run: node scripts/validate-successor-projections.mjs
+      - name: Generate free course runtime
+        run: node scripts/generate-free-course-runtime.mjs
+
+      - name: Validate free course runtime
+        run: node scripts/validate-free-course-runtime.mjs
 
       - name: Check successor client syntax
         run: node --check js/successor-client.js
