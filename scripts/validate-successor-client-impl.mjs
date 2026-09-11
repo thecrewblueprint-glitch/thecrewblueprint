@@ -8,7 +8,7 @@ const requiredPages={
   'departments.html':['data-successor-overview','data-successor-lanes','data-successor-integrity'],
   'field.html':['data-successor-field-skills'],
   'contexts.html':['data-successor-contexts'],
-  'advanced.html':['data-advanced-gate','data-advanced-signed-out','data-advanced-signed-in','data-advanced-unavailable'],
+  'advanced.html':[],
   'sources-v4.html':['data-successor-sources','data-successor-integrity']
 };
 const projectionPath=path.join(root,'data','generated','web-client-projection.json');
@@ -37,13 +37,13 @@ for(const route of ['departments.html','field.html','contexts.html','advanced.ht
 }
 
 const advanced=text('advanced.html');
-assert(!advanced.includes('data-successor-advanced'),'Advanced must not expose the generated advanced projection while protected content/access architecture is incomplete.');
-assert(!advanced.includes('Checkout not connected'),'Retired Advanced checkout-preview copy reappeared.');
+assert(!advanced.includes('data-successor-advanced'),'Advanced must not expose generated advanced course bodies.');
 assert(!advanced.includes('data-premium-lock'),'Retired client-side premium-lock preview reappeared.');
-assert(!advanced.includes('$—'),'Advanced must not expose a price placeholder before commercial design is accepted.');
+assert(!advanced.includes('$'),'Advanced explainer must not publish pricing.');
 assert(!advanced.includes('atlas.thecrewblueprint.com'),'Advanced must not expose Production Atlas while Atlas access remains locked.');
-assert(advanced.includes('Create free account')&&advanced.includes('Sign in'),'Advanced signed-out shell must expose free account actions.');
-assert(advanced.includes('No purchase flow is active.'),'Advanced signed-in shell must state the current noncommercial boundary.');
+assert(advanced.includes('Future paid learning'),'Advanced page must remain an informational future-paid explainer.');
+assert(advanced.includes('No pricing, checkout, subscription, or paid entitlement is active'),'Advanced page must state the noncommercial release boundary.');
+assert(!advanced.includes('OPERATE')&&!advanced.includes('DEEPEN / LEAD'),'Advanced page must not publish account-access level labels.');
 
 const field=text('field.html');
 assert(field.includes('first-class Field Skills library'),'Field Skills surface no longer states its first-class-library role.');
@@ -105,4 +105,4 @@ assert(!/worker_records|personal_contacts/i.test(publicHtml),'Learner-facing HTM
 console.log('Successor client validation passed.');
 console.log(`${Object.keys(requiredPages).length} successor learner surfaces validated.`);
 console.log(`${publicationEligible.length} access-authorized public identities tracked; ${freeCourses.length} free + ${referenceCourses.length} reference identities are fully materialized.`);
-console.log('Existing four V4 foundation routes preserved; Advanced and Production Atlas remain locked as configured.');
+console.log('Existing four V4 foundation routes preserved; Advanced is explainer-only and Production Atlas remains locked.');
