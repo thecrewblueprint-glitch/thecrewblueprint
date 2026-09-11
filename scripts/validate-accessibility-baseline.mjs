@@ -3,14 +3,29 @@ import path from 'node:path';
 
 const root = process.cwd();
 const critical = [
-  'curriculum-map.html',
-  'first-five-calls.html',
+  'index.html',
+  'start.html',
+  'learn.html',
+  'field.html',
+  'contexts.html',
+  'departments.html',
+  'advanced.html',
+  'sources-v4.html',
+  'about.html',
+  'contact.html',
+  'privacy-policy.html',
+  'terms-and-conditions.html',
+  'cookies-notice.html',
+  'accessibility-statement.html',
+  'limitation-of-liability.html',
+  'affiliate-disclosure.html',
+  'courses-v4/crew-ready.html',
+  'courses-v4/systems-thinking.html',
+  'courses-v4/shop-logistics.html',
+  'courses-v4/department-explorer.html',
   'courses/ecosystem-course.html',
-  'resources/templates/production-advance-checklist.html',
-  'resources/templates/labor-call-plan.html',
-  'resources/templates/change-log.html',
-  'resources/templates/show-closeout-postmortem.html'
-];
+  'courses/field-skill-move-road-case-with-partner.html'
+]
 
 const errors = [];
 const warnings = [];
