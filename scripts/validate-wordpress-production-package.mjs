@@ -81,7 +81,8 @@ const manifest=JSON.parse(await readFile(path.join(packageRoot,'PACKAGE-MANIFEST
 check(manifest.raw_dob_retained===false,'Package manifest does not affirm raw DOB minimization.');
 check(manifest.paid_content_included===false,'Package manifest indicates paid content is present.');
 check(manifest.production_atlas_included===false,'Package manifest indicates Production Atlas is present.');
-check(Number(manifest.protected_route_count)>=70,'Protected free learner route count is unexpectedly low.');
+check(Number(manifest.protected_route_count)>=62,'Protected free learner route count is unexpectedly low.');
+check(manifest.public_reference_delivery==='metadata_only_via_sources_page','Public reference identities are being treated as protected course bodies.');
 
 if(errors.length){
   console.error(`WordPress package validation failed with ${errors.length} error(s):`);
@@ -91,6 +92,7 @@ if(errors.length){
   console.log('WordPress production package validation passed.');
   console.log(`- ${manifest.public_route_count} public WordPress routes`);
   console.log(`- ${manifest.protected_route_count} protected free learner routes`);
+  console.log('- public-reference identities remain metadata-only on the Sources surface');
   console.log('- protected/public documents stored as guarded PHP payloads, not static HTML');
   console.log('- no dev Clerk keys/domain, paid bodies, mixed catalogs, or Production Atlas access in package');
   console.log('- server JWT verification + private adult eligibility controls present');
