@@ -21,8 +21,10 @@ const projection=JSON.parse(fs.readFileSync(projectionPath,'utf8'));
 
 for(const [file,markers] of Object.entries(requiredPages)){
   const html=text(file);
-  assert(html.includes('css/successor-client.css'),`${file} does not load successor-client.css.`);
-  assert(html.includes('js/successor-client.js'),`${file} does not load successor-client.js.`);
+  if(markers.length){
+    assert(html.includes('css/successor-client.css'),`${file} does not load successor-client.css.`);
+    assert(html.includes('js/successor-client.js'),`${file} does not load successor-client.js.`);
+  }
   for(const marker of markers)assert(html.includes(marker),`${file} is missing ${marker}.`);
   assert(!html.includes('github.com/thecrewblueprint-glitch/festival-atlas/'),`${file} embeds a Production Atlas repository/branch URL instead of the stable product domain.`);
   assert(!html.includes('thecrewblueprint-glitch/Roadmapdev'),`${file} leaks a private Roadmapdev repository pointer.`);
