@@ -38,6 +38,14 @@
   const legal=document.getElementById('signup-legal');
   const error=document.getElementById('signup-error');
   const button=document.getElementById('continue-signup');
+  const INELIGIBLE_COOKIE='cb_age_screen_ineligible';
+
+  function hasIneligibleSession(){
+    return document.cookie.split(';').some(part=>part.trim().startsWith(INELIGIBLE_COOKIE+'='));
+  }
+  function markIneligibleSession(){
+    document.cookie=INELIGIBLE_COOKIE+'=1; Path=/; SameSite=Lax; Secure';
+  }
 
   function parseDob(value){
     if(!/^\d{4}-\d{2}-\d{2}$/.test(String(value||'')))return null;
@@ -61,12 +69,19 @@
     error.textContent='';
     dob.removeAttribute('aria-invalid');
   }
+  if(hasIneligibleSession()){
+    showError('This browser session is not eligible to continue account registration.');
+    button.disabled=true;
+    dob.disabled=true;
+    legal.disabled=true;
+  }
+
   button.addEventListener('click',async()=>{
     clearError();
     const date=parseDob(dob.value);
     if(!date){showError('Enter a valid date of birth.');return;}
     if(date>new Date()){showError('Enter a valid date of birth.');return;}
-    if(!eligible(dob.value)){showError('This account is not eligible for registration.');return;}
+    if(!eligible(dob.value)){markIneligibleSession();showError('This account is not eligible for registration.');button.disabled=true;dob.disabled=true;legal.disabled=true;return;}
     if(!legal.checked){showError('Accept the Terms and acknowledge the Privacy Policy to continue.');return;}
     if(!window.Clerk){showError('Account creation is temporarily unavailable.');return;}
     try{
