@@ -363,11 +363,14 @@
 })();
 
 (()=>{
-  const clerkSiteBase=window.location.pathname.startsWith('/thecrewblueprint/')?'/thecrewblueprint/':'/';
-  const clerkSignUpUrl=clerkSiteBase+'sign-up.html';
-  const CLERK_PUBLISHABLE_KEY='pk_test_cGxlYXNlZC1jYW1lbC0zNDMyLmNsZXJrLmFjY291bnRzLmRldiQ';
-  const CLERK_UI_URL='https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js';
-  const CLERK_JS_URL='https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js';
+  const runtimeConfig=window.CBP_CONFIG||{};
+  const clerkSiteBase=runtimeConfig.siteBase||(window.location.pathname.startsWith('/thecrewblueprint/')?'/thecrewblueprint/':'/');
+  const clerkSignUpUrl=runtimeConfig.signUpUrl||(clerkSiteBase+'sign-up.html');
+  const clerkSignInUrl=runtimeConfig.signInUrl||clerkSiteBase;
+  const afterSignOutUrl=runtimeConfig.afterSignOutUrl||clerkSiteBase;
+  const CLERK_PUBLISHABLE_KEY=runtimeConfig.clerkPublishableKey||'pk_test_cGxlYXNlZC1jYW1lbC0zNDMyLmNsZXJrLmFjY291bnRzLmRldiQ';
+  const CLERK_UI_URL=runtimeConfig.clerkUiUrl||'https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js';
+  const CLERK_JS_URL=runtimeConfig.clerkJsUrl||'https://pleased-camel-3432.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js';
   let clerkLoadPromise=null;
 
   function hasSessionCookie(){
@@ -408,11 +411,11 @@
         if(!window.Clerk)return false;
         await window.Clerk.load({
           ui:{ClerkUI:window.__internal_ClerkUICtor},
-          signInUrl:clerkSiteBase,
+          signInUrl:clerkSignInUrl,
           signUpUrl:clerkSignUpUrl,
           signInFallbackRedirectUrl:clerkSiteBase,
           signUpFallbackRedirectUrl:clerkSiteBase,
-          afterSignOutUrl:clerkSiteBase
+          afterSignOutUrl:afterSignOutUrl
         });
         return true;
       }catch(e){
@@ -483,19 +486,15 @@
   function renderAdvancedGate(state){
     const root=document.querySelector('[data-advanced-gate]');
     if(!root)return;
-
     const checking=root.querySelector('[data-advanced-checking]');
     const signedOut=root.querySelector('[data-advanced-signed-out]');
     const signedIn=root.querySelector('[data-advanced-signed-in]');
     const unavailable=root.querySelector('[data-advanced-unavailable]');
-
     [checking,signedOut,signedIn,unavailable].forEach(node=>{if(node)node.hidden=true;});
-
     if(state==='unavailable'||!window.Clerk){
       if(unavailable)unavailable.hidden=false;
       return;
     }
-
     if(window.Clerk.isSignedIn){
       if(signedIn)signedIn.hidden=false;
     }else{
@@ -512,7 +511,7 @@
       bindClerkAction('clerk-sign-in','openSignIn');
       bindClerkAction('clerk-sign-up','openSignUp');
     }
-    renderAdvancedGate('ready');
+    renderAdvancedGate('unavailable');
     renderMemberAccess('signed-out');
   }
 
@@ -524,12 +523,22 @@
     }
     if(window.Clerk.isSignedIn){
       slot.innerHTML='<div id="clerk-user-button"></div>';
-      window.Clerk.mountUserButton  window.addEventListener('load',async()=>{
+      const target=document.getElementById('clerk-user-button');
+      if(target)window.Clerk.mountUserButton(target);
+    }else{
+      slot.innerHTML='<a href="#" id="clerk-sign-in">Sign In</a><a href="'+clerkSignUpUrl+'" id="clerk-sign-up" class="work">Create Account</a>';
+      bindClerkAction('clerk-sign-in','openSignIn');
+      bindClerkAction('clerk-sign-up','openSignUp');
+    }
+    renderAdvancedGate('ready');
+    renderMemberAccess('ready');
+  }
+
+  window.addEventListener('load',async()=>{
     renderSignedOutAuth();
 
-    // Signed-out public browsing does not initialize Clerk. If a Clerk session
-    // cookie is already present, initialize Clerk so authenticated learner
-    // state and the account button can be restored.
+    // Signed-out public browsing does not initialize Clerk. Restore Clerk only
+    // for an existing session or when the visitor explicitly starts auth.
     if(!hasSessionCookie())return;
 
     if(!await ensureClerk()){
