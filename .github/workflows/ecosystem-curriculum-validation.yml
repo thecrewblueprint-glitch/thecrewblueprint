@@ -63,6 +63,12 @@ jobs:
       - name: Build free-tier release artifact
         run: node scripts/build-free-release-artifact.mjs
 
+      - name: Normalize WordPress release shell
+        run: node scripts/normalize-wordpress-release-shell.mjs
+
+      - name: Validate WordPress release shell
+        run: node scripts/validate-wordpress-release-shell.mjs
+
       - name: Validate release network surface
         run: node scripts/validate-release-network-surface.mjs
 
