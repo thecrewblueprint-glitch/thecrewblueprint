@@ -7,7 +7,9 @@ const root=path.resolve(scriptDir,'..');
 const siteDir=path.join(root,'_site');
 async function walk(dir){const out=[];for(const entry of await readdir(dir,{withFileTypes:true})){const full=path.join(dir,entry.name);if(entry.isDirectory())out.push(...await walk(full));else out.push(full)}return out;}
 const errors=[];
-try{if(!(await stat(path.join(siteDir,'images','crew-blueprint-logo.png'))).isFile())errors.push('Full Crew Blueprint wordmark asset is missing.');}catch{errors.push('Full Crew Blueprint wordmark asset is missing.');}
+for(const rel of ['images/crew-blueprint-logo.png','css/wordpress-global-shell.css','js/wordpress-global-shell.js']){
+  try{if(!(await stat(path.join(siteDir,rel))).isFile())errors.push(`Missing release-shell asset: ${rel}`);}catch{errors.push(`Missing release-shell asset: ${rel}`);}
+}
 let checked=0;
 for(const file of (await walk(siteDir)).filter(file=>file.endsWith('.html'))){
   const rel=path.relative(siteDir,file).split(path.sep).join('/');
@@ -18,8 +20,9 @@ for(const file of (await walk(siteDir)).filter(file=>file.endsWith('.html'))){
   const footers=(html.match(/data-cbp-global-shell="footer"/g)||[]).length;
   if(headers!==1)errors.push(`${rel}: global header count is ${headers}`);
   if(footers!==1)errors.push(`${rel}: global footer count is ${footers}`);
-  if(!/crew-blueprint-logo\.png/.test(html))errors.push(`${rel}: full wordmark missing`);
+  if((html.match(/crew-blueprint-logo\.png/g)||[]).length<2)errors.push(`${rel}: header/footer full wordmark coverage incomplete`);
   if(!/wordpress-global-shell\.css/.test(html))errors.push(`${rel}: global shell CSS missing`);
+  if(!/(?:blueprint-v4|wordpress-global-shell)\.js/.test(html))errors.push(`${rel}: no shell runtime available for navigation/auth`);
   for(const label of ['Home','Start Here','Courses','Field Skills','Context Labs'])if(!html.includes(`>${label}<`))errors.push(`${rel}: primary nav missing ${label}`);
 }
 if(errors.length){console.error(`WordPress release-shell validation failed with ${errors.length} error(s):`);for(const error of errors)console.error('- '+error);process.exit(1);}
