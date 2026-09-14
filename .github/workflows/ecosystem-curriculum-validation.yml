@@ -75,8 +75,13 @@ jobs:
       - name: Build WordPress production package
         run: node scripts/build-wordpress-production-package.mjs
 
+      - name: Inject dynamic WordPress shell runtime
+        run: node scripts/inject-wordpress-shell-runtime.mjs
+
       - name: Check WordPress plugin PHP syntax
-        run: php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+        run: |
+          php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+          php -l _wordpress/the-crew-blueprint/cbp-shell-runtime.php
 
       - name: Validate WordPress production package
         run: node scripts/validate-wordpress-production-package.mjs
@@ -101,7 +106,7 @@ jobs:
         run: |
           if git diff --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.email '418982ids+github-actions[bot]@users.noreply.github.com'
           git add research/matrix research/ECOSYSTEM_COURSE_EVIDENCE_MATRIX_2026-08-31.md
           git commit -m 'chore: sync ecosystem matrix [matrix-generated]'
           git push
