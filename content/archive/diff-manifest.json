@@ -114,6 +114,30 @@
       "relationship": "superseded_public_body",
       "replaced_by": "PR #95 authenticated Advanced development-status shell",
       "note": "Exact predecessor preserved before PR #95 replaces the public Advanced catalog/purchase-preview presentation."
+    },
+    {
+      "archive_path": "content/archive/snapshots/pre-department-explorer-rewrite-2026-09-24/courses-v4/department-explorer.html",
+      "source_ref": "main@2d3cc6e749c8aa1f9e1b9dcb0412b6cdf6ff7b2b",
+      "source_path": "courses-v4/department-explorer.html",
+      "source_blob_sha": "46e59da248e59dcecdc31637b25124460f133729",
+      "capture_date": "2026-09-24",
+      "verbatim": true,
+      "logical_identity": "v4-department-explorer",
+      "relationship": "superseded_public_body",
+      "replaced_by": "Owner-requested Department Explorer rebuild (2026-09-24) from research packages 02, 07, 08, 08A, 09, 10, 11, 11A",
+      "note": "Exact predecessor lesson body preserved before the six-lesson Department Explorer is replaced by the rebuilt eight-lesson course."
+    },
+    {
+      "archive_path": "content/archive/snapshots/pre-department-explorer-rewrite-2026-09-24/js/blueprint-v4.js",
+      "source_ref": "main@2d3cc6e749c8aa1f9e1b9dcb0412b6cdf6ff7b2b",
+      "source_path": "js/blueprint-v4.js",
+      "source_blob_sha": "04693d60c37ce132fff3711e2b8f22338308c741",
+      "capture_date": "2026-09-24",
+      "verbatim": true,
+      "logical_identity": "v4-department-explorer-assessment",
+      "relationship": "superseded_assessment_bank",
+      "replaced_by": "Scenario-based Department Explorer assessment (2026-09-24)",
+      "note": "Preserves the prior five-item Department Explorer assessment bank, which the 2026-09-10 foundation responsibility map flagged as partly testing internal career taxonomy."
     }
   ],
   "snapshot_record_schema": {

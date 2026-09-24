@@ -53,14 +53,11 @@
     'department-explorer':{
       title:'Department Explorer assessment',
       questions:[
-        {prompt:'You are helping lighting. A fixture on the deck is pointed at a different angle than the ones next to it. What should you do?',choices:['Match it to its neighbors so the row looks even','Leave it as it is; it may be focused that way on purpose, and ask the lighting lead if it is in your way','Loosen the yoke so the lighting crew can adjust it faster later','Unplug it so nobody runs it at the wrong angle'],answer:1},
-        {prompt:'During strike you see an audio cable that nobody seems to be using. What is the right move?',choices:['Unplug it and coil it so strike moves faster','Pull it from the far end so the connector stays clean','Ask the audio lead whether that line is cleared to strike before you touch it','Leave it and walk away without saying anything'],answer:2},
-        {prompt:'You are holding an LED cabinet next to one already hung, and the lock will not engage. What should you do?',choices:['Push harder until the lock clicks','Keep control of the cabinet weight, stop, and get the LED lead to look at it','Leave it resting on the magnets and move to the next cabinet','Use the lock method from the last wall you built'],answer:1},
-        {prompt:'You are building decks and notice one section is missing a brace that all the others have. What should you do?',choices:['Report it to the staging lead before anyone uses that section','Leave it out; the deck feels solid','Borrow a brace from a finished section','Put a road case underneath it as support'],answer:0},
-        {prompt:'A prop is sitting alone on a table in the wing, right in your path. What should you do?',choices:['Move it to the prop table where the other props are','Put it in the nearest prop trunk so it does not get damaged','Ask whether it is preset before you move it','Slide it to the back of the table and keep working'],answer:2},
-        {prompt:'Which statement best describes the difference between moving an item and changing it?',choices:['Moving and changing are the same once you have been assigned to a department','Moving an assigned item is labor; changing its setup, settings, contents or preset is department work unless the lead assigns it','Changing settings is fine if you put them back afterward','Only performer-owned items have settings that matter'],answer:1},
-        {prompt:'You have an idea about why a sound check problem is happening, but you are not on the audio team. Who should you tell?',choices:['The stage manager, since they call the show','Whoever is closest to the console','Nobody; guessing wastes time','The audio lead, briefly, without touching the system'],answer:3},
-        {prompt:'What does passing Department Explorer establish?',choices:['That you are qualified to work in the department you chose','That you understand what departments do and where support work stops, well enough to choose what to learn next','That you can skip support work and start at technician level','That you are authorized to connect gear under supervision anywhere'],answer:1}
+        {prompt:'You are new to live production and do not yet know which department fits you. What is the best way to use Department Explorer?',choices:['Choose whichever job title sounds most advanced','Compare the work, problems, and responsibilities in each area, then choose what you want to learn and support next','Treat the departments as interchangeable because the same crew habits apply everywhere','Skip support-level learning and start with whichever advanced system seems most interesting'],answer:1},
+        {prompt:'Which kind of work most directly points toward the lighting department?',choices:['Microphones, consoles, loudspeakers, and listening','Fixtures, positions, lighting data/control, and the look of the show','LED processing, switching, cameras, and playback','Decks, platforms, scenery, and physical build systems'],answer:1},
+        {prompt:'A learner is most interested in microphones, signal paths, consoles, PA systems, and isolating why something cannot be heard. Which department is the closest match?',choices:['Audio','Staging / scenic','Video / LED','Shop / logistics'],answer:0},
+        {prompt:'A learner wants to understand LED panels, processors, video signal paths, switching, playback, and cameras. Which department is the closest match?',choices:['Video / LED / AV','Lighting','Staging / scenic','Shop / logistics'],answer:0},
+        {prompt:'What does passing Department Explorer establish?',choices:['That you are ready to lead the department you selected','That you are authorized to work in any technical department','That you understand the basic differences well enough to choose what to learn next; field experience, practical competence, and authorization remain separate','That the foundation is equivalent to technician-level department training'],answer:2}
       ]
     }
   };
@@ -97,7 +94,7 @@
     toolbar.className='course-dashboard-toolbar';
     toolbar.setAttribute('aria-label','Course navigation');
     toolbar.innerHTML='<div class="course-dashboard-toolbar-top"><div class="course-dashboard-toolbar-title"><strong>Course lessons</strong><span>Move between lessons, then complete the course assessment after the lesson set.</span></div><label class="lesson-jump"><span>Jump to</span><select aria-label="Jump to lesson"></select></label></div><div class="lesson-tabs" role="tablist" aria-label="Lessons"></div>';
-    lessonList.insertBefore(toolbar,lessonList.firstChild);
+    lessonList.parentNode.insertBefore(toolbar,lessonList);
     const tabList=toolbar.querySelector('.lesson-tabs');
     const select=toolbar.querySelector('select');
 
