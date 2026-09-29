@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, prelive/member-access-2026-09-10]
 permissions:
   contents: write
 jobs:
@@ -63,14 +63,25 @@ jobs:
       - name: Build free-tier release artifact
         run: node scripts/build-free-release-artifact.mjs
 
+      - name: Normalize WordPress release shell
+        run: node scripts/normalize-wordpress-release-shell.mjs
+
+      - name: Validate WordPress release shell
+        run: node scripts/validate-wordpress-release-shell.mjs
+
       - name: Validate release network surface
         run: node scripts/validate-release-network-surface.mjs
 
       - name: Build WordPress production package
         run: node scripts/build-wordpress-production-package.mjs
 
+      - name: Inject dynamic WordPress shell runtime
+        run: node scripts/inject-wordpress-shell-runtime.mjs
+
       - name: Check WordPress plugin PHP syntax
-        run: php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+        run: |
+          php -l _wordpress/the-crew-blueprint/the-crew-blueprint.php
+          php -l _wordpress/the-crew-blueprint/cbp-shell-runtime.php
 
       - name: Validate WordPress production package
         run: node scripts/validate-wordpress-production-package.mjs
