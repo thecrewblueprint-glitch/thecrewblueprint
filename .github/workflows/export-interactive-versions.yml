@@ -2,17 +2,6 @@ name: Export Interactive Site Versions
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'index.html'
-      - '_includes/v2-baseline.html'
-      - 'css/**'
-      - 'js/**'
-      - 'lab/clean-sheet-v1/**'
-      - 'research/analysis/clean-sheet-v1-ui-ux-usability-audit-2026-09-06.md'
-      - '.github/workflows/export-interactive-versions.yml'
-
 permissions:
   contents: read
 

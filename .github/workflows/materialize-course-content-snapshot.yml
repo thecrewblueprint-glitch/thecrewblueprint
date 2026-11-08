@@ -1,9 +1,6 @@
 name: Materialize Course Content Snapshot
 
 on:
-  push:
-    branches:
-      - archive/content-snapshot-all-versions-2026-09-06
   workflow_dispatch:
 
 permissions:
