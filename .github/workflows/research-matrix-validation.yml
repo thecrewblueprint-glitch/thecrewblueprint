@@ -2,6 +2,7 @@ name: Research Matrix Validation
 
 on:
   pull_request:
+    types: [ready_for_review]
     paths:
       - 'research/**'
       - 'scripts/validate-research-matrix.mjs'
@@ -11,19 +12,7 @@ on:
       - 'scripts/apply-responsibility-access-reviewed-overrides.mjs'
       - 'scripts/validate-responsibility-access-classification.mjs'
       - '.github/workflows/research-matrix-validation.yml'
-  push:
-    branches:
-      - main
-    paths:
-      - 'research/**'
-      - 'scripts/validate-research-matrix.mjs'
-      - 'scripts/generate-research-matrix-views.mjs'
-      - 'scripts/generate-owner-competency-state-view.mjs'
-      - 'scripts/generate-responsibility-access-classification.mjs'
-      - 'scripts/apply-responsibility-access-reviewed-overrides.mjs'
-      - 'scripts/validate-responsibility-access-classification.mjs'
-      - '.github/workflows/research-matrix-validation.yml'
-
+  workflow_dispatch:
 permissions:
   contents: read
 
