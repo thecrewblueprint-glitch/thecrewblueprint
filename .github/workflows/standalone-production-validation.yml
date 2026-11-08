@@ -2,6 +2,7 @@ name: Standalone Production Validation
 
 on:
   pull_request:
+    types: [ready_for_review]
     paths:
       - 'deployment/standalone/**'
       - 'scripts/build-standalone-production-package.mjs'
