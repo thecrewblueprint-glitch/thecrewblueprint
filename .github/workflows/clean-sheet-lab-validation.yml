@@ -2,6 +2,7 @@ name: Clean-Sheet Learning Lab Validation
 
 on:
   pull_request:
+    types: [ready_for_review]
     paths:
       - 'lab/clean-sheet-v1/**'
       - 'research/analysis/clean-sheet-learning-product-**'
