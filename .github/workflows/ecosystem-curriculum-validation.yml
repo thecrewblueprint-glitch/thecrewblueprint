@@ -1,5 +1,8 @@
 name: Ecosystem Curriculum Validation
 on:
+  pull_request:
+    types: [ready_for_review]
+    branches: [main, prelive/member-access-2026-09-10]
   workflow_dispatch:
 permissions:
   contents: read
