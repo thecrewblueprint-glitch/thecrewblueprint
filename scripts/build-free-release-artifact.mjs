@@ -11,6 +11,10 @@ const manifestPath=path.join(generatedDir,'free-release-artifact-manifest.json')
 
 // Clear prior release output even when projection parsing/validation fails.
 await rm(outDir,{recursive:true,force:true});
+for(const directory of [path.join(root,'data'),generatedDir]){
+  const info=await lstat(directory);
+  if(!info.isDirectory()||info.isSymbolicLink())throw Error('Unsafe generated artifact directory');
+}
 await rm(manifestPath,{force:true});
 try{
 for(const rel of ['data/generated/free-web-client-projection.json','data/generated/web-client-projection.json']){
@@ -109,7 +113,8 @@ async function exists(rel){
       if((await lstat(current)).isSymbolicLink())throw Error('Symbolic link in release source');
     }
     const resolved=await realpath(current), base=await realpath(root);
-    return resolved.startsWith(base+path.sep)&&(await lstat(current)).isFile();
+    const info=await lstat(current);
+    return resolved.startsWith(base+path.sep)&&info.isFile()&&info.nlink===1;
   }catch{return false;}
 }
 
