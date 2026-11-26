@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, rm, copyFile, lstat, realpath } from 'node:
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { canonicalReleasePath, resolveReleaseReference, learnerRoutePath, allowedReleaseAsset } from './release-path-policy.mjs';
+import { verifyFreeClient } from './free-client-projection-policy.mjs';
 
 const scriptDir=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(scriptDir,'..');
@@ -25,7 +26,8 @@ for(const rel of ['data/generated/free-web-client-projection.json','data/generat
   }
 }
 const projection=JSON.parse(await readFile(path.join(generatedDir,'free-web-client-projection.json'),'utf8'));
-if(!Array.isArray(projection.courses)||!projection.courses.length)throw Error('Missing free projection course records');
+const fullProjection=JSON.parse(await readFile(path.join(generatedDir,'web-client-projection.json'),'utf8'));
+verifyFreeClient(fullProjection,projection);
 
 const foundationPages=[
   'courses-v4/crew-ready.html',
@@ -183,8 +185,6 @@ while(assetQueue.length){
   }
 }
 
-const fullProjection=JSON.parse(await readFile(path.join(generatedDir,'web-client-projection.json'),'utf8'));
-if(!Array.isArray(fullProjection.courses)||!fullProjection.courses.length)throw Error('Missing full projection course records');
 const nonFreeMaterialized=fullProjection.courses
   .filter(course=>!deliveryAllowed.has(course?.access?.delivery_state)&&course?.identity?.route_state==='materialized')
   .map(course=>String(course?.identity?.route_id||'').split(/[?#]/)[0])
