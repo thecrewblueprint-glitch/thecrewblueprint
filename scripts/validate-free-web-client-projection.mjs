@@ -1,12 +1,14 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { verifyFreeClient } from './free-client-projection-policy.mjs';
 
 const scriptDir=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(scriptDir,'..');
 const full=JSON.parse(await readFile(path.join(root,'data','generated','web-client-projection.json'),'utf8'));
 const free=JSON.parse(await readFile(path.join(root,'data','generated','free-web-client-projection.json'),'utf8'));
 const errors=[];
+try{verifyFreeClient(full,free);}catch(error){errors.push(error.message);}
 const allowed=new Set(['free_public','public_reference']);
 
 for(const course of free.courses||[]){
