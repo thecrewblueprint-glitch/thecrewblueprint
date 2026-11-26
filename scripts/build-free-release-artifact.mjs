@@ -13,7 +13,15 @@ const manifestPath=path.join(generatedDir,'free-release-artifact-manifest.json')
 await rm(outDir,{recursive:true,force:true});
 await rm(manifestPath,{force:true});
 try{
+for(const rel of ['data/generated/free-web-client-projection.json','data/generated/web-client-projection.json']){
+  let current=root;
+  for(const segment of rel.split('/')){
+    current=path.join(current,segment);
+    if((await lstat(current)).isSymbolicLink())throw Error('Symbolic link in projection input');
+  }
+}
 const projection=JSON.parse(await readFile(path.join(generatedDir,'free-web-client-projection.json'),'utf8'));
+if(!Array.isArray(projection.courses)||!projection.courses.length)throw Error('Missing free projection course records');
 
 const foundationPages=[
   'courses-v4/crew-ready.html',
@@ -170,7 +178,9 @@ while(assetQueue.length){
   }
 }
 
-const nonFreeMaterialized=(JSON.parse(await readFile(path.join(generatedDir,'web-client-projection.json'),'utf8')).courses||[])
+const fullProjection=JSON.parse(await readFile(path.join(generatedDir,'web-client-projection.json'),'utf8'));
+if(!Array.isArray(fullProjection.courses)||!fullProjection.courses.length)throw Error('Missing full projection course records');
+const nonFreeMaterialized=fullProjection.courses
   .filter(course=>!deliveryAllowed.has(course?.access?.delivery_state)&&course?.identity?.route_state==='materialized')
   .map(course=>String(course?.identity?.route_id||'').split(/[?#]/)[0])
   .filter(Boolean);
