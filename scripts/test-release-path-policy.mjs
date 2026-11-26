@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {canonicalReleasePath,resolveReleaseReference,learnerRoutePath,allowedReleaseAsset} from './release-path-policy.mjs';
+test('valid learner route with fragment',()=>assert.equal(learnerRoutePath('courses/sample.html#section'),'courses/sample.html'));
+test('relative public asset',()=>assert.equal(resolveReleaseReference('courses/sample.html','../images/a.png'),'images/a.png'));
+test('root-relative asset',()=>assert.equal(resolveReleaseReference('courses/sample.html','/images/a.png'),'images/a.png'));
+test('encoded space in image name',()=>assert.equal(resolveReleaseReference('index.html','images/a%20b.png'),'images/a b.png'));
+test('external and local fragment not copied',()=>{for(const x of ['https://example.invalid/a','//example.invalid/a','#section','mailto:a@example.invalid'])assert.equal(resolveReleaseReference('index.html',x),null)});
+for(const x of ['../outside.html','/index.html','courses/../sample.html','courses/.hidden.html','courses//sample.html','courses/sample.html\n','docs/sample.html','courses/a%2fb.html'])test('reject learner route '+JSON.stringify(x),()=>assert.throws(()=>learnerRoutePath(x)));
+for(const x of ['../../private.txt','images/%2e%2e/private.txt','images/a%2fb.png','images/a%5cb.png','images/%252e.png','images/a\\b.png','file:/private.txt','images/a//b.png','images/%','images/a\u0000.png'])test('reject reference '+JSON.stringify(x),()=>assert.throws(()=>resolveReleaseReference('courses/sample.html',x)));
+test('only explicit active assets and raster image references eligible',()=>{const e=new Set(['js/runtime.js','data/generated/free.json']);for(const x of ['js/runtime.js','data/generated/free.json','images/example.png'])assert.equal(allowedReleaseAsset(x,e),true);for(const x of ['js/other.js','data/private.json','config/local.php','images/example.svg','private.txt','images/source.zip'])assert.equal(allowedReleaseAsset(x,e),false)});
+test('hidden file and directory denied',()=>{for(const x of ['.env','images/.hidden.png','images/.git/a.png'])assert.throws(()=>canonicalReleasePath(x))});
