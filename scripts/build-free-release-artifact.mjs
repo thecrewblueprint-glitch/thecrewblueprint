@@ -9,6 +9,10 @@ const outDir=path.join(root,'_site');
 const generatedDir=path.join(root,'data','generated');
 const manifestPath=path.join(generatedDir,'free-release-artifact-manifest.json');
 
+// Clear prior release output even when projection parsing/validation fails.
+await rm(outDir,{recursive:true,force:true});
+await rm(manifestPath,{force:true});
+try{
 const projection=JSON.parse(await readFile(path.join(generatedDir,'free-web-client-projection.json'),'utf8'));
 
 const foundationPages=[
@@ -131,9 +135,6 @@ function refsFromCss(source){
   return [...source.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/gi)].map(m=>m[1]);
 }
 
-await rm(outDir,{recursive:true,force:true});
-await rm(manifestPath,{force:true});
-try{
 await mkdir(outDir,{recursive:true});
 
 for(const html of htmlAllowlist){
