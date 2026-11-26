@@ -1,6 +1,7 @@
-import { readFile, writeFile, mkdir, rm, copyFile, stat } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, copyFile, lstat, realpath } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { canonicalReleasePath, resolveReleaseReference, learnerRoutePath, allowedReleaseAsset } from './release-path-policy.mjs';
 
 const scriptDir=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(scriptDir,'..');
@@ -40,10 +41,9 @@ const publicPages=[
 const deliveryAllowed=new Set(['free_public','public_reference']);
 const learnerRoutes=(projection.courses||[])
   .filter(course=>deliveryAllowed.has(course?.access?.delivery_state)&&course?.identity?.route_state==='materialized')
-  .map(course=>String(course?.identity?.route_id||''))
-  .filter(Boolean);
+  .map(course=>course?.identity?.route_id);
 
-const routeFiles=learnerRoutes.map(route=>route.split(/[?#]/)[0]).filter(Boolean);
+const routeFiles=learnerRoutes.map(learnerRoutePath);
 const htmlAllowlist=new Set([...publicPages,...foundationPages,...routeFiles]);
 
 const explicitDynamicAssets=[
@@ -82,23 +82,23 @@ const errors=[];
 const copied=new Set();
 const assetQueue=[...explicitDynamicAssets];
 
-function normalizeRel(baseFile,ref){
-  if(!ref)return null;
-  const trimmed=ref.trim();
-  if(!trimmed||trimmed.startsWith('#')||/^(?:https?:|mailto:|tel:|javascript:|data:)/i.test(trimmed))return null;
-  const clean=trimmed.split('#')[0].split('?')[0];
-  if(!clean)return null;
-  const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(baseFile),decodeURIComponent(clean))).replace(/^\.\//,'');
-  if(resolved.startsWith('../'))return null;
-  return resolved;
-}
+function normalizeRel(baseFile,ref){ return resolveReleaseReference(baseFile,ref); }
 
 function prohibited(rel){
   return prohibitedExact.has(rel)||prohibitedPrefixes.some(prefix=>rel===prefix.slice(0,-1)||rel.startsWith(prefix));
 }
 
 async function exists(rel){
-  try{return (await stat(path.join(root,rel))).isFile();}catch{return false;}
+  canonicalReleasePath(rel);
+  try{
+    let current=root;
+    for(const segment of rel.split('/')){
+      current=path.join(current,segment);
+      if((await lstat(current)).isSymbolicLink())throw Error('Symbolic link in release source');
+    }
+    const resolved=await realpath(current), base=await realpath(root);
+    return resolved.startsWith(base+path.sep)&&(await lstat(current)).isFile();
+  }catch{return false;}
 }
 
 async function stripExternalFontLoads(){
@@ -113,7 +113,9 @@ async function stripExternalFontLoads(){
 }
 
 async function copy(rel){
+  canonicalReleasePath(rel);
   if(copied.has(rel))return;
+  if(!htmlAllowlist.has(rel)&&!allowedReleaseAsset(rel,new Set(explicitDynamicAssets))){errors.push('Unapproved release asset: '+rel);return;}
   if(prohibited(rel)){errors.push('Prohibited release path requested: '+rel);return;}
   if(!await exists(rel)){errors.push('Release dependency does not exist: '+rel);return;}
   const target=path.join(outDir,rel);
@@ -130,6 +132,8 @@ function refsFromCss(source){
 }
 
 await rm(outDir,{recursive:true,force:true});
+await rm(manifestPath,{force:true});
+try{
 await mkdir(outDir,{recursive:true});
 
 for(const html of htmlAllowlist){
@@ -152,6 +156,7 @@ for(const html of htmlAllowlist){
 while(assetQueue.length){
   const rel=assetQueue.shift();
   if(!rel||copied.has(rel))continue;
+  if(!allowedReleaseAsset(rel,new Set(explicitDynamicAssets))){errors.push('Unapproved dependency in asset queue: '+rel);continue;}
   if(prohibited(rel)){errors.push('Prohibited asset entered release queue: '+rel);continue;}
   if(!await exists(rel)){errors.push('Release asset is missing: '+rel);continue;}
   await copy(rel);
@@ -191,13 +196,14 @@ const manifest={
   generated_projection:'data/generated/free-web-client-projection.json',
   generated_course_runtime:'data/generated/free-course-runtime.js'
 };
-await writeFile(manifestPath,JSON.stringify(manifest,null,2)+'\n','utf8');
-
 if(errors.length){
+  await rm(outDir,{recursive:true,force:true});
+  await rm(manifestPath,{force:true});
   console.error(`Free release artifact build failed with ${errors.length} error(s):`);
   for(const error of errors)console.error('- '+error);
   process.exitCode=1;
 }else{
+  await writeFile(manifestPath,JSON.stringify(manifest,null,2)+'\n','utf8');
   console.log('Free release artifact built from explicit allowlists.');
   console.log(`- ${manifest.public_pages.length} public shell/legal pages`);
   console.log(`- ${manifest.foundation_pages.length} authenticated foundation course pages`);
@@ -205,4 +211,10 @@ if(errors.length){
   console.log(`- ${manifest.copied_files.length} total files copied`);
   console.log('- paid/advanced course bodies and mixed runtime catalogs excluded');
   console.log('- external Google Fonts/preconnect tags stripped from the release artifact; system font fallbacks remain');
+}
+
+}catch(error){
+  await rm(outDir,{recursive:true,force:true});
+  await rm(manifestPath,{force:true});
+  throw error;
 }
