@@ -83,7 +83,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Test release artifact path policy
-        run: node --test scripts/test-release-path-policy.mjs
+        run: node --test scripts/test-release-path-policy.mjs scripts/test-free-client-projection-policy.mjs
 
       - name: Build free-tier release artifact
         run: node scripts/build-free-release-artifact.mjs
