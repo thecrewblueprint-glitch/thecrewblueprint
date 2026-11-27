@@ -1,5 +1,6 @@
 import { readFile, writeFile, mkdir, rm, copyFile, lstat, realpath } from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { canonicalReleasePath, resolveReleaseReference, learnerRoutePath, allowedReleaseAsset } from './release-path-policy.mjs';
 import { verifyFreeClient } from './free-client-projection-policy.mjs';
@@ -80,6 +81,48 @@ const explicitDynamicAssets=[
   'images/crew-blueprint-mark.png'
 ];
 
+// Seven shared dependencies observed in release HTML at the reviewed candidate.
+ // They remain conditional on an actual page reference, never a broad JS/CSS wildcard.
+const reviewedSharedAssets=new Map([
+  ['css/homepage-review.css','9b41864ae69e82f03612163bb0bf99391aab1989'],
+  ['css/theme.css','0ee8992f7a44a78fc66b87063257f683de6c289d'],
+  ['css/tiered-course.css','348da8284b426805a94637abec88058716172209'],
+  ['js/main.js','6d0fa19e03455375321b1ee45d06d2f7e9962a4b'],
+  ['js/field-expansion-loader.js','acf815375da74f88bccf10492878311a8d0d7c14'],
+  ['js/tiered-course.js','758182b2915a9101c456e4c693a5c89d64f71e99'],
+  ['js/field-expansion-courses.js','39a2e787c721e99cfa5071b2acf343455d1a7fef']
+]);
+const approvedAssets=new Set([...explicitDynamicAssets,...reviewedSharedAssets.keys()]);
+const reviewedFieldSlugs=[
+  'field-skill-team-lift-carry-set-down','field-skill-cart-dolly-hand-truck-movement',
+  'field-skill-cable-deployment-gathering','field-skill-case-boneyard-organization',
+  'field-skill-work-area-reset-handoff','field-skill-ground-level-soft-goods',
+  'field-skill-pipe-and-drape-support','field-skill-riser-deck-component-support',
+  'field-skill-basic-stagehand-tool-handling','field-skill-jobsite-tape-label-marking',
+  'field-skill-scenery-flat-wagon-movement','field-skill-dock-ramp-trailer-handoff-awareness'
+];
+const reviewedFieldRoutes=new Set(routeFiles);
+function verifiedSharedBytes(rel,bytes){
+  const pin=reviewedSharedAssets.get(rel);
+  const actual=createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
+  if(actual!==pin)throw Error('Reviewed shared asset changed: '+rel);
+  if(rel==='js/field-expansion-courses.js'){
+    // All records in this exact catalog must be approved materialized free routes.
+    // Do not copy a partially eligible catalog or infer access from its filename.
+    const slugs=[...bytes.toString('utf8').matchAll(/\bslug\s*:\s*['"]([^'"]+)['"]/g)].map(m=>m[1]);
+    if(JSON.stringify(slugs)!==JSON.stringify(reviewedFieldSlugs)||slugs.some(slug=>!reviewedFieldRoutes.has('courses/'+slug+'.html')))
+      throw Error('Shared field catalog contains nonrelease or unverified records');
+  }
+  if(rel==='js/main.js'){
+    // Only the release artifact receives this exact reviewed navigation change.
+    const source=bytes.toString('utf8');
+    if(source.split('curriculum-map.html').length!==3||source.split('Full Curriculum').length!==2)
+      throw Error('Shared navigation transform drift');
+    return Buffer.from(source.replaceAll('curriculum-map.html','learn.html').replace('Full Curriculum','Learning pathways'),'utf8');
+  }
+  return bytes;
+}
+
 const prohibitedPrefixes=[
   '.git/','.github/','.claude/','research/','archive/','content/archive/','docs/','legal-tasks/',
   'ai-communication/','handoffs/','planning/'
@@ -134,12 +177,15 @@ async function stripExternalFontLoads(){
 async function copy(rel){
   canonicalReleasePath(rel);
   if(copied.has(rel))return;
-  if(!htmlAllowlist.has(rel)&&!allowedReleaseAsset(rel,new Set(explicitDynamicAssets))){errors.push('Unapproved release asset: '+rel);return;}
+  if(!htmlAllowlist.has(rel)&&!allowedReleaseAsset(rel,approvedAssets)){errors.push('Unapproved release asset: '+rel);return;}
   if(prohibited(rel)){errors.push('Prohibited release path requested: '+rel);return;}
   if(!await exists(rel)){errors.push('Release dependency does not exist: '+rel);return;}
   const target=path.join(outDir,rel);
   await mkdir(path.dirname(target),{recursive:true});
-  await copyFile(path.join(root,rel),target);
+  if(reviewedSharedAssets.has(rel)){
+    const bytes=await readFile(path.join(root,rel));
+    await writeFile(target,verifiedSharedBytes(rel,bytes));
+  }else await copyFile(path.join(root,rel),target);
   copied.add(rel);
 }
 
@@ -172,7 +218,7 @@ for(const html of htmlAllowlist){
 while(assetQueue.length){
   const rel=assetQueue.shift();
   if(!rel||copied.has(rel))continue;
-  if(!allowedReleaseAsset(rel,new Set(explicitDynamicAssets))){errors.push('Unapproved dependency in asset queue: '+rel);continue;}
+  if(!allowedReleaseAsset(rel,approvedAssets)){errors.push('Unapproved dependency in asset queue: '+rel);continue;}
   if(prohibited(rel)){errors.push('Prohibited asset entered release queue: '+rel);continue;}
   if(!await exists(rel)){errors.push('Release asset is missing: '+rel);continue;}
   await copy(rel);
