@@ -231,14 +231,14 @@ while(assetQueue.length){
   }
 }
 
-const nonFreeMaterialized=fullProjection.courses
-  .filter(course=>!deliveryAllowed.has(course?.access?.delivery_state)&&course?.identity?.route_state==='materialized')
+const nonFreeRoutes=fullProjection.courses
+  .filter(course=>!deliveryAllowed.has(course?.access?.delivery_state))
   .map(course=>String(course?.identity?.route_id||'').split(/[?#]/)[0])
   .filter(Boolean);
 
-for(const rel of new Set(nonFreeMaterialized)){
+for(const rel of new Set(nonFreeRoutes)){
   if(rel==='courses/ecosystem-course.html')continue;
-  if(copied.has(rel))errors.push('Non-free materialized course body leaked into release artifact: '+rel);
+  if(copied.has(rel))errors.push('Non-free course route leaked into release artifact: '+rel);
 }
 
 for(const forbidden of prohibitedExact){
@@ -254,7 +254,7 @@ const manifest={
   learner_route_count:learnerRoutes.length,
   learner_route_files:[...new Set(routeFiles)].sort(),
   copied_files:[...copied].sort(),
-  excluded_nonfree_routes:[...new Set(nonFreeMaterialized)].sort(),
+  excluded_nonfree_routes:[...new Set(nonFreeRoutes)].sort(),
   generated_projection:'data/generated/free-web-client-projection.json',
   generated_course_runtime:'data/generated/free-course-runtime.js'
 };
