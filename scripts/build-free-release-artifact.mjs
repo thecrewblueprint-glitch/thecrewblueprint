@@ -190,6 +190,8 @@ async function copy(rel){
 }
 
 function refsFromHtml(source){
+  // Course data embeds escaped HTML. Normalize its serialized markup before scanning.
+  source=source.replace(/\\u003c/gi,'<').replace(/\\u003e/gi,'>').replace(/\\\//g,'/').replace(/\\"/g,'"');
   // Conservative static discovery; still not a browser parser or dynamic-JS proof.
   if(/<base\b/i.test(source)||/<meta\b[^>]*\bhttp-equiv\s*=\s*(?:"refresh"|'refresh'|refresh(?:\s|\/?>))/i.test(source))
     throw Error('Unreviewed base or refresh changes release routing');
