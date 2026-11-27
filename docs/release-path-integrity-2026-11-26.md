@@ -17,3 +17,18 @@ Exact committed source and test callbacks: 18/18 projection tests passed in adap
 - scripts/build-free-release-artifact.mjs: 7c104ad194fd81025434a55ac2e23cb23f1ca9d4
 - scripts/test-free-release-build-integration.mjs: cd71ddb91dbf553b4de190a88ed6261c36e2e008
 - .github/workflows/deploy-pages-v4.yml: 09e099b6327a01994d3fc7bce3b2f600c1244c68
+
+## CL13 focused release blocker remediation
+
+The seven shared dependencies were located by inspecting references in the pinned release pages; all seven source blobs match the accepted base returned by the connector. They are individually pinned and considered only when referenced. The field expansion catalog is refused unless every one of the twelve reviewed slugs has an eligible materialized route in the free projection. The legacy main.js navigation is transformed only in the built artifact to link to learn.html rather than the excluded full curriculum. No source content or access-state changes; this is not blanket approval to publish the catalog. Actual canonical corpus eligibility remains unverified because generated projections are not present in Git at this pin.
+
+Projection fields now require bounded scalar/string-list/boolean types and source URL schemes; missing released source identities are refused. Builder checks represented nonfree route IDs even when unmaterialized and discovers unquoted attributes and static srcset references, rejects base/refresh and executable URI schemes; this is a conservative static scanner, not a complete browser parser. Nonfree route IDs omitted by the canonical generator still require independent inventory cross-check. No claim of full dynamic-JS coverage.
+
+Exact candidate c2c0b6477759fef69bc8d2fad7e0993a4df9dd9a, local Node 22.16.0: node --test scripts/test-free-release-build-integration.mjs scripts/test-free-client-projection-policy.mjs, 45/45 passed, zero fail/skip/cancel. All five local Git blob hashes matched:
+- builder 106523ba4898c09274dcb9ece12e2cd6e302f037
+- release path policy e5ad893e2137b173a2250eec027893811d9c9ef7
+- projection policy fd3093e96465d9ca50d8d93228cfdadeaa51d271
+- build integration tests 218b50d9b5fc02949cc3d14c891c57b44272f526
+- projection tests 775b35dd6d5e9b2a81b8d716428db6fa09175614
+
+Native temporary-checkout synthetic tests passed, including added unquoted/script, srcset, refresh, executable URL, pin drift and unmaterialized locked alias denials. Full real corpus build, positive actual seven-asset admission, all existing validators, current-base integration and private access/device review remain open. Connector at predecessor reported mergeable=false while compare returned base as merge base, ahead 296/behind 0 and exactly 100 files; discrepancy must be resolved by actual Git checkout rather than a fabricated merge. No workflow activation, deployment or published content change.
