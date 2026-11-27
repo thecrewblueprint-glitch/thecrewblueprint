@@ -23,3 +23,16 @@ test('duplicate canonical identities rejected',()=>{const s=fixture();s.courses.
 test('duplicate canonical sources rejected',()=>{const s=fixture();s.sources.push(s.sources[0]);assert.throws(()=>projectFreeClient(s))});
 test('missing canonical sources denied',()=>{const s=fixture();delete s.sources;assert.throws(()=>projectFreeClient(s))});
 test('all public scope cannot certify separation',()=>{const s=fixture();s.courses.pop();assert.throws(()=>verifyFreeClient(s,projectFreeClient(s)))});
+
+for(const [name,mutate] of [
+ ['canonical nested title',s=>s.courses[0].identity.title={private:'synthetic'}],
+ ['canonical nested objective',s=>s.courses[0].learning={objective:{private:'synthetic'}}],
+ ['canonical nested career lane',s=>s.courses[0].placement={career_lane_ids:[{private:'synthetic'}]}],
+ ['canonical nested source owner',s=>s.sources[0].source_owner={private:'synthetic'}],
+ ['canonical invalid source URL',s=>s.sources[0].url='javascript:synthetic'],
+ ['canonical URL credentials',s=>s.sources[0].url='https://fixture:fixture@example.invalid/'],
+ ['canonical malformed source URL',s=>s.sources[0].url='https://'],
+ ['canonical unexpected evidence identity',s=>s.courses[0].evidence.source_ids=['unknown']],
+ ['canonical nonboolean flag',s=>s.courses[0].placement={public_by_default:'true'}]
+])test(name,()=>{const s=fixture();mutate(s);assert.throws(()=>projectFreeClient(s))});
+test('ordinary public source URL and strings remain intact',()=>{const s=fixture();s.sources[0].url='https://example.invalid/reference';s.courses[0].placement={career_lane_ids:['fixture']};const f=projectFreeClient(s);assert.equal(f.sources[0].url,s.sources[0].url);assert.equal(f.courses[0].placement.career_lane_ids[0],'fixture');assert.equal(verifyFreeClient(s,f),true)});
