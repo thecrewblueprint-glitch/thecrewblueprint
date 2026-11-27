@@ -190,7 +190,24 @@ async function copy(rel){
 }
 
 function refsFromHtml(source){
-  return [...source.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)].map(m=>m[1]);
+  // Conservative static discovery; still not a browser parser or dynamic-JS proof.
+  if(/<base\b/i.test(source)||/<meta\b[^>]*\bhttp-equiv\s*=\s*(?:"refresh"|'refresh'|refresh(?:\s|\/?>))/i.test(source))
+    throw Error('Unreviewed base or refresh changes release routing');
+  const refs=[];
+  const attrs=/(?:^|\s)(src|href|srcset|poster|action|formaction)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>]+))/gi;
+  for(const m of source.matchAll(attrs)){
+    const value=m[2]??m[3]??m[4];
+    if(m[1].toLowerCase()==='srcset'){
+      if(/data:|&[#A-Za-z]/i.test(value))throw Error('Unreviewed encoded srcset');
+      for(const candidate of value.split(',')){
+        const parts=candidate.trim().split(/\s+/);
+        if(!parts[0]||parts.length>2||(parts.length===2&&!/^(?:[1-9]\d*w|(?:\d+(?:\.\d+)?|\.\d+)x)$/.test(parts[1])))
+          throw Error('Unreviewed srcset candidate');
+        refs.push(parts[0]);
+      }
+    }else refs.push(value);
+  }
+  return refs;
 }
 function refsFromCss(source){
   return [...source.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/gi)].map(m=>m[1]);
