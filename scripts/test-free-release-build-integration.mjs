@@ -25,7 +25,13 @@ const cases=[
  ['source hardlink',async f=>{await rm(f.abs(imagePath));await f.put('synthetic-target.txt','fixture');await link(f.abs('synthetic-target.txt'),f.abs(imagePath))},false],
  ['locked route linked',f=>f.put('index.html','<a href="courses/locked.html">x</a>'),false],
  ['root-relative asset',f=>f.put('courses/free.html','<img src="/images/crew-blueprint-mark.png">'),true],
- ['encoded traversal',f=>f.put('index.html','<img src="images/%2e%2e/private.png">'),false]
+ ['encoded traversal',f=>f.put('index.html','<img src="images/%2e%2e/private.png">'),false],
+ ['unquoted unapproved script',async f=>{await f.put('js/extra.js','synthetic');await f.put('index.html','<script src=js/extra.js></script>')},false],
+ ['unapproved srcset candidate',async f=>{await f.put('data/extra.json','synthetic');await f.put('index.html','<img srcset="images/crew-blueprint-mark.png 1x, data/extra.json 2x">')},false],
+ ['unsafe executable link',f=>f.put('index.html','<a href="javascript:synthetic">x</a>'),false],
+ ['refresh refused',f=>f.put('index.html','<meta http-equiv=refresh content="0;url=courses/locked.html">'),false],
+ ['unmaterialized locked alias',async f=>{const v=full();v.courses[1].identity.route_id='courses/free.html';v.courses[1].identity.route_state='unmaterialized';await f.put('data/generated/web-client-projection.json',JSON.stringify(v));await f.put(freePath,JSON.stringify(projectFreeClient(v)))},false],
+ ['reviewed shared asset pin drift',async f=>{await f.put('css/homepage-review.css','changed synthetic');await f.put('index.html','<link href="css/homepage-review.css">')},false]
 ];
 async function missing(p){try{await lstat(p);return false}catch(e){if(e.code==='ENOENT')return true;throw e}}
 for(const [name,mutate,want] of cases)test(name,async()=>{
