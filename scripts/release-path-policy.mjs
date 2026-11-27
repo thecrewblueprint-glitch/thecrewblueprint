@@ -10,7 +10,12 @@ export function resolveReleaseReference(base,ref){
  const trimmed=ref.trim();
  if(!trimmed||trimmed.startsWith('#'))return null;
  if(/[\u0000-\u001f\u007f\\]/.test(ref))throw Error('Unsafe release reference');
- if(/^(?:https?:|mailto:|tel:|javascript:|data:)/i.test(trimmed)||trimmed.startsWith('//'))return null; // Separate network/behavior gates still required.
+ if(/^data:/i.test(trimmed)){
+  if(base.endsWith('.css')&&/^data:image\/(?:png|jpeg|gif|webp|svg\+xml);base64,[A-Za-z0-9+/=]+$/i.test(trimmed))return null;
+  throw Error('Unapproved inline data reference');
+ }
+ if(/^(?:javascript:|vbscript:)/i.test(trimmed))throw Error('Unsafe executable reference');
+ if(/^(?:https?:|mailto:|tel:)/i.test(trimmed)||trimmed.startsWith('//'))return null; // Separate network/behavior gates still required.
  if(/^[A-Za-z][A-Za-z0-9+.-]*:/.test(trimmed))throw Error('Unknown reference scheme');
  const raw=trimmed.split(/[?#]/)[0];
  if(!raw)return null;
